@@ -258,21 +258,22 @@ Dataset > From SPSS', in RStudio's top-right pane).
 ### Installing R-packages from GitHub
 \index{GitHub}
 
-Not all packages are at CRAN. Experimental packages, and packages that can not
-be publicly shared, are typically shared at a site called `GitHub`. This book's
-companion R package emaph, for example, which contains specialised EMA functions
-datasets, is on GitHub.
+Not all packages are at CRAN. Many 'unoffical' Experimental packages are shared
+at a site called `GitHub`. This book's companion R package emaph, for example,
+which contains specialised EMA functions datasets, is on GitHub. 
 
-GitHub packages have to be installed via the `install_github` function. To
-install the package 'emaph', for example, enter the following in the console:
+GitHub packages can be installed via the `install_github` function, which is
+defined in a package called "devtools" (so you have to install that package if
+you want to install packages on GitHub).
+
+You need package emaph to run many examples in the book, so let's install this
+package now. To install it, enter the following in the console:
 
 ```{r cs211, eval = FALSE}
 # Code snippet 2.11: Install a package from GitHub.
+install.packages("devtools")
 devtools::install_github("jruwaard/emaph")
 ```
-
-You need this package to run many examples in the book, so you are advised to
-install this package now.
 
 
 ### Using packages

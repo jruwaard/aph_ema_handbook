@@ -174,7 +174,6 @@ ESMdata <- read.csv(url("https://tinyurl.com/y7fbbw7k"))
 ```
 
 
-
 ### Accessing your data
 
 Since the data is now in the environment (under the name `ESMdata`), you can use

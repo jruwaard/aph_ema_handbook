@@ -1,0 +1,66 @@
+--- 
+title: "Ecological Momentary Mental Health Assessment"
+subtitle: "A Practical Introduction, With Examples in R"
+author: ["Jeroen Ruwaard", "Lisa Kooistra", "Melissa Thong"]
+date: "`r Sys.Date()`"
+cover-image: "images/cover.png"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+description: "This is the APH EMA Research Manual, written to support 
+researchers who are considering EMA MH studies."
+---
+
+# Preface {-}
+
+Given known limitations of retrospective self-report questionnaires, such
+as recall bias and poor generalisability of assessment results to real-life
+situations, mental health researchers increasingly adopt alternative assessment
+tools. One of the promising alternatives is Ecological Momentary Assessment
+(EMA), in which emotions and behaviours are repeatedly sampled in everyday
+life, through wearable electronic devices. By providing detailed data on within-
+person processes, EMA may be the key in the development of personalised health
+interventions.
+
+EMA studies are challenging. Researchers, who are new to the field, face
+a dazzling array of options related to the electronic wearables, outcomes
+selection, study design considerations, ethical and regulatory constraints, data
+management, statistical analysis, and study reporting. Although standards are
+emerging, clear guidelines for EMA research do not - at present - exist.
+
+This research manual provides a practical introduction to EMA-research. It was
+written for the Amsterdam School of Public Health (APH), to aid beginning
+researchers looking for practical advice in conducting EMA studies. It provides
+an overview of EMA instruments, outcomes, methods and analytical techniques,
+guidelines for EMA-studies, and a catalogue of EMA research in the APH
+consortium.
+
+The manual comprises six parts:
+
+- Part I introduces EMA and R. Chapter 1 defines EMA, and discusses the
+opportunities and challenges of EMA research. Chapter 2 introduces R, the
+indespensable tool for EMA researcher.
+
+- Part II focuses on EMA study design (chapter 3), EMA instruments (chapter 4)
+and EMA data management (Chapter 5).
+
+- Part III introduces four EMA data analysis techniques: Feature Extraction
+(chapter 6), Mixed Modelling (chapter 7), Timeseries Analysis (chapter 8), and
+Network Analysis (chapter 9).
+
+- Part IV details the momentary assessment of three key mental health variables:
+Mood (chapter 10), Activity (chapter 11), and Context (chapter 12).
+
+- In part V, the application of the preceding material is illustrated in three
+case studies: The critical Slowing Down study (CSD; chapter 13), an EMA study
+of suicidal ideation (the CASPAR study; chapter 15), and a study into a new GPS-
+based measure of activity (the Home Range Estimation-study; chapter 16).
+
+- Part VI provides three catalogues of EMA resources. Chapter 16 lists EMA
+research groups, chapter 17 lists EMA instruments, and chapter 18 summarises R
+extentions (packages) useful for EMA data analysis.
+
+Comments and suggestions are welcome at emaAPH@ggzingeest.nl.
+

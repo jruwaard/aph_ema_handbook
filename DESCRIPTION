@@ -1,0 +1,20 @@
+Package: placeholder
+Title: EMA.
+Version: 0.0.1
+Imports: 
+  bookdown,
+  emaph,
+  tidyverse,
+  adehabitatHR,
+  data.tree,
+  GPArotation, 
+  graphicalVAR,
+  kableExtra,
+  lme4,
+  mlVAR,
+  nlme,
+  psych,
+  qgraph,
+  stats,
+  zoo
+Remotes: rstudio/bookdown

@@ -1,0 +1,21 @@
+install.packages(
+  c(
+    "bookdown",
+    "emaph",
+    "tidyverse",
+    "adehabitatHR",
+    "data.tree",
+    "GPArotation",
+    "ggmap",
+    "graphicalVAR",
+    "kableExtra",
+    "lme4",
+    "lomb",
+    "nlme",
+    "mlVAR",
+    "psych",
+    "PhysicalActivity",
+    "qgraph",
+    "simstudy"
+  )
+)

@@ -1,0 +1,235 @@
+
+# Fitting Networks {#networks}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+
+## What are Networks?
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra. 
+
+## Fitting Networks on Single-Subject Repeated Measures Data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+```{r network, fig.cap = "Simulated timeseries of 5 variables"}
+
+library(graphicalVAR)
+
+# Simulate model:
+set.seed(2)
+Mod <- randomGVARmodel(5, probKappaEdge = 0.8, probBetaEdge = 0.8)
+
+# Simulate data:
+d <- as.data.frame(graphicalVARsim(50, Mod$beta, Mod$kappa))
+
+e <- gather(d) %>% group_by(key) %>% mutate(t = 1:n())
+ggplot(data = e, aes(x = t, y = value)) + 
+  geom_point(size=.2) + geom_line() + 
+  facet_grid(key~.)
+```
+
+
+### Contemporaneous and Directed Correlations
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+
+```{r fig.asp = .3, fig.cap = "Partial Contemporaneous Correlations (left) and Partial Directed Correlations (right)."}
+# Estimate model:
+Res <- graphicalVAR(data = d,     gamma = 0, 
+                    nLambda = 10, verbose = FALSE)
+
+# Show networks
+plot(Res, title = FALSE)
+```
+
+
+### Node Analysis
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.
+
+- Betweennes
+- Closeness
+- Strength
+
+Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.
+
+- InStrength
+- Outstrength
+
+```{r fig.asp = .25, fig.cap = "Centrality plot of Partial Contemporaneous (top) and Directed (bottom) Correlations."}
+library(qgraph)
+centralityPlot(qgraph(Res$PCC, DoNotPlot = TRUE))
+centralityPlot(qgraph(Res$PDC, DoNotPlot = TRUE))
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+
+
+## Fitting Networks on Multiple Subjects Repeated Measures Data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+```{r}
+library("mlVAR")
+
+Model <- mlVARsim(nPerson = 30, nNode = 5, 
+                  nTime = 50,   lag = 1)
+
+fit1 <- mlVAR(Model$Data,          vars = Model$vars, 
+              idvar = Model$idvar, verbose = FALSE,
+              lags = 1,            temporal = "correlated")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra. 
+
+```{r fig.cap = "True (left) vs estimated (right) contemporaneous  (top), temporal (middle) and between-subject relationships (bottom)", fig.asp = .6}
+layout(matrix(c(1:6), ncol = 2, byrow = TRUE))
+
+plot(Model, "contemporaneous", layout = "circle", verbose = FALSE)
+plot(fit1, "contemporaneous", layout = "circle", verbose = FALSE)
+
+plot(Model, "temporal", layout = "circle", verbose = FALSE)
+plot(fit1, "temporal", layout = "circle", verbose = FALSE)
+
+plot(Model, "between", layout = "circle")
+plot(fit1, "between", layout = "circle")
+
+```
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra. 
+
+
+## Further reading
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+### Subsection
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. 
+
+
+### Subsection
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. 
+

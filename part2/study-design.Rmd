@@ -1,0 +1,184 @@
+# (PART) EMA Methods {-}
+
+# Study Design {#methods}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+## The Sample Plan
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. 
+
+[What is the rational of the sample plan?] Aenean lectus nunc, bibendum ut orci
+vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
+velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta.  
+
+```{r creating_a_sample_schedule, echo = TRUE}
+participants <- 1:5
+days <- 1:14
+beeps <- 1:10
+times = seq(32400, 75600, 300)
+
+sample_schema <- as.data.frame(
+  expand.grid(
+    id = participants, 
+    day = days, 
+    beep = beeps))
+
+sample_schema <- sample_schema %>%
+  arrange(id, day, beep) %>%
+  group_by(id, day) %>%
+  mutate(t = sort(sample(times, max(beep)))) %>%
+  mutate(t = as.character(hms::as.hms(t)))
+```
+
+```{r echo = FALSE}
+knitr::kable(
+   head(as.data.frame(sample_schema, 10)), 
+   booktabs = TRUE,
+   caption = 'First 10 rows of the sample schema of participant 1')
+```
+
+
+##  Power Analysis
+
+[How to determine the power of the experiment? Available analytic tools are
+too limited (no support for intensive longitudinal schemes. Solution: simulate
+data. )] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
+laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
+ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum.
+Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique
+pellentesque arcu. Vestibulum id laoreet neque.
+
+[Simulation tools: rnorm, mvrnorm, Package simstudy] Donec sed lectus at sem
+ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra
+tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget
+leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut
+facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque
+habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
+laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
+ac tellus nec tortor interdum porta. 
+
+```{r sdsimcor, fig.cap='Cross-correlation of two simulated variables.'}
+C <- matrix(c(1.0, 0.2, 
+              0.2, 1.0), 
+            nrow = 2)
+
+dt <- simstudy::genCorData(1000, 
+                           mu = c(4, 12), 
+                           sigma = c(1, 2), 
+                           corMatrix = C)
+
+with(dt, ccf(V1, V2, ylab = "cross-correlation"))
+```
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+
+## Devices 
+
+What is the data acquisition interface? [@Stone2002] Lorem ipsum dolor sit
+amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt
+urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit
+mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+
+## Ethical Considerations
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+[EMA data sharing is complicated. Indirect identifiablity should perhaps be the
+default assumption. GPS data can not be fully anonymised.] Vivamus enim turpis,
+pulvinar volutpat purus nec, lobortis imperdiet diam. Nunc hendrerit cursus
+eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
+lobortis imperdiet diam.
+
+[Informed Consent] Donec sed lectus at sem ultrices commodo. Proin a viverra
+metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
+at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
+ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
+Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
+et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
+volutpat purus nec, lobortis imperdiet diam.
+
+
+## Outcomes
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.  
+

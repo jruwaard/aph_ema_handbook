@@ -1,0 +1,237 @@
+
+# R packages {#rcat}
+
+[CRAN task views are ... ]. Lorem ipsum dolor sit amet, consectetur adipiscing
+elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed
+ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa
+nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit
+tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci
+vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
+velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. 
+
+
+Table: (\#tab:rcat) Your table caption.
+
++----------------+-------------------+-----------------------------------------+
+| Name           | Theme             | Description                             |
++:===============+:==================+:========================================+
+| tidyverse      | General Utilities | Well-managed set of 'modern' packages   |
+|                |                   | for data analysis Includes ggplot2,     |
+|                |                   | dplyr, haven (to read and write spss    |
+|                |                   | files), and many more useful packages.  |
++----------------+-------------------+-----------------------------------------+
+| nlme           | Mixed Modelling   | Older package for lmm.                  |
++----------------+-------------------+-----------------------------------------+
+| lme4           | Mixed Modelling   | Newer package for lmm                   |
++----------------+-------------------+-----------------------------------------+
+| adehabitatHR   | GPS data          | Developed for home range estimation of  |
+|                |                   | wild animals. Useful for human data as  |
+|                |                   | well.                                   |
++----------------+-------------------+-----------------------------------------+
+| lomb           | GPS data          | Lomb-Scargle Periodogram for unevenly   |
+|                |                   | sampled time series.                    |
++----------------+-------------------+-----------------------------------------+
+| qgraph         | Network analysis  | Estimate and plot networks.             |
++----------------+-------------------+-----------------------------------------+
+| bootnet        | Network analysis  | determine staibility of networks        |
++----------------+-------------------+-----------------------------------------+
+
+
+## Package tidyverse
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra. 
+
+```{r}
+library(tidyverse)
+```
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. 
+
+Vivamus enim turpis, pulvinar volutpat purus nec, lobortis 
+http://tidyverse.tidyverse.org. 
+
+### Package ggplot2
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. 
+
+```{r fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
+library(ggplot2)
+d = tibble(
+  ID = rep(1:4, each = 25),
+  time = rep(1:25, 4), 
+  score = rnorm(100, 0, 2))
+
+g = ggplot(d, aes(x = time, y = score))
+g
+
+g <- g + geom_point()
+g
+
+g <- g + geom_smooth()
+g
+
+g + facet_wrap(~ ID)
+```
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. 
+
+### Package dplyr
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. 
+
+```{r}
+library(dplyr)
+d %>% 
+  group_by(ID) %>%
+  summarise(mean_score = mean(score)) %>%
+  round(., 2)
+```
+
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. 
+
+## Hierarchical repeated measures regression
+
+Package **nlme** and ***lme4** consectetur adipiscing elit. Aliquam vehicula
+augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet
+semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. 
+
+Package **nlme** ac tellus nec tortor interdum porta. Vestibulum hendrerit
+tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci
+vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
+velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames
+ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis
+imperdiet diam.
+
+```{r}
+library(nlme)
+fm <- lme(distance ~ age + Sex, data = Orthodont, random = ~ 1)
+summary(fm)
+```
+
+Package **lme4** at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. 
+
+[Do not use both packages together] Vestibulum scelerisque nulla ut massa
+tempor, ac dapibus dui viverra. Pellentesque habitant morbi tristique senectus
+et netus et malesuada fames ac turpis egestas.
+
+Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus
+eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada
+fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
+lobortis imperdiet diam.
+
+```{r eval=FALSE}
+library(lme4)
+fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
+summary(fm)
+```
+
+
+## Accelerometer data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.   
+
+
+## GPS data
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. 
+
+Package **adehabitatHR** at sem ultrices commodo. Proin a viverra metus, nec
+scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius
+erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat.
+Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus
+nec, lobortis imperdiet diam.
+
+```{r eval = FALSE}
+library(adehabitatHR)
+```
+
+Package **lomb** at sem ultrices commodo. Proin a viverra metus, nec
+scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius
+erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat.
+Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus
+nec, lobortis imperdiet diam.
+
+```{r out.width='98%'}
+data(ibex, package = "lomb") 
+lomb::lsp(ibex[2:3]) 
+```
+
+## Network Analysis
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.  

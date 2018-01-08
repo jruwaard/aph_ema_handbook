@@ -1,0 +1,41 @@
+book_filename: "aph_ema"
+language:
+  ui:
+    chapter_name: "Chapter "
+
+new_session: no
+delete_merged_file: TRUE
+
+rmd_files: [
+  "index.rmd",
+  
+  "part1/definitions.Rmd",
+  "part1/R.Rmd",
+
+  "part2/study-design.Rmd",
+  "part2/instruments.Rmd",
+  "part2/datamanagement.Rmd",
+  
+  "part3/features.Rmd",
+  "part3/lmm.Rmd",
+  "part3/timeseries.Rmd",
+  "part3/networks.Rmd",
+  
+  "part4/mood.Rmd",
+  "part4/activity.Rmd",
+  "part4/context.Rmd",
+  
+  "part5/csd.Rmd",
+  "part5/caspar.Rmd",
+  "part5/homerange.Rmd",
+  
+  "part6/aph-catalogue.Rmd",
+  "part6/instruments_catalogue.Rmd",
+  "part6/R-package-catalogue.Rmd",
+  #"part6/other-catalogue.Rmd",
+
+  "part7/acknowledgements.Rmd",
+  "part7/references.Rmd"
+]
+
+before_chapter_script: "_common.R"

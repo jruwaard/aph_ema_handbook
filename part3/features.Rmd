@@ -1,0 +1,149 @@
+# (PART) Analytic Approaches {-}
+
+# Feature Extraction {#features}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+## Feature extraction
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+
+```{r featureExtraction, out.width = '98%', fig.asp = 1.1, fig.cap = "features of a series."}
+d <- data.frame(i = 1:100)
+
+d$x <- rnorm(nrow(d), 0, 2)
+d$mean <- mean(d$x)
+d$variance <- var(d$x)
+d$autocorrelation <- cor(d$x, lag(d$x), use = "complete.obs")
+d$rolling_mean <- zoo::rollapply(d$x, 10, fill = NA, mean)
+d$rolling_variance <- zoo::rollapply(d$x, 10, fill = NA, var)
+d$roling_autocorrelation <- zoo::rollapply(d$x, 10, fill = NA,
+                         function(x) {
+                           cor(x, lag(x), use = "complete.obs")
+                          })
+
+d <- gather(d, aspect, value, -i)
+d$aspect = factor(
+  d$aspect,
+  levels = c(
+    "x", "mean", "variance", "autocorrelation", 
+    "rolling_mean", "rolling_variance", "roling_autocorrelation"))
+
+ggplot(data = d, 
+       aes(x = i, 
+           y = value)) +
+  geom_point(alpha = .3, size = .8) + 
+  geom_line() + 
+  facet_wrap(~ aspect, scales = "free", ncol = 2) + 
+  theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+
+
+### Variance
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+
+### Autocorrelation
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+### Rolling statistics
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+
+## Reliability and Validity
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. 
+
+## Feature Selection
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. 
+

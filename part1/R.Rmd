@@ -145,7 +145,7 @@ steps below to see how this works with data stored in a comma-separated-values
 (csv) format, a common data format to which many programs, including SPSS and
 Excell, can export data to.
 
-- Download the example csv data file at https://tinyurl.com/y7fbbw7k (or create
+- Download the example csv data file at https://tinyurl.com/ybfafxxk (or create
 a csv-version of one of your own data files).
 
 - In RStudio, choose the menu option `File > Import Dataset > From Text (base)`.
@@ -170,7 +170,7 @@ and import the example data.
 
 ```{r cs24}
 # Code snippet 2.4: importing csv-data from the internet.
-ESMdata <- read.csv(url("https://tinyurl.com/y7fbbw7k"))
+ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 ```
 
 
@@ -291,7 +291,7 @@ Once loaded, you can use the functions in the packages.
 
 From the documentation of emaph (type: `?emaph`), you learn that this package
 contains several example EMA datasets. Dataset `csd` (see `?csd`) contains the
-data from the 'critical slowing down'-study [@Kossakowski2017, Wichers2016], in
+data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in
 which a patient recorded his mood for 239 days.
 
 To plot the irritation levels of this patient
@@ -467,7 +467,7 @@ highly authorative, since the writers are from the R core development team. See
 https://cran.r-project.org/manuals.html (or type 'help.start()' in the console -
 the manuals are already on your computer).
 
-- While at CRAN, be sure to browse the "contributed documentation" section as
+While at CRAN, be sure to browse the "contributed documentation" section as
 well. On this page, you will find many freely available manuals contributed by
 the R community. See https://cran.r-project.org/other-docs.html
 

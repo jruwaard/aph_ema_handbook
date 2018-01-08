@@ -145,7 +145,7 @@ steps below to see how this works with data stored in a comma-separated-values
 (csv) format, a common data format to which many programs, including SPSS and
 Excell, can export data to.
 
-- Download the example csv data file at https://tinyurl.com/ybxpjqmx (or create
+- Download the example csv data file at https://tinyurl.com/y7fbbw7k (or create
 a csv-version of one of your own data files).
 
 - In RStudio, choose the menu option `File > Import Dataset > From Text (base)`.
@@ -170,7 +170,7 @@ and import the example data.
 
 ```{r cs24}
 # Code snippet 2.4: importing csv-data from the internet.
-ESMdata <- read.csv(url("https://tinyurl.com/ybxpjqmx"))
+ESMdata <- read.csv(url("https://tinyurl.com/y7fbbw7k"))
 ```
 
 

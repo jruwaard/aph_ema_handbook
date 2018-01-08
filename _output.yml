@@ -6,6 +6,8 @@ bookdown::pdf_book:
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default
+bookdown::html_book:
+    css: toc.css
 bookdown::gitbook:
   css: style.css
   config:

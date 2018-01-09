@@ -144,7 +144,7 @@ One way to load data into R is to use RStudio's data import wizard. Follow the
 steps below to see how this works with data stored in a comma-separated-values
 (csv) format, a common data format to which many programs, including SPSS and
 Excell, can export data to.
-
+ 
 - Download the example csv data file at https://tinyurl.com/ybfafxxk (or create
 a csv-version of one of your own data files).
 

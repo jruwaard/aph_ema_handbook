@@ -2,135 +2,307 @@
 
 # Critical Slowing Down {#csd}
 
-
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+tortor interdum porta [@Kossakowski2017; @Wichers2016].
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+## Preliminaries
 
-## Section
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta.  
-
-##  AR1
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
-laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
-ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum.
-Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique
-pellentesque arcu. Vestibulum id laoreet neque.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus
-eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
-lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
-laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
-ac tellus nec tortor interdum porta. 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+```{r cs131, eval = FALSE}
+# Code snippet 13.1: required libraries for the csd reconstruction
+library(emaph)
+library(tidyverse)
+```
 
 
-## Section
+### Define mental state 'scales'
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+mental states: positive and negative affect, mental unrest. Vestibulum hendrerit
+tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci
+vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
+velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+```{r cs132}
+# Code snippet 13.2: mood state subscale definitions
 
+# positive affect
+pa <- c("mood_enthus", "mood_cheerf", 
+        "mood_strong", "mood_satisfi")
 
-## Section
+# negative affect  
+na <- c("mood_lonely", "mood_anxious", 
+        "mood_guilty", "mood_doubt")
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+# mental unrest
+mu <- c("mood_irritat", "pat_restl", 
+        "pat_agitate")
+```
 
 
+### Remove rows with many missing values.
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs133}
+# Code snippet 13.3: missing value removal
+
+csd$nna <- csd %>%
+  select(matches("mood_")) %>%
+  is.na(.) %>% rowSums
+csd <- csd %>% filter(nna == 0)
+```
+
+
+### MoodState sum score
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs134}
+# Code snippet 13.4: calculating the mood state sum score
+
+csd$pa <- csd %>%
+  select(pa) %>%
+  #scale(.) %>%
+  rowMeans(., na.rm = TRUE)
+
+csd$na <- csd %>%
+  select(na) %>%
+  #scale(.) %>%
+  rowMeans(., na.rm = TRUE)
+
+csd$mu <- csd %>%
+  select(mu) %>%
+  scale(.) %>%
+  rowMeans(., na.rm = TRUE)
+
+csd$su <- scale(csd$mood_suspic)
+csd$wo <- scale(csd$pat_worry)
+
+csd$ms = select(csd, pa, na, mu, su, wo) %>%
+  rowSums(na.rm = TRUE)
+```
+
+
+### De-trend
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs135, fig.asp = .4}
+# Code snippet 13.5: plot moodstate score over time
+ggplot(data = csd, 
+       aes(x = dayno, 
+           y = ms)) +
+  geom_smooth() + 
+  geom_line() + 
+  scale_x_continuous(
+    breaks = seq(from = 1, 
+                 to = 239, 
+                 by = 9)) +
+  theme(
+    axis.text.x = element_text(angle = 90, 
+                               hjust = 1))
+```
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit.
+
+```{r cs136}
+# Code snippet 13.6: de-trending moodstate
+fm <- mgcv::gam(formula = ms ~ s(dayno, bs = "cs"), data = csd)
+csd$ms_dt <- residuals(fm)
+```
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit.
+
+```{r cs137, fig.asp = .4}
+# Code snippet 13.7: plot de-trended moodstate
+ggplot(data = csd, 
+       aes(x = dayno, 
+           y = ms_dt)) +
+  geom_smooth() + 
+  geom_line() + 
+  scale_x_continuous(
+    breaks = seq(from = 1, 
+                 to = 239, 
+                 by = 9)) +
+  theme(
+    axis.text.x = element_text(angle = 90, 
+                               hjust = 1))
+```
+
+
+### MoodState Variance & Autocorrelation (30-day window)
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs138}
+# Code snippet 13.8: calculating vmoving ariance and auto-correlation
+
+csd$ms_rv = NA
+csd$ms_rac = NA
+for(i in 1:nrow(csd)){
+
+  if(csd$dayno[i] < 30) next
+  
+  d <- subset(csd[1:i, ], 
+              dayno > (csd$dayno[i] - 30) & 
+              dayno <= csd$dayno[i])
+
+  csd[i, ]$ms_rv <- var(d$ms_dt, na.rm = TRUE)
+  csd[i, ]$ms_rac <- acf(d$ms_dt,
+                         lag.max = 1,
+                         type = "correlation",
+                         plot = FALSE)$acf[2]
+}
+```
+
+
+## Results
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+
+### Depression
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs139, fig.asp = .4}
+# Code snippet 13.9: Plot depression score
+
+d <- csd %>% filter(!is.na(scl90r_dep)) %>% select(dayno, scl90r_dep, phase)
+d <- unique(d)
+ggplot(data = d, 
+       aes(x = dayno, 
+           y = scl90r_dep, 
+           group = 1)) +
+  geom_point(aes(color = phase), 
+             show.legend = FALSE) + 
+  geom_step(aes(color = phase), 
+            show.legend = FALSE) + 
+  scale_x_continuous(
+    breaks = seq(from = 1, 
+                 to = 239, 
+                 by = 9)) +
+  theme(
+    axis.text.x = element_text(angle = 90, 
+                               hjust = 1))
+```
+
+
+### MoodState Variance
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs1310}
+# Code snippet 13.10: Summarise outcomes by day
+
+d <- csd %>%
+  group_by(dayno) %>%
+  summarise(
+    ms_rac = mean(ms_rac),
+    ms_rv = mean(ms_rv), 
+    phase = phase[1])
+```
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs1311, fig.asp = .4}
+# Code snippet 13.11: Plot variance
+
+ggplot(data = d, 
+       aes(x = dayno, 
+           y = ms_rv)) +
+  geom_line(aes(color = phase, 
+                group = 1), 
+            show.legend = FALSE) +
+  scale_x_continuous(
+    breaks = seq(from = 1, 
+                 to = 239, 
+                 by = 9)) +
+  theme(
+    axis.text.x = element_text(angle = 90, 
+                               hjust = 1))
+```
+
+
+### MoodState Autocorrelation
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+```{r cs1312, fig.asp = .4}
+# Code snippet 13.12: Plot autocorrelation
+
+ggplot(data = d, 
+       aes(x = dayno, 
+           y = ms_rac)) +
+  geom_line(aes(color = phase, 
+                group = 1), 
+            show.legend = FALSE) +
+  scale_x_continuous(
+    breaks = seq(from = 1, 
+                 to = 239, 
+                 by = 9)) +
+  theme(axis.text.x = element_text(angle = 90, 
+                                   hjust = 1))
+```
+
+
+## Discussion
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
 
 

@@ -3,9 +3,6 @@
 # Mood {#mood}
 \index{Mood}
 
-
-Dit is Lisa
-En dit is Jeroen
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec

@@ -1,7 +1,7 @@
 # R & RStudio
 
 In this chapter, you will learn how to install and use two programs that are
-indispensable tools for the management and analysis of EMA data: R and RStudio. 
+indispensable for the management and analysis of EMA data: R and RStudio. 
 
 
 ## What are R and RStudio?
@@ -9,24 +9,24 @@ indispensable tools for the management and analysis of EMA data: R and RStudio.
 R is a programming language and software environment for statistical computing
 and data visualisation. 
 
-R comes with a basic graphical user interface (RGui), but many people never
-use it. Instead, they interact with R through RStudio, a powerful alternative
-interface, which has many useful features that greatly simplify R-work. We
-strongly advise you to adopt the R/RStudio-combo.
+R comes with a basic graphical user interface (RGui), but many people never use
+it. RStudio, a powerful alternative user interface, has many useful features
+that greatly simplify R-work. We strongly advise you to adopt the R/RStudio-
+combo.
 
 
 ## Why R?
 
 R is for data scientists, methodologists, and scientific programmers. It is
 nerdy. It has a steep learning curve. If you are trained in SPSS, it will take
-considerable time to become as productive in R as in SPSS. Why invest in R?
+a lot of time to become as productive in R as in SPSS. Why invest in R?
 
 - Unlike SPSS, R is free. It does not eat up your budget. Why pay for something
 that you can get for free?
 
 - R is cutting-edge. Methodological innovations first appear in R. Network
-analyses, for example (see chapter 9), can be conducted in R, but not (yet) in
-SPSS. For some analyses, R is your only option.
+analyses, for example (see Chapter 9), can be run in R, but not (yet) in
+SPSS. For some analyses, you need this alternative.
 
 - Mastering R improves your connection to the statisticians in your team. They
 probably prefer R over SPSS. It is more efficient and less error-prone to all
@@ -37,21 +37,25 @@ research, requires hundreds of operations on multiple raw data files. R excels
 at that. SPSS, frankly, does not. If you care about reproducible research (which
 you should), R can be a great help in putting it into practice.
 
+- R can be used at different levels. If you want to be a basic user, that's fine.
+However, if you want to dive deeper, you will find that you can easily do so.
+You can study source code to understand a particular technique better. You can
+code new functions. R allows you to grow. 
+
 - R's use base is expanding every year. Chances are high that R is the standard
 in your next workplace. R will look great on your CV.
 
 You don't have to be a programmer or methodologist to use R. It takes time
-to master its full potential, but you should be able to comfortably run basic
-analyses in it in less than a week.
-
-This chapter will get you started.
+to master its full potential, but you should be able to run basic
+analyses in it within a week. This chapter will get you started.
 
 
 ## Installing R & RStudio
 
 Both R and RStudio are available, at no costs, for all major operating systems. 
 
-- Download R from the Comprehensive R Archive Network (CRAN) at https://cran.r-project.org/bin/
+- Download R from the Comprehensive R Archive Network (CRAN) at 
+  https://cran.r-project.org/bin/
 
 - Download RStudio from http://rstudio.org
 
@@ -68,10 +72,10 @@ in the bottom-left pane, named "Console".
 
 ![RStudio's User Interface.\label{rstudio}](images/R/rstudio.png){width=98%}
 
-In the console window, you send commands to R. It will execute the command
-immediately and return the answer back in the console. To test this, move your
-cursor to the bottom line, immediately after the prompt sign (">"). Next, type
-the simple statement below, and press 'Enter'.
+In the console, you send commands to R. It will execute the command immediately
+and return the answer back in the console. To test this, move your cursor to
+the bottom line, immediately after the prompt sign (">"). Next, type the simple
+statement below, and press 'Enter'.
 
 ```{r cs21}
 # Code snippet 2.1: R is a calculator.
@@ -114,7 +118,7 @@ This will open a new tab in the top-right pane of RStudio, where you can edit
 the script.
 
 - In the script window, type all statements that you have been entering in the
-console in the previous sections.
+console in the previous section.
 
 - Next, select all lines in the script.
 
@@ -125,15 +129,15 @@ pane, and results are shown immediately, as was the case before, when you typed
 the commands in the Console yourself.
 
 Scripts can also be run line by line. Set your cursor in the line you want to
-run, and press "Ctrl+Enter". The line is copied to the console and executed, and
-the cursor in the script will move to the next line, allowing you to execute the
-script step by step.
+run, and press "Ctrl+Enter". The line is copied to the console and executed,
+and the cursor in the script will move to the next line, allowing you to walk
+through the script, step by step.
 
 
 ## Importing your data
 \index{Data import}
 
-One thing that confuses new Rstudio users, who are more familiar with SPSS, is
+Something that confuses new Rstudio users, who are more familiar with SPSS, is
 that it is not obvious how to import data into RStudio. In SPSS, the data
 are in plain sight. In R, you first have to import the data. There are several
 ways to do so.
@@ -163,10 +167,10 @@ will see a brief summary of the contents of the data.
 
 ### Using functions to import data
 
-While RStudio's Data import wizard is convenient, you will probably use it less
-once you get more experienced in R. Most likely, you will convert to using R
-commands to import data. For example, it takes only a single line to download
-and import the example data.
+While RStudio's Data import wizard is useful, you will probably use it less if
+you get more experienced in R. Most likely, you will convert to using the more
+efficient R commands to import data. For example, it takes only a single line to
+download and import the example data.
 
 ```{r cs24}
 # Code snippet 2.4: importing csv-data from the internet.
@@ -178,7 +182,7 @@ ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 
 Since the data is now in the environment (under the name `ESMdata`), you can use
 it in other R commands. For example, to produce a more detailed summary of the
-first four columns of `ESM`, you type:
+first four columns of `ESMdata`, you type:
 
 ```{r cs25, comment = NA}
 # Code snippet 2.5: summarising data.
@@ -201,24 +205,24 @@ View(ESMdata)
 ```
 
 To work with a specific variable in the dataset, use '$', For instance, to print
-the first 20 numbers in the `mood_down` variable, type:
+the first 20 numbers in the `mood_relaxed` variable, type:
 
 ```{r cs28, eval = FALSE}
 # Code snippet 2.8: accessing a single variable in a data frame.
-head(ESMdata$mood_down, n = 20)
+head(ESMdata$mood_relaxed, n = 20)
 ```
 
 This allows you to apply functions to specific variables. For example, to
-calculate the mean of the `mood_relaxed` variable, type:
+calculate the mean of scores in `mood_relaxed`, type:
 
 ```{r cs29}
 # Code snippet 2.19: Calculating the mean of a variable.
 mean(ESMdata$mood_relaxed)
 ```
 
-There are, of course, may more ways in which you can summarise and manipulate
-your data. At this point, the important milestone is that you learned how to
-import and access your data in R.
+There are, of course, many ways in which you can summarise and manipulate your
+data. At this point, the important milestone is that you imported
+and accessed your data in R.
 
 
 ## Extending R with Packages
@@ -235,7 +239,7 @@ of available packages, see
 https://cran.r-project.org/web/packages/available_packages_by_name.html
 
 If you find a package you like, you can install it via the RStudio menu
-system. Choosing `Tools > packages`. But you can also use the console, via the
+system, choosing `Tools > packages`. But you can also use the console, via the
 `install.package` function. 
 
 A popular package, `tidyverse`, is used extensively in the examples of this
@@ -248,26 +252,22 @@ install this package now.
 install.package(tidyverse)
 ```
 
-The tidyverse contains a package called `haven`, which allows you to read and
+The tidyverse contains a package called 'haven', which allows you to read and
 write SPSS datafiles (.sav files). This is very convenient. You don't have to
 convert all your SPSS data to csv files. See `?read_spss` to learn how to import
-an SPSS file (or use the data import wizard, by choosing `File > Import
+an SPSS-file (or use the data import wizard, by choosing `File > Import
 Dataset > From SPSS', in RStudio's top-right pane).
 
 
 ### Installing R-packages from GitHub
 \index{GitHub}
 
-Not all packages are at CRAN. Many 'unoffical' Experimental packages are shared
-at a site called `GitHub`. This book's companion R package emaph, for example,
-which contains specialised EMA functions datasets, is on GitHub. 
+Not all packages are at CRAN. Many 'unoffical' packages are shared
+at a site called 'GitHub'. This book's companion R package 'emaph', for example,
+which contains specialised EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
 
 GitHub packages can be installed via the `install_github` function, which is
-defined in a package called "devtools" (so you have to install that package if
-you want to install packages on GitHub).
-
-You need package emaph to run many examples in the book, so let's install this
-package now. To install it, enter the following in the console:
+defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
 
 ```{r cs211, eval = FALSE}
 # Code snippet 2.11: Install a package from GitHub.
@@ -287,34 +287,31 @@ library(tidyverse)
 library(emaph)
 ```
 
-Once loaded, you can use the functions in the packages. 
+Once loaded, you can use the functions in the packages. From the documentation
+of emaph (type: `?emaph`), you learn that this package contains several example
+EMA datasets. Dataset 'csd' (see `?csd`) contains the data from the 'critical
+slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient
+recorded his mood for 239 days (see also Chapter 13).
 
-From the documentation of emaph (type: `?emaph`), you learn that this package
-contains several example EMA datasets. Dataset `csd` (see `?csd`) contains the
-data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in
-which a patient recorded his mood for 239 days.
-
-To plot the irritation levels of this patient
-in the first six days, using the `ggplot` function from package `ggplot2`, type:
+To plot the irritation levels of this patient in the first six days, using the
+`ggplot` function from package 'ggplot2' (which is in 'tidyverse'), type:
 
 ```{r cs213, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
 # Code snippet 2.13: Using ggplot to plot EMA time series.
-ggplot(data = subset(csd, dayno < 7),
-        aes(x = beepno, 
-            y = mood_irritat)) + 
+ggplot(data = subset(csd, dayno <= 6),
+       mapping =  aes(x = beepno, y = mood_irritat)) + 
   geom_point() +  geom_step() + 
-  scale_x_continuous(breaks = 1:10) + 
+  scale_x_continuous(breaks = 1:10) +
   facet_wrap(~ dayno, nrow = 2)
 ```
-
 
 ## Getting help
 \index{help}
 
 Unlike SPSS, R has no point-and-click menu's that you can browse through to
-select a particular statistical procedure. This is a problem for many new users.
-What if you want, for example, to generate random numbers from a distribution
-with a mean of 2 and standard deviation of 4? How to tell this to R?
+select a statistical procedure. This is a problem for many new users. What if
+you want, for example, to generate random numbers from a distribution with a
+mean of 2 and standard deviation of 4? How to tell this to R?
 
 
 ### Using '?' to consult the documentation
@@ -329,15 +326,14 @@ this function, type `?rnorm` in the console.
 ```
 
 This opens the documentation of the rnorm function in the 'Help'-tab, in the
-bottom right pane, from which you learn that that the 'rnorm' function accepts
-'mean' and 'sd' (standard deviation) as additional parameters, which are 0 and
-1, respectively, if you do not specify them (which explains why 'rnorm(100)'
+bottom right pane, from which you learn that that the `rnorm` function accepts
+`mean` and `sd` (standard deviation) as additional parameters, which are 0 and
+1 default, respectively (which explains why `norm(100)`
 worked in the previous examples). So, to generate the required numbers, you
 type:
 
 ```{r cs215, eval = FALSE}
-# Code snippet 2.15: Plotting the histogram of a sample from a
-# customised normal distribution.
+# Code snippet 2.15: Plotting the histogram of a custom random sample
 hist(rnorm(1000, mean = 2, sd = 4))
 ```
 
@@ -354,16 +350,15 @@ At the top-right of the 'Help' pane, RStudio has a search input field, which
 allows you to search through all documentation that is installed on your
 computer. The search field auto-completes your input. If you type a 't' in this
 field, you will be presented with a list of functions starting with a 't'. In
-this list, you find a likely candidate: a function called 't.test'. From the
-documentation of this function (?t.test), you learn that, indeed, this is the
+this list, you find a likely candidate: a function called `t.test`. From the
+documentation of this function (`?t.test`), you learn that, indeed, this is the
 function you were looking for.
 
 ```{r cs216}
 # Code snippet 2.16: Running a t-test, on two simulated samples.
 
 # generate two samples (N = 100 per group) from the normal distribution
-A <- rnorm(100)
-B <- rnorm(100)
+A <- rnorm(100); B <- rnorm(100)
 
 # the t-test should be non-significant 
 t.test(A, B)
@@ -391,9 +386,9 @@ it requires you to develop a vocabulary of statements that are acceptable to R.
 You have to learn how to speak the language. This takes time.
 
 Build your vocabulary by reading books (see the end of this chapter), using
-Cheatsheets (lists of useful commands; see, for example https://www.rstudio.com/
-resources/cheatsheets/), or by browsing the extensive documentation built into R
-(type: 'help.start()' in the console) and Rstudio (see the 'Help' menu option).
+Cheatsheets (lists of useful commands; see, for example 
+https://www.rstudio.com/resources/cheatsheets/), or by browsing the extensive documentation built into R (type: `help.start()` in the console) and Rstudio 
+(see the 'Help' menu option).
 
 
 ### Learning from examples
@@ -407,29 +402,26 @@ to you. Learn from from these examples, by using `?` on each element that you do
 not understand.
 
 For example, consider the example below, which shows R code to reveal how hungry
-the patient of the `csd` data was over the course of the day. It contains a lot
-of statements that weren't discussed yet.
+the patient in the 'csd' study was over the course of the day. It contains a lot
+of statements that weren't discussed yet. Table \ref{tab:usingrhelp} shows how
+`?` can help to understand the code and its output.
 
-```{r cs217, warning = FALSE, fig.cap = "Reported hunger levels, over the course of the day, of a single respondent.", fig.asp = 0.4}
+```{r cs217, warning = FALSE, fig.cap = "Reported hunger levels, over the course of the day, of a single respondent.", fig.asp = 0.3}
 # Code snippet 2.17: Another ggplot example.
-ggplot(data = csd,
-       mapping = aes(x = resptime_s, 
-                     y = phy_hungry)) + 
+ggplot(data = csd, mapping = aes(x = resptime_s, y = phy_hungry)) + 
   geom_jitter(height = .2, size = .5) + 
   geom_smooth()
 ```
 
-
-The table below shows how `?` can be used to understand the code and its output.
 
 Table: (\#tab:usingrhelp) Using R Help to understand code snippets.
 
 +-------------------+----------------------------------------------------------+
 | Help              | What you can learn from the documentation                |
 +:==================+:=========================================================+
-| ?ggplot           | `ggplot` creates a new plot from data in `csd`.          |
-|                   | The variable `hour` from `csd` is used as x.             |
-|                   | The variable `phy_hungry` from `csd` is used as y.       |
+| ?ggplot           | `ggplot` creates a new plot from data in 'csd'.          |
+|                   | The variable `hour` from 'csd' is used as x.             |
+|                   | The variable 'phy_hungry' from 'csd' is used as y.       |
 |                   | Calling `ggplot` plots the coordinate system, but not    |
 |                   | much more. 
 +-------------------+----------------------------------------------------------+
@@ -440,14 +432,16 @@ Table: (\#tab:usingrhelp) Using R Help to understand code snippets.
 +-------------------+----------------------------------------------------------+
 | ?geom_jitter      | This command plots the (x, y) data points, with a small  |
 |                   | amount of random variation (on both x and y).            |
-|                   | Scores (y) are discrete, on a 1 to 7 scale. Without      |    |                   | jittering, many points would overlap, making it difficult|
-|                   | to see the density of scores. Points are plotted smaller,|    |                   | (size = .5), to further reduce the cluttering            |
+|                   | Since y-scores are discrete, on a 1 to 7 scale, without  |    
+|                   | jittering, many points would overlap, making it difficult|
+|                   | to see the density of scores. To further reduce the      |
+|                   | cluttering, points are plotted smaller (`size = .5`).    |
 +-------------------+----------------------------------------------------------+
-| ?geom_smooth      | Plots a smoothed line through the data points defined    |
-|                   | by (x, y).            |
+| ?geom_smooth      | Plots a smoothed line through the (x, y) data points.    |
 |                   | The gray area around the blue lines marks the 95\%       |
 |                   | confidence interval.                                     |
 +-------------------+----------------------------------------------------------+
+
 
 ### Read books
 
@@ -458,34 +452,36 @@ is presented below.
 - Many mental health researchers own a copy of Andy Field's popular book
 "Discovering Statistics Using IBM SPSS Statistics" [@FieldSPSS]. For those,
 Field's R-version of this book, "Discovering Statistics Using R" [@FieldR]
-provides a familiar companion in making the transition to R. See https://
+provides a familiar companion in making the transition to R. See 
 https://www.discoveringstatistics.com/
 
-- Free manuals can be found at the offical CRAN site. The manuals are dry,
-and not for the faint of of heart, but the information is very complete and
-highly authorative, since the writers are from the R core development team. See
-https://cran.r-project.org/manuals.html (or type 'help.start()' in the console -
-the manuals are already on your computer).
+- Free manuals can be found at the offical CRAN site. The manuals are dry, and
+not for the faint of heart, but complete and authorative, since the authors
+are members of the R core development team. See https://cran.r-project.org/
+manuals.html (or type `help.start()` in the console - the manuals are already on
+your computer).
 
-While at CRAN, be sure to browse the "contributed documentation" section as
+- While at CRAN, be sure to browse the 'contributed documentation'-section as
 well. On this page, you will find many freely available manuals contributed by
 the R community. See https://cran.r-project.org/other-docs.html
 
 
 ### Online Courses
 
-- DataCamp, an online data science education platform, offering several high-
+- DataCamp, an online data science education platform, offers several high-
 quality courses in R. See http://www.datacamp.com
 
-- The Try-R course at the CodeSchool website provides an alternative to the interactive courses of DataCamp. See: http://tryr.codeschool.com/
+- The Try-R course at the CodeSchool website provides an alternative to the
+interactive courses of DataCamp. See: http://tryr.codeschool.com/
 
 - The Quick-R website provides a solid, concise, and rich
 introduction to R. See https://www.statmethods.net/
 
 
-### Educational R packages
+### Learn R in R
 
-- Package swirl teaches R in R. It comprises a set of interactive courses that teach many aspects of the R language. See http://swirlstats.com
+Package 'swirl' comprises a set of interactive courses that teach many aspects
+of the R language. See http://swirlstats.com
 
 ```{r cs218, eval = FALSE}
 # Code snippet 2.18: starting the interactive swirl-course in R.

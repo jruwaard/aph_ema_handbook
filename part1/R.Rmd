@@ -9,17 +9,17 @@ indispensable for the management and analysis of EMA data: R and RStudio.
 R is a programming language and software environment for statistical computing
 and data visualisation. 
 
-R comes with a basic graphical user interface (RGui), but many people never use
-it. RStudio, a powerful alternative user interface, has many useful features
+RStudio is a powerful user interface to R. It has many useful features
 that greatly simplify R-work. We strongly advise you to adopt the R/RStudio-
 combo.
 
 
 ## Why R?
 
-R is for data scientists, methodologists, and scientific programmers. It is
-nerdy. It has a steep learning curve. If you are trained in SPSS, it will take
-a lot of time to become as productive in R as in SPSS. Why invest in R?
+R, some may have told you, is for data scientists, methodologists, and
+scientific programmers only. It has a steep learning curve. If you are trained
+in SPSS, it will take a lot of time to become as productive in R as in SPSS. Why
+invest in R?
 
 - Unlike SPSS, R is free. It does not eat up your budget. Why pay for something
 that you can get for free?
@@ -45,22 +45,24 @@ code new functions. R allows you to grow.
 - R's use base is expanding every year. Chances are high that R is the standard
 in your next workplace. R will look great on your CV.
 
-You don't have to be a programmer or methodologist to use R. It takes time
+You don't have to be a programmer or methodologist to use R. Yes, it takes time
 to master its full potential, but you should be able to run basic
 analyses in it within a week. This chapter will get you started.
 
-
 ## Installing R & RStudio
 
-Both R and RStudio are available, at no costs, for all major operating systems. 
+Both R and RStudio are available, at no costs, for all major operating systems.
 
-- Download R from the Comprehensive R Archive Network (CRAN) at 
+- Download R from the Comprehensive R Archive Network (CRAN), at 
   https://cran.r-project.org/bin/
 
 - Download RStudio from http://rstudio.org
 
-Install R first, and RStudio second. If you install the programs in this order, 
-RStudio will automatically find R on your computer.
+Install R first, and RStudio second. If you install the programs in this order,  RStudio will automatically find R on your computer.
+
+If you previously install R or RStudio, please update. This book assumes you
+will be working with version 3.4.2 (or higher) of R, and version 1.1.414 (or
+higher) of RStudio.
 
 
 ## Interacting with R through the RStudio console
@@ -152,7 +154,7 @@ Excell, can export data to.
 - Download the example csv data file at https://tinyurl.com/ybfafxxk (or create
 a csv-version of one of your own data files).
 
-- In RStudio, choose the menu option `File > Import Dataset > From Text (base)`.
+- In RStudio's menu, choose `File > Import Dataset > From Text (base)`.
 
 - In the window that appears, click on `Browse` to locate the csv-
 file on your computer, and click `Import` in the next window (see Figure

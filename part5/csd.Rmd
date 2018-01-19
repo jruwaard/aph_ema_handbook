@@ -1,15 +1,10 @@
----
-output: html_document
-editor_options: 
-  chunk_output_type: console
----
 # (PART) EMA Case Studies {-}
 
 # Early Warning Signs of Depression {#csd}
 
 One of the promises of EMA is that it might detect signs of mental health
 detoriation in an early stage. Subtle changes in time series of mood variables,
-for example, might signal a depression relapse. If we can reliably detect these
+for example, might signal a depression relapse. If we can detect these
 changes, preventive interventions can be triggered to avoid the relapse.
 
 But what changes, exactly, should we look for? What are these early warning
@@ -53,7 +48,6 @@ going to use several functions from the tidyverse.
 # Code snippet 13.1: required libraries for the csd reconstruction
 library(emaph)
 library(tidyverse)
-library(broom)
 ```
 
 
@@ -63,27 +57,29 @@ Let's take a look at the development of depressive symptoms first. These were
 tapped with weekly assessments. The patient answered all thirteen items of
 the depression scale of the 'Symptom Checklist-90-Revised' (SCL-90-R), a well-established self-report questionnaire [@Derogatis1994].
 
-The code below reconstructs Figure 1 in the 2016 article of Wichers et al. It plots `csd$scl90r_dep`, the SCL90-R depression scale score (the mean of the SCL-90 item-scores), by `csd$dayno`(the time variable).
+The code below reconstructs Figure 1 in the 2016 article of Wichers et al. It plots `csd$scl90r_dep`, the SCL90-R depression scale score (the mean of the SCL-90 item-scores), by `csd$dayno`(the time variable). The plot shows how the depression relapse develops over time. After day 127, several weeks after the full reduction of the medication, the depression score increased considerably. This is confirmed by a change score analysis.
 
-```{r cs132, fig.asp = .4}
+
+```{r cs132, fig.asp = .3}
 # Code snippet 13.2: Plot depression score
-dep <- csd %>% select(dayno, scl90r_dep) %>% 
-         filter(!is.na(scl90r_dep)) %>% unique
+dep <- csd %>% select(dayno, scl90r_dep) %>%
+  filter(!is.na(scl90r_dep)) %>% unique
 
-ggplot(dep, aes(x = dayno, y = scl90r_dep)) + geom_step()
-```
-
-The plot shows how the depression relapse develops over time. After day
-127, several weeks after the full reduction of the medication, the depression
-score increased considerably. This is confirmed by a change score analysis:
-
-```{r eval = FALSE}
+# Change point analysis
 library(ecp)
 e1 = e.divisive(matrix(dep$scl90r_dep), sig = .01, min.size = 5)
-dep$cluster <- e1$cluster
+dep$state <- e1$cluster
+dep %>% group_by(state) %>% summarize(dayno = min(dayno))
+
+# plot dep + change point (day 120 in our data)
+ggplot(dep, aes(x = dayno, y = scl90r_dep,
+                group = 1, colour = factor(state))) +
+  geom_step() + scale_colour_manual(values = c("black", "red")) +
+  guides(colour = FALSE)
 ```
 
-## Mental state EMA-items
+
+## Mental state EMA items
 
 Wichers and colleagues selected 13 items from the full EMA dataset. They grouped
 these items in 5 factors: positive affect (pa; 4 items), negative affect (na; 4
@@ -91,36 +87,38 @@ items), mental unrest (mu; 3 items), suspiciousness (su; 1 item), and worrying
 (wo; 1 item). 
 
 ```{r cs133}
-# Code snippet 13.3: mood state calculation
+# Code snippet 13.3: mood states calculation
 
 # positive affect
-pa_items <- c("mood_enthus", "mood_cheerf", 
+pa_items <- c("mood_enthus", "mood_cheerf",
               "mood_strong", "mood_satisfi")
 
-# negative affect  
-na_items <- c("mood_lonely", "mood_anxious", 
-              "mood_guilty", "mood_doubt")
-
-# mental unrest
-mu_items <- c("mood_irritat", "pat_restl", 
-              "pat_agitate")
-
-# calculate factor scores
 csd$pa <- csd %>%
   select(pa_items) %>%
   rowMeans(., na.rm = TRUE)
 csd$pa <- -csd$pa
 
+# negative affect
+na_items <- c("mood_lonely", "mood_anxious",
+              "mood_guilty", "mood_doubt")
+
 csd$na <- csd %>%
   select(na_items) %>%
   rowMeans(., na.rm = TRUE)
 
+# mental unrest
+mu_items <- c("mood_irritat", "pat_restl",
+              "pat_agitate")
 csd$mu <- csd %>%
   select(mu_items) %>%
   rowMeans(., na.rm = TRUE)
 
+# 'single-item' states
 csd$su <- csd$mood_suspic
 csd$wo <- csd$pat_worry
+
+# global mental state score
+csd$ms <- rowSums(csd[c("pa", "na", "mu", "su", "wo")])
 ```
 
 In this reconstruction, we calculate the overall mental state score as the sum
@@ -148,36 +146,46 @@ To de-trend, we fit a generalized additive model with a spline-based smoother.
 This models the trend. By using the residuals of his model (i.e., by subtracting
 the predicted score from the observed score), the trends are removed.
 
-```{r}
-library(KernSmooth)
+```{r cs135}
+# Code snippet 13.5: detrending
 
+library(KernSmooth)
 detrend <- function(y) {
   x <- as.numeric(as.POSIXct(paste(csd$date, csd$resptime_s)))
-  est <- locpoly(x, y, degree = 3, bandwidth =  604800, gridsize = length(y))
+  n <- length(x)
+
+  bw = 7 * 24 * 3600 # days, hours, seconds
+  bw <- dpill(x, y, gridsize = n) # 'best' selected by 'direct plug-in'
+
+  est <- locpoly(x, y,
+                 degree = 3,
+                 bandwidth = bw,
+                 gridsize = n)
   y - est$y
 }
 
-csd$pa_dt <- detrend(csd$pa) 
-csd$na_dt <- detrend(csd$na) 
-csd$mu_dt <- detrend(csd$mu) 
-csd$su_dt <- detrend(csd$su) 
-csd$wo_dt <- detrend(csd$wo) 
+csd$pa_dt <- detrend(csd$pa)
+csd$na_dt <- detrend(csd$na)
+csd$mu_dt <- detrend(csd$mu)
+csd$su_dt <- detrend(csd$su)
+csd$wo_dt <- detrend(csd$wo)
+
+csd$ms_dt <- rowSums(csd[c("pa_dt", "na_dt", "mu_dt", "su_dt", "wo_dt")])
 ```
 
-Let's take a look at the effect of detreding. If we plot positve affect over
+Let's take a look at the effect of detrending. If we plot positive affect over
 time, we see a gradually increase, and two embedded subtrends. The detrended
 variable does not display these trends anymore.
 
-```{r cs135, fig.asp = .4}
-# Code snippet 13.5: demonstrate detrending
+```{r cs136, fig.asp = .4}
+# Code snippet 13.6: show effect of detrending
 
-# store pa and pa_dt in a long format dt, to facet on them in the plot
-d <- csd %>% 
-  select(pa, pa_dt, dayno) %>% 
-  gather(pa, pa_dt, -dayno, 
+# store ms and ms_dt in a long format dt, to facet on them in the plot
+d <- csd %>%
+  select(ms, ms_dt, dayno) %>%
+  gather(ms, ms_dt, -dayno,
          key = "v", value = "score")
 
-# compare raw and detrended pa
 ggplot(data = d, aes(x = dayno, y = score)) +
   geom_smooth() + geom_line(alpha = .5, size = .5) +
   facet_grid(~ v, scales = "free_y", shrink = TRUE)
@@ -186,49 +194,57 @@ ggplot(data = d, aes(x = dayno, y = score)) +
 
 ## Calculating the moving average of mood state variance & autocorrelation
 
-The variance and autocorrelation are calculated from the summed smoothed mood states.
-
-```{r cs138b}
-csd$ms <- csd %>% select(pa_dt, na_dt, mu_dt, wo_dt, su_dt) %>% rowSums
-```
-
 Both the standard deviation and the lag-1 autocorrelation are calculated using a
 30-day sliding window.
 
-```{r cs138}
-# Code snippet 13.8: calculating variance and auto-correlation in 30-day windows
+
+```{r cs137}
+# Code snippet 13.7: variance and auto-correlation, 30-day window
 d <- data.frame(dayno = 1:max(csd$dayno))
 d <- left_join(d, unique(csd[c("dayno", "phase")]))
-d$phase[d$dayno == 125] = "exp: zero" # no data at day 125
+d$phase[d$dayno == 125] = "exp: posttest" # no data at day 125
 
-d$ms_rsd = NA; d$ms_rac = NA
+d$ms_rsd = NA; d$ms_rac = NA; d$ms_dfa = NA
 for(i in 30:max(csd$dayno)){
-
+  
   # get the 30-day data window
   w <- subset(csd, dayno > (i - 30) & dayno <= i)
-  
+ 
   # get standard deviation
-  d$ms_rsd[i] <- sd(w$ms, na.rm = TRUE)
+  d$ms_rsd[i] <- sd(w$ms_dt, na.rm = TRUE)
   
   # get the autocorrelation
-  d$ms_rac[i] <- cor(w$ms, lag(w$ms), use = "complete.obs")
+  d$ms_rac[i] <- cor(w$ms_dt, lag(w$ms_dt), use = "complete.obs")
 }
 ```
 
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
+bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
+Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
+dui viverra.
 
 ## Mood state variance
 
 We can now plot the mood state standard deviation and lag-1 auto-correlation. Did
 these statistics, as predicted, increase considerably prior to relapse onset?
+  
+```{r cs1308, eval = TRUE, fig.asp = .3, fig.cap="Course of depression, variance and autocorrelation."}
+# Code snippet 13.8: Plot dep, standard deviation, autocorrelation
 
-```{r cs1310, fig.asp = .3, fig.cap="Three plots."}
-# Code snippet 13.10: Plot standard deviation, autocorrelation
+# dep
+g = ggplot(dep,
+       aes(x = dayno, y = scl90r_dep, colour = factor(dayno < 120), group = 1)) +
+  geom_step() + ylab("depression") + guides(color = FALSE)
+g
 
-# depression
-ggplot(dep, aes(x = dayno, y = scl90r_dep)) + geom_step() + ylab("depression")
-ggplot(d, aes(x = dayno, y = ms_rsd)) + geom_line() + ylab("standard dev.")
-ggplot(d, aes(x = dayno, y = ms_rac)) + geom_line() + ylab("autocorrelation") 
+# sd
+g %+% d + aes(x = dayno, y = d$ms_rsd) + ylab("standard dev.")
+
+# autocorrelation
+g %+% d + aes(x = dayno, y = d$ms_rac) + ylab("autocorrelation")
 ```
+
 
 ## Network analysis
 
@@ -237,80 +253,64 @@ bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
 Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
 dui viverra.
 
-```{r}
-# detrend 2
-
-detrend2 <- function(state, t) {
-  fm <- lm(scale(state) ~ t)
-  residuals(fm)
-} 
-
-b <- subset(csd, dayno < 127)
-b$t <- as.POSIXct(paste(b$date, b$resptime_s))
-
-b <- b %>% group_by(phase) %>% mutate(pa_dt2 = detrend2(-pa, t))
-b <- b %>% group_by(phase) %>% mutate(na_dt2 = detrend2(na, t))
-b <- b %>% group_by(phase) %>% mutate(mu_dt2 = detrend2(mu, t))
-b <- b %>% group_by(phase) %>% mutate(wo_dt2 = detrend2(wo, t))
-b <- b %>% group_by(phase) %>% mutate(su_dt2 = detrend2(su, t))
-b <- ungroup(b, phase)
-
-
-net = data.frame()
-for(p in 1:4){
-  fm.pa <- lm(pa_dt2 ~ -1 + 
-                      lag(pa_dt2) + lag(na_dt2) + lag(mu_dt2) + 
-                      lag(wo_dt2) + lag(su_dt2), 
-             data = subset(b, as.numeric(phase) == p))
-  fm.na <- update(fm.pa, na_dt2 ~ .)
-  fm.mu <- update(fm.pa, mu_dt2 ~ .)
-  fm.wo <- update(fm.pa, wo_dt2 ~ .)
-  fm.su <- update(fm.pa, su_dt2 ~ .)
-  
-  net <- rbind(net, data.frame(cbind(phase = p, ms = "pa", tidy(fm.pa) )))
-  net <- rbind(net, data.frame(cbind(phase = p, ms = "na", tidy(fm.na) )))
-  net <- rbind(net, data.frame(cbind(phase = p, ms = "mu", tidy(fm.mu) )))
-  net <- rbind(net, data.frame(cbind(phase = p, ms = "wo", tidy(fm.wo) )))
-  net <- rbind(net, data.frame(cbind(phase = p, ms = "su", tidy(fm.su) )))
+```{r cs139, include = FALSE, echo = TRUE}
+# Code snippet 13.9: detrending 2
+sld <- function(ms, t) {
+  fm <- lm(ms ~ t)
+  if(summary(fm)$coefficients["t", "Pr(>|t|)"] < .05){
+    # trend is significant - take time into account
+    y = residuals(fm)
+  } else {
+    # trend is not significant, do not account for time
+    y = residuals(lm(ms ~ 1))
+  }
+  y
 }
 
-subset(net, p.value < .05 & phase == 1)
-subset(net, p.value < .05 & phase == 2)
-subset(net, p.value < .05 & phase == 3)
-subset(net, p.value < .05 & phase == 4)
-```
+# only consider data up to dep state change (127 for now, to get 
+# closer to the article results)
+b <- subset(csd, dayno < 127) 
+b$t <- as.POSIXct(paste(b$date, b$resptime_s))
 
+# note: work with original pa scores (not reverse scored)
+b <- b %>% group_by(phase) %>% mutate(pa_dt2 = sld(-pa, t))
+b <- b %>% group_by(phase) %>% mutate(na_dt2 = sld(na, t))
+b <- b %>% group_by(phase) %>% mutate(mu_dt2 = sld(mu, t))
+b <- b %>% group_by(phase) %>% mutate(wo_dt2 = sld(wo, t))
+b <- b %>% group_by(phase) %>% mutate(su_dt2 = sld(su, t))
+b <- ungroup(b, phase)
+```
 
 Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
 bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
 Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
 dui viverra.
 
-```{r cs1310b, fig.asp = .6, fig.cap = "Fitted Network."}
-library(graphicalVAR)
+```{r cs1310, eval = TRUE, fig.cap = "Fitted network of mental states, per phase"}
+# Code snippet 13.10: fitting networks
 
+library(graphicalVAR)
 fit_net <- function(d){
   nodes <- d %>% select(na_dt2, pa_dt2, mu_dt2, wo_dt2, su_dt2, dayno)
-  net <- graphicalVAR(data = nodes, gamma = 0.25, scale = FALSE,
-                      #lambda_beta = 0, lambda_kappa = 0,
-                      nLambda = 20, verbose = FALSE,
-                      dayvar = "dayno")
+  net <- graphicalVAR(data = nodes, scale = TRUE, dayvar = "dayno",
+                      gamma = 0.1, nLambda = 20, verbose = FALSE)
   
-  plot(net, "PDC", title = FALSE, 
+  plot(net, "PDC", title = FALSE,
        labels = c("NA", "PA", "MU", "WO", "SU"),
-       layout = "circle", theme = "classic", 
-       maximum = .45,
-       vsize = 18, mar = c(10, 10, 10, 10),
-       usePCH = TRUE, label.scale = FALSE)
+       layout = "circle", maximum = .35,
+       theme = "classic",
+       vsize = 14, mar = c(10, 10, 10, 10),
+       label.scale = FALSE, usePCH = TRUE,
+       edge.labels = TRUE, edge.label.cex = 2, edge.width = 2)
   
   net
 }
 
-layout(matrix(c(1:4), ncol=2, byrow = TRUE))
-p1 <- fit_net(subset(b, as.numeric(phase) == 1))
-p2 <- fit_net(subset(b, as.numeric(phase) == 2))
-p3 <- fit_net(subset(b, as.numeric(phase) == 3))
-p4 <- fit_net(subset(b, as.numeric(phase) == 4 & dayno < 120))
+layout(matrix(c(1:4), ncol = 2, byrow = TRUE))
+n1 <- fit_net(subset(b, as.numeric(phase) == 1))
+n2 <- fit_net(subset(b, as.numeric(phase) == 2))
+n3 <- fit_net(subset(b, as.numeric(phase) == 3))
+n4 <- fit_net(subset(b, as.numeric(phase) == 4))
 layout(1)
 ```
 
@@ -318,27 +318,6 @@ Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
 bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
 Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
 dui viverra.
-
-```{r}
-library(qgraph)
-d <- centralityTable(p1$PDC) %>% filter(grepl('Strength', measure)) %>% 
-       select(node, value) %>% mutate(phase = 1)
-d <- rbind(d,
-       centralityTable(p2$PDC) %>% filter(grepl('Strength', measure)) %>% 
-       select(node, value) %>% mutate(phase = 2))
-d <- rbind(d,
-       centralityTable(p3$PDC) %>% filter(grepl('Strength', measure)) %>% 
-       select(node, value) %>% mutate(phase = 3))
-d <- rbind(d,
-       centralityTable(p4$PDC) %>% filter(grepl('Strength', measure)) %>% 
-       select(node, value) %>% mutate(phase = 4))
-
-d$value = abs(d$value)
-#d <- d %>% group_by(node, phase) %>% summarise(value = sum(value))
-
-ggplot(d, aes(x = factor(phase), y = value)) +
-  geom_boxplot() + geom_point()
-```
 
 ## Discussion
 
@@ -361,5 +340,3 @@ Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
 bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
 Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
 dui viverra.
-
-

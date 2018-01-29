@@ -2,86 +2,29 @@
 
 # Mood {#mood}
 \index{Mood}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
-
-## What is Mood?
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. Donec sed lectus at sem ultrices commodo.
-Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
-fringilla. Sed at varius erat, id consequat nibh.
+Mood is a common outcome in EMA research (@Myin-Germeys2016; @Desmet2016). Often, it is studied in relation to depressive symptoms and mood disorders (@aanhetrot2012). In addition, mood can be linked to other variables, such as substance abuse behaviour (@Kirchner2013; @Serre2015), somatic health (@Engel2016; @Moore2016) or activity patterns (@Dunton2017; @Marszalek2014). 
+The definition of mood varies across studies. Usually the concept of mood refers to a general affective state such as arousal or valance. Following this line of reasoning, a distinction can be made between mood states and discrete emotions (e.g. happy, sad, anxious, etc.), where moods are thought to be less specific and more subjective, enduring and related to context (@Beedie2005; @Cranford2006; @Desmet2016). 
+Depending on the study focus and research questions, mood measurement can be operationalized in several ways. In this chapter, we will discuss the most commonly used self-report methods, namely unidimensional assessment, negative and positive affect, the Circumplex model and finally the 'bag of items' approach. 
 
 ## Unidimensional mood assessment
+\index{Unidimensional mood assessment}
+Perhaps the most seemingly straight-forward method to measure mood is to ask 'face-valid' unidimensional questions such as "How is your mood right now" (@VanBallegooijen2016) or "How are you feeling right now" (@VandeVen2017). Respondents rate these questions on a Visual Analogue Scale (VAS), aimed to indicate mood intensity. Typically, scales will range from zero (low or worst mood) to 10 or 100 (good or best mood). Having respondents rate their mood during the day allows researchers to assess fluctuation in mood over time or reactivity to events and daily-stressors (@Wenze2010). 
+Compared to more classic paper-and-pencil methods used in (cognitive behavioural) treatment, digital unidimensional EMA could lead to more accurate data on (in)variability of mood as retrospective bias is thought to be less of an issue. Further, plotting this data in a graph is an easy way to visually inspect within-subject change in general mood and combining data from various variables such as activity, sleep and mood in one graph can help users understand the interaction between mood and behaviour. 
+ 
+# Insert R example plots E-Compared?
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra. 
+A possible problem of unidimensional mood assessment is that is assumes that respondents instinctively understand the concept of general mood. Little is known about whether mood ratings are indeed comparable across respondents (between-subjects). In order to reduce bias and improve reliability, some studies implemented more specific questions, such as "How depressed are you feeling right now" or "How anxious are you feeling right now (@Starr2012). However, this shifts focus from general mood to more specific mood states or emotions.
 
-See [@Groot2010], for the way in which he used a 1-10 mood scale.
+# Correlation between depressive symptom scale (PHQ?) and mood, ask Wouter for data. 
 
-
-E-Compared. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra. 
-
+Another aspect to consider within this approach is that the middle of the scale (e.g. 5 or 50) is considered a negative result, and scores above 6 or 60 are considered accaptable or possible mood states (@Groot2010). This contrasts with common Likert scales, where the centre often reflects a neutral response.
+In order to address this issue, some researchers have proposed to use scales ranging from -1 to 1, with 0 as a neutral scale centre (#REF?). However, this scale implies a mood state that ranges from negative to positive, rather than absent to present. Another option is to use bipolar-unidimensional items, which place two opposing mood states at each end of the scale, for example by asking "Please rate your current mood on a scale of 0 to 100, on which 0 indicates happy, and 100 indicates sad" (@VanRijsbergen2014). 
 
 ## Negative & Positive Affect
 \index{Negative Affect} \index{Positive Affect}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.
-
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. Donec sed lectus at sem ultrices commodo.
-Proin a viverra metus, nec scelerisque odio. In @Wichers2016, a principal components analysis is suggested to yield two 'states': negative affect and positive affect. 
+While the bipolar-unidimensional method was shown to Lorem ipsum dolor sit amet, consectetur adipiscing elit. Study van Rijsbergen (Bockting group). It can be argued that seemingly opposing mood states can occur simultaneously, rather than be mutually exclusive.
+# Search for ref CBT 
+In @Wichers2016, a principal components analysis is suggested to yield two 'states': negative affect and positive affect. 
 
 [Can we do a factor analysis on N= 1 repeated measures? Note the use of
 arima, to remove autocorrelation. We need to look into p-techniques / dynamic

@@ -29,22 +29,20 @@ Table: (\#tab:APHresearch) Your table caption.
 
 ### The CASPAR Project
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
+Project team: Wouter van Ballegooijen, PhD; Chani Nuij, MSc; Ad Kerkhof, PhD; Jan Smit, PhD; Heleen Riper, PhD 
+APH site: Vrije Universiteit Amsterdam, VUmc, GGZ inGeest
+Full title: Continuous Assessment for Suicide Prevention and Research
+Topic: Smartphone-enabled safety planning, self-monitoring, suicide
+Status: Ongoing, 2016 - 2020
+Target population: Adult suicidal patients (N=80) with major depression or dysthymia and suicide risk in mental health care
+Platform used: Ilumivu (https://ilumivu.com)  
+EMA active: Participants are prompted 3 times a day to answer 8 self-report items (e.g. 'I feel sad'). Items are based on existing questionnaires, such as the Patient Health Questionnaire (PHQ-9) and are rated on a 7-point Likert-scale, ranging from 'Not at all' to 'Very much'. Measured concepts include mood, rumination, hopelessness, defeat, entrapment, burdensomeness, belongingness, impulsiveness, suicidal imagery and suicidal ideation. Results are presented to patients in separate graphs. 
+EMA passive: Location data are gathered to indicate movement patterns and daily rhythm. 
+Planned variables include accelerometer and smartphone usage patterns. These data are not visible to patients.
+Data management: Patients receive a unique code to log in to the app. No names, phone numbers or other contact information are stored on the Ilumivu server. Patients are encouraged to show their graphs to their clinicians during treatment sessions. 
+Project goals: The primary objective of the CASPAR study is to test the feasibility of smartphone-based safety planning and real-time self-monitoring for patients with major depression or dysthymia and suicide risk in mental health care. Feasibility will be operationalised in terms of uptake, usage, acceptability, usability and patient satisfaction. EMA data will be used to (a) empirically validate hypothesised psychological processes and stages of suicide pathways, (b) identify individual pathways to suicidal behaviour, and (c) profile types of suicidal individuals.
+Results: An interactive safety plan that patients can access 24/7, increased disease awareness of patients due to self-monitoring, and input for the national and international field of mental health care by sharing our results and our data, ultimately contributing to more personalised interventions according to precision medicine principles, and more effective suicide prevention.
+Lessons learned and advice for other researchers: Constructing the right EMA items takes time. The constructs that you need to measure should be based on theory. Translate these concepts to momentary items in collaboration with EMA experts. Then test extensively among your target group.
 
 ### E-COMPARED (EU)
 
@@ -122,24 +120,56 @@ malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam. 
 
 
-### TEMSTEM
+### Mark van der Gaag group
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+### VRETp trial
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
+Project: Effect of virtual reality exposure therapy on social participation in people with a psychotic disorder (VRETp)
+Project team: Mark van der Gaag, PhD; Roos Pot-Kolder, MSc; Wim Veiling; Chris Geraets
+APH site: Vrije Universiteit Amsterdam, VUmc, UMC Groningen
+Status: Completed, 2013-2016
+Target population: Patients (n=116) with psychotic disorders who fear social situations.
+Platform: PsyMate (http://www.psymate.eu/)
+Study information: EMA data was collected as part of a RCT comparing treatment as usual plus virtual reality therapy (VR-CBT) to treatment as usual for outpatients suffering from a psychotic disorder and paranoid ideation. EMA was used to assess the primary outcome social participation. 
+EMA active: Anxiety (1 item, e.g. "I feel anxious"), Perceived social threat (4 items, e.g. "In this company, I feel accepted"), Paranoia (3 items, e.g. "I feel suspicious"), Time spent with others (max. 3 multiple choice items inquiring about type of company (nobody, family, non-family, etc.). Patients were prompted 10 times a day, during 6 days. Anxiety, threat and paranoia Items were rated on a 7-point Likert scale, ranging from 1 ("not at all") to 7 ("very"). Reports had to be completed within 15 min of the beep. EMA items were used in previous studies (Collip et al., 2010).  
+Data management: To be included in the analysis, participants had to complete diary entries for at least one-third of the beeps (i.e., a minimum of 20 measurements). Because the PsyMate application was not finished at the time of the trial, participants were provided with a small palmtop device for the duration of EMA. Data was extracted with 4D software. Time spent with others was defined as the percentage of time participants were in company of others (excluding mental health care professionals). Other EMA measurements were only used when a participant reported being in a social situation. Information was stored on the PsyMate server, under a user-specific PsyMate-ID number. Researchers had access to a file matching study-ID to PsyMate-ID numbers, which allowed matching of information acquired via EMA with information acquired with regular self-report measures during the RCT study. 
+Project goals: Testing the effects of virtual-reality-based cognitive behavioural therapy (VR-CBT) on paranoid thoughts and social participation via momentary assessment.
+Results: All 116 participants completed EMA measurements at baseline (mean number of completed self-assessments 46.1, SD 13.3), 96 participants completed the post-treatment assessment sufficiently (43.1, SD 10.1), and 87 participants completed the follow-up (43.2, SD 11.1). The trial results suggest that the addition of VR-CBT to standard treatment can reduce paranoid ideation and momentary anxiety in patients with a psychotic disorder.
+Lessons learned and advice for other researchers: Participants reported not wanting to explain to others why they were using the palmtop (a small black hand-held computer) as a reason for non-compliance with EMA. This directly interfered with the primary aim, namely assessing social context. An app facilitates measurement without the participant having to explain to others what they are doing.  
+Trial registration: Current Controlled Trials: ISRCTN12929657. Date of registration: 8 September 2015.
 
+### TemStem
+
+Team Mark van der Gaag
+Topics: Psychosis, auditory hallucinations, social participation in people with schizophrenia.  
+Project title: Temstem
+Project team: Mark van der Gaag, PhD; Alyssa Jongeneel, MSc; David van den Berg, PhD; Dorien Scheffers, MSc
+APH site: Vrije Universiteit Amsterdam, VUmc, GGZ inGeest, Parnassia Psychiatric Institute
+Status: Ongoing, March 2016- July 2018
+Target population: People who suffer from hearing voices and are obstructed by them in their daily life
+Platform used: Temstem application. Developed by Reframing Studio, in collaboration with Parnassia Psychiatric Institute and TU Delft.
+EMI: Mobile application (Temstem) focuses on reducing distress and dysfunction caused by auditory verbal hallucinations (AVH). Components: 1) coping: addressing verbal working memory phonological loop with a language task, thereby blocking the hearing of voices; (2) positive reinforcement: decreasing self-reported negative self-esteem themes; (3) treatment: reducing emotional response to memories associated with voices by taxing the auditory working memory during recall of negative auditory memories (as in EMDR therapy).
+EMA: Users are encouraged to fill-in 9 self-report items on a daily basis. Items concern hearing voices: 6 items (e.g. "Today, the voices were disturbing"), mood: 1 item ("I felt depressed"), self-esteem: 1 item ("I was satisfied about myself"), and the use of Temstem ("I used Temstem today"). Items are rated on a 7-point Likert-scale. Items are based on existing EMA questionnaires. Results are presented to users in separate graphs, in order to support users in gaining insight in the pattern of AVH over time, or after use of Temstem. 
+Project goals: Examine the effect of the app on distress and dysfunction in a RCT. Investigate the effect of Temstem on frequency and severity of AVH, to determine working mechanisms, to identify predictors and mediators of effects, and to test the usability of Temstem.
+Results: Reduce distress and dysfunction caused by auditory verbal hallucinations
+Data management: Data is stored on a server hosted by Service Heroes (via Reframing Studio), under users' unique download numbers. Stored variables include, among others, scores of vividness of AVH pre and post use of Temstem, data on application use (duration), used function (e.g. 'Silencing' function which focuses on coping, or 'Challenging' function which is based on dual tasking), and how users feel when they hear voices. Users can choose to provide additional information on age, gender, which county in the Netherlands they are currently located, how they found the app, and why they want to use it (e.g. because they hear voices, because they are a clinician and they want to learn more about the app to support clients, etc.). Clinicians cannot access user data or graphs. Researchers can, but only in big data files. To see users' personal data (e.g. how many times they used the app, how vivid the voices were before and after the use of Temstem, etc.) researchers need the users' unique download number. 
+Lessons learned and advice for other researchers: Users need internet to use the app, because it works on an online platform. However, not all our users have wireless internet. If we had known this in time, we would have chosen to run it offline. Other lessons we have learned are that you have to resolve bugs as soon as possible, because otherwise it may take a long time before it is fixed. Be very explicit in what you want and expect from the app developers, even when you think that it is quite logic and clear. 
+
+
+### Frank Snoek group
+
+### MERITS
+
+MERITS project
+Project team: Frank Snoek, PhD; Linda Muijs, MSc
+APH site: VUmc
+Full title: MERITS - Momentary assessment of patient Experiences in Real life of Insulin Glargine 300 in Type 1 diabetes Study
+Topic: Type 1 diabetes, relationship between blood glucose variability (continuous glucose measurement) and changes in mood and energy. 
+Status: Ongoing proof-of-concept study, 2018 - 2020
+Target population: Adult patients (N=70) with type 1 diabetes 
+Platform used: Illumivu
+EMA: Currently under development. Participants will be randomly prompted to answer questions on Mood (based on POMS), diabetes distress, fear of hypoglycaemia and sleep. 
+Project goals: Explore whether a) blood glucose variability (SD and CV) is related to changes in wellbeing (mood) during waking time, b) if switching to U-300 results in less glucose variability and translates into improved mood over time within patients, c) explore if individual differences (profiles) can be distinguished with regard to the (strength of the) association between glucose variability and changes in mood. 
 
 ### FAntasTIGUE
 

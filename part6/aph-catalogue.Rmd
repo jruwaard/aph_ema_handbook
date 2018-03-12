@@ -20,6 +20,8 @@ Table: (\#tab:APHresearch) Your table caption.
 | E-COMPARED     | Depression       | www.moodbuster.eu | EU     |  YES   | YES         |
 | Psycho-systems | Networks         | movisense.org     | UvA    |  YES   | YES         |
 | RADAR-CNS      | Depression       | www.psymate.eu    | GiG    |  YES   | YES         |
+| VU-AMS group   | Stress & emotion | www.psymate.eu    | VU     |  YES   | YES        
+|
 | NESDA          | Depression       | www.psymate.eu    | VuMC   |  YES   | YES         |
 | TEMSTEM        | Psychosis        | www.psymate.eu    | VU     |  YES   | YES         |
 | FAntasTIGUE    | Fatigue          | www.psymate.eu    | AMC    |  YES   | YES         |
@@ -99,6 +101,32 @@ Data management: token-based authentication and authorization. A dashboard app a
 Results: 
 Lessons learned and advice for other researchers: 
 
+### VU-AMS Group (de Geus group)
+
+VU-AMS group
+Project team: Eco de Geus, PhD; Gonneke Willemsen, PhD; Martin Gevonden, PhD; Denise van der Mee, MSc. 
+APH site: Vrije Universiteit Amsterdam
+Full title: VU University Monitoring System (VU-AMS)
+Topic: Wearable for passive (non-evasive) ambulatory measurement of the autonomic nervous system for research purposes
+Status: Ongoing (1990 - present)
+Target population: Various target populations. 
+EMA passive: 
+"	Heart Rate / Inter beat Interval (IBI)
+"	Heart Rate Variability (SDNN, RMSSD, IBI power spectrum: HF, LF)
+"	Respiratory Sinus Arrhythmia (RSA)
+"	Pre-Ejection Period (PEP)
+"	Left Ventricular Ejection Time (LVET)
+"	Respiration Rate (RR)
+"	Stroke Volume (SV) and Cardiac Output (CO)
+"	Skin Conductance Level (SCL) and Skin Conductance Responses (SCRs)
+"	Tri-Axial Accelerometry (Body Movement)
+The VU-AMS device is battery powered and can record 24 to 48 hours of data (4GB storage). Data is extracted with infrared to USB. 
+Data management: Users do not have access to data. The Data Analysis and Management System (DAMS) is used for data extraction and processing. The DAMS tool offers options for data inspection (visual inspection of raw data), automated detection of R-peaks in raw ECG signal and visual inspection of final IBI time series, labelling data, IBI spectral power calculation, automated scoring of parasympathetic tone (respiration scoring), impedance scoring and data export per label (to EXCEL or ASCII) http://www.vu-ams.nl/support/downloads/software/.
+Current VU-AMS projects: Validation of the Philips EmoGraphy technology to measure sympathetic nervous system activity in an ambulatory setting (van der Mee et al., ongoing, 2017 - 2021).
+EMA passive: Wearable which measures combined skin conductance and heart rate variability. Information on current stress situation is presented as a Stress Level Score to the user, alongside a one-hour prediction of changes in stress level and cognitive functioning (Cognitive Zone changes). 
+Results: The project aims to validate EmoGraphy by XXX (methods).
+The technology aims to "provide actionable insights that allow users to manage their emotional and physical stress so they can perform in the optimal cognitive zone in their daily activities" http://www.ip.philips.com/licensing/program/121. 
+Lessons learned and advice for other researchers: XX
 
 
 ### NESDA EMA

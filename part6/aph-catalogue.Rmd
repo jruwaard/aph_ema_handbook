@@ -189,14 +189,14 @@ Lessons learned and advice for other researchers: Users need internet to use the
 ### MERITS
 
 MERITS project
-Project team: Frank Snoek, PhD; Linda Muijs, MSc
-APH site: VUmc
+Project team: Frank J. Snoek, PhD; Maartje de Wit, PhD;  Daniel van Raalte, MD, PhD; Erik Serné, MD, PhD;  Cati Racca, MD; L. Muijs, MSc
+APH site: VUmc, AMC
 Full title: MERITS - Momentary assessment of patient Experiences in Real life of Insulin Glargine 300 in Type 1 diabetes Study
 Topic: Type 1 diabetes, relationship between blood glucose variability (continuous glucose measurement) and changes in mood and energy. 
 Status: Ongoing proof-of-concept study, 2018 - 2020
 Target population: Adult patients (N=70) with type 1 diabetes 
 Platform used: Illumivu
-EMA: Currently under development. Participants will be randomly prompted to answer questions on Mood (based on POMS), diabetes distress, fear of hypoglycaemia and sleep. 
+EMA: Currently under development. Participants will be (randomly) prompted to answer questions on mood (based on POMS questionnaire), diabetes distress, fear of hypoglycaemia and sleep. 
 Project goals: Explore whether a) blood glucose variability (SD and CV) is related to changes in wellbeing (mood) during waking time, b) if switching to U-300 results in less glucose variability and translates into improved mood over time within patients, c) explore if individual differences (profiles) can be distinguished with regard to the (strength of the) association between glucose variability and changes in mood. 
 
 ### FAntasTIGUE

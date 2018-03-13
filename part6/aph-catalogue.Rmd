@@ -101,9 +101,11 @@ Data management: token-based authentication and authorization. A dashboard app a
 Results: 
 Lessons learned and advice for other researchers: 
 
-### VU-AMS Group (de Geus group)
+### Eco de Geus group
 
-VU-AMS group
+### VU-AMS
+
+VU-AMS
 Project team: Eco de Geus, PhD; Gonneke Willemsen, PhD; Martin Gevonden, PhD; Denise van der Mee, MSc. 
 APH site: Vrije Universiteit Amsterdam
 Full title: VU University Monitoring System (VU-AMS)
@@ -131,21 +133,31 @@ Lessons learned and advice for other researchers: XX
 
 ### NESDA EMA
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+NESDA diary study 
+Project team: Femke Lamers, Phd 
+APH site: VUmc, GGZ inGeest
+Full title: the Netherlands Study of Depression and Anxiety (NESDA), Wave 6 diary study 
+Topic: Momentary assessment of people with depressive symptoms
+Status: 2015 - 2017
+Target population: NESDA participants with symptoms of depression and healthy controls
+Platform used: RoQua (https://www.roqua.nl/) 
+EMA active: Participants were prompted five times a day, for two weeks. Prompts consisted of a SMS, which contained a link to the EMA questions. Participants were asked to fill in the questionnaire within 15 minutes after the SMS. After 30 minutes a reminder was sent, and after 60 minutes the link would become inactive. Each questionnaire contained circa 35 items. Outcomes included: 
+1) Valance and arousal (2 items, "I'm feeling ...") which were scored on Likert scales ranging from very unpleasant to very pleasant and very calm to very excited; 
+2) Current state (12 items, "I feel relaxed", "I feel down", "I feel cheerful"), symptoms of depression/anxiety (4 items, "I worry a lot", "I am able to concentrate well", and bodily experiences (2 items, "I feel tired") scored on 7-point Linkert scales ranging from 1 (not) to 7 (very)
+3) social contact (2 items, "Where are you now" (e.g. at the neighbour's house), "In who's company are you now") and a follow-up question (1 item, "I would rather have had company" or "I experience my company as being …" (unpleasant - pleasant))
+4) Sleep (3 items on sleep quality and duration)
+5) (Un)pleasant every day experiences, when rated with yes, participants were asked to elaborate (3 items on intensity, importance and internal or external cause). 
+5) Activities (1 multiple-choice item, including social interaction, additional (eating) and other (exercise)
+6) Smoking, coffee and alcohol (number of units)
+7) Eating (1 item at final daily prompt, "Did you eat more of less than usual") 
+8) Burden (1 item, "How disrupting was it to fill in this questionnaire"
+9) Open ended question for general comments on circumstances that might influence answers.  
+Data management: EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow a phone. 
+Patients were briefed on the EMA study during a face-to-face session with a research assistant (following standard NESDA data 9-year follow-up assessment). In order to motivate participants to adhere to EMA, they were shown two examples of mood fluctuation reports, one with a 43% compliance rate and one with a 96% compliance rate. Personalized reports were sent via e-mail in a password protected document. During data collection, patients were contacted by a research assistant after 24 hours and 7 days in order to enquire whether problems had occurred with EMA. Research assistants actively monitored data collection and contacted participants if they missed three consecutive questionnaires. Data were stored in a secured web-environment of the University Medical Centre Groningen (UMCG).
+EMA passive: Alongside active EMA, participants were asked to wear a actigraph watch (GENEActiv) on their non-dominant wrist 24 hours a day for two weeks. After data collection, participants mailed their watch to the research center. Data was extracted via a USB with XXX software. 
+Results: EMA data will be used to assess a variety of research questions, such as the dynamic network structure of affective and somatic symptoms, interpersonal functioning in depression, feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. 
+Lessons learned and advice for other researchers: XXX
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
 
 
 ### Mark van der Gaag group
@@ -268,96 +280,3 @@ Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.  
 
 
-### Group A
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
-
-### Group B
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
-
-### Group C
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
-
-### Group D
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
-
-### Group E
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 

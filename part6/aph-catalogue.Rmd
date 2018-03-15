@@ -141,7 +141,7 @@ Topic: Momentary assessment of people with depressive symptoms
 Status: 2015 - 2017
 Target population: NESDA participants with symptoms of depression and healthy controls
 Platform used: RoQua (https://www.roqua.nl/) 
-EMA active: Participants were prompted five times a day, for two weeks. Prompts consisted of a SMS, which contained a link to the EMA questions. Participants were asked to fill in the questionnaire within 15 minutes after the SMS. After 30 minutes a reminder was sent, and after 60 minutes the link would become inactive. Each questionnaire contained circa 35 items. Outcomes included: 
+EMA active: Outcomes included: 
 1) Valance and arousal (2 items, "I'm feeling ...") which were scored on Likert scales ranging from very unpleasant to very pleasant and very calm to very excited; 
 2) Current state (12 items, "I feel relaxed", "I feel down", "I feel cheerful"), symptoms of depression/anxiety (4 items, "I worry a lot", "I am able to concentrate well", and bodily experiences (2 items, "I feel tired") scored on 7-point Linkert scales ranging from 1 (not) to 7 (very)
 3) social contact (2 items, "Where are you now" (e.g. at the neighbour's house), "In who's company are you now") and a follow-up question (1 item, "I would rather have had company" or "I experience my company as being …" (unpleasant - pleasant))
@@ -152,13 +152,12 @@ EMA active: Participants were prompted five times a day, for two weeks. Prompts 
 7) Eating (1 item at final daily prompt, "Did you eat more of less than usual") 
 8) Burden (1 item, "How disrupting was it to fill in this questionnaire"
 9) Open ended question for general comments on circumstances that might influence answers.  
+Participants were prompted five times a day, for two weeks. Prompts consisted of a SMS, which contained a link to the EMA questions. Participants were asked to fill in the questionnaire within 15 minutes after the SMS. After 30 minutes a reminder was sent, and after 60 minutes the link would become inactive. Each questionnaire contained circa 35 items. 
 Data management: EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow a phone. 
 Patients were briefed on the EMA study during a face-to-face session with a research assistant (following standard NESDA data 9-year follow-up assessment). In order to motivate participants to adhere to EMA, they were shown two examples of mood fluctuation reports, one with a 43% compliance rate and one with a 96% compliance rate. Personalized reports were sent via e-mail in a password protected document. During data collection, patients were contacted by a research assistant after 24 hours and 7 days in order to enquire whether problems had occurred with EMA. Research assistants actively monitored data collection and contacted participants if they missed three consecutive questionnaires. Data were stored in a secured web-environment of the University Medical Centre Groningen (UMCG).
 EMA passive: Alongside active EMA, participants were asked to wear a actigraph watch (GENEActiv) on their non-dominant wrist 24 hours a day for two weeks. After data collection, participants mailed their watch to the research center. Data was extracted via a USB with XXX software. 
 Results: EMA data will be used to assess a variety of research questions, such as the dynamic network structure of affective and somatic symptoms, interpersonal functioning in depression, feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. 
 Lessons learned and advice for other researchers: XXX
-
-
 
 ### Mark van der Gaag group
 
@@ -171,7 +170,12 @@ Status: Completed, 2013-2016
 Target population: Patients (n=116) with psychotic disorders who fear social situations.
 Platform: PsyMate (http://www.psymate.eu/)
 Study information: EMA data was collected as part of a RCT comparing treatment as usual plus virtual reality therapy (VR-CBT) to treatment as usual for outpatients suffering from a psychotic disorder and paranoid ideation. EMA was used to assess the primary outcome social participation. 
-EMA active: Anxiety (1 item, e.g. "I feel anxious"), Perceived social threat (4 items, e.g. "In this company, I feel accepted"), Paranoia (3 items, e.g. "I feel suspicious"), Time spent with others (max. 3 multiple choice items inquiring about type of company (nobody, family, non-family, etc.). Patients were prompted 10 times a day, during 6 days. Anxiety, threat and paranoia Items were rated on a 7-point Likert scale, ranging from 1 ("not at all") to 7 ("very"). Reports had to be completed within 15 min of the beep. EMA items were used in previous studies (Collip et al., 2010).  
+EMA active: 
+1) Anxiety (1 item, e.g. "I feel anxious")
+2) Perceived social threat (4 items, e.g. "In this company, I feel accepted")
+3) Paranoia (3 items, e.g. "I feel suspicious")
+4) Time spent with others (max. 3 multiple choice items inquiring about type of company (nobody, family, non-family, etc.). 
+Patients were prompted 10 times a day, during 6 days. Anxiety, threat and paranoia Items were rated on a 7-point Likert scale, ranging from 1 ("not at all") to 7 ("very"). Reports had to be completed within 15 min of the beep. EMA items were used in previous studies (Collip et al., 2010).  
 Data management: To be included in the analysis, participants had to complete diary entries for at least one-third of the beeps (i.e., a minimum of 20 measurements). Because the PsyMate application was not finished at the time of the trial, participants were provided with a small palmtop device for the duration of EMA. Data was extracted with 4D software. Time spent with others was defined as the percentage of time participants were in company of others (excluding mental health care professionals). Other EMA measurements were only used when a participant reported being in a social situation. Information was stored on the PsyMate server, under a user-specific PsyMate-ID number. Researchers had access to a file matching study-ID to PsyMate-ID numbers, which allowed matching of information acquired via EMA with information acquired with regular self-report measures during the RCT study. 
 Project goals: Testing the effects of virtual-reality-based cognitive behavioural therapy (VR-CBT) on paranoid thoughts and social participation via momentary assessment.
 Results: All 116 participants completed EMA measurements at baseline (mean number of completed self-assessments 46.1, SD 13.3), 96 participants completed the post-treatment assessment sufficiently (43.1, SD 10.1), and 87 participants completed the follow-up (43.2, SD 11.1). The trial results suggest that the addition of VR-CBT to standard treatment can reduce paranoid ideation and momentary anxiety in patients with a psychotic disorder.
@@ -188,8 +192,16 @@ APH site: Vrije Universiteit Amsterdam, VUmc, GGZ inGeest, Parnassia Psychiatric
 Status: Ongoing, March 2016- July 2018
 Target population: People who suffer from hearing voices and are obstructed by them in their daily life
 Platform used: Temstem application. Developed by Reframing Studio, in collaboration with Parnassia Psychiatric Institute and TU Delft.
-EMI: Mobile application (Temstem) focuses on reducing distress and dysfunction caused by auditory verbal hallucinations (AVH). Components: 1) coping: addressing verbal working memory phonological loop with a language task, thereby blocking the hearing of voices; (2) positive reinforcement: decreasing self-reported negative self-esteem themes; (3) treatment: reducing emotional response to memories associated with voices by taxing the auditory working memory during recall of negative auditory memories (as in EMDR therapy).
-EMA: Users are encouraged to fill-in 9 self-report items on a daily basis. Items concern hearing voices: 6 items (e.g. "Today, the voices were disturbing"), mood: 1 item ("I felt depressed"), self-esteem: 1 item ("I was satisfied about myself"), and the use of Temstem ("I used Temstem today"). Items are rated on a 7-point Likert-scale. Items are based on existing EMA questionnaires. Results are presented to users in separate graphs, in order to support users in gaining insight in the pattern of AVH over time, or after use of Temstem. 
+EMI: Mobile application (Temstem) focuses on reducing distress and dysfunction caused by auditory verbal hallucinations (AVH). Components: 
+1) coping: addressing verbal working memory phonological loop with a language task, thereby blocking the hearing of voices
+2) positive reinforcement: decreasing self-reported negative self-esteem themes
+3) treatment: reducing emotional response to memories associated with voices by taxing the auditory working memory during recall of negative auditory memories (as in EMDR therapy).
+EMA: Users are encouraged to fill-in 9 self-report items on a daily basis. Outcomes: 
+1) hearing voices: 6 items (e.g. "Today, the voices were disturbing")
+2) mood: 1 item ("I felt depressed")
+3) self-esteem: 1 item ("I was satisfied about myself")
+4) the use of Temstem ("I used Temstem today"). 
+Items are rated on a 7-point Likert-scale. Items are based on existing EMA questionnaires. Results are presented to users in separate graphs, in order to support users in gaining insight in the pattern of AVH over time, or after use of Temstem. 
 Project goals: Examine the effect of the app on distress and dysfunction in a RCT. Investigate the effect of Temstem on frequency and severity of AVH, to determine working mechanisms, to identify predictors and mediators of effects, and to test the usability of Temstem.
 Results: Reduce distress and dysfunction caused by auditory verbal hallucinations
 Data management: Data is stored on a server hosted by Service Heroes (via Reframing Studio), under users' unique download numbers. Stored variables include, among others, scores of vividness of AVH pre and post use of Temstem, data on application use (duration), used function (e.g. 'Silencing' function which focuses on coping, or 'Challenging' function which is based on dual tasking), and how users feel when they hear voices. Users can choose to provide additional information on age, gender, which county in the Netherlands they are currently located, how they found the app, and why they want to use it (e.g. because they hear voices, because they are a clinician and they want to learn more about the app to support clients, etc.). Clinicians cannot access user data or graphs. Researchers can, but only in big data files. To see users' personal data (e.g. how many times they used the app, how vivid the voices were before and after the use of Temstem, etc.) researchers need the users' unique download number. 

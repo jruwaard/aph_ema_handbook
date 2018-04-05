@@ -62,5 +62,5 @@ based measure of activity (the Home Range Estimation-study; chapter 16).
 research groups, chapter 17 lists EMA instruments, and chapter 18 summarises R
 extentions (packages) useful for EMA data analysis.
 
-Comments and suggestions are welcome at emaAPH@ggzingeest.nl.
+Comments and suggestions are welcome at aph.ema@ggzingeest.nl.
 

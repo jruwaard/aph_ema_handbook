@@ -140,13 +140,28 @@ dui viverra.
 
 ## Ethical Considerations
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+### Medical device
+
+All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC, METC in Dutch). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. This chapter gives a brief overview of this process.  
+
+#### Definition
+The official definition of a medical device (Medical Device Act, or Wet Medische Hulpmiddelen) is as follows (http://www.ccmo.nl/en/research-with-a-medical-device):
+“Any instrument, apparatus or appliance, any software or material or any other article that is used alone or in combination, including any accessory and the software required for its proper operation, that is intended by the manufacturer to be used specifically for diagnostic or therapeutic purposes, and is intended by the manufacturer to be used for human beings for the purpose of:
+- diagnosis, prevention, monitoring, treatment or alleviation of disease
+- diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap
+- investigation, replacement or modification of the anatomy or of a physiological process
+- control of conception, and which does not achieve its principal intended action in or on the human body by pharmacological, immunological or metabolic means, but which may be assisted in its function by such means.”
+
+In short, software can be classified as a medical device if it collects patient-specific data and is specifically intended for one of the above-mentioned objectives. Or in other words, if a health care professional takes this information into account when determining the course of treatment. The law does not differentiate between passive and active measurement.
+
+#### Is my product a medical device?
+The website http://cetool.nl/general/scanAid offers a quick scan that helps to determine whether an app of product should be classified as a medical device. Figure 1 shows a flow-chart, based on these questions. 
+
+```{r Figure 1, fig.cap = "Flow-chart medical device.", echo = FALSE, out.width = '50%'}
+knitr::include_graphics("images/outcomes/Flow_MD.png")
+```
+
+
 
 [EMA data sharing is complicated. Indirect identifiablity should perhaps be the
 default assumption. GPS data can not be fully anonymised.] Vivamus enim turpis,

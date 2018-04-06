@@ -20,21 +20,25 @@ Correlation between depressive symptom scale (PHQ?) and mood, ask Wouter for dat
 Another aspect to consider within this approach is that the middle of the scale (e.g. 5 or 50) is considered a negative result, and scores above 6 or 60 are considered accaptable or possible mood states (@Groot2010). This contrasts with common Likert scales, where the centre often reflects a neutral response.
 In order to address this issue, some researchers have proposed to use scales ranging from -1 to 1, with 0 as a neutral scale centre (#REF?). However, this scale implies a mood state that ranges from negative to positive, rather than absent to present. Another option is to use bipolar-unidimensional items, which place two opposing mood states at each end of the scale, for example by asking "Please rate your current mood on a scale of 0 to 100, on which 0 indicates happy, and 100 indicates sad" (@VanRijsbergen2014). The bipolar-unidimensional method was shown to be able to detect relapse in patients with recurrent Major Depressive Disorder (based on SCID-I interview) at a cut-off score of 51, and outperformed the HAM-D and IDS-SR. However, 47% of patients indicated by the VAS scale did not fulfil formal criteria for relapse (false positives) (@VanRijsbergen2014). 
 
+
 ## The Circumplex Model
 \index{Circumplex model}
 The Circumplex Model of affect (Russell 1980) assumes that all affective states are a linear combination of two underlying constructs, rather than one. Within the model, affective states are scored on a valence scale (ranging from unpleasant to pleasant) and an arousal scale (ranging from low to high arousal). Combining these scores places the affective states in a circle on one of four quadrants (Figure XX). Following this circular assumption, states within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.   
-
 
 ```{r pickamood, fig.cap = "The Pick-A-Mood Circumplex Mood Circle.", echo = FALSE, out.width = '50%'}
 knitr::include_graphics("images/outcomes/CircumPlex-Pick-A-Mood.png")
 ```
 
 
-
 ## Negative & Positive Affect
 \index{Negative Affect} \index{Positive Affect}
 Watson and Tellegen (1985) further specified the Circumplex model, arguing that the diagonal quadrants represent Positive and Negative affect (Figure XX). Within this model, the Circumplex axes are rotated at a 45 degree angle 
 While bipolar-unidimensional assesment assumes that positive and negative affect are mutually exclusive, the PA/NA affect model assumes that these seemingly opposing mood states can occur simultaneously. Watson and Clark (@Watson1997) for example, showed a moderate correlation between the two constructs (.32) and argued that while bipolar scales can be used for within-subject assessment, unipolar scales have suprior convergent and discriminant validity in between-subject data. In @Wichers2016, the interplay between postive (PA) and negative affect (NA) was examined with EMA. Participants were randomly prompted to rate 15 mood items (e.g. ‘satisfied’, ‘hurried’, 'gloomy', etc.) on 7-point Liker scales (paper-and-pencil, 10 assesments per day for 6 days). A principal component analysis with oblique rotation suggested to yield two distinct 'states', matching the theory of PA and NA.
+
+
+## Negative & Positive Affect
+\index{Negative Affect} \index{Positive Affect}
+Bipolar-unidimensional assesment assumes that positive and negative affect are mutually exclusive. However, it can also be argued that these seemingly opposing mood states can occur simultaneously. Watson and Clark (@Watson1997) for example, showed a moderate correlation between the two constructs (.32) and argued that while bipolar scales can be used for within-subject assessment, unipolar scales have suprior convergent and discriminant validity in between-subject data. In @Wichers2016, the interplay between postive (PA) and negative affect (NA) was examined with EMA. Participants were randomly prompted to rate 15 mood items (e.g. ‘satisfied’, ‘hurried’, 'gloomy', etc.) on 7-point Liker scales (paper-and-pencil, 10 assesments per day for 6 days). A principal component analysis with oblique rotation suggested to yield two distinct 'states', matching the theory of PA and NA.
 
 [Can we do a factor analysis on N= 1 repeated measures? Note the use of
 arima, to remove autocorrelation. We need to look into p-techniques / dynamic

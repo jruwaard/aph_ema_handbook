@@ -11,6 +11,7 @@ install.packages(
     "tidyverse",
     "adehabitatHR",
     "data.tree",
+    "ecp",
     "GPArotation",
     "ggmap",
     "graphicalVAR",

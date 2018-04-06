@@ -172,6 +172,7 @@ Notification of the Health and Youth Care Inspectorate
 #### Useful links
 Add links to EU and Dutch laws and CCMO website. 
 
+### Data sharing
 [EMA data sharing is complicated. Indirect identifiablity should perhaps be the
 default assumption. GPS data can not be fully anonymised.] Vivamus enim turpis,
 pulvinar volutpat purus nec, lobortis imperdiet diam. Nunc hendrerit cursus
@@ -179,6 +180,7 @@ eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada
 fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
 lobortis imperdiet diam.
 
+#### Informed consent
 [Informed Consent] Donec sed lectus at sem ultrices commodo. Proin a viverra
 metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
 at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt

@@ -29,7 +29,7 @@ Table: (\#tab:APHresearch) Your table caption.
 | GROUP          | Heart failure    | www.psymate.eu    | AMC    |  YES   | YES         |
 
 
-### The CASPAR Project
+### The CASPAR Project (approval 16-02-2018)
 
 Project team: Wouter van Ballegooijen, PhD; Chani Nuij, MSc; Ad Kerkhof, PhD; Jan Smit, PhD; Heleen Riper, PhD 
 APH site: Vrije Universiteit Amsterdam, VUmc, GGZ inGeest
@@ -95,15 +95,21 @@ Status: Ongoing, XXX-
 Target populations: Patients with major depressive disorder, epilepsy or multiple sclerosis (MS). 
 Project goals: Examine how remote measurement technologies can monitor and improve quality of life and psychological well-being for people with depression, epilepsy, or multiple sclerosis. Technical goals: 1) Built an end-to-end system with generalized data aggregation capabilities. The platform focuses on classes of data rather than specific devices, in order to enhance modularity and adaptability as new devices become available. The platform is delivered under an Apache 2 open source license. 2) Big data solutions.
 Clinical goals: 1) Continuous monitoring of patients, 2) predicting disease onset or relapse (prevention and risk assessment) 
-EMA passive: Android smartphone sensors: 1) Location and movement (GPS), 2) Mood: voice recognition), 3) Social interaction (call and message logs), 4) App interaction and app usage. Wearables: Skin temperature, heart rate (-variability), actigraphy (3-axis accelerometer, gyroscope), galvanic skin conductance (Empatica E4 Wristband, Pebble 2 Smartwatch, Biovotion VSM, Faros 180, and Fitbit devices). 
 EMA active: EMA questionnaires via pRMT application, which was built with Cordova. Outcomes include variability in sleep quality, levels of activity, social interactions, mood, cognitive performance and stress as possible predictors of clinical course. 
-Data management: token-based authentication and authorization. A dashboard app allows for live monitoring of results. Data is streamed and analyzed live. 
-Results: 
-Lessons learned and advice for other researchers: 
+EMA passive: 
+1) Location and movement (GPS)
+2) Mood: voice recognition)
+3) Social interaction (call and message logs)
+4) App interaction and app usage. 
+Wearables: Skin temperature, heart rate (-variability), actigraphy (3-axis accelerometer, gyroscope), galvanic skin conductance (Empatica E4 Wristband, Pebble 2 Smartwatch, Biovotion VSM, Faros 180, and Fitbit devices). In the depression study a Fitbit will be used to measure sleep and activity.  
+Data management: Participants are requested to install three apps on their Android smartphone. Data is collected during a 2-year period. Active EMA will be activated every 6 weeks for 6 consectutive days. Four times per year a non-EMA follow-up is conducted, which contains (qualitative) interviews and self-report questionnaires. 
+Log in is facilitated with token-based authentication and authorization. A dashboard app allows for live monitoring of results. Data is streamed and analyzed live. 
+Results: GGZ inGeest will participate in the depression study as a research site. Data will be used to assess a variety of research questions, concerning topics such as MDD subtypes, seasonal depression and predicting relapse. 
+Lessons learned and advice for other researchers: When measuring over such a long timespan, extra attention should be paid to the possible burden for participants. Continious monitoring via a Smartphone can severly impact battery life.    
 
 ### Eco de Geus group
 
-### VU-AMS
+### VU-AMS (not yet checked by group 13-04-2018)
 
 VU-AMS
 Project team: Eco de Geus, PhD; Gonneke Willemsen, PhD; Martin Gevonden, PhD; Denise van der Mee, MSc. 
@@ -139,29 +145,33 @@ APH site: VUmc, GGZ inGeest
 Full title: the Netherlands Study of Depression and Anxiety (NESDA), Wave 6 diary study 
 Topic: Momentary assessment of people with depressive symptoms
 Status: 2015 - 2017
-Target population: NESDA participants with symptoms of depression and healthy controls
+Target population: Selected sample of NESDA participants with symptoms of depression and healthy controls
 Platform used: RoQua (https://www.roqua.nl/) 
-EMA active: Outcomes included: 
+EMA active: The self-report questionnaire contained 31 items. Items were rated on a 7-point Likert scale, ranging from 'not [at all]' to 'very'.  
 1) Valance and arousal (2 items, "I'm feeling ...") which were scored on Likert scales ranging from very unpleasant to very pleasant and very calm to very excited; 
-2) Current state (12 items, "I feel relaxed", "I feel down", "I feel cheerful"), symptoms of depression/anxiety (4 items, "I worry a lot", "I am able to concentrate well", and bodily experiences (2 items, "I feel tired") scored on 7-point Linkert scales ranging from 1 (not) to 7 (very)
-3) social contact (2 items, "Where are you now" (e.g. at the neighbour's house), "In who's company are you now") and a follow-up question (1 item, "I would rather have had company" or "I experience my company as being …" (unpleasant - pleasant))
+2) Current state (12 items, "I feel relaxed", "I feel down", "I feel cheerful"), symptoms of depression/anxiety (4 items, "I worry a lot", "I am able to concentrate well", and physical condition (2 items, "I feel tired") scored on 7-point Linkert scales ranging from 1 (not) to 7 (very)
+3) Social context (2 items, "Where are you now" (e.g. at the neighbour's house), "In who's company are you now") and a follow-up question (1 item, "I would rather have had company" or "I experience my company as being …" (unpleasant - pleasant))
 4) Sleep (3 items on sleep quality and duration)
-5) (Un)pleasant every day experiences, when rated with yes, participants were asked to elaborate (3 items on intensity, importance and internal or external cause). 
+5) Daily uplifts/hassles, when rated with yes, participants were asked to elaborate (3 items on intensity, importance and internal or external cause). 
 5) Activities (1 multiple-choice item, including social interaction, additional (eating) and other (exercise)
-6) Smoking, coffee and alcohol (number of units)
+6) Substance use: smoking, coffee and alcohol (number of units)
 7) Eating (1 item at final daily prompt, "Did you eat more of less than usual") 
-8) Burden (1 item, "How disrupting was it to fill in this questionnaire"
-9) Open ended question for general comments on circumstances that might influence answers.  
+And an evaluative addendum questionnaire:
+1) Burden (1 item, "How disrupting was it to fill in this questionnaire"
+2) Open ended question for general comments on circumstances that might influence answers.  
 Participants were prompted five times a day, for two weeks. Prompts consisted of a SMS, which contained a link to the EMA questions. Participants were asked to fill in the questionnaire within 15 minutes after the SMS. After 30 minutes a reminder was sent, and after 60 minutes the link would become inactive. Each questionnaire contained circa 35 items. 
-Data management: EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow a phone. 
-Patients were briefed on the EMA study during a face-to-face session with a research assistant (following standard NESDA data 9-year follow-up assessment). In order to motivate participants to adhere to EMA, they were shown two examples of mood fluctuation reports, one with a 43% compliance rate and one with a 96% compliance rate. Personalized reports were sent via e-mail in a password protected document. During data collection, patients were contacted by a research assistant after 24 hours and 7 days in order to enquire whether problems had occurred with EMA. Research assistants actively monitored data collection and contacted participants if they missed three consecutive questionnaires. Data were stored in a secured web-environment of the University Medical Centre Groningen (UMCG).
-EMA passive: Alongside active EMA, participants were asked to wear a actigraph watch (GENEActiv) on their non-dominant wrist 24 hours a day for two weeks. After data collection, participants mailed their watch to the research center. Data was extracted via a USB with XXX software. 
-Results: EMA data will be used to assess a variety of research questions, such as the dynamic network structure of affective and somatic symptoms, interpersonal functioning in depression, feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. 
+Questions Q1 till Q14 have been used in a previous study; the Uncovering the Positive Potential of Emotional Reactivity (UPPER) study (@Bennik2015). The other items are inspired on earlier EMA studies, such as the work by Mehl and colleagues (@Mehl2012), van Os and colleagues (@Wichers2012) and studies performed at the Interdisciplinary Center of Psychopathology and Emotion regulation (ICPE), such as the Mood and Movement in Daily life (MOOVD) study (@Booij2015).
+Data management: EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow one. 
+Patients were briefed on the EMA study during a face-to-face session with a research assistant (following standard NESDA data 9-year follow-up assessment). Participants needed to answer all questions before the questionnaire could be send to the secured server. In order to motivate participants to adhere to EMA, they were shown two examples of mood fluctuation reports, one with a 43% compliance rate and one with a 96% compliance rate. Personalized reports were sent via e-mail in a password protected document. During data collection, patients were contacted by a research assistant after 24 hours and 7 days in order to enquire whether problems had occurred with EMA. Research assistants actively monitored data collection and contacted participants if they missed three consecutive questionnaires. Data were stored in a secured web-environment of the University Medical Centre Groningen (UMCG).
+EMA passive: In order to record the amount of physical activity during EMA monitoring, participants were asked to wear an accelerometer (GENEActiv) on their non-dominant wrist 24 hours a day for two weeks. Recording started on the evening prior to the first EMA assessment and continued until the morning after the last assessment.  
+After data collection, participants mailed their watch to the research center. Data was extracted via a USB with GENEActiv software. 
+Results: EMA data will be used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behavior and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. 
 Lessons learned and advice for other researchers: XXX
+
 
 ### Mark van der Gaag group
 
-### VRETp trial
+### VRETp trial (approval 02-03-2018)
 
 Project: Effect of virtual reality exposure therapy on social participation in people with a psychotic disorder (VRETp)
 Project team: Mark van der Gaag, PhD; Roos Pot-Kolder, MSc; Wim Veiling; Chris Geraets
@@ -182,7 +192,7 @@ Results: All 116 participants completed EMA measurements at baseline (mean numbe
 Lessons learned and advice for other researchers: Participants reported not wanting to explain to others why they were using the palmtop (a small black hand-held computer) as a reason for non-compliance with EMA. This directly interfered with the primary aim, namely assessing social context. An app facilitates measurement without the participant having to explain to others what they are doing.  
 Trial registration: Current Controlled Trials: ISRCTN12929657. Date of registration: 8 September 2015.
 
-### TemStem
+### TemStem (approval 08-03-2018)
 
 Team Mark van der Gaag
 Topics: Psychosis, auditory hallucinations, social participation in people with schizophrenia.  
@@ -210,7 +220,7 @@ Lessons learned and advice for other researchers: Users need internet to use the
 
 ### Frank Snoek group
 
-### MERITS
+### MERITS (approval summary 12-03-2018)
 
 MERITS project
 Project team: Frank J. Snoek, PhD; Maartje de Wit, PhD;  Daniel van Raalte, MD, PhD; Erik Serné, MD, PhD;  Cati Racca, MD; L. Muijs, MSc

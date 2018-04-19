@@ -155,9 +155,9 @@ The official definition of a medical device (Medical Device Act, or Wet Medische
 In short, software can be classified as a medical device if it collects patient-specific data and is specifically intended for one of the above-mentioned objectives. Or in other words, if a health care professional takes this information into account when determining the course of treatment. The law does not differentiate between passive and active measurement.
 
 #### Is my product a medical device?
-The website http://cetool.nl/general/scanAid offers a quick scan that helps to determine whether an app of product should be classified as a medical device. Figure 1 shows a flow-chart, based on these questions. 
+The website http://cetool.nl/general/scanAid offers a quick scan that helps to determine whether an app of product should be classified as a medical device. Figure XX shows a flow-chart, based on these questions. 
 
-```{r Figure 1, fig.cap = "Flow-chart medical device.", echo = FALSE, out.width = '50%'}
+```{r fig.cap = "Flow-chart medical device.", echo = FALSE, out.width = '50%'}
 knitr::include_graphics("images/outcomes/Flow_MD.png")
 ```
 

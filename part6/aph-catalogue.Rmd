@@ -252,23 +252,23 @@ Results: Future results will guide the development of interventions for the mana
 Link to protocol paper: http://bmjopen.bmj.com/content/8/4/e021745.long
 
 
-### The IMPACT project
+### The IMPACT Onderzoek project
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
+Project team: Iris Hartog, Tom Oreel, Pythia Nieuwkerk, Michael Scherer-Rath, José Henriques, Hanneke van Laarhoven, Mirjam Sprangers
+APH site: AMC, VUmc
+Full title: Improving the conceptualisation and measurement of quality of life of patients with multiple chronic morbidities, exemplified by patients with cardiac disease undergoing cardiac intervention
+Topic: Smartphone data collection
+Status: Ongoing, 2016-
+Target population: Cardiac patients who underwent either angioplasty or bypass surgery (N= 37/320) 
+Platform used: Psymate (https://psymate.eu)
+Study design: Longitudinal with 3 data collection periods (pre-treatment, within 2 weeks after treatment, 3-6 months post-treatment)   
+EMA active: Participants are prompted to answer 9 general and 1 evening questionnaire per day for 7 consecutive days. During the day, patients are beeped randomly between 7.30 and 22.30 hours to complete the general questionnaire. The general questionnaire contains 19 items, including 5 contextual items. Concepts measured include agitation, relaxed feeling, anxiety, feeling down, feeling energetic, irritation, happiness, tiredness, worry, chest pain, other types of pain, shortness of breath, tightness in chest, feeling stuffy in the chest. Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. Patents are asked to complete the evening questionnaire just before the go to bed. The evening questionnaire has a different set of questions including the QoL of that day, items from the EQ5, and the health status of that day. The last item is rated on a visual analogue scale from 0 (worst) to 100 (best).
+Data management: Participants are provided with iPods installed with the EMA application during data collection
+Project goals: The project aims to compare QoL collected retrospectively through paper surveys with that collected via EMA. Data collected through EMA can also inform possible changes in daily QoL, taking contextual situations into account
+Statistical methods: R package used to conduct network analyses
+Results: Potential results can offer personalized assessments or advice to patients at risk of poorer QoL following cardia intervention. Prediction of 
+Lessons learned and advice for other researchers: To maintain response during follow-ups, it is important to maintain contact with patients between follow-ups. The quality of EMA data can be low due to significant amount of missing data. Besides missing data, lack of variation in answers from day-to-day (through use of a Likert scale) could also be an issue. Both missing data and lack of variation can be a problem if planning to run network analyses. Due to the amount of data collected via EMA, data cleaning can take up a significant amount of time. 
+Link to website: http://www.impactonderzoek.nl/  
 
 
 ### The GROUP project

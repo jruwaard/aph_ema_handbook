@@ -243,7 +243,8 @@ Status: Ongoing, 2017-2020
 Target population: Patients with clinically stable chronic obstructive pulmonary disease (proposed: n=60) 
 Platform used: Psymate (https://psymate.eu)
 Study design: Longitudinal with 4 data collection periods (baseline, 4, 8, 12 months)  
-EMA active: For each data collection period, participants are prompted 8 times a day at random moments between 7.30am and 22.30pm, for 5 consecutive days, to answer 19 items (including 9 contextual items).Measured concepts include fatigue, relaxed feeling, breathlessness, agitation, uncertainty, irritation, satisfaction, anxiety, feeling energetic, and feeling mentally fit. Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. In conjunction with the self-reported questionnaire, patients are also asked to wear an actigraph (activity monitor) for 7 days, even during sleep.
+EMA active: For each data collection period, participants are prompted 8 times a day at random moments between 7.30am and 22.30pm, for 5 consecutive days, to answer 19 items (including 9 contextual items). Measured concepts include fatigue, relaxed feeling, breathlessness, agitation, uncertainty, irritation, satisfaction, anxiety, feeling energetic, and feeling mentally fit. Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. 
+EMA passive: In conjunction with the self-reported questionnaire, patients are also asked to wear an actigraph (activity monitor) for 7 days, even during sleep.
 Data management: During the data collection period, patients are provided with iPods installed with the EMA application.
 Project goals: To capture possible diurnal fluctuations in fatigue.
 Results: Future results will guide the development of interventions for the management of fatigue in this patient group.

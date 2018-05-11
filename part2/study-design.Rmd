@@ -1,56 +1,40 @@
 # (PART) EMA Methods {-}
 
 # Study Design {#methods}
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+The starting point of an EMA study should be mindfully planning the general aspects of the study design, as is the case with all scientific research. Issues that need to be considered are, for example, hypotheses and research questions, the target population of interest, recruitment strategies to insure inclusion of a representative study group, comparison groups and allocation strategies (@Shiffman2008). Because ample information on these topics can be found elsewhere (for example X Y Z), this guideline will not address these issues.
+When designing an EMA study, researchers also need to carefully consider some specific design aspects. This chapter gives a brief overview the sample plan, power analysis and ethical issues. Outcomes, methods of measurement and data analysis will be discussed seperate chapters. 
 
 ## The Sample Plan
+One of the main reasons to use EMA is that it can reduce recall bias by measuring during or close to an event, rather than retrospectively. In order to make sure the outcome, pattern and/or context of interest are indeed captured during EMA, a sensible sample plan (or sampling scheme) is required. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. 
+###Active (obtrusive) EMA 
 
-[What is the rational of the sample plan?] Aenean lectus nunc, bibendum ut orci
-vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
-velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+Timing of assessment
+Most often EMA sampling focusses on a time-point (signal-contingent plan), an event (event-coningent plan), or a combination of both (@Conner2012b). When a signal-contingent plan is used, a participant receives a prompt and is required to rate an outcome at that moment. A signal plan can either contain fixed or random prompts. For example, in a fixed scheme participants can be prompted to rate their mood every day at 18:00. When prompts are generated randomly, a fixed number of prompts is send at a random time-point within pre-set intervals. For example, a prompt is sent every day between 9:00 and 12:00, 13:00 and 15:00 and 16:00 and 18:00. This latter form of EMA is also described as experience sampling (@Moskowitz2006). Event-contingent sampling requires participants to complete an assessment when a specific event occurs, such as a panic attack or alcohol consumption. In case of coninious monitoring and real-time data processing, it is also possible to trigger event-based prompts automaticaly. For example, by linking a self-report EMA questionnaire to a change in activity level (@Smyth2003). 
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+Frequency and duration
+In order to assure that the outcome of interest is captured, the required number of prompts and duration of assessment need to be considered. The more 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta.  
+
+For example, when a researcher is interested in capturing a
+
+
+burden compliance
+
+match EMA reterospective questionaire 
+
+Battery 
+
+A sample plan contains the following elements: duration (hours, days, weeks, etc.), frequency (every day, hour, minute, etc.), random    
+
+Signal contingent event contingent 
+
+Expected fluctuation/patterns
+Duration
+Context
+Burden
+Random or fixed
 
 ```{r creating_a_sample_schedule, echo = TRUE}
 participants <- 1:5
@@ -128,6 +112,15 @@ ut massa tempor, ac dapibus dui viverra.
 
 ## Devices 
 
+Opletten wat je koopt aan technologie Tabel onderbouwen devices 
+
+Gevalideerd vs nieuw
+
+Stabiliteit
+Kosten
+Back-office
+data opslag
+
 What is the data acquisition interface? [@Stone2002] Lorem ipsum dolor sit
 amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt
 urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit
@@ -173,6 +166,11 @@ Notification of the Health and Youth Care Inspectorate
 Add links to EU and Dutch laws and CCMO website. 
 
 ### Data sharing
+
+Intellectueel eigendom
+Server
+DSA data sharing agreement. 
+
 [EMA data sharing is complicated. Indirect identifiablity should perhaps be the
 default assumption. GPS data can not be fully anonymised.] Vivamus enim turpis,
 pulvinar volutpat purus nec, lobortis imperdiet diam. Nunc hendrerit cursus
@@ -191,6 +189,11 @@ volutpat purus nec, lobortis imperdiet diam.
 
 
 ## Outcomes
+
+Precies def wat meten
+betrouwbaarheid, validiteit, ruwe data 
+
+VOlgend hoofdstuk per domein
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,

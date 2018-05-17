@@ -1,40 +1,25 @@
 # (PART) EMA Methods {-}
 
 # Study Design {#methods}
-The starting point of an EMA study should be mindfully planning the general aspects of the study design, as is the case with all scientific research. Issues that need to be considered are, for example, hypotheses and research questions, the target population of interest, recruitment strategies to insure inclusion of a representative study group, comparison groups and allocation strategies (@Shiffman2008). Because ample information on these topics can be found elsewhere (for example X Y Z), this guideline will not address these issues.
-When designing an EMA study, researchers also need to carefully consider some specific design aspects. This chapter gives a brief overview the sample plan, power analysis and ethical issues. Outcomes, methods of measurement and data analysis will be discussed seperate chapters. 
+The starting point of any EMA study should be mindfully planning the general aspects of the study design, as is the case with all scientific research. Issues that need to be considered are, for example, hypotheses and research questions, the target population of interest, recruitment strategies to insure inclusion of a representative study group, comparison groups and allocation strategies (@Shiffman2008). Because ample information on these topics can be found elsewhere (for example at http://www.consort-statement.org/ and http://www.emgo.nl/kc/), this guideline will not address these issues.
+When designing an EMA study, researchers also need to carefully consider some specific design aspects. This chapter gives a brief overview the sample plan, power analysis and ethical issues. Outcomes, methods of measurement and data analysis will be discussed in separate chapters. 
 
 ## The Sample Plan
-One of the main reasons to use EMA is that it can reduce recall bias by measuring during or close to an event, rather than retrospectively. In order to make sure the outcome, pattern and/or context of interest are indeed captured during EMA, a sensible sample plan (or sampling scheme) is required. 
+One of the main reasons to use EMA is that it can reduce recall bias by measuring during or close to an event, rather than retrospectively. In order to make sure the outcome, pattern and/or context of interest are indeed captured during EMA, a sensible sample plan (also called a sampling scheme) is required. 
 
 ###Active (obtrusive) EMA 
 
-Timing of assessment
-Most often EMA sampling focusses on a time-point (signal-contingent plan), an event (event-coningent plan), or a combination of both (@Conner2012b). When a signal-contingent plan is used, a participant receives a prompt and is required to rate an outcome at that moment. A signal plan can either contain fixed or random prompts. For example, in a fixed scheme participants can be prompted to rate their mood every day at 18:00. When prompts are generated randomly, a fixed number of prompts is send at a random time-point within pre-set intervals. For example, a prompt is sent every day between 9:00 and 12:00, 13:00 and 15:00 and 16:00 and 18:00. This latter form of EMA is also described as experience sampling (@Moskowitz2006). Event-contingent sampling requires participants to complete an assessment when a specific event occurs, such as a panic attack or alcohol consumption. In case of coninious monitoring and real-time data processing, it is also possible to trigger event-based prompts automaticaly. For example, by linking a self-report EMA questionnaire to a change in activity level (@Smyth2003). 
+####Timing of assessment
+Most often EMA sampling focusses on a time-point (signal-contingent plan), an event (event-contingent plan), or a combination of both (@Conner2012b). When a signal-contingent plan is used, a participant receives a prompt and is required to rate an outcome at that moment. A signal plan can either contain fixed or random prompts. For example, in a fixed scheme, participants can be prompted to rate their mood every day at 18:00. When prompts are generated randomly, a fixed number of prompts is send at a random time-point within pre-set intervals. For example, a prompt is sent every day between 9:00 and 12:00, 13:00 and 15:00 and 16:00 and 18:00. This latter form of EMA is also described as experience sampling (@Moskowitz2006). Using pre-set intervals will prevent participants from receiving several prompts within a limited time-frame (@Piasecki2007).
+Event-contingent sampling requires participants to complete an assessment when a specific event occurs, such as a panic attack or alcohol consumption. In case of continuous monitoring and real-time data processing, it is also possible to trigger event-based prompts automatically. For example, by linking a self-report EMA questionnaire to a change in activity level (@Smyth2003). 
 
-Frequency and duration
-In order to assure that the outcome of interest is captured, the required number of prompts and duration of assessment need to be considered. The more 
+####Frequency and duration
+In order to assure that the outcome of interest is captured, the required number of prompts (every day, hour, minute, etc.) and duration of assessment (hours, days, weeks, etc.) need to be considered. Increasing the prompt frequency often will allow you to gather a more detailed overview of the outcome of interest. However, in active EMA this also increases the burden that is placed on participants, which in turn can affect compliance and accuracy (REF). For example, measurement reactivity can occur, where the focus on their own behaviour causes participants to increase or decrease the frequency of the outcome of interest (@Hufford2002). Also, issues related to hardware need to be considered, such as battery-life and memory space. This is especially relevant in passive EMA sampling, for example using GPS data. 
+When determining the appropriate sample plan, researchers are advised to start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data (@Piasecki2007). 
 
+Determine window of compliance
+Allow participants to suspend prompting? @Piasecki2007
 
-
-For example, when a researcher is interested in capturing a
-
-
-burden compliance
-
-match EMA reterospective questionaire 
-
-Battery 
-
-A sample plan contains the following elements: duration (hours, days, weeks, etc.), frequency (every day, hour, minute, etc.), random    
-
-Signal contingent event contingent 
-
-Expected fluctuation/patterns
-Duration
-Context
-Burden
-Random or fixed
 
 ```{r creating_a_sample_schedule, echo = TRUE}
 participants <- 1:5

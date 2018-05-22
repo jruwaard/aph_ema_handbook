@@ -67,12 +67,13 @@ higher) of RStudio.
 
 ## Interacting with R through the RStudio console
 
-If you open RStudio, you will be presented with the interface shown in Figure
-\ref{rstudio}. Rstudio's main window is divided in four panes (subwindows),
+If you open RStudio, you will be presented with the interface shown in Figure \@ref(fig:rstudio). Rstudio's main window is divided in four panes (subwindows),
 which further contain several tabbed windows. Your first session with R starts
 in the bottom-left pane, named "Console".
 
-![RStudio's User Interface.\label{rstudio}](images/R/rstudio.png){width=98%}
+```{r rstudio, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
+knitr::include_graphics("images/R/rstudio.png")
+```
 
 In the console, you send commands to R. It will execute the command immediately
 and return the answer back in the console. To test this, move your cursor to
@@ -105,7 +106,7 @@ histogram of these numbers.
 hist(rnorm(N))
 ```
 
-The plot appears in the bottom-right pane, as in Figure \ref{rstudio}. 
+The plot appears in the bottom-right pane, as in Figure \@ref(fig:rstudio). 
 
 
 ## Writing R-scripts
@@ -158,14 +159,18 @@ a csv-version of one of your own data files).
 
 - In the window that appears, click on `Browse` to locate the csv-
 file on your computer, and click `Import` in the next window (see Figure
-\ref{rstudiocsvimport}).
+\@ref(fig:rstudiocsvimport)).
 
 RStudio shows the data, in tabular view, in the top-left window, ready for
 further analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-![RStudio's CSV import wizard.\label{rstudiocsvimport}](images/R/csv_import.png){width=98%}
+
+
+```{r rstudiocsvimport, fig.cap="RStudio's CSV import wizard.", out.width="98%", echo=FALSE}
+knitr::include_graphics("images/R/csv_import.png")
+```
 
 ### Using functions to import data
 
@@ -198,7 +203,7 @@ To inspect the first 6 lines of data, type,
 head(ESMdata)
 ```
 
-To view all rows of data in a spreadsheet (as in Figure \ref{rstudiocsvimport}),
+To view all rows of data in a spreadsheet (as in Figure \@ref(fig:rstudiocsvimport),
 type:
 
 ```{r cs27, eval = FALSE}

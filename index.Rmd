@@ -41,7 +41,7 @@ The manual comprises six parts:
 
 - Part I introduces EMA and R. Chapter 1 defines EMA, and discusses the
 opportunities and challenges of EMA research. Chapter 2 introduces R, the
-indespensable tool for EMA researcher.
+indespensable tool of the EMA researcher.
 
 - Part II focuses on EMA study design (chapter 3), EMA instruments (chapter 4)
 and EMA data management (Chapter 5).

@@ -8,8 +8,10 @@ bookdown::pdf_book:
 bookdown::epub_book: default
 bookdown::html_book:
     css: toc.css
+    pandoc_args: [ "--csl", "apa.csl" ]
 bookdown::gitbook:
   css: style.css
+  pandoc_args: [ "--csl", "apa.csl" ]
   config:
     toc:
       before: |

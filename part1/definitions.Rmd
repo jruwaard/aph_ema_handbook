@@ -9,7 +9,7 @@
 \index{continuous unified electronic diary method|see{EMA!Synonymns}}
 
 Ecological Momentary Assessment (EMA) has many aliases. It is known as the
-experience sampling method [@Larson1983], ambulatory assessment [@EbnerPriemer2009] or Ambulatory self-report [@Conner2012], real-time data capturing,
+experience sampling method [@Larson1983], ambulatory assessment [@EbnerPriemer2009] or Ambulatory self-report [@Conner2012a], real-time data capturing,
 the continuous unified electronic diary method [@EllisDavies2012], and as
 the intensive-longitudinal study design [@Bolger2013]. All these terms refer
 to research methods that involve the repeated sampling of people's current

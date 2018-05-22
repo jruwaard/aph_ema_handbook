@@ -21,8 +21,8 @@ ggplot(csd, aes(x = date, y = as.numeric(mood_irritat))) +
 
 A downside of unidimensional mood assessment is that is assumes that respondents instinctively understand the concept of general mood. Little is known about whether mood ratings are indeed comparable across respondents (between-subjects). In order to reduce bias and improve reliability, some studies implemented more specific questions, such as "How depressed are you feeling right now" or "How anxious are you feeling right now (@Starr2012). However, this shifts focus from general mood to more specific mood states or emotions.
 
-```{Correlation between depressive symptom scale (PHQ?) and mood? }
-```
+FIG HERE - Correlation between depressive symptom scale (PHQ?) and mood?
+
 
 Another aspect to consider is that the middle of a VAS scale (e.g. 5 or 50) is considered a negative result, and only scores above 6 or 60 are considered accaptable or possible mood states (@Groot2010). This contrasts with common Likert scales, where the centre often reflects a neutral response.
 In order to address this issue, some researchers have proposed to use scales ranging from -1 to 1, with 0 as a neutral scale centre. However, this scale implies a mood state that ranges from negative to positive, rather than absent to present. 

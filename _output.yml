@@ -2,7 +2,6 @@ bookdown::pdf_book:
   includes:
     in_header: preamble.tex
     after_body: postamble.tex
-  latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
 bookdown::epub_book: default

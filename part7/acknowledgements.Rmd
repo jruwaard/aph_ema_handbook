@@ -7,6 +7,6 @@ We also thank the APH researchers, who we spoke with during the project, for sha
 
 We are also indebted to the researchers who shared EMA data, analyses scripts, and other materials that are presented in this book. In particular, we like to thank prof. Dr. Conor Dolan and Dr. Wouter van Ballegooijen.
 
-Finally, we like to thank the project advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their support and valuable input.
+Finally, we like to thank our advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their support and valuable input throughout the project.
 
 Jeroen Ruwaard, Lisa Kooistra, and Melissa Thong

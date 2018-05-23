@@ -1,5 +1,5 @@
 --- 
-title: "Ecological Momentary Mental Health Assessment"
+title: "Ecological Momentary Assessment in Mental Health Research"
 subtitle: "A Practical Introduction, With Examples in R"
 author: ["Jeroen Ruwaard", "Lisa Kooistra", "Melissa Thong"]
 date: "`r Sys.Date()`"
@@ -9,8 +9,8 @@ documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
 link-citations: yes
-description: "This is the APH EMA Research Manual, written to support 
-researchers who are considering EMA MH studies."
+description: "This is an Amsterdam Public Health (APH) Research Manual, written for 
+researchers who are considering Ecological Momentary Assessment (EMA) studies."
 ---
 
 # Preface {-}
@@ -60,7 +60,7 @@ based measure of activity (the Home Range Estimation-study; chapter 16).
 
 - Part VI provides three catalogues of EMA resources. Chapter 16 lists EMA
 research groups, chapter 17 lists EMA instruments, and chapter 18 summarises R
-extentions (packages) useful for EMA data analysis.
+extentions (packages) that are useful in EMA data analysis.
 
 Comments and suggestions are welcome at aph.ema@ggzingeest.nl.
 

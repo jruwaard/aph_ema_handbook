@@ -22,19 +22,20 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 | GROUP          | Heart failure    | --                   | AMC                 |
 | IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
 | NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
-| Psycho-systems | Symptom Networks | psychosystems.org    | UvA                 |
+| Psychosystems  | Symptom Networks | psychosystems.org    | UvA                 |
 | RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
 | TEMSTEM        | Psychosis        | tinyurl.com/ybac6flo | VU                  |
 | VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
 
 
 ### The CASPAR Project (approval 16-02-2018)
+\index{CASPAR}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
 |Project team    | Dr. Wouter van Ballegooijen; Chani Nuij, MSc.; Prof.dr. Ad Kerkhof; Prof. dr Johannes Smit; Prof. dr. Heleen Riper |
 |APH site        | Vrije Universiteit Amsterdam, VUmc, GGZ inGeest |
-|Full title      | Continuous Assessment for Suicide Prevention and Research |
+| Full title     | Continuous Assessment for Suicide Prevention and Research |
 | Topic          | Smartphone-enabled safety planning, self-monitoring, suicide |
 | Status         | Ongoing, 2016 - 2020 |
 | Target population | Adult suicidal patients (N = 80) with major depression or dysthymia and suicide risk in mental health care |
@@ -47,6 +48,7 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 | Lessons learned | Constructing the right EMA items takes time. The constructs that you need to measure should be based on theory. Translate these concepts to momentary items in collaboration with EMA experts. Then test extensively among your target group.|
 
 ### E-COMPARED (EU)
+\index{E-COMPARED}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -66,6 +68,7 @@ purus nec, lobortis imperdiet diam.
 
 
 ### The Psycho-systems group
+\index{Psycho-Systems}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -85,6 +88,7 @@ purus nec, lobortis imperdiet diam.
 
 
 ### Project RADAR-CNS (EU)
+\index{RADAR-CNS}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -105,9 +109,9 @@ purus nec, lobortis imperdiet diam.
 | Results | GGZ inGeest will participate in the depression study as a research site. Data will be used to assess a variety of research questions, concerning topics such as MDD subtypes, seasonal depression and predicting relapse |
 | Lessons learned | When measuring over such a long timespan, extra attention should be paid to the possible burden for participants. Continious monitoring via a Smartphone can severly impact battery life |
 
-### Eco de Geus group
 
 ### VU-AMS (not yet checked by group 13-04-2018)
+\index{VU-AMS}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -126,6 +130,7 @@ purus nec, lobortis imperdiet diam.
 
 
 ### NESDA EMA Diary Study
+\index{NESDA}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -165,6 +170,7 @@ APH site: Vrije Universiteit Amsterdam, VUmc, UMC Groningen |
 
 
 ### TemStem (approval 08-03-2018)
+\index{TEMSTEM}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -202,6 +208,7 @@ APH site: Vrije Universiteit Amsterdam, VUmc, UMC Groningen |
 
 
 ### FAntasTIGUE
+\index{FAntasTIGUE}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -222,6 +229,7 @@ APH site: Vrije Universiteit Amsterdam, VUmc, UMC Groningen |
 
 
 ### The IMPACT Onderzoek project
+\index{IMPACT}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -243,6 +251,7 @@ APH site: Vrije Universiteit Amsterdam, VUmc, UMC Groningen |
 
 
 ### The GROUP project
+\index{GROUP}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -261,7 +270,8 @@ malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam. 
 
 
-### Study on Chronic Fatigue Syndrome (to be updated)
+### Study on Chronic Fatigue Syndrome
+\index{Chronic Fatigue}
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
@@ -269,7 +279,7 @@ purus nec, lobortis imperdiet diam.
 | APH site | AMC, Radboud UMC |
 | Topic | Time series study on patients with chronic fatigue syndrome |
 | Status | Completed (Period of study____) |
-| Target population | New patients attending the Expert Centre for Chronic Fatigue for diagnosis of chronic fatigue syndrome (CFFS, n=102) |
+| Target population | New patients attending the Expert Centre for Chronic Fatigue for diagnosis of chronic fatigue syndrome (CFFS, n = 102) |
 | Platform used | RoQua (https://www.roqua.nl) |   
 | EMA active | Participants are asked to complete an e-diary 5 times a day for 2 weeks. The times are fixed in consultation with the participant, with a 3-hour break in between each time. The e-diary assessed concepts such as fatigue, pain, anxiety, depression, functioning (physical, mental, social), focus on fatigue, fatigue catastrophising, self-efficacy, fear avoidance, and social incomprehension. Items are ranged on a 5-point Likert scale. In addition, participants also wear an actimeter during the period when the self-reports are collected. 
 | Data management | Participants receive on their smartphone a link to the e-diary via SMS. Participants need to have internet/wifi access to log in to complete the questionnaire. |

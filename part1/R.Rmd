@@ -1,44 +1,30 @@
 # R & RStudio
 
-In this chapter, you will learn how to install and use two programs that are
-indispensable for the management and analysis of EMA data: R and RStudio. 
+In this chapter, you will learn how to install and use two programs that are indispensable for the management and analysis of EMA data: R and RStudio. 
 
 
 ## What are R and RStudio?
 
-R is a programming language and software environment for statistical computing
-and data visualisation. RStudio is a powerful user interface to R. It has many useful features that greatly simplify R-work. We strongly advise you to adopt the R/RStudio-combo.
+R is a programming language and software environment for statistical computing and data visualisation. RStudio is a powerful user interface to R. It has many useful features that greatly simplify R-work. We strongly advise you to adopt the R/RStudio-combo.
 
 
 ## Why R?
 
-R, some may have told you, is for data scientists, methodologists, and
-scientific programmers only. It has a steep learning curve. If you are trained
-in SPSS, it will take time to become as productive in R as in SPSS. Why then, should you invest in R?
+R, some may have told you, is for data scientists, methodologists, and scientific programmers only. It has a steep learning curve. If you are trained in SPSS, it will take time to become as productive in R as in SPSS. Why then, should you invest in R?
 
-- Unlike SPSS, R is free. It does not eat up your budget. Why pay for something
-that you can get for free?
+- Unlike SPSS, R is free. It does not eat up your budget. Why pay for something that you can get for free?
 
-- R is cutting-edge. Methodological innovations first appear in R. Network
-analyses, for example (see Chapter 9), can be run in R, but not (yet) in
-SPSS. For some analyses, you need this alternative.
+- R is cutting-edge. Methodological innovations first appear in R. Network analyses, for example (see Chapter 9), can be run in R, but not (yet) in SPSS. For some analyses, you need this alternative.
 
 - Mastering R improves your connection to the statisticians in your team. They
 probably prefer R over SPSS. It is more efficient and less error-prone to all
 speak the same language.
 
-- R is great for data-management. Clinical research, and especially EMA
-research, requires hundreds of operations on multiple raw data files. R excels
-at that. SPSS, frankly, does not. If you care about reproducible research (which
-you should), R can be a great help in putting it into practice.
+- R is great for data-management. Clinical research, and especially EMA research, requires hundreds of operations on multiple raw data files. R excels at that. SPSS, frankly, does not. If you care about reproducible research (which you should), R can be a great help in putting it into practice.
 
-- R can be used at different levels. If you want to be a basic user, that's fine.
-However, if you want to dive deeper, you will find that you can easily do so.
-You can study source code to understand a particular technique better. You can
-code new functions. R allows you to grow. 
+- R can be used at different levels. If you want to be a basic user, that's fine. However, if you want to dive deeper, you will find that you can easily do so. You can study source code to understand a particular technique better. You can code new functions. R allows you to grow. 
 
-- R's user base is expanding every year. Chances are high that R will be the standard
-in your next workplace. R will look great on your CV.
+- R's user base is expanding every year. Chances are high that R will be the standard in your next workplace. R will look great on your CV.
 
 You don't have to be a programmer or methodologist to use R. Yes, it takes time
 to master its full potential, but you should be able to run basic analyses in it within a week. This chapter will get you started.
@@ -54,7 +40,7 @@ Both R and RStudio are available, at no costs, for all major operating systems.
 
 Install R first, and RStudio second. If you install the programs in this order,  RStudio will automatically find R on your computer.
 
-If you previously install R or RStudio, please update. This book assumes you
+If you installed R or RStudio previously, please update. This book assumes you
 will be working with version 3.4.2 (or higher) of R, and version 1.1.414 (or
 higher) of RStudio.
 
@@ -62,29 +48,27 @@ higher) of RStudio.
 ## Interacting with R through the RStudio console
 
 If you open RStudio, you will be presented with the interface shown in Figure \@ref(fig:rstudio). Rstudio's main window is divided in four panes (subwindows),
-which further contain several tabbed windows. Your first session with R starts
-in the bottom-left pane, named "Console".
+which further contain several tabbed windows. 
 
 ```{r rstudio, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
 knitr::include_graphics("images/R/rstudio.png")
 ```
 
-In the console, you send commands to R. It will execute the command immediately
-and return the answer back in the console. To test this, move your cursor to
-the bottom line, immediately after the prompt sign (">"). Next, type the simple
-statement below, and press 'Enter'.
+Your first session with R starts in the bottom-left pane, named "Console". There, you send commands to R. To test this, move your cursor to the bottom line, immediately after the prompt sign (">"). Next, type the simple statement below, and press 'Enter'. R will execute the command immediately, and return the answer back to the console.
 
-```{r cs21}
+```{r cs21, eval = FALSE}
 # Code snippet 2.1: R is a calculator.
 1 + 1
 ```
+
+
 
 Results of calculations can be saved into variables, by making use of the
 assignment operator ("<-"). If you type the name of a variable, R returns its
 value.
 
 ```{r cs22}
-# Code snippet 2.2: Using <- to declare and set a variable,
+# Code snippet 2.2: Using <- to declare and set a variable.
 N <- 50 + 50
 N
 ```
@@ -121,14 +105,9 @@ console in the previous section.
 
 - Press `Ctrl+Enter` to run the script.
 
-All commands in the script are executed. The commands are echoed in the console
-pane, and results are shown immediately, as was the case before, when you typed
-the commands in the console yourself.
+All commands in the script are executed. The commands are echoed in the console pane, and results are shown immediately, as was the case before, when you typed the commands in the console yourself.
 
-Scripts can also be run line by line. Move the cursor to the line you want to
-run, and press "Ctrl+Enter". The line is copied to the console and executed,
-and the cursor in the script will move to the next line, allowing you to walk
-through the script, step by step.
+Scripts can also be run line by line. Move the cursor to the line you want to run, and press "Ctrl+Enter". The line is copied to the console and executed, and the cursor in the script will move to the next line, allowing you to walk through the script, step by step.
 
 
 ## Importing your data
@@ -172,7 +151,6 @@ While RStudio's Data import wizard is useful, you will probably use it less over
 ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 ```
 
-
 ### Accessing your data
 
 Since the data is now in the environment (under the name `ESMdata`), you can use
@@ -215,16 +193,13 @@ calculate the mean of scores in `mood_relaxed`, type:
 mean(ESMdata$mood_relaxed)
 ```
 
-There are, of course, many ways in which you can summarise and manipulate your
-data. At this point, the important milestone is that you imported and accessed data in R. 
+There are many ways in which you can summarise and manipulate your data. At this point, the important milestone is that you imported and accessed data in R. 
 
 
 ## Extending R with Packages
 \index{packages}
 
-R's attractiveness lies in the ease with which it can be extended with new
-functionality. Through so-called packages, which can be freely downloaded from
-the internet, specialised functions can be added to your workspace.
+R's attractiveness lies in the ease with which it can be extended with new functionality. Through so-called packages, which can be freely downloaded from the internet, specialised functions can be added to your workspace.
 
 ### Installing R-packages from CRAN
 
@@ -232,39 +207,27 @@ Packages can be found at the CRAN website. To browse through the impressive list
 of available packages, see 
 https://cran.r-project.org/web/packages/available_packages_by_name.html
 
-If you find a package you like, you can install it via the RStudio menu
-system, choosing `Tools > packages`. But you can also use the console, via the
-`install.package` function. 
+If you find a package you like, you can install it via the RStudio menu system, choosing `Tools > packages`. But you can also use the console, via the `install.package` function. 
 
-A popular package, `tidyverse`, is used extensively in the examples of this
-manual. Package tidyverse comprises a set of popular packages from the creators
-of RStudio, that greatly simplify working with R. So, while you are at it,
-install this package now.
+A popular package, `tidyverse`, is used extensively in the examples of this manual. Package tidyverse comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.
 
 ```{r cs210, eval = FALSE}
 # Code snippet 2.10: installing a package from CRAN.
 install.package(tidyverse)
 ```
 
-The tidyverse contains a package called 'haven', which allows you to read and
-write SPSS datafiles (.sav files). This is very convenient. You don't have to
-convert all your SPSS data to csv files. See `?read_spss` to learn how to import
-an SPSS-file (or use the data import wizard, by choosing `File > Import
-Dataset > From SPSS', in RStudio's top-right pane).
+The tidyverse contains a package called 'haven', which allows you to read and write SPSS datafiles (.sav files). This is very convenient. You don't have to convert all your SPSS data to csv files. See `?read_spss` to learn how to import an SPSS-file (or use the data import wizard, by choosing `File > Import Dataset > From SPSS', in RStudio's top-right pane).
 
 
 ### Installing R-packages from GitHub
 \index{GitHub}
 
-Not all packages are at CRAN. Many 'unoffical' packages are shared
-at a site called 'GitHub'. This book's companion R package 'emaph', for example,
-which contains specialised EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
+Not all packages are at CRAN. Many 'unoffical' packages are shared at a site called 'GitHub'. This book's companion R package 'emaph', for example, which contains specialised EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
 
-GitHub packages can be installed via the `install_github` function, which is
-defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
+GitHub packages can be installed via the `install_github` function, which is defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
 
 ```{r cs211, eval = FALSE}
-# Code snippet 2.11: Install a package from GitHub.
+# Code snippet 2.11: Install the GitHub 'emaph' package.
 install.packages("devtools")
 devtools::install_github("jruwaard/emaph")
 ```
@@ -281,11 +244,7 @@ library(tidyverse)
 library(emaph)
 ```
 
-Once loaded, you can use the functions in the packages. From the documentation
-of emaph (type: `?emaph`), you learn that this package contains several example
-EMA datasets. Dataset 'csd' (see `?csd`) contains the data from the 'critical
-slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient
-recorded his mood, for 239 days (see also Chapter 13).
+Once loaded, you can use the functions in the packages. From the documentation of emaph (type: `?emaph`), you learn that this package contains several example EMA datasets. Dataset 'csd' (see `?csd`) contains the data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient recorded his mood, for 239 days (see also Chapter 13).
 
 To plot the irritation levels of this patient in the first six days, using the
 `ggplot` function from package 'ggplot2' (which is in 'tidyverse'), type:
@@ -299,13 +258,11 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
+
 ## Getting help
 \index{help}
 
-Unlike SPSS, R has no point-and-click menu's that you can browse through to
-select a statistical procedure. This is a problem for many new users. What if
-you want, for example, to generate random numbers from a distribution with a
-mean of 2 and standard deviation of 4? How to tell this to R?
+R has no point-and-click menu's that you can browse through to select a statistical procedure. This is a problem for many new users. What if you want, for example, to generate random numbers from a distribution with a mean of 2 and standard deviation of 4? How to tell this to R?
 
 
 ### Using '?' to consult the documentation
@@ -456,14 +413,12 @@ quality interactive courses in R. See http://www.datacamp.com
 
 - The Try-R course at the CodeSchool website provides an alternative to DataCamp. See: http://tryr.codeschool.com/
 
-- The Quick-R website provides a solid, concise, and rich
-introduction to R. See https://www.statmethods.net/
+- The Quick-R website provides a solid, concise, and rich introduction to R. See https://www.statmethods.net/
 
 
 ### Learn R, in R
 
-Package 'swirl' comprises a set of interactive courses that teach many aspects
-of the R language. See http://swirlstats.com
+Package 'swirl' comprises a set of interactive courses that teach many aspects of the R language. See http://swirlstats.com
 
 ```{r cs218, eval = FALSE}
 # Code snippet 2.18: starting the interactive swirl-course in R.

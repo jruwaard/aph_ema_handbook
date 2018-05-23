@@ -1,56 +1,12 @@
 # (PART) Closing Matters {-}
 
 # Acknowledgements {-}
+The authors wish to thank the APH consortium for giving us the opportunity to write this book, by granting us one of the 2017 APH mental health research grants.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta.
+We also thank the APH researchers, who we spoke with during the project, for sharing their knowledge, experience and insights in EMA research.
 
-[APH Funding] Vestibulum hendrerit tempus condimentum. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet
-neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac
-dapibus dui viverra. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus
-nec, lobortis imperdiet diam.
+We are also indebted to the researchers who shared EMA data, analyses scripts, and other materials that are presented in this book. In particular, we like to thank prof. Dr. Conor Dolan and Dr. Wouter van Ballegooijen.
 
-[APH Colleagues] Vestibulum hendrerit tempus condimentum. Aenean lectus
-nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet
-neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac
-dapibus dui viverra. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus
-nec, lobortis imperdiet diam.
- 
-[Data contributors] Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices,
-erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac
-dolor. 
+Finally, we like to thank the project advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their support and valuable input.
 
-- Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus
-condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel,
-tristique pellentesque arcu. 
-
-- Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus
-condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel,
-tristique pellentesque arcu.
-
-- Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus
-condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel,
-tristique pellentesque arcu.
-
-- Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus
-condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel,
-tristique pellentesque arcu.
-
-- Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus
-condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel,
-tristique pellentesque arcu.
-
-[EMA researchers] Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac
-sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc
-hendrerit cursus eleifend.
-
-
-
+Jeroen Ruwaard, Lisa Kooistra, and Melissa Thong

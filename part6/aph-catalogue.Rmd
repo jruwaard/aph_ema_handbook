@@ -22,8 +22,8 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 | GROUP          | Heart failure    | --                   | AMC                 |
 | IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
 | NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
-| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
 | Psycho-systems | Symptom Networks | psychosystems.org    | UvA                 |
+| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
 | TEMSTEM        | Psychosis        | tinyurl.com/ybac6flo | VU                  |
 | VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
 

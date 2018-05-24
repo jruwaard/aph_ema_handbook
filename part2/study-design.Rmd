@@ -16,7 +16,8 @@ Most often EMA sampling focusses on a time-point (signal-contingent plan), an ev
 Event-contingent sampling requires participants to complete an assessment when a specific event occurs, such as a panic attack or alcohol consumption. In case of continuous monitoring and real-time data processing, it is also possible to trigger event-based prompts automatically. For example, by linking a self-report EMA questionnaire to a change in activity level [@Smyth2003]. 
 
 ####Frequency and duration
-In order to assure that the outcome of interest is captured, the required number of prompts (every day, hour, minute, etc.) and duration of assessment (hours, days, weeks, etc.) need to be considered. Increasing the prompt frequency often will allow you to gather a more detailed overview of the outcome of interest. However, in active EMA this also increases the burden that is placed on participants, which in turn can affect compliance and accuracy (REF). For example, measurement reactivity can occur, where the focus on their own behaviour causes participants to increase or decrease the frequency of the outcome of interest [@Hufford2002]. Also, issues related to hardware need to be considered, such as battery-life and memory space. This is especially relevant in passive EMA sampling, for example using GPS data. 
+In order to assure that the outcome of interest is captured, the required number of prompts (every day, hour, minute, etc.) and duration of assessment (hours, days, weeks, etc.) need to be considered. Increasing the prompt frequency often will allow you to gather a more detailed overview of the outcome of interest. However, in active EMA this also increases the burden that is placed on participants, which in turn can affect compliance and accuracy (REF). For example, measurement reactivity can occur, where the focus on their own behaviour causes participants to increase or decrease the frequency of the outcome of interest [@Hufford2002]. Also, issues related to hardware need to be considered, such as battery-life and memory space. This is especially relevant in passive EMA sampling, for example using GPS data.
+
 When determining the appropriate sample plan, researchers are advised to start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data [@Piasecki2007]. 
 
 Determine window of compliance
@@ -126,11 +127,18 @@ All clinical studies that involve human participants need to be evaluated by a M
 
 #### Definition of a medical device
 The official definition of a medical device (Medical Device Act, or Wet Medische Hulpmiddelen) is as follows (http://www.ccmo.nl/en/research-with-a-medical-device):
-“Any instrument, apparatus or appliance, any software or material or any other article that is used alone or in combination, including any accessory and the software required for its proper operation, that is intended by the manufacturer to be used specifically for diagnostic or therapeutic purposes, and is intended by the manufacturer to be used for human beings for the purpose of:
-- diagnosis, prevention, monitoring, treatment or alleviation of disease
-- diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap
-- investigation, replacement or modification of the anatomy or of a physiological process
-- control of conception, and which does not achieve its principal intended action in or on the human body by pharmacological, immunological or metabolic means, but which may be assisted in its function by such means.”
+
+> “Any instrument, apparatus or appliance, any software or material or any other
+> article that is used alone or in combination, including any accessory and the 
+> software required for its proper operation, that is intended by the manufacturer
+> to be used specifically for diagnostic or therapeutic purposes, and is intended
+> by the manufacturer to be used for human beings for the purpose of:
+> - diagnosis, prevention, monitoring, treatment or alleviation of disease
+> - diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap
+> - investigation, replacement or modification of the anatomy or of a physiological process
+> - control of conception, and which does not achieve its principal intended action in or on the
+> human body by pharmacological, immunological or metabolic means, but which may be 
+> assisted in its function by such means.” [@ccmo_meddev]
 
 In short, software can be classified as a medical device if it collects patient-specific data and is specifically intended for one of the above-mentioned objectives. Or in other words, if a health care professional takes this information into account when determining the course of treatment. The law does not differentiate between passive and active measurement.
 

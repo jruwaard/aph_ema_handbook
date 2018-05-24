@@ -1,12 +1,18 @@
 # (PART) Closing Matters {-}
 
 # Acknowledgements {-}
-The authors wish to thank the APH consortium for giving us the opportunity to write this book, by granting us one of the 2017 APH mental health research grants.
+We like to thank the APH consortium for giving us the opportunity to write this book, by granting us one of the 2017 APH mental health research funds.
 
 We also thank the APH researchers, who we spoke with during the project, for sharing their knowledge, experience and insights in EMA research.
 
-We are also indebted to the researchers who shared EMA data, analyses scripts, and other materials that are presented in this book. In particular, we like to thank prof. Dr. Conor Dolan and Dr. Wouter van Ballegooijen.
+We are also indebted to the researchers who contributed data, analyses scripts, and other materials that are presented in this book. In particular, we like to thank prof. Dr. Conor Dolan and Dr. Wouter van Ballegooijen.
 
-Finally, we like to thank our advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their support and valuable input throughout the project.
+Finally, we like to thank our advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their valuable support and input throughout the project.
 
-Jeroen Ruwaard, Lisa Kooistra, and Melissa Thong
+
+*Jeroen Ruwaard, Lisa Kooistra \& Melissa Thong*
+
+
+```{r aph_consortium, out.width="98%", fig.asp = .3, echo=FALSE}
+knitr::include_graphics("images/aph_consortium.png")
+```

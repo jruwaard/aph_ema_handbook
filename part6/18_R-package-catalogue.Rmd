@@ -1,108 +1,105 @@
 
-# R packages {#rcat}
+# R packages for EMA research {#rcat}
 
-[CRAN task views are ... ]. Lorem ipsum dolor sit amet, consectetur adipiscing
-elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed
-ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa
-nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit
-tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci
-vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
-velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. 
+Many specialised R packages exist for EMA analysis. In this chapter, these packages are discussed. We provide a summary description, and example analysis code. 
 
-
-Table: (\#tab:rcat) Your table caption.
+Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful for EMA research.
 
 +----------------+-------------------+-----------------------------------------+
-| Name           | Theme             | Description                             |
+| Name           | Category          | Description                             |
 +:===============+:==================+:========================================+
-| tidyverse      | General Utilities | Well-managed set of 'modern' packages   |
-|                |                   | for data analysis Includes ggplot2,     |
-|                |                   | dplyr, haven (to read and write spss    |
-|                |                   | files), and many more useful packages.  |
+| adehabitatHR   | Passive EMA data  | Developed for home range estimation of  |
+|                | analysis          | wild animals from GPS data. Useful for  |
+|                |                   | human data as well (see Chapter         |
+|                |                   | \@ref(homerange)).                      | 
 +----------------+-------------------+-----------------------------------------+
-| nlme           | Mixed Modelling   | Older package for lmm.                  |
+| autovar        | Symptom Networks  | Automate the construction of vector     |              
+|                |                   | autoregressive models.                  |
 +----------------+-------------------+-----------------------------------------+
-| lme4           | Mixed Modelling   | Newer package for lmm                   |
+| bootnet        | Symptom Networks  | Determine the stability of symptom      |
+|                | analysis          | networks.                               |
++----------------+-------------------+-----------------------------------------+ 
+| GGIR           | Accelerometer     | Simplifies management and analysis of   |
+|                | Data              | raw accelerometer data.                 |          
 +----------------+-------------------+-----------------------------------------+
-| adehabitatHR   | GPS data          | Developed for home range estimation of  |
-|                |                   | wild animals. Useful for human data as  |
-|                |                   | well.                                   |
+| lme4           | Mixed Modeling    | Fit linear and nonlinear mixed effects  |
+|                |                   | models. More efficient reimplementation |
+|                |                   | of package 'nlme', that also provides   |
+|                |                   | options for generalised modeling.       |
 +----------------+-------------------+-----------------------------------------+
-| lomb           | GPS data          | Lomb-Scargle Periodogram for unevenly   |
-|                |                   | sampled time series.                    |
+| lomb           | GPS data          | Calculate the Lomb-Scargle Periodogram  |
+|                |                   | for unevenly sampled time series.       |
++----------------+-------------------+-----------------------------------------+ 
+| nlme           | Mixed Modeling    | Fit linear and nonlinear mixed effects  |
+|                |                   | models. Pre-dates package lme4, but is  |
+|                |                   | still used because it a provides more   |
+|                |                   | advanced options to model correlational |
+|                |                   | structures in the data.                 |
 +----------------+-------------------+-----------------------------------------+
-| qgraph         | Network analysis  | Estimate and plot networks.             |
+| tidyverse      | Data Management & | Well-managed set of packages            |
+|                | Visual Exploration| for data management and data            |
+|                |                   | visualisation. Includes "ggplot2',      |
+|                |                   | 'dplyr, and 'haven' (to read and write |
+|                |                   | SPSS data files.                        |
 +----------------+-------------------+-----------------------------------------+
-| bootnet        | Network analysis  | determine staibility of networks        |
+| qgraph         | Symptom Networks  | Estimate and plot symptom networks.     |
+|                | analysis          |                                         |
 +----------------+-------------------+-----------------------------------------+
 
 
-## Package tidyverse
+## Data management & Visual Exploration
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra. 
+### Package `tidyverse`
+\index{tidyverse}
 
-```{r}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. 
+
+```{r load_tidyverse}
+# code snippet 18.1: loading the tidyverse package
 library(tidyverse)
 ```
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. 
 
 Vivamus enim turpis, pulvinar volutpat purus nec, lobortis 
 http://tidyverse.tidyverse.org. 
 
-### Package ggplot2
+#### Package `ggplot2`
+\index{ggplot2}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
 
 ```{r fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
-library(ggplot2)
-d = tibble(
-  ID = rep(1:4, each = 25),
-  time = rep(1:25, 4), 
+# code snippet 18.2: simple ggplot example
+d = data.frame(
+  ID    = rep(1:4, each = 25),
+  time  = rep(1:25, 4), 
   score = rnorm(100, 0, 2))
 
-g = ggplot(d, aes(x = time, y = score))
+# initialise the plot area and the data mapping
+g <- ggplot(d, aes(x = time, y = score))
 g
 
+# add scatterplot
 g <- g + geom_point()
 g
 
+# fit a smoothed line
 g <- g + geom_smooth()
 g
 
+# split plot by ID
 g + facet_wrap(~ ID)
 ```
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. 
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend at [the tidyverse website](http://ggplot2.tidyverse.org/). Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas [@wickham2016ggplot2]. 
 
-### Package dplyr
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. 
+#### Package `dplyr`
+\index{dplyr}
 
-```{r}
-library(dplyr)
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
+
+```{r dplyr_example}
+# code snippet 18.3: aggregate data by group, through a 'pipe'
 d %>% 
   group_by(ID) %>%
   summarise(mean_score = mean(score)) %>%
@@ -110,128 +107,101 @@ d %>%
 ```
 
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. 
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
 
-## Hierarchical repeated measures regression
 
-Package **nlme** and ***lme4** consectetur adipiscing elit. Aliquam vehicula
-augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet
-semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. 
+## Linear mixed modeling
 
-Package **nlme** ac tellus nec tortor interdum porta. Vestibulum hendrerit
-tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci
-vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex
-velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames
-ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis
-imperdiet diam.
+Package **nlme** and ***lme4** consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. 
 
-```{r}
+
+### nlme
+\index{nlme}
+
+Package **nlme** ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem [@R-nlme]. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+
+```{r nlme_example}
+# code snippet 18.4: fit a linear mixed model, with lme
 library(nlme)
 fm <- lme(distance ~ age + Sex, data = Orthodont, random = ~ 1)
 summary(fm)
 ```
 
-Package **lme4** at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. 
 
-[Do not use both packages together] Vestibulum scelerisque nulla ut massa
-tempor, ac dapibus dui viverra. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas.
+### lme4
+\index{lme4}
 
-Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus
-eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
-lobortis imperdiet diam.
+Package **lme4** at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Bates2015]. Sed at varius erat, id consequat nibh.
 
-```{r eval=FALSE}
+```{r lme4_example, eval=FALSE}
+# code snippet 18.4: fit a linear mixed model, with lme
 library(lme4)
 fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
 summary(fm)
 ```
 
+Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
-## Accelerometer data
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+## Analysis of passive EMA data
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+### Accelerometer data: Package 'GGIR'
+\index{GGIR}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam.   
 
 
-## GPS data
+### GPS data: Package 'lomb'
+\index{Lomb-Scargle periodogram}
+\index{lomb}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. 
+Package **lomb** simplifies the computation of Lomb-Scargle periodograms. Proin a viverra metus, nec scelerisque odio [@ruf1999]. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh [@Saeb2015]. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
-Package **adehabitatHR** at sem ultrices commodo. Proin a viverra metus, nec
-scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius
-erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat.
-Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus
-nec, lobortis imperdiet diam.
+```{r out.width='98%'}
+# code snippet 18.5: calculating a Lomb-Scargle periodogram
+data(ibex, package = "lomb") 
+lomb::lsp(ibex[2:3]) 
+```
+
+
+### GPS data: Package `adehabitatHR`
+\index{Homerange estimation}
+
+Package **adehabitatHR** at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Calenge2006]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 ```{r eval = FALSE}
 library(adehabitatHR)
 ```
 
-Package **lomb** at sem ultrices commodo. Proin a viverra metus, nec
-scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius
-erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat.
-Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus
-nec, lobortis imperdiet diam.
 
-```{r out.width='98%'}
-data(ibex, package = "lomb") 
-lomb::lsp(ibex[2:3]) 
-```
+## Symptom Network Analysis
+\index{symptom networks}
 
-## Network Analysis
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor (see Chapter \@ref(networks)).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+### Package 'qgraph`
+\index{qgraph}
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet [@Epskamp2012]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.  
+
+
+### Package 'bootnet`
+\index{bootnet}
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Epskamp2018a]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+
+### Package 'autovar`
+\index{autovar}
+\index{vector autoregressive models}
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisqueodio. Morbi viverra tristique libero vel fringilla [@VanderKrieke2015]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. 
+
+Vivamus enim turpis, pulvinar volutpat purus nec, lobortis [http://autovar.nl](https://autovar.nl/)
+

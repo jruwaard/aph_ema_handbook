@@ -1,5 +1,5 @@
 
-# EMA Instruments Catalogue
+# EMA Instruments Catalogue {#ema-instruments-catalogue}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,

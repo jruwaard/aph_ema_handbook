@@ -54,16 +54,16 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Project team | Margreet Worm-Smeitink, ………, Hans Knoop |
+| Project team | Margreet Worm-Smeitink, MSc,  .... , Prof. dr. Hans Knoop |
 | APH site | AMC, Radboud UMC |
 | Topic | Time series study on patients with chronic fatigue syndrome |
 | Status | Completed (Period of study____) |
-| Target population | New patients attending the Expert Centre for Chronic Fatigue for diagnosis of chronic fatigue syndrome (CFFS, n = 102) |
+| Target population | Patients attending the Expert Centre for Chronic Fatigue for diagnosis of Chronic Fatigue Syndrome (CFS, n = 102) |
 | Platform used | RoQua (https://www.roqua.nl) |   
-| EMA active | Participants are asked to complete an e-diary 5 times a day for 2 weeks. The times are fixed in consultation with the participant, with a 3-hour break in between each time. The e-diary assessed concepts such as fatigue, pain, anxiety, depression, functioning (physical, mental, social), focus on fatigue, fatigue catastrophising, self-efficacy, fear avoidance, and social incomprehension. Items are ranged on a 5-point Likert scale. In addition, participants also wear an actimeter during the period when the self-reports are collected. 
-| Data management | Participants receive on their smartphone a link to the e-diary via SMS. Participants need to have internet/wifi access to log in to complete the questionnaire. |
-| Project goals | The objective of this study was to conduct time series analyses on fatigue, namely to investigate whether there are differences in fatigue over time. |
-| Statistical methods | R auto-var package used to conduct network analyses |
+| EMA Measures | Participants were asked to complete an e-diary, 5 times a day, in a 2 week study period. Prompts were fixed in consultation with the participant, with a 3-hour break in between each. The e-diary assessed concepts such as fatigue, pain, anxiety, depression, functioning (physical, mental, social), focus on fatigue, fatigue catastrophising, self-efficacy, fear avoidance, and social incomprehension. Items were scored a 5-point Likert scale. In addition to the active self-report EMA, participants also contributed passive EMA data, by wearing an actimeter during the study period. 
+| Data management | Participants received prompts on their smartphone, through a inviting SMS, with contained a link to the (web-based) e-diary. |
+| Project goals | The objective of this study was to conduct time series analyses on fatigue, to investigate fatigue fluctuations over time. |
+| Statistical methods | The R auto-var package  (see ), was used to conduct network analyses |
 | Results | Determinants of fatigue will be identified with the aim of personalizing treatment of fatigue in patients with CFS. |
 | Lessons learned | Think carefully beforehand which variables to include for EMA as assessing too many variables will make it difficult to determine which variables to include in model. It also makes interpretation of results difficult. Prepare clear and detailed guideline/handbook for colleagues who will assist in including participants, and be aware of potential problems with the EMA app. This is to ensure that colleagues will be motivated to include participants into the study. |
 

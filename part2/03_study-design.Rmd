@@ -69,8 +69,6 @@ knitr::kable(
 
 ##  Power Analysis
 
-
-
 [How to determine the power of the experiment? Available analytic tools are
 too limited (no support for intensive longitudinal schemes. Solution: simulate
 data. )] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
@@ -111,6 +109,9 @@ tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.  
+
+
+[POWER ANALYSIS OF CONOR HERE]
 
 
 ## Devices 

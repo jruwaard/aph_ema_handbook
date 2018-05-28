@@ -3,75 +3,126 @@
 
 # Study Design {#methods}
 
-The starting point of any EMA study should be mindfully planning the general aspects of the study design, as is the case with all scientific research. Issues that need to be considered are, for example, the research questions, the hypotheses, the population of interest, recruitment strategies to insure inclusion of a representative study group, the nature of the comparison groups and experimental group allocation strategies [@Shiffman2008]. Ample information on these topics can be found elsewhere (for example in the CONSORT reporint guidelines,  http://www.consort-statement.org/, and the EMGO quality manual, http://www.emgo.nl/kc/). This manual will not address these general issues.
+As with all scientific research, EMA studies start with mindful consideration of the study design. Issues that need to be considered are, for example, the research question(s), the hypotheses, the population of interest, and the nature of the comparison groups [@Shiffman2008]. 
 
-This chapter highlights specific design aspects of EMA studies. It provides a brief overview of the sample plan, power analysis and ethical issues. Outcomes, methods of measurement and data analysis will be discussed in separate chapters. 
+This chapter highlights key design aspects of EMA studies. Ample information on general study design issues can be found elsewhere [see for example, the APH quality handbook, @aph_qh]. 
+
+## What is the research question?
+Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into explorative data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be a first step.
+
+Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter \@ref(introduction). Are you interested in real-life behaviour, in individual differences between participants, in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when  you have to decide on the other aspects of the study design.
+
+## Who are the prospect participants?
+Given the experimental nature of EMA, studies are often piloted in healthy or sub-clinical populations. This is a recommended first step to test the experimental procedures and to avoid unnecessary burden of vulnerable patient populations. You should be aware, though, that results obtained in non-patient populations do not necessarily generalise to patient populations. EMA mood ratings, for example, might be much more variable in patients compared to non-patients. Pilot studies should therefore also be conducted in the target population.
+
+## How are theoretical experimental variables operationalised?
+With the study hypotheses in place, experimental constructs can be operationalised into well-defined quantifiable measures.
+
+Precies def wat meten betrouwbaarheid, validiteit, ruwe dat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+What is the data acquisition interface? [@Stone2002]. Opletten wat je koopt aan technologie. Onderbouw keuze. Zie hoofdstuk X. Gevalideerd vs nieuw.
+
+- Technical Reliability of data platform
+- Track record of data platform suppliers
+- User-friendliness of data device for study participants.
+- User-friendliness of data platform for researcher (availability of an administrative back-office).
+- Location of data storage
+- Costs
+
+For an overview of existing EMA data platforms, see \@ref(ema-instruments-catalogue).
 
 
-## The Sample Plan
+## Defining the Sample Plan
 
-One of the main reasons to use EMA is that it can reduce recall bias by measuring during or close to an event, rather than retrospectively. To make sure the outcome, pattern and/or context of interest are indeed captured during EMA, a sensible sample plan (also called a sampling scheme) is required. 
+An important next step is to define the EMA data sample plan. Questions that need to be answered are:
 
-### Timing of assessment
+- How many days will data collection last?
+- On each day, how often are participants assessed?
+- How and when are participants invited for assessment?
 
-EMA sampling may focus on a time-point (signal-contingent plan), an event (event-contingent plan), or a combination of both [@Conner2012b]. 
-
-\index{sampling plan!signal-contingent} 
-When a *signal-contingent plan* is used, a participant receives a prompt and is asked to rate an outcome at that moment. A signal plan can either contain fixed or random prompts. For example, in a fixed scheme, participants can be prompted to rate their mood every day at 18:00. When prompts are generated randomly, a fixed number of prompts is sent at a random time-point, typically within pre-set intervals. For example, a prompt is sent every day between 9:00 and 12:00, 13:00 and 15:00 and 16:00 and 18:00. Using pre-set intervals ensures that participants do not receive several prompts within a limited time-frame [@Piasecki2007].
-
-
-\index{sampling plan!event-contingent} 
-In *event-contingent sampling*, participants are instructed to complete an assessment whenever a specific event occurs, such as a panic attack or alcohol consumption. 
-In case of continuous monitoring and real-time data processing, it is also possible to trigger event-based prompts automatically. For example, by linking a self-report EMA questionnaire to a change in activity level [@Smyth2003]. 
-
-
-#### Frequency and duration
-
-To assure that the outcome of interest is captured, the required number of prompts (every day, hour, minute, etc.) and duration of assessment (hours, days, weeks, etc.) need to be considered. Increasing the prompt frequency will allow a more detailed overview of the outcome of interest. However, in active EMA this also increases the burden that is placed on participants, which in turn can affect compliance and accuracy (REF). For example, measurement reactivity can occur, where the focus on their own behaviour causes participants to increase or decrease the frequency of the outcome of interest [@Hufford2002]. 
-
-Issues related to hardware need to be considered, such as battery-life and memory space. This is especially relevant in passive EMA sampling, for example using GPS data.
+The questions above should be answered as much as possible to best serve the research question and the  statistical power (see below). In practice, however, it is often necessary to balance between research interests, respondent burden, and practical considerations, such as hardware limitations.
 
 When determining the appropriate sample plan, researchers are advised to start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data [@Piasecki2007]. 
 
-Determine window of compliance
-Allow participants to suspend prompting? @Piasecki2007
+Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and long. However, this may also increase respondent burden, which may affect compliance and accuracy. Measurement reactivity could occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome [@Hufford2002; @VanBallegooijen2016].
 
+Issues related to hardware should also be considered. Electronic wearables have limited battery life and memory storage space. Actigraph watches memory space limitations may require participants to visit the research site. GPS-monitoring apps may have a negative impact on the battery life of the smartphone of the participants. These practical issues may result in data loss, through problems with study adherence or even study drop-out.
 
-```{r creating_a_sample_schedule, echo = TRUE}
+Once all decisions related to the sampling plan are made, the procedure should be throughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below.
 
-library(dplyr)
+```{r echo=FALSE}
+sample_plan <- function(
+  n_participants = 5,
+  n_days = 7,
+  n_beeps_per_day = 3,
+  times = c("10:00-14:00", "14:00-18:00", "18:00-22:00")
+) {
 
-participants <- 1:5
-days <- 1:14
-beeps <- 1:10
-times = seq(32400, 75600, 300)
+  plan <- as.data.frame(
+    expand.grid(
+      id = 1:n_participants, 
+      day = 1:n_days, 
+      beep = 1:n_beeps_per_day)
+  )
+  
+  plan$id <- factor(plan$id)
+  
+  plan <- plan[order(plan$id, plan$day, plan$beep), ]
+  plan$observation <- rep(1:(n_days*n_beeps_per_day), n_participants)
+  
+  plan$t <- rep(times, n_participants * n_days)
+  
+  if (any(grep("-", times))) {
+    t <- strsplit(plan$t, "-")
+    t <- lapply(t, function(x) as.numeric(as.POSIXct(paste("1970-01-01", x))))
+    tr <- unlist(lapply(t, function(x) sample(x[1]:x[2], 1)))
+    tr <- as.POSIXct(tr, origin = "1970-01-01")
+    plan$t <- substring(tr, 12, 16)
+  }
+  
+  plan <- plan[c("id", "observation", "day", "beep", "t")]
+  rownames(plan) <- 1:nrow(plan)
+  
+  plan
+}
+```
 
-sample_schema <- as.data.frame(
-  expand.grid(
-    id = participants, 
-    day = days, 
-    beep = beeps))
-
-sample_schema <- sample_schema %>%
-  arrange(id, day, beep) %>%
-  group_by(id, day) %>%
-  mutate(t = sort(sample(times, max(beep)))) %>%
-  mutate(t = as.character(hms::as.hms(t)))
+```{r creating_a_sample_schedule, echo = TRUE, message = FALSE}
+# code snippet 3.1: simulating a signal-contingent sample plan
+plan <- sample_plan(n_participants = 5,
+                    n_days = 2,
+                    n_beeps_per_day = 3,
+                    times = c("10:00-14:00", "14:00-18:00", "18:00-22:00"))
 ```
 
 ```{r echo = FALSE}
 knitr::kable(
-   head(as.data.frame(sample_schema, 10)), 
+   plan, 
    booktabs = TRUE,
-   caption = 'First 10 rows of the sample schema of participant 1')
+   caption = 'Sample EMA sampling plan')
+```
+
+```{r echo = FALSE, out.width="95%", fig.asp = .4}
+d <- plan
+d$t <- as.POSIXct(paste(Sys.Date(), d$t))
+ggplot(d, aes(x = id, y = t)) + 
+  geom_point(size = 2) +   
+  geom_segment(aes(x = id, 
+                   xend = id, 
+                   y = min(t), 
+                   yend = max(t)), 
+               linetype = "dashed", 
+               size = 0.1) + 
+  coord_flip()
 ```
 
 
 ##  Power Analysis
+The power of a statistical test is the probability that it will detect the hypothesized relationship when this relationship, in reality, exists. It is a function of the strength of the relationship, sample size (i.e., the number of participants and the number of repeated measures), *and* the particular statistical tests that is adopted. Determining the power of the experiment is an important step in the design of an EMA study. Both underpowered and overpowered studies are a waste of resources and time.
 
-[How to determine the power of the experiment? Available analytic tools are
-too limited (no support for intensive longitudinal schemes. Solution: simulate
-data. )] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+Determining the power of an EMA study is not easy. Analytical statistical tools for intensive longitudinal study design are not readily available. 
+
+Solution: simulate data. )] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
 vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
 laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
 ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum.
@@ -86,66 +137,18 @@ facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque
 habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
 Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit simstudy [@R-simstudy]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit simstudy [@R-simstudy]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
 
-```{r sdsimcor, fig.cap='Cross-correlation of two simulated variables.'}
-C <- matrix(c(1.0, 0.2, 
-              0.2, 1.0), 
-            nrow = 2)
-
-dt <- simstudy::genCorData(1000, 
-                           mu = c(4, 12), 
-                           sigma = c(1, 2), 
-                           corMatrix = C)
-
-with(dt, ccf(V1, V2, ylab = "cross-correlation"))
-```
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 
 [POWER ANALYSIS OF CONOR HERE]
 
 
-## Devices 
-
-What is the data acquisition interface? [@Stone2002] Lorem ipsum dolor sit
-amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt
-urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit
-mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
-
-Opletten wat je koopt aan technologie. Onderbouw keuze. Zie hoofdstuk X. Gevalideerd vs nieuw.
-
-- Technical Reliability of data platform
-- Track record of data platform suppliers
-- User-friendliness of data device for study participants.
-- User-friendliness of data platform for researcher (availability of an administrative back-office).
-- Location of data storage
-- Costs
-
-For an overview of existing EMA data platforms, see \@ref(ema-instruments-catalogue).
-
-
 ## Ethical Considerations
 
 Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
-
 
 ### Privacy Protection
 
@@ -191,10 +194,4 @@ Data processing agreement (DSA). Donec sed lectus at sem ultrices commodo. Proin
 
 [Informed Consent] Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
 Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-
-
-## Outcomes
-
-Precies def wat meten betrouwbaarheid, validiteit, ruwe dat. Volgende hoofdstukken, per domein. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
 

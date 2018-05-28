@@ -13,9 +13,11 @@ install.packages(
     "lomb",
     "nlme",
     "mlVAR",
+    "powerlmm",
     "psych",
     "PhysicalActivity",
     "qgraph",
-    "simstudy"
+    "simstudy",
+    "simr"
   )
 )

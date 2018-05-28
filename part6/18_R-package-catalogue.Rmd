@@ -13,7 +13,7 @@ Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful fo
 |                |                   | human data as well (see Chapter         |
 |                |                   | \@ref(homerange)).                      | 
 +----------------+-------------------+-----------------------------------------+
-| autovar        | Symptom Networks  | Automate the construction of vector     |              
+| autovar        | Symptom Networks  | Automate the construction of vector     |          
 |                |                   | autoregressive models.                  |
 +----------------+-------------------+-----------------------------------------+
 | bootnet        | Symptom Networks  | Determine the stability of symptom      |
@@ -35,6 +35,15 @@ Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful fo
 |                |                   | still used because it a provides more   |
 |                |                   | advanced options to model correlational |
 |                |                   | structures in the data.                 |
++----------------+-------------------+-----------------------------------------+
+| powerlmm       | Power analysis    | power calculation for two- and three-   |
+|                |                   | level multilevel models with missing    |
+|                |                   | data.                                   | 
++----------------+-------------------+-----------------------------------------+
+| simr           | Power analysis    | Simulation-based power calculations for |
+|                |                   | mixed models                            |
++----------------+-------------------+-----------------------------------------+
+| simstudy       | Data simulation   | Simulating study data.                  | 
 +----------------+-------------------+-----------------------------------------+
 | tidyverse      | Data Management & | Well-managed set of packages            |
 |                | Visual Exploration| for data management and data            |

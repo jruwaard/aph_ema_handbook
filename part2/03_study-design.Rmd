@@ -32,7 +32,7 @@ What is the data acquisition interface? [@Stone2002]. Opletten wat je koopt aan 
 For an overview of existing EMA data platforms, see \@ref(ema-instruments-catalogue).
 
 
-## Defining the Sample Plan
+## Constructing the Sample Plan
 
 An important next step is to define the EMA data sample plan. Questions that need to be answered are:
 
@@ -118,33 +118,63 @@ ggplot(d, aes(x = id, y = t)) +
 
 
 ##  Power Analysis
-The power of a statistical test is the probability that it will detect the hypothesized relationship when this relationship, in reality, exists. It is a function of the strength of the relationship, sample size (i.e., the number of participants and the number of repeated measures), *and* the particular statistical tests that is adopted. Determining the power of the experiment is an important step in the design of an EMA study. Both underpowered and overpowered studies are a waste of resources and time.
+The power of a statistical test is the probability that it will detect the hypothesized relationship when this relationship, in reality, exists. It is a function of the strength of the relationship, the significance level alpha, sample size (i.e., the number of participants and the number of repeated measures), *and* the particular statistical tests that is adopted. Determining the power of the experiment is an important step in the design of an EMA study. Both underpowered and overpowered studies are a waste of resources and time.
 
-Determining the power of an EMA study is not easy. Analytical statistical tools for intensive longitudinal study design are not readily available. 
+Several R-packages exist to conduct poweranalyses for longitudinal designs. The example below is from a package called 'powerlmm' [@R-powerlmm]. In the example, the package is used to calculate the power of a linear mixed model analysis of a two-group repeated measurers design, with 24 repeated measures, 40 participants per group, a standardized effect size of .5 (between-group difference at t = 24), and a significance level of .05. Power is calculated as 26%, which signals a problem with the design: more participants are needed.
 
-Solution: simulate data. )] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
-laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
-ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum.
-Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique
-pellentesque arcu. Vestibulum id laoreet neque.
+```{r}
+# code snippet 3.2: Power analysis of a two-group repeated measures design
+# (analytical approach)
+library(powerlmm)
+p <- study_parameters(n1 = 24,  
+                      n2 = 40,
+                      effect_size = cohend(0.5, 
+                                           standardizer = "pretest_SD"),
+                      icc_pre_subject = 0.5,
+                      var_ratio = 0.01)
 
-[Simulation tools: rnorm, mvrnorm, Package simstudy] Donec sed lectus at sem
-ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra
-tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget
-leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut
-facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque
-habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+get_power(p)
+```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit simstudy [@R-simstudy]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
+Note the two additional variables in the 'study_parameters' call: 'icc_pre_subject', and 'var_ratio'. According to the package documentation (?study_parameters), 'icc_pre_subject' refers to the 'amount of baseline variance at the subject level', and 'var_ratio' refers to the 'ratio of the random slope variance to the within-subject variance'. Understanding what these values are, why they are important, and how they affect the power analysis requires more background information on the specific statistical technique that is used here (linear mixed-effect modeling), which we will discuss in more depth in Chapter \@ref(lmm). For now, the point is that analytical approaches to power analyses need the specification of parameters that may be difficult to understand and highly dependent on the statistical technique that is used.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+The approach of 'get_power' to determine power is called an analytical technique. Based on theoretical considerations and assumptions, the power is determined via a mathematical formula. Increasingly, researchers also adopt simulation techniques to determine power. The general idea is that power can be determined by noting the proportion of times a statistical tests reaches significance if it is run, many times, on simulated data. This approach, taken by package 'simr' [@Green2016], is illustrated in the example below.
 
+```{r}
+# code snippet 3.3: Power analysis of a two-group repeated measures design
+# (simulation approach)
+library(simr)
 
-[POWER ANALYSIS OF CONOR HERE]
+# construct design matrix
+t <- 1:24
+s <- 1:40 
+X   <- expand.grid(t = t, s = s)
+X$g <- c(rep(0, 24), rep(1, 24))
 
+# fixed intercept and slope
+b <- c(2, -0.1, -0.5)
+
+# random intercept variance
+V1 <- 0.5                     
+
+# random intercept and slope variance-covariance matrix
+V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2) 
+
+# residual standard deviation
+s <- 1 
+
+model1 <- makeLmer(y ~ t + g + (1 | s), 
+                   fixef = b, 
+                   VarCorr = V1, 
+                   sigma = s, 
+                   data = X)
+
+powerSim(model1, 
+         fixed("g", "lr"), 
+         nsim = 10)
+```
+
+R excells at data simulation, and many packages exists to help you simulate your data. A great example is package 'simstudy' [@R-simstudy].
 
 ## Ethical Considerations
 

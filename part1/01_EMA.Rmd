@@ -2,7 +2,7 @@
 
 # (PART) Introduction {-}
 
-# What is EMA? {#intro}
+# What is EMA? {#introduction}
 
 \index{EMA} 
 \index{EMA!Synonymns} 
@@ -62,7 +62,18 @@ consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
 metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
 cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+purus nec, lobortis imperdiet diam.
+
+
+### Time-contingent and signal-contingent sampling
+\index{sampling plan!signal-contingent}
+\index{sampling plan!event-contingent} 
+
+EMA sampling may focus on a single time-point (signal-contingent sampling), an event (event-contingent sampling), or a combination of both [@Conner2012b]. 
+
+In *signal-contingent sampling*, participants respond to questions when they are prompted to do so by a signal.  Signal-contingent sampling can follow a fixed or a random scheme. In a fixed scheme, participants are prompted at fixed time-points, for example at 9.30, 12:30, and 16:30. In a random scheme, prompts are sent at random time points, typically in pre-set intervals, for example, participants could be prompted to complete two assessments per day, one at a random time point between 10:00 and 14:00, and one at a random time point between 14:00 and 16:00. Using pre-set intervals ensures that participants do not receive several prompts within a limited time-frame [@Piasecki2007]. In addition, it ensures that participants are not bothered by prompts at inappropriate times (e.g., most participants do not appreciate prompts after 22:00 and before 7:30).
+
+In *event-contingent sampling*, study participants complete an assessment whenever a specific event occurs, such as a panic attack or alcohol consumption. One option is to simply instruct the participants to do so. In that case, it is important to be clear, in the instructions, to provide a clear definition of the target event, and to stress the importance to rate each event. In some cases, it may be possible to trigger event-based prompts automatically, for example by linking a self-report EMA questionnaire to an automatically detected change in activity level [@Smyth2003].
 
 
 ## Why EMA?

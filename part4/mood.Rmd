@@ -11,7 +11,7 @@ Depending on the study focus and research questions, mood measurement can be ope
 Perhaps the most seemingly straight-forward method to measure mood is to ask 'face-valid' unidimensional questions such as "How is your mood right now" (@VanBallegooijen2016) or "How are you feeling right now" (@VandeVen2017). Respondents rate these questions on a Likert scale or a Visual Analogue Scale (VAS), aimed to indicate mood intensity. Typically, VAS scales will range from zero (low or worst mood) to 10 or 100 (good or best mood). 
 Compared to classic paper-and-pencil methods, digital unidimensional EMA might lead to more accurate data on (in)variability of mood, because retrospective bias is thought to be less of an issue. Further, plotting this data in a graph is an easy way to visually inspect within-subject change in general mood. Combining data from various variables such as activity, sleep and mood in one graph can help respondents understand the interaction between mood and behaviour. 
 
-```{r fig.cap="34 weeks of mood data, from a single participant"}
+```{r figmood, fig.cap="34 weeks of mood data, from a single participant"}
 ggplot(csd, aes(x = date, y = as.numeric(mood_irritat))) +
   geom_smooth(method = "loess", span = .05, se = FALSE) + 
   geom_point(size = .5, alpha = .5, position = position_jitter(height = .1)) + 
@@ -30,10 +30,10 @@ Another option is to use bipolar-unidimensional items, which place two opposing 
 
 ## The Circumplex Model
 \index{Circumplex model}
-The Circumplex Model of affect (@russell1980circumplex) assumes that all affective states are a linear combination of two independent underlying constructs, rather than one. Affective states are scored on a valence scale (ranging from unpleasant to pleasant) and an arousal scale (ranging from low to high arousal). Combining these scores places the affective states in a circle on one of four quadrants (Figure 1). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.  
+The Circumplex Model of affect (@russell1980circumplex) assumes that all affective states are a linear combination of two independent underlying constructs, rather than one. Affective states are scored on a valence scale (ranging from unpleasant to pleasant) and an arousal scale (ranging from low to high arousal). Combining these scores places the affective states in a circle on one of four quadrants (\@ref(fig:Circumplex)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.  
 
 
-```{r Circumplex, fig.cap = "Figure 1. The Circumplex model of affect. Adapted from Posner et al. 2008.", echo = FALSE, out.width = '50%'}
+```{r Circumplex, fig.cap = "The Circumplex model of affect. Adapted from Posner et al. 2008.", echo = FALSE, out.width = '50%'}
 knitr::include_graphics("images/outcomes/Circumplex.png")
 ```
 

@@ -15,8 +15,7 @@ researchers who are considering Ecological Momentary Assessment (EMA) studies."
 
 # Preface {-}
 
-Given known limitations of retrospective self-report questionnaires, such as recall bias and poor generalisability of assessment results to real-life situations, mental health researchers increasingly adopt alternative assessment tools. One of the promising alternatives is Ecological Momentary Assessment
-(EMA), in which emotions and behaviours are repeatedly sampled in everyday life, through wearable electronic devices. By providing detailed data on within-person processes, EMA may be the key in the development of personalised health interventions.
+Given known limitations of retrospective self-report questionnaires, such as recall bias and poor generalisability of assessment results to real-life situations, mental health researchers increasingly adopt alternative assessment tools. One of the promising alternatives is Ecological Momentary Assessment (EMA), in which emotions and behaviours are repeatedly sampled in everyday life, through wearable electronic devices. By providing detailed data on within-person processes, EMA may be the key in the development of personalised health interventions.
 
 EMA studies are challenging. Researchers, who are new to the field, face a dazzling array of options related to the electronic wearables, outcomes selection, study design considerations, ethical and regulatory constraints, data management, statistical analysis, and study reporting. Although standards are emerging, clear guidelines for EMA research do not - at present - exist.
 

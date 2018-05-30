@@ -1,13 +1,13 @@
 # (PART) Closing Matters {-}
 
 # Acknowledgements {-}
-We like to thank the APH consortium for giving us the opportunity to write this book, by granting us one of the 2017 APH mental health research funds.
+We would like to thank the APH consortium, for giving us the opportunity to write this book, by granting us one of the 2017 APH mental health research funds.
 
 We also thank the APH researchers, who we spoke with during the project, for sharing their knowledge, experience and insights in EMA research.
 
 We are also indebted to the researchers who contributed data, analyses scripts, and other materials that are presented in this book. In particular, we like to thank prof. Dr. Conor Dolan and Dr. Wouter van Ballegooijen.
 
-Finally, we like to thank our advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their valuable support and input throughout the project.
+Finally, we like to thank the project advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their valuable support and input.
 
 
 *Jeroen Ruwaard, Lisa Kooistra \& Melissa Thong*

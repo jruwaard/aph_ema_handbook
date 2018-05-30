@@ -13,6 +13,7 @@ install.packages(
     "lomb",
     "nlme",
     "mlVAR",
+    "nonlinearTseries",
     "powerlmm",
     "psych",
     "PhysicalActivity",

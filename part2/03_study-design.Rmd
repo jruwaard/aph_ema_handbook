@@ -171,7 +171,8 @@ model1 <- makeLmer(y ~ t + g + (1 | s),
 
 powerSim(model1, 
          fixed("g", "lr"), 
-         nsim = 10)
+         nsim = 10,
+         progress = FALSE)
 ```
 
 R excells at data simulation, and many packages exists to help you simulate your data. A great example is package 'simstudy' [@R-simstudy].

@@ -1,3 +1,7 @@
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}
+
+\usepackage{pdfpages}
 \usepackage{booktabs}
 \usepackage{makeidx}
 \usepackage{float}

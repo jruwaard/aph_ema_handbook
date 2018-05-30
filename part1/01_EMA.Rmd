@@ -12,12 +12,18 @@
 
 Ecological Momentary Assessment (EMA) has many aliases. It is known as 'experience sampling' [@Larson1983], 'ambulatory assessment' [@EbnerPriemer2009] or 'Ambulatory self-reporting' [@Conner2012a], 'real-time data capturing', the 'continuous unified electronic diary method' [@EllisDavies2012], and as the 'intensive-longitudinal study design' [@Bolger2013]. The different terms stress different aspects of EMA research. All terms, however, refer to research methods that involve the repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices [@Shiffman2008].
 
+EMA has been around for many years. Already in the 1980's, early pioneers used electronic devices to elicit responses from study participants to tap into (mental) health processes in everyday life [see, e.g.,  @Csikszentmihalyi2014]. Recent years, however, have witnessed a large increase in EMA research. Rapid technological developments, a marked interest in the individual, and a wide recognition of the need to study health-related processes in real-life situations have all contributed to this. 
+
+With the increased adoption of EMA comes a growing need for methodological guidelines. EMA studies have unique characteristics that require specialised research skills, related to study design statistical analysis. In many cases, these skills are not part of the standard curriculum of academic departments. This book was written to fill this gap.
+
+
 ### Self-report versus Observational EMA
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta.
+
 
 #### Self-report EMA
 \index{EMA!Self-report EMA} \index{EMA!Active EMA|see{Self-report EMA}}
@@ -37,6 +43,7 @@ metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
 cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam.  
+
 
 #### Observational EMA
 \index{Observational EMA} \index{Passive EMA}

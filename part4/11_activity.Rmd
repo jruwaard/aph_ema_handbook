@@ -47,7 +47,7 @@ Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
 fringilla. Sed at varius erat, id consequat nibh.
 
 
-```{r fig.cap="Three days of Accelerometer data."}
+```{r fig11a, fig.cap="Three days of Accelerometer data."}
 library(PhysicalActivity)
 data(dataSec)
 
@@ -100,7 +100,7 @@ Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
 fringilla. Sed at varius erat, id consequat nibh.
 
 
-```{r fig.cap="Heatmap of GPS Locations."}
+```{r fig11b, fig.cap="Heatmap of GPS Locations."}
 library(ggmap)
 
 d <- subset(GPSdata, TimeStamp < "2017-07-01")

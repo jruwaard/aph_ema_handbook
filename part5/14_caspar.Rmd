@@ -1,115 +1,37 @@
 # CASPAR {#caspar}
 
-Project team: Wouter van Ballegooijen, PhD; Chani Nuij, MSc; Ad Kerkhof, PhD; Jan Smit, PhD; Heleen Riper, PhD 
-APH site: Vrije Universiteit Amsterdam, VUmc, GGZ inGeest
-Full title: Continuous Assessment for Suicide Prevention and Research
-Topic: Smartphone-enabled safety planning, self-monitoring, suicide
-Status: Ongoing, 2016 - 2020
-Target population: Adult suicidal patients (N=80) with major depression or dysthymia and suicide risk in mental health care
-Platform used: Ilumivu (https://ilumivu.com)  
-EMA active: Participants are prompted 3 times a day to answer 8 self-report items (e.g. 'I feel sad'). Items are based on existing questionnaires, such as the Patient Health Questionnaire (PHQ-9) and are rated on a 7-point Likert-scale, ranging from 'Not at all' to 'Very much'. Measured concepts include mood, rumination, hopelessness, defeat, entrapment, burdensomeness, belongingness, impulsiveness, suicidal imagery and suicidal ideation. Results are presented to patients in separate graphs. 
-EMA passive: Location data are gathered to indicate movement patterns and daily rhythm. 
-Planned variables include accelerometer and smartphone usage patterns. These data are not visible to patients.
-Data management: Patients receive a unique code to log in to the app. No names, phone numbers or other contact information are stored on the Ilumivu server. Patients are encouraged to show their graphs to their clinicians during treatment sessions. 
-Project goals: The primary objective of the CASPAR study is to test the feasibility of smartphone-based safety planning and real-time self-monitoring for patients with major depression or dysthymia and suicide risk in mental health care. Feasibility will be operationalised in terms of uptake, usage, acceptability, usability and patient satisfaction. EMA data will be used to (a) empirically validate hypothesised psychological processes and stages of suicide pathways, (b) identify individual pathways to suicidal behaviour, and (c) profile types of suicidal individuals.
-Results: An interactive safety plan that patients can access 24/7, increased disease awareness of patients due to self-monitoring, and input for the national and international field of mental health care by sharing our results and our data, ultimately contributing to more personalised interventions according to precision medicine principles, and more effective suicide prevention.
-Lessons learned and advice for other researchers: Constructing the right EMA items takes time. The constructs that you need to measure should be based on theory. Translate these concepts to momentary items in collaboration with EMA experts. Then test extensively among your target group.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor [@Nuij2018]. 
+
+Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
 
 ## Section
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta.  
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
-laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
-ac tellus nec tortor interdum porta. 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 
 ## Section
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.    
 
 
 ## Section
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
 
 
 

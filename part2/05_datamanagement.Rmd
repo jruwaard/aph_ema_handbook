@@ -50,13 +50,14 @@ tortor interdum porta.
 ##  Section
 
 
-```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r cs5a, echo = FALSE, message = FALSE, warning = FALSE, paged.print = FALSE}
+# show EMA R-project directory structure
 path <- c(
     "project/data/source/gpsdata.csv", 
     "project/data/source/surveydata.sav", 
     "project/data/pruned/mydata.Rda", 
     "project/scripts/import/import_gpsdata.R", 
-    "project/scripts/import/import_sruveydata.R", 
+    "project/scripts/import/import_surveydata.R", 
     "project/scripts/analyse/analysis.R",
     "project/output/images/figure_1.png",
     "project/README"
@@ -65,7 +66,8 @@ path <- c(
 
 x <- lapply(strsplit(path, "/"), function(z) as.data.frame(t(z)))
 x <- bind_rows(x)
-x$pathString <- apply(x, 1, function(x) paste(trimws(na.omit(x)), collapse="/"))
+x$pathString <- apply(x, 1, function(x) paste(trimws(na.omit(x)), 
+                                              collapse = "/"))
 mytree <- data.tree::as.Node(x)
 mytree
 ```

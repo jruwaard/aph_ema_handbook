@@ -44,7 +44,7 @@ For this reconstruction, we need two R packages:
 - To manipulate the raw data and reconstruct the plots of the article, we are
 going to use several functions from the tidyverse.
 
-```{r cs131}
+```{r cs13a}
 # Code snippet 13.1: required libraries for the csd reconstruction
 library(emaph)
 library(tidyverse)
@@ -60,7 +60,7 @@ the depression scale of the 'Symptom Checklist-90-Revised' (SCL-90-R), a well-es
 The code below reconstructs Figure 1 in the 2016 article of Wichers et al. It plots `csd$scl90r_dep`, the SCL90-R depression scale score (the mean of the SCL-90 item-scores), by `csd$dayno`(the time variable). The plot shows how the depression relapse develops over time. After day 127, several weeks after the full reduction of the medication, the depression score increased considerably. This is confirmed by a change score analysis.
 
 
-```{r cs132, fig.asp = .3}
+```{r cs13b, fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
 # Code snippet 13.2: Plot depression score
 dep <- csd %>% select(dayno, scl90r_dep) %>%
   filter(!is.na(scl90r_dep)) %>% unique
@@ -86,7 +86,7 @@ these items in 5 factors: positive affect (pa; 4 items), negative affect (na; 4
 items), mental unrest (mu; 3 items), suspiciousness (su; 1 item), and worrying
 (wo; 1 item). 
 
-```{r cs133}
+```{r cs13c}
 # Code snippet 13.3: mood states calculation
 
 # positive affect
@@ -128,8 +128,8 @@ For the overall mood state variable to be valid, its factors should be
 adequately measured. Rows, in which one or more of the factors had missing
 values, are therefore removed from the analysis.
 
-```{r cs134}
-# Code snippet 13.4: missing value removal
+```{r cs13d}
+# Code snippet 13.3: missing value removal
 csd$nna <- csd %>%
   select(matches("mood_")) %>%
   is.na(.) %>% rowSums
@@ -146,7 +146,7 @@ To de-trend, we fit a generalized additive model with a spline-based smoother.
 This models the trend. By using the residuals of his model (i.e., by subtracting
 the predicted score from the observed score), the trends are removed.
 
-```{r cs135}
+```{r cs13e}
 # Code snippet 13.5: detrending
 
 library(KernSmooth)
@@ -177,7 +177,7 @@ Let's take a look at the effect of detrending. If we plot positive affect over
 time, we see a gradually increase, and two embedded subtrends. The detrended
 variable does not display these trends anymore.
 
-```{r cs136, fig.asp = .4}
+```{r cs13f, fig.asp = .4}
 # Code snippet 13.6: show effect of detrending
 
 # store ms and ms_dt in a long format dt, to facet on them in the plot
@@ -198,7 +198,7 @@ Both the standard deviation and the lag-1 autocorrelation are calculated using a
 30-day sliding window.
 
 
-```{r cs137}
+```{r cs13g}
 # Code snippet 13.7: variance and auto-correlation, 30-day window
 d <- data.frame(dayno = 1:max(csd$dayno))
 d <- left_join(d, unique(csd[c("dayno", "phase")]))
@@ -229,7 +229,7 @@ dui viverra.
 We can now plot the mood state standard deviation and lag-1 auto-correlation. Did
 these statistics, as predicted, increase considerably prior to relapse onset?
   
-```{r cs1308, eval = TRUE, fig.asp = .3, fig.cap="Course of depression, variance and autocorrelation."}
+```{r cs13h, eval = TRUE, fig.asp = .3, fig.cap="Course of depression, variance and autocorrelation."}
 # Code snippet 13.8: Plot dep, standard deviation, autocorrelation
 
 # dep
@@ -245,79 +245,6 @@ g %+% d + aes(x = dayno, y = d$ms_rsd) + ylab("standard dev.")
 g %+% d + aes(x = dayno, y = d$ms_rac) + ylab("autocorrelation")
 ```
 
-
-## Network analysis
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
-
-```{r cs139, include = FALSE, echo = TRUE}
-# Code snippet 13.9: detrending 2
-sld <- function(ms, t) {
-  fm <- lm(ms ~ t)
-  if(summary(fm)$coefficients["t", "Pr(>|t|)"] < .05){
-    # trend is significant - take time into account
-    y = residuals(fm)
-  } else {
-    # trend is not significant, do not account for time
-    y = residuals(lm(ms ~ 1))
-  }
-  y
-}
-
-# only consider data up to dep state change (127 for now, to get 
-# closer to the article results)
-b <- subset(csd, dayno < 127) 
-b$t <- as.POSIXct(paste(b$date, b$resptime_s))
-
-# note: work with original pa scores (not reverse scored)
-b <- b %>% group_by(phase) %>% mutate(pa_dt2 = sld(-pa, t))
-b <- b %>% group_by(phase) %>% mutate(na_dt2 = sld(na, t))
-b <- b %>% group_by(phase) %>% mutate(mu_dt2 = sld(mu, t))
-b <- b %>% group_by(phase) %>% mutate(wo_dt2 = sld(wo, t))
-b <- b %>% group_by(phase) %>% mutate(su_dt2 = sld(su, t))
-b <- ungroup(b, phase)
-```
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
-
-```{r cs1310, eval = TRUE, fig.cap = "Fitted network of mental states, per phase"}
-# Code snippet 13.10: fitting networks
-
-library(graphicalVAR)
-fit_net <- function(d){
-  nodes <- d %>% select(na_dt2, pa_dt2, mu_dt2, wo_dt2, su_dt2, dayno)
-  net <- graphicalVAR(data = nodes, scale = TRUE, dayvar = "dayno",
-                      gamma = 0.1, nLambda = 20, verbose = FALSE)
-  
-  plot(net, "PDC", title = FALSE,
-       labels = c("NA", "PA", "MU", "WO", "SU"),
-       layout = "circle", maximum = .35,
-       theme = "classic",
-       vsize = 14, mar = c(10, 10, 10, 10),
-       label.scale = FALSE, usePCH = TRUE,
-       edge.labels = TRUE, edge.label.cex = 2, edge.width = 2)
-  
-  net
-}
-
-layout(matrix(c(1:4), ncol = 2, byrow = TRUE))
-n1 <- fit_net(subset(b, as.numeric(phase) == 1))
-n2 <- fit_net(subset(b, as.numeric(phase) == 2))
-n3 <- fit_net(subset(b, as.numeric(phase) == 3))
-n4 <- fit_net(subset(b, as.numeric(phase) == 4))
-layout(1)
-```
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
 
 ## Discussion
 

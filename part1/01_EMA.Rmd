@@ -10,14 +10,7 @@
 \index{Experience Sampling|see{EMA!Synonymns}} 
 \index{continuous unified electronic diary method|see{EMA!Synonymns}}
 
-Ecological Momentary Assessment (EMA) has many aliases. It is known as the
-experience sampling method [@Larson1983], ambulatory assessment [@EbnerPriemer2009] or Ambulatory self-report [@Conner2012a], real-time data capturing,
-the continuous unified electronic diary method [@EllisDavies2012], and as
-the intensive-longitudinal study design [@Bolger2013]. All these terms refer
-to research methods that involve the repeated sampling of people's current
-thoughts, emotions, behaviour, physiological states, and context, in their
-natural environment, typically (but not necessary) via electronic wearable
-devices [@Shiffman2008].
+Ecological Momentary Assessment (EMA) has many aliases. It is known as 'experience sampling' [@Larson1983], 'ambulatory assessment' [@EbnerPriemer2009] or 'Ambulatory self-reporting' [@Conner2012a], 'real-time data capturing', the 'continuous unified electronic diary method' [@EllisDavies2012], and as the 'intensive-longitudinal study design' [@Bolger2013]. The different terms stress different aspects of EMA research. All terms, however, refer to research methods that involve the repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices [@Shiffman2008].
 
 ### Self-report versus Observational EMA
 
@@ -107,33 +100,37 @@ posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a,
 fringilla ut neque. Nunc hendrerit cursus eleifend.  
 
 
-```{r individalvsgroup, echo = FALSE, fig.cap = "Effect of x on y is positive for individuals (marked by ellipses), and negative for the group."}
+```{r fig1a, echo = FALSE, fig.cap = "An extreme case of how indiviual effects may be different from group effects: the effect of x on y is positive for individuals (marked by ellipses), but negative for the group (as illustrated by the negative regression line)."}
 # simulate individual
 sim_p <- function(id = 1, intercept = 0, x_start = 0){
-  x = (0:9)
-  y = intercept + x * .9 + rnorm(10, 0, 1.5)
-  data.frame(id = id, x = x + x_start, y = y)
+  X <- (0:9)
+  Y <- intercept + X * .9 + rnorm(10, 0, 1.5)
+  data.frame(id = id, X = X + x_start, Y = Y)
 }
 
-# define effeft of x on y for the group
-intercept = 100
-x = seq(1, 100, 10)
-y = 100 - .4 * x 
+# define effect of x on y for the group
+intercept <- 100
+X <- seq(1, 100, 10)
+Y <- 100 - .4 * X 
 
 # let individuals define the group
-dt = NULL
-for(i in 1:10) {
-  p = sim_p(i, y[i], x[i])
-  dt = rbind(dt, p)
+dt <- NULL
+for (i in 1:10) {
+  p <- sim_p(i, Y[i], X[i])
+  dt <- rbind(dt, p)
 }
 
-ggplot(dt, aes(x = x, y = y, group = id)) + 
-  geom_point(size = 1, shape = 16) + 
-  stat_ellipse(color = "black", level = .99, type = "t") + 
-  stat_ellipse(color = "black", level = .99, aes(group = NULL)) +
+# plot figure
+ggplot(dt, aes(x = X, y = Y, group = id)) + 
+  geom_smooth(aes(group = NULL), 
+              color = "black", 
+              method = "lm", 
+              se = FALSE) +
+  geom_point(size = 1.2, shape = 16) + 
+  stat_ellipse(color = "grey", level = .99, type = "t") + 
   theme_bw(12) + 
-  theme(axis.text=element_blank(),
-        axis.ticks=element_blank(),
+  theme(axis.text = element_blank(),
+        axis.ticks = element_blank(),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_blank())

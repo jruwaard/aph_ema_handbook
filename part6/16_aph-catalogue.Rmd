@@ -1,15 +1,8 @@
 # (PART) EMA Catalogues {-}
 
-# Research Groups {#aphcat}
+# EMA Research Groups within APH {#aphcat}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
+This chapter summarises ongoing EMA research projects within the APH mental health consortium, as a guide to other researchers looking for nearby EMA-expertise and research collaboration.  
 
 ## Overview
 
@@ -33,6 +26,8 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 ### The CASPAR Project (approval 16-02-2018)
 \index{CASPAR}
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor [@Nuij2018]. 
+
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
 |Project team    | Dr. Wouter van Ballegooijen; Chani Nuij, MSc.; Prof.dr. Ad Kerkhof; Prof. dr Johannes Smit; Prof. dr. Heleen Riper |
@@ -48,6 +43,7 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 | Project goals | The primary objective of the CASPAR study is to test the feasibility of smartphone-based safety planning and real-time self-monitoring for patients with major depression or dysthymia and suicide risk in mental health care. Feasibility will be operationalised in terms of uptake, usage, acceptability, usability and patient satisfaction. EMA data will be used to (a) empirically validate hypothesised psychological processes and stages of suicide pathways, (b) identify individual pathways to suicidal behaviour, and (c) profile types of suicidal individuals. |
 | Results | An interactive safety plan that patients can access 24/7, increased disease awareness of patients due to self-monitoring, and input for the national and international field of mental health care by sharing our results and our data, ultimately contributing to more personalised interventions according to precision medicine principles, and more effective suicide prevention. |
 | Lessons learned | Constructing the right EMA items takes time. The constructs that you need to measure should be based on theory. Translate these concepts to momentary items in collaboration with EMA experts. Then test extensively among your target group.|
+
 
 ### Study on Chronic Fatigue Syndrome
 \index{Chronic Fatigue}

@@ -1,151 +1,101 @@
-# Datamanagement {#datamanagement}
+# Data management {#datamanagement}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Modern EMA research generates a lot of data. Repeated self-reports, GPS-data, accelerometer data, background demographic data and traditional questionnaire data quickly add up to hundreds of megabytes of raw data. This raises the importance of proper data management. Without a proper data management plan, the EMA researcher quickly drowns in the data feed.
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+## Using RStudio-projects to manage EMA data 
 
-## Section
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+"File | New Project..."
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.   
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.   
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta.  
+##  Project directory structure
 
-##  Section
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE}
+```{r cs5a, echo = FALSE, message = FALSE, warning = FALSE, prompt="", comment = NA,  null_prefix = TRUE}
+# show EMA R-project directory structure
 path <- c(
-    "project/data/source/gpsdata.csv", 
-    "project/data/source/surveydata.sav", 
-    "project/data/pruned/mydata.Rda", 
-    "project/scripts/import/import_gpsdata.R", 
-    "project/scripts/import/import_sruveydata.R", 
-    "project/scripts/analyse/analysis.R",
+    "project/data/source/keyfile.csv",
+    "project/data/source/GPS/subject1.json", 
+    "project/data/source/GPS/subject2.json", 
+    "project/data/source/accelerometer/subject1.bin", 
+    "project/data/source/accelerometer/subject2.bin", 
+    "project/data/source/surveys/demographics.sav", 
+    "project/data/source/surveys/survey.sav", 
+    "project/data/pruned/GPS.Rda",
+    "project/data/pruned/accelerometer.Rda",
+    "project/data/pruned/surveys.Rda", 
+    "project/scripts/import/import_GPS.R", 
+    "project/scripts/import/import_accelerometers.R", 
+    "project/scripts/import/import_surveys.R", 
+    "project/scripts/analysis/explore.R",
+    "project/scripts/analysis/test.R",
     "project/output/images/figure_1.png",
+    "project/output/images/figure_2.png",
     "project/README"
 )
 
-
 x <- lapply(strsplit(path, "/"), function(z) as.data.frame(t(z)))
 x <- bind_rows(x)
-x$pathString <- apply(x, 1, function(x) paste(trimws(na.omit(x)), collapse="/"))
+x$pathString <- apply(x, 1, function(x) paste(trimws(na.omit(x)), 
+                                              collapse = "/"))
 mytree <- data.tree::as.Node(x)
+
+#data.tree::SetGraphStyle(mytree, rankdir = "LR", width = 1000, height = 500)
+#data.tree::SetNodeStyle(mytree, 
+#                        fontname = 'helvetica', 
+#                        shape = "box")
+# plot(mytree)
 mytree
-```
-
-[Template] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
-laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
-ac tellus nec tortor interdum porta.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus
-eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada
-fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
-lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at
-laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc
-ac tellus nec tortor interdum porta. 
+``` 
 
 
-## Section
+[Template] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+## The keyfile
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+Table: (\#tab:tab5a) Sample Study Keyfile
+
+| ID   | Status | SurveyID         | Watch ID             | App ID              |
+|:-----|:-------| :-----------------|:---------------------|:--------------------|
+| P001 | QM01221          | 192.A102.83A         | APC009              |
+| P002 | QM01228          | 192.A102.83B         | APC010              |
 
 Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+Store personal data in another location. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 
-## Section
+## Source data
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
+## Import & Prune
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+
+## Visual Exploration
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.   
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+
+## Analysis
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.   
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 
 

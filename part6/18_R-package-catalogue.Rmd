@@ -63,7 +63,7 @@ Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful fo
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. 
 
-```{r load_tidyverse}
+```{r cs18a}
 # code snippet 18.1: loading the tidyverse package
 library(tidyverse)
 ```
@@ -76,7 +76,7 @@ http://tidyverse.tidyverse.org.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
 
-```{r fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
+```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
 # code snippet 18.2: simple ggplot example
 d = data.frame(
   ID    = rep(1:4, each = 25),
@@ -107,7 +107,7 @@ Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
 
-```{r dplyr_example}
+```{r cs18c, dplyr_example}
 # code snippet 18.3: aggregate data by group, through a 'pipe'
 d %>% 
   group_by(ID) %>%
@@ -129,7 +129,7 @@ Package **nlme** and ***lme4** consectetur adipiscing elit. Aliquam vehicula aug
 
 Package **nlme** ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem [@R-nlme]. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
-```{r nlme_example}
+```{r cs18d, nlme_example}
 # code snippet 18.4: fit a linear mixed model, with lme
 library(nlme)
 fm <- lme(distance ~ age + Sex, data = Orthodont, random = ~ 1)
@@ -142,7 +142,7 @@ summary(fm)
 
 Package **lme4** at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Bates2015]. Sed at varius erat, id consequat nibh.
 
-```{r lme4_example, eval=FALSE}
+```{r cs18e, lme4_example, eval=FALSE}
 # code snippet 18.4: fit a linear mixed model, with lme
 library(lme4)
 fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
@@ -169,7 +169,7 @@ purus nec, lobortis imperdiet diam.
 
 Package **lomb** simplifies the computation of Lomb-Scargle periodograms. Proin a viverra metus, nec scelerisque odio [@ruf1999]. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh [@Saeb2015]. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
-```{r out.width='98%'}
+```{r cs18f, out.width='98%'}
 # code snippet 18.5: calculating a Lomb-Scargle periodogram
 data(ibex, package = "lomb") 
 lomb::lsp(ibex[2:3]) 
@@ -181,7 +181,7 @@ lomb::lsp(ibex[2:3])
 
 Package **adehabitatHR** at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Calenge2006]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
-```{r eval = FALSE}
+```{r cs18g, eval = FALSE}
 library(adehabitatHR)
 ```
 

@@ -1,6 +1,7 @@
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
+    before_body: frontpage.tex
     after_body: postamble.tex
   citation_package: natbib
   keep_tex: yes

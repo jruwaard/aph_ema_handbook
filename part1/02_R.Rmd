@@ -47,27 +47,26 @@ higher) of RStudio.
 
 ## Interacting with R through the RStudio console
 
-If you open RStudio, you will be presented with the interface shown in Figure \@ref(fig:rstudio). Rstudio's main window is divided in four panes (subwindows),
-which further contain several tabbed windows. 
+If you open RStudio, you will be presented with the interface shown in Figure \@ref(fig:fig2a). Rstudio's main window is divided in four panes (subwindows), which further contain several tabbed windows. 
 
-```{r rstudio, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
+```{r fig2a, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
 knitr::include_graphics("images/R/rstudio.png")
 ```
 
-Your first session with R starts in the bottom-left pane, named "Console". There, you send commands to R. To test this, move your cursor to the bottom line, immediately after the prompt sign (">"). Next, type the simple statement below, and press 'Enter'. R will execute the command immediately, and return the answer back to the console.
+Command are sent to R starts in the bottom-left pane, named "Console". To test this, move your cursor to the bottom line, immediately after the prompt sign (">"). Next, type the statement below (note that '#' denotes a comment line; R ignores it, so there is no immediate need to type that). To execute, press 'Enter'. 
 
-```{r cs21, eval = FALSE}
+R will execute the command and return the answer back to the console.
+
+```{r cs2a, eval = FALSE}
 # Code snippet 2.1: R is a calculator.
 1 + 1
 ```
-
-
 
 Results of calculations can be saved into variables, by making use of the
 assignment operator ("<-"). If you type the name of a variable, R returns its
 value.
 
-```{r cs22}
+```{r cs2b}
 # Code snippet 2.2: Using <- to declare and set a variable.
 N <- 50 + 50
 N
@@ -78,13 +77,13 @@ the following command, which, in one line, 1) uses the variable N, just created,
 to 2) generate 100 random numbers from the normal distribution, and 3) plot a
 histogram of these numbers.
 
-```{r cs23, eval = FALSE}
+```{r cs2c, eval = FALSE}
 # Code snippet 2.3: Plotting the histogram of a sample from the normal 
 # distribution.
 hist(rnorm(N))
 ```
 
-The plot appears in the bottom-right pane, as in Figure \@ref(fig:rstudio). 
+The plot appears in the bottom-right pane, as in Figure \@ref(fig:fig2a). 
 
 
 ## Writing R-scripts
@@ -131,14 +130,14 @@ a csv-version of one of your own data files).
 
 - In the window that appears, click on `Browse` to locate the csv-
 file on your computer, and click `Import` in the next window (see Figure
-\@ref(fig:rstudiocsvimport)).
+\@ref(fig:fig2b)).
 
 RStudio shows the data, in tabular view, in the top-left window, ready for
 analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-```{r rstudiocsvimport, fig.cap="RStudio's CSV import wizard.", out.width="98%", echo=FALSE}
+```{r fig2b, fig.cap="RStudio's CSV import wizard.", out.width="98%", echo=FALSE}
 knitr::include_graphics("images/R/csv_import.png")
 ```
 
@@ -146,7 +145,7 @@ knitr::include_graphics("images/R/csv_import.png")
 
 While RStudio's Data import wizard is useful, you will probably use it less over time. Most likely, you will convert to using the more efficient R commands to import data. For example, it takes only a single line to download and import the example data.
 
-```{r cs24}
+```{r cs2d}
 # Code snippet 2.4: importing csv-data from the internet.
 ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 ```
@@ -157,22 +156,22 @@ Since the data is now in the environment (under the name `ESMdata`), you can use
 it in other R commands. For example, to produce a more detailed summary of the
 first four columns of `ESMdata`, you type:
 
-```{r cs25, comment = NA}
+```{r cs2e, comment = NA}
 # Code snippet 2.5: summarising data.
 summary(ESMdata)
 ```
 
 To inspect the first 6 lines of data, type,
 
-```{r cs26, eval = TRUE}
+```{r cs2f, eval = TRUE}
 # Code snippet 2.6: Show first 6 lines of a data frame.
 head(ESMdata)
 ```
 
-To view all rows of data in a spreadsheet (as in Figure \@ref(fig:rstudiocsvimport),
+To view all rows of data in a spreadsheet (as in Figure \@ref(fig:fig2b),
 type:
 
-```{r cs27, eval = FALSE}
+```{r cs2g, eval = FALSE}
 # Code snippet 2.7: Show data as spreadsheet.
 View(ESMdata)
 ```
@@ -180,7 +179,7 @@ View(ESMdata)
 To work with a specific variable in the dataset, use '$', For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
-```{r cs28, eval = FALSE}
+```{r cs2h, eval = FALSE}
 # Code snippet 2.8: accessing a single variable in a data frame.
 head(ESMdata$mood_relaxed, n = 20)
 ```
@@ -188,7 +187,7 @@ head(ESMdata$mood_relaxed, n = 20)
 This allows you to apply functions to specific variables. For example, to
 calculate the mean of scores in `mood_relaxed`, type:
 
-```{r cs29}
+```{r cs2i}
 # Code snippet 2.19: Calculating the mean of a variable.
 mean(ESMdata$mood_relaxed)
 ```
@@ -211,7 +210,7 @@ If you find a package you like, you can install it via the RStudio menu system, 
 
 A popular package, `tidyverse`, is used extensively in the examples of this manual. Package tidyverse comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.
 
-```{r cs210, eval = FALSE}
+```{r cs2j, eval = FALSE}
 # Code snippet 2.10: installing a package from CRAN.
 install.package(tidyverse)
 ```
@@ -226,7 +225,7 @@ Not all packages are at CRAN. Many 'unoffical' packages are shared at a site cal
 
 GitHub packages can be installed via the `install_github` function, which is defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
 
-```{r cs211, eval = FALSE}
+```{r cs2k, eval = FALSE}
 # Code snippet 2.11: Install the GitHub 'emaph' package.
 install.packages("devtools")
 devtools::install_github("jruwaard/emaph")
@@ -238,18 +237,18 @@ devtools::install_github("jruwaard/emaph")
 To use packages, you have to tell R to load them. You do this with the `library`
 function. For example, to use package 'tidyverse' and 'emaph', type:
 
-```{r cs212, eval = TRUE}
+```{r cs2l, eval = TRUE}
 # Code snippet 2.12: Loading packages.
 library(tidyverse)
 library(emaph)
 ```
 
-Once loaded, you can use the functions in the packages. From the documentation of emaph (type: `?emaph`), you learn that this package contains several example EMA datasets. Dataset 'csd' (see `?csd`) contains the data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient recorded his mood, for 239 days (see also Chapter 13).
+Once loaded, you can use the functions and datasets of the packages. Packge 'emaph' provides dataset 'csd', which contains the data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient recorded his mood, for 239 days (see also Chapter 13).
 
 To plot the irritation levels of this patient in the first six days, using the
 `ggplot` function from package 'ggplot2' (which is in 'tidyverse'), type:
 
-```{r cs213, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
+```{r cs2m, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
 # Code snippet 2.13: Using ggplot to plot EMA time series.
 ggplot(data = subset(csd, dayno <= 6),
        mapping =  aes(x = beepno, y = mood_irritat)) + 
@@ -264,14 +263,13 @@ ggplot(data = subset(csd, dayno <= 6),
 
 R has no point-and-click menu's that you can browse through to select a statistical procedure. This is a problem for many new users. What if you want, for example, to generate random numbers from a distribution with a mean of 2 and standard deviation of 4? How to tell this to R?
 
-
 ### Using '?' to consult the documentation
 
 The good thing is that you already known the name of the function to use, since
 we used it in the previous section: it is 'rnorm'. To check the documentation of
 this function, type `?rnorm` in the console.
 
-```{r cs214, eval = FALSE}
+```{r cs2n, eval = FALSE}
 # Code snippet 2.14: Using '?' to find the documentation of a function.
 ?rnorm
 ```
@@ -283,7 +281,7 @@ bottom right pane, from which you learn that that the `rnorm` function accepts
 worked in the previous examples). So, to generate the required numbers, you
 type:
 
-```{r cs215, eval = FALSE}
+```{r cs2o, eval = FALSE}
 # Code snippet 2.15: Plotting the histogram of a custom random sample
 hist(rnorm(1000, mean = 2, sd = 4))
 ```
@@ -305,7 +303,7 @@ this list, you find a likely candidate: a function called `t.test`. From the
 documentation of this function (`?t.test`), you learn that, indeed, this is the
 function you were looking for.
 
-```{r cs216}
+```{r cs2p}
 # Code snippet 2.16: Running a t-test, on two simulated samples.
 
 # generate two samples (N = 100 per group) from the normal distribution
@@ -314,6 +312,14 @@ A <- rnorm(100); B <- rnorm(100)
 # the t-test should be non-significant 
 t.test(A, B)
 ```
+
+
+### Learning from examples
+
+This book contains many R code snippets. By studying these examples, you will become more familar with R.
+
+Some examples will introduce R language constructs and functions that are unknown to you. Learn from from these examples, by using `?` on each element that you do not understand.
+
 
 ### Google 
 
@@ -326,68 +332,6 @@ Good resources are:
 - Stackoverflow: (see https://stackoverflow.com/questions/tagged/r)
 
 - SearchR (see: http://search.r-project.org/)
-
-
-## Next steps
-
-Not all functions have clear-cut names. Some are not easily located via a
-simple search. One reason why R is said to have a steep learning curve is that
-it requires you to develop a vocabulary of statements that are acceptable to R.
-You have to learn how to speak the language. This takes time.
-
-Build your vocabulary by reading books (see the end of this chapter), using
-Cheatsheets (lists of useful commands; see, for example 
-https://www.rstudio.com/resources/cheatsheets/), or by browsing the extensive documentation built into R (type: `help.start()` in the console), and Rstudio 
-(see the 'Help' menu option).
-
-
-### Learning from examples
-
-This book contains many R code snippets. By studying these examples, you will become more familar with R.
-
-Some examples will introduce R language constructs and functions that are unknown
-to you. Learn from from these examples, by using `?` on each element that you do
-not understand.
-
-For example, consider the example below, which shows R code to reveal how hungry
-the patient in the 'csd' study was over the course of the day. It contains several statements that weren't discussed yet. Table \@ref(tab:usingrhelp) shows how
-`?` can help to understand the code and its output.
-
-```{r cs217, warning = FALSE, fig.cap = "Reported hunger levels, over the course of the day, of a single respondent.", fig.asp = 0.3}
-# Code snippet 2.17: Another ggplot example.
-ggplot(data = csd, mapping = aes(x = resptime_s, y = phy_hungry)) + 
-  geom_jitter(height = .2, size = .5) + 
-  geom_smooth()
-```
-
-
-Table: (\#tab:usingrhelp) Using R Help to understand code snippets.
-
-+-------------------+----------------------------------------------------------+
-| Help              | What you learn from the documentation                    |
-+:==================+:=========================================================+
-| ?ggplot           | `ggplot` creates a new plot from data in 'csd'.          |
-|                   | The variable `hour` from 'csd' is used as x.             |
-|                   | The variable 'phy_hungry' from 'csd' is used as y.       |
-|                   | Calling `ggplot` plots the coordinate system, but not    |
-|                   | much more. 
-+-------------------+----------------------------------------------------------+
-| ?csd              | Variable `resptime_s` marks the time when the question   |
-|                   | was answered by the patient.                             |
-|                   | Variable `phy_hungry` contains the response of the       |
-|                   | patient to the statement 'I am hungry.'                  |
-+-------------------+----------------------------------------------------------+
-| ?geom_jitter      | This command plots the (x, y) data points, with a small  |
-|                   | amount of random variation (on both x and y).            |
-|                   | Since y-scores are discrete, on a 1 to 7 scale, without  |    
-|                   | jittering, many points would overlap, making it difficult|
-|                   | to see the density of scores. To further reduce the      |
-|                   | cluttering, points are plotted smaller (`size = .5`).    |
-+-------------------+----------------------------------------------------------+
-| ?geom_smooth      | Plots a smoothed line through the (x, y) data points.    |
-|                   | The gray area around the blue lines marks the 95\%       |
-|                   | confidence interval.                                     |
-+-------------------+----------------------------------------------------------+
 
 
 ### Read books
@@ -420,7 +364,7 @@ quality interactive courses in R. See http://www.datacamp.com
 
 Package 'swirl' comprises a set of interactive courses that teach many aspects of the R language. See http://swirlstats.com
 
-```{r cs218, eval = FALSE}
+```{r cs2r, eval = FALSE}
 # Code snippet 2.18: starting the interactive swirl-course in R.
 install.packages("swirl")
 library("swirl")

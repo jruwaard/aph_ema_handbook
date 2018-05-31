@@ -17,26 +17,15 @@ Critical Slowing Down (CSD) is a concept from dynamic systems theory. In
 dynamic systems, state transitions are preceded by a change in which the system
 reacts to disturbances. In a stable state, the system quickly recovers from
 disturbances. Prior to a transition to a new state, however, the system takes
-more and more time to recover back to its current state.
-
-In (multivariate) time series, three statistical indicators of CSD have been identified [Scheffer2009; Dakos2010]:
-
-- Increased variance,
-
-- Increased auto-correlation,
-
-- Increased correlation between system components
-
-In an explorative study [@VandeLeemput2014], data suggested that CSD was associated with depression severity. This was a between-subject finding, however. CSD remained to be demonstrated in within-subject data.
+more and more time to recover back to its current state: the variance and auto-correlation of the system increases [@Scheffer2009; @Dakos2010]. 
 
 In this chapter, we re-analyze data from a study that aimed to demonstrate CSD
 in EMA-data of a single patient with a history of major depression [@Groot2010,
-@Kossakowski2017; @Wichers2016]. The patient, a 57-year old male, monitored
-himself extensively with EMA during a 239-day single-case double-blind
-medication reduction trial. In this experiment, he experienced a relapse. Was
-this transition preceded by CSD in the EMA data?
+@Kossakowski2017; @Wichers2016]. The patient, a 57-year old male, used EMA to monitor himself during a 239-day single-case double-blind medication reduction trial. He experienced a relapse, and Wichers and colleagues showed how variance and auto-correlation in the EMA data increased, several weeks prior to the relapse. The transition appeared to be preceded by CSD.
 
-For this reconstruction, we need two R packages: 
+We will try to reconstruct the finding, using an alternative analysis strategy. One of the limitations of the Wicherts et al analysis is that autocorrelation was analysed at lag 1 only (i.e., only the correlation between t and t-1 was considered). With another analysis technique, called 'Detrended Fluctuation Analysis', all lags can be considered. 
+
+To conduct the analysis, we need three R packages: 
 
 - Raw EMA data of this study were published in the public domain
 [@Kossakowski2017]. We included the data in the emaph package.
@@ -44,36 +33,29 @@ For this reconstruction, we need two R packages:
 - To manipulate the raw data and reconstruct the plots of the article, we are
 going to use several functions from the tidyverse.
 
-```{r cs131}
-# Code snippet 13.1: required libraries for the csd reconstruction
+- DFA is implemented in package 'nonlinearTseries', so we will need that as well.
+
+```{r cs13a}
+# Code snippet 13.1: required libraries for the CSD-study re-analysis.
 library(emaph)
 library(tidyverse)
+library(nonlinearTseries)
 ```
 
 
 ## Plotting the course of depression 
 
-Let's take a look at the development of depressive symptoms first. These were
-tapped with weekly assessments. The patient answered all thirteen items of
-the depression scale of the 'Symptom Checklist-90-Revised' (SCL-90-R), a well-established self-report questionnaire [@Derogatis1994].
+Let's take a look at the development of the depressive symptoms of the patient first. These were tapped with weekly assessments of the depression scale of the 'Symptom Checklist-90-Revised' [SCL-90-R; @Derogatis1994], a well-established self-report questionnaire.
 
-The code below reconstructs Figure 1 in the 2016 article of Wichers et al. It plots `csd$scl90r_dep`, the SCL90-R depression scale score (the mean of the SCL-90 item-scores), by `csd$dayno`(the time variable). The plot shows how the depression relapse develops over time. After day 127, several weeks after the full reduction of the medication, the depression score increased considerably. This is confirmed by a change score analysis.
+The code below reconstructs Figure 1 of the Wichers et al article. It plots the SCL90-R depression scale score over the time. Around day 120, the depression score increased considerable: the patient experienced a relapse.
 
-
-```{r cs132, fig.asp = .3}
+```{r cs13b, fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
 # Code snippet 13.2: Plot depression score
 dep <- csd %>% select(dayno, scl90r_dep) %>%
   filter(!is.na(scl90r_dep)) %>% unique
 
-# Change point analysis
-library(ecp)
-e1 = e.divisive(matrix(dep$scl90r_dep), sig = .01, min.size = 5)
-dep$state <- e1$cluster
-dep %>% group_by(state) %>% summarize(dayno = min(dayno))
-
 # plot dep + change point (day 120 in our data)
-ggplot(dep, aes(x = dayno, y = scl90r_dep,
-                group = 1, colour = factor(state))) +
+ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
   geom_step() + scale_colour_manual(values = c("black", "red")) +
   guides(colour = FALSE)
 ```
@@ -81,12 +63,11 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep,
 
 ## Mental state EMA items
 
-Wichers and colleagues selected 13 items from the full EMA dataset. They grouped
-these items in 5 factors: positive affect (pa; 4 items), negative affect (na; 4
+Wichers and colleagues selected 13 items from the full EMA dataset, which they grouped in 5 factors: positive affect (pa; 4 items), negative affect (na; 4
 items), mental unrest (mu; 3 items), suspiciousness (su; 1 item), and worrying
-(wo; 1 item). 
+(wo; 1 item). From these factors, an overall mental state sum score can be calculated.
 
-```{r cs133}
+```{r cs13c}
 # Code snippet 13.3: mood states calculation
 
 # positive affect
@@ -121,203 +102,78 @@ csd$wo <- csd$pat_worry
 csd$ms <- rowSums(csd[c("pa", "na", "mu", "su", "wo")])
 ```
 
-In this reconstruction, we calculate the overall mental state score as the sum
-of the detrended scores of the five factors.
+Rows, in which one or more of the factors have missing values, are removed from the analysis. In a full analysis, options to impute the missing values could and should be considered. However, since only 3 of the 1476 rows have missing item scores, not much is probably lost by running a simple complete-case analysis.
 
-For the overall mood state variable to be valid, its factors should be
-adequately measured. Rows, in which one or more of the factors had missing
-values, are therefore removed from the analysis.
+```{r cs13d}
+# Code snippet 13.3: missing value removal
 
-```{r cs134}
-# Code snippet 13.4: missing value removal
+# count number of items with missing items, per row
 csd$nna <- csd %>%
   select(matches("mood_")) %>%
   is.na(.) %>% rowSums
 
+# drop rows with missing values
 csd <- csd %>% filter(nna == 0)
 ```
 
 
-## De-trending the mood states
+## Running the DFA
 
-Since trends in time-series can distort the variance and auto-correlation (see Chapter 8), mood state variables were de-trended.
+```{r}
+d <- NULL
+d <- csd %>% 
+  group_by(dayno) %>%
+  summarise(ms = mean(ms))
 
-To de-trend, we fit a generalized additive model with a spline-based smoother.
-This models the trend. By using the residuals of his model (i.e., by subtracting
-the predicted score from the observed score), the trends are removed.
+e <- d %>% right_join(data.frame(dayno = 1:max(csd$dayno)))
 
-```{r cs135}
-# Code snippet 13.5: detrending
+d$ms_dfa = NA; d$ms_m = NA
 
-library(KernSmooth)
-detrend <- function(y) {
-  x <- as.numeric(as.POSIXct(paste(csd$date, csd$resptime_s)))
-  n <- length(x)
+window <- 32
+for(i in seq(window, max(csd$dayno), 5)) {
 
-  bw = 7 * 24 * 3600 # days, hours, seconds
-  bw <- dpill(x, y, gridsize = n) # 'best' selected by 'direct plug-in'
+  # get the sliding window data
+  w <- subset(csd, dayno > (i - window) & dayno <= i)
 
-  est <- locpoly(x, y,
-                 degree = 3,
-                 bandwidth = bw,
-                 gridsize = n)
-  y - est$y
-}
+  # dfa: ms
+  dfa.analysis = dfa(time.series = w$ms,
+                     npoints = 30,
+                     window.size.range = c(10, nrow(w)),
+                     do.plot = FALSE)
 
-csd$pa_dt <- detrend(csd$pa)
-csd$na_dt <- detrend(csd$na)
-csd$mu_dt <- detrend(csd$mu)
-csd$su_dt <- detrend(csd$su)
-csd$wo_dt <- detrend(csd$wo)
-
-csd$ms_dt <- rowSums(csd[c("pa_dt", "na_dt", "mu_dt", "su_dt", "wo_dt")])
-```
-
-Let's take a look at the effect of detrending. If we plot positive affect over
-time, we see a gradually increase, and two embedded subtrends. The detrended
-variable does not display these trends anymore.
-
-```{r cs136, fig.asp = .4}
-# Code snippet 13.6: show effect of detrending
-
-# store ms and ms_dt in a long format dt, to facet on them in the plot
-d <- csd %>%
-  select(ms, ms_dt, dayno) %>%
-  gather(ms, ms_dt, -dayno,
-         key = "v", value = "score")
-
-ggplot(data = d, aes(x = dayno, y = score)) +
-  geom_smooth() + geom_line(alpha = .5, size = .5) +
-  facet_grid(~ v, scales = "free_y", shrink = TRUE)
-```
-
-
-## Calculating the moving average of mood state variance & autocorrelation
-
-Both the standard deviation and the lag-1 autocorrelation are calculated using a
-30-day sliding window.
-
-
-```{r cs137}
-# Code snippet 13.7: variance and auto-correlation, 30-day window
-d <- data.frame(dayno = 1:max(csd$dayno))
-d <- left_join(d, unique(csd[c("dayno", "phase")]))
-d$phase[d$dayno == 125] = "exp: posttest" # no data at day 125
-
-d$ms_rsd = NA; d$ms_rac = NA; d$ms_dfa = NA
-for(i in 30:max(csd$dayno)){
-  
-  # get the 30-day data window
-  w <- subset(csd, dayno > (i - 30) & dayno <= i)
- 
-  # get standard deviation
-  d$ms_rsd[i] <- sd(w$ms_dt, na.rm = TRUE)
-  
-  # get the autocorrelation
-  d$ms_rac[i] <- cor(w$ms_dt, lag(w$ms_dt), use = "complete.obs")
+  fgn.estimation = estimate(dfa.analysis,
+                            do.plot = FALSE,
+                            fit.col="blue", fit.lwd = 2, fit.lty = 2,
+                            main="Fitting DFA to fGn")
+  d$ms_dfa[d$dayno == i] <- fgn.estimation
+  d$ms_m[d$dayno == i] = mean(w$ms)
 }
 ```
 
 
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
 
-## Mood state variance
+## Results
 
-We can now plot the mood state standard deviation and lag-1 auto-correlation. Did
-these statistics, as predicted, increase considerably prior to relapse onset?
-  
-```{r cs1308, eval = TRUE, fig.asp = .3, fig.cap="Course of depression, variance and autocorrelation."}
-# Code snippet 13.8: Plot dep, standard deviation, autocorrelation
+We can now plot the DFA indicator over time, to see whether it peaks prior to the onset of the relapse. As can be seen, the DFA-indicator clearly pleaks prior to the onset of the relapse, around day 110. Interestingly, a second peak is reached at the end of the experiment, around day 239, possibly to indicate a recovery from the relapse. 
 
-# dep
-g = ggplot(dep,
-       aes(x = dayno, y = scl90r_dep, colour = factor(dayno < 120), group = 1)) +
-  geom_step() + ylab("depression") + guides(color = FALSE)
+
+```{r cs13h, eval = TRUE, fig.asp = .4, fig.cap="Results of the DFA analysis.", warning = FALSE}
+# Code snippet 13.8: Plot DFA results
+
+# dfa
+e <- subset(d, !is.na(ms_dfa))
+g = ggplot(e,
+           aes(x = dayno, y = ms_dfa, 
+               colour = factor(dayno < 120), 
+               group = 1)) +
+  # geom_step() +
+  geom_line() + 
+  ylab("dfa (60-day window)") + 
+  xlim(c(0, 250)) + 
+  guides(color = FALSE)
 g
-
-# sd
-g %+% d + aes(x = dayno, y = d$ms_rsd) + ylab("standard dev.")
-
-# autocorrelation
-g %+% d + aes(x = dayno, y = d$ms_rac) + ylab("autocorrelation")
 ```
 
-
-## Network analysis
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
-
-```{r cs139, include = FALSE, echo = TRUE}
-# Code snippet 13.9: detrending 2
-sld <- function(ms, t) {
-  fm <- lm(ms ~ t)
-  if(summary(fm)$coefficients["t", "Pr(>|t|)"] < .05){
-    # trend is significant - take time into account
-    y = residuals(fm)
-  } else {
-    # trend is not significant, do not account for time
-    y = residuals(lm(ms ~ 1))
-  }
-  y
-}
-
-# only consider data up to dep state change (127 for now, to get 
-# closer to the article results)
-b <- subset(csd, dayno < 127) 
-b$t <- as.POSIXct(paste(b$date, b$resptime_s))
-
-# note: work with original pa scores (not reverse scored)
-b <- b %>% group_by(phase) %>% mutate(pa_dt2 = sld(-pa, t))
-b <- b %>% group_by(phase) %>% mutate(na_dt2 = sld(na, t))
-b <- b %>% group_by(phase) %>% mutate(mu_dt2 = sld(mu, t))
-b <- b %>% group_by(phase) %>% mutate(wo_dt2 = sld(wo, t))
-b <- b %>% group_by(phase) %>% mutate(su_dt2 = sld(su, t))
-b <- ungroup(b, phase)
-```
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
-
-```{r cs1310, eval = TRUE, fig.cap = "Fitted network of mental states, per phase"}
-# Code snippet 13.10: fitting networks
-
-library(graphicalVAR)
-fit_net <- function(d){
-  nodes <- d %>% select(na_dt2, pa_dt2, mu_dt2, wo_dt2, su_dt2, dayno)
-  net <- graphicalVAR(data = nodes, scale = TRUE, dayvar = "dayno",
-                      gamma = 0.1, nLambda = 20, verbose = FALSE)
-  
-  plot(net, "PDC", title = FALSE,
-       labels = c("NA", "PA", "MU", "WO", "SU"),
-       layout = "circle", maximum = .35,
-       theme = "classic",
-       vsize = 14, mar = c(10, 10, 10, 10),
-       label.scale = FALSE, usePCH = TRUE,
-       edge.labels = TRUE, edge.label.cex = 2, edge.width = 2)
-  
-  net
-}
-
-layout(matrix(c(1:4), ncol = 2, byrow = TRUE))
-n1 <- fit_net(subset(b, as.numeric(phase) == 1))
-n2 <- fit_net(subset(b, as.numeric(phase) == 2))
-n3 <- fit_net(subset(b, as.numeric(phase) == 3))
-n4 <- fit_net(subset(b, as.numeric(phase) == 4))
-layout(1)
-```
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
 
 ## Discussion
 

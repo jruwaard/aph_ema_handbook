@@ -7,15 +7,20 @@ As with all scientific research, EMA studies start with mindful consideration of
 
 This chapter highlights key design aspects of EMA studies. Ample information on general study design issues can be found elsewhere [see for example, the APH quality handbook, @aph_qh]. 
 
+
 ## What is the research question?
+
 Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into explorative data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be a first step.
 
 Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter \@ref(introduction). Are you interested in real-life behaviour, in individual differences between participants, in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when  you have to decide on the other aspects of the study design.
 
+
 ## Who are the prospect participants?
+
 Given the experimental nature of EMA, studies are often piloted in healthy or sub-clinical populations. This is a recommended first step to test the experimental procedures and to avoid unnecessary burden of vulnerable patient populations. You should be aware, though, that results obtained in non-patient populations do not necessarily generalise to patient populations. EMA mood ratings, for example, might be much more variable in patients compared to non-patients. Pilot studies should therefore also be conducted in the target population.
 
 ## How are theoretical experimental variables operationalised?
+
 With the study hypotheses in place, experimental constructs can be operationalised into well-defined quantifiable measures.
 
 Precies def wat meten betrouwbaarheid, validiteit, ruwe dat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
@@ -48,81 +53,24 @@ Increasing the assessment frequency and study duration will allow for a more det
 
 Issues related to hardware should also be considered. Electronic wearables have limited battery life and memory storage space. Actigraph watches memory space limitations may require participants to visit the research site. GPS-monitoring apps may have a negative impact on the battery life of the smartphone of the participants. These practical issues may result in data loss, through problems with study adherence or even study drop-out.
 
-Once all decisions related to the sampling plan are made, the procedure should be throughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below.
+Once all decisions related to the sampling plan are made, the procedure should be throughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below, using the 'sample_plan' of package 'emaph':
 
-```{r echo=FALSE}
-sample_plan <- function(
-  n_participants = 5,
-  n_days = 7,
-  n_beeps_per_day = 3,
-  times = c("10:00-14:00", "14:00-18:00", "18:00-22:00")
-) {
-
-  plan <- as.data.frame(
-    expand.grid(
-      id = 1:n_participants, 
-      day = 1:n_days, 
-      beep = 1:n_beeps_per_day)
-  )
-  
-  plan$id <- factor(plan$id)
-  
-  plan <- plan[order(plan$id, plan$day, plan$beep), ]
-  plan$observation <- rep(1:(n_days*n_beeps_per_day), n_participants)
-  
-  plan$t <- rep(times, n_participants * n_days)
-  
-  if (any(grep("-", times))) {
-    t <- strsplit(plan$t, "-")
-    t <- lapply(t, function(x) as.numeric(as.POSIXct(paste("1970-01-01", x))))
-    tr <- unlist(lapply(t, function(x) sample(x[1]:x[2], 1)))
-    tr <- as.POSIXct(tr, origin = "1970-01-01")
-    plan$t <- substring(tr, 12, 16)
-  }
-  
-  plan <- plan[c("id", "observation", "day", "beep", "t")]
-  rownames(plan) <- 1:nrow(plan)
-  
-  plan
-}
-```
-
-```{r creating_a_sample_schedule, echo = TRUE, message = FALSE}
+```{r fig3a, echo = TRUE, fig.cap = "Simulated EMA sampling plan", out.width = "95%", fig.asp = .4}
 # code snippet 3.1: simulating a signal-contingent sample plan
 plan <- sample_plan(n_participants = 5,
                     n_days = 2,
-                    n_beeps_per_day = 3,
-                    times = c("10:00-14:00", "14:00-18:00", "18:00-22:00"))
-```
-
-```{r echo = FALSE}
-knitr::kable(
-   plan, 
-   booktabs = TRUE,
-   caption = 'Sample EMA sampling plan')
-```
-
-```{r echo = FALSE, out.width="95%", fig.asp = .4}
-d <- plan
-d$t <- as.POSIXct(paste(Sys.Date(), d$t))
-ggplot(d, aes(x = id, y = t)) + 
-  geom_point(size = 2) +   
-  geom_segment(aes(x = id, 
-                   xend = id, 
-                   y = min(t), 
-                   yend = max(t)), 
-               linetype = "dashed", 
-               size = 0.1) + 
-  coord_flip()
+                    times = c("09:00-11:00", "12:30", "17:00-19:00"),
+                    plot = TRUE)
 ```
 
 
 ##  Power Analysis
+
 The power of a statistical test is the probability that it will detect the hypothesized relationship when this relationship, in reality, exists. It is a function of the strength of the relationship, the significance level alpha, sample size (i.e., the number of participants and the number of repeated measures), *and* the particular statistical tests that is adopted. Determining the power of the experiment is an important step in the design of an EMA study. Both underpowered and overpowered studies are a waste of resources and time.
 
 Several R-packages exist to conduct poweranalyses for longitudinal designs. The example below is from a package called 'powerlmm' [@R-powerlmm]. In the example, the package is used to calculate the power of a linear mixed model analysis of a two-group repeated measurers design, with 24 repeated measures, 40 participants per group, a standardized effect size of .5 (between-group difference at t = 24), and a significance level of .05. Power is calculated as 26%, which signals a problem with the design: more participants are needed.
 
-```{r}
+```{r cs3b}
 # code snippet 3.2: Power analysis of a two-group repeated measures design
 # (analytical approach)
 library(powerlmm)
@@ -140,7 +88,7 @@ Note the two additional variables in the 'study_parameters' call: 'icc_pre_subje
 
 The approach of 'get_power' to determine power is called an analytical technique. Based on theoretical considerations and assumptions, the power is determined via a mathematical formula. Increasingly, researchers also adopt simulation techniques to determine power. The general idea is that power can be determined by noting the proportion of times a statistical tests reaches significance if it is run, many times, on simulated data. This approach, taken by package 'simr' [@Green2016], is illustrated in the example below.
 
-```{r}
+```{r cs3c}
 # code snippet 3.3: Power analysis of a two-group repeated measures design
 # (simulation approach)
 library(simr)
@@ -171,10 +119,11 @@ model1 <- makeLmer(y ~ t + g + (1 | s),
 
 powerSim(model1, 
          fixed("g", "lr"), 
-         nsim = 10)
+         nsim = 10,
+         progress = FALSE)
 ```
 
-R excells at data simulation, and many packages exists to help you simulate your data. A great example is package 'simstudy' [@R-simstudy].
+R excells at data simulation, and many packages exist to help you simulate your data. A good example , in addition to 'simr', is package 'simstudy' [@R-simstudy].
 
 ## Ethical Considerations
 
@@ -208,9 +157,9 @@ The official definition of a medical device (Medical Device Act, or 'Wet Medisch
 
 In short, software can be classified as a medical device if it collects patient-specific data and is specifically intended for one of the above-mentioned objectives. Or in other words, if a health care professional takes this information into account when determining the course of treatment. The law does not differentiate between passive and active EMA.
 
-In practice, the definition of medical devices leaves a lot of room for confusion.  Researchers often struggle with the question whether their assessment tools should be considered an medical device or not. For this purpose, flowcharts exist that help to determine whether an app of product should be classified as a medical device [see, e.g., @Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:meddevflowchart) shows such a flow-chart. 
+In practice, the definition of medical devices leaves a lot of room for confusion.  Researchers often struggle with the question whether their assessment tools should be considered an medical device or not. For this purpose, flowcharts exist that help to determine whether an app of product should be classified as a medical device [see, e.g., @Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows such a flow-chart. 
 
-```{r meddevflowchart, fig.cap = "Flow-chart medical device.", echo = FALSE, out.width = '100%'}
+```{r fig3b, fig.cap = "Flow-chart medical device.", echo = FALSE, out.width = '100%'}
 knitr::include_graphics("images/outcomes/Flow_MD.png")
 ```
 
@@ -223,5 +172,6 @@ Data processing agreement (DSA). Donec sed lectus at sem ultrices commodo. Proin
 #### Informed consent
 
 [Informed Consent] Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
+
 Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 

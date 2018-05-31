@@ -1,6 +1,7 @@
 install.packages(
   c(
     "bookdown",
+    "ecp",
     "emaph",
     "tidyverse",
     "adehabitatHR",
@@ -13,9 +14,11 @@ install.packages(
     "lomb",
     "nlme",
     "mlVAR",
+    "powerlmm",
     "psych",
     "PhysicalActivity",
     "qgraph",
-    "simstudy"
+    "simstudy",
+    "simr"
   )
 )

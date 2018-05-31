@@ -2,14 +2,14 @@ bookdown::pdf_book:
   includes:
     in_header: preamble.tex
     after_body: postamble.tex
-  latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
+  pandoc_args: [ "--csl", "apa.csl" ]
 bookdown::epub_book: default
-bookdown::html_book:
-    css: toc.css
 bookdown::gitbook:
   css: style.css
+  highlight: monochrome
+  pandoc_args: [ "--csl", "apa.csl" ]
   config:
     toc:
       before: |

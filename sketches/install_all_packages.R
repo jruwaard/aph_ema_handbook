@@ -1,6 +1,7 @@
 install.packages(
   c(
     "bookdown",
+    "ecp",
     "emaph",
     "tidyverse",
     "adehabitatHR",

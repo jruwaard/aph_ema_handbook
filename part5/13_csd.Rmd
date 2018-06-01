@@ -17,11 +17,11 @@ Critical Slowing Down (CSD) is a concept from dynamic systems theory. In
 dynamic systems, state transitions are preceded by a change in which the system
 reacts to disturbances. In a stable state, the system quickly recovers from
 disturbances. Prior to a transition to a new state, however, the system takes
-more and more time to recover back to its current state: the variance and auto-correlation of the system increases [@Scheffer2009; @Dakos2010]. 
+more and more time to recover back to its current state: the variance and auto-correlation of the system increases [@Scheffer2009; @Dakos2008]. 
 
 In this chapter, we re-analyze data from a study that aimed to demonstrate CSD
 in EMA-data of a single patient with a history of major depression [@Groot2010,
-@Kossakowski2017; @Wichers2016]. The patient, a 57-year old male, used EMA to monitor himself during a 239-day single-case double-blind medication reduction trial. He experienced a relapse, and Wichers and colleagues showed how variance and auto-correlation in the EMA data increased, several weeks prior to the relapse. The transition appeared to be preceded by CSD.
+@Kossakowski2017; @Wichers2016]. The patient, a 57-year old male, used EMA to monitor himself during a 239-day single-case double-blind medication reduction trial. During the experiment, he experienced a relapse, and Wichers and colleagues showed how variance and auto-correlation in the EMA data increased, several weeks prior to this relapse. The transition appeared to be preceded by CSD.
 
 We will try to reconstruct the finding, using an alternative analysis strategy. One of the limitations of the Wicherts et al analysis is that autocorrelation was analysed at lag 1 only (i.e., only the correlation between t and t-1 was considered). With another analysis technique, called 'Detrended Fluctuation Analysis', all lags can be considered. 
 
@@ -49,7 +49,7 @@ Let's take a look at the development of the depressive symptoms of the patient f
 
 The code below reconstructs Figure 1 of the Wichers et al article. It plots the SCL90-R depression scale score over the time. Around day 120, the depression score increased considerable: the patient experienced a relapse.
 
-```{r cs13b, fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
+```{r cs13b, out.width = "100%", fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
 # Code snippet 13.2: Plot depression score
 dep <- csd %>% select(dayno, scl90r_dep) %>%
   filter(!is.na(scl90r_dep)) %>% unique
@@ -57,7 +57,7 @@ dep <- csd %>% select(dayno, scl90r_dep) %>%
 # plot dep + change point (day 120 in our data)
 ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
   geom_step() + scale_colour_manual(values = c("black", "red")) +
-  guides(colour = FALSE)
+  xlab("Days") + ylab("SCL-90-R Depression")
 ```
 
 
@@ -120,33 +120,36 @@ csd <- csd %>% filter(nna == 0)
 ## Running the DFA
 
 ```{r}
+# code snippet #13c: Running the DFA
+
+# prepare result rows: one row for each day
 d <- NULL
 d <- csd %>% 
   group_by(dayno) %>%
   summarise(ms = mean(ms))
 
-e <- d %>% right_join(data.frame(dayno = 1:max(csd$dayno)))
+d$ms_dfa = NA
 
-d$ms_dfa = NA; d$ms_m = NA
-
+# determine DFA, in a moving window of 32 days,
+# in steps of 7 days
 window <- 32
-for(i in seq(window, max(csd$dayno), 5)) {
+for (i in seq(window, max(csd$dayno), 7)) {
 
   # get the sliding window data
   w <- subset(csd, dayno > (i - window) & dayno <= i)
 
   # dfa: ms
-  dfa.analysis = dfa(time.series = w$ms,
-                     npoints = 30,
-                     window.size.range = c(10, nrow(w)),
-                     do.plot = FALSE)
+  dfa.analysis <- dfa(time.series = w$ms,
+                      npoints = 30,
+                      window.size.range = c(10, nrow(w)),
+                      do.plot = FALSE)
 
-  fgn.estimation = estimate(dfa.analysis,
+  fgn.estimation <- estimate(dfa.analysis,
                             do.plot = FALSE,
-                            fit.col="blue", fit.lwd = 2, fit.lty = 2,
-                            main="Fitting DFA to fGn")
+                            fit.col = "blue", fit.lwd = 2, fit.lty = 2,
+                            main = "Fitting DFA to fGn")
+  
   d$ms_dfa[d$dayno == i] <- fgn.estimation
-  d$ms_m[d$dayno == i] = mean(w$ms)
 }
 ```
 
@@ -157,42 +160,32 @@ for(i in seq(window, max(csd$dayno), 5)) {
 We can now plot the DFA indicator over time, to see whether it peaks prior to the onset of the relapse. As can be seen, the DFA-indicator clearly pleaks prior to the onset of the relapse, around day 110. Interestingly, a second peak is reached at the end of the experiment, around day 239, possibly to indicate a recovery from the relapse. 
 
 
-```{r cs13h, eval = TRUE, fig.asp = .4, fig.cap="Results of the DFA analysis.", warning = FALSE}
+```{r cs13h, eval = TRUE, out.width = "100%", fig.asp = .4, fig.cap = "Results of the DFA analysis.", warning = FALSE}
 # Code snippet 13.8: Plot DFA results
 
-# dfa
-e <- subset(d, !is.na(ms_dfa))
-g = ggplot(e,
-           aes(x = dayno, y = ms_dfa, 
-               colour = factor(dayno < 120), 
-               group = 1)) +
-  # geom_step() +
+ggplot(na.omit(d),
+      aes(x = dayno, y = ms_dfa, 
+          colour = factor(dayno < 120), 
+          group = 1)) +
+  geom_point() +
   geom_line() + 
   ylab("dfa (60-day window)") + 
   xlim(c(0, 250)) + 
   guides(color = FALSE)
-g
 ```
 
 
 ## Discussion
 
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
+Our re-analysis replicates the main finding of the Wichers et al article ([@Wichers2016]): several weeks prior to a depression relapse, as predicted by complex systems theory, the variance and autocorrelation in EMA mood ratings increased.
 
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
+One swallow does not make summer. Yes, in this case, the DFA-indicator peaked prior to the relapse. This could be a mere coincidence. The predictive power of CSD needs to be confirmed in larger samples. Given the theoretical background, succesful applications of CSD in other domains, and the present finding, these studies seem warranted.
 
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
+Important additional questions remain to be answered. When it predicts a state change, what is the expected delay between this prediction and the chanage? Does a critical DFA-value exist? Given that critical value, are false positive and false negative rates of this prediction acceptable? These are important questions that should be answered before any clinical application of DFA can be considered.  
 
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque.
-Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus
-dui viverra.
+Re-analysis of data from completed clinical studies, in which EMA data were collected, may be a first step to further explore the value of CSD. One option, for example, would be to re-analyse data from the E-COMPARED study [@Kleiboer2016]. In this trial, patients, who were treated for major depression, completed weekly self-report questionnaires [the Patient Health Questionnaire; PHQ-8, @Kroenke2009] and daily EMA mood ratings throughout treatment, which lasted up to 16-week. Since CSD is an indicator of *any* state change (i.e., irrespective of whether the change is clinically "good" or "bad"), theory would predict a (lagged) relationship between CSD (i.e., the DFA-score) and clinically significant changes in PHQ-scores [@Jacobson1991].
+
+Potential clinical applications, of course, are clear. If clinically relevant changes can be predicted algorithmitcally from EMA ratings, automated patient feedback systems could help to prevent pending detoriation or consolidate the path towards recovery.    
+
+
+

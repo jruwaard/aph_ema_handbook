@@ -37,25 +37,20 @@ Another option is to use bipolar-unidimensional items, which place two opposing 
 
 ## The Circumplex Model
 \index{Circumplex model}
-The Circumplex Model of affect (@russell1980circumplex) assumes that all affective states are a linear combination of two independent underlying constructs, rather than one. Affective states are scored on a valence scale (ranging from unpleasant to pleasant) and an arousal scale (ranging from low to high arousal). Combining these scores places the affective states in a circle on one of four quadrants (\@ref(fig:Circumplex)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.  
-
-The Circumplex Model of affect [@russell1980circumplex; @Posner2005] assumes that affective states are a linear combination of two independent underlying constructs, rather than one. Affective states are scored on a valence scale (ranging from unpleasant to pleasant) and an arousal scale (ranging from low to high arousal). Combining these scores places the affective states in a circle on one of four quadrants (\@ref(fig:Circumplex)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.  
-=======
 The Circumplex Model of affect [@russell1980circumplex; @Posner2005] assumes that affective states are a linear combination of two independent underlying constructs, rather than one. Affective states are scored on a valence scale (ranging from unpleasant to pleasant) and an arousal scale (ranging from low to high arousal). Combining these scores places the affective states in a circle on one of four quadrants (\@ref(fig:fig10b)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.  
 
+## Negative & Positive Affect
+\index{Negative Affect} \index{Positive Affect}
+Watson and Tellegen (@watson1985) further specified the Circumplex model, arguing that the diagonal quadrants represent Positive and Negative affect (PA/NA) and that these two terms are the main dimensions of affect (@watson1999). 
+
+While bipolar-unidimensional assesment assumes that positive and negative affect are mutually exclusive, the PA/NA affect model assumes that these seemingly opposing mood states can occur simultaneously. Watson and Clark [@Watson1997] for example, showed a moderate correlation between the two constructs (.32) and argued that while bipolar scales can be used for within-subject assessment, unipolar scales have suprior convergent and discriminant validity in between-subject data. In @Wichers2016, the interplay between postive (PA) and negative affect (NA) was examined with EMA. Participants were randomly prompted to rate 15 mood items (e.g. ‘satisfied’, ‘hurried’, 'gloomy', etc.) on 7-point Likert scales (paper-and-pencil, 10 assesments per day for 6 days). A principal component analysis with oblique rotation suggested to yield two distinct 'states', matching the theory of PA and NA.
+
+In order to facilitate studying affect, DeSmet and colleagues developed the pick-a-mood scale, which is a pictorial self-report scale. The scale builds on the circumplex and PA/NA models and adds the third dimension "". 
 
 ```{r fig10b, fig.cap = "The Circumplex model of affect (left) and the The Pick-A-Mood Circumplex Mood Circle (right).", echo = FALSE, out.width = '100%'}
 knitr::include_graphics("images/outcomes/Circumplex_Model_with_Pick-A-Mood.png")
 ```
 
-
-## Negative & Positive Affect
-\index{Negative Affect} \index{Positive Affect}
-Watson and Tellegen (@watson1985) further specified the Circumplex model, arguing that the diagonal quadrants represent Positive and Negative affect (PA/NA). 
-
-While bipolar-unidimensional assesment assumes that positive and negative affect are mutually exclusive, the PA/NA affect model assumes that these seemingly opposing mood states can occur simultaneously. 
-
-Watson and Clark [@Watson1997] for example, showed a moderate correlation between the two constructs (.32) and argued that while bipolar scales can be used for within-subject assessment, unipolar scales have suprior convergent and discriminant validity in between-subject data. In @Wichers2016, the interplay between postive (PA) and negative affect (NA) was examined with EMA. Participants were randomly prompted to rate 15 mood items (e.g. ‘satisfied’, ‘hurried’, 'gloomy', etc.) on 7-point Likert scales (paper-and-pencil, 10 assesments per day for 6 days). A principal component analysis with oblique rotation suggested to yield two distinct 'states', matching the theory of PA and NA.
 
 
 Ben Zeev overestimation 

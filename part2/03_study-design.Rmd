@@ -12,7 +12,7 @@ This chapter highlights key design aspects of EMA studies. Ample information on 
 
 Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into explorative data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be a first step.
 
-Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter \@ref(introduction). Are you interested in real-life behaviour, in individual differences between participants, in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when  you have to decide on the other aspects of the study design.
+Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter \@ref(introduction). Are you interested in real-life behaviour, in individual differences between participants, in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when you have to decide on the other aspects of the study design.
 
 
 ## Who are the prospect participants?
@@ -45,15 +45,15 @@ An important next step is to define the EMA data sample plan. Questions that nee
 - On each day, how often are participants assessed?
 - How and when are participants invited for assessment?
 
-The questions above should be answered as much as possible to best serve the research question and the  statistical power (see below). In practice, however, it is often necessary to balance between research interests, respondent burden, and practical considerations, such as hardware limitations.
+The questions above should be answered as detailed as possible to best serve the research question and the statistical power (see below). In practice, however, it is often necessary to balance between research interests, respondent burden, and practical considerations, such as hardware limitations.
 
 When determining the appropriate sample plan, researchers are advised to start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data [@Piasecki2007]. 
 
-Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and long. However, this may also increase respondent burden, which may affect compliance and accuracy. Measurement reactivity could occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome [@Hufford2002; @VanBallegooijen2016].
+Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and for a long period of time. However, this may also increase respondent burden, which may affect compliance and accuracy. Measurement reactivity could occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome [@Hufford2002; @VanBallegooijen2016].
 
 Issues related to hardware should also be considered. Electronic wearables have limited battery life and memory storage space. Actigraph watches memory space limitations may require participants to visit the research site. GPS-monitoring apps may have a negative impact on the battery life of the smartphone of the participants. These practical issues may result in data loss, through problems with study adherence or even study drop-out.
 
-Once all decisions related to the sampling plan are made, the procedure should be throughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below, using the 'sample_plan' of package 'emaph':
+Once all decisions related to the sampling plan are made, the procedure should be thoroughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below, using the 'sample_plan' of package 'emaph':
 
 ```{r fig3a, echo = TRUE, fig.cap = "Simulated EMA sampling plan", out.width = "95%", fig.asp = .4}
 # code snippet 3.1: simulating a signal-contingent sample plan
@@ -68,9 +68,9 @@ plan <- sample_plan(n_participants = 5,
 
 The power of a statistical test is the probability that it will detect an effect when this effect, in reality, exists. It is a function of the strength of the effect size, sample size, the significance level (alpha), *and* the statistical model. Determining the power of the experiment is an important step in the design of any study - EMA studies included. Both underpowered and overpowered studies are a waste of time and resources.
 
-Conducting a power analysis can be easy or very difficult, depending on the complexity of the experimental design and the adopted statistical technique. For simple tests, such as the t-test and ANOVA, straightforward analytical solutions exists, which are implemented in readily available tools. In R, one of those tools is package 'pwr'. 
+Conducting a power analysis can be easy or very difficult, depending on the complexity of the experimental design and the adopted statistical technique. For simple tests, such as the t-test and ANOVA, straightforward analytical solutions exist, which are implemented in readily available tools. In R, one of those tools is package 'pwr'. 
 
-For example, to use 'pwr' to calculate the power of a t.test to detect a moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided) signifance level alpha of .05, type:
+For example, to use 'pwr' to calculate the power of a t.test to detect a moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided) significance level alpha of .05, type:
 
 ```{r}
 # code snippet 3.2: Power analysis of a t-test
@@ -86,7 +86,7 @@ pwr.t.test(d = 0.5,
 
 The power is 48% - not even close to the generally adopted standard of 80%. More participants are needed to detect the hypothesised effect.
 
-EMA study designs are often characterised by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happends, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation: 
+EMA study designs are often characterised by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happens, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation: 
 
 ```{r}
 # code snippet 3.2: Power analysis of a t-test
@@ -127,19 +127,21 @@ There was no immediate need to run this simulation. We already knew that the pow
 
 ## Ethical Considerations
 
-Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
+When collecting digital data, you should be mindful of the rules and regulations that apply to data collection, storage and sharing. From May 2018 onward, the European Committee has enforced the General Data Protection Regulation (GDPR) (in Dutch, Algemene Verordening Gegevensbescherming (AVG)). The regulation aims to protect the data and privacy of EU citizens. 
 
 ### Privacy Protection
 
+
+
 Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
 
-[EMA data sharing is complicated. Indirect identifiablity should perhaps be the default assumption. GPS data can not be fully anonymised.] Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
+[EMA data sharing is complicated. Indirect identifiablity should perhaps be the default assumption. GPS data cannot be fully anonymised.] Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
 lobortis imperdiet diam.
 
 
 ### Medical device
 
-All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC; Dutch: 'METC'). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. This chapter gives a brief overview of this process.  
+All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC; Dutch: 'METC'). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. This paragraph gives a brief overview of this process.  
 
 The official definition of a medical device (Medical Device Act, or 'Wet Medische Hulpmiddelen') is as follows:
 
@@ -165,13 +167,28 @@ knitr::include_graphics("images/outcomes/Flow_MD.png")
 
 
 ### Data Processing Agreements
-
-Data processing agreement (DSA). Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-
+When data processing is (partly) outsourced to a third party, a Data Processing Agreement (DPA) should be drafted, that specifies the agreements between the 'controller' and 'processor'. In this context, a controller is the person or organisation that determines the why and how of data collection (for example you as a researcher). The processor processes the data on behalf of the controller, for example by storing the data in a cloud. 
+Aspects of data processing that need to be adressed in the agreement are for example:
+> Context, duration and termination of agreement
+> Processing data
+> Secure data storage
+> Sharing or exporting data
+> Confidentiality
+> Data leaks
+> Liability
+> Data storage period
 
 #### Informed consent
 
-[Informed Consent] Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
+Part of the General Data Protection Regulation is that individuals should provide consent before their data can be collected and processed. 
+The European Union has formulated a number of conditions that need to be met for a consent to be valid:
 
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+>“it must be freely given;
+>it must be informed;
+>it must be given for a specific purpose;
+>all the reasons for the processing must be clearly stated;
+>it is explicit and given via a positive act (for example an electronic tick-box that the individual has to explicitly check online or a signature on a form);
+>it uses clear and plain language and is clearly visible;
+>it is possible to withdraw consent and that fact is explained (for example an unsubscribe link at the end of an electronic newsletter email)”.
 
+The CCMO offers a template that can be used to construct an informed consent form for your specific study [see http://www.ccmo.nl/en/consent]. 

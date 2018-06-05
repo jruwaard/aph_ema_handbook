@@ -151,6 +151,65 @@ summary(fm)
 
 Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
+## Power analysis
+
+### Powerlmm
+
+```{r cs3b}
+# code snippet 3.2: Power analysis of a two-group repeated measures design
+# (analytical approach)
+library(powerlmm)
+p <- study_parameters(n1 = 24,  
+                      n2 = 40,
+                      effect_size = cohend(0.5, 
+                                           standardizer = "pretest_SD"),
+                      icc_pre_subject = 0.5,
+                      var_ratio = 0.01)
+
+get_power(p)
+```
+
+Note the two additional variables in the 'study_parameters' call: 'icc_pre_subject', and 'var_ratio'. According to the package documentation (?study_parameters), 'icc_pre_subject' refers to the 'amount of baseline variance at the subject level', and 'var_ratio' refers to the 'ratio of the random slope variance to the within-subject variance'.
+
+### Package 'simr'
+
+With package 'simr' [@Green2016], power of mixed models can be determined via simulation:
+
+```{r cs3c}
+# code snippet 3.3: Power analysis of a two-group repeated measures design
+# (simulation approach)
+library(simr)
+
+# construct design matrix
+t <- 1:24
+s <- 1:40 
+X   <- expand.grid(t = t, s = s)
+X$g <- c(rep(0, 24), rep(1, 24))
+
+# fixed intercept and slope
+b <- c(2, -0.1, -0.5)
+
+# random intercept variance
+V1 <- 0.5                     
+
+# random intercept and slope variance-covariance matrix
+V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2) 
+
+# residual standard deviation
+s <- 1 
+
+model1 <- makeLmer(y ~ t + g + (1 | s), 
+                   fixef = b, 
+                   VarCorr = V1, 
+                   sigma = s, 
+                   data = X)
+
+powerSim(model1, 
+         fixed("g", "lr"), 
+         nsim = 10,
+         progress = FALSE)
+```
+
 
 ## Analysis of passive EMA data
 

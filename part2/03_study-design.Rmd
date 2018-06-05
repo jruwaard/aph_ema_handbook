@@ -66,64 +66,64 @@ plan <- sample_plan(n_participants = 5,
 
 ##  Power Analysis
 
-The power of a statistical test is the probability that it will detect the hypothesized relationship when this relationship, in reality, exists. It is a function of the strength of the relationship, the significance level alpha, sample size (i.e., the number of participants and the number of repeated measures), *and* the particular statistical tests that is adopted. Determining the power of the experiment is an important step in the design of an EMA study. Both underpowered and overpowered studies are a waste of resources and time.
+The power of a statistical test is the probability that it will detect an effect when this effect, in reality, exists. It is a function of the strength of the effect size, sample size, the significance level (alpha), *and* the statistical model. Determining the power of the experiment is an important step in the design of any study - EMA studies included. Both underpowered and overpowered studies are a waste of time and resources.
 
-Several R-packages exist to conduct poweranalyses for longitudinal designs. The example below is from a package called 'powerlmm' [@R-powerlmm]. In the example, the package is used to calculate the power of a linear mixed model analysis of a two-group repeated measurers design, with 24 repeated measures, 40 participants per group, a standardized effect size of .5 (between-group difference at t = 24), and a significance level of .05. Power is calculated as 26%, which signals a problem with the design: more participants are needed.
+Conducting a power analysis can be easy or very difficult, depending on the complexity of the experimental design and the adopted statistical technique. For simple tests, such as the t-test and ANOVA, straightforward analytical solutions exists, which are implemented in readily available tools. In R, one of those tools is package 'pwr'. 
 
-```{r cs3b}
-# code snippet 3.2: Power analysis of a two-group repeated measures design
+For example, to use 'pwr' to calculate the power of a t.test to detect a moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided) signifance level alpha of .05, type:
+
+```{r}
+# code snippet 3.2: Power analysis of a t-test
 # (analytical approach)
-library(powerlmm)
-p <- study_parameters(n1 = 24,  
-                      n2 = 40,
-                      effect_size = cohend(0.5, 
-                                           standardizer = "pretest_SD"),
-                      icc_pre_subject = 0.5,
-                      var_ratio = 0.01)
 
-get_power(p)
+library(pwr)
+pwr.t.test(d = 0.5, 
+           n = 30,
+           sig.level = 0.05,
+           type = "two.sample",
+           alternative = "two.sided")
 ```
 
-Note the two additional variables in the 'study_parameters' call: 'icc_pre_subject', and 'var_ratio'. According to the package documentation (?study_parameters), 'icc_pre_subject' refers to the 'amount of baseline variance at the subject level', and 'var_ratio' refers to the 'ratio of the random slope variance to the within-subject variance'. Understanding what these values are, why they are important, and how they affect the power analysis requires more background information on the specific statistical technique that is used here (linear mixed-effect modeling), which we will discuss in more depth in Chapter \@ref(lmm). For now, the point is that analytical approaches to power analyses need the specification of parameters that may be difficult to understand and highly dependent on the statistical technique that is used.
+The power is 48% - not even close to the generally adopted standard of 80%. More participants are needed to detect the hypothesised effect.
 
-The approach of 'get_power' to determine power is called an analytical technique. Based on theoretical considerations and assumptions, the power is determined via a mathematical formula. Increasingly, researchers also adopt simulation techniques to determine power. The general idea is that power can be determined by noting the proportion of times a statistical tests reaches significance if it is run, many times, on simulated data. This approach, taken by package 'simr' [@Green2016], is illustrated in the example below.
+EMA study designs are often characterised by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happends, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation: 
 
-```{r cs3c}
-# code snippet 3.3: Power analysis of a two-group repeated measures design
+```{r}
+# code snippet 3.2: Power analysis of a t-test
 # (simulation approach)
-library(simr)
 
-# construct design matrix
-t <- 1:24
-s <- 1:40 
-X   <- expand.grid(t = t, s = s)
-X$g <- c(rep(0, 24), rep(1, 24))
+m1 = 0   # mean in group 1  
+m2 = 0.5 # mean in group 2
+sd = 1   # sd (in both groups)
+n = 30   # sample size, per group
 
-# fixed intercept and slope
-b <- c(2, -0.1, -0.5)
+# conduct the experiment many times
+nsim <- 10000
+p <- numeric(nsim)
+for (i in 1:nsim) {
+  
+  data <- data.frame(
+    outcome <- c(
+      rnorm(n, m1, sd), # group 1 data
+      rnorm(n, m2, sd)  # group 2 data
+    ),
+    group <- c(
+      rep(1, n), # group 1 indicator
+      rep(2, n)) # group 2 indicator
+  )
+  
+  # save significance of test
+  p[i] <- t.test(outcome ~ group, data)$p.value
+}
 
-# random intercept variance
-V1 <- 0.5                     
-
-# random intercept and slope variance-covariance matrix
-V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2) 
-
-# residual standard deviation
-s <- 1 
-
-model1 <- makeLmer(y ~ t + g + (1 | s), 
-                   fixef = b, 
-                   VarCorr = V1, 
-                   sigma = s, 
-                   data = X)
-
-powerSim(model1, 
-         fixed("g", "lr"), 
-         nsim = 10,
-         progress = FALSE)
+# power
+sum(p < 0.05) / nsim
 ```
 
-R excells at data simulation, and many packages exist to help you simulate your data. A good example , in addition to 'simr', is package 'simstudy' [@R-simstudy].
+As can be seen, the simulation results are very close to the output of 'pwr.t.test'. 
+
+There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited (or too difficult to understand...). Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, 'mvrnorm' in package MASS [@Venables2002] can be used to generate correlated data, and package 'simstudy' [@R-simstudy] can be used to generate complex (longitudinal) data. 
+
 
 ## Ethical Considerations
 

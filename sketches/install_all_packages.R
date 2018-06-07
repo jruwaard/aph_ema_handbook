@@ -17,6 +17,7 @@ install.packages(
     "nonlinearTseries",
     "powerlmm",
     "psych",
+    "pwr",
     "PhysicalActivity",
     "qgraph",
     "simstudy",

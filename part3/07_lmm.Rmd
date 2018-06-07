@@ -4,9 +4,7 @@
 options(digits = 3)
 ```
 
-EMA data are timeseries that are characterised by complex correlational structures, irregular sampling intervals, missing data, and substantive individual differences. Mixed models are well-suited to deal with these aspects. For this reason, they are often adopted in the analysis of EMA data.
-
-This chapter provides a brief explanation of the mixed model analysis of EMA data. It shows how mixed models can be run in R, and how the output of these analyses can be interpreted.
+EMA data are timeseries that are characterised by complex correlational structures, irregular sampling intervals, missing data, and substantive individual differences. Mixed models are well-suited to deal with these aspects. For this reason, they are often adopted in the analysis of EMA data. This chapter provides a brief explanation of the mixed model analysis of EMA data. It shows how mixed models can be run in R, and how the output of these analyses can be interpreted.
 
 ## The Mixed Model
 

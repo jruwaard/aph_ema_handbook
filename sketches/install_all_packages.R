@@ -20,6 +20,7 @@ install.packages(
     "pwr",
     "PhysicalActivity",
     "qgraph",
+    "rgl",
     "simstudy",
     "simr"
   )

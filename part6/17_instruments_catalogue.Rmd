@@ -14,10 +14,10 @@ Table: (\#tab:17a) EMA Instruments.
 | Name         | Manufacturer     | URL               | Active | Passive| Backoffice  |
 |-------------:|-----------------:|------------------:|-------:|-------:|------------:|
 | Illumivu     | Illumivu.com     | ilumivu.com       | YES    |  YES   | YES         |
-| MoodBuster   | ICT4D Consortium | moodbuster.eu     | YES    |  YES   | No          |
+| MoodBuster   | ICT4D Consortium | moodbuster.eu     | YES    |  YES   | NO          |
 | Movisense    | MoviSence        | movisense.org     | YES    |  YES   | YES         |
-| PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | No          |
-| Survey Signal|                  | surveysignal.com  | YES    |  NO    | Yes         |
+| PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | NO          |
+| Survey Signal|                  | surveysignal.com  | YES    |  NO    | YES         |
 
 
 ### Illumivu

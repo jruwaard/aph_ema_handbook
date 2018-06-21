@@ -57,20 +57,19 @@ The Study on Chronic Fatigue Syndrome (CFS) focusses on CFS patients that are tr
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Project team | Margreet Worm-Smeitink, MSc,  .... , Prof. dr. Hans Knoop |
-| APH site | AMC, Radboud UMC |
+| Project team | Margreet Worm-Smeitink, MSc; Judith Rosmalen, PhD; Anne van Gils, MSc; Rei Monden, PhD; Hans Knoop, PhD |
+| APH site | AMC |
 | Topic | Time series study on patients with chronic fatigue syndrome |
-| Status | Completed (Period of study____) |
-| Target population | Patients attending the Expert Centre for Chronic Fatigue for diagnosis of Chronic Fatigue Syndrome (CFS, n = 102) |
+| Status | Completed (Period of data collection: Oct 2015 - April 2016) |
+| Target population | New patients attending the Expert Centre for Chronic Fatigue for diagnosis of chronic fatigue syndrome (ECCF, n = 102) |
 | Platform used | RoQua (https://www.roqua.nl) |   
-| EMA active | Participants were asked to complete an e-diary, 5 times a day, in a 2 week study period. Prompts were fixed in consultation with the participant, with a 3-hour break in between each. The e-diary assessed concepts such as fatigue, pain, anxiety, depression, functioning (physical, mental, social), focus on fatigue, fatigue catastrophising, self-efficacy, fear avoidance, and social incomprehension. Items were scored a 5-point Likert scale |
-| EMA passive | Participants contributed passive EMA data, by wearing an actimeter during the study period | 
-| Data management | Participants received prompts on their smartphone, through a inviting SMS, with contained a link to the (web-based) e-diary. |
-| Project goals | The objective of this study was to conduct time series analyses on fatigue, to investigate fatigue fluctuations over time. |
-| Statistical methods | The R auto-var package  (see ), was used to conduct network analyses |
+| EMA Measures | Participants were asked to complete an e-diary, 5 times a day for 2 weeks. The times were fixed in consultation with the participant, with a 3-hour break in between each time. The e-diary assessed concepts such as fatigue, pain, anxiety, depression, activity (physical, mental, social), focus on fatigue, fatigue catastrophising, self-efficacy, fear avoidance, and social incomprehension. Items were scored a 5-point Likert scale. In addition, participants also wear an actometer (actigraphy) during the period when the self-reports were collected. 
+| Data management | Participants received via an SMS to their smartphone a link to the (web-based) e-diary. Participants need to have internet/wifi access to log in to complete the questionnaire.|
+| Project goals | The objective of this study was to conduct time series analyses on fatigue, namely to investigate whether there are differences in perpetuators of fatigue between individual patients. |
+| METC | No METC required as EMA studies do not fall under the scope of Medical Research Involving Human Subjects (WMO). However, with the new EU privacy laws, the involvement of third party for data collection needs to be considered.
+| Statistical methods | The R auto-var package was used to conduct network analyses |
 | Results | Determinants of fatigue will be identified with the aim of personalizing treatment of fatigue in patients with CFS. |
-| Lessons learned | Think carefully beforehand which variables to include for EMA as assessing too many variables will make it difficult to determine which variables to include in model. It also makes interpretation of results difficult. Prepare clear and detailed guideline/handbook for colleagues who will assist in including participants, and be aware of potential problems with the EMA app. This is to ensure that colleagues will be motivated to include participants into the study. |
-
+| Lessons learned | Think carefully beforehand which variables to include for EMA as assessing too many variables will make it difficult to determine which variables to include in model. It also makes interpretation of results difficult. Try to relate EMA to other (traditional) clinical parameters to determine relevance of new type of assessment. Prepare clear and detailed guideline/handbook for colleagues who will assist in including participants, and be aware of potential problems with the EMA app. This is to ensure that colleagues will be motivated to include participants into the study. |
 
 ### Moodbuster and E-COMPARED (EU)
 \index{Moodbuster and E-COMPARED}
@@ -108,19 +107,21 @@ The FAntasTIGUE study examines fatigue in patients with COPD, by evaluating the 
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Project team | Yvonne Goërtz, Melissa Thong, Daisy Janssen, Jeanette Peters, Jan Vercoulen, Chris Burtin, Yvonne Meertens-Kerris, Arnold Coors, Jean Muris, Emiel Wouters, Judith Prins, Mirjam Sprangers, Martijn Spruit |
+| Project team | Yvonne Goërtz, MSc; Zjala Ebadi (from July 2018), MSc; Melissa Thong, PhD; Daisy Janssen, MD,PhD; Jeanette Peters, PhD; Jan Vercoulen, PhD; Chris Burtin, MSc; Yvonne Meertens-Kerris; Arnold Coors; Jean Muris, MD, PhD; Emiel Wouters, MD, PhD; Judith Prins, PhD; Mirjam Sprangers, PhD Martijn Spruit, PhD |
 | APH site | AMC (in collaboration with Ciro-Horn, Maastricht UMC, Radboud UMC, Hasselt University) |
 | Full title | Fatigue in patients with chronic obstructive pulmonary disease: FAntasTIGUE study |
-| Topic | EMA |
+| Topic | iPod data collection |
 | Status | Ongoing, 2017-2020 |
 | Target population | Patients with clinically stable chronic obstructive pulmonary disease (proposed: n=60) |
 | Platform used | Psymate (https://psymate.eu) |
 | Study design | Longitudinal with 4 data collection periods (baseline, 4, 8, 12 months) |  
-| EMA active | For each data collection period, participants are prompted 8 times a day at random moments between 7.30am and 22.30pm, for 5 consecutive days, to answer 19 items (including 9 contextual items). Measured concepts include fatigue, feeling relaxed, breathlessness, agitation, uncertainty, irritation, satisfaction, anxiety, feeling energetic, and feeling mentally fit. Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. In addition, participants are asked to complete a morning questionnaire soon after awakening to assess the quality of their sleep the previous night. Participants also complete an evening questionnaire assessing the general perception of their day just before going to bed | | EMA Passive | During the collection period of self-reported data, patients are asked to wear an actigraph (activity monitor) for 7 days for 24 hours a day |
-| Data management | During the data collection period, patients are provided with iPods installed with the EMA application |
+| EMA active | For each data collection period, participants are prompted 8 times a day at random moments between 7.30am and 22.30pm, for 5 consecutive days, to answer 19 items (including 9 contextual items). Measured concepts include fatigue, relaxed feeling, breathlessness, agitation, uncertainty, irritation, satisfaction, anxiety, feeling energetic, and feeling mentally fit. Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. In addition, participants are asked to complete a morning questionnaire soon after they are awake to assess the quality of their sleep the previous night. Participants also complete an evening questionnaire assessing the general perception of their day just before going to bed. During period of collecting self-reported data, patients are also asked to wear an actigraph (activity monitor) for 7 whole days, even during sleep. |
+| Data management | During the data collection period, patients are provided with iPods installed with the EMA application. |
 | Project goals | To capture possible diurnal fluctuations in fatigue. |
-| Results | Future results will guide the development of interventions for the management of fatigue in this patient group |
-| Lessons learned | |
+| Results | Future results will guide the development of interventions for the management of fatigue in this patient group. |
+| Lessons learned | There were no problems regarding EMA with METC. There were also no questions/comments on EMA from reviewers of the protocol paper. The experience with Psymate is generally positive as queries are promptly answered and we could also tap into the wealth of experience Psymate has in conducting EMA.|
+| Protocol paper| http://bmjopen.bmj.com/content/8/4/e021745.long |
+
 
 ### MERITS (approval summary 12-03-2018)
 
@@ -273,18 +274,20 @@ The European (EU H2020-IMI) RADAR-CNS project (Remote Assessment of Disease and 
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Project team | Iris Hartog, Justine Netjes (until 2017), Tom Oreel (since 2017), Pythia Nieuwkerk, Michael Scherer-Rath, José Henriques, Hanneke van Laarhoven, Mirjam Sprangers |
+|  Project team | Iris Hartog, MSc; Justine Netjes (until 2017), MSc; Tom Oreel (since 2017), MSc; Pythia Nieuwkerk, PhD; Michael Scherer-Rath, PhD; José Henriques,MD, PhD; Hanneke van Laarhoven, MD, PhD; Mirjam Sprangers, PhD |
 |APH site | AMC |
 | Full title | Improving the conceptualisation and measurement of quality of life of patients with multiple chronic morbidities, exemplified by patients with cardiac disease undergoing cardiac intervention |
-| Topic | Smartphone data collection |
+| Topic | iPod data collection |
 | Status | Ongoing, 2016-2010 |
 | Target population | Cardiac patients with comorbidities who were scheduled for elective percutaneous coronary intervention (PCI) or elective coronary artery bypass graft (CABG) (N= 37 EMA /320 total) |
 | Platform used |Psymate (https://psymate.eu)|
 | Study design | Longitudinal with three EMA data collection periods (1. pre-treatment, 2. two weeks after treatment for PCI patients or 3 months post-treatment for CABG patients, and 3. six months post-treatment) |
-| EMA active | Participants are prompted to answer nine general and one evening questionnaire per day for seven consecutive days. During the day, patients are beeped randomly between 7.30 and 22.30 hours to complete the general questionnaire. The general questionnaire contains 19 items, including 5 contextual items. Concepts measured include: positive mood (feeling energetic, relaxed feeling, cheerfulness, happy), negative mood (anxiety, sadness, irritation, worry), coronary artery disease symptoms (chest pain, tightness in chest, oppressive feeling on the chest), and general symptoms (tiredness, other types of pain, shortness of breath). Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. Patients were asked to complete the evening questionnaire just before they went to bed. The evening questionnaire had, besides the general questionnaire, an additional set of questions from the EQ-5D, and the health state of that day. The last item is rated on a visual analogue scale from 0 (worst) to 100 (best) |
+| EMA active | Participants are prompted to answer nine general and one evening questionnaire per day for seven consecutive days. During the day, patients are beeped randomly between 7.30 and 22.30 hours to complete the general questionnaire. The general questionnaire contains 19 items, including 5 contextual items. Concepts measured include: positive mood (feeling energetic, relaxed feeling, cheerfulness, happy), negative mood (anxiety, sadness, irritation, worry), coronary artery disease symptoms (chest pain, tightness in chest, oppressive feeling on the chest), and general symptoms (tiredness, other types of pain, shortness of breath). Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. Patients were asked to complete the evening questionnaire just before they went to bed. The evening questionnaire had, besides the general questionnaire, an additional set of questions from the EQ-5D, and the health state of that day. The last item is rated on a visual analogue scale from 0 (worst) to 100 (best).|
 | Data management | Participants were provided with iPods installed with the EMA application during data collection. Or if they preferred, could use their own device. |
-| Project goals | The project aims to get a better understanding of the moment-to-moment changes in quality of life and how this compares with changes found in retrospective QoL measurements. The project aims to compare QoL collected retrospectively through online or paper surveys with that collected via EMA. Data collected through EMA can also inform possible changes in daily QoL, taking contextual situations into account  |
-| Project goals | The project aims to compare QoL collected retrospectively through paper surveys with that collected via EMA. Data collected through EMA can also inform possible changes in daily QoL, taking contextual situations into account. Data will be analysed using vector autoregressive models using R|
-| Results | Work in progress, currently exploring the data using network analysis. 
+| Project goals | The project aims to get a better understanding of the moment-to-moment changes in quality of life and how this compares with changes found in retrospective QoL measurements. The project aims to compare QoL collected retrospectively through online or paper surveys with that collected via EMA. Data collected through EMA can also inform possible changes in daily QoL, taking contextual situations into account. |
+| Statistics |  Data will be analysed using vector autoregressive models using R. |
+| METC | METC approval was waived as EMA was not considered a WMO study. |
+| Results | Work in progress, currently exploring the data using network analysis. |
 Lessons learned | To maintain response during follow-ups, it is important to maintain contact with patients between follow-ups. The development and testing of the app can take a significant amount of time, and during the study, updates of the smartphone operating system may lead to new bugs in the app. Due to the amount of data collected via EMA, data cleaning can take up a significant amount of time. The quality of EMA data can be low due to significant amount of missing data. Besides missing data, lack of variation in answers from day-to-day (through use of a Likert scale) could also be an issue. Possible solution is the use of continuous rating scales instead of 7-point Likert scales Both missing data and lack of variation can be a problem if planning to estimate vector autoregressive models.  |
 | Website | http://www.impactonderzoek.nl/  |
+

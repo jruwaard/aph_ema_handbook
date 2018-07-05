@@ -18,7 +18,8 @@ Table: (\#tab:17a) EMA Instruments.
 | Movisense    | MoviSence        | movisense.org     | YES    |  YES   | YES         |
 | PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | NO          |
 | Survey Signal|                  | surveysignal.com  | YES    |  NO    | YES         |
-| RoQua        | RoQua            | roqua.nl          | Yes    |  No    |  Yes
+| RoQua        | RoQua            | roqua.nl          | YES    |  NO    | YES
+
 
 ### Illumivu
 

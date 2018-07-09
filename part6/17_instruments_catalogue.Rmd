@@ -14,10 +14,11 @@ Table: (\#tab:17a) EMA Instruments.
 | Name         | Manufacturer     | URL               | Active | Passive| Backoffice  |
 |-------------:|-----------------:|------------------:|-------:|-------:|------------:|
 | Illumivu     | Illumivu.com     | ilumivu.com       | YES    |  YES   | YES         |
-| MoodBuster   | ICT4D Consortium | moodbuster.eu     | YES    |  YES   | No          |
+| MoodBuster   | ICT4D Consortium | moodbuster.eu     | YES    |  YES   | NO          |
 | Movisense    | MoviSence        | movisense.org     | YES    |  YES   | YES         |
-| PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | No          |
-| Survey Signal|                  | surveysignal.com  | YES    |  NO    | Yes         |
+| PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | NO          |
+| Survey Signal|                  | surveysignal.com  | YES    |  NO    | YES         |
+| RoQua        | RoQua            | roqua.nl          | YES    |  NO    | YES
 
 
 ### Illumivu
@@ -81,3 +82,8 @@ knitr::include_graphics(c(
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 
+### RoQua
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+http://www.roqua.nl/

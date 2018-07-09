@@ -14,7 +14,7 @@ install.packages(
     "lomb",
     "nlme",
     "mlVAR",
-    "nonlinearTseries",
+    "nonlinearTseries", 
     "powerlmm",
     "psych",
     "pwr",

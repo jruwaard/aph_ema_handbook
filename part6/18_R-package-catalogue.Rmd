@@ -1,58 +1,85 @@
 
 # R packages for EMA research {#rcat}
 
-Many R packages exist to ease up the management and analysis of EMA data. In this chapter, some of these packages are discussed. For each, we provide a summary description, and example  code snippets. 
+Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, some of these packages are discussed. For each, we provide a summary description, and example code snippets. 
 
-Table: (\#tab:rcat) Alphabetic list of R packages that are useful in EMA research.
+Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
-+----------------+-------------------+-----------------------------------------+
-| Name           | Category          | Description                             |
-+:===============+:==================+:========================================+
-| adehabitatHR   | Passive EMA data  | Developed for home range estimation of  |
-|                | analysis          | wild animals from GPS data. Useful for  |
-|                |                   | human data as well (see Chapter         |
-|                |                   | \@ref(homerange)).                      | 
-+----------------+-------------------+-----------------------------------------+
-| autovar        | Symptom Networks  | Automate the construction of vector     |          
-|                |                   | autoregressive models.                  |
-+----------------+-------------------+-----------------------------------------+
-| bootnet        | Symptom Networks  | Determine the stability of symptom      |
-|                | analysis          | networks.                               |
-+----------------+-------------------+-----------------------------------------+ 
-| GGIR           | Accelerometer     | Simplifies management and analysis of   |
-|                | Data              | raw accelerometer data.                 |          
-+----------------+-------------------+-----------------------------------------+
-| lme4           | Mixed Modeling    | Fit linear and nonlinear mixed effects  |
-|                |                   | models. More efficient reimplementation |
-|                |                   | of package 'nlme', that also provides   |
-|                |                   | options for generalised modeling.       |
-+----------------+-------------------+-----------------------------------------+
-| lomb           | GPS data          | Calculate the Lomb-Scargle Periodogram  |
-|                |                   | for unevenly sampled time series.       |
-+----------------+-------------------+-----------------------------------------+ 
-| nlme           | Mixed Modeling    | Fit linear and nonlinear mixed effects  |
-|                |                   | models. Pre-dates package lme4, but is  |
-|                |                   | still used because it a provides more   |
-|                |                   | advanced options to model correlational |
-|                |                   | structures in the data.                 |
-+----------------+-------------------+-----------------------------------------+
-| powerlmm       | Power analysis    | power calculation for two- and three-   |
-|                |                   | level multilevel models with missing    |
-|                |                   | data.                                   | 
-+----------------+-------------------+-----------------------------------------+
-| simr           | Power analysis    | Simulation-based power calculations for |
-|                |                   | mixed models                            |
-+----------------+-------------------+-----------------------------------------+
-| simstudy       | Data simulation   | Simulating study data.                  | 
-+----------------+-------------------+-----------------------------------------+
-| tidyverse      | Data Management & | Well-designed set of packages           |
-|                | Visual Exploration| for data management and data            |
-|                |                   | visualisation.                          |
-+----------------+-------------------+-----------------------------------------+
-| qgraph         | Symptom Networks  | Estimate and plot symptom networks.     |
-|                | analysis          |                                         |
-+----------------+-------------------+-----------------------------------------+
++-----------------+-------------------+-----------------------------------------+
+| Category        | Package           | Description                             |
++:================+:==================+:========================================+
+| Accelerometry   | GGIR              | Simplifies management and analysis of   |
+|                 |                   | raw accelerometer data.                 | 
++-----------------+-------------------+-----------------------------------------+
+|                 | PhysicalActivity  | Analysis of raw accelerometer data.     | 
++-----------------+-------------------+-----------------------------------------+
+| Data Management | tidyverse         | Well-designed coherent set of           | 
+| & Visual        |                   | packages for data manipulation and      |
+| Exploration     |                   | visual exploration                      |
++-----------------+-------------------+-----------------------------------------+
+| Mixed-effects   | lme4              | Fit linear and nonlinear mixed-effects  |
+| Modeling        |                   | models. More efficient reimplementation |
+|                 |                   | of package 'nlme', that also provides   |
+|                 |                   | options for generalised modeling.       |
++-----------------+-------------------+-----------------------------------------+
+|                 | nlme              | Fit linear and nonlinear mixed effects  |
+|                 |                   | models. Pre-dates package 'lme4', but is|
+|                 |                   | still used because it a provides more   |
+|                 |                   | advanced options to model correlational |
+|                 |                   | structures in the data.                 |
++-----------------+-------------------+-----------------------------------------+
+| Power Analysis  | simr              | Simulation-based power calculations for |
+|                 |                   | mixed models.                           | 
++-----------------+-------------------+-----------------------------------------+
+| Simulation      | simstudy          | Simulate study data.                    | 
++-----------------+-------------------+-----------------------------------------+
+| Spatio-temporal | adehabitatHR      | Developed for home range estimation of  |
+| analysis        |                   | wild animals from GPS data. Useful for  |
+|                 |                   | human data as well (see Chapter         |
+|                 |                   | \@ref(homerange)).                      | 
++-----------------+-------------------+-----------------------------------------+
+| Symptom Networks| autovar           | Automate the construction of vector     |          
+|                 |                   | autoregressive models.                  |
++-----------------+-------------------+-----------------------------------------+
+|                 | bootnet           | Assess the stability of symptom         |
+|                 |                   | networks.                               |
++-----------------+-------------------+-----------------------------------------+
+|                 | qgraph            | Estimate and plot symptom networks.     |  
++-----------------+-------------------+-----------------------------------------+
+| Time Series     | forecast          | Forecasting Functions for Time Series   |
+| analysis        |                   |                                         |
++-----------------+-------------------+-----------------------------------------+
+|                 | lomb              | Calculate the Lomb-Scargle Periodogram  |
+|                 |                   | for unevenly sampled time series.       |
++-----------------+-------------------+-----------------------------------------+
 
+
+## Accelerometry
+
+### Package 'GGIR'
+\index{GGIR}
+
+The management and (pre)processing of raw multi-day accelerometer data can be challenging. Before final analyses can be conducted, raw data have to re-callibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and engergy-expenditure measures, have to be calculated from the triangular (x, y, x) data, often in several time windows. Package *GGIR* [@R-GGIR] is a popular packages to pre-process raw acceleromety data from three wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
+
+
+### Package 'PhysicalActivity'
+\index{PhysicalActivity}
+
+Package ***'PhysicalActivity'*** [@R-PhysicalActivity] provides an alternative to package 'GGIR', when ActiGraph data are available.
+
+```{r fig11a, fig.cap="Three days of Accelerometer data."}
+library(PhysicalActivity)
+data(dataSec)
+
+d <- dataCollapser(dataSec, TS = "TimeStamp", col = "counts", by = 60)
+
+ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
+  geom_smooth(method = "loess", span = .05, se = FALSE) + 
+  geom_point(size = .2, alpha = .25) + 
+  scale_x_datetime() +
+  scale_y_sqrt(breaks = c(100, 1000, 3000, 6000, 9000)) +  
+  xlab("Time") + ylab("Activity")
+```
 
 ## Data management & Visual Exploration
 
@@ -69,9 +96,9 @@ library(tidyverse)
 #### Package `ggplot2`
 \index{ggplot2}
 
-This package is used throughout the book to produce all graphs. It provides a collection of high-level plotting commands with which graphs can be build up as a series of layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the general structure of scientific graphs.
+Package ***'ggplot2'*** [@wickham2016ggplot2] provides a collection of high-level plotting commands with which graphs can be build up as a series of layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the general structure of scientific graphs.
 
-The package is very popular. Many tutorials on how to use the package to produce graphs can be found on the web. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in a book written by lead author Hadley Wickham [@wickham2016ggplot2].
+The package is very popular. Many tutorials on how to use the package to produce graphs can be found on the web. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in the book 'ggplot2: Elegant Graphics for Data Analysis', written by package author Hadley Wickham [@wickham2016ggplot2].
 
 ```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
 # code snippet 18.2: simple ggplot example
@@ -99,7 +126,7 @@ g + facet_wrap(~ ID)
 #### Package `dplyr`
 \index{dplyr}
 
-Package 'dplyr' is an attempt to provide a grammar of data manipulations. With 'dplyr', elementary data manipulations can be chained using the piping operator '%>%' to implement highly complex data transformations. A good introduction can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/) 
+Package ***'dplyr'**8 [@R-dplyr] is an attempt to provide a grammar of data manipulations. With 'dplyr', elementary data manipulations can be chained using the piping operator '%>%' to implement highly complex data transformations. A good introduction can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/).
 
 ```{r cs18c, dplyr_example}
 # code snippet 18.3: aggregate data by ID, through a 'pipe'
@@ -109,7 +136,7 @@ d %>%
   round(., 2)
 ```
 
-## Linear mixed modeling
+## Mixed-effects modeling
 
 Several R-packages for mixed modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
 
@@ -128,7 +155,7 @@ summary(fm)
 ### lme4
 \index{lme4}
 
-Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed effects model. With large data sets and complex hierarchical models, this package should probably be preferred.
+Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, models specifications in 'lmer' are different from model specifications in 'lme'. 
 
 ```{r cs18e, lme4_example, eval=FALSE}
 # code snippet 18.4: fit a linear mixed model, with lme
@@ -139,27 +166,9 @@ summary(fm)
 
 ## Power analysis
 
-### Powerlmm
-
-```{r cs3b}
-# code snippet 3.2: Power analysis of a two-group repeated measures design
-# (analytical approach)
-library(powerlmm)
-p <- study_parameters(n1 = 24,  
-                      n2 = 40,
-                      effect_size = cohend(0.5, 
-                                           standardizer = "pretest_SD"),
-                      icc_pre_subject = 0.5,
-                      var_ratio = 0.01)
-
-get_power(p)
-```
-
-Note the two additional variables in the 'study_parameters' call: 'icc_pre_subject', and 'var_ratio'. According to the package documentation (?study_parameters), 'icc_pre_subject' refers to the 'amount of baseline variance at the subject level', and 'var_ratio' refers to the 'ratio of the random slope variance to the within-subject variance'.
-
 ### Package 'simr'
 
-With package 'simr' [@Green2016], power of mixed models can be determined via simulation:
+With package 'simr' [@Green2016], power of mixed-effects models can be determined via simulation:
 
 ```{r cs3c}
 # code snippet 3.3: Power analysis of a two-group repeated measures design
@@ -173,7 +182,7 @@ X   <- expand.grid(t = t, s = s)
 X$g <- c(rep(0, 24), rep(1, 24))
 
 # fixed intercept and slope
-b <- c(2, -0.1, -0.5)
+b <- c(2, -0.1, 0, -0.5)
 
 # random intercept variance
 V1 <- 0.5                     
@@ -184,42 +193,21 @@ V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2)
 # residual standard deviation
 s <- 1 
 
-model1 <- makeLmer(y ~ t + g + (1 | s), 
+model1 <- makeLmer(y ~ t * g + (1 + t | s), 
                    fixef = b, 
-                   VarCorr = V1, 
+                   VarCorr = V2, 
                    sigma = s, 
                    data = X)
 
 powerSim(model1, 
-         fixed("g", "lr"), 
+         fixed("t:g", "lr"), 
          nsim = 10,
          progress = FALSE)
 ```
 
 
-## Analysis of passive EMA data
 
-### Accelerometer data: Package 'GGIR'
-\index{GGIR}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.   
-
-
-### GPS data: Package 'lomb'
-\index{Lomb-Scargle periodogram}
-\index{lomb}
-
-Package **lomb** simplifies the computation of Lomb-Scargle periodograms. Proin a viverra metus, nec scelerisque odio [@ruf1999]. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh [@Saeb2015]. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-
-```{r cs18f, out.width='98%'}
-# code snippet 18.5: calculating a Lomb-Scargle periodogram
-data(ibex, package = "lomb") 
-lomb::lsp(ibex[2:3]) 
-```
-
+## Spatio-temporal analysis: 
 
 ### GPS data: Package `adehabitatHR`
 \index{Homerange estimation}
@@ -236,6 +224,16 @@ library(adehabitatHR)
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor (see Chapter \@ref(networks)).
 
+
+### Package 'autovar`
+\index{autovar}
+\index{vector autoregressive models}
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisqueodio. Morbi viverra tristique libero vel fringilla [@VanderKrieke2015]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. 
+
+Vivamus enim turpis, pulvinar volutpat purus nec, lobortis [http://autovar.nl](https://autovar.nl/)
+
+
 ### Package 'qgraph`
 \index{qgraph}
 
@@ -251,11 +249,22 @@ Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
 purus nec, lobortis imperdiet diam.  
 
 
-### Package 'autovar`
-\index{autovar}
-\index{vector autoregressive models}
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisqueodio. Morbi viverra tristique libero vel fringilla [@VanderKrieke2015]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. 
+## Timeseries analysis
 
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis [http://autovar.nl](https://autovar.nl/)
+### Package 'forecast'
+\index{forecast}
 
+Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+
+### Package 'lomb'
+\index{Lomb-Scargle periodogram}
+\index{lomb}
+
+Disturbances in circadian rhythms have been related to depressive symptoms [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhytms can be detected in EMA data. Standard analysis techniques, however, expect regular timeseries, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976], which can be applied to unevenly-sampled timeseries as well. Package ***lomb*** [@ruf1999] implements this procedure.
+
+```{r cs18f, out.width='98%'}
+# code snippet 18.5: calculating a Lomb-Scargle periodogram
+data(ibex, package = "lomb") 
+lomb::lsp(ibex[2:3]) 
+```

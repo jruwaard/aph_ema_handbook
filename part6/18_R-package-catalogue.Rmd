@@ -1,9 +1,9 @@
 
 # R packages for EMA research {#rcat}
 
-Many specialised R packages exist for EMA analysis. In this chapter, these packages are discussed. We provide a summary description, and example analysis code. 
+Many R packages exist to ease up the management and analysis of EMA data. In this chapter, some of these packages are discussed. For each, we provide a summary description, and example  code snippets. 
 
-Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful for EMA research.
+Table: (\#tab:rcat) Alphabetic list of R packages that are useful in EMA research.
 
 +----------------+-------------------+-----------------------------------------+
 | Name           | Category          | Description                             |
@@ -45,11 +45,9 @@ Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful fo
 +----------------+-------------------+-----------------------------------------+
 | simstudy       | Data simulation   | Simulating study data.                  | 
 +----------------+-------------------+-----------------------------------------+
-| tidyverse      | Data Management & | Well-managed set of packages            |
+| tidyverse      | Data Management & | Well-designed set of packages           |
 |                | Visual Exploration| for data management and data            |
-|                |                   | visualisation. Includes "ggplot2',      |
-|                |                   | 'dplyr, and 'haven' (to read and write |
-|                |                   | SPSS data files.                        |
+|                |                   | visualisation.                          |
 +----------------+-------------------+-----------------------------------------+
 | qgraph         | Symptom Networks  | Estimate and plot symptom networks.     |
 |                | analysis          |                                         |
@@ -61,20 +59,19 @@ Table: (\#tab:rcat) Alphabetic list of specialised R packages that are useful fo
 ### Package `tidyverse`
 \index{tidyverse}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. 
+This package is actually a collection of well-designed packages, that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
 
 ```{r cs18a}
 # code snippet 18.1: loading the tidyverse package
 library(tidyverse)
 ```
 
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis 
-http://tidyverse.tidyverse.org. 
-
 #### Package `ggplot2`
 \index{ggplot2}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
+This package is used throughout the book to produce all graphs. It provides a collection of high-level plotting commands with which graphs can be build up as a series of layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the general structure of scientific graphs.
+
+The package is very popular. Many tutorials on how to use the package to produce graphs can be found on the web. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in a book written by lead author Hadley Wickham [@wickham2016ggplot2].
 
 ```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
 # code snippet 18.2: simple ggplot example
@@ -99,35 +96,27 @@ g
 g + facet_wrap(~ ID)
 ```
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend at [the tidyverse website](http://ggplot2.tidyverse.org/). Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas [@wickham2016ggplot2]. 
-
-
 #### Package `dplyr`
 \index{dplyr}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
+Package 'dplyr' is an attempt to provide a grammar of data manipulations. With 'dplyr', elementary data manipulations can be chained using the piping operator '%>%' to implement highly complex data transformations. A good introduction can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/) 
 
 ```{r cs18c, dplyr_example}
-# code snippet 18.3: aggregate data by group, through a 'pipe'
+# code snippet 18.3: aggregate data by ID, through a 'pipe'
 d %>% 
   group_by(ID) %>%
   summarise(mean_score = mean(score)) %>%
   round(., 2)
 ```
 
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
-
-
 ## Linear mixed modeling
 
-Package **nlme** and ***lme4** consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. 
-
+Several R-packages for mixed modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
 
 ### nlme
 \index{nlme}
 
-Package **nlme** ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem [@R-nlme]. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+Package **nlme** is introduced in chapter \@ref(lmm). It is an older package (in comparison to package lme4), that is still used a lot because it provides options to model correlational structures that are not implemented (yet) in lme4.
 
 ```{r cs18d, nlme_example}
 # code snippet 18.4: fit a linear mixed model, with lme
@@ -136,11 +125,10 @@ fm <- lme(distance ~ age + Sex, data = Orthodont, random = ~ 1)
 summary(fm)
 ```
 
-
 ### lme4
 \index{lme4}
 
-Package **lme4** at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Bates2015]. Sed at varius erat, id consequat nibh.
+Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed effects model. With large data sets and complex hierarchical models, this package should probably be preferred.
 
 ```{r cs18e, lme4_example, eval=FALSE}
 # code snippet 18.4: fit a linear mixed model, with lme
@@ -148,8 +136,6 @@ library(lme4)
 fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
 summary(fm)
 ```
-
-Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 ## Power analysis
 
@@ -255,7 +241,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet [@Epskamp2012]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.  
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 
 ### Package 'bootnet`

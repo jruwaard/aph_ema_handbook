@@ -1,0 +1,89 @@
+
+# EMA Instruments Catalogue {#ema-instruments-catalogue}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
+
+
+## Apps
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+
+Table: (\#tab:17a) EMA Instruments.
+
+| Name         | Manufacturer     | URL               | Active | Passive| Backoffice  |
+|-------------:|-----------------:|------------------:|-------:|-------:|------------:|
+| Illumivu     | Illumivu.com     | ilumivu.com       | YES    |  YES   | YES         |
+| MoodBuster   | ICT4D Consortium | moodbuster.eu     | YES    |  YES   | NO          |
+| Movisense    | MoviSence        | movisense.org     | YES    |  YES   | YES         |
+| PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | NO          |
+| Survey Signal|                  | surveysignal.com  | YES    |  NO    | YES         |
+| RoQua        | RoQua            | roqua.nl          | YES    |  NO    | YES
+
+
+### Illumivu
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+https://ilumivu.com/
+
+
+```{r fig17a, echo = FALSE, fig.cap = "Illumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+knitr::include_graphics(c(
+   "images/instruments/illumivu/iv-app-1.png",
+   "images/instruments/illumivu/iv-app-2.png",
+   "images/instruments/illumivu/iv-app-3.png"))
+```
+
+
+### MoodBuster
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+http://www.moodbuster.eu/
+
+
+```{r fig17b, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+knitr::include_graphics(c(
+   "images/instruments/moodbuster/mb-app-home.png",
+   "images/instruments/moodbuster/mb-app-mood.png",
+   "images/instruments/moodbuster/mb-app-graph.png"))
+```
+
+
+### Movisense XS
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+
+### PsyMate
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+http://www.psymate.eu/
+
+
+```{r fig17c, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+knitr::include_graphics(c(
+   "images/instruments/psymate/psymate-app1.jpg",
+   "images/instruments/psymate/psymate-app3.jpg",
+   "images/instruments/psymate/psymate-app4.jpg"))
+```
+
+
+### Survey Signal
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+
+### RoQua
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+
+http://www.roqua.nl/

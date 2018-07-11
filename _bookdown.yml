@@ -3,38 +3,38 @@ language:
   ui:
     chapter_name: "Chapter "
 
-new_session: no
+new_session: yes
 delete_merged_file: TRUE
 
 rmd_files: [
   "index.rmd",
   
-  "part1/01_EMA.Rmd",
-  "part1/02_R.Rmd",
+  "01_EMA.Rmd",
+  "02_R.Rmd",
 
-  "part2/03_study-design.Rmd",
-  "part2/04_instruments.Rmd",
-  "part2/05_datamanagement.Rmd",
+  "03_study-design.Rmd",
+  "04_instruments.Rmd",
+  "05_datamanagement.Rmd",
   
-  "part3/06_features.Rmd",
-  "part3/07_lmm.Rmd",
-  "part3/08_timeseries.Rmd",
-  "part3/09_networks.Rmd",
+  "06_features.Rmd",
+  "07_lmm.Rmd",
+  "08_timeseries.Rmd",
+  "09_networks.Rmd",
   
-  "part4/10_mood.Rmd",
-  "part4/11_activity.Rmd",
-  "part4/12_context.Rmd",
+  "10_mood.Rmd",
+  "11_activity.Rmd",
+  "12_context.Rmd",
   
-  "part5/13_csd.Rmd",
-  "part5/14_caspar.Rmd",
-  "part5/15_homerange.Rmd",
+  "13_csd.Rmd",
+  "14_caspar.Rmd",
+  "15_homerange.Rmd",
   
-  "part6/16_aph-catalogue.Rmd",
-  "part6/17_instruments_catalogue.Rmd",
-  "part6/18_R-package-catalogue.Rmd",
+  "16_aph-catalogue.Rmd",
+  "17_instruments_catalogue.Rmd",
+  "18_R-package-catalogue.Rmd",
 
-  "part7/acknowledgements.Rmd",
-  "part7/references.Rmd"
+  "acknowledgements.Rmd",
+  "references.Rmd"
 ]
 
 before_chapter_script: "_common.R"

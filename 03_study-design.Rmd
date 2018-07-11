@@ -1,0 +1,197 @@
+# (PART) EMA Methods {-}
+
+
+# Study Design {#methods}
+
+As with all scientific research, EMA studies start with mindful consideration of the study design. Issues that need to be considered are, for example, the research question(s), the hypotheses, the population of interest, and the nature of the comparison groups [@Shiffman2008]. 
+
+This chapter highlights key design aspects of EMA studies. Ample information on general study design issues can be found elsewhere [see for example, the APH quality handbook, @aph_qh]. 
+
+
+## What is the research question?
+
+Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into explorative data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be a first step.
+
+Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter \@ref(introduction). Are you interested in real-life behaviour, in individual differences between participants, in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when you have to decide on the other aspects of the study design.
+
+
+## Who are the prospect participants?
+
+Given the experimental nature of EMA, studies are often piloted in healthy or sub-clinical populations. This is a recommended first step to test the experimental procedures and to avoid unnecessary burden of vulnerable patient populations. You should be aware, though, that results obtained in non-patient populations do not necessarily generalise to patient populations. EMA mood ratings, for example, might be much more variable in patients compared to non-patients. Pilot studies should therefore also be conducted in the target population.
+
+## How are theoretical experimental variables operationalised?
+
+With the study hypotheses in place, experimental constructs can be operationalised into well-defined quantifiable measures.
+
+Precies def wat meten betrouwbaarheid, validiteit, ruwe dat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+What is the data acquisition interface? [@Stone2002]. Opletten wat je koopt aan technologie. Onderbouw keuze. Zie hoofdstuk X. Gevalideerd vs nieuw.
+
+- Technical Reliability of data platform
+- Track record of data platform suppliers
+- User-friendliness of data device for study participants.
+- User-friendliness of data platform for researcher (availability of an administrative back-office).
+- Location of data storage
+- Costs
+
+For an overview of existing EMA data platforms, see \@ref(ema-instruments-catalogue).
+
+
+## Constructing the Sample Plan
+
+An important next step is to define the EMA data sample plan. Questions that need to be answered are:
+
+- How many days will data collection last?
+- On each day, how often are participants assessed?
+- How and when are participants invited for assessment?
+
+The questions above should be answered as detailed as possible to best serve the research question and the statistical power (see below). In practice, however, it is often necessary to balance between research interests, respondent burden, and practical considerations, such as hardware limitations.
+
+When determining the appropriate sample plan, researchers are advised to start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data [@Piasecki2007]. 
+
+Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and for a long period of time. However, this may also increase respondent burden, which may affect compliance and accuracy. Measurement reactivity could occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome [@Hufford2002; @VanBallegooijen2016].
+
+Issues related to hardware should also be considered. Electronic wearables have limited battery life and memory storage space. Actigraph watches memory space limitations may require participants to visit the research site. GPS-monitoring apps may have a negative impact on the battery life of the smartphone of the participants. These practical issues may result in data loss, through problems with study adherence or even study drop-out.
+
+Once all decisions related to the sampling plan are made, the procedure should be thoroughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below, using the 'sample_plan' of package 'emaph':
+
+```{r fig3a, echo = TRUE, fig.cap = "Simulated EMA sampling plan", out.width = "95%", fig.asp = .4}
+# code snippet 3.1: simulating a signal-contingent sample plan
+plan <- sample_plan(n_participants = 5,
+                    n_days = 2,
+                    times = c("09:00-11:00", "12:30", "17:00-19:00"),
+                    plot = TRUE)
+```
+
+
+##  Power Analysis
+
+The power of a statistical test is the probability that it will detect an effect when this effect, in reality, exists. It is a function of the strength of the effect size, sample size, the significance level (alpha), *and* the statistical model. Determining the power of the experiment is an important step in the design of any study - EMA studies included. Both underpowered and overpowered studies are a waste of time and resources.
+
+Conducting a power analysis can be easy or very difficult, depending on the complexity of the experimental design and the adopted statistical technique. For simple tests, such as the t-test and ANOVA, straightforward analytical solutions exist, which are implemented in readily available tools. In R, one of those tools is package 'pwr'. 
+
+For example, to use 'pwr' to calculate the power of a t.test to detect a moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided) significance level alpha of .05, type:
+
+```{r}
+# code snippet 3.2: Power analysis of a t-test
+# (analytical approach)
+
+library(pwr)
+pwr.t.test(d = 0.5, 
+           n = 30,
+           sig.level = 0.05,
+           type = "two.sample",
+           alternative = "two.sided")
+```
+
+The power is 48% - not even close to the generally adopted standard of 80%. More participants are needed to detect the hypothesised effect.
+
+EMA study designs are often characterised by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happens, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation: 
+
+```{r}
+# code snippet 3.2: Power analysis of a t-test
+# (simulation approach)
+
+m1 = 0   # mean in group 1  
+m2 = 0.5 # mean in group 2
+sd = 1   # sd (in both groups)
+n = 30   # sample size, per group
+
+# conduct the experiment many times
+nsim <- 10000
+p <- numeric(nsim)
+for (i in 1:nsim) {
+  
+  data <- data.frame(
+    outcome <- c(
+      rnorm(n, m1, sd), # group 1 data
+      rnorm(n, m2, sd)  # group 2 data
+    ),
+    group <- c(
+      rep(1, n), # group 1 indicator
+      rep(2, n)) # group 2 indicator
+  )
+  
+  # save significance of test
+  p[i] <- t.test(outcome ~ group, data)$p.value
+}
+
+# power
+sum(p < 0.05) / nsim
+```
+
+As can be seen, the simulation results are very close to the output of 'pwr.t.test'. 
+
+There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited (or too difficult to understand...). Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, 'mvrnorm' in package MASS [@Venables2002] can be used to generate correlated data, and package 'simstudy' [@R-simstudy] can be used to generate complex (longitudinal) data. 
+
+
+## Ethical Considerations
+
+When collecting digital data, you should be mindful of the rules and regulations that apply to data collection, storage and sharing. From May 2018 onward, the European Committee has enforced the General Data Protection Regulation (GDPR) (in Dutch, Algemene Verordening Gegevensbescherming (AVG)). The regulation aims to protect the data and privacy of EU citizens. 
+
+### Privacy Protection
+
+
+
+Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
+
+[EMA data sharing is complicated. Indirect identifiablity should perhaps be the default assumption. GPS data cannot be fully anonymised.] Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec,
+lobortis imperdiet diam.
+
+
+### Medical device
+
+All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC; Dutch: 'METC'). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. This paragraph gives a brief overview of this process.  
+
+The official definition of a medical device (Medical Device Act, or 'Wet Medische Hulpmiddelen') is as follows:
+
+> “Any instrument, apparatus or appliance, any software or material or any other
+> article that is used alone or in combination, including any accessory and the 
+> software required for its proper operation, that is intended by the manufacturer
+> to be used specifically for diagnostic or therapeutic purposes, and is intended
+> by the manufacturer to be used for human beings for the purpose of:
+> - diagnosis, prevention, monitoring, treatment or alleviation of disease
+> - diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap
+> - investigation, replacement or modification of the anatomy or of a physiological process
+> - control of conception, and which does not achieve its principal intended action in or on the
+> human body by pharmacological, immunological or metabolic means, but which may be 
+> assisted in its function by such means.” [@ccmo_meddev]
+
+In short, software can be classified as a medical device if it collects patient-specific data and is specifically intended for one of the above-mentioned objectives. Or in other words, if a health care professional takes this information into account when determining the course of treatment. The law does not differentiate between passive and active EMA.
+
+In practice, the definition of medical devices leaves a lot of room for confusion.  Researchers often struggle with the question whether their assessment tools should be considered an medical device or not. For this purpose, flowcharts exist that help to determine whether an app of product should be classified as a medical device [see, e.g., @Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows such a flow-chart. 
+
+```{r fig3b, fig.cap = "Flow-chart medical device.", echo = FALSE, out.width = '100%'}
+knitr::include_graphics("images/outcomes/Flow_MD.png")
+```
+
+
+### Data Processing Agreements
+When data processing is (partly) outsourced to a third party, a Data Processing Agreement (DPA) should be drafted, that specifies the agreements between the 'controller' and 'processor'. In this context, a controller is the person or organisation that determines the why and how of data collection (for example you as a researcher). The processor processes the data on behalf of the controller, for example by storing the data in a cloud. 
+Aspects of data processing that need to be adressed in the agreement are for example:
+
+Wie, niet delen anderen, data leaks rap., niet uitbesteden, log toegang binnen organisatie
+
+> Context, duration and termination of agreement
+> Processing data
+> Secure data storage
+> Sharing or exporting data
+> Confidentiality
+> Data leaks
+> Liability
+> Data storage period
+
+#### Informed consent
+
+Part of the General Data Protection Regulation is that individuals should provide consent before their data can be collected and processed. 
+The European Union has formulated a number of conditions that need to be met for a consent to be valid:
+
+>“it must be freely given;
+>it must be informed;
+>it must be given for a specific purpose;
+>all the reasons for the processing must be clearly stated;
+>it is explicit and given via a positive act (for example an electronic tick-box that the individual has to explicitly check online or a signature on a form);
+>it uses clear and plain language and is clearly visible;
+>it is possible to withdraw consent and that fact is explained (for example an unsubscribe link at the end of an electronic newsletter email)”.
+
+The CCMO offers a template that can be used to construct an informed consent form for your specific study [see http://www.ccmo.nl/en/consent]. 

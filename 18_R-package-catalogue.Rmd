@@ -88,12 +88,8 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 ### Package `tidyverse`
 \index{tidyverse}
 
-This package is actually a collection of well-designed packages, that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
+The tidyverse is a collection of well-designed packages that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
 
-```{r cs18a}
-# code snippet 18.1: loading the tidyverse package
-library(tidyverse)
-```
 
 #### Package `ggplot2`
 \index{ggplot2}
@@ -104,6 +100,8 @@ The package is very popular. Many tutorials on how to use the package to produce
 
 ```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
 # code snippet 18.2: simple ggplot example
+library(ggplot2)
+
 d = data.frame(
   ID    = rep(1:4, each = 25),
   time  = rep(1:25, 4), 
@@ -132,6 +130,8 @@ Package ***'dplyr'**8 [@R-dplyr] is an attempt to provide a grammar of data mani
 
 ```{r cs18c, dplyr_example}
 # code snippet 18.3: aggregate data by ID, through a 'pipe'
+library(dplyr)
+
 d %>% 
   group_by(ID) %>%
   summarise(mean_score = mean(score)) %>%
@@ -236,35 +236,9 @@ Vector autoregressive (VAR) models can be used to detect lagged relationships be
 In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
 
 
-```{r}
-sess.pkgs <- function (package = NULL) 
-{   z <- list()
-       if (is.null(package)) {
-        package <- grep("^package:", search(), value = TRUE)
-        keep <- sapply(package, function(x) x == "package:base" || 
-            !is.null(attr(as.environment(x), "path")))
-        package <- sub("^package:", "", package[keep])
-    }
-    pkgDesc <- lapply(package, packageDescription)
-    if (length(package) == 0) 
-        stop("no valid packages were specified")
-    basePkgs <- sapply(pkgDesc, function(x) !is.null(x$Priority) && 
-        x$Priority == "base")
-    z$basePkgs <- package[basePkgs]
-    if (any(!basePkgs)) {
-        z$otherPkgs <-  package[!basePkgs]
-    }
-    z
-}
-
-lapply(paste("package:",sess.pkgs()$otherPkgs, sep=""), detach, 
-                             character.only = TRUE, unload = TRUE, force = TRUE)
-getLoadedDLLs()
-
-```
 
 ```{r eval = TRUE}
-#library(autovarCore)
+library(autovarCore)
 
 # simulate data
 N = 100

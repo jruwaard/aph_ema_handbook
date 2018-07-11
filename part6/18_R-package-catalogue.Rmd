@@ -236,35 +236,8 @@ Vector autoregressive (VAR) models can be used to detect lagged relationships be
 In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
 
 
-```{r}
-sess.pkgs <- function (package = NULL) 
-{   z <- list()
-       if (is.null(package)) {
-        package <- grep("^package:", search(), value = TRUE)
-        keep <- sapply(package, function(x) x == "package:base" || 
-            !is.null(attr(as.environment(x), "path")))
-        package <- sub("^package:", "", package[keep])
-    }
-    pkgDesc <- lapply(package, packageDescription)
-    if (length(package) == 0) 
-        stop("no valid packages were specified")
-    basePkgs <- sapply(pkgDesc, function(x) !is.null(x$Priority) && 
-        x$Priority == "base")
-    z$basePkgs <- package[basePkgs]
-    if (any(!basePkgs)) {
-        z$otherPkgs <-  package[!basePkgs]
-    }
-    z
-}
-
-lapply(paste("package:",sess.pkgs()$otherPkgs, sep=""), detach, 
-                             character.only = TRUE, unload = TRUE, force = TRUE)
-getLoadedDLLs()
-
-```
-
 ```{r eval = TRUE}
-#library(autovarCore)
+library(autovarCore)
 
 # simulate data
 N = 100
@@ -280,7 +253,9 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 # Show details for the best model found
 summary(models_found[[1]]$varest$varresult$depression)
 ```
-AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
+
+AutovarCore is a 'lean-and-mean' version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
+
 
 ### Package 'qgraph`
 \index{qgraph}

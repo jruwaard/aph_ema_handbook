@@ -1,5 +1,15 @@
-install.packages(
+ensurePackage <- function (pkgs) {
+  installed_packages <- rownames(installed.packages()) 
+  for (pkg in pkgs) {
+    if (!(pkg %in% installed_packages)) {
+      install.packages(pkg, dependencies = TRUE)
+    }
+  }
+}
+
+ensurePackage(
   c(
+    "autovarCore",
     "bookdown",
     "ecp",
     "emaph",

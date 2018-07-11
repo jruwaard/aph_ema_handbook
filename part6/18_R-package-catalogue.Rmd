@@ -88,12 +88,7 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 ### Package `tidyverse`
 \index{tidyverse}
 
-This package is actually a collection of well-designed packages, that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
-
-```{r cs18a}
-# code snippet 18.1: loading the tidyverse package
-library(tidyverse)
-```
+The ***'tidyverse'*** is a collection of well-designed packages that, together, provide a highly useful and consistent modern extention of the base R language. The 'tidyverse' includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
 
 #### Package `ggplot2`
 \index{ggplot2}
@@ -102,8 +97,11 @@ Package ***'ggplot2'*** [@wickham2016ggplot2] provides a collection of high-leve
 
 The package is very popular. Many tutorials on how to use the package to produce graphs can be found on the web. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in the book 'ggplot2: Elegant Graphics for Data Analysis', written by package author Hadley Wickham [@wickham2016ggplot2].
 
-```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
-# code snippet 18.2: simple ggplot example
+```{r cs18b, fig.cap = "Plotting in layers with ggplot2", out.width = '45%', fig.show = "hold"}
+# code snippet 18.2: demonstrating ggplot layers
+
+library(ggplot2)
+
 d = data.frame(
   ID    = rep(1:4, each = 25),
   time  = rep(1:25, 4), 
@@ -131,12 +129,15 @@ g + facet_wrap(~ ID)
 Package ***'dplyr'**8 [@R-dplyr] is an attempt to provide a grammar of data manipulations. With 'dplyr', elementary data manipulations can be chained using the piping operator '%>%' to implement highly complex data transformations. A good introduction can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/).
 
 ```{r cs18c, dplyr_example}
-# code snippet 18.3: aggregate data by ID, through a 'pipe'
+# code snippet 18.3: demonstrating dplyr pipes
+library(dplyr)
+
 d %>% 
   group_by(ID) %>%
   summarise(mean_score = mean(score)) %>%
   round(., 2)
 ```
+
 
 ## Mixed-effects modeling
 

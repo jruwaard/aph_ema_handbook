@@ -1,7 +1,7 @@
 
 # R packages for EMA research {#rcat}
 
-Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, some of these packages are discussed. For each, we provide a summary description, and example code snippets. 
+Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages are discussed. For each, we provide a summary description, and example code snippets. 
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
@@ -38,7 +38,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 |                 |                   | human data as well (see Chapter         |
 |                 |                   | \@ref(homerange)).                      | 
 +-----------------+-------------------+-----------------------------------------+
-| Symptom Networks| autovar           | Automate the construction of vector     |          
+| Symptom Networks| autovarCore       | Automate the construction of vector     |          
 |                 |                   | autoregressive models.                  |
 +-----------------+-------------------+-----------------------------------------+
 |                 | bootnet           | Assess the stability of symptom         |
@@ -69,6 +69,8 @@ Package ***'PhysicalActivity'*** [@R-PhysicalActivity] provides an alternative t
 
 ```{r fig11a, fig.cap="Three days of Accelerometer data."}
 library(PhysicalActivity)
+library(ggplot2)
+
 data(dataSec)
 
 d <- dataCollapser(dataSec, TS = "TimeStamp", col = "counts", by = 60)
@@ -138,7 +140,7 @@ d %>%
 
 ## Mixed-effects modeling
 
-Several R-packages for mixed modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
+Several R-packages for mixed-effects modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
 
 ### nlme
 \index{nlme}
@@ -205,8 +207,6 @@ powerSim(model1,
          progress = FALSE)
 ```
 
-
-
 ## Spatio-temporal analysis: 
 
 ### GPS data: Package `adehabitatHR`
@@ -225,14 +225,62 @@ library(adehabitatHR)
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor (see Chapter \@ref(networks)).
 
 
-### Package 'autovar`
+### Package 'autovarCore`
+\index{autovarCore}
 \index{autovar}
+
 \index{vector autoregressive models}
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisqueodio. Morbi viverra tristique libero vel fringilla [@VanderKrieke2015]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. 
+Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package ***'autovarCore'*** [@R-autovarCore] was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.
 
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis [http://autovar.nl](https://autovar.nl/)
+In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
 
+
+```{r}
+sess.pkgs <- function (package = NULL) 
+{   z <- list()
+       if (is.null(package)) {
+        package <- grep("^package:", search(), value = TRUE)
+        keep <- sapply(package, function(x) x == "package:base" || 
+            !is.null(attr(as.environment(x), "path")))
+        package <- sub("^package:", "", package[keep])
+    }
+    pkgDesc <- lapply(package, packageDescription)
+    if (length(package) == 0) 
+        stop("no valid packages were specified")
+    basePkgs <- sapply(pkgDesc, function(x) !is.null(x$Priority) && 
+        x$Priority == "base")
+    z$basePkgs <- package[basePkgs]
+    if (any(!basePkgs)) {
+        z$otherPkgs <-  package[!basePkgs]
+    }
+    z
+}
+
+lapply(paste("package:",sess.pkgs()$otherPkgs, sep=""), detach, 
+                             character.only = TRUE, unload = TRUE, force = TRUE)
+getLoadedDLLs()
+
+```
+
+```{r eval = TRUE}
+#library(autovarCore)
+
+# simulate data
+N = 100
+depression <- rnorm(N)
+activity <- rnorm(N)
+activity_lag1 <- c(NA, activity[1:(N -1)])
+
+depression <- depression + 0.5 * activity_lag1 
+d <- data.frame(depression, activity)
+
+models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'depression'))
+
+# Show details for the best model found
+summary(models_found[[1]]$varest$varresult$depression)
+```
+AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
 
 ### Package 'qgraph`
 \index{qgraph}

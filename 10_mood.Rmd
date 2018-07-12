@@ -77,6 +77,9 @@ For their EMA studies, Wichers and colleagues created a 10-item short-form of th
 All items were rated on 7-point Likert scales. PA and NA were calculated as the average score across all five items, and weighted for their factor loadings [@Wichers2012].
 
 ```{r fig10c, fig.cap = "Factor analysis of 7 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
+library(dplyr)
+library(tibble)
+
 items <- csd %>%
   select(c(
     "mood_enthus", "mood_cheerf",

@@ -26,6 +26,7 @@ Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulu
 ```{r network, fig.cap = "Simulated timeseries of 5 variables"}
 # code snippet 9.1: Fitting symptom networks
 library(graphicalVAR)
+library(dplyr)
 
 # Simulate model:
 set.seed(2)
@@ -34,7 +35,7 @@ Mod <- randomGVARmodel(5, probKappaEdge = 0.8, probBetaEdge = 0.8)
 # Simulate data:
 d <- as.data.frame(graphicalVARsim(50, Mod$beta, Mod$kappa))
 
-e <- gather(d) %>% group_by(key) %>% mutate(t = 1:n())
+e <- tidyr::gather(d) %>% group_by(key) %>% mutate(t = 1:n())
 ggplot(data = e, aes(x = t, y = value)) + 
   geom_point(size=.2) + geom_line() + 
   facet_grid(key~.)

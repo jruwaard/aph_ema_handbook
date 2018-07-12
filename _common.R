@@ -23,7 +23,7 @@ options(width = 120)
 
 
 # standard libraries -----------------------------------------------------------
-library(tidyverse)
+library(ggplot2)
 library(emaph)
 
 

@@ -18,7 +18,9 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 ```{r nlme}
-# library(nlme)
+library(nlme)
+library(dplyr)
+
 # 
 d <- subset(caspar, substr(item, 1, 3) == "PHQ")
 d <- d %>% group_by(id) %>%

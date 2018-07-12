@@ -38,7 +38,7 @@ path <- c(
 )
 
 x <- lapply(strsplit(path, "/"), function(z) as.data.frame(t(z)))
-x <- bind_rows(x)
+x <- dplyr::bind_rows(x)
 x$pathString <- apply(x, 1, function(x) paste(trimws(na.omit(x)), 
                                               collapse = "/"))
 mytree <- data.tree::as.Node(x)

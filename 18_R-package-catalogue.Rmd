@@ -1,7 +1,7 @@
 
 # R packages for EMA research {#rcat}
 
-Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, some of these packages are discussed. For each, we provide a summary description, and example code snippets. 
+Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages are discussed. For each, we provide a summary description, and example code snippets. 
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
@@ -38,7 +38,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 |                 |                   | human data as well (see Chapter         |
 |                 |                   | \@ref(homerange)).                      | 
 +-----------------+-------------------+-----------------------------------------+
-| Symptom Networks| autovar           | Automate the construction of vector     |          
+| Symptom Networks| autovarCore       | Automate the construction of vector     |          
 |                 |                   | autoregressive models.                  |
 +-----------------+-------------------+-----------------------------------------+
 |                 | bootnet           | Assess the stability of symptom         |
@@ -69,6 +69,8 @@ Package ***'PhysicalActivity'*** [@R-PhysicalActivity] provides an alternative t
 
 ```{r fig11a, fig.cap="Three days of Accelerometer data."}
 library(PhysicalActivity)
+library(ggplot2)
+
 data(dataSec)
 
 d <- dataCollapser(dataSec, TS = "TimeStamp", col = "counts", by = 60)
@@ -86,12 +88,8 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 ### Package `tidyverse`
 \index{tidyverse}
 
-This package is actually a collection of well-designed packages, that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
+The tidyverse is a collection of well-designed packages that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
 
-```{r cs18a}
-# code snippet 18.1: loading the tidyverse package
-library(tidyverse)
-```
 
 #### Package `ggplot2`
 \index{ggplot2}
@@ -102,6 +100,8 @@ The package is very popular. Many tutorials on how to use the package to produce
 
 ```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
 # code snippet 18.2: simple ggplot example
+library(ggplot2)
+
 d = data.frame(
   ID    = rep(1:4, each = 25),
   time  = rep(1:25, 4), 
@@ -130,6 +130,8 @@ Package ***'dplyr'**8 [@R-dplyr] is an attempt to provide a grammar of data mani
 
 ```{r cs18c, dplyr_example}
 # code snippet 18.3: aggregate data by ID, through a 'pipe'
+library(dplyr)
+
 d %>% 
   group_by(ID) %>%
   summarise(mean_score = mean(score)) %>%
@@ -138,7 +140,7 @@ d %>%
 
 ## Mixed-effects modeling
 
-Several R-packages for mixed modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
+Several R-packages for mixed-effects modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
 
 ### nlme
 \index{nlme}
@@ -205,8 +207,6 @@ powerSim(model1,
          progress = FALSE)
 ```
 
-
-
 ## Spatio-temporal analysis: 
 
 ### GPS data: Package `adehabitatHR`
@@ -225,14 +225,36 @@ library(adehabitatHR)
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor (see Chapter \@ref(networks)).
 
 
-### Package 'autovar`
+### Package 'autovarCore`
+\index{autovarCore}
 \index{autovar}
+
 \index{vector autoregressive models}
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisqueodio. Morbi viverra tristique libero vel fringilla [@VanderKrieke2015]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam. 
+Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package ***'autovarCore'*** [@R-autovarCore] was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.
 
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis [http://autovar.nl](https://autovar.nl/)
+In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
 
+
+
+```{r eval = TRUE}
+library(autovarCore)
+
+# simulate data
+N = 100
+depression <- rnorm(N)
+activity <- rnorm(N)
+activity_lag1 <- c(NA, activity[1:(N -1)])
+
+depression <- depression + 0.5 * activity_lag1 
+d <- data.frame(depression, activity)
+
+models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'depression'))
+
+# Show details for the best model found
+summary(models_found[[1]]$varest$varresult$depression)
+```
+AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
 
 ### Package 'qgraph`
 \index{qgraph}

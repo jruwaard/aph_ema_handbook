@@ -304,6 +304,8 @@ Lessons learned | To maintain response during follow-ups, it is important to mai
 
 The Sleep & Cognition group, headed by Ysbrand Van Der Werf, studies the interplay between sleep (disturbance), wakefulness and brain function. Various research methods are combined, including a fully equiped sleep-lab, neuro-imaging and EMA. 
 
+samenwerking met andere afdelingen
+
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
 |  Project team |  |

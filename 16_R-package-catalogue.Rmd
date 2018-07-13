@@ -1,3 +1,10 @@
+---
+editor_options:
+  chunk_output_type: console
+output:
+  pdf_document: default
+  html_document: default
+---
 
 # R packages for EMA research {#rcat}
 
@@ -11,16 +18,17 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 | Accelerometry   | GGIR              | Simplifies management and analysis of   |
 |                 |                   | raw accelerometer data.                 | 
 +-----------------+-------------------+-----------------------------------------+
-|                 | PhysicalActivity  | Analysis of raw accelerometer data.     | 
+|                 | PhysicalActivity  | Analyse Actigraph accelerometer data.   | 
 +-----------------+-------------------+-----------------------------------------+
-| Data Management | tidyverse         | Well-designed coherent set of           | 
-| & Visual        |                   | packages for data manipulation and      |
-| Exploration     |                   | visual exploration                      |
+| Data Management | dplyr             | Data transformation                     | 
+| & Visual        |                   |                                         |
+| Exploration     |                   |                                         |
++-----------------+-------------------+-----------------------------------------+
+|                 | ggplot2           | Create graphs                           |
 +-----------------+-------------------+-----------------------------------------+
 | Mixed-effects   | lme4              | Fit linear and nonlinear mixed-effects  |
-| Modeling        |                   | models. More efficient reimplementation |
-|                 |                   | of package 'nlme', that also provides   |
-|                 |                   | options for generalised modeling.       |
+| Modeling        |                   | models. Fast alternative to             |
+|                 |                   | package 'nlme'.                         |
 +-----------------+-------------------+-----------------------------------------+
 |                 | nlme              | Fit linear and nonlinear mixed effects  |
 |                 |                   | models. Pre-dates package 'lme4', but is|
@@ -38,7 +46,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 |                 |                   | human data as well (see Chapter         |
 |                 |                   | \@ref(homerange)).                      | 
 +-----------------+-------------------+-----------------------------------------+
-| Symptom Networks| autovarCore       | Automate the construction of vector     |          
+| Symptom Networks| autovarCore       | Automate the construction of vector     |     
 |                 |                   | autoregressive models.                  |
 +-----------------+-------------------+-----------------------------------------+
 |                 | bootnet           | Assess the stability of symptom         |
@@ -56,18 +64,20 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 ## Accelerometry
 
-### Package 'GGIR'
-\index{GGIR}
+Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-callibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and engergy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs). 
 
-The management and (pre)processing of raw multi-day accelerometer data can be challenging. Before final analyses can be conducted, raw data have to re-callibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and engergy-expenditure measures, have to be calculated from the triangular (x, y, x) data, often in several time windows. Package *GGIR* [@R-GGIR] is a popular packages to pre-process raw acceleromety data from three wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
+### Package 'GGIR'
+\index{Packages!GGIR}
+
+Package *GGIR* [@R-GGIR] is a popular packages to pre-process raw acceleromety data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
 
 
 ### Package 'PhysicalActivity'
-\index{PhysicalActivity}
+\index{Packages!PhysicalActivity}
 
 Package ***'PhysicalActivity'*** [@R-PhysicalActivity] provides an alternative to package 'GGIR', when ActiGraph data are available.
 
-```{r fig11a, fig.cap="Three days of Accelerometer data."}
+```{r fig11a, fig.cap="Three days of Accelerometer data.", out.width = "100%", fig.asp = .4}
 library(PhysicalActivity)
 library(ggplot2)
 
@@ -77,73 +87,73 @@ d <- dataCollapser(dataSec, TS = "TimeStamp", col = "counts", by = 60)
 
 ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
   geom_smooth(method = "loess", span = .05, se = FALSE) + 
-  geom_point(size = .2, alpha = .25) + 
-  scale_x_datetime() +
-  scale_y_sqrt(breaks = c(100, 1000, 3000, 6000, 9000)) +  
+  geom_point(size = .2, alpha = .25) +
   xlab("Time") + ylab("Activity")
 ```
 
 ## Data management & Visual Exploration
+\index{Packages!tidyverse}
 
-### Package `tidyverse`
-\index{tidyverse}
+The tidyverse is a collection of well-designed packages, authored by the team behind RStudio, that together add a consistent, modern, and efficient extension of base R functionalities. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
 
-The tidyverse is a collection of well-designed packages that together provide a highly useful and consistent modern extention of the base R language. The tidyverse includes popular packages such as "ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data manipulation), and many more (see: http://tidyverse.org for a full list).
+### Package `dplyr`
+\index{Packages!dplyr}
 
+Package ***'dplyr'*** [@R-dplyr] implements the 'split-apply-combine'-strategy. With 'dplyr', elementary data manipulations can be e chained (using the pipe operator '%>%') to elegantly implement complex data transformations. 
 
-#### Package `ggplot2`
-\index{ggplot2}
+```{r cs18c}
+# code snippet 18.3: aggregate data by ID, through a 'pipe'
+require(dplyr)
 
-Package ***'ggplot2'*** [@wickham2016ggplot2] provides a collection of high-level plotting commands with which graphs can be build up as a series of layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the general structure of scientific graphs.
+d <- data.frame(
+  c = factor(rep(1:5, each = 10)), 
+  score = rnorm(50)
+)
 
-The package is very popular. Many tutorials on how to use the package to produce graphs can be found on the web. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in the book 'ggplot2: Elegant Graphics for Data Analysis', written by package author Hadley Wickham [@wickham2016ggplot2].
+b <- as_tibble(d) %>% 
+  group_by(c) %>%
+  summarize(mean_score = mean(score))
+```
 
-```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.show = "hold"}
+A good introduction to dplyr can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/).
+
+### Package `ggplot2`
+\index{Packages!ggplot2}
+
+Package ***'ggplot2'*** [@wickham2016ggplot2] provides a collection of high-level plotting commands with which graphs can be build up in layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the general structure of scientific graphs. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in the book 'ggplot2: Elegant Graphics for Data Analysis' [@wickham2016ggplot2].
+
+The example below illustrates how graphs are layered. In the first step, a coordinate system is set up. In step 2, all time/scores points are plotted. In step 3, a smoothed line is fitted through these points. Finally, in step 4, the graph is split on a variable ID (a subject identifier), to show individual trajectories.
+
+```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.asp = .4, fig.show = "hold"}
 # code snippet 18.2: simple ggplot example
 library(ggplot2)
 
+# simulate example data 
 d = data.frame(
   ID    = rep(1:4, each = 25),
   time  = rep(1:25, 4), 
   score = rnorm(100, 0, 2))
 
-# initialise the plot area and the data mapping
-g <- ggplot(d, aes(x = time, y = score))
-g
+# step 1: initialise the coordinate system
+g <- ggplot(d, aes(x = time, y = score)); g
 
-# add scatterplot
-g <- g + geom_point()
-g
+# step 2: add scatterplot
+g <- g + geom_point(); g
 
-# fit a smoothed line
-g <- g + geom_smooth()
-g
+# step 3: fit a smoothed line
+g <- g + geom_smooth(); g
 
-# split plot by ID
+# step 4: split plot by ID
 g + facet_wrap(~ ID)
 ```
 
-#### Package `dplyr`
-\index{dplyr}
-
-Package ***'dplyr'**8 [@R-dplyr] is an attempt to provide a grammar of data manipulations. With 'dplyr', elementary data manipulations can be chained using the piping operator '%>%' to implement highly complex data transformations. A good introduction can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/).
-
-```{r cs18c, dplyr_example}
-# code snippet 18.3: aggregate data by ID, through a 'pipe'
-library(dplyr)
-
-d %>% 
-  group_by(ID) %>%
-  summarise(mean_score = mean(score)) %>%
-  round(., 2)
-```
 
 ## Mixed-effects modeling
 
 Several R-packages for mixed-effects modelling exist. The most popular are package **nlme** [@R-nlme] and package ***lme4** [@Bates2015]. Both packages are actively used, as both provide unique functionalities. 
 
 ### nlme
-\index{nlme}
+\index{Packages!nlme}
 
 Package **nlme** is introduced in chapter \@ref(lmm). It is an older package (in comparison to package lme4), that is still used a lot because it provides options to model correlational structures that are not implemented (yet) in lme4.
 
@@ -151,33 +161,35 @@ Package **nlme** is introduced in chapter \@ref(lmm). It is an older package (in
 # code snippet 18.4: fit a linear mixed model, with lme
 library(nlme)
 fm <- lme(distance ~ age + Sex, data = Orthodont, random = ~ 1)
-summary(fm)
+
+fixef(fm)
 ```
 
 ### lme4
-\index{lme4}
+\index{Packages!lme4}
 
-Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, models specifications in 'lmer' are different from model specifications in 'lme'. 
+Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed-effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, models specifications in 'lmer' are different from model specifications in 'lme'. 
 
-```{r cs18e, lme4_example, eval=FALSE}
+```{r cs18e, lme4_example, eval = TRUE}
 # code snippet 18.4: fit a linear mixed model, with lme
 library(lme4)
 fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
-summary(fm)
+fixef(fm)
 ```
 
 ## Power analysis
 
 ### Package 'simr'
+\index{Packages!simr}
 
-With package 'simr' [@Green2016], power of mixed-effects models can be determined via simulation:
+With package 'simr' [@Green2016], power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the "true" parameters of a mixed model, and a single data set. Then,  function 'simPower' can be used to simulate new datasets and tests (of a specified parameter in the model), to determine the power of the test. 
 
 ```{r cs3c}
 # code snippet 3.3: Power analysis of a two-group repeated measures design
 # (simulation approach)
 library(simr)
 
-# construct design matrix
+# construct design matrix 
 t <- 1:24
 s <- 1:40 
 X   <- expand.grid(t = t, s = s)
@@ -210,9 +222,9 @@ powerSim(model1,
 ## Spatio-temporal analysis: 
 
 ### GPS data: Package `adehabitatHR`
-\index{Homerange estimation}
+\index{Packages!adehabitatHR}
 
-Package **adehabitatHR** at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Calenge2006]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+Package **adehabitatHR** [@Calenge2006] was created for the study of the habitat of wild animals, using accelerometer and GPS data. Defined procedures can be used for the analysis of human data as well.
 
 ```{r cs18g, eval = FALSE}
 library(adehabitatHR)
@@ -226,15 +238,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 
 
 ### Package 'autovarCore`
-\index{autovarCore}
-\index{autovar}
+\index{Packages!autovarCore}
+\index{Packages!autovar}
 
 \index{vector autoregressive models}
 
 Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package ***'autovarCore'*** [@R-autovarCore] was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.
 
 In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
-
 
 
 ```{r eval = TRUE}
@@ -257,15 +268,15 @@ summary(models_found[[1]]$varest$varresult$depression)
 AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
 
 ### Package 'qgraph`
-\index{qgraph}
+\index{Packages!qgraph}
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet [@Epskamp2012]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 
-### Package 'bootnet`
-\index{bootnet}
+### Package 'bootnet'
+\index{Packages!bootnet}
 
 Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Epskamp2018a]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam.  
@@ -275,13 +286,12 @@ purus nec, lobortis imperdiet diam.
 ## Timeseries analysis
 
 ### Package 'forecast'
-\index{forecast}
+\index{Packages!forecast}
 
 Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 ### Package 'lomb'
 \index{Lomb-Scargle periodogram}
-\index{lomb}
 
 Disturbances in circadian rhythms have been related to depressive symptoms [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhytms can be detected in EMA data. Standard analysis techniques, however, expect regular timeseries, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976], which can be applied to unevenly-sampled timeseries as well. Package ***lomb*** [@ruf1999] implements this procedure.
 

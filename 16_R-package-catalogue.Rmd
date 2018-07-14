@@ -2,8 +2,8 @@
 editor_options:
   chunk_output_type: console
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 # R packages for EMA research {#rcat}
@@ -54,11 +54,8 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 +-----------------+-------------------+-----------------------------------------+
 |                 | qgraph            | Estimate and plot symptom networks.     |  
 +-----------------+-------------------+-----------------------------------------+
-| Time Series     | forecast          | Forecasting Functions for Time Series   |
-| analysis        |                   |                                         |
-+-----------------+-------------------+-----------------------------------------+
-|                 | lomb              | Calculate the Lomb-Scargle Periodogram  |
-|                 |                   | for unevenly sampled time series.       |
+| Time series     | lomb              | Calculate the Lomb-Scargle Periodogram  |
+| analysis        |                   | for unevenly sampled time series.       |
 +-----------------+-------------------+-----------------------------------------+
 
 
@@ -70,6 +67,8 @@ Accelerometer data need considerable pre-processing before final analyses can be
 \index{Packages!GGIR}
 
 Package *GGIR* [@R-GGIR] is a popular packages to pre-process raw acceleromety data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
+
+
 
 
 ### Package 'PhysicalActivity'
@@ -228,13 +227,15 @@ Package **adehabitatHR** [@Calenge2006] was created for the study of the habitat
 
 ```{r cs18g, eval = FALSE}
 library(adehabitatHR)
+
+
 ```
 
 
 ## Symptom Network Analysis
 \index{symptom networks}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor (see Chapter \@ref(networks)).
+When EMA is used to tap various symptoms, network analysis can reveal the dynamic interplay between these symptoms  (see Chapter \@ref(networks). Various packages exist to fit these networks in R.
 
 
 ### Package 'autovarCore`
@@ -246,7 +247,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package ***'autovarCore'*** [@R-autovarCore] was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.
 
 In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
-
 
 ```{r eval = TRUE}
 library(autovarCore)
@@ -265,30 +265,54 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 # Show details for the best model found
 summary(models_found[[1]]$varest$varresult$depression)
 ```
+
 AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
 
 ### Package 'qgraph`
 \index{Packages!qgraph}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet [@Epskamp2012]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+Package ***qgraph*** [@Epskamp2012] can be used to fit so-called contemperous networks, i.e., networks of symptoms that were assessed at the same time.
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+In the example below, qgraph is used to fit a network on the 'Critical Slowing Down' (CSD) data set, which is included in package 'emaph' (see ?csd and chapter @\ref(networks)). 
+
+```{r csd83, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
+library(qgraph)
+library(emaph)
+
+# get mood_ scores from csd data set
+d <- subset(csd, 
+            subset = phase == "exp: db: no change", 
+            select = grep("mood_", names(csd))[1:5])
+
+
+# Fit and plot regularized partial correlation network
+g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
+       graph = "glasso", sampleSize = nrow(d),
+       nodeNames = names(d),
+       label.scale = FALSE, label.cex = .8, 
+       legend = TRUE, legend.cex = .5,
+       layout = "spring")
+```
 
 
 ### Package 'bootnet'
 \index{Packages!bootnet}
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Epskamp2018a]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on lare data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance edges estimations will be small,  while in unstable networks, the variance will be high. This idea is implemented in package ***bootnet***  [@Epskamp2018a]. 
 
+Below, the stability of the network that was fit in the prevous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
+
+```{r out.width = "100%", fig.asp = .4}
+library(bootnet)
+
+g <- estimateNetwork(d, default = "EBICglasso",
+                     corArgs = list(detectOrdinal = FALSE))
+results <- bootnet(g, nBoots = 50, verbose = FALSE)
+plot(results, order = "mean")
+```
 
 
 ## Timeseries analysis
-
-### Package 'forecast'
-\index{Packages!forecast}
-
-Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 ### Package 'lomb'
 \index{Lomb-Scargle periodogram}

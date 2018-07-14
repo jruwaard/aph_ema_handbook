@@ -76,20 +76,16 @@ Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
 fringilla. Sed at varius erat, id consequat nibh.
 
 
-```{r fig11b, fig.cap="Heatmap of GPS Locations."}
-library(ggmap)
+```{r fig11b, fig.cap="four-week Location history of two people, collected with Google Timeline", out.width = "100%", fig.asp = .4}
+library(emaph)
+library(ggplot2)
+d <-  subset(locations,
+              accuracy <= 100 &
+              lon >=  4.80 & lon <=  5.00 &
+              lat >= 52.25 & lat <= 52.50)
 
-d <- subset(GPSdata, TimeStamp < "2017-07-01")
-d <- round(d[c("lat", "lon")], 4)
-d <- unique(d)
-
-#zaandam <- get_map(location = 'Sloterdijk, Amsterdam', zoom = 12)
-#ggmap(zaandam, extent = "panel", darken = 0) + 
-#  geom_density2d(data = d, aes(x = lon, y = lat), size = .1, color = "black") + 
-#  stat_density2d(data = d, aes(x = lon, y = lat, 
-#                               fill = ..level.., alpha = ..level..), 
-#                 size = 0.01, bins = 200, geom = "polygon") + 
-#  scale_fill_gradientn(colours = topo.colors(10), guide = FALSE) + 
-#  scale_alpha(range = c(0, .3), guide = FALSE)
+ ggplot(d, aes(lon, lat)) +
+   geom_point(alpha = .1,  shape = 21, size = 3) +
+   facet_wrap(~ id)
 ```
 

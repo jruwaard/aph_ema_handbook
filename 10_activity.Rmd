@@ -189,3 +189,19 @@ d <-  subset(locations,
    facet_wrap(~ id)
 ```
 
+
+### Features
+
+Table: (\#tab:GPSfeatures) Features of a GPS data set [@Saeb2015].
+
+| Name              | Formula                               | Description                                    | 
+|:------------------|:--------------------------------------|:-----------------------------------------------|
+| Total Distance    | $$\sum(distance((lat_{t}, lon_{t}), (lat_{t-1}, lon_{t-1})$$ | Total distance between locations |
+| Location variance | $$\sigma_{lon}^2 + \sigma_{lat}^2$$   | Variability of location visits                 |
+| N Places          | k-means(loc, lat)                     | Location clusters                              |
+| Location Entropy  | $$-\sum_{i} p_i * log(p_i)$$          | Variability in location cluster visits         |        
+| Normalized Entropy| $$\sigma_{lon}^2 + \sigma_{lat}^2$$   | Entropy, controlled for number of clusters     |    
+| Home Stay         | $$Entropy  log(N)$$                   | Percentage of time spent at home               | 
+| Circadian         | lomb_scargle(lat / lon)               | Consistency of location schedule based on a    |
+| Movement          |                                       | 24-hour period.                                |
+

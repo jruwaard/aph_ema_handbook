@@ -1,13 +1,7 @@
 
 # EMA Instruments Catalogue {#ema-instruments-catalogue}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. 
-
-
-## Apps
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
-
+To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a selection of these.
 
 Table: (\#tab:17a) EMA Instruments.
 
@@ -21,27 +15,28 @@ Table: (\#tab:17a) EMA Instruments.
 | RoQua        | RoQua            | roqua.nl          | YES    |  NO    | YES         |
 
 
-### Illumivu
+## Illumivu
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+Ilumivu (see https://ilumivu.com/) is an American commercial company specialized in mobile EMA application development. It offers a cross-platform (Android and IOS) smartphone app (mEMA) that researchers can use to collect data from study participants. Researchers can define the assessment plan of their study in an online backoffice (i.e., without any assistance from Illumivu staff). 
 
-https://ilumivu.com/
+The Ilumivi EMA toolbox library includes a rather complete set of survey elements, survey logic branching tools, and survey scheduling options. Passive EMA options include GPS tagging (of survey responses), GEO-fencing (triggering surveys at specific locations) and smartphone sensor logging (light and noise level, screen brightness, screen locked/unlocked, humidity, ambient temperature, barometric pressure, phone/SMS activity log, and basic device information). a limited number of smartwatch devices can optionally be linked to the Ilumivu app for further passive data collection.  With the online backoffice, researchers can invite participants, monitor study compliance and download data (in common data formats such as CSV). The company is open for custom development, when studies require features that are not included in the default app.
 
+Ilumivi is not the cheapest EMA product on the market:  current (July 2018) subscription plans range from 3.375 dollar (basic features) to 12.000 dollar (all features), per year. Researchers, who are interested in purchasing a licence of the service, are advised to the 'Grant Writer's Guide' of Ilumivu, which can be downloaded from the site of the company (at https://ilumivu.com/pricing/writing-a-grant/)
 
-```{r fig17a, echo = FALSE, fig.cap = "Illumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+```{r fig17a, echo = FALSE, fig.cap = "Ilumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
    "images/instruments/illumivu/iv-app-1.png",
    "images/instruments/illumivu/iv-app-2.png",
    "images/instruments/illumivu/iv-app-3.png"))
 ```
 
+## MoodBuster
 
-### MoodBuster
+MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated (Android) EMA app. The platform was developed by an international non-profit research consortium in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+In the E-COMPARED trial, MoodBuster was used, in five countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satelite study designed to assess the effects of long-term EMA [@VanBallegooijen2016].
 
-http://www.moodbuster.eu/
-
+Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online backoffice is in development. Experimental cross-platform versions of the app have been tested in Portugal.
 
 ```{r fig17b, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -51,7 +46,7 @@ knitr::include_graphics(c(
 ```
 
 
-### Movisense XS
+## Movisense XS
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -77,16 +72,16 @@ knitr::include_graphics(c(
 ```
 
 
-### Survey Signal
+## Survey Signal
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 
-### RoQua
+## RoQua
 
 RoQua (http://www.roqua.nl/) is a web-based Routine Outcome Monitoring system, developed and maintained by a Dutch non-profit development and service organization that is funded by several by northern GGZ organisations and the Department of Psychiatry, University Medical Center Groningen. RoQUA has a sophisticated and user-friendly online backoffice portal, with which researchers can define assessment protocols and invite study participants - through e-mail or SMS - to complete questionnaires online (on desktop or mobile devices). By inviting study participants several times a day to complete a questionnaire via the standard web browser of their mobile phone, active EMA an be implemented. This approach is taken in several large-scale studies, including 'NESDA' (nesda.nl) and 'HowNutsAreTheDutch' (www.hoegekis.nl; see [@VanDerKrieke2017; @VanDerKrieke2016]).
 
-At present, RoQua does not support the collections of passive EMA data. Preliminary results have been reported with system called 'Physiqual', with which EMA data, collected with RoQUA, can be automatically combined with wearable sensor data [@Blaauw2016].
+At present, RoQua does not support the collections of passive EMA data. Preliminary results have been reported with system called 'Physiqual' [@Blaauw2016], with which EMA data, collected with RoQUA, can be automatically combined with wearable sensor data.
 
 
 ```{r roqua-results, echo = FALSE, fig.cap = "Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQUA system", out.width='30%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}

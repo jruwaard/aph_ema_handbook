@@ -84,13 +84,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 
 ### RoQua
 
-RoQua is a Dutch non-profit organization, that is set up, in collaboration with northern GGZ organisations and the Department of Psychiatry, University Medical Center Groningen, to conduct Routine Outcome Monitoring. See http://www.roqua.nl/
+RoQua (http://www.roqua.nl/) is a web-based Routine Outcome Monitoring system, developed and maintained by a Dutch non-profit development and service organization that is funded by several by northern GGZ organisations and the Department of Psychiatry, University Medical Center Groningen. RoQUA has a sophisticated and user-friendly online backoffice portal, with which researchers can define assessment protocols and invite study participants - through e-mail or SMS - to complete questionnaires online (on desktop or mobile devices). By inviting study participants several times a day to complete a questionnaire via the standard web browser of their mobile phone, active EMA an be implemented. This approach is taken in several large-scale studies, including 'NESDA' (nesda.nl) and 'HowNutsAreTheDutch' (www.hoegekis.nl; see [@VanDerKrieke2017; @VanDerKrieke2016]).
 
-The RoQUA system library contains an extensive inventory of over 200 questionnaires. Researchers are able to construct a survey using their own questions. Changes to the survey will be done by RoQua staff in consultation with the researcher. Researchers can benefit from RoQua’s experience when creating the online survey to avoid pitfalls.
+At present, RoQua does not support the collections of passive EMA data. Preliminary results have been reported with system called 'Physiqual', with which EMA data, collected with RoQUA, can be automatically combined with wearable sensor data [@Blaauw2016].
 
-Participants need internet access to log in to complete questionnaire.
 
-Using a 2-factor authenticator, researchers can log in to download data. The data is delivered in two CSV files: one file containing the data, with a generated ID-code for each participant, the other is the key table, linking the ID-code to the participants personal information. The files can be read by Excel and SPSS.
+```{r roqua-results, echo = FALSE, fig.cap = "Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQUA system", out.width='30%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+knitr::include_graphics(c(
+   "images/instruments/roqua/roqua_p1.jpg",
+   "images/instruments/roqua/roqua_p2.jpg",
+   "images/instruments/roqua/roqua_p3.jpg"))
+```
 
-Examples of research using RoQua system:
 

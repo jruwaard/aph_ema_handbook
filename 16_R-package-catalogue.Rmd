@@ -2,21 +2,23 @@
 editor_options:
   chunk_output_type: console
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 # R packages for EMA research {#rcat}
 
-Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages are discussed. For each, we provide a summary description, and example code snippets. 
+Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages are discussed. For each, we provide a summary description, a code example code, and pointers to further documentation, to give you a head start in using the packages for your work.
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 +-----------------+-------------------+-----------------------------------------+
 | Category        | Package           | Description                             |
 +:================+:==================+:========================================+
-| Accelerometry   | GGIR              | Simplifies management and analysis of   |
-|                 |                   | raw accelerometer data.                 | 
+| Accelerometry   | GENEAread         | Import GENEActive data into R           |
++-----------------+-------------------+-----------------------------------------+
+|                 | GGIR              | Pre-proces and analyse raw multi-day    |
+|                 |                   | multi-day accelerometer data.           | 
 +-----------------+-------------------+-----------------------------------------+
 |                 | PhysicalActivity  | Analyse Actigraph accelerometer data.   | 
 +-----------------+-------------------+-----------------------------------------+
@@ -25,6 +27,10 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 | Exploration     |                   |                                         |
 +-----------------+-------------------+-----------------------------------------+
 |                 | ggplot2           | Create graphs                           |
++-----------------+-------------------+-----------------------------------------+
+|                 | haven             | Import and export SPSS data files       |
++-----------------+-------------------+-----------------------------------------+
+|                 | lubridate         | Manipulate date and time variables      |
 +-----------------+-------------------+-----------------------------------------+
 | Mixed-effects   | lme4              | Fit linear and nonlinear mixed-effects  |
 | Modeling        |                   | models. Fast alternative to             |
@@ -54,22 +60,43 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 +-----------------+-------------------+-----------------------------------------+
 |                 | qgraph            | Estimate and plot symptom networks.     |  
 +-----------------+-------------------+-----------------------------------------+
-| Time Series     | forecast          | Forecasting Functions for Time Series   |
-| analysis        |                   |                                         |
-+-----------------+-------------------+-----------------------------------------+
-|                 | lomb              | Calculate the Lomb-Scargle Periodogram  |
-|                 |                   | for unevenly sampled time series.       |
+| Time series     | lomb              | Calculate the Lomb-Scargle Periodogram  |
+| analysis        |                   | for unevenly sampled time series.       |
 +-----------------+-------------------+-----------------------------------------+
 
 
 ## Accelerometry
 
-Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-callibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and engergy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs). 
+Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-calibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and engergy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs). 
+
+### Package GENEAread
+
+GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that is often used in clinical research studies. With package ***GENEAread*** [@R_GENEAread], raw data can be imported into R for further processing, as illustrated below.    
+
+```{r out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer.", message = FALSE, warning = FALSE}
+library(GENEAread)
+library(ggplot2)
+library(tidyr)
+
+dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
+                verbose = FALSE)
+
+d <- as.data.frame(dat$data.out)
+d <- gather(d, key = "sensor", value = "value", -timestamp)
+d$timestamp <- as.POSIXct(d$timestamp, 
+                          origin = "1970-01-01",
+                          tz = "UTC")
+
+ggplot(d, aes(x = timestamp, y = value)) + 
+  geom_line() + 
+  facet_wrap(~sensor, scales = "free_y")
+```
+
 
 ### Package 'GGIR'
 \index{Packages!GGIR}
 
-Package *GGIR* [@R-GGIR] is a popular packages to pre-process raw acceleromety data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
+Package *GGIR* [@R-GGIR] is a packages to pre-process raw acceleromety data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
 
 
 ### Package 'PhysicalActivity'
@@ -115,12 +142,12 @@ b <- as_tibble(d) %>%
   summarize(mean_score = mean(score))
 ```
 
-A good introduction to dplyr can be found in 'R for data science', which can be freely accessed online (http://r4ds.had.co.nz/).
+A good introduction to dplyr can be found in the book 'R for Data Science' [@wickham2016r], which can be freely accessed online (http://r4ds.had.co.nz/).
 
-### Package `ggplot2`
+### Package 'ggplot2'
 \index{Packages!ggplot2}
 
-Package ***'ggplot2'*** [@wickham2016ggplot2] provides a collection of high-level plotting commands with which graphs can be build up in layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the general structure of scientific graphs. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in the book 'ggplot2: Elegant Graphics for Data Analysis' [@wickham2016ggplot2].
+Package ***'ggplot2*** [@wickham2016ggplot2] provides a collection of high-level plotting commands with which graphs can be build up in layers. It is based on 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the structure of scientific graphs. Systematic introductions are available on the [the tidyverse website](http://ggplot2.tidyverse.org/), and in the book 'ggplot2: Elegant Graphics for Data Analysis' [@wickham2016ggplot2].
 
 The example below illustrates how graphs are layered. In the first step, a coordinate system is set up. In step 2, all time/scores points are plotted. In step 3, a smoothed line is fitted through these points. Finally, in step 4, the graph is split on a variable ID (a subject identifier), to show individual trajectories.
 
@@ -146,6 +173,51 @@ g <- g + geom_smooth(); g
 # step 4: split plot by ID
 g + facet_wrap(~ ID)
 ```
+
+
+### Package 'haven'
+\index{Packages!haven}
+\index{SPSS}
+
+With package ***haven*** [@R-haven], SPSS, STATA and SAS files can be read into R.
+
+```{r}
+library(haven)
+
+path <- system.file("examples", "iris.sav", package = "haven")
+d <- read_sav(path)
+
+attributes(d$Species)
+```
+
+### Package 'lubridate'
+\index{datetime variables}
+\index{Packages!lubridate}
+
+EMA data analyses frequently require manipulations of datetime variables. For this, package ***lubridate*** [@R-lubridate], which provides many functions for common date and datetime operations,  can be very useful. 
+
+In the code snippet below, for example, the 'round_date' function is used to calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute epoch windows.
+
+```{r}
+library(emaph)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+
+d <-  subset(genea,
+              timestamp > "2018-06-02 12:00" &
+              timestamp < "2018-06-02 18:00")
+d$epoch <- round_date(d$timestamp, "minute")
+
+d <- d %>% group_by(id, epoch) %>% 
+  summarise(svm = sum(sqrt(x^2 + y^2 + z^2) -1) / length(x))
+```
+
+```{r echo = FALSE}
+knitr::kable(head(d))
+```
+
+To learn more about handling dates and times with 'lubridate', [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data Science' [@wickham2016r] provides a good introduction.
 
 
 ## Mixed-effects modeling
@@ -228,14 +300,15 @@ Package **adehabitatHR** [@Calenge2006] was created for the study of the habitat
 
 ```{r cs18g, eval = FALSE}
 library(adehabitatHR)
+
+
 ```
 
 
 ## Symptom Network Analysis
 \index{symptom networks}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor (see Chapter \@ref(networks)).
-
+When EMA is used to tap various symptoms, network analysis can reveal the dynamic interplay between these symptoms (see Chapter \@ref(networks). Various packages exist to fit these networks in R. With these packages, it is relatively easy to fit a graphical network on multivariate data sets. If you are interested in conducting a network analysis, be sure to visit the Psycho-systems website, at http://psychosystems.org. 
 
 ### Package 'autovarCore`
 \index{Packages!autovarCore}
@@ -246,7 +319,6 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package ***'autovarCore'*** [@R-autovarCore] was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.
 
 In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
-
 
 ```{r eval = TRUE}
 library(autovarCore)
@@ -265,30 +337,55 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 # Show details for the best model found
 summary(models_found[[1]]$varest$varresult$depression)
 ```
-AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications. [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
+
+AutovarCore is a simplified version of a more extensive package ***autovar*** [@[@R-autovarCore], which was used in several publications [@VanderKrieke2015, @Emerencia2016]. Further information can be found on [http://autovar.nl](https://autovar.nl/) and [http://autovarcore.nl](https://autovarcore.nl/) 
+
 
 ### Package 'qgraph`
 \index{Packages!qgraph}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet [@Epskamp2012]. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+Package ***qgraph*** [@Epskamp2012] can be used to fit, visualise and analyse graphical networks.
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+In the example below, qgraph is used to fit a network on the 'Critical Slowing Down' (CSD) data set, which is included in package 'emaph' (see ?csd and Chapter \@ref(networks)). 
+
+```{r csd83, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
+library(qgraph)
+library(emaph)
+
+# get mood_ scores from csd data set
+d <- subset(csd, 
+            subset = phase == "exp: db: no change", 
+            select = grep("mood_", names(csd))[1:5])
+
+
+# Fit and plot regularized partial correlation network
+g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
+       graph = "glasso", sampleSize = nrow(d),
+       nodeNames = names(d),
+       label.scale = FALSE, label.cex = .8, 
+       legend = TRUE, legend.cex = .5,
+       layout = "spring")
+```
 
 
 ### Package 'bootnet'
 \index{Packages!bootnet}
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla [@Epskamp2018a]. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on lare data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance edges estimations will be small,  while in unstable networks, the variance will be high. This idea is implemented in package ***bootnet***  [@Epskamp2018a]. 
 
+Below, the stability of the network that was fit in the prevous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
+
+```{r out.width = "100%", fig.asp = .4}
+library(bootnet)
+
+g <- estimateNetwork(d, default = "EBICglasso",
+                     corArgs = list(detectOrdinal = FALSE))
+results <- bootnet(g, nBoots = 50, verbose = FALSE)
+plot(results, order = "mean")
+```
 
 
 ## Timeseries analysis
-
-### Package 'forecast'
-\index{Packages!forecast}
-
-Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
 
 ### Package 'lomb'
 \index{Lomb-Scargle periodogram}

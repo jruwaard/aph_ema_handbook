@@ -18,7 +18,7 @@ Table: (\#tab:17a) EMA Instruments.
 | Movisense    | MoviSence        | movisense.org     | YES    |  YES   | YES         |
 | PsyMate      | PsyMate          | psymate.eu        | YES    |  YES   | NO          |
 | Survey Signal|                  | surveysignal.com  | YES    |  NO    | YES         |
-| RoQua        | RoQua            | roqua.nl          | YES    |  NO    | YES
+| RoQua        | RoQua            | roqua.nl          | YES    |  NO    | YES         |
 
 
 ### Illumivu
@@ -84,6 +84,13 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 
 ### RoQua
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+RoQua is a Dutch non-profit organization, that is set up, in collaboration with northern GGZ organisations and the Department of Psychiatry, University Medical Center Groningen, to conduct Routine Outcome Monitoring. See http://www.roqua.nl/
 
-http://www.roqua.nl/
+The RoQUA system library contains an extensive inventory of over 200 questionnaires. Researchers are able to construct a survey using their own questions. Changes to the survey will be done by RoQua staff in consultation with the researcher. Researchers can benefit from RoQua’s experience when creating the online survey to avoid pitfalls.
+
+Participants need internet access to log in to complete questionnaire.
+
+Using a 2-factor authenticator, researchers can log in to download data. The data is delivered in two CSV files: one file containing the data, with a generated ID-code for each participant, the other is the key table, linking the ID-code to the participants personal information. The files can be read by Excel and SPSS.
+
+Examples of research using RoQua system:
+

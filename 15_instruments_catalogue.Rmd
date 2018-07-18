@@ -1,7 +1,7 @@
 
 # EMA Instruments Catalogue {#ema-instruments-catalogue}
 
-To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a selection of these.
+To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a selection of instruments that are use within the APH consortium.
 
 Table: (\#tab:17a) EMA Instruments.
 
@@ -21,7 +21,9 @@ Ilumivu (see https://ilumivu.com/) is an American commercial company specialized
 
 The Ilumivi EMA toolbox library includes a rather complete set of survey elements, survey logic branching tools, and survey scheduling options. Passive EMA options include GPS tagging (of survey responses), GEO-fencing (triggering surveys at specific locations) and smartphone sensor logging (light and noise level, screen brightness, screen locked/unlocked, humidity, ambient temperature, barometric pressure, phone/SMS activity log, and basic device information). a limited number of smartwatch devices can optionally be linked to the Ilumivu app for further passive data collection.  With the online backoffice, researchers can invite participants, monitor study compliance and download data (in common data formats such as CSV). The company is open for custom development, when studies require features that are not included in the default app.
 
-Ilumivi is not the cheapest EMA product on the market:  current (July 2018) subscription plans range from 3.375 dollar (basic features) to 12.000 dollar (all features), per year. Researchers, who are interested in purchasing a licence of the service, are advised to the 'Grant Writer's Guide' of Ilumivu, which can be downloaded from the site of the company (at https://ilumivu.com/pricing/writing-a-grant/)
+Current (July 2018) subscription plans range from 3.375 dollar (basic features) to 12.000 dollar (all features), per year. Researchers, who are interested in purchasing a licence of the service, are advised to the 'Grant Writer's Guide' of Ilumivu, which can be downloaded from the site of the company (at https://ilumivu.com/pricing/writing-a-grant/).
+
+Ilumivu's competetive advantage is that it has multi-platform support. It is, however, not the cheapest EMA product on the market. Being an American company, researchers should also consider EU regulations relating to personal data privacy protection, since regulations are more strict when personal data of EU citizens leave the EU.  
 
 ```{r fig17a, echo = FALSE, fig.cap = "Ilumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -32,11 +34,13 @@ knitr::include_graphics(c(
 
 ## MoodBuster
 
-MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated (Android) EMA app. The platform was developed by an international non-profit research consortium in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
+MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated (Android) EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
 
-In the E-COMPARED trial, MoodBuster was used, in five countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satelite study designed to assess the effects of long-term EMA [@VanBallegooijen2016].
+In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satelite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImplementAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
 
-Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online backoffice is in development. Experimental cross-platform versions of the app have been tested in Portugal.
+Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online backoffice is in development. While this can be advantage, as researchers ths have more options for custom development, it may take longer before an EMA-study can be started (depending on the specific requirements of the study). Another limitation is that only an Android version of the app is currently available. However, experimental cross-platform versions of the app have been tested in Portugal.
+
+More information on MoodBuster can be requested from Dr. Jiska Aardoom (j.j.aardoom@vu.nl), or prof. dr. Heleen Riper (h.riper@vu.nl).
 
 ```{r fig17b, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -46,16 +50,14 @@ knitr::include_graphics(c(
 ```
 
 
-## Movisense XS
+## Movisens
+Movisens (http://www.movisens.com) is a German company that is specialised in the development of hard- and software solutions for mobile sensing. The company sells small wearable devices that contain several high-precision sensors, including an accelerometer, gyroscope, barometer and thermomether. In addition, the company has developed an (Android) app, called MovisensXS, which can be used for active EMA research. The app can optionally be configured for smartphone logging (e.g., to log music that a study participant listens this). The wearable sensor can also be linked to the app, so that EMA questionnaires can be triggered based on targeted activity or energy expenditure patterns, such as extended periods of sedentary behaviour. Specialised software to import, pre-process and analyse raw sensor data is available for download.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Like Ilimuvi, researchers can define EMA sample schedules for their study in a web-based backoffice (https://xs.movisens.com), using an online graphical editor. Once defined, participants can be invited to the study , through the backoffice, to download the freely available Movisens App from Google Play store. The backoffice also allows researchers to monitor study compliance and download data.
 
+MoviSensXS EMA licence costs vary from 500 to 10.000 euro's per year, depending on the required number of 'credits' which are linked to the the number of EMA responses. Prospect users can test platform, without functional restrictions, with a free test account. An EMA test-study can thus be set up and started in less than a day.
+
+A major limitation of Movisens is the lack of an iOS version of the EMA app. Study participants who own an iphone have to be excluded from studies, or will have to be provided with an Android phone. 
 
 ### PsyMate
 

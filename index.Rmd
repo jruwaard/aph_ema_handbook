@@ -27,13 +27,13 @@ The manual comprises six parts:
 
 - Part II focuses on EMA study design (chapter 3), EMA instruments (chapter 4) and EMA data management (Chapter 5).
 
-- Part III introduces four EMA data analysis techniques: Feature Extraction (chapter 6), Mixed Modelling (chapter 7), Timeseries Analysis (chapter 8), and Network Analysis (chapter 9).
+- Part III introduces EMA data analysis techniques: Feature Extraction (chapter 6), Mixed Modelling (chapter 7), and Network Analysis (chapter 8).
 
-- Part IV details the momentary assessment of three key mental health variables: Mood (chapter 10), Activity (chapter 11), and Context (chapter 12).
+- Part IV details the momentary assessment of key mental health variables: Mood (chapter 9) and Activity (chapter 10).
 
-- In part V, the application of the preceding material is illustrated in three case studies: The critical Slowing Down study (CSD; chapter 13), an EMA study of suicidal ideation (the CASPAR study; chapter 15), and a study into a new GPS-based measure of activity (the Home Range Estimation-study; chapter 16).
+- In part V, the application of the preceding material is illustrated in three case studies: The critical Slowing Down study (CSD; chapter 11), an EMA pilot study of suicidal ideation (the CASPAR study; chapter 12), and a study into a new GPS-based measure of activity (the Home Range Estimation-study; chapter 13).
 
-- Part VI provides three catalogues of EMA resources. Chapter 16 lists EMA research groups, chapter 17 lists EMA instruments, and chapter 18 summarises R extentions (packages) that are useful in EMA data analysis.
+- Part VI provides three catalogues of EMA resources. Chapter 14 lists EMA research groups, chapter 15 lists EMA instruments, and chapter 16 summarises R extensions (packages) that are useful in EMA data analysis.
 
 The manual was written in Bookdown [@R-bookdown_book; @R-bookdown]. Sources are freely available at 'github', via https://github.com/jruwaard/aph_ema_handbook. Please post your comments and suggestions there, or via e-mail, through aph.ema@ggzingeest.nl.
 

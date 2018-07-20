@@ -1,20 +1,73 @@
+```{r include=FALSE, cache=FALSE}
+# # Reproducability --------------------------------------------------------------
+# 
+# # fix random numbers
+# set.seed(1014)
+# 
+# 
+# # knitr chunk options ----------------------------------------------------------
+# 
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  cache = FALSE,
+  out.width = "98%",
+  fig.align = 'center',
+  fig.width = 7,
+  fig.asp = 0.5,  # was: 0.618 (1 / phi)
+  fig.show = "hold",
+  message = FALSE,
+  warning = FALSE
+)
+# 
+# options(width = 120)
+# 
+# 
+# # standard libraries -----------------------------------------------------------
+library(ggplot2)
+library(emaph)
+# 
+# 
+# # theming ----------------------------------------------------------------------
+# 
+# # avoid long pint-out of numeric variables
+# #options(digits = 3)
+# 
+# # avoid long print-outs of tables
+# #options(dplyr.print_min = 6, dplyr.print_max = 6)
+# 
+# # common theme of all ggplot images
+# #theme_set(theme_bw(12))
+# 
+# 
+```
 
 # EMA Instruments Catalogue {#ema-instruments-catalogue}
 
-To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a selection of instruments that are use within the APH consortium.
+To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a (small) selection of instruments that we found to be in use in scientific studies within the APH consortium.
 
 Table: (\#tab:17a) EMA Instruments.
 
-| Name         | Manufacturer     | URL               | Description
-|-------------:|-----------------:|------------------:|-------------------------------|
-| Illumivu     | Illumivu.com     | ilumivu.com       | Android / iOS EMA app         |
-| MoodBuster   | ICT4D Consortium | moodbuster.eu     | Android EMA app               |
-| Movisense    | MoviSence        | movisense.org     | Android EMA app               |
-| PsyMate      | PsyMate          | psymate.eu        | Android EMA app               |
-| RoQua        | RoQua            | roqua.nl          | SMS / Browser-based EMA       |
-| VU-AMS       | VU               | www.vu-ams.nl     | Wearable for autonomic nervous| 
-|              |                  |                   | system measurement            |
+| Name         | Manufacturer      | URL               | Description
+|-------------:|------------------:|------------------:|-------------------------------|
+| GENEActive   | activinsights     | activinsights.com | Wrist-worn accelerometer      |
+| Illumivu     | Illumivu          | ilumivu.com       | Android / iOS EMA app         |
+| MoodBuster   | ICT4D Consortium  | moodbuster.eu     | Android EMA app               |
+| Movisense    | MoviSence         | movisense.org     | Android EMA app               |
+| PsyMate      | PsyMate           | psymate.eu        | Android EMA app               |
+| RoQua        | RoQua             | roqua.nl          | SMS / Browser-based EMA       |
+| VU-AMS       | VU                | www.vu-ams.nl     | Wearable for autonomic nervous| 
+|              |                   |                   | system measurement            |
 
+
+## GENEActive
+GENEActive, sold by UK-based company Activinsights (activinsights.com), is a waterproof wrist-worn device with a high-precision, configurable 3-axial accelerometer (range: +/- 8g), an ambient light sensor, a (near-body) temperature sensor, and an event logger (a button that users can press to mark a targeted event). GENEActive was developed to accurately assess human activity in scientific studies. The device has a storage capacity of 0.5GB of raw data. At 10Hz, the device can log activity up to one month. July 2018, the price for one unit is approximately 250 euro. 
+
+GENEActive is used in a growing number of clinical studies to measure activity and sleep-wake cycles, in natural conditions, over longer periods of time. Dedicated R-packages to pre-process and analyse the raw data exist (see, e.g., Chapter \@ref(rcat)). Note, however, that no accompanying app exists with which study participants can be provided feedback about their activity. This might negatively affect wear-time and study compliance in research participants, who are accustomed to consumer activity-sampling devices, such as Fitbit, where many options for real-time feedback exist.
+
+```{r geneactive, echo = FALSE, fig.cap = "The GENEActive Accelerometer", out.width='100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")
+```
 
 ## Illumivu
 
@@ -26,7 +79,7 @@ Current (July 2018) subscription plans range from 3.375 dollar (basic features) 
 
 Ilumivu's competetive advantage is that it has multi-platform support. It is, however, not the cheapest EMA product on the market. Being an American company, researchers should also consider EU regulations relating to personal data privacy protection, since regulations are more strict when personal data of EU citizens leave the EU.  
 
-```{r fig17a, echo = FALSE, fig.cap = "Ilumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+```{r ilumivu, echo = FALSE, fig.cap = "Ilumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
    "images/instruments/ilumivu/iv-app-1.png",
    "images/instruments/ilumivu/iv-app-2.png",
@@ -43,7 +96,7 @@ Currently, EMA assessment protocols are hard-coded in the app. New EMA assessmen
 
 More information on MoodBuster can be requested from Dr. Jiska Aardoom (j.j.aardoom@vu.nl), or prof. dr. Heleen Riper (h.riper@vu.nl).
 
-```{r fig17b, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+```{r moodbuster, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
    "images/instruments/moodbuster/mb-app-home.png",
    "images/instruments/moodbuster/mb-app-mood.png",
@@ -72,7 +125,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 http://www.psymate.eu/
 
 
-```{r fig17c, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+```{r psymate, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
    "images/instruments/psymate/psymate-app1.jpg",
    "images/instruments/psymate/psymate-app3.jpg",
@@ -87,7 +140,7 @@ RoQua (http://www.roqua.nl/) is a web-based Routine Outcome Monitoring system, d
 At present, RoQua does not support the collection of passive EMA data. However, preliminary results have been reported with a system called 'Physiqual' [@Blaauw2016], with which EMA data, collected with RoQUA, can be automatically combined with wearable sensor data.
 
 
-```{r roqua-results, echo = FALSE, fig.cap = "Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQUA system", out.width='30%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+```{r roqua, echo = FALSE, fig.cap = "Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQUA system", out.width='30%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
    "images/instruments/roqua/roqua_p1.jpg",
    "images/instruments/roqua/roqua_p2.jpg",
@@ -97,7 +150,7 @@ knitr::include_graphics(c(
 
 ### VU-AMS
 
-The VU University Ambulatory Monitoring System (VU-AMS) was developed by the department of Biological Psychology and the Technical Department (ITM) of the Faculty of Psychology and Education to allow ambulant recording of autonomic and cardiovascular activity (http://www.vu-ams.nl/). The system can be used to measure Heart Rate / Inter beat Interval, Heart Rate Variability, Respiratory Sinus Arrhythmia, Pre-Ejection Period, Left Ventricular Ejection Time, Respiration Rate, Stroke Volume (SV) and Cardiac Output, Skin Conductance Level (SCL) and Skin Conductance Responses (SCRs) and Tri-Axial Accelerometry (of Body Movement). For the processing of VU-AMS data, a dedicated software suite called the 'Data Analysis and Management Software' (VU-DAMS) is available (for Windows and Mac).
+The VU University Ambulatory Monitoring System (VU-AMS; http://www.vu-ams.nl/), developed by the department of Biological Psychology and the Technical Department (ITM) of the Faculty of Psychology and Education, allows ambulant recording of autonomic and cardiovascular activity. VU-AMS measures heart rate, heart rate variability, Respiratory Sinus Arrhythmia, Pre-Ejection Period, Left Ventricular Ejection Time, Respiration Rate, Stroke Volume (SV) and Cardiac Output, Skin Conductance Level (SCL) and Skin Conductance Responses (SCRs) and Tri-Axial Accelerometry (of Body Movement). For the processing of VU-AMS data, a dedicated software suite called the 'Data Analysis and Management Software' (VU-DAMS) is available (for Windows and Mac).
 
 
 ```{r vu-ams, echo = FALSE, fig.cap = "VU-AMS device", out.width = '100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}

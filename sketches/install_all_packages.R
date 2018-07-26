@@ -16,6 +16,7 @@ ensurePackage(
     "tidyverse",
     "adehabitatHR",
     "data.tree",
+    "ggplot2",
     "GPArotation",
     "GENEAread",
     "GGIR",

@@ -9,19 +9,49 @@ This chapter summarises ongoing EMA research projects within the APH mental heal
 Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 
 | Name           | Focus            | URL                  | Organisation        |
-|---------------:|-----------------:|---------------------:|--------------------:|
+|:---------------|:-----------------|:---------------------|:--------------------|
+| Bockting group  | Depression    | claudibockting.com     | AMC               |
 | CASPAR         | Suicide          | ilumivu.com          | VU                  |
 | Chronic Fatigue| Chronic Fatigue  | ---                  | AMC                 |
-| Moodbuster/ E-COMPARED     | Depression       | ict4depression.eu    | VU                  |
 | FAntasTIGUE    | Fatigue          | tinyurl.com/ybb7up87 | AMC                 |
+| Huibers group | Depression        | ---                   | VU                  |
 | IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
 | MERITS          | Type 1 diabetes       | -            | VuMC  |
+| Moodbuster/ E-COMPARED     | Depression       | ict4depression.eu    | VU     |
 | NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
 | Psychosystems  | Symptom Networks | psychosystems.org    | UvA                 |
 | RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
-| TEMSTEM        | Psychosis        | tinyurl.com/ybac6flo | VU                  |
+| van der Gaag group |  Psychotic symptoms  |               | VU                  |
+| TEMSTEM        | Auditory hallucinations        | tinyurl.com/ybac6flo | VU                  |
+| VRETp      | Psychotic disorders        | psymate.eu | VU                  |
+| van Someren group | Sleep       | https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/ | AMC |
 | VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
 
+
+### The Bockting group
+\index{Bockting}
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team    | |
+|APH site        | AMC, Rijksuniversiteit Groningen |
+| Topic          | Depression |
+| Status         | Ongoing |
+| Target populations | Adults with depression, remitted recurrently depressed individuals  |
+| Platforms used |Psymate, Roqua, ‘Imagine your mood’ app (TEMPEST software) |
+| EMA active     | Imagine your mood study (2012-2017): The study aims to evaluate relapse in remitted depressed patients who either continue or taper antidepressant medication with or without preventative cognitive therapy (three conditions). Participants are prompted 10 times per day, 3 days a week, for 8 weeks. Prompts are send randomly within fixed time-intervals. EMA items are scored on VAS scales (0-100) and include mood, positive affect (PA, 5 items) and negative affect (NA, 9 items)  0 to 100 VAS scales (average score for PA and NA) and mental imagery (2 items). |
+| | StayFine study (http://stayfine.nl): the study aims to prevent relapse in young people (12-23) with remitted anxiety or depression. The app contains a monitoring function (diaries). Half of participants will also gain access to tailored content and a chat-function with trained peers.|
+
+Aansluiten op eerdere projecten, zoals. 
+
+| EMA passive |  |
+| Data management | |
+| Project goals | 
+| Results |  |
+| Lessons learned | 
+- Roqua proved not to be the preferred EMA method in adolescents, SMS messages were left unnoticed and they prefer apps to websites.
+- It is important to evaluate the value of collected information (usability, reliability, specificity). For many self-report EMA items it remains unclear which construct is measured. |
+| Website |  |
 
 ### The CASPAR Project
 \index{CASPAR}

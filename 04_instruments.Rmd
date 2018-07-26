@@ -1,5 +1,32 @@
 # EMA instruments {#instruments}
 
+General introduction
+  Procedure
+
+Features 
+
+Costs new development vs known player
+Low-tech vs high-tech
+
+Validation, reliability (noise)
+Is raw data available (genactiv versus fitbit)
+  Dedicated software y/n
+Back-office (autonomy to define questions and design)
+
+Device limitations (technical considerations)
+  Storage (local, cloud, etc)
+  Data sharing (wifi, usb etc)
+  Server (where, who owns the server/data)
+  Battery life
+
+Pilot (on your own phone)
+  Make sure there is a plan b
+
+## Participant perspective
+Social environment participant, stigma
+Impact 
+Carrying the device (remembering to take it with you)
+Charging battery
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,

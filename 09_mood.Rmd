@@ -8,27 +8,37 @@ Mood is a common outcome in EMA research [@Myin-Germeys2016; @Desmet2016]. Havin
 
 The definition of mood varies across studies. Usually the concept refers to a general affective state such as arousal or valence. Following this line of reasoning, a distinction can be made between mood states (e.g. irritable, cheerful, relaxed, etc.) and discrete emotions (e.g. happy, sad, anxious, etc.), where moods are thought to be less specific and more subjective, enduring and related to context [@Beedie2005; @Cranford2006; @Desmet2016].
 
-Depending on the study focus and research questions, mood measurement can be operationalized in several ways. Therefore, it is vital to consider the goal of measuring mood in your own study and to choose an operationalisation that matches your hypothesis and theoretical framework. In this chapter, we will discuss the most commonly used constructs: 1) unidimensional mood assessment, 2) the Circumplex model, 3) negative and positive affect, and 4) the 'bag of items' approach. 
+Depending on the study focus and research questions, mood measurement can be operationalized in several ways. Therefore, it is vital to consider the goal of measuring mood in your own study and to choose an operationalisation that matches your hypothesis and theoretical framework. In this chapter, we will discuss the most commonly used constructs: 1) unidimensional mood assessment, 2) the Circumplex model, 3) Negative and Positive affect (NA/PA), and 4) the 'bag of items' approach. 
 
 ## Unidimensional mood assessment
 \index{Unidimensional mood assessment}
 Perhaps the most seemingly straight-forward method to measure mood is to ask 'face-valid' unidimensional questions such as "How is your mood right now" [@VanBallegooijen2016] or "How are you feeling right now" [@VandeVen2017].
 
-Respondents rate these questions on a Likert scale or a Visual Analogue Scale (VAS), aimed to indicate mood intensity. Typically, VAS scales will range from zero (low or worst mood) to 10 or 100 (good or best mood). 
-Plotting this data in a graph is an easy way to visually inspect within-subject change in general mood:
+Respondents typically rate these questions on a Likert scale or a Visual Analogue Scale (VAS), aimed to indicate mood intensity. Typically, VAS scales will range from zero (low or worst mood) to 10 or 100 (good or best mood). Keep in mind that the middle of a VAS scale (e.g. 5 or 50) is generally considered a negative result, and only scores above 6 or 60 are considered acceptable or positive mood states [@Groot2010]. In order to address this issue, some researchers have proposed to use VAS-scales ranging from -1 to 1, with 0 as a neutral centre. However, such a scale implies a mood state that ranges from negative to positive, rather than absent to present. Another alternative is to use Likert scales, where the scale centre often reflects a neutral response.  
 
-```{r fig10a, fig.cap = "34 weeks of mood data, from a single participant"}
+Plotting data from an unidimensional item in a graph is an easy way to visually inspect within-subject change in general mood:
+
+```{r fig09a, fig.cap = "34 weeks of mood data, from a single participant"}
+library(ggplot2) 
+library(emaph)
+
 plotmood_down <- ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
   geom_smooth(method = "loess", span = .05, se = FALSE, colour="dodgerblue4") + 
   geom_point(size = .3, alpha = .3, position = position_jitter(height = .1),
-  colour="dodgerblue2") + scale_x_date() + scale_y_continuous(breaks = 1:7) +
+  colour="dodgerblue2") +  scale_x_date() + scale_y_continuous(breaks = 1:7) +
   xlab("Time") + ylab("Mood") 
 print(plotmood_down)
 ```  
 
-Combining data from various variables such as activity, sleep and mood in one graph can help respondents understand the interaction between mood and behaviour. 
+## Bag-of-Items
+When using general items, such as "how is your mood right now", you assume that respondents instinctively understand the concept of general mood. Little is known about whether mood ratings are indeed comparable across respondents (between-subjects). An alternative is to specify the items, for example by asking "How depressed are you feeling right now" or "How anxious are you feeling right now [@Starr2012]. This often leads to a 'bag-of-items' approach, where single items from various sources, such as existing questionnaires on mood and sleep, are combined into a new EMA questionnaire. A benefit of this approach is that you can select items for which information on validity and test-retest reliability is available. A downside of the bag-of-items approach is that items scores can only be evaluated separately, rather that providing one overall indication of mood or well-being.
 
-```{r fig10f, fig.cap = "34 weeks of combined mood data, from a single participant"}
+Combining data from multiple items, such as mood and loneliness, in one graph can provide respondents with insight in the interaction between the constructs. In r two variables can easily be plotted together:
+
+```{r fig09b, fig.cap = "34 weeks of combined mood data, from a single participant"}
+library(ggplot2) 
+library(emaph)
+
 combined <- plotmood_down + 
   geom_point(data=csd, aes(date,as.numeric(mood_lonely)), 
     size = .3, alpha = .3, position = position_jitter(height = .1),
@@ -36,27 +46,27 @@ combined <- plotmood_down +
   geom_smooth(data=csd, aes(date,as.numeric(mood_lonely)), 
     method = "loess", span = .05, se = FALSE, colour="indianred2")
 print(combined)
-
 ```  
 
-There are a few things to consider when using unidimensional mood assessment. First, it assumes that respondents instinctively understand the concept of general mood. Little is known about whether mood ratings are indeed comparable across respondents (between-subjects). 
-Secondly, the middle of a VAS scale (e.g. 5 or 50) is considered a negative result, and only scores above 6 or 60 are considered acceptable or possible mood states [@Groot2010]. This contrasts with common Likert scales, where the centre often reflects a neutral response. In order to address this issue, some researchers have proposed to use scales ranging from -1 to 1, with 0 as a neutral scale centre. However, such a scale implies a mood state that ranges from negative to positive, rather than absent to present.  
-
-### Bipolar unidimensinal items
-\index{Bipolar unidimensinal items}
-Another option is to use bipolar unidimensional items, which place two opposing mood states at each end of the scale, for example by asking "Please rate your current mood on a scale of 0 to 100, on which 0 indicates happy, and 100 indicates sad" [@VanRijsbergen2014]. The bipolar-unidimensional method was shown to be able to predict time to relapse over 5.5 years in recurrently depressed out-patients, with 6.3% of variance in time to relapse explained. This percentage was comparable to that of the HAM-D [@Rijsbergen2012]. Also the scale was able to detect relapse in patients with recurrent Major Depressive Disorder (based on SCID-I interview) at a cut-off score of 55, and outperformed the HAM-D and IDS-SR. However, 47% of patients indicated by the VAS scale did not fulfil formal criteria for relapse (false positives) [@VanRijsbergen2014]. 
+### Bipolar unidimensional items
+\index{Bipolar unidimensional items}
+Another option to assist respondents with the meaning and interpretation of single mood items, is to use a bipolar scale. These items place two opposing mood states at each end of the scale, for example by asking "Please rate your current mood on a scale of 0 to 100, on which 0 indicates happy, and 100 indicates sad" [@VanRijsbergen2014]. 
+The bipolar-unidimensional method was shown to be able to predict time to relapse over 5.5 years in recurrently depressed out-patients, with 6.3% of variance in time to relapse explained. This percentage was comparable to that of the HAM-D [@Rijsbergen2012]. Also, the scale was able to detect relapse in patients with recurrent Major Depressive Disorder (based on SCID-I interview) at a cut-off score of 55, and outperformed the HAM-D and IDS-SR. However, 47% of patients indicated by the VAS scale did not fulfil formal criteria for relapse (false positives) [@VanRijsbergen2014]. 
+A downside of this approach that you should consider, is that it assumes that mood states, such as happy and sad cannot occur simultaneously and are mutually exclusive.  
 
 ## Multi-dimensional mood assessment
 \index{Multi-dimensional mood assessment}
-Dimensional models assume that affective states or emotions should be described by (at least) two bipolar items, instead of just one. Over the past decades several multi-dimensional models have been specified (for an overview, see @sander2009). In the context of EMA, researchers most often base their items on the circumplex model [@russell1980circumplex] or the Positive/Negative affect theory [@watson1985]. 
+Dimensional models assume that every affective state or emotion should be described by (at least) two items, instead of just one. Over the past decades several multi-dimensional models have been specified (for an overview, see @sander2009). In the context of EMA, researchers most often base their items on the circumplex model [@russell1980circumplex] or the Negative/Positive affect (NA/PA) theory [@watson1985]. 
 
 ### The Circumplex Model
 \index{Circumplex model}
-The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from low to high arousal) and affect (ranging from unpleasant to pleasant). Combining scores on these scales places the affective states in a circle on one of four quadrants (\@ref(fig:fig10d)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated. 
-```{r fig10d, fig.cap = "Russell's Circumplex model of affect.", echo = FALSE, out.width = '50%'}
-knitr::include_graphics("images/outcomes/Russell_1980.png")
+The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from low to high arousal) and affect (ranging from unpleasant to pleasant). Combining scores on these scales places the affective states in a circle on one of four quadrants (\@ref(fig:fig09c)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated. 
+
+```{r fig09c, fig.cap = "Russell's Circumplex model of affect.", echo = FALSE, out.width = '50%'}
+knitr::include_graphics("images/outcomes/Russell1980.png")
 ```
-There are several options to operationalise the Circumplex model in EMA research. For example, respondents can rate valence and arousal on two VAS scales. The most pragmatic approach is to report both scale scores seperately [@Asselbergs2016]. Alternatively, scores can be combined to give insight into the quadrant in which respondents affective states fall:
+
+There are several options to operationalise the Circumplex model in EMA research. For example, respondents can rate valence and arousal on two VAS scales. The most pragmatic approach is to report both scale scores separately [@Asselbergs2016]. Alternatively, scores can be combined to give insight into the quadrant in which respondents’ affective states fall:
 
 - Low aroused - unpleasant
 - Low aroused - pleasant
@@ -64,30 +74,29 @@ There are several options to operationalise the Circumplex model in EMA research
 - High aroused - pleasant
 
 A downside of the Circumplex model is that the concepts of valence and arousal can be hard to convey to respondents, especially when translated to other languages, such as Dutch. One alternative is to adjust the scale ends, for example using “extreme sleepiness” and “extreme high energy” [@sharar2016]. 
-Another option is to use pictures or emoticons, rather than language. For this purpose, DeSmet and colleagues developed the pick-a-mood scale, which is a pictorial self-report scale. The scale builds on the circumplex model and adds the third dimension "dominance" (level of experienced control over the mood state), rendering eight (instead of four) different mood states and one neutral state. 
+Another option is to use pictures or emoticons, rather than language. For this purpose, DeSmet and colleagues developed the pick-a-mood scale, which is a pictorial self-report scale. The scale builds on the circumplex model and adds the third dimension "dominance" (level of experienced control over the mood state), rendering eight (instead of four) different mood states and one neutral state (\@ref(fig:fig09d)). 
 
-```{r fig09b, fig.cap = "The Pick-A-Mood Circle.", echo = FALSE, out.width = '50%'}
+```{r fig09d, fig.cap = "The Pick-A-Mood Circle.", echo = FALSE, out.width = '50%'}
 knitr::include_graphics("images/outcomes/Circumplex-Pick-A-Mood.png")
 ```
 
 ## Negative & Positive Affect
 \index{Negative Affect} \index{Positive Affect}
-Watson and Tellegen [@watson1985] also specified the underlying theory of the Circumplex model, arguing that the diagonal quadrants represent Positive and Negative affect (PA/NA) and that these two terms are the main dimensions of affect [@Watson1999]. PA ranges from sadness to high energy, NA from calmness to distress [@Watson1988]. While bipolar-unidimensional assessment assumes that positive and negative affect are mutually exclusive, the PA/NA affect model assumes that these seemingly opposing mood states can occur simultaneously. Watson and Clark [@Watson1997] for example, showed a moderate correlation between the two constructs (.32) and argued that while bipolar scales can be used for within-subject assessment, unipolar scales have superior convergent and discriminant validity in between-subject data.
-
-In order to measure Postive and Negative Affect, a designated Postive and Negative Affect Schedule was developed by Watson, Clark and Tellegen [@Watson1988]. Respondents are asked to indicatie on 20 affect items "to what extent you feel this way right now" on a 5-point Likert-scale, ranging from 1 (very slightly or not at all) to 5 (very) [@Watson1999]. Items include:
+Watson and Tellegen [@watson1985] also specified the underlying theory of the Circumplex model, arguing that the diagonal quadrants represent Positive and Negative affect (PA/NA) and that these two terms are the main dimensions of affect [@Watson1999]. PA ranges from sadness to high energy, NA from calmness to distress [@Watson1988]. While bipolar-unidimensional assessment assumes that positive and negative affect are mutually exclusive, the PA/NA affect model assumes that these seemingly opposing mood states can occur simultaneously. Watson and Clark [@Watson1997] for example, showed a moderate correlation between the two constructs (.32). 
+In order to measure Positive and Negative Affect, a designated Positive and Negative Affect Schedule was developed by Watson, Clark and Tellegen [@Watson1988]. Respondents are asked to indicate "to what extent you feel this way right now" on 20 affect items. The scale uses a 5-point Likert-scale, ranging from 1 (very slightly or not at all) to 5 (very) [@Watson1999]. Items include:
 
 - Negative Affect (10): afraid, scared, nervous, jittery, irritable, hostile, guilty, ashamed, upset, distressed 
 - Positive Affect (10): active, alert, attentive, determined, enthusiastic, excited, inspired, interested, proud, strong
 
-For their EMA studies, Wichers and colleagues created a 10-item short-form of the PANAS, based on the PANAS and their own experience with EMA [@Wichers2012]. Using factor analyses, the following items were chosen for the questionnaire:
+There are several short-forms available. For example, Wichers and colleagues created a 10-item short-form of the PANAS for their EMA studies. The items were based on the PANAS and their own experience with EMA [@Wichers2012]. Using factor analyses, the following 7-point Likert items were chosen for the questionnaire:
 
 - Negative affect (6): insecure, lonely, anxious, low, guilty, suspicious. 
 - Positive affect (4): cheerful, content, energetic, enthusiastic. 
 
-All items were rated on 7-point Likert scales. PA and NA were calculated as the average score across all five items, and weighted for their factor loadings [@Wichers2012].
-In r, such a factor analysis can be excecuted as follows: 
+PA and NA were calculated as the average score across all five items and weighted for their factor loadings [@Wichers2012].
+In r, such a factor analysis can be executed as follows: 
 
-```{r fig10c, fig.cap = "Factor analysis of 7 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
+```{r fig09e, fig.cap = "Factor analysis of 7 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
 library(dplyr)
 library(tibble)
 
@@ -112,9 +121,3 @@ psych::fa.diagram(fa,
                   simple = TRUE, 
                   main = "")
 ```
-
-## Bag-of-Items
-Another strategy for choosing EMA questions on mood, is to use the 'bag-of-items' approach. Or, in other words, to combine items from various sources, such as existing questionnaires. Often this strategy 
-
-In order to reduce bias and improve reliability, some studies implemented more specific questions, such as "How depressed are you feeling right now" or "How anxious are you feeling right now [@Starr2012]. However, this shifts focus from general mood to more specific mood states or emotions.
-

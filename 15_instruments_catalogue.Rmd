@@ -120,9 +120,12 @@ knitr::include_graphics(c(
 
 ### PsyMate
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
+The PsyMate™ app (www.psymate.eu) was developed by the Department of Psychiatry and Psychology at Maastricht University in the Netherlands to assess psychological problems in daily life. The app has been validated for use in depression, bipolar disorder, and psychosis, with new scales currently being developed for a range of diseases including Parkinson's disease, pain, cardiology, hypertension, diabetes and Irritable Bowel Syndrome. It is currently used in a EU-funded project to study gene-environment interaction in schizophrenia (http://www.eu-gei.eu/about-the-project/psymate). 
 
-http://www.psymate.eu/
+The app is free to download for iOS and Android devices on Apple and Google play stores. Uses for the app include self-monitoring of mood states, for professional support during treatment, or for research purposes. The app can be customized to address specific client needs or research projects with expertise from the Psymate back office, which includes a working group that meets regularly to discuss and advise new projects.
+
+Researchers have access to the raw data without having to go through the Psymate back office. A disadvantage of the Psymate app is that technical problems could arise when there are either iOS or Android updates. Communication from the Psymate back office to researchers about updates and assistance with technical problems could be a point for consideration for using this platform.
+
 
 
 ```{r psymate, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}

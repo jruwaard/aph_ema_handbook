@@ -49,10 +49,11 @@ Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
 fringilla. Sed at varius erat, id consequat nibh.
 
 
-```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelorometer.", echo = FALSE}
+```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelorometer, sub-sampled to 10-seconds epochs (0.1 Hz)", echo = FALSE}
 # plot one hour of accelerometer data
 library(ggplot2)
 library(tidyr)
+library(dplyr)
 library(emaph)
 
 d <-  subset(genea,
@@ -60,11 +61,15 @@ d <-  subset(genea,
               timestamp < "2018-06-01 14:00" &
               id == 1)
 
+# resample to 30 seconds
+d$timestamp <- lubridate::round_date(d$timestamp, "10 seconds")
+d <- d %>% group_by(timestamp) %>% summarise_all(.funs = mean)
+
 d <- gather(d,
              key = "sensor", value = "value",
              x, y, z, temperature, light)
 ggplot(d, aes(timestamp, value)) +
-  geom_point(alpha = .3,  shape = 16, size = .5) +
+  geom_line() + 
   facet_grid(rows = vars(sensor) , scales = "free_y")
 ```
 

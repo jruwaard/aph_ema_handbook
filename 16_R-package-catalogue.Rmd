@@ -73,13 +73,12 @@ Accelerometer data need considerable pre-processing before final analyses can be
 
 GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that is often used in clinical research studies. With package ***GENEAread*** [@R_GENEAread], raw data can be imported into R for further processing, as illustrated below.    
 
-```{r out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer.", message = FALSE, warning = FALSE}
+```{r out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).", message = FALSE, warning = FALSE}
 library(GENEAread)
-library(ggplot2)
 library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
-                verbose = FALSE)
+                verbose = FALSE, downsample = 20)
 
 d <- as.data.frame(dat$data.out)
 d <- gather(d, key = "sensor", value = "value", -timestamp)
@@ -104,18 +103,17 @@ Package *GGIR* [@R-GGIR] is a packages to pre-process raw acceleromety data from
 
 Package ***'PhysicalActivity'*** [@R-PhysicalActivity] provides an alternative to package 'GGIR', when ActiGraph data are available.
 
-```{r fig11a, fig.cap="Three days of Accelerometer data.", out.width = "100%", fig.asp = .4}
+```{r fig11a, fig.cap="Activity Counts (5-minute windows), in a Three-day Accelerometer data set.", out.width = "100%", fig.asp = .4}
 library(PhysicalActivity)
 library(ggplot2)
 
 data(dataSec)
 
-d <- dataCollapser(dataSec, TS = "TimeStamp", col = "counts", by = 60)
+d <- dataCollapser(dataSec, TS = "TimeStamp", col = "counts", by = 300)
 
 ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
-  geom_smooth(method = "loess", span = .05, se = FALSE) + 
-  geom_point(size = .2, alpha = .25) +
-  xlab("Time") + ylab("Activity")
+  geom_line(size = .5, alpha = .5) +
+  xlab("Time") + ylab("Activity Counts")
 ```
 
 ## Data management & Visual Exploration

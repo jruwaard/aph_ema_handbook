@@ -11,6 +11,7 @@ ensurePackage(
   c(
     "autovarCore",
     "bookdown",
+    "bootnet",
     "ecp",
     "emaph",
     "tidyverse",

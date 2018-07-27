@@ -26,28 +26,37 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 | VRETp      | Psychotic disorders        | psymate.eu | VU                  |
 | van Someren group | Sleep       | https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/ | AMC |
 | VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
+| | |
+| | |
+| | |
+| | | 
+
 
 
 ### The Bockting group
 \index{Bockting}
+Prof. dr. Claudi Bockting is a professor in clinical psychology at the psychiatry department of the AMC location of Amsterdam UMC and the Rijksuniversiteit Groningen. Her group focuses on treatment and relapse prevention of (severe) depressive disorder and related common mental health disorders.  
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Project team    | |
+| Project team    | Claudi Bockting, PhD; Yvonne Stikkelbroek, Phd; Gerard van Rijsbergen, PhD |
 |APH site        | AMC, Rijksuniversiteit Groningen |
 | Topic          | Depression |
 | Status         | Ongoing |
 | Target populations | Adults with depression, remitted recurrently depressed individuals |
 | Platforms used |Psymate, Roqua, ‘Imagine your mood’ app (TEMPEST software) |
-| EMA active     | 1) Imagine your mood study (2012-2017): The study aims to evaluate relapse in remitted depressed patients who either continue or taper antidepressant medication with or without preventative cognitive therapy (three conditions). Participants are prompted 10 times per day, 3 days a week, for 8 weeks. Prompts are sent randomly within fixed time-intervals. EMA items are scored on VAS scales (0-100) and include mood, positive affect (PA, 5 items) and negative affect (NA, 9 items) 0 to 100 VAS scales (average score for PA and NA) and mental imagery (2 items). |
-| | 2) StayFine study (http://stayfine.nl): the study aims to prevent relapse in young people (12-23) with remitted anxiety or depression. The app contains a monitoring function (diaries). Half of participants will also gain access to tailored content and a chat-function with trained peers. |
-| EMA passive |  |
-| Data management | |
-| Project goals | 
-| Results |  |
-| Lessons learned | - Roqua proved not to be the preferred EMA method in adolescents, because SMS messages (prompts) were not noticed by participants, due to infrequent use of SMS. In addition, participants preferred filling in questions in designated apps to websites.
-- It is important to evaluate the value of collected information (usability, reliability, specificity). For many self-report EMA items it remains unclear which construct is measured. |
-| Website |  |
+| EMA active     | 1) Imagine your mood study (2012-2017): The randomised controlled study aimed to evaluate relapse in remitted depressed patients who either continue or taper antidepressant medication with or without preventative cognitive therapy (three conditions). Participants were prompted 10 times per day, 3 days a week, for 8 weeks. Prompts were sent randomly within fixed time-intervals. EMA items were scored on VAS scales (0-100) and include mood, positive affect (PA, 5 items) and negative affect (NA, 9 items) 0 to 100 VAS scales (average score for PA and NA) and mental imagery (2 items). |
+| | 2) StayFine study (ongoing, http://stayfine.nl): the randomised controlled study aims to prevent relapse in young people (12-23) with remitted anxiety or depression. The app contains a monitoring function (diaries), which is used for 3 weeks at each assessment (0,3,6,12,24 and 36 months). Half of participants will also gain access to an EMI function, with tailored content (based on Preventive Cognitive Therapy) and a chat-function with peers, guided by an expert patient counsellor. |
+| EMA passive | In the StayFine study, wristwatches (Polar) will be used to measure activity. |
+| Data management | How is data stored (cloud, server, locally), under an ID or actual patient name, who moderates the server, how much time do patients have to answer the prompts (in minutes) |
+| Project goals | Prevent relapse of anxiety and depression, and improve quality of life. |
+| Results | The VAS mood scale that was used in the imagine your mood study (‘Please rate your current mood on a scale of 0 to 100’, on which 0 indicates ‘happy’, and 100 indicates ‘sad’) [@Vanrijsbergen2014], was shown to have a high positive predictive value without any false negatives at a cut-off score of 55. Compared to the HAM-D17 and the IDS-SR, the VAS also was a better predictor of current relapse status, as measured by the SCID-1 interview (variance explained for VAS: 60%; HAM-D17: 49%; IDS-SR: 34%).  |
+| Lessons learned | 1) Roqua proved not to be the preferred EMA method in adolescents, because SMS messages (prompts) were not noticed due to infrequent use of SMS. In addition, adolescent participants preferred using designated apps to websites. 2) It is important to evaluate the value of EMA data more thoroughly (usability, reliability, specificity). For many self-report EMA items it remains unclear which construct is measured. 3) There is a need for scientific research examining existing applications. 4) APH should consider joining forces to develop a shared system (website and mobile application) that has a back-office, so that it can be adapted to fit the requirements of different projects.  |
+| Website | www.stayfine.org |
+| | [ZonMw summary](https://www.zonmw.nl/nl/onderzoek-resultaten/geestelijke-gezondheid-ggz/programmas/project-detail/onderzoeksprogramma-ggz/stay-fine-a-personalized-monitoring-and-intervention-app-to-prevent-relapse-of-anxiety-and-mood-dis-1/verslagen/) |
+| |claudibockting.com |
+
+
 
 ### The CASPAR Project
 \index{CASPAR}

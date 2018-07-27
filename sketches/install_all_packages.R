@@ -25,6 +25,7 @@ ensurePackage(
     "graphicalVAR",
     "kableExtra",
     "haven",
+    "iterators",
     "lme4",
     "lomb",
     "lubridate",

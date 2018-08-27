@@ -118,7 +118,7 @@ knitr::include_graphics(c(
    "images/instruments/movisens/movisens.png"))
 ```
 
-### PsyMate
+## PsyMate
 
 The PsyMate™ app (www.psymate.eu) was developed by the Department of Psychiatry and Psychology at Maastricht University in the Netherlands to assess psychological problems in daily life. The app has been validated for use in depression, bipolar disorder, and psychosis, with new scales currently being developed for a range of diseases including Parkinson's disease, pain, cardiology, hypertension, diabetes and Irritable Bowel Syndrome. It is currently used in a EU-funded project to study gene-environment interaction in schizophrenia (http://www.eu-gei.eu/about-the-project/psymate). 
 

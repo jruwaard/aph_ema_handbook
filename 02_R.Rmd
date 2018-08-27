@@ -78,8 +78,7 @@ to 2) generate 100 random numbers from the normal distribution, and 3) plot a
 histogram of these numbers.
 
 ```{r cs2c, eval = FALSE}
-# Code snippet 2.3: Plotting the histogram of a sample from the normal 
-# distribution.
+# Code snippet 2.3: Plotting the histogram of a sample from the normal distribution.
 hist(rnorm(N))
 ```
 
@@ -146,7 +145,7 @@ knitr::include_graphics("images/R/csv_import.png")
 While RStudio's Data import wizard is useful, you will probably use it less over time. Most likely, you will convert to using the more efficient R commands to import data. For example, it takes only a single line to download and import the example data.
 
 ```{r cs2d}
-# Code snippet 2.4: importing csv-data from the internet.
+# Code snippet 2.4: Importing csv-data from the internet.
 ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 ```
 
@@ -157,7 +156,7 @@ it in other R commands. For example, to produce a more detailed summary of the
 first four columns of `ESMdata`, you type:
 
 ```{r cs2e, comment = NA}
-# Code snippet 2.5: summarising data.
+# Code snippet 2.5: Summarising data.
 summary(ESMdata)
 ```
 
@@ -180,7 +179,7 @@ To work with a specific variable in the dataset, use '$', For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 ```{r cs2h, eval = FALSE}
-# Code snippet 2.8: accessing a single variable in a data frame.
+# Code snippet 2.8: Accessing a single variable in a data frame.
 head(ESMdata$mood_relaxed, n = 20)
 ```
 
@@ -211,7 +210,7 @@ If you find a package you like, you can install it via the RStudio menu system, 
 A popular package, `tidyverse`, is used extensively in the examples of this manual. Package tidyverse comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.
 
 ```{r cs2j, eval = FALSE}
-# Code snippet 2.10: installing a package from CRAN.
+# Code snippet 2.10: Installing a package from CRAN.
 install.package(tidyverse)
 ```
 
@@ -365,7 +364,7 @@ quality interactive courses in R. See http://www.datacamp.com
 Package 'swirl' comprises a set of interactive courses that teach many aspects of the R language. See http://swirlstats.com
 
 ```{r cs2r, eval = FALSE}
-# Code snippet 2.18: starting the interactive swirl-course in R.
+# Code snippet 2.18: Starting the interactive swirl-course in R.
 install.packages("swirl")
 library("swirl")
 swirl()

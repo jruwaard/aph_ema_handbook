@@ -85,6 +85,7 @@ fringilla ut neque. Nunc hendrerit cursus eleifend.
 
 
 ```{r fig1a, echo = FALSE, fig.cap = "An extreme case of how indiviual effects may be different from group effects: the effect of x on y is positive for individuals (marked by ellipses), but negative for the group (as illustrated by the negative regression line)."}
+
 # simulate individual
 sim_p <- function(id = 1, intercept = 0, x_start = 0){
   X <- (0:9)

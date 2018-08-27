@@ -5,11 +5,9 @@ output:
 ---
 # (PART) EMA Catalogues {-}
 
-# EMA Research Groups within APH {#aphcat}
-
 This chapter summarises ongoing EMA research projects within the APH mental health consortium, as a guide to other researchers looking for nearby EMA-expertise and research collaboration.  
 
-# Overview
+## Overview
 
 Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 

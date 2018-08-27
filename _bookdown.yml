@@ -16,20 +16,19 @@ rmd_files: [
   "04_instruments.Rmd",
   "05_datamanagement.Rmd",
   
-  "06_features.Rmd",
-  "07_lmm.Rmd",
-  "08_networks.Rmd",
+  "06_mood.Rmd",
+  "07_activity.Rmd",
   
-  "09_mood.Rmd",
-  "10_activity.Rmd",
-
+  "08_features.Rmd",
+  "09_lmm.Rmd",
+  "10_networks.Rmd",
+  
   "11_csd.Rmd",
-  "12_caspar.Rmd",
-  "13_homerange.Rmd",
+  "12_homerange.Rmd",
   
-  "14_aph-catalogue.Rmd",
-  "15_instruments_catalogue.Rmd",
-  "16_R-package-catalogue.Rmd",
+  "13_aph-catalogue.Rmd",
+  "14_instruments_catalogue.Rmd",
+  "15_R-package-catalogue.Rmd",
 
   "acknowledgements.Rmd",
   "references.Rmd"

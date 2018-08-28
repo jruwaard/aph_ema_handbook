@@ -25,6 +25,7 @@ Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulu
 
 ```{r network, fig.cap = "Simulated timeseries of 5 variables"}
 # code snippet 9.1: Fitting symptom networks
+library(ggplot2)
 library(graphicalVAR)
 library(dplyr)
 
@@ -84,9 +85,10 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
-```{r}
+```{r mlvarcode}
 # code snippet 9.4: Fitting symptom networks of multiple subjects
 library("mlVAR")
+library(methods)
 
 Model <- mlVARsim(nPerson = 30, nNode = 5, 
                   nTime = 50,   lag = 1)

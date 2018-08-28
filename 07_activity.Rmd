@@ -1,0 +1,212 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+# Activity {#activity}
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra [@Marszalek2014].  
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+## Accelerometry
+\index{Accelerometer} 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. 
+
+vertical (Y), horizontal right-left (X) and horizontal front-back axis (Z). 
+
+Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.
+
+### Data collection
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. Donec sed lectus at sem ultrices commodo.
+Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
+fringilla. Sed at varius erat, id consequat nibh.
+
+
+```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelorometer, sub-sampled to 10-seconds epochs (0.1 Hz)", echo = FALSE}
+# plot one hour of accelerometer data
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(emaph)
+
+d <-  subset(genea,
+              timestamp > "2018-06-01 13:00" &
+              timestamp < "2018-06-01 14:00" &
+              id == 1)
+
+# resample to 30 seconds
+d$timestamp <- lubridate::round_date(d$timestamp, "10 seconds")
+d <- d %>% group_by(timestamp) %>% summarise_all(.funs = mean)
+
+d <- gather(d,
+             key = "sensor", value = "value",
+             x, y, z, temperature, light)
+ggplot(d, aes(timestamp, value)) +
+  geom_line() + 
+  facet_grid(rows = vars(sensor) , scales = "free_y")
+```
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. 
+
+1 g =  9.81 m/s^2 
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  
+
+### Data cleaning
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam [@VanHeest2014, @VanHeest2015].
+
+### Feature extraction
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+
+signal vector magnitude (svm):
+
+\begin{equation} \sqrt{x^2 + y^2 + z^2} \end{equation}
+
+
+Euclidian Norm minus one (ENMO): 
+
+\begin{equation} \sqrt{x^2 + y^2 + z^2} - g \end{equation}
+
+
+```{r svm, out.width = "100%", fig.asp = 0.3, fig.cap = "One day of data of the two persons in the genea data set, summarised with ENMO, calculated from 15-minute epoch windows", echo = FALSE}
+# plot signal vector magnitude
+library(emaph)
+library(lubridate)
+library(ggplot2)
+library(dplyr)
+
+d <-  subset(genea,
+              timestamp > "2018-06-02 00:00" &
+              timestamp < "2018-06-02 23:59")
+d$epoch <- round_date(d$timestamp, "10 minutes")
+
+d <- d %>% group_by(id, epoch) %>% 
+  summarise(svm = sum(sqrt(x^2 + y^2 + z^2) -1) / length(x))
+
+ggplot(d, aes(epoch, svm)) +
+  geom_point(alpha = 1,  shape = 16, size = 1) +
+  geom_line() + 
+  facet_grid(rows = vars(id))
+```
+
+
+
+### Analysis
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam.
+
+
+## Location analysis
+\index{GPS} \index{longitude} \index{latitude}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.
+
+### Global Positioning Systems (GPS)
+Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
+odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
+consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
+metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
+cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
+malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
+purus nec, lobortis imperdiet diam. Donec sed lectus at sem ultrices commodo.
+Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
+fringilla. Sed at varius erat, id consequat nibh.
+
+
+```{r fig11b, fig.cap="Four-week Location history of two people, collected with Google Timeline", out.width = "100%", fig.asp = .4}
+library(emaph)
+library(ggplot2)
+
+d <-  subset(locations,
+              accuracy <= 100 &
+              lon >=  4.80 & lon <=  5.00 &
+              lat >= 52.25 & lat <= 52.50)
+
+ ggplot(d, aes(lon, lat)) +
+   geom_point(alpha = .1,  shape = 21, size = 3) +
+   facet_wrap(~ id)
+```
+
+
+### Features
+
+Table: (\#tab:GPSfeatures) Features of a GPS data set [@Saeb2015].
+
+| Name              | Formula                               | Description                                    | 
+|:------------------|:--------------------------------------|:-----------------------------------------------|
+| Total Distance    | $$\sum(distance((lat_{t}, lon_{t}), (lat_{t-1}, lon_{t-1})$$ | Total distance between locations |
+| Location variance | $$\sigma_{lon}^2 + \sigma_{lat}^2$$   | Variability of location visits                 |
+| N Places          | k-means(loc, lat)                     | Location clusters                              |
+| Location Entropy  | $$-\sum_{i} p_i * log(p_i)$$          | Variability in location cluster visits         |        
+| Normalized Entropy| $$\sigma_{lon}^2 + \sigma_{lat}^2$$   | Entropy, controlled for number of clusters     |    
+| Home Stay         | $$Entropy  log(N)$$                   | Percentage of time spent at home               | 
+| Circadian         | lomb_scargle(lat / lon)               | Consistency of location schedule based on a    |
+| Movement          |                                       | 24-hour period.                                |
+

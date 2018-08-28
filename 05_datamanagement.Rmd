@@ -15,7 +15,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 ##  Project directory structure
 
 ```{r cs5a, echo = FALSE, message = FALSE, warning = FALSE, prompt="", comment = NA,  null_prefix = TRUE}
-# show EMA R-project directory structure
+# Code snippet 5.1: Show the EMA R-project directory structure.
 path <- c(
     "project/data/source/keyfile.csv",
     "project/data/source/GPS/subject1.json", 

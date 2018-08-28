@@ -1,0 +1,356 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
+# (PART) EMA Catalogues {-}
+
+This chapter summarises ongoing EMA research projects within the APH mental health consortium, as a guide to other researchers looking for nearby EMA-expertise and research collaboration.  
+
+## Overview
+
+Table: (\#tab:APHresearch) Overview of APH EMA research groups.
+
+| Name           | Focus            | URL                  | Organisation        |
+|:---------------|:-----------------|:---------------------|:--------------------|
+| Bockting group  | Depression    | claudibockting.com     | AMC               |
+| CASPAR         | Suicide          | ilumivu.com          | VU                  |
+| Chronic Fatigue| Chronic Fatigue  | ---                  | AMC                 |
+| FAntasTIGUE    | Fatigue          | tinyurl.com/ybb7up87 | AMC                 |
+| van der Gaag group |  Psychotic symptoms  |               | VU                  |
+| TEMSTEM        | Auditory hallucinations        | tinyurl.com/ybac6flo | VU                  |
+| VRETp      | Psychotic disorders        | psymate.eu | VU  
+| Huibers group | Depression        | ---                   | VU                  |
+| IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
+| MERITS          | Type 1 diabetes       | -            | VuMC  |
+| Moodbuster/ E-COMPARED     | Depression       | ict4depression.eu    | VU     |
+| NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
+| Psychosystems  | Symptom Networks | psychosystems.org    | UvA                 |
+| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
+                |
+| van Someren group | Sleep       | https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/ | AMC |
+| VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
+| | |
+| | |
+| | |
+| | | 
+
+## The Bockting group
+\index{Bockting}
+Prof. dr. Claudi Bockting is a professor in clinical psychology at the psychiatry department of the AMC location of Amsterdam UMC and the Rijksuniversiteit Groningen. Her group focuses on treatment and relapse prevention of (severe) depressive disorder and related common mental health disorders.  
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team    | Claudi Bockting, PhD; Yvonne Stikkelbroek, Phd; Gerard van Rijsbergen, PhD |
+|APH site        | AMC, Rijksuniversiteit Groningen |
+| Topic          | Depression |
+| Status         | Ongoing |
+| Target populations | Adults with depression, remitted recurrently depressed individuals |
+| Platforms used |Psymate, Roqua, ‘Imagine your mood’ app (TEMPEST software) |
+| EMA active     | 1) Imagine your mood study (2012-2017): The randomised controlled study aimed to evaluate relapse in remitted depressed patients who either continue or taper antidepressant medication with or without preventative cognitive therapy (three conditions). Participants were prompted 10 times per day, 3 days a week, for 8 weeks. Prompts were sent randomly within fixed time-intervals. EMA items were scored on VAS scales (0-100) and include mood, positive affect (PA, 5 items) and negative affect (NA, 9 items) 0 to 100 VAS scales (average score for PA and NA) and mental imagery (2 items). |
+| | 2) StayFine study (ongoing, http://stayfine.nl): the randomised controlled study aims to prevent relapse in young people (12-23) with remitted anxiety or depression. The app contains a monitoring function (diaries), which is used for 3 weeks at each assessment (0,3,6,12,24 and 36 months). Half of participants will also gain access to an EMI function, with tailored content (based on Preventive Cognitive Therapy) and a chat-function with peers, guided by an expert patient counsellor. |
+| EMA passive | In the StayFine study, wristwatches (Polar) will be used to measure activity. |
+| Data management | How is data stored (cloud, server, locally), under an ID or actual patient name, who moderates the server, how much time do patients have to answer the prompts (in minutes) |
+| Project goals | Prevent relapse of anxiety and depression, and improve quality of life. |
+| Results | The VAS mood scale that was used in the imagine your mood study (‘Please rate your current mood on a scale of 0 to 100’, on which 0 indicates ‘happy’, and 100 indicates ‘sad’) [@Vanrijsbergen2014], was shown to have a high positive predictive value without any false negatives at a cut-off score of 55. Compared to the HAM-D17 and the IDS-SR, the VAS also was a better predictor of current relapse status, as measured by the SCID-1 interview (variance explained for VAS: 60%; HAM-D17: 49%; IDS-SR: 34%).  |
+| Lessons learned | 1) Roqua proved not to be the preferred EMA method in adolescents, because SMS messages (prompts) were not noticed due to infrequent use of SMS. In addition, adolescent participants preferred using designated apps to websites. 2) It is important to evaluate the value of EMA data more thoroughly (usability, reliability, specificity). For many self-report EMA items it remains unclear which construct is measured. 3) There is a need for scientific research examining existing applications. 4) APH should consider joining forces to develop a shared system (website and mobile application) that has a back-office, so that it can be adapted to fit the requirements of different projects.  |
+| Website | www.stayfine.org |
+| | [ZonMw summary](https://www.zonmw.nl/nl/onderzoek-resultaten/geestelijke-gezondheid-ggz/programmas/project-detail/onderzoeksprogramma-ggz/stay-fine-a-personalized-monitoring-and-intervention-app-to-prevent-relapse-of-anxiety-and-mood-dis-1/verslagen/) |
+| |claudibockting.com |
+
+
+
+## The CASPAR Project
+\index{CASPAR}
+
+The Continuous Assessment for Suicide Prevention And Research (CASPAR) study (2016-2010) aims to evaluate the feasibility of mobile safety planning and daily mobile self-monitoring in routine care treatment for suicidal patients, and to conduct fundamental research on suicidal processes [@Nuij2018]. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team    | Wouter van Ballegooijen, PhD; Chani Nuij, MSc.; Ad Kerkhof, PhD; Jan Smit, PhD; Heleen Riper, PhD |
+|APH site        | Vrije Universiteit Amsterdam, VUmc, GGZ inGeest |
+| Full title     | Continuous Assessment for Suicide Prevention and Research |
+| Topic          | Smartphone-enabled safety planning, self-monitoring, suicide |
+| Status         | Ongoing, 2016 - 2020 |
+| Target population | Adult suicidal patients (N = 80) with major depression or dysthymia and suicide risk in mental health care |
+| Platform used | Ilumivu (https://ilumivu.com) |
+| EMA active     | Participants are prompted 3 times a day to answer 8 self-report items (e.g. 'I feel sad'). Items are based on existing questionnaires, such as the Patient Health Questionnaire (PHQ-9) and are rated on a 7-point Likert-scale, ranging from 'Not at all' to 'Very much'. Measured concepts include mood, rumination, hopelessness, defeat, entrapment, burdensomeness, belongingness, impulsiveness, suicidal imagery and suicidal ideation. Results are presented to patients in separate graphs. |
+| EMA passive | Location data are gathered to indicate movement patterns and daily rhythm. Planned variables include accelerometer and smartphone usage patterns. These data are not visible to patients. |
+| Data management | Patients receive a unique code to log in to the app. No names, phone numbers or other contact information are stored on the Ilumivu server. Patients are encouraged to show their graphs to their clinicians during treatment sessions. |
+| Project goals | The primary objective of the CASPAR study is to test the feasibility of smartphone-based safety planning and real-time self-monitoring for patients with major depression or dysthymia and suicide risk in mental health care. Feasibility will be operationalised in terms of uptake, usage, acceptability, usability and patient satisfaction. 
+| | EMA data will be used to: |
+| | (a) empirically validate hypothesised psychological processes and stages of suicide pathways | 
+| | (b) identify individual pathways to suicidal behaviour | 
+| | (c) profile types of suicidal individuals. |
+| Results | An interactive safety plan that patients can access 24/7, increased disease awareness of patients due to self-monitoring, and input for the national and international field of mental health care by sharing our results and our data, ultimately contributing to more personalised interventions according to precision medicine principles, and more effective suicide prevention. |
+| Lessons learned | Constructing the right EMA items takes time. The constructs that you need to measure should be based on theory. Translate these concepts to momentary items in collaboration with EMA experts. Then test extensively among your target group|
+| Website | [ZonMw summary](https://www.zonmw.nl/nl/onderzoek-resultaten/kwaliteit-van-zorg/programmas/project-detail/suicidepreventie/continuous-assessment-for-suicide-prevention-and-research-caspar-smartphone-enabled-safety-pla/verslagen/)|
+
+
+## Study on Chronic Fatigue Syndrome
+\index{Chronic Fatigue}
+
+The Study on Chronic Fatigue Syndrome (CFS) focusses on CFS patients that are treated at the Expert Centre for Chronic Fatigue (ECCF). The study aims to examine determinants of chronic fatigue. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team | Margreet Worm-Smeitink, MSc; Judith Rosmalen, PhD; Anne van Gils, MSc; Rei Monden, PhD; Hans Knoop, PhD |
+| APH site | AMC |
+| Topic | Time series study on patients with chronic fatigue syndrome |
+| Status | Completed (Period of data collection: October 2015 - April 2016) |
+| Target population | New patients attending the Expert Centre for Chronic Fatigue for diagnosis of chronic fatigue syndrome (ECCF, n = 102) |
+| Platform used | RoQua (https://www.roqua.nl) |   
+| EMA active | Participants were asked to complete an e-diary, 5 times a day for 2 weeks. The times were fixed in consultation with the participant, with a 3-hour break in between each assessment. The e-diary assessed concepts such as fatigue, pain, anxiety, depression, activity (physical, mental, social), focus on fatigue, fatigue catastrophising, self-efficacy, fear avoidance, and social incomprehension. Items were scored a 5-point Likert scale. 
+| EMA passive | Participants wore an actometer (actigraphy) during the period when the self-reports were collected. |
+| Data management | Participants received a link to the (web-based) e-diary via an SMS to their smartphone. Participants needed to have internet/wifi access to log in to complete the questionnaire. |
+| Project goals | The objective of this study was to conduct time series analyses on fatigue, namely to investigate whether there are differences in perpetuators of fatigue between individual patients. |
+| Statistical methods | The R auto-var package was used to conduct network analyses |
+| Results | Results are forthcoming. Determinants of fatigue will be identified with the aim of personalizing treatment of fatigue in patients with CFS. |
+| Lessons learned | Think carefully beforehand which variables to include in EMA, as assessing too many variables will make it difficult to determine which variables to include in the model. This also makes interpretation of results difficult. 
+Try to relate EMA to other (traditional) clinical parameters to determine relevance of the new type of assessment. 
+Prepare a clear and detailed guideline/handbook for colleagues who will assist in including participants and be aware of potential problems with the EMA app. Clear guidelines will ensure that colleagues stay motivated to include participants in the study. 
+No METC approval was required, as this type of EMA studies do not fall under the scope of Medical Research Involving Human Subjects (WMO). 
+It was not feasible for all participants to have access to the internet at all times that the Roqua questionnaire needed to be filled-in. This caused some data to be missing. |
+
+## Moodbuster and E-COMPARED (EU)
+\index{Moodbuster and E-COMPARED}
+
+E-COMPARED is a European study (EU CIP), executed in nine countries, comparing the costs and effects of blended treatment (combined internet, mobile and face-to-face treatment) with Cognitive Behavioural Therapy (CBT) in routine and specialised mental healthcare for depression. Within the project, the Moodbuster application was used to gather EMA data on patient variables, such as depression and sleep. Patients were presented personalised reports on their mental and physical health over time [@Kleiboer2016]. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team | Heleen Riper, PhD; Jan Smit, PhD; Jeroen Ruwaard, PhD; Stasja Draisma, PhD.; Lise Kemmeren, MSc.|
+| APH site | Vrije Universiteit Amsterdam, GGZ inGeest |
+| Full title | Moodbuster |
+| Project | Developed within the European FP7 project “ICT4Depression” |
+| | Applied in Horizon 2020 FP7 EU-project “European COMPARative Effectiveness research on blended Depression treatment versus treatment-as-usual” (E-COMPARED) |
+| Topic | Ecological Momentary Assessment alongside formal depression treatment |
+| Status | Data collection completed (2012 – 2018) |
+| Target population | Patients with Major Depressive Disorder in primary and specialised mental health care |
+| Platform used | Moodbuster [http://www.ict4depression.eu/moodbuster/]. The platform is currently available in five languages: English, Dutch, German, Polish and French |
+| Moodbuster | The original Moodbuster platform aimed to provide unguided self-help treatment to people with depressive symptoms. ICT4depression had 4 components: 1) physiological sensors aimed ad acceleration data and sympathetic nervous system responses (chest strap and glove), 2) a medication adherence monitor, 3) a website with treatment modules, automated feedback messages and tools (calendar, mood graph, sensor chart, ratings), and 4) Moodbuster (Android) app for access to treatment modules and mood ratings, location and activity tracking, and aggregation of physiological sensors |
+| E-COMPARED | Within the E-COMPARED study, the Moodbuster website and application were used. A therapist portal was added, in order to allow therapists to monitor patients’ progress and send feedback messages. |
+| EMA active | Patients rated 7 items on a visual analogue scale (VAS), ranging from 0 (low) to 10 (high). Concepts that were measured, included: sleep, mood, worrying, self-esteem, activities (2 items) and social contacts. Items focused on current state, for example by asking “How is your mood right now”. Mood was assessed once a day, for the duration of treatment. Prompts were sent at a random time point between 10:00 and 22:00. At the beginning and during the final phase of treatment, patients received two additional prompts per day for one week. In the morning (around 10:00), sleep, worrying and self-esteem items were assessed. In the evening (around 22:00), these questions were repeated, along with the activity and social interaction items.
+| EMI | The platform sent out automated reminders for scheduled activities and therapist appointments, and sent tailored automated motivational text messages. The aim of EMI was to keep patients engaged with Moodbuster (rate mood and log in on platform). |
+| Data management | Patient data was stored on a server under a unique participant ID number. Patients with an iPhone were offered an android phone for the duration of EMA. Participants had a 60-minute window per assessment to complete the items. Patients and therapists accessed the platform with a personalised log-in. On the platform, they could access an interactive graph displaying mood ratings over time.  |
+| Results | Results are forthcoming. Patients (n=193, in NL, FR, DE and PL) on average rated their mood for 14 weeks during treatment (use of mobile application). The total number of mood ratings was 95 on average (range 40-148). | 
+| Lessons learned | Make sure to extensively pilot the application before the start of actual data collection. Not all prompts were received by patients. Reasons for this are still unclear, most likely it was caused by updates of the application. | 
+| Website |http://www.ict4depression.eu/ |
+| | [Final evaluation report](http://www.ict4depression.eu/wp/wp-content/uploads/2011/03/FP7-248778-D4.7r1.pdf) |
+| | https://www.e-compared.eu/ |
+
+## FAntasTIGUE
+\index{FAntasTIGUE}
+
+The FAntasTIGUE study examines fatigue in patients with COPD, by evaluating the course of fatigue, precipitating/perpetuating factors and hospitalisation. A secondary aim is to identify diurnal differences in fatigue by using EMA [@Goertz2018]. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team | Yvonne Goërtz, MSc; Zjala Ebadi (from July 2018), MSc; Melissa Thong, PhD; Daisy Janssen, MD,PhD; Jeanette Peters, PhD; Jan Vercoulen, PhD; Chris Burtin, MSc; Yvonne Meertens-Kerris; Arnold Coors; Jean Muris, MD, PhD; Emiel Wouters, MD, PhD; Judith Prins, PhD; Mirjam Sprangers, PhD Martijn Spruit, PhD |
+| APH site | AMC (in collaboration with Ciro-Horn, Maastricht UMC, Radboud UMC, and Hasselt University) |
+| Full title | Fatigue in patients with chronic obstructive pulmonary disease: FAntasTIGUE study |
+| Topic | Management of fatigue in patients with COPD |
+| Status | Ongoing, 2017-2020 |
+| Target population | Patients with clinically stable chronic obstructive pulmonary disease (proposed: n=60) |
+| Platform used | Psymate (https://psymate.eu) |
+| Study design | Longitudinal with 4 data collection periods (baseline, 4, 8, 12 months) |  
+| EMA active | For each data collection period, participants are prompted 8 times a day at random moments between 7.30am and 22.30pm, for 5 consecutive days, to answer 19 items (including 9 contextual items). Measured concepts include fatigue, relaxed feeling, breathlessness, agitation, uncertainty, irritation, satisfaction, anxiety, feeling energetic, and feeling mentally fit. Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. In addition, participants are asked to complete a morning questionnaire soon after they awaken to assess the quality of their sleep the previous night. Participants also complete an evening questionnaire assessing the general perception of their day just before going to bed. | EMA passive | During the ema data collection period, patients are asked to wear an actigraph (activity monitor) 24 hours a day for one week. |
+| Data management | During the data collection period, patients are provided with iPods installed with the EMA application. |
+| Project goals | To capture possible diurnal fluctuations in fatigue. |
+| Results | Future results will guide the development of interventions for the management of fatigue in this patient group. |
+| Lessons learned | The experience with Psymate is generally positive. Queries are promptly answered and we could also tap into the wealth of experience Psymate has in conducting EMA. |
+| Protocol paper| http://bmjopen.bmj.com/content/8/4/e021745.long |
+
+## The van der Gaag group
+
+#### TemStem
+\index{TEMSTEM}
+
+The TemStem project focusses on people who suffer from hearing voices and are obstructed by them in their daily life. Study participants install an app that contains both an EMI and EMA function, aiming to reduce distress and dysfunction caused by auditory verbal hallucinations [@jongeneel2018]. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Topics | Psychosis, auditory hallucinations, social participation in people with schizophrenia.|  
+| Project title | Temstem |
+| Project team | Mark van der Gaag, PhD; Alyssa Jongeneel, MSc; David van den Berg, PhD; Dorien Scheffers, MSc |
+| APH site | Vrije Universiteit Amsterdam, VUmc, GGZ inGeest, Parnassia Psychiatric Institute
+| Status | Ongoing, March 2016- July 2018 |
+| Target population | People who suffer from hearing voices and are obstructed by them in their daily life |
+| Platform | Temstem application. Developed by Reframing Studio, in collaboration with Parnassia Psychiatric Institute and TU Delft. Available for IOS and Android |
+| EMI | Mobile application (Temstem) focuses on reducing distress and dysfunction caused by auditory verbal hallucinations (AVH). Components:  1) coping: addressing verbal working memory phonological loop with a language task, thereby blocking the hearing of voices, 2) positive reinforcement: decreasing self-reported negative self-esteem themes, 3) treatment: reducing emotional response to memories associated with voices by taxing the auditory working memory during recall of negative auditory memories (as in EMDR therapy).
+| EMA active | Users are encouraged to fill-in 9 self-report items on a daily basis. Outcomes include: 1) hearing voices: 6 items (e.g. "Today, the voices were disturbing"), 2) mood, 3) self-esteem, 4) the use of Temstem ("I used Temstem today"). Items are rated on a 7-point Likert-scale. Items are based on existing EMA questionnaires. Results are presented to users in separate graphs, in order to support users in gaining insight in the pattern of AVH over time, or after use of Temstem. |
+| Project goals | Examine the effect of the app on distress and dysfunction in a RCT. Investigate the effect of Temstem on frequency and severity of AVH, to determine working mechanisms, to identify predictors and mediators of effects, and to test the usability of Temstem. |
+| Results | Reduce distress and dysfunction caused by auditory verbal hallucinations |
+| Data management| Data is stored on a server hosted by Service Heroes (via Reframing Studio), under users' unique download numbers. Stored variables include, among others, scores of vividness of AVH pre and post use of Temstem, data on application use (duration), used function (e.g. 'Silencing' function which focuses on coping, or 'Challenging' function which is based on dual tasking), and how users feel when they hear voices. Users can choose to provide additional information on age, gender, which county in the Netherlands they are currently located, how they found the app, and why they want to use it (e.g. because they hear voices, because they are a clinician and they want to learn more about the app to support clients, etc.). Clinicians cannot access user data or graphs. Researchers can, but only in big data files. To see users' personal data (e.g. how many times they used the app, how vivid the voices were before and after the use of Temstem, etc.) researchers need the users' unique download number. |
+| Lessons learned | Users need internet to use the app, because it works on an online platform. However, not all our users have wireless internet. If we had known this in time, we would have chosen to run it offline. Other lessons we have learned are that you have to resolve bugs as soon as possible, because otherwise it may take a long time before it is fixed. Be very explicit in what you want and expect from the app developers, even when you think that it is quite logic and clear. |
+| Website | https://www.parnassiagroep.nl/hoe-wij-helpen/online-hulp/temstem |
+
+#### VRETp trial
+The VRETp trial examined virtual-reality-based cognitive behavioural therapy for patients with a psychotic disorder, aiming to improve social functioning and reducing paranoid ideation. EMA was used to measure change in these outcomes [@pot2016]. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project | Effect of virtual reality exposure therapy on social participation in people with a psychotic disorder (VRETp) |
+| Project team | Mark van der Gaag, PhD; Roos Pot-Kolder, MSc; Wim Veiling; Chris Geraets
+| APH site | Vrije Universiteit Amsterdam, VUmc, UMC Groningen |
+| Status | Completed, 2013-2016 |
+| Target population | Patients (n = 116) with psychotic disorders who fear social situations.
+| Platform | PsyMate (http://www.psymate.eu/) |
+| Study information | EMA data was collected as part of a RCT comparing treatment as usual plus virtual reality therapy (VR-CBT) to treatment as usual for outpatients suffering from a psychotic disorder and paranoid ideation. EMA was used to assess the primary outcome social participation. |
+| EMA active | 1) Anxiety (1 item, e.g. "I feel anxious"), 2) Perceived social threat (4 items, e.g. "In this company, I feel accepted"), 3) Paranoia (3 items, e.g. "I feel suspicious"), and 4) Time spent with others (max. 3 multiple choice items inquiring about type of company (nobody, family, non-family, etc.). Patients were prompted 10 times a day, during 6 days. Anxiety, threat and paranoia Items were rated on a 7-point Likert scale, ranging from 1 ("not at all") to 7 ("very"). Reports had to be completed within 15 min of the beep. EMA items were used in previous studies (Collip et al., 2010). |
+| Data management |To be included in the analysis, participants had to complete diary entries for at least one-third of the beeps (i.e., a minimum of 20 measurements). Because the PsyMate application was not finished at the time of the trial, participants were provided with a small palmtop device for the duration of EMA. Data was extracted with 4D software. Time spent with others was defined as the percentage of time participants were in company of others (excluding mental health care professionals). Other EMA measurements were only used when a participant reported being in a social situation. Information was stored on the PsyMate server, under a user-specific PsyMate-ID number. Researchers had access to a file matching study-ID to PsyMate-ID numbers, which allowed matching of information acquired via EMA with information acquired with regular self-report measures during the RCT study. |
+| Project goals | Testing the effects of virtual-reality-based cognitive behavioural therapy (VR-CBT) on paranoid thoughts and social participation via momentary assessment |
+| Results | All 116 participants completed EMA measurements at baseline (mean number of completed self-assessments 46.1, SD 13.3), 96 participants completed the post-treatment assessment sufficiently (43.1, SD 10.1), and 87 participants completed the follow-up (43.2, SD 11.1). The trial results suggest that the addition of VR-CBT to standard treatment can reduce paranoid ideation and momentary anxiety in patients with a psychotic disorder. |
+| Lessons learned | Participants reported not wanting to explain to others why they were using the palmtop (a small black hand-held computer) as a reason for non-compliance with EMA. This directly interfered with the primary aim, namely assessing social context. An app facilitates measurement without the participant having to explain to others what they are doing |
+
+## The IMPACT project
+\index{IMPACT}
+
+The IMPACT project studies state and trait quality of life in patients with cardiac diseases who have multiple somatic co-morbidities. The project aims to improve the conceptualisation of QoL and enhance the sensitivity and comprehensiveness of its measurement by taking the trait-state distinction and response shift into account (http://www.impactonderzoek.nl/).
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+|  Project team | Iris Hartog, MSc; Justine Netjes (until 2017), MSc; Tom Oreel (since 2017), MSc; Pythia Nieuwkerk, PhD; Michael Scherer-Rath, PhD; José Henriques,MD, PhD; Hanneke van Laarhoven, MD, PhD; Mirjam Sprangers, PhD |
+|APH site | AMC |
+| Full title | Improving the conceptualisation and measurement of quality of life of patients with multiple chronic morbidities, exemplified by patients with cardiac disease undergoing cardiac intervention |
+| Topic | Quality of life in patients with cardiac disease after undergoing a cardiac intervention |
+| Status | Ongoing, 2016-2010 |
+| Target population | Cardiac patients with comorbidities who were scheduled for elective percutaneous coronary intervention (PCI) or elective coronary artery bypass graft (CABG) (N= 37 EMA /320 total) |
+| Platform used |Psymate (https://psymate.eu)|
+| Study design | Longitudinal with three EMA data collection periods: 1. pre-treatment, 2. two weeks after treatment for PCI patients or 3 months post-treatment for CABG patients, and 3. six months post-treatment |
+| EMA active | Participants are prompted to answer nine general and one evening questionnaire per day for seven consecutive days. During the day, patients are beeped randomly between 7.30 and 22.30 hours to complete the general questionnaire. The general questionnaire contains 19 items, including 5 contextual items. Concepts measured include: positive mood (feeling energetic, relaxed feeling, cheerfulness, happy), negative mood (anxiety, sadness, irritation, worry), coronary artery disease symptoms (chest pain, tightness in chest, oppressive feeling on the chest), and general symptoms (tiredness, other types of pain, shortness of breath). Items are rated on a 7-point Likert-scale, ranging from ‘Not at all’ to ‘Very much’. Patients are asked to complete the evening questionnaire just before they go to bed. The evening questionnaire had, besides the general questionnaire, an additional set of questions from the EQ-5D, and the health state of that day. The last item is rated on a visual analogue scale from 0 (worst) to 100 (best). |
+| Data management | Participants were provided with iPods installed with the EMA application during data collection. Or if they preferred, patients could use their own device. |
+| Project goals | The project aims to get a better understanding of the moment-to-moment changes in quality of life and how this compares with changes found in retrospective QoL measurements. The project aims to compare QoL collected retrospectively through online or paper surveys with that collected via EMA. Data collected through EMA can also inform possible changes in daily QoL, taking contextual situations into account. |
+| Statistics | Data will be analysed using vector autoregressive models using R. |
+| METC | METC approval was waived as EMA was not considered a WMO study. |
+| Results | Work in progress, currently exploring the data using network analysis. |
+Lessons learned | To maintain response during follow-ups, it is important to maintain contact with patients between follow-ups. The development and testing of the app can take a significant amount of time, and during the study, updates of the smartphone operating system may lead to new bugs in the app. Due to the amount of data collected via EMA, data cleaning can take up a significant amount of time. The quality of EMA data can be low due to significant amount of missing data. Besides missing data, lack of variation in answers from day-to-day (through use of a Likert scale) could also be an issue. Possible solution is the use of continuous rating scales instead of 7-point Likert scales Both missing data and lack of variation can be a problem if planning to estimate vector autoregressive models.  |
+
+## MERITS
+\index{MERITS study}
+
+The Momentary assessment of patient Experiences in Real life of Insulin Glargine 300 in Type 1 diabetes (MERITS) Study aims to 1) evaluate whether blood glucose variability is associated with changes in wellbeing (mood) during waking time, and 2) assess whether there are individual differences (profiles) with regard to this association.
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team  | Frank J. Snoek, PhD; Maartje de Wit, PhD;  Daniel van Raalte, MD, PhD; Erik Serné, MD, PhD;  Cati Racca, MD; L. Muijs, MSc |
+| APH site | VUmc, AMC |
+| Full title | MERITS - Momentary assessment of patient Experiences in Real life of Insulin Glargine 300 in Type 1 diabetes Study |
+| Topic | Type 1 diabetes, relationship between blood glucose variability (continuous glucose measurement) and changes in mood and energy. | 
+| Status | Ongoing proof-of-concept study, 2018 - 2020 |
+| Target population | Adult patients (N=70) with type 1 diabetes |
+| Platform used | Illumivu |
+| EMA | Currently under development. Participants will be (randomly) prompted to answer questions on mood (based on POMS questionnaire), diabetes distress, fear of hypoglycaemia and sleep. |
+| Project goals | Explore whether a) blood glucose variability (SD and CV) is related to changes in wellbeing (mood) during waking time, b) if switching to U-300 results in less glucose variability and translates into improved mood over time within patients, c) explore if individual differences (profiles) can be distinguished with regard to the (strength of the) association between glucose variability and changes in mood. |
+
+## NESDA EMA Diary Study
+\index{NESDA}
+
+The main aim of NESDA (the Netherlands study of Depression and Anxiety) is to examine the long-term (eight-year) course and prognosis and co-morbidity of anxiety and depression in order to improve quality of care and prevent chronicity [@Penninx2008] (https://www.nesda.nl/). 
+Within the 9-year follow-up of the NESDA study, EMA was used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behaviour and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, and chronotype and diurnal patterns of activity in depressed versus non-depressed participants. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team | Femke Lamers, PhD, Brenda Penninx, PhD (VUmc); Hariette Riese (UMCG)|
+| APH site | VUmc, GGZ inGeest |
+| Full title | the Netherlands Study of Depression and Anxiety (NESDA), Wave 6 diary study |
+| Topic | Momentary assessment of people with depressive and anxiety symptoms |
+| Status | Completed, 2015 - 2017 |
+| Target population | Selected sample of NESDA participants with symptoms of depression and healthy controls (n=384) |
+| Platform used | RoQua (https://www.roqua.nl/). Participants were prompted with a SMS, which contained a link to the EMA questions | 
+| EMA active | The self-report questionnaire contained circa 31 items. Items were rated on a 7-point Likert scale, ranging from 'not [at all]' to 'very'. Participants were prompted five times a day, for two weeks. Constructs of interest were 1) valance (unpleasant to pleasant) and arousal (calm to excited), 2) current state, symptoms of depression/anxiety, physical condition, 3) social context, 4) sleep, 5) daily uplifts/hassles, 6) activities, and 7) substance use. Examples of items were: "I feel down", "I feel cheerful" and "Where are you now" (e.g. at the neighbour's house). In addition, there was an addendum questionnaire with one item inquiring about questionnaire burden and an open-ended question for general comments on circumstances that might influence answers. 
+| Origin of items | The items on valance, arousal and current state have been used in a previous study; the Uncovering the Positive Potential of Emotional Reactivity (UPPER) study (@Bennik2015). The other items are inspired on earlier EMA studies, such as the work by Mehl and colleagues (@Mehl2012), van Os and colleagues (@Wichers2012) and studies performed at the Interdisciplinary Center of Psychopathology and Emotion regulation (ICPE), such as the Mood and Movement in Daily life (MOOVD) study (@Booij2015) |
+| EMA passive | In order to record the amount of physical activity during EMA monitoring, participants (n=370) were asked to wear an accelerometer (GENEActiv, 30Hz) on their non-dominant wrist 24 hours a day for two weeks. Recording started on the evening prior to the first EMA assessment and continued until the morning after the last assessment. After data collection, participants mailed their watch to the research centre. Data was extracted via a USB with GENEActiv software. |
+| Data management | EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow one. Patients were briefed on the EMA study during a face-to-face session with a research assistant. Participants were asked to fill in the questionnaire within 15 minutes after the SMS. After 30 minutes a reminder was sent, and after 60 minutes the link would become inactive. Participants needed to answer all questions before the questionnaire could be send to the secured server. Participants received a personalised mood fluctuation report after the data collection period, in order to motivate them to adhere to EMA. Reports were sent via e-mail in a password protected document. Research assistants actively monitored data collection and contacted participants if they missed three consecutive questionnaires. Data were stored in a secured web-environment of the University Medical Centre Groningen (UMCG) |
+| Results | EMA data will be used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behaviour and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. |
+| Website | https://www.nesda.nl/ |
+
+## The Psycho-systems group
+\index{Psycho-Systems}
+
+The Psycho-systems group is an UvA based initiative, led by Prof. Dr. Denny Borsboom, focusing on "the development of new methodologies for psychological research using complex systems theory and network models" (http://psychosystems.org/). 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Senior project team | UvA: Denny Borsboom, PhD; Lourens Waldorp, PhD; Han van der Maas, PhD; Sascha Epskamp, PhD; Claudia van Borkulo, PhD; Donald Robinaugh, PhD
+| APH site | Universiteit van Amsterdam (UvA) |
+| Topic | Complex systems theory and network models |
+| Status | Ongoing, founded in 2013 |
+| Aims | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam |
+| Results |[@epskamp2018d ] "temporal and contemporaneous relationships should not be overinterpreted, as these merely show predictive effects and can at most only highlight potential causal pathways." [Reproducibility Project: Psychology](https://osf.io/ytpuq/) 
+|
+| Website | http://psychosystems.org/|
+
+## Project RADAR-CNS (EU)
+\index{RADAR-CNS}
+
+The European (EU H2020-IMI) RADAR-CNS project (Remote Assessment of Disease and Relapse - Central Nervous System) aims to study the potential of wearable devices and smartphone technology to help prevent and treat depression, multiple sclerosis and epilepsy (https://www.radar-cns.org/). The Dutch research site (VUmc/GGZ inGeest) will focus on depression (RADAR-MDD). 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Dutch project team| Femke Lamers, PhD; Brenda Penninx, PhD; Sonia Difrancesco, MSc  |
+| APH site | VUmc, GGZ inGeest |
+| Context | RADAR-CNS is jointly led by King's College London (KCL) and Janssen Pharmaceutica NV. The project is funded by the Innovative Medicines Initiative, a Public Private Partnership set up between the European Federation of Pharmaceutical Industries and Associations (EFPIA) and the European Union). It includes 23 organizations from across Europe and the US. The RADAR-MDD study is coordinated by KCL.  |
+| Full title | RADAR-CNS: Remote Assessment of Disease and Relapse - Central Nervous System |
+| Topic | Wearable devices to monitor and prevent and treat depression, multiple sclerosis and epilepsy |
+| Status | Ongoing, 2016 |
+| Target populations | Patients with major depressive disorder, epilepsy or multiple sclerosis (MS) |
+| Platform | RMT application (http://thehyve.nl/cases/radar-cns/), https://github.com/RADAR-base/RADAR-aRMT-protocols |
+| Project goals | Examine how remote measurement technologies can monitor and improve quality of life and psychological well-being for people with depression, epilepsy, or multiple sclerosis |
+| Technical goals | 1) Build an end-to-end system with generalised data aggregation capabilities. The platform focuses on classes of data rather than specific devices, to enhance modularity and adaptability as new devices become available. The platform is delivered under an Apache 2 open source license, 2) Big data solutions. |
+| Clinical goals | 1) Feasibility of continuous monitoring of patients, 2) predicting disease onset or relapse (prevention and risk assessment) |
+| EMA active | aRMT application: Outcomes include variability in sleep quality, levels of activity, social interactions, mood, cognitive performance and stress as possible predictors of clinical course. The questionnaire for EMA was developed by prof. I. Myin-Germeys (Leuven), one of the consortium members.|
+| EMA passive | pRMT application: 1) Location and movement (GPS) 2) Mood: voice recognition) 3) Social interaction (call and message logs), and 4) App interaction and app usage. 
+| Wearables | Skin temperature, heart rate (-variability), actigraphy (3-axis accelerometer, gyroscope), galvanic skin conductance (Empatica E4 Wristband, Pebble 2 Smartwatch, Biovotion VSM, Faros 180, and Fitbit devices). In the depression study a Fitbit Charge 2 will be used to measure sleep and activity. | 
+| Data management | Participants are requested to install three apps on their Android smartphone. Data is collected during a 2-year period. Active EMA will be activated every 6 weeks for 6 consecutive days. Four times per year a non-EMA follow-up is conducted, which contains (qualitative) interviews and self-report questionnaires. Log in is facilitated with token-based authentication and authorization. A dashboard app allows for live monitoring of results. Data is streamed and analysed live. |
+| Results | VUmc Psychiatry will participate in the depression study as a research site. Data will be used to assess if RMT data can help predict relapse. |
+| Lessons learned | When measuring over such a long timespan, extra attention should be paid to the possible burden for participants. Continuous monitoring via a Smartphone can severely impact battery life. Participants prefer consumer devices (such as FitBit) to research devices (such as GenActiv), because of stigma. Carrying a research device will prompt questions. |
+| More information | [Presentation RADAR](https://www.ecsel.eu/sites/default/files/2017-11/thehyve_vanbochove_-_session3_-_july_5_ecsel_imi_workshop.pdf) |
+
+## The van Someren group
+\index{Sleep}
+
+Eus van Someren is head of the department of sleep and cognition, which is part of the Netherlands Institute for Neuroscience and is situated at the Amsterdam Academic Medical Center. The group focusses on studying healthy and disturbed sleep. The department has a fully equipped sleep-lab and combines various research methods, such as neuro-imaging, actigraphy and EMA. 
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+|  Project team | Eus van Someren, PhD (departement head); Tessa Blanken, MSc; Michele Colombo, MSc; Kim Dekker, MSc; Jeanne Leerssen, MSc; Bart te Lindert, MSc; Wisse van der Meijden, MSc; Rick Wassing, Phd  |
+|APH site | AMC and GGZ inGeest |
+| Projects that involve EMA | |
+|Sleep and light | Wisse van der Meijden studies, among other things, the interplay between light, vigilance, post-illumination pupil response (PIPR) and sleep by combining information from a) a questionnaire on habitual lights-out time, sleep onset latency, and final wake-up time (Munich Chronotype Questionnaire), a one-week sleep diary on actual wake/sleep times and actigraphy.   | 
+|EMA passive | Actigraphy data was obtained using either a Philips Actiwatch Spectrum or a microelectromechanical accelerometer (Move II, Movisens GmbH). Data collection was set to 30hz.|
+|Data management | Sleep onset and final wake-up time were estimated using an algorithm that is implemented in Matlab (https://github.com/btlindert/actant-1).  |
+|Results| Participants (adolescents and young adults, n=71) with a later sleep timing had a stronger responsiveness to blue light. The mid-sleep timing estimates from sleep diaries and actigraphy shared 94.5% of their interindividual variance [@Meijden2016]. | 
+| | |
+|Sleep and context | Bart te Lindert studies the relation between context and sleep, for example by measuring light, body temperature and posture, and psychological variables. A recent study focused on Insomnia, light intensity and Liking, Wanting and mood. |
+| EMA active | Prompts were sent eight times a day for one week. Prompts were timed at quasi-random intervals between 8:00 and 22:00. In addition, participants provided input after waking up and before bedtime. The interval between prompts ranged between 16 minutes and 3 hours. EMA consisted of 22 items. Liking and Wanting (6 items each), focused on taste or smell, bodily sensation, watching or listening, interactions with other, physical activity or being busy, and receiving something. Participants indicated whether they enjoyed and wanted these categories on a 0-100 VAS scale (ranging from not to very much). Mood items were derived from the Daytime Insomnia Symptom Scale (DISS, @buysse2007), which was developed specifically for EMA. Items focused on positive mood (5 items; relaxed, energetic, calm, happy, and efficient) and negative mood (5 items; anxious, stressed, tense, sad, and irritable). Items were scored on a 0-20 VAS-scale (ranging from very little to very much). |
+| EMA passive | Participants wore two light sensors (Dimesimeter), one on their indoor clothes and one on their jacket. A build-in accelerometer indicated at what times the outdoor clothing was used. Light was sampled every minute for one week. |
+| Data management | Participants received a designated Android smartphone for the duration of EMA. Detailed information on data processing and analysis can be found in @Lindert2018.  |
+| Results | On average, 80% of the prompts contained valid data. People with insomnia disorder (n=17) had significantly lower subjective Liking and Wanting than matched controls without sleep complaints (n=18). This was most apparent at low environmental light intensity. There were no overall differences between groups in Positive mood and Negative mood. Participants with insomnia did have a different diurnal profile of Positive mood and Negative mood [@Lindert2018]. 
+| | |
+| Lessons learned | The one-item Karolinska sleepiness scale is advised as a simple way to measure sleepiness in EMA. The item was validated against performance and EEG variables [@kaida2006]. A 30hz frequency is an acceptable sampling frequency for actigraphy, and is generally considered the gold standard. Higher frequencies lead to shorter battery life, while not improving estimations. Asking participants to keep a sleep diary parallel to wearing an accelerometer/actigraph is vital in order to determine lights-out time and wake-up time. When actigraph data and the sleep diary do not overlap, the information from the diary should be used. |
+
+
+## VU-AMS
+\index{VU-AMS}
+
+The VU University Ambulatory Monitoring System (VU-AMS) is a non-invasive wearable device that is used for continuous ambulatory measurement of the autonomic nervous system. The device was developed by the department of Biological Psychology of the Vrije Universiteit Amsterdam and is used worldwide by many research groups to study stress and emotion in both laboratory and naturalistic settings (http://www.vu-ams.nl/vu-ams/).
+
+| Aspect         | Description                                                  | 
+|:---------------|:-------------------------------------------------------------|
+| Project team | Eco de Geus, PhD; Gonneke Willemsen, PhD; Martin Gevonden, PhD; Denise van der Mee, MSc, Mandy Tjew-A-Sin, MSc; Cor Stoof, MSc |
+| APH site | Vrije Universiteit Amsterdam |
+| Full title | VU University Ambulatory Monitoring System (VU-AMS) |
+| Topic | Wearable for continuous (non-invasive) ambulatory measurement of the autonomic nervous system for research purposes |
+| Status | Ongoing (1990 - present) |
+| Target population | VVarious target populations. The VU-AMS device has been used to study the effects of ADHD, aggression, anxiety and depressive disorders, mental, social and work-related stress, circadian rhythms, hyperventilation, migraine, sleep, and in studies linking the autonomic nervous system to metabolic and immunological risk factors |
+|EMA passive | The VU-AMS device is a battery powered wearable that can record 24 to 48 hours of data (4GB storage). It measures the electrocardiogram, the  impedance cardiogram, and skin conductance. The VU-AMS data can be used to compute the following outcomes:|
+|Heart|  Heart Rate / Inter beat Interval (IBI), Heart Rate Variability (SDNN, RMSSD, IBI power spectrum: HF, LF), Respiratory Sinus Arrhythmia (RSA), Pre-Ejection Period (PEP), T-wave amplitude (TWA), Left Ventricular Ejection Time (LVET), Stroke Volume (SV) and Cardiac Output (CO) |
+| Respiration| Respiration Rate (RR)|
+|Skin conductance |Skin Conductance Level (SCL) and Skin Conductance Responses (SCRs)|
+|Movement| Hip-worn tri-axial accelerometer signals (g)|
+| Data management | The freely available Data Analysis and Management System (DAMS) package is used for data extraction and processing (http://www.vu-ams.nl/support/downloads/software/) . The DAMS tool offers options for data inspection (visual inspection of raw data), automated detection of R-peaks in raw ECG signal and visual inspection of final IBI time series, event/diary-based data labelling, IBI spectral power calculation, automated scoring of RR, RSA, and PEP form the combined ECG and impedance cardiogram signals, and data export per label (to EXCEL or ASCII). |
+| Current VU-AMS projects | 1)	Validation of a wristwatch-based technology, developed by Philips, to measure skin conductance responses in a laboratory (~2.5 h) and ambulatory (~22h, including the night) setting on a total of 100 subjects (van der Mee et al., ongoing, 2017 - 2021). The goal is to test whether wrist based (Philips) and palm based (VU-AMS) measured skin conductance responses accord, how these measures relate to the heart based measured pre-ejection period (PEP, VU-AMS) and whether it can be related to positive and negative affect (hourly diary prompts). The end goal for the wrist based technology is to detect sympathetic nervous system activity (measured as skin conductance responses) and present this information to the person’s as an index of the current stress level, alongside a one-hour prediction of changes in stress level and cognitive functioning (Cognitive Zone Changes;  http://www.ip.philips.com/licensing/program/121) |
+| | 2)	Ambulatory study on self-regulation among youth (Tjew A Sin et al., 2018-2019). This study is conducted at the schools as part of the neurolab project. A total of 50 students, will wear the VU-AMS device for approximately 22 hours. Autonomic nervous system activity is collected continuously over the course of a regular school day (including the night and morning thereafter) and will be related to multiple components of self-regulation, including emotion-regulation, cognitive functioning, impulsivity and inhibition   |
+| Results | VU-AMS is considered by many to be the golden standard in ambulatory assessment [@Geus1996]. For more information on publications go to http://www.vu-ams.nl/research/publications/
+| Lessons learned | The autonomic nervous system is almost entirely governed by homeostatic control over cardiovascular function, meaning that posture and physical activity changes will dominate ambulatory recordings. Without appropriate attention to these confounding factors (e.g. by selecting only sedentary fragments, or by deconvolution of the physiological outcomes by parallel registration of posture and activity, location of the accelerometer, robustness of the measure) erroneous conclusions will be drawn.  It is therefore of importance that a clear research question is formulated before data collection is started. With regard to measuring behaviour or affect during an ambulatory study you have to clearly think about the medium you want to use. Thus far no clear consensus is present on a particular medium/diary application that is best suited and/or mostly used by either the department or in combination with the VU-AMS. This may lead to researchers each creating their own diary application which has not been previously validated. In addition, comparing results from studies with similar end goals, but who used different mediums, becomes much more difficult |

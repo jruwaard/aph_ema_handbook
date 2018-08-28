@@ -2,53 +2,36 @@
 
 # (PART) Introduction {-}
 
-# What is EMA? {#introduction}
+# What is EMA and why do we need it? {#introduction}
 
 \index{EMA} 
-\index{EMA!Synonymns} 
-\index{Ambulatory Assesment|see{EMA!Synonymns}} 
-\index{Experience Sampling|see{EMA!Synonymns}} 
-\index{continuous unified electronic diary method|see{EMA!Synonymns}}
+\index{EMA!Synonyms} 
+\index{Ambulatory Assesment|see{EMA!Synonyms}} 
+\index{Experience Sampling|see{EMA!Synonyms}} 
+\index{Ambulatory Self-reporting|see{EMA!Synonyms}} 
+\index{Real-time Data Capturing|see{EMA!Synonyms}} 
+\index{Continuous Unified Electronic Diary Method|see{EMA!Synonyms}}
+\index{Intensive-longitudinal Study Design|see{EMA!Synonyms}}
 
-Ecological Momentary Assessment (EMA) has many aliases. It is known as 'experience sampling' [@Larson1983], 'ambulatory assessment' [@EbnerPriemer2009] or 'Ambulatory self-reporting' [@Conner2012a], 'real-time data capturing', the 'continuous unified electronic diary method' [@EllisDavies2012], and as the 'intensive-longitudinal study design' [@Bolger2013]. The different terms stress different aspects of EMA research. All terms, however, refer to research methods that involve the repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices [@Shiffman2008].
+Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment' [@EbnerPriemer2009] or 'Ambulatory Self-reporting' [@Conner2012a], 'Real-time Data Capturing', the 'Continuous Unified Electronic Diary Method' [@EllisDavies2012], and as the 'Intensive-longitudinal Study Design' [@Bolger2013]. The different terms stress different aspects of EMA research. All terms, however, refer to research methods that involve the repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices [@Shiffman2008].
 
 EMA has been around for many years. Already in the 1980's, early pioneers used electronic devices to elicit responses from study participants to tap into (mental) health processes in everyday life [see, e.g., @Csikszentmihalyi2014]. Recent years, however, have witnessed a large increase in EMA research. Rapid technological developments, a marked interest in the individual, and a wide recognition of the need to study health-related processes in real-life situations have all contributed to this. 
 
-With the increased adoption of EMA comes a growing need for methodological guidelines. EMA studies have unique characteristics that require specialised research skills, related to study design and statistical analysis. In many cases, these skills are not part of the standard curriculum of academic departments. This book was written to fill this gap.
+With the increased adoption of EMA, comes a growing need for methodological guidelines. EMA studies have unique characteristics that require specialised research skills, related to study design and statistical analysis. In many cases, these skills are not part of the standard curriculum of academic departments. This book was written to fill this gap.
 
+## What is EMA?
 
 ### Self-report versus Observational EMA
+\index{EMA!Self-report EMA} \index{EMA!Active EMA|see{Self-report EMA}}
+\index{Observational EMA} \index{EMA!Passive EMA|see{Observational EMA}}
 
 In EMA research, there are two forms of data collection: EMA based on self-report (active) and EMA based on observational (passive) data. Self-report requires participants to provide information, for example by rating their current mood, activities or social interaction on items that are presented to them during EMA. For observational EMA, information is collected through wearables or logfiles without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media. Some studies combine both forms of data collection, for example by using both a self-report sleep diary and an accelerometer in order to study sleeping patterns [@Meijden2016]. 
 
-#### Self-report EMA
-\index{EMA!Self-report EMA} \index{EMA!Active EMA|see{Self-report EMA}}
 
-
-
-#### Observational EMA
-\index{Observational EMA} \index{Passive EMA}
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
-
-
-### Time-contingent and signal-contingent sampling
-\index{sampling plan!signal-contingent}
-\index{sampling plan!event-contingent} 
+### EMA sampling
+\index{Sampling!Signal-contingent}
+\index{Sampling!Event-contingent} 
+\index{Sample plan|see{Sampling}}
 
 EMA sampling may focus on a single time-point (signal-contingent sampling), an event (event-contingent sampling), or a combination of both [@Conner2012b]. 
 
@@ -58,33 +41,21 @@ In *event-contingent sampling*, study participants complete an assessment whenev
 
 
 ## Why EMA?
+\index{Recall bias}
+\index{Ecological validity} 
+\index{Microprocesses}
 
 EMA aims to "minimize recall bias, maximize ecological validity, and allow study of microprocesses that influence behavior in real-world contexts." [@Shiffman2008]. 
-Recall bias refers to the concern that with retrospective self-report information, participants' current state might affect the way they remember past events or emotions [@Shiffman2008; @Moore2016]. The idea of EMA is evaluate participants' *current state*, rather than reflect on past experiences. By making sure participants are measured in their own environment (daily life), rather than in a research specific context, such as a lab or mental healthcare centre, EMA is thought to provide *ecological valid* information that is not distorted by context.  
+Recall bias refers to the concern that in retrospective self-report information, participants' current state might affect the way they remember past events or emotions [@Shiffman2008; @Moore2016]. The idea of EMA is to evaluate participants' *current state*, rather than reflect on past experiences. By making sure participants are measured in their own environment (daily life) instead of a research specific context, such as a lab or mental healthcare centre, EMA is thought to provide *ecological valid* information that is not distorted by context.  
 
-### Focus on the Individual
-Finally, EMA offers a unique opportunity to study change in individuals with repeated sampling. By doing this, EMA offers a quantitative method for idiographic research [@allport1937], measuring characteristics of individuals across time and context (within-subject change) [@Shiffman2008]. This contrasts with more classic, nomothetic research, in which individuals are grouped together in order to study universal characteristics.
-
-
+###Focus on the Individual
 \index{Nomothetic research} \index{Ideographic research} 
-[Nomothetic vs Ideographic research] Donec sed lectus at sem ultrices commodo.
-Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero
-vel fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci
-posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a,
-fringilla ut neque. Nunc hendrerit cursus eleifend. Pellentesque habitant morbi
-tristique senectus et netus et malesuada fames ac turpis egestas. Vivamus enim
-turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
+\index{Intra-individual process|see{Ideographic research}}
 
-\index{Ergodicity} 
-[The Ergodicity hypothesis] Donec sed lectus at sem ultrices commodo. Proin
-a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
-fringilla. Sed at varius erat, id consequat nibh. Ut eget leo blandit orci
-posuere tincidunt ac sed erat. Aenean metus metus, eleifend ut facilisis a,
-fringilla ut neque. Nunc hendrerit cursus eleifend.  
-??? Fermi–Pasta–Ulam–Tsingou problem ??? 
+EMA offers a unique opportunity to study change in individuals with repeated sampling. By doing this, EMA offers a quantitative method for idiographic research [@allport1937], measuring characteristics of (unique) individuals across time and context (within-subject) [@Shiffman2008]. This contrasts with more classic, nomothetic research, in which individuals are grouped together in order to study universal characteristics (between-subject). The relevance of idiographic research is illustrated in Figure 1 (\@ref(fig:fig01a)), where the individual effects of x on y are positive for individuals, but negative for the group as a whole. 
+In contrast to more qualitative idiographic studies, such as interviews and N=1 case studies, EMA leads to a large amount of information on each individual. This allows for testing of hypotheses. Also, by studying patterns in individuals (the intra-individual process), you can test whether individuals have similar relations between variables and which factors account for variability [@Conner2009]. This, then, allows you to make inferences to a larger population, combining both idiographic and nomothetic approaches.  
 
-
-```{r fig1a, echo = FALSE, fig.cap = "An extreme case of how indiviual effects may be different from group effects: the effect of x on y is positive for individuals (marked by ellipses), but negative for the group (as illustrated by the negative regression line)."}
+```{r fig01a, echo = FALSE, fig.cap = "An extreme case of how indiviual effects may be different from group effects: the effect of x on y is positive for individuals (marked by ellipses), but negative for the group (as illustrated by the negative regression line)."}
 
 # simulate individual
 sim_p <- function(id = 1, intercept = 0, x_start = 0){
@@ -122,35 +93,25 @@ ggplot(dt, aes(x = X, y = Y, group = id)) +
 ```
 
 
-### Focus on mental health dynamics 
+### Change over time
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta.
+In more traditional longitudinal research, individuals are often assessed a limited amount of times. For example, by administering a baseline assessment, and 3-month, 6-month and 12-month follow-up. This will provide insight on a macro-level how groups behave over time. Conversely, EMA focuses on micro-processes by measuring multiple times per day for two weeks (\@ref(fig:fig01b)). 
 
-[State versus trait] Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend.
+```{r fig01b , echo = FALSE, fig.cap = "34 weeks of mood data, from a single participant"}
+# plot figure
+ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
+  geom_smooth(method = "loess", span = .05, se = FALSE, colour="black") + 
+  geom_point(size = .3, alpha = .3, position = position_jitter(height = .1),
+  colour="grey44") +  scale_x_date() + scale_y_continuous(breaks = 1:7) +
+  xlab("Time") + ylab("Mood") +
+   theme(panel.background = element_blank())
+```  
 
-[ Latent variables versus Symptom clusters] Lorem ipsum dolor sit amet,
-consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna
-luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi,
-eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta.
-Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc,
-bibendum ut orci vel, tristique pellentesque arcu.
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
+### Real-world context and ecological validity
+\index{Exposomics}
 
-### Focus on Real Life
+Is there a difference between Real life and the lab
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -167,44 +128,7 @@ cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam.  
 
-
-### Focus on the Context
-
-\index{Exposomics}
-[Exposomics] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat
-at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac
-dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus
-condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel,
-tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit.
-Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
-
-## Clinical Applications
+## EMA research
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
 vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat
 at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac
@@ -236,9 +160,6 @@ metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
 cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
 malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
 purus nec, lobortis imperdiet diam. 
-
-
-## Further Reading
 
 Table: (\#tab:emareviews) Reviews of EMA studies targeting specific Mental
 Health Conditions

@@ -11,9 +11,44 @@ This chapter summarises ongoing EMA research projects within the APH mental heal
 
 Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 
+| Focus           | Name          | URL                  | Organisation        |
+|:---------------|:-----------------|:---------------------|:--------------------|
+| **Depression**  |    |     |              |
+| Bockting group  | Imagine your mood   | [Protocol](https://www.sciencedirect.com/science/article/pii/S2451865417300376)    | AMC |
+|   | Stay Fine Study |http://stayfine.nl ||
+| Huibers group |  FreqMech      | http://freqmech.nl/                 | VU                  |
+| Riper group | MOODBUSTER & E-COMPARED    | ict4depression.eu    | VU               |
+| Penninx group  | NESDA      | nesda.nl     | VuMC / GGz InGeest  |
+|   |RADAR-CNS       | radar-cns.org        | VuMC / Ggz InGeest  |
+| | | ||
+| **Somatic ilness**  |    |     |              |
+|Knoop group |Chronic Fatigue study  | ---                  | AMC                 |
+| Snoek group | MERITS (type 1 diabetes)      | -            | VuMC  |
+|Sprangers group    | FAntasTIGUE (fatigue)       | tinyurl.com/ybb7up87 | AMC                |
+|    |  IMPACT (Heart failure)  | impactonderzoek.nl   | AMC                 |
+| | | ||
+| **Psychotic symptoms** |   |     |              |
+| Van der Gaag group   | TEMSTEM       | tinyurl.com/ybac6flo | VU         |  
+|     | VRETp        | psymate.eu | VU  |
+| | | ||
+| **Suicidal ideation**  |    |     |              |
+|          | CASPAR          | ilumivu.com          | VU                  |
+| | | ||
+| **Sleep** |  |  | AMC|
+|  van Someren group        |         | [Website](https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/)         | AMC                 |
+| | | ||
+| **Symptom Networks** |  | | |
+| Borsboom group | Psychosystems | psychosystems.org    | UvA                 |
+| | | ||
+| **Ambulant Monitoring** | De Geus group | | VU |
+| Stress & Emtion         | VU-AMS | vu-ams.nl            |                  |
+
+
 | Name           | Focus            | URL                  | Organisation        |
 |:---------------|:-----------------|:---------------------|:--------------------|
 | Bockting group  | Depression    | claudibockting.com     | AMC               |
+|  |Imagine your mood study | [Protocol](https://www.sciencedirect.com/science/article/pii/S2451865417300376) |  |
+|| Stay Fine Study |http://stayfine.nl ||
 | CASPAR         | Suicide          | ilumivu.com          | VU                  |
 | Chronic Fatigue| Chronic Fatigue  | ---                  | AMC                 |
 | FAntasTIGUE    | Fatigue          | tinyurl.com/ybb7up87 | AMC                 |

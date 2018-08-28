@@ -80,7 +80,7 @@ Another option is to use pictures or emoticons, rather than language. For this p
 knitr::include_graphics("images/outcomes/Circumplex-Pick-A-Mood.png")
 ```
 
-## Negative & Positive Affect
+### Negative & Positive Affect
 \index{Negative Affect} \index{Positive Affect}
 Watson and Tellegen [@watson1985] also specified the underlying theory of the Circumplex model, arguing that the diagonal quadrants represent Positive and Negative affect (PA/NA) and that these two terms are the main dimensions of affect [@Watson1999]. PA ranges from sadness to high energy, NA from calmness to distress [@Watson1988]. While bipolar-unidimensional assessment assumes that positive and negative affect are mutually exclusive, the PA/NA affect model assumes that these seemingly opposing mood states can occur simultaneously. Watson and Clark [@Watson1997] for example, showed a moderate correlation between the two constructs (.32). 
 In order to measure Positive and Negative Affect, a designated Positive and Negative Affect Schedule was developed by Watson, Clark and Tellegen [@Watson1988]. Respondents are asked to indicate "to what extent you feel this way right now" on 20 affect items. The scale uses a 5-point Likert-scale, ranging from 1 (very slightly or not at all) to 5 (very) [@Watson1999]. Items include:

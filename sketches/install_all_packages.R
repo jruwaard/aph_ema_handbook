@@ -12,6 +12,7 @@ ensurePackage(
     "autovarCore",
     "bookdown",
     "bootnet",
+    "digest",
     "ecp",
     "emaph",
     "tidyverse",
@@ -37,7 +38,9 @@ ensurePackage(
     "pwr",
     "PhysicalActivity",
     "qgraph",
+    "rlang",
     "rgl",
+    "scales",
     "simstudy",
     "simr"
   )

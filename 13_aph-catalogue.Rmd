@@ -3,11 +3,11 @@ output:
   pdf_document: default
   html_document: default
 ---
-# (PART) EMA Catalogues {-}
+# (PART) EMA Catalogue {-}
 
 This chapter summarises ongoing EMA research projects within the APH mental health consortium, as a guide to other researchers looking for nearby EMA-expertise and research collaboration.  
 
-## Overview
+# EMA research within APH
 
 Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 
@@ -342,28 +342,28 @@ The European (EU H2020-IMI) RADAR-CNS project (Remote Assessment of Disease and 
 | Lessons learned | When measuring over such a long timespan, extra attention should be paid to the possible burden for participants. Continuous monitoring via a Smartphone can severely impact battery life. Participants prefer consumer devices (such as FitBit) to research devices (such as GenActiv), because of stigma. Carrying a research device will prompt questions. |
 | More information | [Presentation RADAR](https://www.ecsel.eu/sites/default/files/2017-11/thehyve_vanbochove_-_session3_-_july_5_ecsel_imi_workshop.pdf) |
 
-## The van Someren group
+## Department of sleep and cognition
 \index{Sleep}
 
-Eus van Someren is head of the department of sleep and cognition, which is part of the Netherlands Institute for Neuroscience and is situated at the Amsterdam Academic Medical Center. The group focusses on studying healthy and disturbed sleep. The department has a fully equipped sleep-lab and combines various research methods, such as neuro-imaging, actigraphy and EMA. 
+Eus van Someren is head of the department of sleep and cognition, which is part of the Netherlands Institute for Neuroscience and is located near the Amsterdam UMC - location AMC. The group focusses on studying healthy and disturbed sleep. The department has a fully equipped sleep lab and combines various research methods, such as neuro-imaging, actigraphy and EMA. 
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-|  Project team | Eus van Someren, PhD (departement head); Tessa Blanken, MSc; Michele Colombo, MSc; Kim Dekker, MSc; Jeanne Leerssen, MSc; Bart te Lindert, MSc; Wisse van der Meijden, MSc; Rick Wassing, Phd  |
+|  Project team | Eus van Someren, PhD (departement head); Tessa Blanken, MSc; Michele Colombo, PhD; Kim Dekker, MSc; Jeanne Leerssen, MSc; Bart te Lindert, MSc; Wisse van der Meijden, MSc; Rick Wassing, MSc.  |
 |APH site | AMC and GGZ inGeest |
 | Projects that involve EMA | |
-|Sleep and light | Wisse van der Meijden studies, among other things, the interplay between light, vigilance, post-illumination pupil response (PIPR) and sleep by combining information from a) a questionnaire on habitual lights-out time, sleep onset latency, and final wake-up time (Munich Chronotype Questionnaire), a one-week sleep diary on actual wake/sleep times and actigraphy.   | 
-|EMA passive | Actigraphy data was obtained using either a Philips Actiwatch Spectrum or a microelectromechanical accelerometer (Move II, Movisens GmbH). Data collection was set to 30hz.|
+|Sleep and light | Wisse van der Meijden studies, among other things, the interplay between light, vigilance, and sleep. A recent study associated the post-illumination pupil response (PIPR) to blue light with multiple indices of sleep timing: a) a questionnaire on habitual lights-out time, sleep onset latency, and final wake-up time (Munich Chronotype Questionnaire, MTCQ [@Roenneberg2003]); b) a one-week sleep diary on actual wake/sleep times; and c) actigraphy.  | 
+|EMA passive | Actigraphy data was obtained using either a Philips Actiwatch Spectrum or a microelectromechanical accelerometer (Move II, Movisens GmbH). Data collection was set to 30Hz.|
 |Data management | Sleep onset and final wake-up time were estimated using an algorithm that is implemented in Matlab (https://github.com/btlindert/actant-1).  |
 |Results| Participants (adolescents and young adults, n=71) with a later sleep timing had a stronger responsiveness to blue light. The mid-sleep timing estimates from sleep diaries and actigraphy shared 94.5% of their interindividual variance [@Meijden2016]. | 
 | | |
-|Sleep and context | Bart te Lindert studies the relation between context and sleep, for example by measuring light, body temperature and posture, and psychological variables. A recent study focused on Insomnia, light intensity and Liking, Wanting and mood. |
-| EMA active | Prompts were sent eight times a day for one week. Prompts were timed at quasi-random intervals between 8:00 and 22:00. In addition, participants provided input after waking up and before bedtime. The interval between prompts ranged between 16 minutes and 3 hours. EMA consisted of 22 items. Liking and Wanting (6 items each), focused on taste or smell, bodily sensation, watching or listening, interactions with other, physical activity or being busy, and receiving something. Participants indicated whether they enjoyed and wanted these categories on a 0-100 VAS scale (ranging from not to very much). Mood items were derived from the Daytime Insomnia Symptom Scale (DISS, @buysse2007), which was developed specifically for EMA. Items focused on positive mood (5 items; relaxed, energetic, calm, happy, and efficient) and negative mood (5 items; anxious, stressed, tense, sad, and irritable). Items were scored on a 0-20 VAS-scale (ranging from very little to very much). |
-| EMA passive | Participants wore two light sensors (Dimesimeter), one on their indoor clothes and one on their jacket. A build-in accelerometer indicated at what times the outdoor clothing was used. Light was sampled every minute for one week. |
+|Sleep and context | Bart te Lindert studies the effect of the environment on sleepiness, for example by measuring light, (skin) temperature, posture, and psychological variables. A recent study focused on the effect of light intensity on Liking, Wanting and mood in insomnia disorder. |
+| EMA active | Prompts were sent eight times a day for one week. Prompts were timed at quasi-random intervals between 8:00 and 22:00. In addition, participants provided input after waking up and before bedtime. The interval between prompts ranged between 16 minutes and 3 hours. EMA consisted of 22 items. Liking and Wanting (6 items each), focused on taste or smell, bodily sensation, watching or listening, interactions with other, physical activity or being busy, and receiving something. Participants indicated whether they enjoyed and wanted these categories on a 0-100 VAS scale (ranging from not to very much). Mood items were derived from the Daytime Insomnia Symptom Scale (DISS, @buysse2007), which was developed specifically for EMA. Items focused on positive mood (5 items; relaxed, energetic, calm, happy, and efficient) and negative mood (5 items; anxious, stressed, tense, sad, and irritable). Items were scored on a 0-100 VAS-scale (ranging from very little to very much). |
+| EMA passive | PParticipants wore two light sensors (Dimesimeter), one on their indoor clothes and one on their jacket. Wear-time of each sensor was derived from a build-in accelerometer. Light was sampled every minute for one week. |
 | Data management | Participants received a designated Android smartphone for the duration of EMA. Detailed information on data processing and analysis can be found in @Lindert2018.  |
 | Results | On average, 80% of the prompts contained valid data. People with insomnia disorder (n=17) had significantly lower subjective Liking and Wanting than matched controls without sleep complaints (n=18). This was most apparent at low environmental light intensity. There were no overall differences between groups in Positive mood and Negative mood. Participants with insomnia did have a different diurnal profile of Positive mood and Negative mood [@Lindert2018]. 
 | | |
-| Lessons learned | The one-item Karolinska sleepiness scale is advised as a simple way to measure sleepiness in EMA. The item was validated against performance and EEG variables [@kaida2006]. A 30hz frequency is an acceptable sampling frequency for actigraphy, and is generally considered the gold standard. Higher frequencies lead to shorter battery life, while not improving estimations. Asking participants to keep a sleep diary parallel to wearing an accelerometer/actigraph is vital in order to determine lights-out time and wake-up time. When actigraph data and the sleep diary do not overlap, the information from the diary should be used. |
+| Lessons learned | The one-item Karolinska sleepiness scale is advised as a simple way to measure sleepiness in EMA. The item was validated against performance and EEG variables [@kaida2006]. A 30 Hz frequency is an acceptable sampling frequency for actigraphy, and is generally considered the gold standard. This is based on 3x the maximal human acceleration which is limited to <10 Hz. Higher frequencies lead to shorter battery life, while not improving estimations. Asking participants to keep a sleep diary parallel to wearing an accelerometer/actigraph is vital in order to determine lights-out time and wake-up time. When actigraph data and the sleep diary do not overlap, the information from the diary should be used. |
 
 
 ## VU-AMS

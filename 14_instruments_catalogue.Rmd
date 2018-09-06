@@ -162,8 +162,3 @@ knitr::include_graphics(c(
 ```
 
 
-### Points to consider
-
--Internet access - whether company has an app or is notification for completion of survey via an email or SMS.
--Use of participants’ own device (fitness device, tablet, smartphone) or designated device – issues of software updates, compatibility issues if using participants device, issues of storage capacity of device if data has to be stored locally (because of lack of internet access) before it can be uploaded to central system.
--Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.

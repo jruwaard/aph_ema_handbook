@@ -110,24 +110,10 @@ ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
 
 ### Real-world context and ecological validity
 \index{Exposomics}
+A key feature of EMA is the capture of data in real-world environments as subjects go about their daily activities, as opposed to data collection within a controlled lab or research setting [@Shiffman2008]. Thus, EMA data provides ecological validity and can better generalize to the subject’s lived experience or real world. Practical applications derived from the data would be more relevant and useful to life situations.  
 
-Is there a difference between Real life and the lab
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. 
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
+  
 ## EMA research
 In recent decades, research on mental health using EMA has produce an impressive trove of findings that have supported and sometimes, challenged existing theories on behaviour. A key implication of EMA data is the temporal fluidity of cognition, affect, and behaviour which are highly responsive to the context [@Shiffman2009]. EMA, whether collected as self-report or via wearable device/sensor, can have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Below is a non-exhaustive summary of systematic reviews or meta-analyses of research on mental health using EMA.
 

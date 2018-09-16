@@ -1,7 +1,8 @@
 # EMA instruments {#instruments}
 
 General introduction
-  Procedure
+
+Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet.
 
 Features 
 

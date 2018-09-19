@@ -2,11 +2,14 @@
 
 General introduction
 
-Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet.
+Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets (@Shiffman, et al 2008). For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Other points to consider when deciding on a suitable EMA instrument are briefly listed below.
 
 Features 
 
 Costs new development vs known player
+
+When considering a platform for collecting data, do you go with a platform developed by known player or consider developing a one of your own? If deciding on the latter, keep in mind of the costs required in terms of time and finances.  
+
 Low-tech vs high-tech
 
 Validation, reliability (noise)
@@ -38,25 +41,6 @@ Charging battery
 -Use of participants’ own device (fitness device, tablet, smartphone) or designated device 
 – issues of software updates, compatibility issues if using participants device, issues of storage capacity of device if data has to be stored locally (because of lack of internet access) before it can be uploaded to central system.
 -Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.
-
-
-
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
 
 
 ## Section

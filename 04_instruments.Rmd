@@ -2,19 +2,25 @@
 
 General introduction
 
-Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets (@Shiffman, et al 2008). For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Other points to consider when deciding on a suitable EMA instrument are briefly listed below.
+Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Other points to consider when deciding on a suitable EMA instrument are briefly listed below.
 
 Features 
 
 Costs new development vs known player
 
-When considering a platform for collecting data, do you go with a platform developed by known player or consider developing a one of your own? If deciding on the latter, keep in mind of the costs required in terms of time and finances.  
+When considering a platform for collecting EMA data, do you choose a platform developed by a known player or consider creating one of your own? Using a currently available platform has its advantages but it might not have the flexibility to meet your research needs.For example, the EMA application might not be adapted to include items specific to your research. If deciding on the creating a new platform, keep in mind of the costs required in terms of time and financial.  
 
 Low-tech vs high-tech
 
+Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
+
 Validation, reliability (noise)
+
+
+
 Is raw data available (genactiv versus fitbit)
   Dedicated software y/n
+  
 Back-office (autonomy to define questions and design)
 
 Device limitations (technical considerations)

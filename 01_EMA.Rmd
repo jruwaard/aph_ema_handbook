@@ -115,33 +115,38 @@ A key feature of EMA is the capture of data in real-world environments as subjec
 
   
 ## EMA research
-In recent decades, research on mental health using EMA has produce an impressive trove of findings that have supported and sometimes, challenged existing theories on behaviour. A key implication of EMA data is the temporal fluidity of cognition, affect, and behaviour which are highly responsive to the context [@Shiffman2009]. EMA, whether collected as self-report or via wearable device/sensor, can have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Below is a non-exhaustive summary of systematic reviews or meta-analyses of research on mental health using EMA.
+The use of EMA in mental health research might seem novel but this methodology has a long track record. With the expansion of mobile technologies in recent years, EMA-based research in mental health has produce an impressive trove of findings that have supported and sometimes, challenged existing theories on behaviour. EMA data, whether collected as self-report or via wearable device/sensor, have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Its feasibility for mental health research is evidenced by its use in observational studies and randomized controlled trials on a wide range of topics and populations. Enough results have been generated for systematic reviews and meta-analyses pubished in recent years. Below is a non-exhaustive summary of these systematic reviews or meta-analyses.
 
 ### Self-report EMA
 \index{Self-report EMA}
 
-Mood disorders have been well-studied using EMA methods [@Wenze2010] with several reviews outlining recent findings in depression [@Telford2012; @Wichers2011; @burton2013], anxiety disorders [@Walz2014], depression/bipolar disorder [@AanhetRot2012].
-EMA is particularly suited to examine the role of emotions in development and maintenance of obesity and eating disorders [@Engel2016]. Meta-analytic results suggest that negative affect, rather than hunger, is associated with binge eating among individuals with eating disorders [@HaedtMatt2011; @Haedt2012]. 
-EMA methods have significantly contributed to the understanding of the processes that drive substance use, cessation, and relapse, often in contrast with theory-driven studies largely derived from global reports collected through questionnaires [@Shiffman2009].
+Mood disorders have been well-studied using EMA methods [@Wenze2010] with several reviews outlining recent findings in depression [@Telford2012; @Wichers2011; @burton2013], anxiety disorders [@Walz2014], depression/bipolar disorder [@AanhetRot2012].The potential of EMA for use among young populations showed promising results (Dubad, 2018). Innovations in mobile devices has improved the feasibility and popularity of ecological momentary interventions (EMIs) for anxiety and depression (Schueller, 2017). A systematic review and meta-analyis of EMIs reported small to medium effects on mental health (Versluis, 2016).  
+
+EMA is particularly suited to examine the role of emotions in development and maintenance of obesity and eating disorders [@Engel2016]. Meta-analytic results suggest that negative affect, rather than hunger, is associated with binge eating among individuals with eating disorders [@HaedtMatt2011; @Haedt2012].
+
+EMA methods have significantly contributed to the understanding of the processes that drive substance use, cessation, and relapse, often in contrast with theory-driven studies largely derived from global reports collected through questionnaires [@Shiffman2009; Swendsen 2016].
 
 ### Passive EMA
 \index{Passive sensing|see{EMA!Observational EMA}}
 \index{Passive EMA|see{EMA!Observational EMA}}
 
-A systematic review and meta-analysis on actigraphy reported diurnal variations in activity levels among individuals with depression [@burton2013]. The potential of passive sensing via smartphone for mental health research are outlined in two reviews, encompassing the assessment of health and well-being [@Cornet2017], and the measuring, understanding, and intervening in mental illness and maintaining mental health [@Aung2017]. Compared with traditional self-reports, passive sensing is less intrusive and provides more accurate data, continual monitoring, and feedback. However, studies identified in that review did not include clinical samples.
+Objective EMA data collected passively through biosensors, smart devices, or context/environmental (e.g. location) is a feasible and promising method for the longitudinal monitoring of individuals with affective disorders (Dogan, 2017; Kirchner, 2016).       
 
-EMA has potential to make significant contributions to mental health research. However, there are some general limitations to consider.
+The potential of passive sensing via smartphone for mental health research are outlined in two reviews, encompassing the assessment of health and well-being [@Cornet2017], and the measuring, understanding, and intervening in mental illness and maintaining mental health [@Aung2017]. A systematic review and meta-analysis on actigraphy reported diurnal variations in activity levels among individuals with depression [@burton2013]. Compared with traditional self-reports, passive sensing is less intrusive and provides more accurate data, continual monitoring, and feedback. 
+
+In general, there is agreement among the reviews that EMA is feasible and has the potential to make significant contributions to mental health research. Despite the increase in the number of studies in the past decade, the lack of high-quality studies was a common point highlighted in several reviews. General limitations to consider include.
 \index{Limitations} 
 \index{Limitations!Selected samples}
 \index{Limitations!Practive effect}
 \index{Limitations!Feasibility}
 \index{Limitations!Privacy}
 
--	Selected samples, e.g. hospital in-patients [@burton2013]
+-	Generalizability of results due to selected samples, e.g. hospital in-patients [@burton2013], small sample size (Dogan, 2017)
 -	Practice effect [@Telford2012], reactivity and compliance [@Shiffman2009]
 -	Issues of feasibility and tolerability of prolonged and intense data periods of data collection [@Wichers2011]
 -	Issues of privacy, consent, and awareness [@Cornet2017]
 -	Responsibility of researcher, e.g. in suicide ideation research [@Wenze2010]
+- Methodology issues (Dubad, 2018)
 
 
 Table: (\#tab:emareviews) Reviews of EMA studies targeting specific Mental
@@ -151,6 +156,7 @@ Health Conditions
 |:--------------------|:--------------------|:--------------------|
 | Anxiety disorders | | |
 | | @Walz2014 | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviours, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations |
+| | Schueller(2017) | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation |
 | | | |
 | Eating disorders | | |
 | | @Engel2016| An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
@@ -161,10 +167,15 @@ Health Conditions
 || @burton2013 | Diurnal variations in activity levels among depressed individuals |
 | |@Telford2012 | Identified six themes of EMA research in MDD: methodology; positive and negative affect; cortisol secretion; antidepressant treatment; work performance; genetic risk factors |
 | | @Wenze2010 | Provides an overview of EMA in mood disorder research comprising techniques used, types of population assessed, types of research questions, and a discussion of the potential of EMA in treatment setting of mood disorders |
-| | @Wichers2011 | Provides an overview for the possible clinical application of EMA in the diagnostic and treatment of MDD |
+| | @Wichers2011 | Provides an overview for the possible clinical application of EMA in the diagnostic and treatment of MDD  |
+| | Versluis (2016) | Provides an overview of interventions (EMI) addressing anxiety, depression, and perceived stress on positive psychological outcomes |
+| | Dubad (2018) | Provides an overview of the feasibility and efficacy of mood-monitoring applications for use among young populations (10-24 years old) |
 | | | |
 | Substance abuse| | |
 | | @Shiffman2009 | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
+| | Swendsen 2016 | Conceptual review of the use of mobile technologies for research on addiction and its treatment |
 | | | |
 | Mental health/ Well-being | | |
 | | @Cornet2017 | Outlines the potential of passive sensing to detect status change and behaviour change following feedback on behaviour. Also outlines the challenges of using passive sensing |
+| | Kirchner(2016) | Provides an overview of geographically explicit momentary assessment (GEMA) research to enrich EMA research in mental health and well-being |
+| | Dogan (2017) | Provides an overview of studies that combined subjective ratings with objective-collected EMA using smartphone-based systems |

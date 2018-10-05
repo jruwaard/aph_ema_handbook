@@ -134,7 +134,7 @@ Objective EMA data collected passively through biosensors, smart devices, or con
 
 The potential of passive sensing via smartphone for mental health research are outlined in two reviews, encompassing the assessment of health and well-being [@Cornet2017], and the measuring, understanding, and intervening in mental illness and maintaining mental health [@Aung2017]. A systematic review and meta-analysis on actigraphy reported diurnal variations in activity levels among individuals with depression [@burton2013]. Compared with traditional self-reports, passive sensing is less intrusive and provides more accurate data, continual monitoring, and feedback. 
 
-In general, there is agreement among the reviews that EMA is feasible and has the potential to make significant contributions to mental health research. Despite the increase in the number of studies in the past decade, the lack of high-quality studies was a common point highlighted in several reviews. General limitations to consider include.
+In general, the reviews conclude that EMA is feasible and has the potential to make significant contributions to mental health research. Nevertheless one significant drawback of EMA highlighted in several reviews is the lack of high-quality studies. This is despite the increase in the number of studies in the past decade. Other general limitations to consider include.
 \index{Limitations} 
 \index{Limitations!Selected samples}
 \index{Limitations!Practive effect}

@@ -14,16 +14,23 @@ Low-tech vs high-tech
 
 Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether your study needs to hve an advanced metods of data collection. Maybe the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
 
+Access to back-office 
+
+An important consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some EMA platforms do allow configuration or customization to the needs of the researcher. Also some back office offer advisory services to researchers when adating items. Using EMA to collect depression data does not mean the wholesale transportation of a validated paper questionnaire onto the EMA platform. It is not similar to conducting an online questionnaire.
+
 Validation, reliability (noise)
 
+Questions can also arise regarding the validity of EMA. Items used in subjective EMA have often not undergone rigorous psychometric testing, unlike traditional paper questionnaires. Also, EMA software are developed using algorithms which are not known or unavailable to the researcher to test for validity.
 
 
-Is raw data available (genactiv versus fitbit)
-  Dedicated software y/n
-  
-Access to back-office 
-An importanat consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some platforms do allow items on their EMA app to be adapted. Furthermore,    
+Access to data
 
+If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? 
+
+
+Demands on time     
+
+Subjective EMA could be burdensome to participants as data is collected multiple times a day for an extended period. In order to ensure continued participation, it is important that researchers have in place procedures and resources to manage study participants. This could include providing a manual describing the including information on how to operate devices used to collect EMA. Besides a manual, considerable time needs to be invested during the inclusion process, explaining the study and how the EMA works, during data collection (e.g. the following day after the start of study to address possible problems), and after period of data collection (e.g. a debriefing). 
 
 
 Device limitations (technical considerations)

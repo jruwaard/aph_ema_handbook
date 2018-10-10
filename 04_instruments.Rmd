@@ -12,7 +12,7 @@ When considering a platform for collecting EMA data, do you choose a platform de
 
 Low-tech vs high-tech
 
-Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
+Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether your study needs to hve an advanced metods of data collection. Maybe the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
 
 Validation, reliability (noise)
 
@@ -21,7 +21,10 @@ Validation, reliability (noise)
 Is raw data available (genactiv versus fitbit)
   Dedicated software y/n
   
-Back-office (autonomy to define questions and design)
+Access to back-office 
+An importanat consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some platforms do allow items on their EMA app to be adapted. Furthermore,    
+
+
 
 Device limitations (technical considerations)
   Storage (local, cloud, etc)

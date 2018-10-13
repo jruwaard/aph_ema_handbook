@@ -4,7 +4,7 @@ General introduction
 
 Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Other points to consider when deciding on a suitable EMA instrument are briefly listed below.
 
-Features 
+##General considerations 
 
 Costs new development vs known player
 
@@ -25,15 +25,24 @@ Questions can also arise regarding the validity of EMA. Items used in subjective
 
 Access to data
 
-If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? 
+If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform? 
 
 
 Demands on time     
 
-Subjective EMA could be burdensome to participants as data is collected multiple times a day for an extended period. In order to ensure continued participation, it is important that researchers have in place procedures and resources to manage study participants. This could include providing a manual describing the including information on how to operate devices used to collect EMA. Besides a manual, considerable time needs to be invested during the inclusion process, explaining the study and how the EMA works, during data collection (e.g. the following day after the start of study to address possible problems), and after period of data collection (e.g. a debriefing). 
+Subjective EMA could be burdensome to participants as data is collected multiple times a day for an extended period. In order to ensure continued participation, it is important that researchers have in place procedures and resources to manage study participants. Besides preparing a study protocol, it is also necessary to have a manual on how to operate the EMA device. Considerable time also needs to be invested for the training of participants; how EMA and the device works. The researcher might also have to factor in the time needed to contact the participant when data collection starts (e.g. the following day after start of study) to address possible problems, and after data collection (e.g. a debriefing).  
 
 
-Device limitations (technical considerations)
+##Technical considerations
+
+Internet access
+
+Is access to internet or wifi an integral part of the collection process? For example, the EMA platform does not offer an app but sends an alert with a link to complete an online survey. If there is an app available, would the data collected collected be stored locally on a device before being uploaded to the paltform server when in the vicitnity of internet access or wifi?  
+
+Device limitations
+
+
+
   Storage (local, cloud, etc)
   Data sharing (wifi, usb etc)
   Server (where, who owns the server/data)
@@ -57,190 +66,6 @@ Charging battery
 -Use of participants’ own device (fitness device, tablet, smartphone) or designated device 
 – issues of software updates, compatibility issues if using participants device, issues of storage capacity of device if data has to be stored locally (because of lack of internet access) before it can be uploaded to central system.
 -Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.
-
-
-## Section
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
-
-## Section
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
-
-
-## Section
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
-
-
-
-## Section
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
-
-
-
-
-## Section
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Vivamus enim turpis, pulvinar volutpat purus nec, lobortis imperdiet diam.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra
-metus, nec scelerisque odio. Morbi viverra tristique libero vel fringilla. Sed
-at varius erat, id consequat nibh. Ut eget leo blandit orci posuere tincidunt
-ac sed erat. Aenean metus metus, eleifend ut facilisis a, fringilla ut neque.
-Nunc hendrerit cursus eleifend. Pellentesque habitant morbi tristique senectus
-et netus et malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar
-volutpat purus nec, lobortis imperdiet diam.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.  
 
 
 

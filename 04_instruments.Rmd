@@ -2,21 +2,24 @@
 
 General introduction
 
-Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Other points to consider when deciding on a suitable EMA instrument are briefly listed below.
+Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Below are points to consider when deciding on a suitable EMA instrument, gleaned from the past experiences of APH researchers.
 
 ##General considerations 
 
 Costs new development vs known player
 
-When considering a platform for collecting EMA data, do you choose a platform developed by a known player or consider creating one of your own? Using a currently available platform has its advantages but it might not have the flexibility to meet your research needs.For example, the EMA application might not be adapted to include items specific to your research. If deciding on the creating a new platform, keep in mind of the costs required in terms of time and financial.  
+When considering a platform for collecting EMA data, do you choose a platform developed by a known player or consider creating one of your own? Using a currently available platform has its advantages but it might not have the flexibility to meet your research needs. For example, the EMA application might not be adapted to include items specific to your research. If deciding on the creating a new platform, keep in mind of the costs required in terms of time and financial. 
+
 
 Low-tech vs high-tech
 
 Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether your study needs to hve an advanced metods of data collection. Maybe the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
 
+
 Access to back-office 
 
-An important consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some EMA platforms do allow configuration or customization to the needs of the researcher. Also some back office offer advisory services to researchers when adating items. Using EMA to collect depression data does not mean the wholesale transportation of a validated paper questionnaire onto the EMA platform. It is not similar to conducting an online questionnaire.
+An important consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some EMA platforms do allow configuration or customization to the needs of the researcher. Also some back office offer advisory services to researchers when adapting items. For example, using EMA to collect depression data does not mean the wholesale transportation of a validated paper questionnaire onto the EMA platform. A subjective EMA survey is not similar to an online questionnaire.
+
 
 Validation, reliability (noise)
 
@@ -25,7 +28,7 @@ Questions can also arise regarding the validity of EMA. Items used in subjective
 
 Access to data
 
-If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform? 
+If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform?
 
 
 Demands on time     
@@ -37,26 +40,29 @@ Subjective EMA could be burdensome to participants as data is collected multiple
 
 Internet access
 
-Is access to internet or wifi an integral part of the collection process? For example, the EMA platform does not offer an app but sends an alert with a link to complete an online survey. If there is an app available, would the data collected collected be stored locally on a device before being uploaded to the paltform server when in the vicitnity of internet access or wifi?  
+Is access to internet or wifi an integral part of the collection process? For example, the EMA platform does not offer an app but sends an alert with a link to complete an online survey. This means that the participant needs to have online access following the alert. Otherwise, this will lead to a missed data collection. Also, if the server of the platform is down, the participant will not be able to access the online survey following an alert. 
+
+If an app is available, would the data collected be stored locally on a device before being uploaded to the server when in the vicitnity of internet access or wifi?  
+
 
 Device limitations
 
+Ensure there is adequate local storage on device, in the event that uploading of data to a central server might be hindered. EMA studies can generate a tremendous amount of data which needs adequate storage, be it in cloud or locally on a central server. If using cloud storage or from a commercial entity, This raises the following questions the ownership of the server and the data, and also the location of the server.     
 
+As EMA data could be collected using apps or in modern smartphone (e.g. GPS tracking), a consideration would be whether to use participants' own device or to provide a device for the study. If providing a dedicated study device, there are upfront costs of purchasing the devices and their accessories (e.g. battery chargers). Also, the costs of sending/returning of devices and potential loss of device needs to be factored in. 
 
-  Storage (local, cloud, etc)
-  Data sharing (wifi, usb etc)
-  Server (where, who owns the server/data)
-  Battery life
+These financial factors are a non-issue if participants use their own devices. Instead there are other potential problems, namely that of compatibility of the smart devices. Currently some apps are available either only on IoS or Android. Besides considering the make of the participants device, one also needs to take into account the model. Older models might not have the feature needed for the EMA collection. Another potential issue associated with using own devices is  adequate memory/storage capacity, i.e. to install the EMA app and collect the data.         
 
-Pilot (on your own phone)
-  Make sure there is a plan b
+Regardless of using own or a dedicated device, keep in mind that apps do have software upgrades which researchers need to be aware of and inform participants (especially if participant is using own device).
+
 
 ## Participant perspective
-Social environment participant, stigma
-Impact 
-Carrying the device (remembering to take it with you)
-Charging battery
 
+Participating in an EMA study could impact negatively on the participant's in his/her social environment. If using a dedicated device, participant could have to deal with questions of the need to carry the device. This might create feelings of stigma if the study was on a socially sensitive topic e.g.) psychiatric well-being or suicide ideatioin. 
+
+Or the design of the device might not be compatible with the lifestyle of the participant, e.g. a fashion-conscious female participant might be less than enamoured with the chunky design of a wearable activity sensor. Furthermore, the participants have to remember to have the device on hand during the period of data collection, sometimes even during sleep (e.g. actigraphy)
+
+Also, in a subjective EMA study design, participants has to attend to multiple alerts. These alerts might occur at an inconvenient social moment.  
 
 
 ## Points to consider
@@ -68,5 +74,6 @@ Charging battery
 -Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.
 
 
+In a nutshell, before implementing an EMA study, it is advisable to do a pilot study using your own device. This will allow the researcher to experience the possible inconveniences faced by participants. And, make sure there is a Plan B!
 
 

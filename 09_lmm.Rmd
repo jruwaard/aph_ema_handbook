@@ -1,4 +1,5 @@
 # Mixed Modeling {#lmm}
+\index{Mixed Modeling}
 
 ```{r setdigits, include = FALSE}
 options(digits = 3)
@@ -26,6 +27,8 @@ The group intercept is called the 'fixed' effect. If we would gather more data f
 The participant-specific component of the intercept is known as the 'random' effect. If we sample new data, we would expect a similar *variance* of the participant-specific intercept components around the group intercept. This "mixing" of fixed and random effects is what gives mixed modeling its name.
 
 ## Simulating example data
+\index{R and RStudio!Simulating data} 
+
 To understand analysis techniques, it often helps to apply the technique to simulated data, in which parameters of interest are known.  
 
 Here, we will use the 'sim_ema' function from package 'emaph', to simulate EMA mood assessments of 100 participants, who rate their mood, three times per day, for one week. We set the mean mood (intercept_g) to 5, the variance around this mean - var(intercept_i) - to .5., and the average variance around these means within participants - the error - to 1.

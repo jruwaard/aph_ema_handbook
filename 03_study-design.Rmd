@@ -1,7 +1,95 @@
+```{r include=FALSE, cache=FALSE}
+# # Reproducability --------------------------------------------------------------
+# 
+# # fix random numbers
+# set.seed(1014)
+# 
+# 
+# # knitr chunk options ----------------------------------------------------------
+# 
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  cache = FALSE,
+  out.width = "98%",
+  fig.align = 'center',
+  fig.width = 7,
+  fig.asp = 0.5,  # was: 0.618 (1 / phi)
+  fig.show = "hold",
+  message = FALSE,
+  warning = FALSE
+)
+# 
+# options(width = 120)
+# 
+# 
+# # standard libraries -----------------------------------------------------------
+library(ggplot2)
+library(emaph)
+# 
+# 
+# # theming ----------------------------------------------------------------------
+# 
+# # avoid long pint-out of numeric variables
+# #options(digits = 3)
+# 
+# # avoid long print-outs of tables
+# #options(dplyr.print_min = 6, dplyr.print_max = 6)
+# 
+# # common theme of all ggplot images
+# #theme_set(theme_bw(12))
+# 
+# 
+```
+```{r include=FALSE, cache=FALSE}
+# # Reproducability --------------------------------------------------------------
+# 
+# # fix random numbers
+# set.seed(1014)
+# 
+# 
+# # knitr chunk options ----------------------------------------------------------
+# 
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  cache = FALSE,
+  out.width = "98%",
+  fig.align = 'center',
+  fig.width = 7,
+  fig.asp = 0.5,  # was: 0.618 (1 / phi)
+  fig.show = "hold",
+  message = FALSE,
+  warning = FALSE
+)
+# 
+# options(width = 120)
+# 
+# 
+# # standard libraries -----------------------------------------------------------
+library(ggplot2)
+library(emaph)
+# 
+# 
+# # theming ----------------------------------------------------------------------
+# 
+# # avoid long pint-out of numeric variables
+# #options(digits = 3)
+# 
+# # avoid long print-outs of tables
+# #options(dplyr.print_min = 6, dplyr.print_max = 6)
+# 
+# # common theme of all ggplot images
+# #theme_set(theme_bw(12))
+# 
+# 
+```
 # (PART) EMA Methods {-}
 
 
 # Study Design {#methods}
+\index{Methods} 
+\index{Methods!Study design}
 
 As with all scientific research, EMA studies start with mindful consideration of the study design. Issues that need to be considered are, for example, the research question(s), the hypotheses, the population of interest, and the nature of the comparison groups [@Shiffman2008]. 
 
@@ -38,6 +126,7 @@ For an overview of existing EMA data platforms, see \@ref(ema-instruments-catalo
 
 
 ## Constructing the Sample Plan
+\index{Sampling}
 
 An important next step is to define the EMA data sample plan. Questions that need to be answered are:
 
@@ -65,6 +154,7 @@ plan <- sample_plan(n_participants = 5,
 
 
 ##  Power Analysis
+\index{Methods!Power analysis}
 
 The power of a statistical test is the probability that it will detect an effect when this effect, in reality, exists. It is a function of the strength of the effect size, sample size, the significance level (alpha), *and* the statistical model. Determining the power of the experiment is an important step in the design of any study - EMA studies included. Both underpowered and overpowered studies are a waste of time and resources.
 
@@ -125,12 +215,13 @@ As can be seen, the simulation results are very close to the output of 'pwr.t.te
 There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited (or too difficult to understand...). Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, 'mvrnorm' in package MASS [@Venables2002] can be used to generate correlated data, and package 'simstudy' [@R-simstudy] can be used to generate complex (longitudinal) data. 
 
 
-## Ethical Considerations
+## Ethical considerations
+\index{Methods!Ethical considerations}
 
 When collecting digital data, you should be mindful of the rules and regulations that apply to data collection, storage and sharing. From May 2018 onward, the European Committee has enforced the General Data Protection Regulation (GDPR) (in Dutch, Algemene Verordening Gegevensbescherming (AVG)). The regulation aims to protect the data and privacy of EU citizens. 
 
 ### Privacy Protection
-
+\index{Ethical considerations! Privacy}
 
 
 Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.
@@ -140,6 +231,7 @@ lobortis imperdiet diam.
 
 
 ### Medical device
+\index{Ethical considerations! Medical device}
 
 All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC; Dutch: 'METC'). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. This paragraph gives a brief overview of this process.  
 
@@ -167,6 +259,8 @@ knitr::include_graphics("images/outcomes/Flow_MD.png")
 
 
 ### Data Processing Agreements
+\index{Ethical considerations! DPA}
+
 When data processing is (partly) outsourced to a third party, a Data Processing Agreement (DPA) should be drafted, that specifies the agreements between the 'controller' and 'processor'. In this context, a controller is the person or organisation that determines the why and how of data collection (for example you as a researcher). The processor processes the data on behalf of the controller, for example by storing the data in a cloud. 
 Aspects of data processing that need to be adressed in the agreement are for example:
 

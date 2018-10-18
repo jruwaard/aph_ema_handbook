@@ -7,7 +7,7 @@ output:
 
 This chapter summarises ongoing EMA research projects within the APH mental health consortium, as a guide to other researchers looking for nearby EMA-expertise and research collaboration.  
 
-# EMA research within APH
+# EMA research within APH {#catalogue}
 
 Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 
@@ -40,38 +40,40 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 | **Symptom Networks** |  | | |
 | Borsboom group | Psychosystems | psychosystems.org    | UvA                 |
 | | | ||
-| **Ambulant Monitoring** | De Geus group | | VU |
-| Stress & Emtion         | VU-AMS | vu-ams.nl            |                  |
+| **Ambulant Monitoring** |  | | VU |
+| De Geus group         | VU-AMS | vu-ams.nl            |                  |
 
 
-| Name           | Focus            | URL                  | Organisation        |
-|:---------------|:-----------------|:---------------------|:--------------------|
-| Bockting group  | Depression    | claudibockting.com     | AMC               |
-|  |Imagine your mood study | [Protocol](https://www.sciencedirect.com/science/article/pii/S2451865417300376) |  |
-|| Stay Fine Study |http://stayfine.nl ||
-| CASPAR         | Suicide          | ilumivu.com          | VU                  |
-| Chronic Fatigue| Chronic Fatigue  | ---                  | AMC                 |
-| FAntasTIGUE    | Fatigue          | tinyurl.com/ybb7up87 | AMC                 |
-| van der Gaag group |  Psychotic symptoms  |               | VU                  |
-| TEMSTEM        | Auditory hallucinations        | tinyurl.com/ybac6flo | VU                  |
-| VRETp      | Psychotic disorders        | psymate.eu | VU  
-| Huibers group | Depression        | ---                   | VU                  |
-| IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
-| MERITS          | Type 1 diabetes       | -            | VuMC  |
-| Moodbuster/ E-COMPARED     | Depression       | ict4depression.eu    | VU     |
-| NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
-| Psychosystems  | Symptom Networks | psychosystems.org    | UvA                 |
-| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
-                |
-| van Someren group | Sleep       | https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/ | AMC |
-| VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
-| | |
-| | |
-| | |
-| | | 
+#| Name           | Focus            | URL                  | Organisation        |
+#|:---------------|:-----------------|:---------------------|:--------------------|
+#| Bockting group  | Depression    | claudibockting.com     | AMC               |
+#|  |Imagine your mood study[Protocol](https://www.sciencedirect.com/science/article/pii/S2451865417300376) |  |
+#|| Stay Fine Study |http://stayfine.nl ||
+#| CASPAR         | Suicide          | ilumivu.com          | VU                  |
+#| Chronic Fatigue| Chronic Fatigue  | ---                  | AMC                 |
+#| FAntasTIGUE    | Fatigue          | tinyurl.com/ybb7up87 | AMC                 |
+#| van der Gaag group |  Psychotic symptoms  |               | VU                  |
+#| TEMSTEM        | Auditory hallucinations        | tinyurl.com/ybac6flo | VU                  |
+#| VRETp      | Psychotic disorders        | psymate.eu | VU  
+#| Huibers group | Depression        | ---                   | VU                  |
+#| IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
+#| MERITS          | Type 1 diabetes       | -            | VuMC  |
+#| Moodbuster/ E-COMPARED     | Depression       | ict4depression.eu    | VU     |
+#| NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
+#| Psychosystems  | Symptom Networks | psychosystems.org    | UvA                 |
+#| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
+#                |
+#| van Someren group | Sleep       | #https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/ | AMC |
+#| VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
+#| | |
+#| | |
+#| | |
+#| | | 
 
 ## The Bockting group
 \index{Bockting}
+\index{Stay fine study}
+\index{Imagine your mood study}
 Prof. dr. Claudi Bockting is a professor in clinical psychology at the psychiatry department of the AMC location of Amsterdam UMC and the Rijksuniversiteit Groningen. Her group focuses on treatment and relapse prevention of (severe) depressive disorder and related common mental health disorders.  
 
 | Aspect         | Description                                                  | 

@@ -1,4 +1,7 @@
-# R & RStudio
+# (PART) R & RStudio {-}
+
+# R & RStudio {#R & RStudio}
+\index{R and RStudio} 
 
 In this chapter, you will learn how to install and use two programs that are indispensable for the management and analysis of EMA data: R and RStudio. 
 
@@ -9,6 +12,7 @@ R is a programming language and software environment for statistical computing a
 
 
 ## Why R?
+\index{R and RStudio!Why R} 
 
 R, some may have told you, is for data scientists, methodologists, and scientific programmers only. It has a steep learning curve. If you are trained in SPSS, it will take time to become as productive in R as in SPSS. Why then, should you invest in R?
 
@@ -30,6 +34,7 @@ You don't have to be a programmer or methodologist to use R. Yes, it takes time
 to master its full potential, but you should be able to run basic analyses in it within a week. This chapter will get you started.
 
 ## Installing R & RStudio
+\index{R and RStudio!Installing} 
 
 Both R and RStudio are available, at no costs, for all major operating systems.
 
@@ -46,6 +51,7 @@ higher) of RStudio.
 
 
 ## Interacting with R through the RStudio console
+\index{R and RStudio!Console} 
 
 If you open RStudio, you will be presented with the interface shown in Figure \@ref(fig:fig2a). Rstudio's main window is divided in four panes (subwindows), which further contain several tabbed windows. 
 
@@ -86,7 +92,7 @@ The plot appears in the bottom-right pane, as in Figure \@ref(fig:fig2a).
 
 
 ## Writing R-scripts
-\index{scripts}
+\index{R and RStudio!Scripts} 
 
 Working in the console is a great way to interactively explore R and data, but
 what if you want to save a particularly useful chain of statements? For this,
@@ -109,7 +115,7 @@ Scripts can also be run line by line. Move the cursor to the line you want to ru
 
 
 ## Importing your data
-\index{Data import}
+\index{R and RStudio!Data import} 
 
 Something that confuses new Rstudio users, who are more familiar with SPSS, is
 that it is not obvious how to import data into RStudio. In SPSS, the data
@@ -150,6 +156,7 @@ ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 ```
 
 ### Accessing your data
+\index{R and RStudio!Data access} 
 
 Since the data is now in the environment (under the name `ESMdata`), you can use
 it in other R commands. For example, to produce a more detailed summary of the
@@ -195,11 +202,12 @@ There are many ways in which you can summarise and manipulate your data. At this
 
 
 ## Extending R with Packages
-\index{packages}
+\index{R packages}
 
 R's attractiveness lies in the ease with which it can be extended with new functionality. Through so-called packages, which can be freely downloaded from the internet, specialised functions can be added to your workspace.
 
 ### Installing R-packages from CRAN
+\index{CRAN}
 
 Packages can be found at the CRAN website. To browse through the impressive list
 of available packages, see 
@@ -232,6 +240,7 @@ devtools::install_github("jruwaard/emaph")
 
 
 ### Using packages
+\index{R and RStudio!Packages} 
 
 To use packages, you have to tell R to load them. You do this with the `library`
 function. For example, to use package 'tidyverse' and 'emaph', type:
@@ -258,7 +267,7 @@ ggplot(data = subset(csd, dayno <= 6),
 
 
 ## Getting help
-\index{help}
+\index{R and RStudio!Help} 
 
 R has no point-and-click menu's that you can browse through to select a statistical procedure. This is a problem for many new users. What if you want, for example, to generate random numbers from a distribution with a mean of 2 and standard deviation of 4? How to tell this to R?
 

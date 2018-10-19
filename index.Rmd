@@ -15,25 +15,27 @@ researchers who are considering Ecological Momentary Assessment (EMA) studies."
 
 # Preface {-}
 
-Given known limitations of retrospective self-report questionnaires, such as recall bias and poor generalisability of assessment results to real-life situations, mental health researchers increasingly adopt alternative assessment methods. One of the promising alternatives is Ecological Momentary Assessment (EMA), in which emotions and behaviours are repeatedly sampled in everyday life, through wearable electronic devices. 
+Given known limitations of retrospective self-report questionnaires, such as recall bias and poor generalisability of assessment results to real-life situations, mental health researchers increasingly adopt alternative assessment methods. One of the promising alternatives is Ecological Momentary Assessment (EMA), in which emotions and behaviours are repeatedly sampled in everyday life, through wearable electronic devices.
 
-Conducting an EMA study can be a challenge. Researchers, who are new to the field, face a dazzling array of options related to the electronic wearables, outcomes selection, study design considerations, ethical and regulatory constraints, data management, statistical analysis, and study reporting. Although standards are emerging, clear guidelines for EMA research do not - at present - exist.
+Repeated measurement can reveal important characteristics of the dynamics of phenomena, as illustrated by the cover of this book. With EMA, we can tap into mental health processes that were, up to very recently, unavailable to scientific research. 
+
+Conducting an EMA study, however, can be challenging. Researchers face a dazzling array of options related to the electronic wearables, outcomes selection, study design considerations, ethical and regulatory constraints, data management, statistical analysis, and study reporting. Although standards are emerging, clear guidelines for EMA research do not - at present - exist.
 
 This research manual provides a practical introduction to EMA-research. It was written for the Amsterdam School of Public Health (APH), to aid beginning researchers looking for practical advice in conducting EMA studies. It provides an overview of EMA instruments, outcomes, methods and analytical techniques, guidelines for EMA-studies, and a catalogue of EMA research in the APH consortium.
 
 The manual comprises six parts:
 
-- Part I introduces EMA and R. Chapter 1 defines EMA, and discusses the opportunities and some of the challenges of EMA research. Chapter 2 introduces R, which, as this manual aims to show, is an indespensable tool for the EMA researcher.
+- Part I introduces EMA and the statistical program R. Chapter 1 defines EMA, and discusses the opportunities and some of the challenges of EMA research. Chapter 2 introduces R, which is an indespensable tool for the EMA researcher, as will become clear throughout this manual.
 
 - Part II focuses on EMA study design (chapter 3), EMA instruments (chapter 4) and EMA data management (Chapter 5).
 
-- Part III introduces EMA data analysis techniques: Feature Extraction (chapter 6), Mixed Modelling (chapter 7), and Network Analysis (chapter 8).
+- Part III details the momentary assessment of two specific outcomes: Mood (chapter 6) and Activity (chapter 7).
 
-- Part IV details the momentary assessment of key mental health variables: Mood (chapter 9) and Activity (chapter 10).
+- Part IV introduces EMA data analysis techniques: Feature Extraction (chapter 8), Mixed Modelling (chapter 9), and Network Analysis (chapter 10).
 
-- In part V, the application of the preceding material is illustrated in three case studies: The critical Slowing Down study (CSD; chapter 11), an EMA pilot study of suicidal ideation (the CASPAR study; chapter 12), and a study into a new GPS-based measure of activity (the Home Range Estimation-study; chapter 13).
+- In part V, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (chapter 11), and a study into a new GPS-based measure of activity (chapter 12).
 
-- Part VI provides three catalogues of EMA resources. Chapter 14 lists EMA research groups, chapter 15 lists EMA instruments, and chapter 16 summarises R extensions (packages) that are useful in EMA data analysis.
+- Part VI provides three catalogues of EMA resources. Chapter 13 lists EMA research groups within APH, chapter 14 lists EMA instruments that were found to be in use among APH researchers, and chapter 15 summarises R extensions (packages) that are useful in EMA data analysis.
 
-The manual was written in Bookdown [@R-bookdown_book; @R-bookdown]. Sources are freely available at 'github', via https://github.com/jruwaard/aph_ema_handbook. Please post your comments and suggestions there, or via e-mail, through aph.ema@ggzingeest.nl.
+This manual was written in Bookdown [@R-bookdown_book; @R-bookdown]. Sources are freely available at 'github', via https://github.com/jruwaard/aph_ema_handbook. Please post your comments and suggestions there, or via e-mail, through aph.ema@ggzingeest.nl.
 

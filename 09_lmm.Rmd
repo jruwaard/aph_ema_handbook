@@ -182,9 +182,9 @@ fm <- lme(Y ~ 1 + time * group, random = ~ 1 + time | id,
 round(summary(fm)$tTable, 2)
 ```
 
-In Figure \@ref(fig:fig7k) below, EMA mood ratings predicted by the fitted model clearly show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups. 
+In Figure \@ref(fig:figk) below, EMA mood ratings predicted by the fitted model clearly show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups. 
 
-```{r fig7k, echo = FALSE, out.width = "100%", fig.asp = .5}
+```{r figk, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "Predicted mood ratings"}
 d3$predY <- predict(fm)
 ggplot(d3, aes(x = time, y = predY, group = id)) + 
   geom_line(aes(color = group), size = .6, alpha = .2) +  

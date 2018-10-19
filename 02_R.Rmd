@@ -1,5 +1,3 @@
-# (PART) R & RStudio {-}
-
 # R & RStudio {#R_and_Studio}
 \index{R and RStudio} 
 

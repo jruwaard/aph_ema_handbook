@@ -97,7 +97,7 @@ ggplot(dt, aes(x = X, y = Y, group = id)) +
 
 In more traditional longitudinal research, individuals are often assessed a limited amount of times. For example, by administering a baseline assessment, and 3-month, 6-month and 12-month follow-up. This will provide insight on a macro-level how groups behave over time. Conversely, EMA focuses on micro-processes by measuring multiple times per day for two weeks (\@ref(fig:fig01b)). 
 
-```{r fig01b , echo = FALSE, fig.cap = "34 weeks of mood data, from a single participant"}
+```{r fig01b, echo = FALSE, fig.cap = "34 weeks of mood data, from a single participant"}
 # plot figure
 ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
   geom_smooth(method = "loess", span = .05, se = FALSE, colour="black") + 

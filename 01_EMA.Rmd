@@ -2,7 +2,10 @@
 
 # (PART) Introduction {-}
 
-# What is EMA and why do we need it? {#introduction}
+# What is EMA? {#introduction}
+
+
+## What is EMA?
 
 \index{EMA} 
 \index{EMA synonyms} 
@@ -13,19 +16,73 @@
 \index{EMA synonyms!Continuous Unified Electronic Diary Method} 
 \index{EMA synonyms!Intensive-longitudinal Study Design} 
 
-Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment' [@EbnerPriemer2009] or 'Ambulatory Self-reporting' [@Conner2012a], 'Real-time Data Capturing', the 'Continuous Unified Electronic Diary Method' [@EllisDavies2012], and as the 'Intensive-longitudinal Study Design' [@Bolger2013]. The different terms stress different aspects of EMA research. All terms, however, refer to research methods that involve the repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices [@Shiffman2008].
+Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment' [@EbnerPriemer2009] or 'Ambulatory Self-reporting' [@Conner2012a], 'Real-time Data Capturing', the 'Continuous Unified Electronic Diary Method' [@EllisDavies2012], and as the 'Intensive-longitudinal Study Design' [@Bolger2013]. The different terms stress different aspects of EMA research. All, however, refer to research methods that involve the *repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices* [@Shiffman2008].
 
-EMA has been around for many years. Already in the 1980's, early pioneers used electronic devices to elicit responses from study participants to tap into (mental) health processes in everyday life [see, e.g., @Csikszentmihalyi2014]. Recent years, however, have witnessed a large increase in EMA research. Rapid technological developments, a marked interest in the individual, and a wide recognition of the need to study health-related processes in real-life situations have all contributed to this. 
+### Active versus Passive EMA
+\index{EMA!Passive EMA EMA} \index{EMA!Observational EMA|see{Passive EMA}}
+\index{EMA!Active EMA} \index{EMA!Self-report EMA|see{Active EMA}}
 
-With the increased adoption of EMA, comes a growing need for methodological guidelines. EMA studies have unique characteristics that require specialised research skills, related to study design and statistical analysis. In many cases, these skills are not part of the standard curriculum of academic departments. This book was written to fill this gap.
+In EMA research, two forms of data collection are distinguished: 1) 'Active EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with which *observational* data are collected. Active EMA requires participants to consciously provide information, for example by rating their current mood in response to a question that is prompted on their smartphone (see Figure \@ref(fig:fig01a)). In passive EMA, information is collected through wearables or logfiles without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media (see Figure \@ref(fig:fig01b)). 
 
-## What is EMA?
+Studies may combine active and passive EMA. A study into sleep patterns, for example, may involve both a self-report sleep diary and an accelerometer sensor [@Meijden2016].
 
-### Self-report versus Observational EMA
-\index{EMA!Observational EMA} \index{EMA!Passive EMA|see{Observational EMA}}
-\index{EMA!Self-report EMA} \index{EMA!Active EMA|see{Self-report EMA}}
+```{r fig01a, echo = FALSE, out.width = '100%', fig.asp = .3, fig.align='center', fig.cap='Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as MoodBuster. '}
+library(png)
+library(grid)
+library(gridExtra)
 
-In EMA research, there are two forms of data collection: EMA based on self-report (active) and EMA based on observational (passive) data. Self-report requires participants to provide information, for example by rating their current mood, activities or social interaction on items that are presented to them during EMA. For observational EMA, information is collected through wearables or logfiles without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media. Some studies combine both forms of data collection, for example by using both a self-report sleep diary and an accelerometer in order to study sleeping patterns [@Meijden2016]. 
+img <- readPNG("images/instruments/moodbuster/mb-app-mood.png") 
+g <- rasterGrob(img, interpolate=TRUE) 
+
+b <- ggplot(csd[1:52, ], aes(x = date, y = as.numeric(mood_down))) +
+  geom_smooth(method = "loess", span = 0.5, se = FALSE, colour="black", alpha = .3) + 
+  geom_point(size = 2, shape = 1, alpha = 1, position = position_jitter(height = .05),
+             colour="black") +  
+  scale_x_date() + 
+  scale_y_continuous(breaks = seq(0, 10, 2), limits = c(0, 10)) +
+  xlab("Time") + ylab("Mood") +
+  theme_bw(10)
+
+grid.arrange(g, b, ncol=2, widths = c(100, 500))
+```
+
+
+```{r fig01b, echo = FALSE, out.width = '100%', fig.asp = .3, fig.align='center', fig.cap='Passive EMA: data are collected automatically, for instance by accelerometers such as the GeneActive actiwatch.'}
+library(jpeg)
+library(grid)
+library(gridExtra)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(emaph)
+
+img <- readJPEG("images/instruments/geneactive/geneactive.jpg") 
+g <- rasterGrob(img, interpolate=TRUE) 
+
+
+
+d <-  subset(genea,
+              timestamp > "2018-06-01 13:00" &
+              timestamp < "2018-06-01 14:00" &
+              id == 1)
+
+# resample to 30 seconds
+d$timestamp <- lubridate::round_date(d$timestamp, "10 seconds")
+d <- d %>% group_by(timestamp) %>% summarise_all(.funs = mean)
+d <- gather(d,
+             key = "sensor", value = "value",
+             x, y, z, temperature, light)
+
+d <- subset(d, sensor == "x")
+b <- ggplot(d, aes(timestamp, value)) +
+  geom_line() + 
+  xlab("Time") + 
+  ylab("Acceleration (x)") +
+  theme_bw(10)
+
+grid.arrange(g, b, ncol=2, widths = c(100, 500))
+```
+
 
 
 ### EMA sampling
@@ -33,29 +90,37 @@ In EMA research, there are two forms of data collection: EMA based on self-repor
 \index{Sampling!Event-contingent} 
 \index{Sample plan|see{Sampling}}
 
-EMA sampling may focus on a single time-point (signal-contingent sampling), an event (event-contingent sampling), or a combination of both [@Conner2012b]. 
+EMA is further typified by the way in which data sampling is triggered. EMA sampling may be triggered by a signal (signal-contingent sampling), an event (event-contingent sampling), or a combination of both [@Conner2012b]. 
 
-In *signal-contingent sampling*, participants respond to questions when they are prompted to do so by a signal.  Signal-contingent sampling can follow a fixed or a random scheme. In a fixed scheme, participants are prompted at fixed time-points, for example at 9.30, 12:30, and 16:30. In a random scheme, prompts are sent at random time points, typically in pre-set intervals, for example, participants could be prompted to complete two assessments per day, one at a random time point between 10:00 and 14:00, and one at a random time point between 14:00 and 16:00. Using pre-set intervals ensures that participants do not receive several prompts within a limited time-frame [@Piasecki2007]. In addition, it ensures that participants are not bothered by prompts at inappropriate times (e.g., most participants do not appreciate prompts after 22:00 and before 7:30).
+In *signal-contingent sampling*, participants respond to questions when they are prompted to do so by a signal (or 'beeps', as these signals are often called in the literature). In *event-contingent sampling*, study participants complete an assessment whenever a specific event occurs, such as a panic attack or alcohol consumption. 
 
-In *event-contingent sampling*, study participants complete an assessment whenever a specific event occurs, such as a panic attack or alcohol consumption. One option is to simply instruct the participants to do so. In that case, it is important to be clear, in the instructions, to provide a clear definition of the target event, and to stress the importance to rate each event. In some cases, it may be possible to trigger event-based prompts automatically, for example by linking a self-report EMA questionnaire to an automatically detected change in activity level [@Smyth2003].
+Signal-contingent sampling can follow a fixed or a random scheme. In a fixed scheme, participants are prompted at fixed time-points, for example at 9:30, 12:30, and 16:30. In a random scheme, prompts are sent at random time points, typically in pre-set intervals. For example, participants could be prompted to complete two assessments per day, one at a random time point between 10:00 and 14:00, and one at a random time point between 14:00 and 16:00. Using pre-set intervals ensures that participants do not receive several prompts within a limited time-frame [@Piasecki2007]. In addition, it ensures that participants are not bothered by prompts at inappropriate times (e.g., participants may not appreciate prompts after 22:00 and before 7:30).
 
+With 'event-contingent sampling', the sample rate is determined by the occurence rate of the event. One way to implement this is to simply ask study participants to complete a questionnaire whenever the event occurs. When active EMA is combined with passive EMA, it may be also be possible to trigger event-based prompts automatically based on changes in passive data, for example by triggering an EMA questionnaire automatically whenever a significant change in activity level is detected [@Smyth2003].
 
-## Why EMA?
+## Why do we need EMA?
 \index{Recall bias}
 \index{Ecological validity} 
 \index{Microprocesses}
 
-EMA aims to "minimize recall bias, maximize ecological validity, and allow study of microprocesses that influence behavior in real-world contexts." [@Shiffman2008]. 
-Recall bias refers to the concern that in retrospective self-report information, participants' current state might affect the way they remember past events or emotions [@Shiffman2008; @Moore2016]. The idea of EMA is to evaluate participants' *current state*, rather than reflect on past experiences. By making sure participants are measured in their own environment (daily life) instead of a research specific context, such as a lab or mental healthcare centre, EMA is thought to provide *ecological valid* information that is not distorted by context.  
+### To minimize recall bias
 
-###Focus on the Individual
+In clinical research, self-report questionnaires are often used to assess the presence and severity of mental health symptoms in the recent past. While useful, these retrospective self-reports are not without drawbacks, since they tap into the memory of respondents, which can be distorted [@Shiffman2008; @Moore2016]. EMA aims to minimize recall bias by asking participants to rate their *current state*, rather than asking them to reflect on past experiences.
+
+### To increase ecological validity
+\index{Exposomics}
+
+A key feature of EMA is the collection of data in real-world environments, as participants go about their daily activities, as opposed to data collection in controlled labs or research settings [@Shiffman2008]. Thus, EMA data can be expected to result in research findings that have better ecological validity and better generalizability to the subject’s lived experience in real-world settings. Practical applications derived from EMA data are therefore expected to be more relevant to real-life situations.
+
+### To study intra-individual processes
 \index{Nomothetic research} \index{Ideographic research} 
 \index{Intra-individual process|see{Ideographic research}}
 
-EMA offers a unique opportunity to study change in individuals with repeated sampling. By doing this, EMA offers a quantitative method for idiographic research [@allport1937], measuring characteristics of (unique) individuals across time and context (within-subject) [@Shiffman2008]. This contrasts with more classic, nomothetic research, in which individuals are grouped together in order to study universal characteristics (between-subject). The relevance of idiographic research is illustrated in Figure 1 (\@ref(fig:fig01a)), where the individual effects of x on y are positive for individuals, but negative for the group as a whole. 
-In contrast to more qualitative idiographic studies, such as interviews and N=1 case studies, EMA leads to a large amount of information on each individual. This allows for testing of hypotheses. Also, by studying patterns in individuals (the intra-individual process), you can test whether individuals have similar relations between variables and which factors account for variability [@Conner2009]. This, then, allows you to make inferences to a larger population, combining both idiographic and nomothetic approaches.  
+Quantitative clinical research is largely *nomothetic*: universal characteristics of groups are the subject of study. Increasingly, however, this approach is criticised. The average group member, it is argued, does not exist, and group-level findings do not necessarily generalise to the individual members of the group, as shown by Figure \@ref(fig:fig01c).
 
-```{r fig01a, echo = FALSE, fig.cap = "An extreme case of how individual effects may be different from group effects: the effect of x on y is positive for individuals (marked by ellipses), but negative for the group (as illustrated by the negative regression line)."}
+In contrast to more qualitative idiographic studies, such as interviews and N = 1 case studies, EMA allows for the collection of large amounts of quantitative data on the individual level. Thus, EMA offers a quantitative method for *idiographic* research [@allport1937], measuring characteristics of (unique) individuals across time and context [@Shiffman2008]. This allows for a better understanding of intra-individual process, and the factors that account for variability within and between individuals [@Conner2009].
+
+```{r fig01c, fig.asp = .4, out.width = "100%", echo = FALSE, fig.cap = "An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)."}
 
 # simulate individual
 sim_p <- function(id = 1, intercept = 0, x_start = 0){
@@ -93,32 +158,14 @@ ggplot(dt, aes(x = X, y = Y, group = id)) +
 ```
 
 
-### Change over time
-
-In more traditional longitudinal research, individuals are often assessed a limited amount of times. For example, by administering a baseline assessment, and 3-month, 6-month and 12-month follow-up. This will provide insight on a macro-level how groups behave over time. Conversely, EMA focuses on micro-processes by measuring multiple times per day for two weeks (\@ref(fig:fig01b)). 
-
-```{r fig01b, echo = FALSE, fig.cap = "34 weeks of mood data, from a single participant"}
-# plot figure
-ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
-  geom_smooth(method = "loess", span = .05, se = FALSE, colour="black") + 
-  geom_point(size = .3, alpha = .3, position = position_jitter(height = .1),
-  colour="black") +  scale_x_date() + scale_y_continuous(breaks = 1:7) +
-  xlab("Time") + ylab("Mood") +
-   theme(panel.background = element_blank())
-```  
-
-
-### Real-world context and ecological validity
-\index{Exposomics}
-A key feature of EMA is the capture of data in real-world environments as subjects go about their daily activities, as opposed to data collection within a controlled lab or research setting [@Shiffman2008]. Thus, EMA data provides ecological validity and can better generalize to the subject’s lived experience or real world. Practical applications derived from the data would be more relevant and useful to life situations.  
-
-
 
 ## EMA research
 \index{Wearables}
 \index{Sensors|see{Wearables}
 
-The use of EMA in mental health research might seem novel but this methodology has a long track record. With the expansion of mobile technologies in recent years, EMA-based research in mental health has produce an impressive trove of findings that have supported and sometimes, challenged existing theories on behaviour. EMA data, whether collected as self-report or via wearable device/sensor, have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Its feasibility for mental health research is evidenced by its use in observational studies and randomized controlled trials on a wide range of topics and populations. Enough results have been generated for systematic reviews and meta-analyses pubished in recent years. Below is a non-exhaustive summary of these systematic reviews or meta-analyses.
+The use of EMA in mental health research might seem novel but this methodology has a long track record. Already in the 1980's, early pioneers used electronic devices to elicit responses from study participants to tap into (mental) health processes in everyday life [see, e.g., @Csikszentmihalyi2014]. Recent years, however, have witnessed a large increase in EMA research. Rapid technological developments, a marked interest in the individual, and a wide recognition of the need to study health-related processes in real-life situations have all contributed to this. 
+
+EMA-based research in mental health has produce an impressive trove of findings that have supported and sometimes, challenged existing theories on behaviour. EMA data, whether collected as self-report or via wearable device/sensor, have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Its feasibility for mental health research is evidenced by its use in observational studies and randomized controlled trials on a wide range of topics and populations. Enough results have been generated for systematic reviews and meta-analyses pubished in recent years. Below is a non-exhaustive summary of these systematic reviews or meta-analyses.
 
 ### Self-report EMA
 \index{EMI}

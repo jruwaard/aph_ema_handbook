@@ -19,9 +19,9 @@ Given known limitations of retrospective self-report questionnaires, such as rec
 
 Repeated measurement can reveal important characteristics of the dynamics of phenomena, as illustrated by the cover of this book. With EMA, we can tap into mental health processes that were, up to very recently, unavailable to scientific research. 
 
-Conducting an EMA study, however, can be challenging. Researchers face a dazzling array of options related to the electronic wearables, outcomes selection, study design considerations, ethical and regulatory constraints, data management, statistical analysis, and study reporting. Although standards are emerging, clear guidelines for EMA research do not - at present - exist.
+Conducting an EMA study, however, can be challenging. Researchers face a dazzling array of options related to the electronic wearables, outcomes selection, study design considerations, ethical and regulatory constraints, data management, statistical analysis, and study reporting. Although standards are emerging, clear guidelines for EMA research do not - at present - exist.  EMA studies have unique characteristics that require specialist research skills, related to study design and statistical analysis. This manual was written to fill this gap.
 
-This research manual provides a practical introduction to EMA-research. It was written for the Amsterdam School of Public Health (APH), to aid beginning researchers looking for practical advice in conducting EMA studies. It provides an overview of EMA instruments, outcomes, methods and analytical techniques, guidelines for EMA-studies, and a catalogue of EMA research in the APH consortium.
+The manual provides a practical introduction to EMA-research. It was written to aid beginning researchers of the Amsterdam School of Public Health (APH), who are looking for practical advice in conducting EMA studies. The manual provides an overview of EMA instruments, outcomes, methods and analytical techniques, guidelines for EMA-studies, and a catalogue of EMA research in the APH consortium.
 
 The manual comprises six parts:
 

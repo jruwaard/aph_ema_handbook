@@ -2,47 +2,47 @@
 
 Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Below are points to consider when deciding on a suitable EMA instrument, gleaned from the past experiences of APH researchers.
 
-#General considerations 
+## General considerations 
 
-##Costs new development vs known player
+### Costs new development vs known player
 
 When considering a platform for collecting EMA data, do you choose a platform developed by a known player or consider creating one of your own? Using a currently available platform has its advantages but it might not have the flexibility to meet your research needs. For example, the EMA application might not be adapted to include items specific to your research. If deciding on the creating a new platform, keep in mind of the costs required in terms of time and financial. 
 
 
-##Low-tech versus high-tech
+### Low-tech versus high-tech
 
 Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether your study needs to hve an advanced metods of data collection. Maybe the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
 
 
-##Access to a back-office 
+### Access to a back-office 
 
 An important consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some EMA platforms do allow configuration or customization to the needs of the researcher. Also some back office offer advisory services to researchers when adapting items. For example, using EMA to collect depression data does not mean the wholesale transportation of a validated paper questionnaire onto the EMA platform. A subjective EMA survey is not similar to an online questionnaire.
 
 
-##Validation and reliability
+### Validation and reliability
 
 Questions can also arise regarding the validity of EMA. Items used in subjective EMA have often not undergone rigorous psychometric testing, unlike traditional paper questionnaires. Also, EMA software are developed using algorithms which are not known or unavailable to the researcher to test for validity.
 
 
-## Data access
+###  Data access
 
 If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform?
 
 
-## Demands on time     
+### Demands on time     
 
 Subjective EMA could be burdensome to participants as data is collected multiple times a day for an extended period. In order to ensure continued participation, it is important that researchers have in place procedures and resources to manage study participants. Besides preparing a study protocol, it is also necessary to have a manual on how to operate the EMA device. Considerable time also needs to be invested for the training of participants; how EMA and the device works. The researcher might also have to factor in the time needed to contact the participant when data collection starts (e.g. the following day after start of study) to address possible problems, and after data collection (e.g. a debriefing).  
 
 
-##Technical considerations
+## Technical considerations
 
-###Internet access
+### Internet access
 Is access to internet or wifi an integral part of the collection process? For example, the EMA platform does not offer an app but sends an alert with a link to complete an online survey. This means that the participant needs to have online access following the alert. Otherwise, this will lead to a missed data collection. Also, if the server of the platform is down, the participant will not be able to access the online survey following an alert. 
 
 If an app is available, would the data collected be stored locally on a device before being uploaded to the server when in the vicitnity of internet access or wifi?  
 
 
-###Device limitations
+### Device limitations
 
 Ensure there is adequate local storage on device, in the event that uploading of data to a central server might be hindered. EMA studies can generate a tremendous amount of data which needs adequate storage, be it in cloud or locally on a central server. If using cloud storage or from a commercial entity, This raises the following questions the ownership of the server and the data, and also the location of the server.     
 

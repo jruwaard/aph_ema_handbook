@@ -11,7 +11,7 @@ Table: (\#tab:APHresearch) Overview of EMA research groups in APH MH.
 | Focus / PI      | Study Name              | URL                          | Organisation        |
 |:----------------|:------------------------|:-----------------------------|:--------------------|
 | **Depression**  |                         |                      |                     |
-| Bockting        | Imagine your mood       | http://tinyurl.com/ydxeo52y | AMC                 |
+| Bockting        | Imagine your mood       | http://tinyurl.com/ydxeo52y  | AMC                 |
 |                 | Stay Fine               | http://stayfine.nl           |                     |
 | Riper           | E-COMPARED              | http://ict4depression.eu     | VU                  |
 | Penninx         | NESDA                   | http://nesda.nl              | VUmc / GGz InGeest  |

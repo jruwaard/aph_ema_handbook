@@ -197,7 +197,7 @@ While available reviews suggest that EMA is a feasible research method that has 
 \index{EMA research!Substance-related disorders}
 \index{EMA research!Mental health/ Well-being}
 
-Table: (\#tab:emareviews) An Illustrative Selection of Reviews of EMA studies targeting various mental Health Conditions
+Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting various mental health conditions
 
 | **Topic**        | **Author (Year)**        | **Outcome**        |
 |:--------------------|:--------------------|:--------------------|

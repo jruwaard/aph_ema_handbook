@@ -88,13 +88,13 @@ knitr::include_graphics(c(
 
 ## MoodBuster
 
-MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated (Android) EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
+MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
 
 In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satelite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImplementAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
 
-Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online backoffice is in development. While this can be advantage, as researchers ths have more options for custom development, it may take longer before an EMA-study can be started (depending on the specific requirements of the study). Another limitation is that only an Android version of the app is currently available. However, experimental cross-platform versions of the app have been tested in Portugal.
+Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online backoffice is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
 
-More information on MoodBuster can be requested from Dr. Jiska Aardoom (j.j.aardoom@vu.nl), or prof. dr. Heleen Riper (h.riper@vu.nl).
+More information on MoodBuster can be obtained from prof. dr. Heleen Riper (h.riper@vu.nl).
 
 ```{r moodbuster, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(

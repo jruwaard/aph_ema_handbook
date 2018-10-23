@@ -77,7 +77,7 @@ Dimensional models assume that every affective state or emotion should be descri
 \index{Circumplex model}
 \index{Mood assessment!Pick-a-mood scale}
 
-The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from low to high arousal) and affect (ranging from unpleasant to pleasant). Combining scores on these scales places the affective states in a circle on one of four quadrants (\@ref(fig:fig09c)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated. 
+The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from unpleasant to pleasant) and arousal/activation (ranging from low to high arousal). Combining scores on these scales places the affective states in a circle on one of four quadrants (\@ref(fig:fig09c)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated. 
 
 ```{r fig09c, fig.cap = "Russell's Circumplex model of affect.", echo = FALSE, out.width = '60%'}
 knitr::include_graphics("images/outcomes/Russell1980.png")

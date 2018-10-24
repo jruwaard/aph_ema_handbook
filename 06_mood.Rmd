@@ -30,8 +30,8 @@ Respondents usually rate these questions on a Visual Analogue Scale (VAS), aimed
 
 Plotting data from an unidimensional item in a graph is an easy way to visually inspect within-subject change in general mood:
 
-```{r fig09a, fig.cap = "34 weeks of mood data, from a single participant"}
-# code snippet 9.1: plotting data over time
+```{r fig06a, fig.cap = "34 weeks of mood data, from a single participant"}
+# Code snippet 6.1: plotting data over time.
 library(ggplot2) 
 library(emaph)
 
@@ -54,8 +54,8 @@ In order to make sure all constructs of interest are measured, you can also cons
 
 Combining data from multiple items, such as mood and loneliness, in one graph can provide respondents with insight in the interaction between the constructs. In r two variables can easily be plotted together:
 
-```{r fig09b, fig.cap = "34 weeks of combined mood data, from a single participant"}
-# code snippet 9.2: Plotting multiple variables in one graph
+```{r fig69b, fig.cap = "34 weeks of combined mood data, from a single participant"}
+# Code snippet 6.2: Plotting multiple variables in one graph.
 library(ggplot2) 
 library(emaph)
 
@@ -77,9 +77,9 @@ Dimensional models assume that every affective state or emotion should be descri
 \index{Circumplex model}
 \index{Mood assessment!Pick-a-mood scale}
 
-The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from unpleasant to pleasant) and arousal/activation (ranging from low to high arousal). Combining scores on these scales places the affective states in a circle on one of four quadrants (\@ref(fig:fig09c)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated. 
+The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from unpleasant to pleasant) and arousal/activation (ranging from low to high arousal). Combining scores on these scales places the affective states in a circle on one of four quadrants (\@ref(fig:fig06c)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated. 
 
-```{r fig09c, fig.cap = "Russell's Circumplex model of affect.", echo = FALSE, out.width = '60%'}
+```{r fig06c, fig.cap = "Russell's Circumplex model of affect.", echo = FALSE, out.width = '60%'}
 knitr::include_graphics("images/outcomes/Russell1980.png")
 ```
 
@@ -117,8 +117,8 @@ There are several short-forms available. For example, Wichers and colleagues cre
 PA and NA were calculated as the average score across all items and weighted for their factor loadings [@Wichers2012].
 In r, such a factor analysis can be executed as follows: 
 
-```{r fig09e, fig.cap = "Factor analysis of 7 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
-# code snippet 9.3: Performing a factor analysis
+```{r fig06e, fig.cap = "Factor analysis of 7 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
+# Code snippet 6.3: Performing a factor analysis.
 library(dplyr)
 library(tibble)
 

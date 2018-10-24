@@ -35,8 +35,8 @@ Here, we will use the 'sim_ema' function from package 'emaph', to simulate EMA m
 
 As you can learn from the documentation of 'sim_ema' (see '?sim_ema'), the function expects at least two arguments: the definition of a sample plan (see '?sample_plan'), and a specification of the data-generating model, in the form of a list defining fixed effects, the random effects, and residual variance (i.e, the error). From these specifications, a data set is simulated (which is assigned to variable d1).
 
-```{r cs7a_}
-# code snippet 7.1: Simulating ema data.
+```{r cs9a_}
+# Code snippet 9.1: Simulating ema data.
 library(emaph)
 plan <- sample_plan(n_participants = 100, 
                     n_days = 7,
@@ -51,9 +51,9 @@ d1 <- sim_ema(plan,
               lim = c(0, 10))
 ```
 
-Figure \@ref(fig:fig7a) shows EMA mood ratings of the first 6 participants in the simulated data set. Mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line), as specified. 
+Figure \@ref(fig:fig9a) shows EMA mood ratings of the first 6 participants in the simulated data set. Mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line), as specified. 
 
-```{r fig7a, out.width = "100%", fig.asp = .4, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants."}
+```{r fig9a, out.width = "100%", fig.asp = .4, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants."}
 library(ggplot2)
 ggplot(subset(d1, id %in% unique(d1$id)[1:6]), 
        aes(x = time, y = Y, group = id)) + 
@@ -70,8 +70,8 @@ Now, let's fit a mixed model to the data, to see whether the simulation paramete
 
 The first argument of the lme function , 'Y ~ 1', specifies the fixed 'effect' (in this case: the mean intercept). The second argument, 'random = ~ 1 | id' specifies the random effect: in this model, intercepts are allowed to vary between participants. The fitted model is assigned to variable fm.
 
-```{r cs7a}
-# code snippet 7.2: Fitting a mixed model with lme.
+```{r cs9b}
+# Code snippet 9.2: Fitting a mixed model with lme.
 library(nlme)
 fm <- lme(Y ~ 1, random = ~ 1 | id, 
           data = d1)
@@ -79,26 +79,26 @@ fm <- lme(Y ~ 1, random = ~ 1 | id,
 
 We can now extract the fixed effects regression coefficients table, by calling the 'summary' function on the fitted model. The estimated intercept should be around to 5 (as this is a finite sample, we expect some deviation): 
 
-```{r cs7b}
-# code snippet 7.3: Print fixed effects.
+```{r cs9c}
+# Code snippet 9.3: Print fixed effects.
 summary(fm)$tTable
 ```
 
 Random effects and residual variance are shown by the 'VarCorr' function. Again, since we specified the data ourselves in this case, we know the 'true' value of these parameters: the random intercept variance should be around .5 and the residual error variance should be close to .2. 
 
-```{r cs7c}
-# code snippet 7.4: Fitted random effects.
+```{r cs9d}
+# Code snippet 9.4: Fitted random effects.
 VarCorr(fm)
 ```
 
 It can be instructive to plot the predicted values of the model, to make clear how the model 'thinks'. As shown by Figure \@ref(fig:fig7b), the model predicts a series of straight lines, one for each participant, that vary around 5.
 
-```{r cs7d7}
-# code snippet 7.5: Saving predicted values.
+```{r cs9e}
+# Code snippet 9.5: Saving predicted values.
 d1$predY <- predict(fm)
 ```
 
-```{r fig7b, out.width = "100%", fig.asp = 0.3, fig.cap = "EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.", echo = FALSE}
+```{r fig9b, out.width = "100%", fig.asp = 0.3, fig.cap = "EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.", echo = FALSE}
 ggplot(d1, aes(x = time, y = predY, group = id)) + 
   geom_line(alpha = .1, size = .6) + 
   geom_smooth(aes(group = NULL), method = "lm", color = "blue") + 
@@ -111,8 +111,8 @@ Now that we know how to fit a simple mixed model, we can consider a more complic
 
 Let's first call 'sim_ema' again, with parameters that will result in data in which mood rating increase over the course of the week, 0.5 scale points per day. Let's also assume that individual participants will vary in the degree of mood improvement: the mean time effect will be 0.5, but this parameter is allowed to vary between participants, with a variance of 0.05.
 
-```{r}
-# code snippet 7.6: Simulating ema data (time effect).
+```{r cs9f}
+# Code snippet 9.6: Simulating ema data (time effect).
 d2 <- sim_ema(plan, 
               mm_par = list(fixed  = c(intercept = 5, time = 0.5),
                             random = c(intercept = 1, time = 0.1),
@@ -120,9 +120,9 @@ d2 <- sim_ema(plan,
               lim = c(0, 10))
 ```
 
-Figure \@ref(fig:fig7e) shows the data of the first six participants in the second data set. Both the intercept and the slope vary across the participants. Some participants improve more over time, and others improve less: the slope in this data set is a random effect.
+Figure \@ref(fig:fig9c) shows the data of the first six participants in the second data set. Both the intercept and the slope vary across the participants. Some participants improve more over time, and others improve less: the slope in this data set is a random effect.
 
-```{r fig7e, out.width = "100%", fig.asp = .4, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants (Time-varying model)."}
+```{r fig9c, out.width = "100%", fig.asp = .4, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants (Time-varying model)."}
 ggplot(subset(d2, id %in% unique(d2$id)[1:6]), 
        aes(x = time, y = Y, group = id)) + 
   geom_line() + 
@@ -134,8 +134,8 @@ ggplot(subset(d2, id %in% unique(d2$id)[1:6]),
 
 To fit the extended mixed model, time can simply be added to both the fixed and random arguments of the 'lme' function.  Fixed effects estimated of this model should be around 5 and 0.5, since that is how we specified the data. Calling 'summary' on this function, we see that the fixed time effect is significant. 
 
-```{r cs7f}
-# code snippet 7.7: A mixed model, with a random slope.
+```{r cs9g}
+# Code snippet 9.7: A mixed model, with a random slope.
 library(nlme)
 fm <- lme(Y ~ 1 + time, random = ~ 1 + time | id, 
           data = d2)
@@ -144,14 +144,14 @@ summary(fm)$tTable
 
 The random effects now has four components: the variance of the intercept, the variance of the slope, the residual error *and* the correlation between the random intercept and the random slope.
 
-```{r cs7g}
-# code snippet 7.8: Extracting random effects.
+```{r cs9h}
+# Code snippet 9.8: Extracting random effects.
 VarCorr(fm)
 ```
 
 Model predictions cleary show how the mixed model estimated varying intercepts and slopes, that, on average, reflect the fixed effect regression formula 'Y ~ 5 + 0.5 * time'. 
 
-```{r fig7f, out.width = "100%", fig.asp = 0.4}
+```{r fig9d, out.width = "100%", fig.asp = 0.4}
 d2$predY <- predict(fm)
 
 ggplot(d2, aes(x = time, y = predY, group = id)) + 
@@ -165,8 +165,8 @@ In data-set 1, mood ratings did not change during the week, while in data-set 2,
 
 Since the two data-sets are already available (in d1 and d2), the new data set can be created with just three lines of code (below). In the first line, the 'rbind' function is used to combine the rows of data-set 1 and 2 into a new variable:  data.frame d3. The second line adds a group indicator to d3. The third line updates the id's of the participants in the second group, to explicitly differentiate the participants in the second group from the participants in the first group.
 
-```{r cs7h}
-# code snippet 7.9: two-group simulation.
+```{r cs9i}
+# Code snippet 9.9: two-group simulation.
 d3 <- rbind(d1, d2)
 d3$group <- factor(c(rep(0, nrow(d1)), rep(1, nrow(d2))))
 d3$id[d3$group == 1] <- d3$id[d3$group == 1] + 100
@@ -174,17 +174,17 @@ d3$id[d3$group == 1] <- d3$id[d3$group == 1] + 100
 
 The effect of the intervention can be tested by adding a (fixed) 'time * group' interaction effect to the model. This effect, we know, is 0.5, and, as can be seen, this is what the model picks up:
 
-```{r cs7i}
-# code snippet 7.10: A mixed model, with two groups.
+```{r cs9j}
+# Code snippet 9.10: A mixed model, with two groups.
 library(nlme)
 fm <- lme(Y ~ 1 + time * group, random = ~ 1 + time | id, 
           data = d3)
 round(summary(fm)$tTable, 2)
 ```
 
-In Figure \@ref(fig:figk) below, EMA mood ratings predicted by the fitted model clearly show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups. 
+In Figure \@ref(fig:fig9e) below, EMA mood ratings predicted by the fitted model clearly show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups. 
 
-```{r figk, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "Predicted mood ratings"}
+```{r fig9e, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "Predicted mood ratings"}
 d3$predY <- predict(fm)
 ggplot(d3, aes(x = time, y = predY, group = id)) + 
   geom_line(aes(color = group), size = .6, alpha = .2) +  
@@ -197,6 +197,6 @@ ggplot(d3, aes(x = time, y = predY, group = id)) +
 
 In this chapter, we introduced mixed model analysis of EMA data. To do so, we could only touch upon the theoretical foundations of mixed models, and we deliberately used simple examples with clean simulated data. Readers, who consider the application of mixed models, are strongly advised to study additional resources.
 
-The authoritative reference for mixed effect modeling in R is a book by Pinheiro and Bates [-@Pinheiro2000]. To fully appreciate this book, however, a strong background in formal statistics is required. Gentle introductions in the topic can be found in XXX, YYY and ZZZ ().   
+The authoritative reference for mixed effect modeling in R is a book by Pinheiro and Bates [-@Pinheiro2000]. To fully appreciate this book, however, a strong background in mathemathical statistics is required. Gentle introductions in the topic can be found in XXX, YYY and ZZZ ().   
 
 

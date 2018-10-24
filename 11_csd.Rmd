@@ -35,8 +35,8 @@ going to use several functions from the tidyverse.
 
 - DFA is implemented in package 'nonlinearTseries', so we will need that as well.
 
-```{r cs13a}
-# Code snippet 13.1: required libraries for the CSD-study re-analysis.
+```{r cs11a}
+# Code snippet 11.1: required libraries for the CSD-study re-analysis.
 library(emaph)
 library(tidyverse)
 library(nonlinearTseries)
@@ -49,8 +49,8 @@ Let's take a look at the development of the depressive symptoms of the patient f
 
 The code below reconstructs Figure 1 of the Wichers et al article. It plots the SCL90-R depression scale score over the time. Around day 120, the depression score increased considerable: the patient experienced a relapse.
 
-```{r cs13b, out.width = "100%", fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
-# Code snippet 13.2: Plot depression score
+```{r cs11b, out.width = "100%", fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
+# Code snippet 11.2: Plot depression score.
 dep <- csd %>% select(dayno, scl90r_dep) %>%
   filter(!is.na(scl90r_dep)) %>% unique
 
@@ -68,7 +68,7 @@ items), mental unrest (mu; 3 items), suspiciousness (su; 1 item), and worrying
 (wo; 1 item). From these factors, an overall mental state sum score can be calculated.
 
 ```{r cs13c}
-# Code snippet 13.3: mood states calculation
+# Code snippet 11.3: mood states calculation.
 
 # positive affect
 pa_items <- c("mood_enthus", "mood_cheerf",
@@ -104,8 +104,8 @@ csd$ms <- rowSums(csd[c("pa", "na", "mu", "su", "wo")])
 
 Rows, in which one or more of the factors have missing values, are removed from the analysis. In a full analysis, options to impute the missing values could and should be considered. However, since only 3 of the 1476 rows have missing item scores, not much is probably lost by running a simple complete-case analysis.
 
-```{r cs13d}
-# Code snippet 13.3: missing value removal
+```{r cs11d}
+# Code snippet 11.4: missing value removal.
 
 # count number of items with missing items, per row
 csd$nna <- csd %>%
@@ -119,8 +119,8 @@ csd <- csd %>% filter(nna == 0)
 
 ## Running the DFA
 
-```{r}
-# code snippet #13c: Running the DFA
+```{r cs11e}
+# Code snippet 11.5: Running the DFA.
 
 # prepare result rows: one row for each day
 d <- NULL
@@ -160,9 +160,8 @@ for (i in seq(window, max(csd$dayno), 7)) {
 We can now plot the DFA indicator over time, to see whether it peaks prior to the onset of the relapse. As can be seen, the DFA-indicator clearly pleaks prior to the onset of the relapse, around day 110. Interestingly, a second peak is reached at the end of the experiment, around day 239, possibly to indicate a recovery from the relapse. 
 
 
-```{r cs13h, eval = TRUE, out.width = "100%", fig.asp = .4, fig.cap = "Results of the DFA analysis.", warning = FALSE}
-# Code snippet 13.8: Plot DFA results
-
+```{r cs11f, eval = TRUE, out.width = "100%", fig.asp = .4, fig.cap = "Results of the DFA analysis.", warning = FALSE}
+# Code snippet 11.6: Plot DFA results.
 ggplot(na.omit(d),
       aes(x = dayno, y = ms_dfa, 
           colour = factor(dayno < 120), 

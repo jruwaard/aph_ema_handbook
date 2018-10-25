@@ -16,7 +16,7 @@ R, you may have been told, is for data scientists, methodologists, and scientifi
 
 - Unlike SPSS, R is free. It does not eat up your budget. Why pay for something that you can get for free?
 
-- R is cutting-edge. Methodological innovations first appear in R. Network analyses, for example (see Chapter 9), can be run in R, but not (yet) in SPSS. For some analyses, you need this alternative.
+- R is cutting-edge. Methodological innovations first appear in R. Network analyses, for example (see Chapter \@ref(lmm)), can be run in R, but not (yet) in SPSS. For some analyses, you need this alternative.
 
 - Mastering R improves your connection to the statisticians in your team. They
 probably prefer R over SPSS. It is more efficient and less error-prone to all

@@ -1,12 +1,5 @@
----
-editor_options:
-  chunk_output_type: console
-output:
-  html_document: default
-  pdf_document: default
----
 
-# R packages for EMA research {#rcat}
+# R Packages for EMA Research {#rcat}
 
 Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages are discussed. For each, we provide a summary description, a code example code, and pointers to further documentation, to give you a head start in using the packages for your work.
 
@@ -74,6 +67,7 @@ Accelerometer data need considerable pre-processing before final analyses can be
 GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that is often used in clinical research studies. With package ***GENEAread*** [@R_GENEAread], raw data can be imported into R for further processing, as illustrated below.    
 
 ```{r out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).", message = FALSE, warning = FALSE}
+# Code snippet 15.1: Reading raw sensor data.
 library(GENEAread)
 library(tidyr)
 
@@ -103,7 +97,8 @@ Package *GGIR* [@R-GGIR] is a packages to pre-process raw acceleromety data from
 
 Package ***'PhysicalActivity'*** [@R-PhysicalActivity] provides an alternative to package 'GGIR', when ActiGraph data are available.
 
-```{r fig11a, fig.cap="Activity Counts (5-minute windows), in a Three-day Accelerometer data set.", out.width = "100%", fig.asp = .4}
+```{r fig15a, fig.cap="Activity Counts (5-minute windows), in a Three-day Accelerometer data set.", out.width = "100%", fig.asp = .4}
+# Code snippet 15.2: plotting activity counts.
 library(PhysicalActivity)
 library(ggplot2)
 
@@ -126,8 +121,8 @@ The tidyverse is a collection of well-designed packages, authored by the team be
 
 Package ***'dplyr'*** [@R-dplyr] implements the 'split-apply-combine'-strategy. With 'dplyr', elementary data manipulations can be e chained (using the pipe operator '%>%') to elegantly implement complex data transformations. 
 
-```{r cs18c}
-# code snippet 18.3: aggregate data by ID, through a 'pipe'
+```{r cs15c}
+# Code snippet 15.3: aggregate data by ID, through a 'pipe'.
 require(dplyr)
 
 d <- data.frame(
@@ -149,8 +144,8 @@ Package ***'ggplot2*** [@wickham2016ggplot2] provides a collection of high-level
 
 The example below illustrates how graphs are layered. In the first step, a coordinate system is set up. In step 2, all time/scores points are plotted. In step 3, a smoothed line is fitted through these points. Finally, in step 4, the graph is split on a variable ID (a subject identifier), to show individual trajectories.
 
-```{r cs18b, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.asp = .4, fig.show = "hold"}
-# code snippet 18.2: simple ggplot example
+```{r cs15d, fig.cap = "Plotting layers with ggplot2", out.width = '45%', fig.asp = .4, fig.show = "hold"}
+# Code snippet 15.4: simple ggplot example.
 library(ggplot2)
 
 # simulate example data 
@@ -179,7 +174,8 @@ g + facet_wrap(~ ID)
 
 With package ***haven*** [@R-haven], SPSS, STATA and SAS files can be read into R.
 
-```{r}
+```{r cs15e}
+# Code snippet 15.5: read SPSS data
 library(haven)
 
 path <- system.file("examples", "iris.sav", package = "haven")
@@ -196,7 +192,8 @@ EMA data analyses frequently require manipulations of datetime variables. For th
 
 In the code snippet below, for example, the 'round_date' function is used to calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute epoch windows.
 
-```{r}
+```{r cs15f}
+# code snippet 15.6: rounding dates.
 library(emaph)
 library(lubridate)
 library(ggplot2)
@@ -227,8 +224,8 @@ Several R-packages for mixed-effects modelling exist. The most popular are packa
 
 Package **nlme** is introduced in chapter \@ref(lmm). It is an older package (in comparison to package lme4), that is still used a lot because it provides options to model correlational structures that are not implemented (yet) in lme4.
 
-```{r cs18d, nlme_example}
-# code snippet 18.4: fit a linear mixed model, with lme
+```{r cs15g, nlme_example}
+# Code snippet 15.7: fit a linear mixed model, with lme.
 library(nlme)
 fm <- lme(distance ~ age + Sex, data = Orthodont, random = ~ 1)
 
@@ -240,10 +237,11 @@ fixef(fm)
 
 Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed-effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, models specifications in 'lmer' are different from model specifications in 'lme'. 
 
-```{r cs18e, lme4_example, eval = TRUE}
-# code snippet 18.4: fit a linear mixed model, with lme
+```{r cs15h, lme4_example, eval = TRUE}
+# Code snippet 15.8: fit a linear mixed model, with lme.
 library(lme4)
 fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
+
 fixef(fm)
 ```
 
@@ -254,9 +252,9 @@ fixef(fm)
 
 With package 'simr' [@Green2016], power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the "true" parameters of a mixed model, and a single data set. Then,  function 'simPower' can be used to simulate new datasets and tests (of a specified parameter in the model), to determine the power of the test. 
 
-```{r cs3c}
-# code snippet 3.3: Power analysis of a two-group repeated measures design
-# (simulation approach)
+```{r cs15i}
+# Code snippet 15.9: Power analysis of a two-group repeated measures design
+# (simulation approach).
 library(simr)
 
 # construct design matrix 
@@ -289,19 +287,6 @@ powerSim(model1,
          progress = FALSE)
 ```
 
-## Spatio-temporal analysis: 
-
-### GPS data: Package `adehabitatHR`
-\index{Packages!adehabitatHR}
-
-Package **adehabitatHR** [@Calenge2006] was created for the study of the habitat of wild animals, using accelerometer and GPS data. Defined procedures can be used for the analysis of human data as well.
-
-```{r cs18g, eval = FALSE}
-library(adehabitatHR)
-
-
-```
-
 
 ## Symptom Network Analysis
 \index{symptom networks}
@@ -318,7 +303,8 @@ Vector autoregressive (VAR) models can be used to detect lagged relationships be
 
 In the (unrealistic) example below, function 'autovar' is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set: 
 
-```{r eval = TRUE}
+```{r cs15k, eval = TRUE}
+# Code snippet 15.11: autovar analysis.
 library(autovarCore)
 
 # simulate data
@@ -346,7 +332,9 @@ Package ***qgraph*** [@Epskamp2012] can be used to fit, visualise and analyse gr
 
 In the example below, qgraph is used to fit a network on the 'Critical Slowing Down' (CSD) data set, which is included in package 'emaph' (see ?csd and Chapter \@ref(networks)). 
 
-```{r csd83, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
+```{r cs15l, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
+# Code snippet 15.12:  fitting a network with qgraph.
+
 library(qgraph)
 library(emaph)
 
@@ -373,7 +361,8 @@ In the interpretation of fitted network plots, it is important to take the stabi
 
 Below, the stability of the network that was fit in the prevous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
 
-```{r out.width = "100%", fig.asp = .4}
+```{r cs15m, out.width = "100%", fig.asp = .4}
+# Code snippet 15.13: a bootstrapped network. 
 library(bootnet)
 
 g <- estimateNetwork(d, default = "EBICglasso",
@@ -390,8 +379,8 @@ plot(results, order = "mean")
 
 Disturbances in circadian rhythms have been related to depressive symptoms [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhytms can be detected in EMA data. Standard analysis techniques, however, expect regular timeseries, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976], which can be applied to unevenly-sampled timeseries as well. Package ***lomb*** [@ruf1999] implements this procedure.
 
-```{r cs18f, out.width='98%'}
-# code snippet 18.5: calculating a Lomb-Scargle periodogram
+```{r cs15n, out.width='98%'}
+# Code snippet 15.14: calculating a Lomb-Scargle periodogram.
 data(ibex, package = "lomb") 
 lomb::lsp(ibex[2:3]) 
 ```

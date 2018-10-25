@@ -29,8 +29,7 @@ sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.  
 
-```{r fig6a, out.width = '98%', fig.asp = 1.1, fig.cap = "features of a series."}
-# Figure 6a: Features of a timeseries
+```{r fig8a, echo = FALSE, out.width = '98%', fig.asp = 1.1, fig.cap = "features of a series."}
 d <- data.frame(i = 1:100)
 
 d$x <- rnorm(nrow(d), 0, 2)

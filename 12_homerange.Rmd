@@ -27,6 +27,15 @@ sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.  
 
+## Spatio-temporal analysis: 
+
+Package **adehabitatHR** [@Calenge2006] was created for the study of the habitat of wild animals, using accelerometer and GPS data. Defined procedures can be used for the analysis of human data as well.
+
+```{r cs12a, eval = FALSE}
+# code snippet 12.1
+library(adehabitatHR)
+```
+
 Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
 odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
 consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean

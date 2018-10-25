@@ -1,4 +1,4 @@
-# R & RStudio {#R_and_Studio}
+# Introducing R & RStudio {#R_and_Studio}
 \index{R and RStudio} 
 
 In this chapter, you will learn how to install and use two programs that are indispensable for the management and analysis of EMA data: R and RStudio. 
@@ -12,7 +12,7 @@ R is a programming language and software environment for statistical computing a
 ## Why R?
 \index{R and RStudio!Why R} 
 
-R, some may have told you, is for data scientists, methodologists, and scientific programmers only. It has a steep learning curve. If you are trained in SPSS, it will take time to become as productive in R as in SPSS. Why then, should you invest in R?
+R, you may have been told, is for data scientists, methodologists, and scientific programmers only. It has a steep learning curve. If you are trained in SPSS, it will take time to become as productive in R as in SPSS. Why then, should you invest in R?
 
 - Unlike SPSS, R is free. It does not eat up your budget. Why pay for something that you can get for free?
 

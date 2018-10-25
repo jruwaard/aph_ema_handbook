@@ -1,52 +1,9 @@
-```{r include=FALSE, cache=FALSE}
-# # Reproducability --------------------------------------------------------------
-# 
-# # fix random numbers
-# set.seed(1014)
-# 
-# 
-# # knitr chunk options ----------------------------------------------------------
-# 
-knitr::opts_chunk$set(
-  comment = "#>",
-  collapse = TRUE,
-  cache = FALSE,
-  out.width = "98%",
-  fig.align = 'center',
-  fig.width = 7,
-  fig.asp = 0.5,  # was: 0.618 (1 / phi)
-  fig.show = "hold",
-  message = FALSE,
-  warning = FALSE
-)
-# 
-# options(width = 120)
-# 
-# 
-# # standard libraries -----------------------------------------------------------
-library(ggplot2)
-library(emaph)
-# 
-# 
-# # theming ----------------------------------------------------------------------
-# 
-# # avoid long pint-out of numeric variables
-# #options(digits = 3)
-# 
-# # avoid long print-outs of tables
-# #options(dplyr.print_min = 6, dplyr.print_max = 6)
-# 
-# # common theme of all ggplot images
-# #theme_set(theme_bw(12))
-# 
-# 
-```
 
 # EMA Instruments Catalogue {#ema-instruments-catalogue}
 
 To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a (small) selection of instruments that we found to be in use in scientific studies within the APH consortium.
 
-Table: (\#tab:17a) EMA Instruments.
+Table: (\#tab:14a) EMA Instruments.
 
 | Name         | Manufacturer      | URL               | Description
 |-------------:|------------------:|------------------:|-------------------------------|
@@ -69,7 +26,7 @@ GENEActive is used in a growing number of clinical studies to measure activity a
 knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")
 ```
 
-## Illumivu
+## Ilumivu
 
 Ilumivu (see https://ilumivu.com/) is an American commercial company specialized in mobile EMA application development. It offers a cross-platform (Android and IOS) smartphone app (mEMA) that researchers can use to collect data from study participants. Researchers can define the assessment plan of their study in an online backoffice (i.e., without any assistance from Illumivu staff). 
 
@@ -125,8 +82,6 @@ The PsyMate™ app (www.psymate.eu) was developed by the Department of Psychiatr
 The app is free to download for iOS and Android devices on Apple and Google play stores. Uses for the app include self-monitoring of mood states, for professional support during treatment, or for research purposes. The app can be customized to address specific client needs or research projects with expertise from the Psymate back office, which includes a working group that meets regularly to discuss and advise new projects.
 
 Researchers have access to the raw data without having to go through the Psymate back office. A disadvantage of the Psymate app is that technical problems could arise when there are either iOS or Android updates. Communication from the Psymate back office to researchers about updates and assistance with technical problems could be a point for consideration for using this platform.
-
-
 
 ```{r psymate, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(

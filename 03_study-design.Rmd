@@ -49,8 +49,7 @@ Issues related to hardware should also be considered. Electronic wearables have 
 Once all decisions related to the sampling plan are made, the procedure should be thoroughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below, using the 'sample_plan' function, which is part of package 'emaph':
 
 ```{r fig3a, echo = TRUE, fig.cap = "Generated two-day EMA sampling plan, for 5 participants", out.width = "95%", fig.asp = .4}
-# code snippet 3.1: simulating a signal-contingent sample plan
-
+# Code snippet 3.1: simulating a signal-contingent sample plan.
 library(emaph)
 plan <- sample_plan(n_participants = 5,
                     n_days = 2,
@@ -69,8 +68,8 @@ Conducting a power analysis can be easy or very difficult, depending on the comp
 For example, to use 'pwr' to calculate the power of a t.test to detect a moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided) significance level alpha of .05, type:
 
 ```{r}
-# code snippet 3.2: Power analysis of a t-test
-# (analytical approach)
+# Code snippet 3.2: Power analysis of a t-test
+# (analytical approach).
 
 library(pwr)
 pwr.t.test(d = 0.5, 
@@ -85,8 +84,8 @@ The power is 48% - not even close to the generally adopted standard of 80%. More
 EMA study designs are often characterized by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happens, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation: 
 
 ```{r}
-# code snippet 3.2: Power analysis of a t-test
-# (simulation approach)
+# Code snippet 3.3: Power analysis of a t-test
+# (simulation approach).
 
 m1 = 0   # mean in group 1  
 m2 = 0.5 # mean in group 2
@@ -140,7 +139,7 @@ All clinical studies that involve human participants need to be evaluated by a M
 
 In short, software can be classified as a medical device when it collects patient-specific data and when it is specifically intended for one of the above-mentioned objectives. In practice, the definition of medical devices leaves a lot of room for confusion.  Researchers often struggle with the question whether their assessment tools should be considered an medical device or not. For this purpose, flowcharts exist that help to determine whether an app of product should be classified as a medical device [see, e.g., @Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows such a flow-chart.
 
-```{r fig3b, fig.cap = "Flow-chart to determine whether study software should be considered a medical device.", echo = FALSE, out.width = '71%'}
+```{r fig3b, fig.cap = "Flow-chart to determine whether study software should be considered a medical device.", echo = FALSE, out.width = '65%'}
 knitr::include_graphics("images/outcomes/Flow_MD.png")
 ```
 

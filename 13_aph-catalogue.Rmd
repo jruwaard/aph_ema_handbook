@@ -1,12 +1,12 @@
 
-# (PART) EMA Catalogue {-}
+# (PART) EMA Catalogues {-}
 
 
-# EMA research in APH Mental Health {#catalogue}
+# EMA Research within the APH Mental Health Consortium {#catalogue}
 
 This chapter summarises EMA research projects within the APH Mental Health consortium, as a guide to other researchers looking for nearby EMA-expertise and research collaboration. An overview of identified projects is presented in Table \@ref(tab:APHresearch). Detailed summaries are presented below. 
 
-Table: (\#tab:APHresearch) Overview of EMA research groups in APH MH.
+Table: (\#tab:APHresearch) Overview of EMA research groups in the APH MH consortium.
 
 | Focus / PI      | Study Name              | URL                          | APH MH Organisation |
 |:----------------|:------------------------|:-----------------------------|:--------------------|

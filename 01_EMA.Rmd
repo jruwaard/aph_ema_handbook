@@ -19,7 +19,7 @@
 Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment' [@EbnerPriemer2009] or 'Ambulatory Self-reporting' [@Conner2012a], 'Real-time Data Capturing', the 'Continuous Unified Electronic Diary Method' [@EllisDavies2012], and as the 'Intensive-longitudinal Study Design' [@Bolger2013]. The different terms stress different aspects of EMA research. All, however, refer to research methods that involve the *repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices* [@Shiffman2008].
 
 ### Active versus Passive EMA
-\index{EMA!Passive EMA EMA} \index{EMA!Observational EMA|see{Passive EMA}}
+\index{EMA!Passive EMA} \index{EMA!Observational EMA|see{Passive EMA}}
 \index{EMA!Active EMA} \index{EMA!Self-report EMA|see{Active EMA}}
 
 In EMA research, two forms of data collection are distinguished: 1) 'Active EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with which *observational* data are collected. Active EMA requires participants to consciously provide information, for example by rating their current mood in response to a question that is prompted on their smartphone (see Figure \@ref(fig:fig01a)). In passive EMA, information is collected through wearables or log files without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media (see Figure \@ref(fig:fig01b)).Studies may combine active and passive EMA. A study into sleep patterns, for example, may involve both a self-report sleep diary and an accelerometer sensor [@Meijden2016].
@@ -164,12 +164,14 @@ The use of EMA in mental health research might seem novel but this methodology h
 EMA-based research in mental health has produced an impressive trove of findings that have supported and, sometimes, challenged existing theories on behavior. EMA data, whether collected as self-report or via wearable device/sensor, have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Its feasibility for mental health research is evidenced by its use in observational studies and randomized controlled trials on a wide range of topics and populations. Below, we present a non-exhaustive summary of systematic reviews and meta-analyses of EMA research.
 
 ### Active EMA
+\index{EMA!Active EMA}
 
 Mood disorders have been well-studied using active EMA methods [@Wenze2010], with several reviews outlining recent findings in depression [@Telford2012; @Wichers2011; @burton2013], anxiety disorders [@Walz2014], and depression/bipolar disorder [@AanhetRot2012]. The potential of EMA for use among young populations showed promising results [@Dubad2018]. Innovations in mobile devices has improved the feasibility and popularity of ecological momentary interventions (EMIs) for anxiety and depression [@schueller2017]. A systematic review and meta-analysis of EMIs reported small to medium effects on mental health [@Versluis2016].
 
 EMA appears to be particularly well-suited to examine the role of emotions in the development and maintenance of obesity and eating disorders [@Engel2016]. Meta-analytic results suggest that negative affect, rather than hunger, is associated with binge eating among individuals with eating disorders [@Haedt2011; @Haedt2012]. EMA methods have also significantly contributed to the understanding of the processes that drive substance use, cessation, and relapse, often in contrast with theory-driven studies largely derived from global reports collected through retrospective questionnaires [@Shiffman2009; @Swendsen2016].
 
 ### Passive EMA
+\index{EMA!Passive EMA}
 
 Objective EMA data collected passively through bio-sensors, smart devices, or context/environmental (e.g. location) has been shown to be a feasible and promising method for the longitudinal monitoring of individuals with affective disorders [@Dogan2017; @kirchner2016]. The potential of passive sensing via smartphone for mental health research are outlined in two reviews, encompassing the assessment of health and well-being [@Cornet2017], and the measuring, understanding, and intervening in mental illness and maintaining mental health [@Aung2017]. A systematic review and meta-analysis on actigraphy reported diurnal variations in activity levels among individuals with depression [@burton2013]. Compared with traditional self-reports, passive sensing was reported to be less intrusive and to result in more accurate data, while providing options for continuous monitoring and feedback. 
 
@@ -201,10 +203,10 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 
 | **Topic**        | **Author (Year)**        | **Outcome**        |
 |:--------------------|:--------------------|:--------------------|
-| Anxiety disorders  | @Walz2014 | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviors, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
+| **Anxiety disorders**  | @Walz2014 | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviors, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
 | | @schueller2017 | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation |
-| Eating disorders | @Engel2016| An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
-| Mood disorders | @AanhetRot2012 | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, paediatric populations, MDD/BD specificity, and links with neuroscience |
+| **Eating disorders** | @Engel2016| An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
+| **Mood disorders** | @AanhetRot2012 | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, paediatric populations, MDD/BD specificity, and links with neuroscience |
 | | @Aung2017 | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
 || @burton2013 | Focuses on diurnal variations in activity levels among depressed individuals. |
 | |@Telford2012 | Identifies six themes of EMA research in MDD: methodology; positive and negative affect; cortisol secretion; antidepressant treatment; work performance; genetic risk factors |
@@ -212,9 +214,9 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 | | @Wichers2011 | Provides an overview for the potential clinical application of EMA in the diagnostic and treatment of MDD.  |
 | | @Versluis2016 | Provides an overview of interventions (EMI) addressing anxiety, depression, and perceived stress on positive psychological outcomes |
 | | @Dubad2018 | Provides an overview of the feasibility and clinical impact of mood-monitoring applications targeting young populations (10-24 years old) |
-| Substance-related disorders| @Shiffman2009 | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
+| **Substance-related disorders**| @Shiffman2009 | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
 | | @Swendsen2016 | Conceptual review of the use of mobile technologies for research on addiction and its treatment |
-| Mental health/ Well-being | @Cornet2017 | Outlines the potential and challenges of passive sensing to detect status change and behavior change following feedback on behavior. |
+| **Mental health/ Well-being** | @Cornet2017 | Outlines the potential and challenges of passive sensing to detect status change and behavior change following feedback on behavior. |
 | | @kirchner2016 | Provides an overview of ' geographically explicit momentary assessment' (GEMA) research to enrich EMA research in mental health and well-being |
 | | @Dogan2017 | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems |
 
@@ -223,16 +225,16 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 
 This manual comprises six parts, in which various aspects of EMA research will be discussed. 
 
-- Chapter 2 introduces R, the statistical program that is an indespensable tool for the EMA researcher.
+- In **part I**, Chapter 2 introduces R, the statistical program that is an indespensable tool for the EMA researcher.
 
-- Part II focuses on EMA study design (chapter 3), EMA instruments (chapter 4) and EMA data management (Chapter 5).
+- **Part II** focuses on EMA study design (chapter 3), EMA instruments (chapter 4) and EMA data management (Chapter 5).
 
-- Part III details the momentary assessment of two specific outcomes: Mood (chapter 6) and Activity (chapter 7).
+- **Part III** details the momentary assessment of two specific outcomes: Mood (chapter 6) and Activity (chapter 7).
 
-- Part IV introduces EMA data analysis techniques: Feature Extraction (chapter 8), Mixed Modelling (chapter 9), and Network Analysis (chapter 10).
+- **Part IV** introduces EMA data analysis techniques: Feature Extraction (chapter 8), Mixed Modelling (chapter 9), and Network Analysis (chapter 10).
 
-- In part V, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (chapter 11), and a study into a new GPS-based measure of activity (chapter 12).
+- In **part V**, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (chapter 11), and a study into a new GPS-based measure of activity (chapter 12).
 
-- Part VI provides three catalogues of EMA resources. Chapter 13 lists EMA research groups within APH, chapter 14 lists EMA instruments that were found to be in use among APH researchers, and chapter 15 summarises useful R extensions (packages) for EMA data analysis.
+- **Part VI** provides three catalogues of EMA resources. Chapter 13 lists EMA research groups within APH, chapter 14 lists EMA instruments that were found to be in use among APH researchers, and chapter 15 summarises useful R extensions (packages) for EMA data analysis.
 
 

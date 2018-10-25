@@ -1,4 +1,4 @@
-# Introducing R & RStudio {#R_and_Studio}
+# Introducing R & RStudio {#rstudio}
 \index{R and RStudio} 
 
 In this chapter, you will learn how to install and use two programs that are indispensable for the management and analysis of EMA data: R and RStudio. 

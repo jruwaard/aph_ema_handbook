@@ -225,16 +225,16 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 
 This manual comprises six parts, in which various aspects of EMA research will be discussed. 
 
-- In **part I**, Chapter 2 introduces R, the statistical program that is an indespensable tool for the EMA researcher.
+- In **part I**, chapter \@ref(R_and_Studio) introduces R, the statistical program that is an indespensable tool for the EMA researcher.
 
-- **Part II** focuses on EMA study design (chapter 3), EMA instruments (chapter 4) and EMA data management (Chapter 5).
+- **Part II** focuses on EMA study design (chapter \@ref(#methods), EMA instruments (chapter \@ref(#instruments)) and EMA data management (chapter \@ref(#datamanagement)).
 
-- **Part III** details the momentary assessment of two specific outcomes: Mood (chapter 6) and Activity (chapter 7).
+- **Part III** details the momentary assessment of two specific outcomes: Mood (chapter \@ref(#mood)) and Activity (chapter \@ref(#activity)).
 
-- **Part IV** introduces EMA data analysis techniques: Feature Extraction (chapter 8), Mixed Modelling (chapter 9), and Network Analysis (chapter 10).
+- **Part IV** introduces EMA data analysis techniques: Feature Extraction (chapter \@ref(#features)), Mixed Modelling (chapter \@ref(#lmm)), and Network Analysis (chapter \@ref(#networks)).
 
-- In **part V**, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (chapter 11), and a study into a new GPS-based measure of activity (chapter 12).
+- In **part V**, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (chapter \@ref(#csd)), and a study into a new GPS-based measure of activity (chapter \@ref(#homerange)).
 
-- **Part VI** provides three catalogues of EMA resources. Chapter 13 lists EMA research groups within APH, chapter 14 lists EMA instruments that were found to be in use among APH researchers, and chapter 15 summarises useful R extensions (packages) for EMA data analysis.
+- **Part VI** provides three catalogues of EMA resources. Chapter \@ref(#catalogue) lists EMA research groups within APH, chapter \@ref(#ema-instruments-catalogue) lists EMA instruments that were found to be in use among APH researchers, and chapter \@ref(#rcat) summarises useful R extensions (packages) for EMA data analysis.
 
 

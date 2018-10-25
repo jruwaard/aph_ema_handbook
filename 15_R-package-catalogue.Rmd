@@ -13,7 +13,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 |                 | GGIR              | Pre-proces and analyse raw multi-day    |
 |                 |                   | multi-day accelerometer data.           | 
 +-----------------+-------------------+-----------------------------------------+
-|                 | PhysicalActivity  | Analyse Actigraph accelerometer data.   | 
+|                 | PhysicalActivity  | Analyse actigraph accelerometer data.   | 
 +-----------------+-------------------+-----------------------------------------+
 | Data Management | dplyr             | Data transformation                     | 
 | & Visual        |                   |                                         |
@@ -89,7 +89,7 @@ ggplot(d, aes(x = timestamp, y = value)) +
 ### Package 'GGIR'
 \index{Packages!GGIR}
 
-Package *GGIR* [@R-GGIR] is a packages to pre-process raw acceleromety data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
+Package *GGIR* [@R-GGIR] is a packages to pre-process raw accelerometry data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
 
 
 ### Package 'PhysicalActivity'
@@ -222,7 +222,7 @@ Several R-packages for mixed-effects modelling exist. The most popular are packa
 ### nlme
 \index{Packages!nlme}
 
-Package **nlme** is introduced in chapter \@ref(lmm). It is an older package (in comparison to package lme4), that is still used a lot because it provides options to model correlational structures that are not implemented (yet) in lme4.
+Package **nlme** is introduced in Chapter \@ref(lmm). It is an older package (in comparison to package lme4), that is still used a lot because it provides options to model correlational structures that are not implemented (yet) in lme4.
 
 ```{r cs15g, nlme_example}
 # Code snippet 15.7: fit a linear mixed model, with lme.
@@ -330,7 +330,7 @@ AutovarCore is a simplified version of a more extensive package ***autovar*** [@
 
 Package ***qgraph*** [@Epskamp2012] can be used to fit, visualise and analyse graphical networks.
 
-In the example below, qgraph is used to fit a network on the 'Critical Slowing Down' (CSD) data set, which is included in package 'emaph' (see ?csd and Chapter \@ref(networks)). 
+In the example below, qgraph is used to fit a network on the 'Critical Slowing Down' (CSD) data set, which is included in package 'emaph' (see Chapter \@ref(csd) and Chapter \@ref(networks)). 
 
 ```{r cs15l, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
 # Code snippet 15.12:  fitting a network with qgraph.
@@ -359,7 +359,7 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
 
 In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on lare data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance edges estimations will be small,  while in unstable networks, the variance will be high. This idea is implemented in package ***bootnet***  [@Epskamp2018a]. 
 
-Below, the stability of the network that was fit in the prevous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
+Below, the stability of the network that was fit in the previous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
 
 ```{r cs15m, out.width = "100%", fig.asp = .4}
 # Code snippet 15.13: a bootstrapped network. 

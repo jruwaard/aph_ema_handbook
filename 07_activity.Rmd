@@ -49,7 +49,7 @@ Proin a viverra metus, nec scelerisque odio. Morbi viverra tristique libero vel
 fringilla. Sed at varius erat, id consequat nibh.
 
 
-```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelorometer, sub-sampled to 10-seconds epochs (0.1 Hz)", echo = FALSE}
+```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-seconds epochs (0.1 Hz)", echo = FALSE}
 # Code snippet 7.1: plot one hour of accelerometer data.
 library(ggplot2)
 library(tidyr)

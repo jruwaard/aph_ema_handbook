@@ -8,7 +8,7 @@ Table: (\#tab:14a) EMA Instruments.
 | Name         | Manufacturer      | URL               | Description
 |-------------:|------------------:|------------------:|-------------------------------|
 | GENEActive   | activinsights     | activinsights.com | Wrist-worn accelerometer      |
-| Illumivu     | Illumivu          | ilumivu.com       | Android / iOS EMA app         |
+| Ilumivu     | Ilumivu          | ilumivu.com       | Android / iOS EMA app         |
 | MoodBuster   | ICT4D Consortium  | moodbuster.eu     | Android EMA app               |
 | Movisense    | MoviSence         | movisense.org     | Android EMA app               |
 | PsyMate      | PsyMate           | psymate.eu        | Android EMA app               |
@@ -20,21 +20,22 @@ Table: (\#tab:14a) EMA Instruments.
 ## GENEActive
 GENEActive, sold by UK-based company Activinsights (activinsights.com), is a waterproof wrist-worn device with a high-precision, configurable 3-axial accelerometer (range: +/- 8g), an ambient light sensor, a (near-body) temperature sensor, and an event logger (a button that users can press to mark a targeted event). GENEActive was developed to accurately assess human activity in scientific studies. The device has a storage capacity of 0.5GB of raw data. At 10Hz, the device can log activity up to one month. July 2018, the price for one unit is approximately 250 euro. 
 
-GENEActive is used in a growing number of clinical studies to measure activity and sleep-wake cycles, in natural conditions, over longer periods of time. Dedicated R-packages to pre-process and analyse the raw data exist (see, e.g., Chapter \@ref(rcat)). Note, however, that no accompanying app exists with which study participants can be provided feedback about their activity. This might negatively affect wear-time and study compliance in research participants, who are accustomed to consumer activity-sampling devices, such as Fitbit, where many options for real-time feedback exist.
+GENEActive is used in a growing number of clinical studies to measure activity and sleep-wake cycles, in natural conditions, over longer periods of time. Dedicated R-packages to pre-process and analyse the raw data exist (see Chapter \@ref(rcat)). Note, however, that no accompanying app exists with which study participants can be provided feedback about their activity. This might negatively affect wear-time and study compliance in research participants, who are accustomed to consumer activity-sampling devices, such as Fitbit, where many options for real-time feedback exist.
 
 ```{r geneactive, echo = FALSE, fig.cap = "The GENEActive Accelerometer", out.width='100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")
 ```
 
 ## Ilumivu
+\index(Ilumivu)
 
-Ilumivu (see https://ilumivu.com/) is an American commercial company specialized in mobile EMA application development. It offers a cross-platform (Android and IOS) smartphone app (mEMA) that researchers can use to collect data from study participants. Researchers can define the assessment plan of their study in an online backoffice (i.e., without any assistance from Illumivu staff). 
+Ilumivu (see https://ilumivu.com/) is an American commercial company specialized in mobile EMA application development. It offers a cross-platform (Android and IOS) smartphone app (mEMA) that researchers can use to collect data from study participants. Researchers can define the assessment plan of their study in an online back-office (i.e., without any assistance from Illumivu staff). 
 
-The Ilumivi EMA toolbox library includes a rather complete set of survey elements, survey logic branching tools, and survey scheduling options. Passive EMA options include GPS tagging (of survey responses), GEO-fencing (triggering surveys at specific locations) and smartphone sensor logging (light and noise level, screen brightness, screen locked/unlocked, humidity, ambient temperature, barometric pressure, phone/SMS activity log, and basic device information). a limited number of smartwatch devices can optionally be linked to the Ilumivu app for further passive data collection.  With the online backoffice, researchers can invite participants, monitor study compliance and download data (in common data formats such as CSV). The company is open for custom development, when studies require features that are not included in the default app.
+The Ilumivu EMA toolbox library includes a rather complete set of survey elements, survey logic branching tools, and survey scheduling options. Passive EMA options include GPS tagging (of survey responses), GEO-fencing (triggering surveys at specific locations) and smartphone sensor logging (light and noise level, screen brightness, screen locked/unlocked, humidity, ambient temperature, barometric pressure, phone/SMS activity log, and basic device information). a limited number of smartwatch devices can optionally be linked to the Ilumivu app for further passive data collection.  With the online backoffice, researchers can invite participants, monitor study compliance and download data (in common data formats such as CSV). The company is open for custom development, when studies require features that are not included in the default app.
 
 Current (July 2018) subscription plans range from 3.375 dollar (basic features) to 12.000 dollar (all features), per year. Researchers, who are interested in purchasing a licence of the service, are advised to the 'Grant Writer's Guide' of Ilumivu, which can be downloaded from the site of the company (at https://ilumivu.com/pricing/writing-a-grant/).
 
-Ilumivu's competetive advantage is that it has multi-platform support. It is, however, not the cheapest EMA product on the market. Being an American company, researchers should also consider EU regulations relating to personal data privacy protection, since regulations are more strict when personal data of EU citizens leave the EU.  
+Ilumivu's competitive advantage is that it has multi-platform support. It is, however, not the cheapest EMA product on the market. Being an American company, researchers should also consider EU regulations relating to personal data privacy protection, since regulations are more strict when personal data of EU citizens leave the EU.  
 
 ```{r ilumivu, echo = FALSE, fig.cap = "Ilumivu App Screenshots", out.width = '25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -44,12 +45,13 @@ knitr::include_graphics(c(
 ```
 
 ## MoodBuster
+\index(Moodbuster)
 
 MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
 
-In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satelite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImplementAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
+In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satelite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
 
-Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online backoffice is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
+Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online back-office is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
 
 More information on MoodBuster can be obtained from prof. dr. Heleen Riper (h.riper@vu.nl).
 
@@ -62,9 +64,11 @@ knitr::include_graphics(c(
 
 
 ## Movisens
-Movisens (http://www.movisens.com) is a German company that is specialised in the development of hard- and software solutions for mobile sensing. The company sells small wearable devices that contain several high-precision sensors, including an accelerometer, gyroscope, barometer and thermomether. In addition, the company has developed an (Android) app, called MovisensXS, which can be used for active EMA research. The app can optionally be configured for smartphone logging (e.g., to log music that a study participant listens this). The wearable sensor can also be linked to the app, so that EMA questionnaires can be triggered based on targeted activity or energy expenditure patterns, such as extended periods of sedentary behaviour. Specialised software to import, pre-process and analyse raw sensor data is available for download.
+\index(Movisens)
 
-Like Ilimuvi, researchers can define EMA sample schedules for their study in a web-based backoffice (https://xs.movisens.com), using an online graphical editor. Once defined, participants can be invited to the study , through the backoffice, to download the freely available Movisens App from Google Play store. The backoffice also allows researchers to monitor study compliance and download data.
+Movisens (http://www.movisens.com) is a German company that is specialised in the development of hard- and software solutions for mobile sensing. The company sells small wearable devices that contain several high-precision sensors, including an accelerometer, gyroscope, barometer and thermometer. In addition, the company has developed an (Android) app, called MovisensXS, which can be used for active EMA research. The app can optionally be configured for smartphone logging (e.g., to log music that a study participant listens this). The wearable sensor can also be linked to the app, so that EMA questionnaires can be triggered based on targeted activity or energy expenditure patterns, such as extended periods of sedentary behaviour. Specialised software to import, pre-process and analyse raw sensor data is available for download.
+
+Like Ilumivu, researchers can define EMA sample schedules for their study in a web-based backoffice (https://xs.movisens.com), using an online graphical editor. Once defined, participants can be invited to the study , through the back-office, to download the freely available Movisens App from Google Play store. The backoffice also allows researchers to monitor study compliance and download data.
 
 MoviSensXS EMA licence costs vary from 500 to 10.000 euro's per year, depending on the required number of 'credits' which are linked to the the number of EMA responses. Prospect users can test platform, without functional restrictions, with a free test account. An EMA test-study can thus be set up and started in less than a day.
 
@@ -92,8 +96,9 @@ knitr::include_graphics(c(
 
 
 ## RoQua
+\index(RoQua)
 
-RoQua (http://www.roqua.nl/) is a web-based Routine Outcome Monitoring system, developed and maintained by a Dutch non-profit development and service organization that is funded by several by northern GGZ organisations and the Department of Psychiatry, University Medical Center Groningen. RoQUA has a sophisticated and user-friendly online backoffice portal, with which researchers can define assessment protocols and invite study participants - through e-mail or SMS - to complete questionnaires online (on desktop or mobile devices). By inviting study participants several times a day to complete a questionnaire via the standard web browser of their mobile phone, active EMA an be implemented. This approach is taken in several large-scale studies, including 'NESDA' (nesda.nl) and 'HowNutsAreTheDutch' (www.hoegekis.nl; see [@VanDerKrieke2017; @VanDerKrieke2016]).
+RoQua (http://www.roqua.nl/) is a web-based Routine Outcome Monitoring system, developed and maintained by a Dutch non-profit development and service organization that is funded by several by northern GGZ organisations and the Department of Psychiatry, University Medical Center Groningen. RoQUA has a sophisticated and user-friendly online back-office portal, with which researchers can define assessment protocols and invite study participants - through e-mail or SMS - to complete questionnaires online (on desktop or mobile devices). By inviting study participants several times a day to complete a questionnaire via the standard web browser of their mobile phone, active EMA an be implemented. This approach is taken in several large-scale studies, including 'NESDA' (nesda.nl) and 'HowNutsAreTheDutch' (www.hoegekis.nl; see [@VanDerKrieke2017; @VanDerKrieke2016]).
 
 At present, RoQua does not support the collection of passive EMA data. However, preliminary results have been reported with a system called 'Physiqual' [@Blaauw2016], with which EMA data, collected with RoQUA, can be automatically combined with wearable sensor data.
 

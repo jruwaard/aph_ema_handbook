@@ -3,7 +3,7 @@
 # Early Warning Signs of Depression {#csd}
 
 One of the promises of EMA is that it might detect signs of mental health
-detoriation in an early stage. Subtle changes in time series of mood variables,
+deterioration in an early stage. Subtle changes in time series of mood variables,
 for example, might signal a depression relapse. If we can detect these
 changes, preventive interventions can be triggered to avoid the relapse.
 
@@ -19,7 +19,7 @@ reacts to disturbances. In a stable state, the system quickly recovers from
 disturbances. Prior to a transition to a new state, however, the system takes
 more and more time to recover back to its current state: the variance and auto-correlation of the system increases [@Scheffer2009; @Dakos2008]. 
 
-In this chapter, we re-analyze data from a study that aimed to demonstrate CSD
+In this chapter, we re-analyse data from a study that aimed to demonstrate CSD
 in EMA-data of a single patient with a history of major depression [@Groot2010,
 @Kossakowski2017; @Wichers2016]. The patient, a 57-year old male, used EMA to monitor himself during a 239-day single-case double-blind medication reduction trial. During the experiment, he experienced a relapse, and Wichers and colleagues showed how variance and auto-correlation in the EMA data increased, several weeks prior to this relapse. The transition appeared to be preceded by CSD.
 
@@ -180,11 +180,11 @@ Our re-analysis replicates the main finding of the Wichers et al article ([@Wich
 
 One swallow does not make summer. Yes, in this case, the DFA-indicator peaked prior to the relapse. This could be a mere coincidence. The predictive power of CSD needs to be confirmed in larger samples. Given the theoretical background, succesful applications of CSD in other domains, and the present finding, these studies seem warranted.
 
-Important additional questions remain to be answered. When it predicts a state change, what is the expected delay between this prediction and the chanage? Does a critical DFA-value exist? Given that critical value, are false positive and false negative rates of this prediction acceptable? These are important questions that should be answered before any clinical application of DFA can be considered.  
+Important additional questions remain to be answered. When it predicts a state change, what is the expected delay between this prediction and the change? Does a critical DFA-value exist? Given that critical value, are false positive and false negative rates of this prediction acceptable? These are important questions that should be answered before any clinical application of DFA can be considered.  
 
 Re-analysis of data from completed clinical studies, in which EMA data were collected, may be a first step to further explore the value of CSD. One option, for example, would be to re-analyse data from the E-COMPARED study [@Kleiboer2016]. In this trial, patients, who were treated for major depression, completed weekly self-report questionnaires [the Patient Health Questionnaire; PHQ-8, @Kroenke2009] and daily EMA mood ratings throughout treatment, which lasted up to 16-week. Since CSD is an indicator of *any* state change (i.e., irrespective of whether the change is clinically "good" or "bad"), theory would predict a (lagged) relationship between CSD (i.e., the DFA-score) and clinically significant changes in PHQ-scores [@Jacobson1991].
 
-Potential clinical applications, of course, are clear. If clinically relevant changes can be predicted algorithmitcally from EMA ratings, automated patient feedback systems could help to prevent pending detoriation or consolidate the path towards recovery.    
+Potential clinical applications, of course, are clear. If clinically relevant changes can be predicted algorithmitcally from EMA ratings, automated patient feedback systems could help to prevent pending deterioration or consolidate the path towards recovery.    
 
 
 

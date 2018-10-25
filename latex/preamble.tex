@@ -1,0 +1,12 @@
+% disable maketile temporarily (to get the cover before title - see frontpage.tex)
+\let\oldmaketitle\maketitle
+\AtBeginDocument{\let\maketitle\relax}
+
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage{makeidx}
+\usepackage{float}
+\floatplacement{figure}{H}
+\makeindex
+
+\frontmatter

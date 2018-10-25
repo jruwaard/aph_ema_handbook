@@ -16,7 +16,7 @@
 \index{EMA synonyms!Continuous Unified Electronic Diary Method} 
 \index{EMA synonyms!Intensive-longitudinal Study Design} 
 
-Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment' [@EbnerPriemer2009] or 'Ambulatory Self-reporting' [@Conner2012a], 'Real-time Data Capturing', the 'Continuous Unified Electronic Diary Method' [@EllisDavies2012], and as the 'Intensive-longitudinal Study Design' [@Bolger2013]. The different terms stress different aspects of EMA research. All, however, refer to research methods that involve the *repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessary) via electronic wearable devices* [@Shiffman2008].
+Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment' [@EbnerPriemer2009] or 'Ambulatory Self-reporting' [@Conner2012a], 'Real-time Data Capturing', the 'Continuous Unified Electronic Diary Method' [@EllisDavies2012], and as the 'Intensive-longitudinal Study Design' [@Bolger2013]. The different terms stress different aspects of EMA research. All, however, refer to research methods that involve the *repeated sampling of people's current thoughts, emotions, behaviour, physiological states, and context, in their natural environment, typically (but not necessarily) via electronic wearable devices* [@Shiffman2008].
 
 ### Active versus Passive EMA
 \index{EMA!Passive EMA} \index{EMA!Observational EMA|see{Passive EMA}}

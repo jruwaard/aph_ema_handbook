@@ -1,8 +1,8 @@
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
-    before_body: frontpage.tex
-    after_body: postamble.tex
+    in_header: latex/preamble.tex
+    before_body: latex/frontpage.tex
+    after_body: latex/postamble.tex
   citation_package: natbib
   keep_tex: yes
   pandoc_args: [ "--csl", "apa.csl" ]

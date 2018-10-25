@@ -9,7 +9,7 @@ As with all scientific research, EMA studies start with mindful consideration of
 
 Ample information on general study design issues can be found elsewhere (see for example, the APH quality handbook, at http://www.emgo.nl/kc/). This chapter highlights key design aspects of EMA studies.
 
-## What is the research question?
+## What is the research question
 
 Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into exploratory data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be the first step.
 
@@ -21,6 +21,9 @@ Ask yourself what EMA could bring to your topic of interest. How is it different
 Given the experimental nature of EMA, studies are often piloted in healthy or sub-clinical populations. This is a recommended first step, to test the experimental procedures and to avoid unnecessary burdening of vulnerable patient populations. You should be aware, though, that results obtained in non-patient populations do not necessarily generalize to patient populations. EMA mood ratings, for example, might be much more variable in patients compared to non-patients. Pilot studies should therefore also be conducted in the target population.
 
 ## What are the qualities of the EMA measures?
+\index{EMA!Passive EMA}
+\index{EMA!Active EMA}
+\index{Measurement error}
 
 With the study hypotheses in place, theoretical constructs must be operationalized into quantitative measures. For this, you should consult the scientific literature on the reliability and validity of existing EMA measures.
 
@@ -149,7 +152,3 @@ While planning your EMA study, you should also be mindful of the rules and regul
 In EMA studies, an important GDPR-related issue concerns the Data Processing Agreement (DPA). When data processing is (partly) outsourced to a third party, a Data Processing Agreement (DPA) should be drafted, that specifies the agreements between the 'controller' and 'processor'. In this context, a controller is the person or organisation that determines the why and how of data collection (for example you as a researcher). The processor processes the data on behalf of the controller, for example by providing a data-collection service, or by storing raw study data on a cloud-server.
 
 Aspects of data processing that need to be addressed in this agreement include the context, duration and termination of agreement, the nature of the data collected, the duration of data storage, security measures taken to prevent unauthorized access, and agreements on data ownership, data sharing, the handling of personal data breaches, and liability. Most organisations offer model agreements in which all relevant issues are addressed. Third parties may offer model agreements as well. If so, however, these agreements need to be checked for compliance to local regulations. 
-
-
-
-

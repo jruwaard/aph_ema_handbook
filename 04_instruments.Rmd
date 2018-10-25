@@ -1,4 +1,5 @@
 # EMA instruments {#instruments}
+\index{EMA instruments} 
 
 Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviours, whereas wearable devices are more suited to collect physiological data. Below are points to consider when deciding on a suitable EMA instrument, gleaned from the past experiences of APH researchers.
 
@@ -15,6 +16,8 @@ Technology has greatly increased the methods of EMA data collection. Nevertheles
 
 
 ### Access to a back-office 
+\index{Back-office} 
+
 
 An important consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back office? For example, some EMA platforms do allow configuration or customization to the needs of the researcher. Also some back office offer advisory services to researchers when adapting items. For example, using EMA to collect depression data does not mean the wholesale transportation of a validated paper questionnaire onto the EMA platform. A subjective EMA survey is not similar to an online questionnaire.
 
@@ -25,8 +28,10 @@ Questions can also arise regarding the validity of EMA. Items used in subjective
 
 
 ###  Data access
+\index{GENEActiv}
+\index{Fitbit}
 
-If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. genactiv versus fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform?
+If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. GENEActiv versus Fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform?
 
 
 ### Demands on time     
@@ -64,12 +69,11 @@ Also, in a subjective EMA study design, participants has to attend to multiple a
 
 ## Points to consider
 
--Internet access 
-- whether company has an app or is notification for completion of survey via an email or SMS.
--Use of participants’ own device (fitness device, tablet, smartphone) or designated device 
-– issues of software updates, compatibility issues if using participants device, issues of storage capacity of device if data has to be stored locally (because of lack of internet access) before it can be uploaded to central system.
+- Internet access 
+- Whether a company has an app or is notification for completion of survey via an email or SMS.
+- Use of participants’ own device (fitness device, tablet, smartphone) or designated device 
+– Issues of software updates, compatibility issues if using participants device, issues of storage capacity of device if data has to be stored locally (because of lack of internet access) before it can be uploaded to central system.
 -Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.
-
 
 In a nutshell, before implementing an EMA study, it is advisable to do a pilot study using your own device. This will allow the researcher to experience the possible inconveniences faced by participants. And, make sure there is a Plan B!
 

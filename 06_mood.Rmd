@@ -143,3 +143,36 @@ psych::fa.diagram(fa,
                   simple = TRUE, 
                   main = "")
 ```
+
+```{r fig06f, fig.cap = "Factor analysis of 7 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
+# Code snippet 6.3: Performing a factor analysis.
+library(dplyr)
+library(tibble)
+
+items2 <- csd %>%
+  select(c(
+   "mood_relaxed", "mood_satisfi",
+   "mood_enthus", "mood_cheerf",
+   "mood_strong", "mood_down",
+  "mood_lonely", "mood_anxious", 
+  "mood_guilty" )) %>%
+  scale(.) %>%
+  as.tibble(.) %>%
+  mutate_all(funs(residuals(stats::arima(., order = c(1,0,0)))))
+
+require(psych)
+
+correlations <- cor(items2, use = "complete.obs")
+model <- fa(items2,
+               nfactors = 2,
+               rotate = "oblimin",
+               fm = "pa",
+               scores = "regression")
+
+psych::fa.diagram(model, 
+                  simple = TRUE,
+                  main = "")
+colnames(model$loadings) <- c("PA", "NA")
+fa.diagram(model)
+
+```

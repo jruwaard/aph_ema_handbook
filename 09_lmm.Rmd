@@ -91,7 +91,7 @@ Random effects and residual variance are shown by the 'VarCorr' function. Again,
 VarCorr(fm)
 ```
 
-It can be instructive to plot the predicted values of the model, to make clear how the model 'thinks'. As shown by Figure \@ref(fig:fig7b), the model predicts a series of straight lines, one for each participant, that vary around 5.
+It can be instructive to plot the predicted values of the model, to make clear how the model 'thinks'. As shown by Figure \@ref(fig:fig9b), the model predicts a series of straight lines, one for each participant, that vary around 5.
 
 ```{r cs9e}
 # Code snippet 9.5: Saving predicted values.

@@ -18,8 +18,8 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 |   | Stay Fine Study |http://stayfine.nl ||
 | Huibers group |  FreqMech      | http://freqmech.nl/                 | VU                  |
 | Riper group | MOODBUSTER & E-COMPARED    | ict4depression.eu    | VU               |
-| Penninx group  | NESDA      | nesda.nl     | VuMC / GGz InGeest  |
-|   |RADAR-CNS       | radar-cns.org        | VuMC / Ggz InGeest  |
+| Penninx group  | NESDA      | nesda.nl     | VuMC / GGZ InGeest  |
+|   |RADAR-CNS       | radar-cns.org        | VuMC / GGZ InGeest  |
 | | | ||
 | **Somatic ilness**  |    |     |              |
 |Knoop group |Chronic Fatigue study  | ---                  | AMC                 |
@@ -59,9 +59,9 @@ Table: (\#tab:APHresearch) Overview of APH EMA research groups.
 #| IMPACT         | Heart failure    | impactonderzoek.nl   | AMC                 |
 #| MERITS          | Type 1 diabetes       | -            | VuMC  |
 #| Moodbuster/ E-COMPARED     | Depression       | ict4depression.eu    | VU     |
-#| NESDA          | Depression       | nesda.nl             | VuMC / GGz InGeest  |
+#| NESDA          | Depression       | nesda.nl             | VuMC / GGZ InGeest  |
 #| Psychosystems  | Symptom Networks | psychosystems.org    | UvA                 |
-#| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / Ggz InGeest  |
+#| RADAR-CNS      | Depression       | radar-cns.org        | VuMC / GGZ InGeest  |
 #                |
 #| van Someren group | Sleep       | #https://herseninstituut.nl/onderzoek/onderzoeksgroepen/van-someren-groep/ | AMC |
 #| VU-AMS         | Stress & emotion | vu-ams.nl            | VU                  |
@@ -276,7 +276,7 @@ The Momentary assessment of patient Experiences in Real life of Insulin Glargine
 | Topic | Type 1 diabetes, relationship between blood glucose variability (continuous glucose measurement) and changes in mood and energy. | 
 | Status | Ongoing proof-of-concept study, 2018 - 2020 |
 | Target population | Adult patients (N=70) with type 1 diabetes |
-| Platform used | Illumivu |
+| Platform used | Ilumivu |
 | EMA | Currently under development. Participants will be (randomly) prompted to answer questions on mood (based on POMS questionnaire), diabetes distress, fear of hypoglycaemia and sleep. |
 | Project goals | Explore whether a) blood glucose variability (SD and CV) is related to changes in wellbeing (mood) during waking time, b) if switching to U-300 results in less glucose variability and translates into improved mood over time within patients, c) explore if individual differences (profiles) can be distinguished with regard to the (strength of the) association between glucose variability and changes in mood. |
 
@@ -351,7 +351,7 @@ Eus van Someren is head of the department of sleep and cognition, which is part 
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-|  Project team | Eus van Someren, PhD (departement head); Tessa Blanken, MSc; Michele Colombo, PhD; Kim Dekker, MSc; Jeanne Leerssen, MSc; Bart te Lindert, MSc; Wisse van der Meijden, MSc; Rick Wassing, MSc.  |
+|  Project team | Eus van Someren, PhD (department head); Tessa Blanken, MSc; Michele Colombo, PhD; Kim Dekker, MSc; Jeanne Leerssen, MSc; Bart te Lindert, MSc; Wisse van der Meijden, MSc; Rick Wassing, MSc.  |
 |APH site | AMC and GGZ inGeest |
 | Projects that involve EMA | |
 |Sleep and light | Wisse van der Meijden studies, among other things, the interplay between light, vigilance, and sleep. A recent study associated the post-illumination pupil response (PIPR) to blue light with multiple indices of sleep timing: a) a questionnaire on habitual lights-out time, sleep onset latency, and final wake-up time (Munich Chronotype Questionnaire, MTCQ [@Roenneberg2003]); b) a one-week sleep diary on actual wake/sleep times; and c) actigraphy.  | 
@@ -361,7 +361,7 @@ Eus van Someren is head of the department of sleep and cognition, which is part 
 | | |
 |Sleep and context | Bart te Lindert studies the effect of the environment on sleepiness, for example by measuring light, (skin) temperature, posture, and psychological variables. A recent study focused on the effect of light intensity on Liking, Wanting and mood in insomnia disorder. |
 | EMA active | Prompts were sent eight times a day for one week. Prompts were timed at quasi-random intervals between 8:00 and 22:00. In addition, participants provided input after waking up and before bedtime. The interval between prompts ranged between 16 minutes and 3 hours. EMA consisted of 22 items. Liking and Wanting (6 items each), focused on taste or smell, bodily sensation, watching or listening, interactions with other, physical activity or being busy, and receiving something. Participants indicated whether they enjoyed and wanted these categories on a 0-100 VAS scale (ranging from not to very much). Mood items were derived from the Daytime Insomnia Symptom Scale (DISS, @buysse2007), which was developed specifically for EMA. Items focused on positive mood (5 items; relaxed, energetic, calm, happy, and efficient) and negative mood (5 items; anxious, stressed, tense, sad, and irritable). Items were scored on a 0-100 VAS-scale (ranging from very little to very much). |
-| EMA passive | PParticipants wore two light sensors (Dimesimeter), one on their indoor clothes and one on their jacket. Wear-time of each sensor was derived from a build-in accelerometer. Light was sampled every minute for one week. |
+| EMA passive | Participants wore two light sensors (Dimesimeter), one on their indoor clothes and one on their jacket. Wear-time of each sensor was derived from a build-in accelerometer. Light was sampled every minute for one week. |
 | Data management | Participants received a designated Android smartphone for the duration of EMA. Detailed information on data processing and analysis can be found in @Lindert2018.  |
 | Results | On average, 80% of the prompts contained valid data. People with insomnia disorder (n=17) had significantly lower subjective Liking and Wanting than matched controls without sleep complaints (n=18). This was most apparent at low environmental light intensity. There were no overall differences between groups in Positive mood and Negative mood. Participants with insomnia did have a different diurnal profile of Positive mood and Negative mood [@Lindert2018]. 
 | | |

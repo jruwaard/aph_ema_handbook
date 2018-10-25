@@ -115,7 +115,7 @@ A key feature of EMA is the collection of data in real-world environments, as pa
 \index{Nomothetic research} \index{Ideographic research} 
 \index{Intra-individual process|see{Ideographic research}}
 
-In clinical research, a distinction is often made between ideographic and nomothethic methods [@allport1937]. Idiographic methods are those that "aim to identify patterns of behavior within the person across a population of experiences or situations, and nomothetic methods[are] those that aim to identify patterns of behavior across a population of individuals, rather than for any given individual" [@Conner2009].  The difference is important. As is increasingly recognised, group-level findings do not necessarily generalize to the individual members of the group, as shown by Figure \@ref(fig:fig01c) (adapted from @Hamaker2012).
+In clinical research, a distinction is often made between ideographic and nomothethic methods [@allport1937]. Idiographic methods are those that "aim to identify patterns of behaviour within the person across a population of experiences or situations, and nomothetic methods[are] those that aim to identify patterns of behaviour across a population of individuals, rather than for any given individual" [@Conner2009].  The difference is important. As is increasingly recognised, group-level findings do not necessarily generalize to the individual members of the group, as shown by Figure \@ref(fig:fig01c) (adapted from @Hamaker2012).
 
 In contrast to more qualitative idiographic methods, such as interviews and N = 1 case studies, EMA allows for the collection of large amounts of quantitative data on the individual level. Thus, EMA offers a quantitative method for *idiographic* research, measuring characteristics of (unique) individuals across time and context [@Shiffman2008]. This allows for a better understanding of intra-individual process, and of the factors that account for variability within and between individuals.
 
@@ -161,7 +161,7 @@ ggplot(dt, aes(x = X, y = Y, group = id)) +
 
 The use of EMA in mental health research might seem novel but this methodology has a long track record. Already in the 1980's, early pioneers used electronic devices to elicit responses from study participants to tap into (mental) health processes in everyday life [see, e.g., @Csikszentmihalyi2014]. Recent years, however, have witnessed a large increase in EMA research. Rapid technological developments, a marked interest in the individual, and a wide recognition of the need to study health-related processes in real-life situations have all contributed to this. 
 
-EMA-based research in mental health has produced an impressive trove of findings that have supported and, sometimes, challenged existing theories on behavior. EMA data, whether collected as self-report or via wearable device/sensor, have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Its feasibility for mental health research is evidenced by its use in observational studies and randomized controlled trials on a wide range of topics and populations. Below, we present a non-exhaustive summary of systematic reviews and meta-analyses of EMA research.
+EMA-based research in mental health has produced an impressive trove of findings that have supported and, sometimes, challenged existing theories on behaviour. EMA data, whether collected as self-report or via wearable device/sensor, have diagnostic, monitoring, management, or intervention applications (@Patel2012; @Aung2017; @Evenson2015]. Its feasibility for mental health research is evidenced by its use in observational studies and randomized controlled trials on a wide range of topics and populations. Below, we present a non-exhaustive summary of systematic reviews and meta-analyses of EMA research.
 
 ### Active EMA
 \index{EMA!Active EMA}
@@ -203,7 +203,7 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 
 | **Topic**        | **Author (Year)**        | **Outcome**        |
 |:--------------------|:--------------------|:--------------------|
-| **Anxiety disorders**  | @Walz2014 | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviors, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
+| **Anxiety disorders**  | @Walz2014 | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviours, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
 | | @schueller2017 | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation |
 | **Eating disorders** | @Engel2016| An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
 | **Mood disorders** | @AanhetRot2012 | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, paediatric populations, MDD/BD specificity, and links with neuroscience |
@@ -216,7 +216,7 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 | | @Dubad2018 | Provides an overview of the feasibility and clinical impact of mood-monitoring applications targeting young populations (10-24 years old) |
 | **Substance-related disorders**| @Shiffman2009 | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
 | | @Swendsen2016 | Conceptual review of the use of mobile technologies for research on addiction and its treatment |
-| **Mental health/ Well-being** | @Cornet2017 | Outlines the potential and challenges of passive sensing to detect status change and behavior change following feedback on behavior. |
+| **Mental health/ Well-being** | @Cornet2017 | Outlines the potential and challenges of passive sensing to detect status change and behaviour change following feedback on behaviour. |
 | | @kirchner2016 | Provides an overview of ' geographically explicit momentary assessment' (GEMA) research to enrich EMA research in mental health and well-being |
 | | @Dogan2017 | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems |
 
@@ -225,16 +225,16 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 
 This manual comprises six parts, in which various aspects of EMA research will be discussed. 
 
-- In **part I**, chapter \@ref(R_and_Studio) introduces R, the statistical program that is an indespensable tool for the EMA researcher.
+- In **part I**, Chapter \@ref(rstudio) introduces R, the statistical program that is an indespensable tool for the EMA researcher.
 
-- **Part II** focuses on EMA study design (chapter \@ref(#methods), EMA instruments (chapter \@ref(#instruments)) and EMA data management (chapter \@ref(#datamanagement)).
+- **Part II** focuses on EMA study design (Chapter \@ref(methods), EMA instruments (Chapter \@ref(instruments)) and EMA data management (Chapter \@ref(datamanagement)).
 
-- **Part III** details the momentary assessment of two specific outcomes: Mood (chapter \@ref(#mood)) and Activity (chapter \@ref(#activity)).
+- **Part III** details the momentary assessment of two specific outcomes: Mood (Chapter \@ref(mood)) and Activity (Chapter \@ref(activity)).
 
-- **Part IV** introduces EMA data analysis techniques: Feature Extraction (chapter \@ref(#features)), Mixed Modelling (chapter \@ref(#lmm)), and Network Analysis (chapter \@ref(#networks)).
+- **Part IV** introduces EMA data analysis techniques: Feature Extraction (Chapter \@ref(features)), Mixed Modelling (Chapter \@ref(lmm)), and Network Analysis (Chapter \@ref(networks)).
 
-- In **part V**, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (chapter \@ref(#csd)), and a study into a new GPS-based measure of activity (chapter \@ref(#homerange)).
+- In **part V**, the application of the preceding material is illustrated in two case studies: a study into the use EMA to detect early warnings signs of depression (Chapter \@ref(csd)), and a study into a new GPS-based measure of activity (Chapter \@ref(homerange)).
 
-- **Part VI** provides three catalogues of EMA resources. Chapter \@ref(#catalogue) lists EMA research groups within APH, chapter \@ref(#ema-instruments-catalogue) lists EMA instruments that were found to be in use among APH researchers, and chapter \@ref(#rcat) summarises useful R extensions (packages) for EMA data analysis.
+- **Part VI** provides three catalogues of EMA resources. Chapter \@ref(catalogue) lists EMA research groups within APH, chapter \@ref(ema-instruments-catalogue) lists EMA instruments that were found to be in use among APH researchers, and Chapter \@ref(rcat) summarises useful R extensions (packages) for EMA data analysis.
 
 

@@ -149,7 +149,7 @@ The random effects now has four components: the variance of the intercept, the v
 VarCorr(fm)
 ```
 
-Model predictions cleary show how the mixed model estimated varying intercepts and slopes, that, on average, reflect the fixed effect regression formula 'Y ~ 5 + 0.5 * time'. 
+Model predictions clearly show how the mixed model estimated varying intercepts and slopes, that, on average, reflect the fixed effect regression formula 'Y ~ 5 + 0.5 * time'. 
 
 ```{r fig9d, out.width = "100%", fig.asp = 0.4}
 d2$predY <- predict(fm)

@@ -1,6 +1,6 @@
 # EMA instruments {#instruments}
 
-Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviors, whereas wearable devices are more suited to collect physiological data. Below are points to consider when deciding on a suitable EMA instrument, gleaned from the past experiences of APH researchers.
+Collection of EMA data has come a long way since the written diary. With technological advances, current EMA data are more likely to be collected through smart or wearable devices, connected to the internet. The various methods of EMA are developed often from distinct assessment targets [@Shiffman2008]. For example, a smart device will be useful for collecting data on subjective states or behaviours, whereas wearable devices are more suited to collect physiological data. Below are points to consider when deciding on a suitable EMA instrument, gleaned from the past experiences of APH researchers.
 
 ## General considerations 
 

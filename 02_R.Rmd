@@ -249,7 +249,7 @@ library(tidyverse)
 library(emaph)
 ```
 
-Once loaded, you can use the functions and datasets of the packages. Packge 'emaph' provides dataset 'csd', which contains the data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient recorded his mood, for 239 days (see also Chapter 13).
+Once loaded, you can use the functions and datasets of the packages. Packge 'emaph' provides dataset 'csd', which contains the data from the 'critical slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient recorded his mood, for 239 days (see also Chapter \@ref(csd)).
 
 To plot the irritation levels of this patient in the first six days, using the
 `ggplot` function from package 'ggplot2' (which is in 'tidyverse'), type:

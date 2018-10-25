@@ -359,7 +359,7 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
 
 In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on lare data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance edges estimations will be small,  while in unstable networks, the variance will be high. This idea is implemented in package ***bootnet***  [@Epskamp2018a]. 
 
-Below, the stability of the network that was fit in the prevous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
+Below, the stability of the network that was fit in the previous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
 
 ```{r cs15m, out.width = "100%", fig.asp = .4}
 # Code snippet 15.13: a bootstrapped network. 

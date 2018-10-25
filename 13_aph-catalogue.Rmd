@@ -15,8 +15,8 @@ Table: (\#tab:APHresearch) Overview of EMA research groups in the APH MH consort
 |                 | Stay Fine               | http://stayfine.nl           |                     |
 | Riper and Smit  | ICT4Depression          | http://ict4depression.eu     | VU / GGZ InGeest    |
 |                 | E-COMPARED              | http://www.e-compared.eu     | VU / GGZ InGeest
-| Penninx         | NESDA                   | http://nesda.nl              | VUmc / GGZ InGeest  |
-| Lamers          | RADAR-CNS               | http://radar-cns.org         | VUmc / GGZ InGeest  |
+| Penninx and Lamers         | NESDA                   | http://nesda.nl              | VUmc / GGZ InGeest  |
+|          | RADAR-CNS               | http://radar-cns.org         | VUmc / GGZ InGeest  |
 | **Psychosomatic symptoms**  |             |                              |                     |
 | Knoop           | Chronic Fatigue study   | http://tinyurl.com/y8wuoone  | AMC                 |
 | Snoek           | MERITS (type 1 diabetes)| http://tinyurl.com/yas8ljbq  | VUmc                |

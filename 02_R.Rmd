@@ -226,7 +226,7 @@ The tidyverse contains a package called 'haven', which allows you to read and wr
 ### Installing R-packages from GitHub
 \index{GitHub}
 
-Not all packages are at CRAN. Many 'unoffical' packages are shared at a site called 'GitHub'. This book's companion R package 'emaph', for example, which contains specialised EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
+Not all packages are at CRAN. Many 'unofficial' packages are shared at a site called 'GitHub'. This book's companion R package 'emaph', for example, which contains specialised EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
 
 GitHub packages can be installed via the `install_github` function, which is defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
 
@@ -322,7 +322,7 @@ t.test(A, B)
 
 ### Learning from examples
 
-This book contains many R code snippets. By studying these examples, you will become more familar with R.
+This book contains many R code snippets. By studying these examples, you will become more familiar with R.
 
 Some examples will introduce R language constructs and functions that are unknown to you. Learn from from these examples, by using `?` on each element that you do not understand.
 

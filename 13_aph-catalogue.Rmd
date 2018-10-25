@@ -8,33 +8,31 @@ This chapter summarises EMA research projects within the APH Mental Health conso
 
 Table: (\#tab:APHresearch) Overview of EMA research groups in the APH MH consortium.
 
-| Focus / PI      | Study Name              | URL                          | APH MH Organisation |
-|:----------------|:------------------------|:-----------------------------|:--------------------|
-| **Depression**  |                         |                      |                             |
-| Bockting        | Imagine Your Mood       | http://tinyurl.com/ydxeo52y  | AMC                 |
-|                 | Stay Fine               | http://stayfine.nl           |                     |
-| Riper and Smit  | ICT4Depression          | http://ict4depression.eu     | VU / GGz InGeest    |
-|                 | E-COMPARED              | http://www.e-compared.eu     | VU / GGz InGeest
-| Penninx         | NESDA                   | http://nesda.nl              | VUmc / GGz InGeest  |
-| Lamers          | RADAR-CNS               | http://radar-cns.org         | VUmc / Ggz InGeest  |
-| **Psychosomatic symptoms**  |             |                              |                     |
-| Knoop           | Chronic Fatigue study   | http://tinyurl.com/y8wuoone  | AMC                 |
-| Snoek           | MERITS (type 1 diabetes)| http://tinyurl.com/yas8ljbq  | VUmc                |
-| Sprangers       | FAntasTIGUE (fatigue)   | http://tinyurl.com/ybb7up87  | AMC                 |
-|                 | IMPACT (Heart failure)  | http://impactonderzoek.nl    | AMC                 |
-| **Psychotic symptoms**|                   |                              |                     |
-| Van der Gaag    | TEMSTEM                 | http://tinyurl.com/ybac6flo  | VU                  |  
-|                 | VRETp                   | http://psymate.eu            | VU                  |
-|                 |                         |                              |                     |
-| **Suicidal ideation**  |                  |                              |                     |
-| Van Ballegooijen| CASPAR                  | http://tinyurl.com/y9e9evgu  | VU                  |
-|                 |                         |                              |                     |
-| **Sleep**       |                         |                              |                     |
-| Van Someren     |                         | http://tinyurl.com/y8ht9lqd  | AMC                 |
-| **Symptom Networks**|                     |                              |                     |
-| Borsboom        | Psychosystems           | http://psychosystems.org     | UvA                 |
-| **Ambulant Monitoring** |                 |                              |                     |
-| De Geus         | VU-AMS                  | http://vu-ams.nl             | VU                  |
+| Focus / PI         | Project                 | URL                          | APH MH Organisation |
+|:-------------------|:------------------------|:-----------------------------|:--------------------|
+| **Depression**     |                         |                      |                             |
+| Bockting           | Imagine Your Mood       | http://tinyurl.com/ydxeo52y  | AMC                 |
+|                    | Stay Fine               | http://stayfine.nl           |                     |
+| Riper and Smit     | ICT4Depression          | http://ict4depression.eu     | VU / GGz InGeest    |
+|                    | E-COMPARED              | http://www.e-compared.eu     | VU / GGz InGeest
+| Penninx and Lamers | NESDA                   | http://nesda.nl              | VUmc / GGz InGeest  |
+|                    | RADAR-CNS               | http://radar-cns.org         | VUmc / Ggz InGeest  |
+| **Psychosomatic symptoms** |                 |                              |                     |
+| Knoop              | Chronic Fatigue study   | http://tinyurl.com/y8wuoone  | AMC                 |
+| Snoek              | MERITS (type 1 diabetes)| http://tinyurl.com/yas8ljbq  | VUmc                |
+| Sprangers          | FAntasTIGUE (fatigue)   | http://tinyurl.com/ybb7up87  | AMC                 |
+|                    | IMPACT (Heart failure)  | http://impactonderzoek.nl    | AMC                 |
+| **Psychotic symptoms**|                      |                              |                     |
+| Van der Gaag       | TEMSTEM                 | http://tinyurl.com/ybac6flo  | VU                  |  
+|                    | VRETp                   | http://psymate.eu            | VU                  |
+| **Suicidal ideation**  |                     |                              |                     |
+| Van Ballegooijen   | CASPAR                  | http://tinyurl.com/y9e9evgu  | VU                  |
+| **Sleep**          |                         |                              |                     |
+| Van Someren        |                         | http://tinyurl.com/y8ht9lqd  | AMC                 |
+| **Symptom Networks**|                        |                              |                     |
+| Borsboom        | Psycho-systems             | http://psychosystems.org     | UvA                 |
+| **Ambulant Monitoring** |                    |                              |                     |
+| De Geus         | VU-AMS                     | http://vu-ams.nl             | VU                  |
 
 
 
@@ -46,87 +44,77 @@ Table: (\#tab:APHresearch) Overview of EMA research groups in the APH MH consort
 \index{Stay fine study}
 \index{Imagine your mood study}
 
-Prof. dr. Claudi Bockting is affiliated with the AMC psychiatry department and the Rijksuniversiteit Groningen. Her group focuses on treatment and relapse prevention of (severe) depressive disorder and related common mental health disorders. In two studies of the group, EMA measures are included. 
+*Prof. dr. Claudi Bockting* is affiliated with the AMC psychiatry department and the Rijksuniversiteit Groningen. Her group focuses on treatment and relapse prevention of (severe) depressive disorder and related common mental health disorders. In two studies of the group, EMA measures are included. 
 
 | Aspect             | Description                                                  | 
 |:-------------------|:-------------------------------------------------------------|
 | Project team       | Claudi Bockting, PhD; Yvonne Stikkelbroek, Phd; Gerard van Rijsbergen, PhD |
 | Organisation       | AMC; Rijksuniversiteit Groningen |
 | Projects           | 1) 'Imagine Your Mood' study (IYM; 2012-2017; @Slofstra2017): This was a three-arm RCT evaluating several relapse prevention strategies in remitted depressed patients.
-|                    | 2) StayFine study (ongoing): this RCT aims to evaluate a smartphone-based intervention to prevent relapse in young people (12-23 yrs.) with remitted anxiety or depression.
-| Target populations | Patients with current or remitted depression and anxiety |
+|                    | 2) StayFine study (ongoing; http://stayfine.nl/): this RCT aims to evaluate a smartphone-based intervention to prevent relapse in young people (12-23 yrs.) with remitted anxiety or depression.
 | EMA Measures       | In the IYM RCT, EMA items included mood, positive affect (PA, 5 items), negative affect (NA, 9 items) and mental imagery (2 items). Participants were prompted 10 times per day, 3 days a week, over a period of 8 weeks. Prompts were sent randomly within fixed time-intervals.  The VAS mood scale used (‘Please rate your current mood on a scale of 0 to 100’, on which 0 indicates ‘happy’, and 100 indicates ‘sad’), was shown to have a high positive predictive value without any false negatives at a cut-off score of 55 [@Vanrijsbergen2014]. Compared to the HAM-D17 and the IDS-SR, the VAS also was a better predictor of current relapse status, as measured by the SCID-1 interview (variance explained for VAS: 60%; HAM-D17: 49%; IDS-SR: 34%). 
 |                     | In the StayFine RCT, EMA will be used to monitor outcomes (for three weeks) at six assessment periods (between baseline and 36-month follow-up). Additionally, Polar watches will be used to assess activity. |
 | Platforms used      | Psymate, Roqua, ‘Imagine your mood’ app (custom development), Polar watches |
-| Website             | www.stayfine.nl |
-|                     | http://tinyurl.com/y8w93q85 (ZonMw summary of StayFine study ]) |
-|                     | http://claudibockting.com |
+| Contact Information | e-mail: c.l.bockting@amc.uva.nl
+|                     | website: http://claudibockting.com |
 
 
 ### Riper and Smit
-\index{E-COMPARED}
 \index{Moodbuster}
 \index{ICT4Depression}
+\index{E-COMPARED}
 
-Prof. dr. Heleen Riper is affiliated with the department of clinical, neuro- and developmental psychology of the Vrije Universiteit and specialised mental health organisation GGz InGeest, Amsterdam. Prof. dr. Jan Smit is affiliated with the department of psychiatry of the Vrije Universiteit  Medical Center (VUmc) and GGz InGeest, Amsterdam. Riper and Smit have been driving forces behind the development of MoodBuster, a research platform for the delivery of online and blended psychotherapy, which has built-in, integrated EMA functionality.
+*Prof. dr. Heleen Riper* is affiliated with the department of clinical, neuro- and developmental psychology of the Vrije Universiteit and specialised mental health organisation GGz InGeest, Amsterdam. *Prof. dr. Jan Smit* is affiliated with the department of psychiatry of the Vrije Universiteit  Medical Center (VUmc) and GGz InGeest, Amsterdam. Riper and Smit have been driving forces behind the development of MoodBuster, a research platform for the delivery of online and blended psychotherapy, which has built-in, integrated EMA functionality.
 
 | Aspect            | Description                                                  | 
 |:------------------|:-------------------------------------------------------------|
 | Project team      | Heleen Riper, PhD, Jan Smit, PhD, and the MoodBuster consortium |
 | Organisation      | Vrije Universiteit Amsterdam; GGZ inGeest (and other organisations)|
 | Project(s)        | Moodbuster was developed in the European FP7 project “ICT4Depression” (@warmerdam2012; http://www.ict4depression.eu/), and applied in the Horizon 2020 FP7 EU-project “European COMPARative Effectiveness research on blended Depression treatment versus treatment-as-usual” (E-COMPARED; @Kleiboer2016; @kemmeren2016; http://www.e-compared.eu/), MoodBuster will also be used in the EU ImplementAll project (http://www.implementall.eu) and in several other clinical trials that are currently (October 2018) in preparation. |
-| EMA measures      | In the ICT4Depression project, the MoodBuster platform included a complex set of active and passive EMA measures, including physiological sensors, accelerometers, wearables to measure sympathetic nervous system responses (chest strap and glove), and an Android EMA smartphone app. |
-|                   | For the E-COMPARED study, the Moodbuster website and smartphone app were adapted to deliver (blended) treatment to patients with MDD, in 5 routine practice settings across Europe. A therapist portal was added, in order to allow therapists to monitor patients’ progress and send feedback messages. Smartphone- based EMA was used to asses sleep, mood, worrying, self-esteem, activities (2 items) and social contacts. Prompts were sent at a random time point between 10:00 and 22:00. At the beginning and during the final phase of treatment, patients received two additional prompts per day for one week. In the morning (around 10:00), sleep, worrying and self-esteem items were assessed. In the evening (around 22:00), these questions were repeated, along with the activity and social interaction items. Patients rated these EMA items on a visual analogue scale, ranging from 0 (low) to 10 (high).|
+| EMA measures      | In the ICT4Depression project, the MoodBuster platform included a rich set of active and passive EMA measures, including physiological sensors, accelerometers, wearables to measure sympathetic nervous system responses (chest strap and glove), and an Android EMA smartphone app. |
+|                   | For the E-COMPARED study, the Moodbuster website and smartphone app were adapted to deliver (blended) treatment to patients with MDD, in 5 routine practice settings across Europe. A therapist portal was added, in order to allow therapists to monitor patients’ progress and send feedback messages. Smartphone- based EMA was used to asses sleep, mood, worrying, self-esteem, activities (2 items) and social contacts. Prompts were sent at a random time point between 10:00 and 22:00. At the beginning and during the final phase of treatment, patients received two additional prompts per day for one week. In the morning (around 10:00), sleep, worrying and self-esteem items were assessed. In the evening (around 22:00), these questions were repeated, along with the activity and social interaction items. Patients rated these EMA items on a visual analogue scale, ranging from 0 (low) to 10 (high). |
 | Platform used     | Moodbuster (http://www.moodbuster.eu) |
-| Website           | https://research.vu.nl/en/persons/heleen-riper
-|                   | https://research.vumc.nl/en/persons/jan-smit
+| Contact Information | https://research.vu.nl/en/persons/heleen-riper
+|                     | https://research.vumc.nl/en/persons/jan-smit
 
-### Penninx
+### Penninx and Lamers
 \index{NESDA}
 
-The main aim of NESDA (the Netherlands study of Depression and Anxiety) is to examine the long-term (eight-year) course and prognosis and co-morbidity of anxiety and depression in order to improve quality of care and prevent chronicity [@Penninx2008] (https://www.nesda.nl/). Within the 9-year follow-up of the NESDA study, EMA was used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behaviour and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, and chronotype and diurnal patterns of activity in depressed versus non-depressed participants. 
+
+#### NESDA EMA study
+
+EMA data will be used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behaviour and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. 
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Project team   | Femke Lamers, PhD, Brenda Penninx, PhD (VUmc); Hariette Riese (UMCG)|
+| Project team   | Femke Lamers, PhD, Brenda Penninx, PhD (VUmc), Hariette Riese, PHD (UMCG), with the NESDA consortium|
 | Organisation   | VUmc, GGZ inGeest, Amsterdam|
-| Full title     | the Netherlands Study of Depression and Anxiety (NESDA), Wave 6 diary study |
-| Topic          | Momentary assessment of people with depressive and anxiety symptoms |
-| Status         | Completed, 2015 - 2017 |
-| Target population | Selected sample of NESDA participants with symptoms of depression and healthy controls (n = 384) |
-| Platform used | RoQua (https://www.roqua.nl/). Participants were prompted with a SMS, which contained a link to the EMA questions | 
-| EMA active | The self-report questionnaire contained ~31 items. Items were rtated on a 7-point Likert scale, ranging from 'not [at all]' to 'very'. Participants were prompted five times a day, for two weeks. Constructs of inerest were 1) valance (unpleasant to pleasant) and arousal (calm to excited), 2) current state, symptoms of depression/anxiety, physical condition, 3) social context, 4) sleep, 5) daily uplifts/hassles, 6) activities, and 7) substance use. Examples of items were: "I feel down", "I feel cheerful" and "Where are you now" (e.g. at the neighbour's house). In addition, there was an addendum questionnaire with one item inquiring about questionnaire burden and an open-ended question for general comments on circumstances that might influence answers. The items on valance, arousal and current state have been used in a previous study; the Uncovering the Positive Potential of Emotional Reactivity (UPPER) study (@Bennik2015). The other items are inspired on earlier EMA studies, such as the work by Mehl and colleagues (@Mehl2012), van Os and colleagues (@Wichers2012) and studies performed at the Interdisciplinary Center of Psychopathology and Emotion regulation (ICPE), such as the Mood and Movement in Daily life (MOOVD) study (@Booij2015) |
-| EMA passive | In order to record the amount of physical activity during EMA monitoring, participants were asked to wear an accelerometer (GENEActiv, 30Hz) on their non-dominant wrist, 24 hours a day, for two weeks. Recording started on the evening prior to the first EMA assessment and continued until the morning after the last assessment.|
-| Data management | EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow one. Patients were briefed on the EMA study during a face-to-face session with a research assistant. Participants were asked to fill in the questionnaire within 15 minutes after the SMS. After 30 minutes a reminder was sent, and after 60 minutes the link would become inactive. Participants needed to answer all questions before the questionnaire could be send to the secured server. Participants received a personalised mood fluctuation report after the data collection period, in order to motivate them to adhere to EMA. Reports were sent via e-mail in a password protected document. Research assistants actively monitored data collection and contacted participants if they missed three consecutive questionnaires. Data were stored in a secured web-environment of the University Medical Centre Groningen (UMCG) |
-| Results | EMA data will be used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behaviour and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, chronotype and diurnal patterns of activity in depressed versus non-depressed participants, and MDD subtypes. |
-| Website | https://www.nesda.nl/ |
+| Project(s)     | The main aim of NESDA (the Netherlands study of Depression and Anxiety) is to examine the long-term (eight-year) course and prognosis and co-morbidity of anxiety and depression in order to improve quality of care and prevent chronicity [@Penninx2008] (https://www.nesda.nl/). Within the Wave 6 9-year follow-up of the NESDA study (2015 - 2017), a selected sample of NESDA participants with symptoms of depression and healthy controls (n = 384) was invited for an EMA diary study. |
+| EMA measures  | EMA was used to assess a variety of research questions, concerning topics such as the dynamic interplay between cognitions, emotions, behaviour and environment in daily life of individuals, the feasibility of EMA in participants with affective disorders, and chronotype and diurnal patterns of activity in depressed versus non-depressed participants. EMA started within 31 days after the regular NESDA assessments (face-to-face interview and self-report measures). Participants could use their own smartphone if they had sufficient data, or access to WiFi for at least 80% of the two-week time period. If participants did not have a smartphone, they could borrow one. |
+|               | Participants were prompted five times a day, for two weeks, to complete a self-report questionnaire of  approx. 31 items. Items (7-point Likert scale, ranging from 'not [at all]' to 'very') tapped 1) valance (unpleasant to pleasant) and arousal (calm to excited), 2) current state, symptoms of depression/anxiety, physical condition, 3) social context, 4) sleep, 5) daily uplifts/hassles, 6) activities, and 7) substance use. Examples of items were: "I feel down", "I feel cheerful" and "Where are you now" (e.g. at the neighbour's house). In addition, there was an addendum questionnaire with one item inquiring about questionnaire burden and an open-ended question for general comments on circumstances that might influence answers. The items on valance, arousal and current state have been used in a previous study; the Uncovering the Positive Potential of Emotional Reactivity (UPPER) study (@Bennik2015). The other items are inspired on earlier EMA studies, such as the work by Mehl and colleagues (@Mehl2012), van Os and colleagues (@Wichers2012) and studies performed at the Interdisciplinary Center of Psychopathology and Emotion regulation (ICPE), such as the Mood and Movement in Daily life (MOOVD) study (@Booij2015) |
+|               | To record the amount of physical activity during EMA monitoring, participants were also asked to wear an accelerometer (GENEActiv, 30Hz) on their non-dominant wrist, 24 hours a day, for two weeks. Recording started on the evening prior to the first EMA assessment and continued until the morning after the last assessment.|
+| Platform used | RoQua (https://www.roqua.nl/), GENEActiv accelerometer |
+| Contact Information | https://research.vumc.nl/en/persons/brenda-penninx |
+|                     | https://research.vumc.nl/en/persons/femke-lamers   |
+|                     | https://www.nesda.nl/ |
 
 
-### Lamers
+#### RADAR-CNS
 \index{RADAR-CNS}
 
-The European (EU H2020-IMI) RADAR-CNS project (Remote Assessment of Disease and Relapse - Central Nervous System) aims to study the potential of wearable devices and smartphone technology to help prevent and treat depression, multiple sclerosis and epilepsy (https://www.radar-cns.org/). The Dutch research site (VUmc/GGZ inGeest) will focus on depression (RADAR-MDD). 
+
 
 | Aspect         | Description                                                  | 
 |:---------------|:-------------------------------------------------------------|
-| Dutch project team| Femke Lamers, PhD; Brenda Penninx, PhD; Sonia Difrancesco, MSc  |
+| Project team team| Femke Lamers, PhD; Brenda Penninx, PhD; Sonia Difrancesco, MSc, and the RADAR consortium.  |
 | Organisation | VUmc, GGZ inGeest |
-| Context | RADAR-CNS is jointly led by King's College London (KCL) and Janssen Pharmaceutica NV. The project is funded by the Innovative Medicines Initiative, a Public Private Partnership set up between the European Federation of Pharmaceutical Industries and Associations (EFPIA) and the European Union). It includes 23 organizations from across Europe and the US. The RADAR-MDD study is coordinated by KCL.  |
-| Full title | RADAR-CNS: Remote Assessment of Disease and Relapse - Central Nervous System |
-| Topic | Wearable devices to monitor and prevent and treat depression, multiple sclerosis and epilepsy |
-| Status | Ongoing, 2016 |
-| Target populations | Patients with major depressive disorder, epilepsy or multiple sclerosis (MS) |
-| Platform | RMT application (http://thehyve.nl/cases/radar-cns/), https://github.com/RADAR-base/RADAR-aRMT-protocols |
-| Project goals | Examine how remote measurement technologies can monitor and improve quality of life and psychological well-being for people with depression, epilepsy, or multiple sclerosis |
-| Technical goals | 1) Build an end-to-end system with generalised data aggregation capabilities. The platform focuses on classes of data rather than specific devices, to enhance modularity and adaptability as new devices become available. The platform is delivered under an Apache 2 open source license, 2) Big data solutions. |
-| Clinical goals | 1) Feasibility of continuous monitoring of patients, 2) predicting disease onset or relapse (prevention and risk assessment) |
-| EMA active | aRMT application: Outcomes include variability in sleep quality, levels of activity, social interactions, mood, cognitive performance and stress as possible predictors of clinical course. The questionnaire for EMA was developed by prof. I. Myin-Germeys (Leuven), one of the consortium members.|
-| EMA passive | pRMT application: 1) Location and movement (GPS) 2) Mood: voice recognition) 3) Social interaction (call and message logs), and 4) App interaction and app usage. 
-| Wearables | Skin temperature, heart rate (-variability), actigraphy (3-axis accelerometer, gyroscope), galvanic skin conductance (Empatica E4 Wristband, Pebble 2 Smartwatch, Biovotion VSM, Faros 180, and Fitbit devices). In the depression study a Fitbit Charge 2 will be used to measure sleep and activity. | 
-| Data management | Participants are requested to install three apps on their Android smartphone. Data is collected during a 2-year period. Active EMA will be activated every 6 weeks for 6 consecutive days. Four times per year a non-EMA follow-up is conducted, which contains (qualitative) interviews and self-report questionnaires. Log in is facilitated with token-based authentication and authorization. A dashboard app allows for live monitoring of results. Data is streamed and analysed live. |
-| Results | VUmc Psychiatry will participate in the depression study as a research site. Data will be used to assess if RMT data can help predict relapse. |
-| Lessons learned | When measuring over such a long timespan, extra attention should be paid to the possible burden for participants. Continuous monitoring via a Smartphone can severely impact battery life. Participants prefer consumer devices (such as FitBit) to research devices (such as GenActiv), because of stigma. |
-| More information | http://www.radar-cns.org/ |
+| Project | The European (EU H2020-IMI) RADAR-CNS project (Remote Assessment of Disease and Relapse - Central Nervous System; http://www.radar-cns.org/) aims to study the potential of wearable devices and smartphone technology to help prevent and treat depression, multiple sclerosis and epilepsy. The project, which started in 2016, is funded by the Innovative Medicines Initiative, a Public Private Partnership set up between the European Federation of Pharmaceutical Industries and Associations (EFPIA) and the European Union). The project is designed to examine how remote measurement technologies can monitor and improve quality of life and psychological well-being for people with depression, epilepsy, or multiple sclerosis. Within this project, the VUmc/GGZ inGeest research site focuses on depression (RADAR-MDD), in collaboration with King's College, London (KCL). |
+| |  Technical goals of the project are to 1) build an end-to-end open source system with generalised data aggregation capabilities, and 2) explore (technological aspects of) big data solutions. Clinical goals of the project are to 1) assess the feasibility of continuous monitoring of patients, and 2) predict disease onset or relapse with big data approaches (via prevention and risk assessment) |
+| EMA Measures | Data is collected during a 2-year period, in which EMA will be activated every 6 weeks for 6 consecutive days. Active EMA outcomes  include variability in sleep quality, levels of activity, social interactions, mood, cognitive performance and stress as possible predictors of the clinical course of participants.  Passive EMA measures, collected via a number of wearable devices, include location and movement (GPS; actigraphy), skin temperature, galvanic skin conductance, heart rate (-variability), voice recognition, social interaction data (call and message logs), and smartphone app usage patterns.|
+| Platform(s) | In the RADAR project, an extensive EMA platform is developed (the RADAR RMT application; see http://thehyve.nl/cases/radar-cns and , http://github.com/RADAR-base); This platform focuses on classes of data rather than specific devices, to enhance modularity and adaptability as new devices become available. The platform will be used to integrate and control data streams from an EMA smartphone app and several wearable device (including the [Empatica E4 Wristband](https://www.empatica.com/research/e4/), Pebble 2 Smartwatch, Biovotion VSM, Faros 180, and [Fitbit](https://www.fitbit.com/home). |
+| Contact Information | https://research.vumc.nl/en/persons/femke-lamers |
+|                     | https://research.vumc.nl/en/persons/brenda-penninx |
+|                     | http://www.radar-cns.org/ |
 
 
 ## Psychosomatic symptoms

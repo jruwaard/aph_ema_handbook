@@ -10,7 +10,7 @@ bibliography: [book.bib, packages.bib]
 biblio-style: apa
 link-citations: yes
 description: "This is an Amsterdam Public Health (APH) Research Manual, written for 
-researchers who are considering Ecological Momentary Assessment (EMA) studies."
+researchers who are planning Ecological Momentary Assessment (EMA) studies."
 ---
 
 # Preface {-}

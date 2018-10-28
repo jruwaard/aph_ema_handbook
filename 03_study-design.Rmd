@@ -9,16 +9,17 @@ As with all scientific research, EMA studies start with mindful consideration of
 
 Ample information on general study design issues can be found elsewhere (see for example, the APH quality handbook, at http://www.emgo.nl/kc/). This chapter highlights key design aspects of EMA studies.
 
-## What is the research question
+## What is the research question?
 
 Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into exploratory data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be the first step.
 
 Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter \@ref(introduction). Are you interested in real-life behaviour, in differences between participants, in changes within participants over time, or in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when you have to decide on the other aspects of the study design.
 
 
-## Who are the prospect participants?
+## Who are the study participants?
 
 Given the experimental nature of EMA, studies are often piloted in healthy or sub-clinical populations. This is a recommended first step, to test the experimental procedures and to avoid unnecessary burdening of vulnerable patient populations. You should be aware, though, that results obtained in non-patient populations do not necessarily generalize to patient populations. EMA mood ratings, for example, might be much more variable in patients compared to non-patients. Pilot studies should therefore also be conducted in the target population.
+
 
 ## What are the qualities of the EMA measures?
 \index{EMA!Passive EMA}
@@ -32,7 +33,7 @@ In active EMA research, complex multi-dimensional constructs such as mood and an
 In passive EMA research, it is important to be aware of the characteristics and limitations of the 'data acquisition interfaces' [@Stone2002]. For example, if you want to collect accelerometer data, a variety of options exist. You can collect these data via the built-in accelerometer of the smartphone of the participants, via cheap commercially available activity trackers, such as Fitbit, or via expensive wearable devices that are developed specifically for scientific research. Each option comes with specific advantages and disadvantages. Smartphone-based accelerometer data, for example, can be collected with relative ease, but these data can also be noisy and incomplete, since samples rates can often not be set and the precision of the built-in sensors varies considerably from device to device. Commercial accelerometers may have better precision and reliability (see, e.g., @Evenson2015), but manufacturers often limit access to raw data and data pre-processing algorithms, making it difficult (or even impossible) to fully analyse outcomes. Being aware of these issues when you plan the study, will help considerably in the analysis stage of your study. 
 
 
-## Constructing the Sample Plan
+## What is the Sample Plan?
 \index{Sampling}
 
 An important next step is to define the EMA data sample plan. Questions that need to be answered are:
@@ -43,9 +44,7 @@ An important next step is to define the EMA data sample plan. Questions that nee
 
 The questions above should be answered as detailed as possible to best serve the research question and the statistical power (see below). In practice, however, it is often necessary to balance between research interests, respondent burden, and practical considerations, such as hardware limitations.
 
-When determining the appropriate sample plan, start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data [@Piasecki2007]. 
-
-Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and for a long period of time. However, this may also increase respondent burden, which may, in turn, affect study adherence and accuracy. Measurement reactivity could also occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome [@Hufford2002; @VanBallegooijen2016].
+When determining the appropriate sample plan, start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data [@Piasecki2007]. Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and for a long period of time. However, this may also increase respondent burden, which may, in turn, affect study adherence and accuracy. Measurement reactivity could also occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome [@Hufford2002; @VanBallegooijen2016].
 
 Issues related to hardware should also be considered. Electronic wearables have limited battery life and memory storage space. Memory space limitations of actigraphy watches may require participants to visit the research site. GPS-monitoring apps may have a negative impact on the battery life of the smartphone of the participants. These practical issues may also result in data loss and study drop-out.
 
@@ -61,7 +60,7 @@ plan <- sample_plan(n_participants = 5,
 ```
 
 
-##  Power Analysis
+##  What is the Optimal Sample Size?
 \index{Methods!Power analysis}
 
 The power of a statistical test is the probability that it will detect an effect when this effect, in reality, exists. It is a function of the strength of the effect size, sample size, the significance level (alpha), *and* the statistical model. Determining the power of the experiment is an important step in the design of any study - EMA studies included. Both underpowered and overpowered studies are a waste of time and resources.
@@ -118,12 +117,10 @@ for (i in 1:nsim) {
 sum(p < 0.05) / nsim
 ```
 
-As can be seen, the simulation results are very close to the output of 'pwr.t.test'. 
-
-There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited (or too difficult to understand...). Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, 'mvrnorm' in package MASS [@Venables2002] can be used to generate correlated data, and package 'simstudy' [@R-simstudy] can be used to generate complex (longitudinal) data. 
+As can be seen, the simulation results are very close to the output of 'pwr.t.test'. There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited. Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, 'mvrnorm' in package MASS [@Venables2002] can be used to generate correlated data, and package 'simstudy' [@R-simstudy] can be used to generate complex longitudinal and hierarchical data.
 
 
-## Ethical considerations
+## What are the Ethical Aspects?
 \index{Methods!Ethical considerations}
 
 All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC; Dutch: 'METC'). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. The official definition of a medical device (Medical Device Act, or 'Wet Medische Hulpmiddelen') is as follows:
@@ -142,13 +139,15 @@ All clinical studies that involve human participants need to be evaluated by a M
 
 In short, software can be classified as a medical device when it collects patient-specific data and when it is specifically intended for one of the above-mentioned objectives. In practice, the definition of medical devices leaves a lot of room for confusion.  Researchers often struggle with the question whether their assessment tools should be considered an medical device or not. For this purpose, flowcharts exist that help to determine whether an app of product should be classified as a medical device [see, e.g., @Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows such a flow-chart.
 
-```{r fig3b, fig.cap = "Flow-chart to determine whether study software should be considered a medical device.", echo = FALSE, out.width = '65%'}
-knitr::include_graphics("images/outcomes/Flow_MD.png")
-```
-
-
 While planning your EMA study, you should also be mindful of the rules and regulations that apply to data collection, storage and sharing. From May 2018 onward, the European Committee has enforced the General Data Protection Regulation (GDPR, see https://gdpr-info.eu/; in Dutch, Algemene Verordening Gegevensbescherming - AVG), which protects the data and privacy of EU citizens. Complying to the GDPR can be a complex and time-consuming process, depending on nature of your study. Do not hesitate to consult local experts or standard guidelines provided by your organisation (see, e.g., http://www.emgo.nl/kc/checklist-avg/). 
 
 In EMA studies, an important GDPR-related issue concerns the Data Processing Agreement (DPA). When data processing is (partly) outsourced to a third party, a Data Processing Agreement (DPA) should be drafted, that specifies the agreements between the 'controller' and 'processor'. In this context, a controller is the person or organisation that determines the why and how of data collection (for example you as a researcher). The processor processes the data on behalf of the controller, for example by providing a data-collection service, or by storing raw study data on a cloud-server.
 
-Aspects of data processing that need to be addressed in this agreement include the context, duration and termination of agreement, the nature of the data collected, the duration of data storage, security measures taken to prevent unauthorized access, and agreements on data ownership, data sharing, the handling of personal data breaches, and liability. Most organisations offer model agreements in which all relevant issues are addressed. Third parties may offer model agreements as well. If so, however, these agreements need to be checked for compliance to local regulations. 
+Aspects of data processing that need to be addressed in this agreement include the context, duration and termination of agreement, the nature of the data collected, the duration of data storage, security measures taken to prevent unauthorized access, and agreements on data ownership, data sharing, the handling of personal data breaches, and liability. Most organisations offer model agreements in which all relevant issues are addressed. Third parties may offer model agreements as well. If so, however, these agreements need to be checked for compliance to local regulations.
+
+```{r fig3b, fig.cap = "Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.", echo = FALSE, out.width = '90%'}
+knitr::include_graphics("images/outcomes/Flow_MD.png")
+```
+
+
+

@@ -157,6 +157,12 @@ ggplot(dt, aes(x = X, y = Y, group = id)) +
 ```
 
 
+### To enable EMI
+\index{Ecological Momentary Intervention}
+\index{EMI|see{Ecological Momentary Intervention}}
+
+EMA enables Ecological Momentary Interventions (EMI): interventions that that are provided to people during their everyday lives, in real time, and in their natural settings [@heron2010]. If dynamic disease processes can be adequately monitored in everyday-life through EMA, it should also be possible to intervene when EMA data reflect clear changes in these processes, in a way that is maximally effective given what is known about the indivudal. A key term in the last sentence, however, is "adequate". We should be aware of the "garbage-in/garbage-out principle". Before EMI's can be considered, the psychometric properties of EMA measures should be demonstrated first. 
+
 ## EMA research findings: A birds-eye view
 
 The use of EMA in mental health research might seem novel but this methodology has a long track record. Already in the 1980's, early pioneers used electronic devices to elicit responses from study participants to tap into (mental) health processes in everyday life [see, e.g., @Csikszentmihalyi2014]. Recent years, however, have witnessed a large increase in EMA research. Rapid technological developments, a marked interest in the individual, and a wide recognition of the need to study health-related processes in real-life situations have all contributed to this. 
@@ -201,24 +207,29 @@ While available reviews suggest that EMA is a feasible research method that has 
 
 Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting various mental health conditions
 
-| **Topic**        | **Author (Year)**        | **Outcome**        |
-|:--------------------|:--------------------|:--------------------|
-| **Anxiety disorders**  | @Walz2014 | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviours, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
-| | @schueller2017 | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation |
-| **Eating disorders** | @Engel2016| An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
-| **Mood disorders** | @AanhetRot2012 | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, paediatric populations, MDD/BD specificity, and links with neuroscience |
-| | @Aung2017 | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
-|| @burton2013 | Focuses on diurnal variations in activity levels among depressed individuals. |
-| |@Telford2012 | Identifies six themes of EMA research in MDD: methodology; positive and negative affect; cortisol secretion; antidepressant treatment; work performance; genetic risk factors |
-| | @Wenze2010 | Provides an overview of EMA in mood disorder research comprising techniques used, types of population assessed, types of research questions, and a discussion of the potential of EMA in treatment settings |
-| | @Wichers2011 | Provides an overview for the potential clinical application of EMA in the diagnostic and treatment of MDD.  |
-| | @Versluis2016 | Provides an overview of interventions (EMI) addressing anxiety, depression, and perceived stress on positive psychological outcomes |
-| | @Dubad2018 | Provides an overview of the feasibility and clinical impact of mood-monitoring applications targeting young populations (10-24 years old) |
-| **Substance-related disorders**| @Shiffman2009 | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
-| | @Swendsen2016 | Conceptual review of the use of mobile technologies for research on addiction and its treatment |
-| **Mental health/ Well-being** | @Cornet2017 | Outlines the potential and challenges of passive sensing to detect status change and behaviour change following feedback on behaviour. |
-| | @kirchner2016 | Provides an overview of ' geographically explicit momentary assessment' (GEMA) research to enrich EMA research in mental health and well-being |
-| | @Dogan2017 | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems |
+| **Topic** / **Author (Year)** | **Summary**                                             |
+|:------------------------------|:--------------------------------------------------------|
+| **Anxiety disorders**  | | 
+| @Walz2014              | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviours, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
+| @schueller2017         | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation |
+| **Eating disorders**   | |
+| @Engel2016 | An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
+| **Mood disorders** | |
+| @AanhetRot2012     | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, paediatric populations, MDD/BD specificity, and links with neuroscience |
+| @Aung2017          | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
+| @burton2013        | Focuses on diurnal variations in activity levels among depressed individuals. |
+| @Telford2012       | Identifies six themes of EMA research in MDD: methodology; positive and negative affect; cortisol secretion; antidepressant treatment; work performance; genetic risk factors |
+| @Wenze2010         | Provides an overview of EMA in mood disorder research comprising techniques used, types of population assessed, types of research questions, and a discussion of the potential of EMA in treatment settings |
+| @Wichers2011       | Provides an overview for the potential clinical application of EMA in the diagnostic and treatment of MDD.  |
+| @Versluis2016      | Provides an overview of interventions (EMI) addressing anxiety, depression, and perceived stress on positive psychological outcomes |
+| @Dubad2018         | Provides an overview of the feasibility and clinical impact of mood-monitoring applications targeting young populations (10-24 years old) |
+| **Substance-related disorders**| |
+| @Shiffman2009      | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
+| @Swendsen2016      | Conceptual review of the use of mobile technologies for research on addiction and its treatment |
+| **Mental health/ Well-being** | | 
+| @Cornet2017        | Outlines the potential and challenges of passive sensing to detect status change and behaviour change following feedback on behaviour. |
+| @kirchner2016      | Provides an overview of ' geographically explicit momentary assessment' (GEMA) research to enrich EMA research in mental health and well-being |
+| @Dogan2017         | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems |
 
 
 ## What is in this manual?

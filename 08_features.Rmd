@@ -1,17 +1,119 @@
+
 # (PART) Analytic Approaches {-}
 
-# Feature Extraction and Selection {#features}
+# Feature Extraction {#features}
 
-Lorem ipsum dolor sit amet, conectetur adipiscing elit. Aliquam vehicula augue
+EMA data are streams: time-series that represent processes that may span hours, days, weeks or even months. To the beginning EMA researcher, it may not be immediately clear how to deal with these data. How can these series be summarised to reveal differences between individuals or changes within the individual over time? What "qualities" or "attributes" of a time-series should be considered? What are the available options?
+
+In the data science community, deriving attributes from raw data is called "feature extraction". It refers to a process in which raw data are transformed into variables (features) that may have richer descriptive and/or predictive value. In this chapter, we will discuss some of the features that can be extracted from EMA time-series. 
+
+
+## The EMA time-series
+
+We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day. Figure \@ref(fig:fig8a) shows a plot of the simulated scores. Stare at the figure for a moment. How would you characterise the development of scores over time? What features would you want to extract? How would you quantify these features?
+
+```{r echo = FALSE}
+## Constructing the simulated EMA time-series
+
+# libraries
+library(ggplot2)
+library(gridExtra)
+library(psych)
+
+# simulate the signal -------
+set.seed(12345)
+n_measurements_per_day <- 5 
+n_days <- 21
+n = n_measurements_per_day * (n_days - 1)
+m <- 3
+sdev_min <- 0.05
+sdev_max <- 2
+trend  <- 3
+missingness_prob = c(0.1, 0.6)
+
+
+# time
+t <- seq(0, n_days - 1, length.out =  n)
+
+# signal
+s <- numeric(length(t))
+
+# periodicity
+s <- 2 * sin(1   * t * 2 * pi)
+s <- s + 1 * sin(1/7 * t * 2 * pi)
+
+# mean + trend + sd (heteroscedastic)
+s <- s + rnorm(n, 
+               mean = seq(m, m + trend, length.out = n), 
+               sd = seq(sdev_min, sdev_max, length.out = n))
+
+
+# missingness
+m1 <- rbinom(n, 1, seq(missingness_prob[1], missingness_prob[2], length.out = n))
+s[m1 == 1] <- NA 
+
+# in range
+s[s > 10] <- 10
+s[s < 0] <- 0
+
+# combine in data.frame
+d <- data.frame(t, s)
+```
+
+```{r fig8a, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "A simulated three-week time-series of EMA mood ratings of a single respondent."}
+# plot signal
+e <- subset(d, !is.na(s))
+ggplot(e, aes(x = t, y = s)) + 
+  geom_line() + 
+  geom_point() + 
+  ylab("mood") + xlab("days") +
+  ylim(0, 10) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
+
+## Central Tendency and Variability
+
+Features do not necessarily have to be complex. Simple measures of central tendency of EMA time-series, such as the mode or the mean, can be effective predictors of traditional clinical assessments. Standard measures of the variability of EMA scores, such as the standard deviation, have also been shown to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to consider these statistics when they help you to answer your research question.
+
+You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is *stationary*, @wiki_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and sd are biased statistics.
+
+Our simulated EMA time-series is non-stationary, as can be seen in Figure \@ref(fig:fig8b). The process is not stable. This person changes over time. For one: her mood increases. EMA scores tend to be below the mean in the beginning, and above the mean at the end. The mean (*M*  = `r round(mean(e$s), 1)`) is an overestimate of the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and an underestimate of the scores of the last week (*M* = `r round(mean(e$s[e$t > 13]), 1)`).
+
+Score variability appears to increase over time as well. EMA scores tend to be below the blue "mean - 1 SD"-line at the beginning, and above the "mean + 1 SD" line at the end. 
+
+```{r fig8b, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "EMA time-series, with mean (red line) and 1 standard deviation range (blue) superposed"}
+# plot signal with mean and variance
+e <- subset(d, !is.na(s))
+ggplot(e, aes(x = t, y = s)) +
+  geom_hline(yintercept = mean(e$s, na.rm = TRUE), color = "red") + 
+  geom_hline(yintercept = mean(e$s, na.rm = TRUE) + sd(e$s, na.rm = TRUE), color = "blue", linetype = 2) +
+  geom_hline(yintercept = mean(e$s, na.rm = TRUE) - sd(e$s, na.rm = TRUE), color = "blue", linetype = 2) +
+  geom_line() + 
+  geom_point() + 
+  ylab("mood") + xlab("days") +
+  ylim(0, 10) +
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
+
+## Trends
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+ut massa tempor, ac dapibus dui viverra. 
 
+```{r fig8c, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with trends in the mean (upper part) and the variability (lower part)"}
+fm = lm(s ~ t, e)
 
-## Feature extraction
+ggplot(e, aes(x = t, y = s)) +
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  geom_line() + 
+  geom_point() + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -21,67 +123,31 @@ sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+```{r fig8d, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with trends in the mean (upper part) and the variability (lower part)"}
+e$residuals <- resid(fm)
 
-```{r fig8a, echo = FALSE, out.width = '98%', fig.asp = 1.1, fig.cap = "features of a series."}
-d <- data.frame(i = 1:100)
-
-d$x <- rnorm(nrow(d), 0, 2)
-d$mean <- mean(d$x)
-d$variance <- var(d$x)
-d$autocorrelation <- cor(d$x, lag(d$x), use = "complete.obs")
-d$rolling_mean <- zoo::rollapply(d$x, 10, fill = NA, mean)
-d$rolling_variance <- zoo::rollapply(d$x, 10, fill = NA, var)
-d$roling_autocorrelation <- zoo::rollapply(d$x, 10, fill = NA,
-                         function(x) {
-                           cor(x, lag(x), use = "complete.obs")
-                          })
-
-d <- tidyr::gather(d, aspect, value, -i)
-d$aspect = factor(
-  d$aspect,
-  levels = c(
-    "x", "mean", "variance", "autocorrelation", 
-    "rolling_mean", "rolling_variance", "roling_autocorrelation"))
-
-ggplot(data = d, 
-       aes(x = i, 
-           y = value)) +
-  geom_point(alpha = .3, size = .8) + 
+ggplot(e, aes(x = t, y = abs(residuals))) +
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
   geom_line() + 
-  facet_wrap(~ aspect, scales = "free", ncol = 2) + 
-  theme(axis.title.x=element_blank(),
-        axis.text.x=element_blank(),
-        axis.ticks.x=element_blank())
+  geom_point() + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
 ```
 
+## Missing Values
 
-### Variance
+```{r echo = FALSE, out.width = "100%", fig.asp = .3}
+d$t_g <- cut(t, 21, labels = 1:21)
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-
-### Autocorrelation
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+p <- prop.table(table(d$t_g, is.na(d$s)), 1)
+p <- as.data.frame(p)
+p <- subset(p, Var2 == TRUE)
+ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +  
+  geom_line() + geom_point() + 
+  ylab("missed ratings (%)") + xlab("days") +
+  ylim(0, 100) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
 
 
 ### Rolling statistics
@@ -92,40 +158,10 @@ sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+ut massa tempor, ac dapibus dui viverra.
 
 
-## Reliability and Validity
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
-
-## Missing values
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra. How to prevent imputation structure to becoming
-a feature of your signal?
-
-
-## Feature Selection
+## Periodicity
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -133,17 +169,55 @@ sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.
+
+Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
+```{r echo = FALSE, out.width = "100%", fig.asp = .3}
+# Fourier analysis ----
+impute_interpolation <- function(x) {
+  require(zoo)
+  
+  y = zoo(x)
+  
+  # fill initial and trailing NA
+  if (is.na(y[1])) y[1] = y[which.max(!is.na(y))]
+  if (is.na(y[length(y)])) y[length(y)] = y[max((!is.na(y))*(1:length(y)))]
+  
+  # interpolate
+  y_ = as.numeric(na.approx(y))
+  
+  y_
+}
+d$s_imputed <- impute_interpolation(d$s)
+ggplot(d, aes(x = t, y = s_imputed)) +
+  geom_line(color = 1) + 
+  geom_point(aes(color = is.na(s))) + 
+  scale_color_manual(values=c("black", "red")) +
+  guides(color = FALSE) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.
+
+```{r echo = FALSE, out.width = "100%", fig.asp = .4}
+fa <- spec.pgram(ts(impute_interpolation(d$s), frequency = n_measurements_per_day), 
+                 detrend = TRUE, demean = TRUE, 
+                 main = "periodogram",  sub = "",
+                 xlab = "frequency", log = "no",
+                 ylab = "power", type = "h",
+                 spans = NULL, taper = 0.01, ci = FALSE)
+```
+
+[Circadian rhythm] Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
@@ -151,13 +225,11 @@ sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.  
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
+```{r echo = FALSE}
+1 / fa$freq[order(fa$spec, decreasing = TRUE)][1:4]
+```
+
+## Discussion
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -165,44 +237,6 @@ sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+ut massa tempor, ac dapibus dui viverra.
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam. 

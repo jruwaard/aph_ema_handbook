@@ -46,6 +46,7 @@ ensurePackage(
     "rgl",
     "scales",
     "simstudy",
-    "simr"
+    "simr",
+    "zoo"
   )
 )

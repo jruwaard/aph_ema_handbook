@@ -1,16 +1,103 @@
+```{r include=FALSE, cache=FALSE}
+# # Reproducability --------------------------------------------------------------
+# 
+# # fix random numbers
+# set.seed(1014)
+# 
+# 
+# # knitr chunk options ----------------------------------------------------------
+# 
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  cache = FALSE,
+  out.width = "98%",
+  fig.align = 'center',
+  fig.width = 7,
+  fig.asp = 0.5,  # was: 0.618 (1 / phi)
+  fig.show = "hold",
+  message = FALSE,
+  warning = FALSE
+)
+# 
+# options(width = 120)
+# 
+# 
+# # standard libraries -----------------------------------------------------------
+library(ggplot2)
+library(emaph)
+# 
+# 
+# # theming ----------------------------------------------------------------------
+# 
+# # avoid long pint-out of numeric variables
+# #options(digits = 3)
+# 
+# # avoid long print-outs of tables
+# #options(dplyr.print_min = 6, dplyr.print_max = 6)
+# 
+# # common theme of all ggplot images
+# #theme_set(theme_bw(12))
+# 
+# 
+```
+```{r include=FALSE, cache=FALSE}
+# # Reproducability --------------------------------------------------------------
+# 
+# # fix random numbers
+# set.seed(1014)
+# 
+# 
+# # knitr chunk options ----------------------------------------------------------
+# 
+knitr::opts_chunk$set(
+  comment = "#>",
+  collapse = TRUE,
+  cache = FALSE,
+  out.width = "98%",
+  fig.align = 'center',
+  fig.width = 7,
+  fig.asp = 0.5,  # was: 0.618 (1 / phi)
+  fig.show = "hold",
+  message = FALSE,
+  warning = FALSE
+)
+# 
+# options(width = 120)
+# 
+# 
+# # standard libraries -----------------------------------------------------------
+library(ggplot2)
+library(emaph)
+# 
+# 
+# # theming ----------------------------------------------------------------------
+# 
+# # avoid long pint-out of numeric variables
+# #options(digits = 3)
+# 
+# # avoid long print-outs of tables
+# #options(dplyr.print_min = 6, dplyr.print_max = 6)
+# 
+# # common theme of all ggplot images
+# #theme_set(theme_bw(12))
+# 
+# 
+```
 
 # (PART) Analytic Approaches {-}
 
 # Feature Extraction {#features}
 
-EMA data are streams: time-series that represent processes that may span hours, days, weeks or even months. To the beginning EMA researcher, it may not be immediately clear how to deal with these data. How can these series be summarised to reveal differences between individuals or changes within the individual over time? What "qualities" or "attributes" of a time-series should be considered? What are the available options?
+EMA data are streams: time-series that represent processes that may span hours, days, weeks or even months. To the beginning EMA researcher, it may not be immediately clear how to deal with these data. How can these series be summarised to study differences between individuals or changes within individuals over time? What 'qualities' or 'featuresf of a time-series should be considered? What are the available options? 
 
-In the data science community, deriving attributes from raw data is called "feature extraction". It refers to a process in which raw data are transformed into variables (features) that may have richer descriptive and/or predictive value. In this chapter, we will discuss some of the features that can be extracted from EMA time-series. 
+In this chapter, we will discuss some of the features that can be extracted from EMA time-series.
 
+## Simulated EMA Time-series Example
 
-## The EMA time-series
+We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day. Figure \@ref(fig:fig8a) shows a plot of the simulated scores.
 
-We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day. Figure \@ref(fig:fig8a) shows a plot of the simulated scores. Stare at the figure for a moment. How would you characterise the development of scores over time? What features would you want to extract? How would you quantify these features?
+Stare at the figure for a moment. How would you characterise the development of scores over time? What features would you want to extract? How would you quantify these features?
 
 ```{r echo = FALSE}
 ## Constructing the simulated EMA time-series
@@ -21,32 +108,34 @@ library(gridExtra)
 library(psych)
 
 # simulate the signal -------
-set.seed(12345)
+set.seed(123)
 n_measurements_per_day <- 5 
 n_days <- 21
-n = n_measurements_per_day * (n_days - 1)
+n = n_measurements_per_day * (n_days)
 m <- 3
-sdev_min <- 0.05
-sdev_max <- 2
+sdev_min <- 1
+sdev_max <- 4
 trend  <- 3
-missingness_prob = c(0.1, 0.6)
-
+missingness_prob = c(0.1, 0.5)
+autocorrelation = .6
 
 # time
-t <- seq(0, n_days - 1, length.out =  n)
+t <- seq(0, (n - 1) * 1 /5, by =  1/5)
 
 # signal
 s <- numeric(length(t))
 
 # periodicity
-s <- 2 * sin(1   * t * 2 * pi)
-s <- s + 1 * sin(1/7 * t * 2 * pi)
+s <- seq(sdev_min, sdev_max, length.out = n) * sin(1   * t * 2 * pi)
+s <- s + 0.5 * seq(sdev_min, sdev_max, length.out = n) * sin(1/7 * t * 2 * pi)
 
 # mean + trend + sd (heteroscedastic)
 s <- s + rnorm(n, 
                mean = seq(m, m + trend, length.out = n), 
-               sd = seq(sdev_min, sdev_max, length.out = n))
+               sd = 0.5)
 
+
+s <- s + 1 * arima.sim(model = list(ar = autocorrelation), n = n)
 
 # missingness
 m1 <- rbinom(n, 1, seq(missingness_prob[1], missingness_prob[2], length.out = n))
@@ -60,12 +149,12 @@ s[s < 0] <- 0
 d <- data.frame(t, s)
 ```
 
-```{r fig8a, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "A simulated three-week time-series of EMA mood ratings of a single respondent."}
+```{r fig8a, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "A simulated three-week time-series of EMA mood ratings."}
 # plot signal
 e <- subset(d, !is.na(s))
 ggplot(e, aes(x = t, y = s)) + 
   geom_line() + 
-  geom_point() + 
+  geom_point() +
   ylab("mood") + xlab("days") +
   ylim(0, 10) + 
   theme_bw() + theme(panel.grid.minor = element_blank())
@@ -73,47 +162,87 @@ ggplot(e, aes(x = t, y = s)) +
 
 ## Central Tendency and Variability
 
-Features do not necessarily have to be complex. Simple measures of central tendency of EMA time-series, such as the mode or the mean, can be effective predictors of traditional clinical assessments. Standard measures of the variability of EMA scores, such as the standard deviation, have also been shown to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to consider these statistics when they help you to answer your research question.
+Features do not necessarily have to be complex. Familiar measures of central tendency of EMA time-series, such as the mode or the mean, can be useful predictors of traditional clinical assessments. Standard measures of the variability of EMA scores, such as the standard deviation (SD), have been shown to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to consider these statistics when they help you to answer your research question.
 
-You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is *stationary*, @wiki_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and sd are biased statistics.
+You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is *stationary*, @wiki_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and SD are biased statistics.
 
-Our simulated EMA time-series is non-stationary, as can be seen in Figure \@ref(fig:fig8b). The process is not stable. This person changes over time. For one: her mood increases. EMA scores tend to be below the mean in the beginning, and above the mean at the end. The mean (*M*  = `r round(mean(e$s), 1)`) is an overestimate of the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and an underestimate of the scores of the last week (*M* = `r round(mean(e$s[e$t > 13]), 1)`).
+Our simulated EMA time-series is non-stationary, as can be seen in Figure \@ref(fig:fig8b). We observe a trend: the mood of the person increases over time. EMA scores tend to be below the mean in the beginning, and above the mean at the end. The overall mean (*M*  = `r round(mean(e$s), 1)`) overestimates the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and underestimates the scores of the last week (*M* = `r round(mean(e$s[e$t > 13]), 1)`). If you use the overall mean as a feature of the time-series in your analyses, you ignore the mood improvements over the three-week period. In clinical research, your would probably not want to miss this other important feature.
 
-Score variability appears to increase over time as well. EMA scores tend to be below the blue "mean - 1 SD"-line at the beginning, and above the "mean + 1 SD" line at the end. 
+When a trend exists in a series, the overall standard deviation is overestimated, because of the extra variability that is introduced by the changes of the mean. This can be checked by comparing the SD of the full series to the SD of smaller parts. In our example, the overall SD is `r round(sd(e$s), 1)`. If we calculate the average of the SD of scores of each day, however, the estimated SD is `r round(mean(aggregate(e$s, by = list(day = floor(e$t)), FUN = sd)$x), 1)`. If the additional variability introduced by the trend is cancelled out, our estimate of variability decreases considerably.   
 
-```{r fig8b, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "EMA time-series, with mean (red line) and 1 standard deviation range (blue) superposed"}
+```{r fig8b, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines)"}
 # plot signal with mean and variance
 e <- subset(d, !is.na(s))
 ggplot(e, aes(x = t, y = s)) +
   geom_hline(yintercept = mean(e$s, na.rm = TRUE), color = "red") + 
   geom_hline(yintercept = mean(e$s, na.rm = TRUE) + sd(e$s, na.rm = TRUE), color = "blue", linetype = 2) +
   geom_hline(yintercept = mean(e$s, na.rm = TRUE) - sd(e$s, na.rm = TRUE), color = "blue", linetype = 2) +
-  geom_line() + 
+  #geom_line() + 
   geom_point() + 
   ylab("mood") + xlab("days") +
   ylim(0, 10) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
 
-## Trends
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra. 
-
-```{r fig8c, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with trends in the mean (upper part) and the variability (lower part)"}
+## Modelling the Trend
+```{r echo=FALSE, include=FALSE}
 fm = lm(s ~ t, e)
+```
 
+Now that we know that the overall mean and SD are sub-optimal features of this time-series, the question is how we can do better. What other features can we extract? One option would be to characterize the series in simple regression terms, via an intercept and a slope. By doing so, we can economically describe the dynamics of the series with two numbers.
+
+As can be seen in Figure \@ref(fig:fig8c), the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is `r round(coef(fm)[1], 1)`. This mean increases aproximately `r round(coef(fm)[2] * 7,  1)` points per day (the slope), to a final estimated mean of `r round(coef(fm)[1], 1) + round(coef(fm)[2] * 21, 1)`.
+
+```{r fig8c, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)"}
 ggplot(e, aes(x = t, y = s)) +
   geom_smooth(method = "lm", color = "red", se = FALSE) +
-  geom_line() + 
+  geom_abline(intercept = coef(fm)[1] + sd(resid(fm)), slope = coef(fm)[2], color = "blue", linetype = 2) + 
+  geom_abline(intercept = coef(fm)[1] - sd(resid(fm)), slope = coef(fm)[2], color = "blue", linetype = 2) + 
   geom_point() + 
+  ylab("mood") + xlab("days") +
+  ylim(0, 10) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
+
+By using regression, we can also find a better estimate of the SD. Remember how the SD is conceptually defined as the average distance between the scores and the mean. Since the mean is modeled by the regression line, we can estimate the SD by calculating the standard deviation of the residuals of the regression model that we used to retrieve the intercept and slope. For our series, this results in an estimated SD of `r round(sd(resid(fm)), 1)`. The new SD estimate is smaller than the overall SD, as expected. By accounting for the extra variability introduced by the trend, we get a more accurate estimate of the variability around the mean at each point in time. However, the new estimate is still higher than the daily estimate that we calculated above. The regression summary provides a better description of the series, but this series may have other important features that we are still unaware of.
+
+Figure \@ref(fig:fig8d) provides a first indication of what is going on. In the figure, absolution regression residuals are plotted over time, with a regression line superposed. This reveals that residuals increase as time goes by. We discovered a new feature of the series: heteroscedasticity. 
+
+```{r fig8d, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Plot of absolute regression residuals over time, revealing heteroscedasticity."}
+e$residuals <- rstandard(fm)
+e$week <- (e$t %/% 1 )+ 1
+
+ggplot(subset(e, week < 20), aes(x = t, y = abs(residuals))) +
+  geom_point() + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +
+  ylab("absolute residuals") + xlab("week") +
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
+
+## Missing Values
+
+```{r echo = FALSE, include = FALSE}
+d$t_g <- cut(t, 21, labels = 1:21)
+p <- prop.table(table(d$t_g, is.na(d$s)), 1)
+p <- as.data.frame(p)
+p <- subset(p, Var2 == TRUE)
+fm2 <- lm(p$Freq ~ as.numeric(p$Var1))
+```
+
+In EMA research, you should be prepared to deal with missing values. Especially with active EMA, in which participants have to consciously respond to prompted questions several times a day, non-response is inevitable. Missing values are typically considered to be a nuisance rather than a features of EMA time-series. Non-response, however, is an important characteristic, that may even have clinical relevance.
+
+Missing values are also present in our simulated EMA time-series example, as you may have found out already when you inspected Figure \@ref(fig:fig8a). The points, denoting the observed responses, are more dense in the beginning of the series. Over the course of the study period, the probability of missed ratings increases. This becomes immediately clear from Figure \@ref(fig:fig8e), in which the percentage of missed ratings is plotted per day. Every week, the probability of missed ratings increases `r round(coef(fm2)[2]*7*100)`%.
+
+```{r fig8e, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed."}
+ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) + 
+  geom_smooth(method = "lm", color = "red", se = FALSE) +  
+  geom_point() + 
+  ylab("missed ratings (%)") + xlab("days") +
+  ylim(0, 100) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
+
+## Autocorrelation
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
@@ -123,32 +252,9 @@ sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.
 
-```{r fig8d, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with trends in the mean (upper part) and the variability (lower part)"}
-e$residuals <- resid(fm)
-
-ggplot(e, aes(x = t, y = abs(residuals))) +
-  geom_smooth(method = "lm", color = "red", se = FALSE) +
-  geom_line() + 
-  geom_point() + 
-  theme_bw() + theme(panel.grid.minor = element_blank())
+```{r echo = FALSE, out.width = "100%", fig.asp = .4}
+acf(e$s, type = "partial", lag.max = 35)
 ```
-
-## Missing Values
-
-```{r echo = FALSE, out.width = "100%", fig.asp = .3}
-d$t_g <- cut(t, 21, labels = 1:21)
-
-p <- prop.table(table(d$t_g, is.na(d$s)), 1)
-p <- as.data.frame(p)
-p <- subset(p, Var2 == TRUE)
-ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) + 
-  geom_smooth(method = "lm", color = "red", se = FALSE) +  
-  geom_line() + geom_point() + 
-  ylab("missed ratings (%)") + xlab("days") +
-  ylim(0, 100) + 
-  theme_bw() + theme(panel.grid.minor = element_blank())
-```
-
 
 ### Rolling statistics
 
@@ -158,7 +264,55 @@ sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
 tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.
+ut massa tempor, ac dapibus dui viverra [@vanBreda2016].
+
+```{r echo = FALSE, out.width = "100%", fig.asp = .4}
+d$rolling_mean <-
+  as.numeric(
+    zoo::rollapply(
+      as.numeric(d$s),
+      width = 5,
+      FUN = function(x)
+        mean(x, na.rm = TRUE),
+      fill = NA,
+      align = "right",
+      partial = TRUE
+    )
+  )
+
+e <- subset(d, !is.na(s))
+ggplot(e, aes(x = t, y = rolling_mean)) +
+  geom_point(aes(y = s), color = "grey", size = .8) + 
+  geom_line(size = 1.2) + 
+  ylab("Mood (rolling mean)") + xlab("days") +
+  ylim(0, 10) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+
+```
+
+```{r echo = FALSE, out.width = "100%", fig.asp = .4}
+d$rolling_sd <-
+  as.numeric(
+    zoo::rollapply(
+      as.numeric(d$s),
+      width = 30,
+      FUN = function(x)
+        var(x, na.rm = TRUE),
+      fill = NA,
+      align = "right",
+      partial = TRUE
+    )
+  )
+
+e <- subset(d, !is.na(s))
+ggplot(e, aes(x = t, y = rolling_sd)) +
+  geom_point() + 
+  geom_line(size = 1.2) + 
+  ylab("Mood (rolling sd)") + xlab("days") +
+  ylim(0, 10) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+
+```
 
 
 ## Periodicity
@@ -200,6 +354,7 @@ ggplot(d, aes(x = t, y = s_imputed)) +
   guides(color = FALSE) + 
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
@@ -239,4 +394,12 @@ sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.
 
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
+metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
+sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
+tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra [@hoogendoorn2017_book].
 

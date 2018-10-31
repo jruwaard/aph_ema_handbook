@@ -242,6 +242,43 @@ ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
 
+Vestibulum hendrerit tempus condimentum. Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit [@hoogendoorn2017_book]. Vestibulum scelerisque nulla
+ut massa tempor, ac dapibus dui viverra.  Donec a mollis
+sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit
+
+Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
+Vestibulum id laoreet neque. Phasellus at ex velit
+
+```{r echo = FALSE, out.width = "100%", fig.asp = .3}
+# Imputation through interpolation 
+impute_interpolation <- function(x) {
+  require(zoo)
+  
+  y = zoo(x)
+  
+  # fill initial and trailing NA
+  if (is.na(y[1])) y[1] = y[which.max(!is.na(y))]
+  if (is.na(y[length(y)])) y[length(y)] = y[max((!is.na(y))*(1:length(y)))]
+  
+  # interpolate
+  y_ = as.numeric(na.approx(y))
+  
+  y_
+}
+
+d$s_imputed <- impute_interpolation(d$s)
+ggplot(d, aes(x = t, y = s_imputed)) +
+  geom_line(color = 1) + 
+  geom_point(aes(color = is.na(s))) + 
+  scale_color_manual(values=c("black", "red")) +
+  guides(color = FALSE) + 
+  theme_bw() + theme(panel.grid.minor = element_blank())
+```
+
+
 ## Autocorrelation
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
@@ -324,36 +361,6 @@ tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis
 sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
 Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
 ut massa tempor, ac dapibus dui viverra.
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
-
-```{r echo = FALSE, out.width = "100%", fig.asp = .3}
-# Fourier analysis ----
-impute_interpolation <- function(x) {
-  require(zoo)
-  
-  y = zoo(x)
-  
-  # fill initial and trailing NA
-  if (is.na(y[1])) y[1] = y[which.max(!is.na(y))]
-  if (is.na(y[length(y)])) y[length(y)] = y[max((!is.na(y))*(1:length(y)))]
-  
-  # interpolate
-  y_ = as.numeric(na.approx(y))
-  
-  y_
-}
-d$s_imputed <- impute_interpolation(d$s)
-ggplot(d, aes(x = t, y = s_imputed)) +
-  geom_line(color = 1) + 
-  geom_point(aes(color = is.na(s))) + 
-  scale_color_manual(values=c("black", "red")) +
-  guides(color = FALSE) + 
-  theme_bw() + theme(panel.grid.minor = element_blank())
-```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,

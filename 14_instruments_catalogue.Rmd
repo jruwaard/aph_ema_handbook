@@ -1,7 +1,7 @@
 
 # EMA Instruments Catalogue {#ema-instruments-catalogue}
 
-To conduct EMA studies, a variety apps, online applications and wearable devices are on the market. In this chapter, we list a (small) selection of instruments that we found to be in use in scientific studies within the APH consortium.
+For conducting EMA studies, a variety of apps, online applications and wearable devices are on the market. In this chapter, we list a selection of instruments that we found to be in use in scientific studies within the APH consortium.
 
 Table: (\#tab:14a) EMA Instruments.
 
@@ -11,7 +11,7 @@ Table: (\#tab:14a) EMA Instruments.
 | Ilumivu      | Ilumivu           | ilumivu.com       | Android / iOS EMA app         |
 | MoodBuster   | ICT4D Consortium  | moodbuster.eu     | Android EMA app               |
 | Movisens     | MoviSens          | www.movisens.com  | Android EMA app               |
-| PsyMate      | PsyMate           | psymate.eu        | Android EMA app               |
+| PsyMate      | PsyMate           | psymate.eu        | Android/iOS EMA app           |
 | RoQua        | RoQua             | roqua.nl          | SMS / Browser-based active EMA|
 | VU-AMS       | VU                | www.vu-ams.nl     | Wearable for autonomic nervous| 
 |              |                   |                   | system measurement            |
@@ -47,11 +47,11 @@ knitr::include_graphics(c(
 ## MoodBuster
 \index{Moodbuster}
 
-MoodBuster (http://www.moodbuster.eu/) is a web-based treatment platform with an integrated EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu) and E-COMPARED (see http://e-compared.eu).
+MoodBuster (http://moodbuster.eu/) is a web-based treatment platform with an integrated EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu; @warmerdam2012) and E-COMPARED (see http://e-compared.eu; @Kleiboer2016; @VandeVen2017).
 
-In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression [@Kleiboer2016]. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. In addition, the EMA app was used in a satellite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
+In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. E-COMPARED EMA data were used in several predictive machine learing studies [@mikus2018; @rocha2018]. In addition, the EMA app was used in a satellite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
 
-Currently, EMA assessment protocols are hard-coded in the app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online back-office is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
+Currently, EMA assessment protocols are hard-coded in the MoodBuster app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online back-office is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
 
 More information on MoodBuster can be obtained from prof. dr. Heleen Riper (h.riper@vu.nl).
 
@@ -70,9 +70,7 @@ Movisens (http://www.movisens.com) is a German company that is specialised in th
 
 Like Ilumivu, researchers can define EMA sample schedules for their study in a web-based back-office (https://xs.movisens.com), using an online graphical editor. Once defined, participants can be invited to the study , through the back-office, to download the freely available Movisens App from Google Play store. The back-office also allows researchers to monitor study compliance and download data.
 
-MoviSensXS EMA licence costs vary from 500 to 10.000 euro's per year, depending on the required number of 'credits' which are linked to the the number of EMA responses. Prospect users can test platform, without functional restrictions, with a free test account. An EMA test-study can thus be set up and started in less than a day.
-
-A major limitation of Movisens is the lack of an iOS version of the EMA app. Study participants who own an iPhone have to be excluded from studies, or will have to be provided with an Android phone. 
+MoviSensXS EMA licence costs vary from 500 to 10.000 euro's per year, depending on the required number of 'credits' which are linked to the the number of EMA responses. Prospect users can test platform, without functional restrictions, with a free test account. An EMA test-study can thus be set up and started in less than a day. A current (nov 2018) limitation of Movisens is the lack of an iOS version of the EMA app. Study participants who own an iPhone have to be excluded from studies, or will have to be provided with an Android phone. 
 
 ```{r movisens, echo = FALSE, fig.cap = "Movisens Sample scheme editor (left) and App Screenshots (right)", out.width = '100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -82,11 +80,11 @@ knitr::include_graphics(c(
 ## PsyMate
 \index{PsyMate}
 
-The PsyMate™ app (www.psymate.eu) was developed by the Department of Psychiatry and Psychology at Maastricht University in the Netherlands to assess psychological problems in daily life. The app has been validated for use in depression, bipolar disorder, and psychosis, with new scales currently being developed for a range of diseases including Parkinson's disease, pain, cardiology, hypertension, diabetes and Irritable Bowel Syndrome. It is currently used in a EU-funded project to study gene-environment interaction in schizophrenia (http://www.eu-gei.eu/about-the-project/psymate). 
+The PsyMate app (www.psymate.eu) was developed by the Department of Psychiatry and Psychology at Maastricht University in the Netherlands to assess psychological problems in daily life. The app has been validated for use in depression, bipolar disorder, and psychosis, with new scales currently being developed for a range of diseases including Parkinson's disease, pain, cardiology, hypertension, diabetes and Irritable Bowel Syndrome. It was also used in a EU-funded project to study gene-environment interaction in schizophrenia (http://www.eu-gei.eu/about-the-project/psymate). 
 
-The app is free to download for iOS and Android devices on Apple and Google play stores. Uses for the app include self-monitoring of mood states, for professional support during treatment, or for research purposes. The app can be customized to address specific client needs or research projects with expertise from the Psymate back office, which includes a working group that meets regularly to discuss and advise new projects.
+The app is free to download for iOS and Android devices on Apple and Google play stores. PsyMate is available in five languages (English, French, German, Dutch, Spanish). More translations are in preparation. Uses of the app include self-monitoring of mood states, delivering professional support during treatment, or conducting EMA-research. 
 
-Researchers have access to the raw data without having to go through the Psymate back office. A disadvantage of the Psymate app is that technical problems could arise when there are either iOS or Android updates. Communication from the Psymate back office to researchers about updates and assistance with technical problems could be a point for consideration for using this platform.
+The app can be customized to address specific client needs or research projects, with expertise from the Psymate development team, which includes an active working group that meets regularly to discuss and advise new projects. Researchers have access to the raw data without having to go through the Psymate development team. Communication from the Psymate back office to researchers about updates and assistance with technical problems could be a point for consideration for using this platform.
 
 ```{r psymate, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(

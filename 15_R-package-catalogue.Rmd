@@ -1,19 +1,19 @@
 
 # R Packages for EMA Research {#rcat}
 
-Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages are discussed. For each, we provide a summary description, a code example code, and pointers to further documentation, to give you a head start in using the packages for your work.
+Many R packages exist that can help you in the management and analysis of EMA data. In this chapter, a selection of these packages is discussed. For each, we provide a summary description, a code example code, and pointers to further documentation, to give you a head start in using the packages for your work.
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 +-----------------+-------------------+-----------------------------------------+
-| Category        | Package           | Description                             |
+| **Category**    |**Package**        | **Description**                         |
 +:================+:==================+:========================================+
 | Accelerometry   | GENEAread         | Import GENEActive data into R           |
 +-----------------+-------------------+-----------------------------------------+
-|                 | GGIR              | Pre-proces and analyse raw multi-day    |
+|                 | GGIR              | Pre-process and analyze raw multi-day    |
 |                 |                   | multi-day accelerometer data.           | 
 +-----------------+-------------------+-----------------------------------------+
-|                 | PhysicalActivity  | Analyse actigraph accelerometer data.   | 
+|                 | PhysicalActivity  | Analyze actigraph accelerometer data.   | 
 +-----------------+-------------------+-----------------------------------------+
 | Data Management | dplyr             | Data transformation                     | 
 | & Visual        |                   |                                         |
@@ -60,7 +60,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 ## Accelerometry
 
-Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-calibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and engergy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs). 
+Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-calibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and energy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs). 
 
 ### Package GENEAread
 
@@ -89,7 +89,7 @@ ggplot(d, aes(x = timestamp, y = value)) +
 ### Package 'GGIR'
 \index{Packages!GGIR}
 
-Package *GGIR* [@R-GGIR] is a packages to pre-process raw accelerometry data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
+Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data from three brands of wearables that are widely used in sleep and physical activity research: [GENEActiv](https://www.geneactiv.org/), [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
 
 
 ### Package 'PhysicalActivity'
@@ -185,10 +185,10 @@ attributes(d$Species)
 ```
 
 ### Package 'lubridate'
-\index{datetime variables}
+\index{Datetime variables}
 \index{Packages!lubridate}
 
-EMA data analyses frequently require manipulations of datetime variables. For this, package ***lubridate*** [@R-lubridate], which provides many functions for common date and datetime operations,  can be very useful. 
+EMA data analyses frequently require manipulations of datetime variables. For this, package ***lubridate*** [@R-lubridate], which provides many functions for common date and datetime operations, can be very useful. 
 
 In the code snippet below, for example, the 'round_date' function is used to calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute epoch windows.
 
@@ -235,7 +235,7 @@ fixef(fm)
 ### lme4
 \index{Packages!lme4}
 
-Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed-effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, models specifications in 'lmer' are different from model specifications in 'lme'. 
+Package **lme4** [@Bates2015] is a faster R-reimplementation of the mixed-effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, model specifications in 'lmer' are different from model specifications in 'lme'. 
 
 ```{r cs15h, lme4_example, eval = TRUE}
 # Code snippet 15.8: fit a linear mixed model, with lme.
@@ -250,7 +250,7 @@ fixef(fm)
 ### Package 'simr'
 \index{Packages!simr}
 
-With package 'simr' [@Green2016], power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the "true" parameters of a mixed model, and a single data set. Then,  function 'simPower' can be used to simulate new datasets and tests (of a specified parameter in the model), to determine the power of the test. 
+With package 'simr' [@Green2016], power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the "true" parameters of a mixed model, and a single data set. Then, function 'simPower' can be used to simulate new datasets and tests (of a specified parameter in the model), to determine the power of the test. 
 
 ```{r cs15i}
 # Code snippet 15.9: Power analysis of a two-group repeated measures design
@@ -289,7 +289,7 @@ powerSim(model1,
 
 
 ## Symptom Network Analysis
-\index{symptom networks}
+\index{Symptom networks}
 
 When EMA is used to tap various symptoms, network analysis can reveal the dynamic interplay between these symptoms (see Chapter \@ref(networks). Various packages exist to fit these networks in R. With these packages, it is relatively easy to fit a graphical network on multivariate data sets. If you are interested in conducting a network analysis, be sure to visit the Psycho-systems website, at http://psychosystems.org. 
 
@@ -297,7 +297,7 @@ When EMA is used to tap various symptoms, network analysis can reveal the dynami
 \index{Packages!autovarCore}
 \index{Packages!autovar}
 
-\index{vector autoregressive models}
+\index{Vector autoregressive models}
 
 Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package ***'autovarCore'*** [@R-autovarCore] was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.
 
@@ -328,7 +328,7 @@ AutovarCore is a simplified version of a more extensive package ***autovar*** [@
 ### Package 'qgraph`
 \index{Packages!qgraph}
 
-Package ***qgraph*** [@Epskamp2012] can be used to fit, visualise and analyse graphical networks.
+Package ***qgraph*** [@Epskamp2012] can be used to fit, visualize and analyze graphical networks.
 
 In the example below, qgraph is used to fit a network on the 'Critical Slowing Down' (CSD) data set, which is included in package 'emaph' (see Chapter \@ref(csd) and Chapter \@ref(networks)). 
 
@@ -357,7 +357,7 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
 ### Package 'bootnet'
 \index{Packages!bootnet}
 
-In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on lare data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance edges estimations will be small,  while in unstable networks, the variance will be high. This idea is implemented in package ***bootnet***  [@Epskamp2018a]. 
+In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on large data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance edges estimations will be small, while in unstable networks, the variance will be high. This idea is implemented in package ***bootnet***  [@Epskamp2018a]. 
 
 Below, the stability of the network that was fit in the previous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps. 
 
@@ -377,7 +377,7 @@ plot(results, order = "mean")
 ### Package 'lomb'
 \index{Lomb-Scargle periodogram}
 
-Disturbances in circadian rhythms have been related to depressive symptoms [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhytms can be detected in EMA data. Standard analysis techniques, however, expect regular timeseries, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976], which can be applied to unevenly-sampled timeseries as well. Package ***lomb*** [@ruf1999] implements this procedure.
+Disturbances in circadian rhythms have been related to depressive symptoms [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhythms can be detected in EMA data. Standard analysis techniques, however, expect regular timeseries, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976], which can be applied to unevenly-sampled timeseries as well. Package ***lomb*** [@ruf1999] implements this procedure.
 
 ```{r cs15n, out.width='98%'}
 # Code snippet 15.14: calculating a Lomb-Scargle periodogram.

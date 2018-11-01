@@ -159,7 +159,7 @@ purus nec, lobortis imperdiet diam.
 
 
 ## Location analysis
-\index{GPS} \index{longitude} \index{latitude}
+\index{GPS} \index{Longitude} \index{Latitude}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
 metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
 sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
@@ -200,7 +200,7 @@ d <-  subset(locations,
 
 Table: (\#tab:GPSfeatures) Features of a GPS data set [@Saeb2015].
 
-| Name              | Formula                               | Description                                    | 
+| **Name**           | **Formula**                            | **Description**                            | 
 |:------------------|:--------------------------------------|:-----------------------------------------------|
 | Total Distance    | $$\sum(distance((lat_{t}, lon_{t}), (lat_{t-1}, lon_{t-1})$$ | Total distance between locations |
 | Location variance | $$\sigma_{lon}^2 + \sigma_{lat}^2$$   | Variability of location visits                 |

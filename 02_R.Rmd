@@ -6,7 +6,7 @@ In this chapter, you will learn how to install and use two programs that are ind
 
 ## What are R and RStudio?
 
-R is a programming language and software environment for statistical computing and data visualisation. RStudio is a powerful user interface to R. It has many useful features that greatly simplify R-work. We strongly advise you to adopt the R/RStudio-combo.
+R is a programming language and software environment for statistical computing and data visualization. RStudio is a powerful user interface to R. It has many useful features that greatly simplify R-work. We strongly advise you to adopt the R/RStudio-combo.
 
 
 ## Why R?
@@ -14,7 +14,7 @@ R is a programming language and software environment for statistical computing a
 
 R, you may have been told, is for data scientists, methodologists, and scientific programmers only. It has a steep learning curve. If you are trained in SPSS, it will take time to become as productive in R as in SPSS. Why then, should you invest in R?
 
-- Unlike SPSS, R is free. It does not eat up your budget. Why pay for something that you can get for free?
+- Unlike SPSS, R is free of charge. It does not eat up your budget. Why pay for something that you can get for free?
 
 - R is cutting-edge. Methodological innovations first appear in R. Network analyses, for example (see Chapter \@ref(lmm)), can be run in R, but not (yet) in SPSS. For some analyses, you need this alternative.
 
@@ -41,7 +41,7 @@ Both R and RStudio are available, at no costs, for all major operating systems.
 
 - Download RStudio from http://rstudio.org
 
-Install R first, and RStudio second. If you install the programs in this order,  RStudio will automatically find R on your computer.
+Install R first, and RStudio second. If you install the programs in this order, RStudio will automatically find R on your computer.
 
 If you installed R or RStudio previously, please update. This book assumes you
 will be working with version 3.4.2 (or higher) of R, and version 1.1.414 (or
@@ -119,7 +119,7 @@ Something that confuses new Rstudio users, who are more familiar with SPSS, is
 that it is not obvious how to import data into RStudio. In SPSS, the data
 are in plain sight. In R, you first have to import the data.
 
-### Using RStudio menu's to import data 
+### Using RStudio menus to import data 
 
 One way to load data into R is to use RStudio's data import wizard. Follow the
 steps below to see how this works with data stored in a comma-separated-values
@@ -161,7 +161,7 @@ it in other R commands. For example, to produce a more detailed summary of the
 first four columns of `ESMdata`, you type:
 
 ```{r cs2e, comment = NA}
-# Code snippet 2.5: Summarising data.
+# Code snippet 2.5: Summarizing data.
 summary(ESMdata)
 ```
 
@@ -196,16 +196,17 @@ calculate the mean of scores in `mood_relaxed`, type:
 mean(ESMdata$mood_relaxed)
 ```
 
-There are many ways in which you can summarise and manipulate your data. At this point, the important milestone is that you imported and accessed data in R. 
+There are many ways in which you can summarize and manipulate your data. At this point, the important milestone is that you imported and accessed data in R. 
 
 
 ## Extending R with Packages
 \index{R packages}
 
-R's attractiveness lies in the ease with which it can be extended with new functionality. Through so-called packages, which can be freely downloaded from the internet, specialised functions can be added to your workspace.
+R's attractiveness lies in the ease with which it can be extended with new functionality. Through so-called packages, which can be freely downloaded from the internet, specialized functions can be added to your workspace.
 
 ### Installing R-packages from CRAN
 \index{CRAN}
+\index{Packages!Tidyverse}
 
 Packages can be found at the CRAN website. To browse through the impressive list
 of available packages, see 
@@ -226,7 +227,7 @@ The tidyverse contains a package called 'haven', which allows you to read and wr
 ### Installing R-packages from GitHub
 \index{GitHub}
 
-Not all packages are at CRAN. Many 'unofficial' packages are shared at a site called 'GitHub'. This book's companion R package 'emaph', for example, which contains specialised EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
+Not all packages are at CRAN. Many 'unofficial' packages are shared at a site called 'GitHub'. This book's companion R package 'emaph', for example, which contains specialized EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let's install this package now.
 
 GitHub packages can be installed via the `install_github` function, which is defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
 
@@ -324,7 +325,7 @@ t.test(A, B)
 
 This book contains many R code snippets. By studying these examples, you will become more familiar with R.
 
-Some examples will introduce R language constructs and functions that are unknown to you. Learn from from these examples, by using `?` on each element that you do not understand.
+Some examples will introduce R language constructs and functions that are unknown to you. Learn from these examples, by using `?` on each element that you do not understand.
 
 
 ### Google 
@@ -350,7 +351,7 @@ Field's R-version of this book, "Discovering Statistics Using R" [@FieldR]
 provides a familiar companion in making the transition to R. See 
 https://www.discoveringstatistics.com/
 
-- Free manuals can be found at the offical CRAN site. The manuals are dry, but complete and authorative, since the authors are members of the R core development team. See https://cran.r-project.org/manuals.html (or type `help.start()` in the console).
+- Free manuals can be found at the official CRAN site. The manuals are dry, but complete and authoritative, since the authors are members of the R core development team. See https://cran.r-project.org/manuals.html (or type `help.start()` in the console).
 
 - While at CRAN, be sure to browse the 'contributed documentation'-section. On this page, you will find many freely available manuals contributed by
 the R community. See https://cran.r-project.org/other-docs.html
@@ -376,8 +377,3 @@ install.packages("swirl")
 library("swirl")
 swirl()
 ```
-
-
-
-
-

@@ -5,10 +5,10 @@
 options(digits = 3)
 ```
 
-EMA data are time-series that are characterized by complex correlational structures, irregular sampling intervals, missing data, and substantive individual differences. Mixed models are well-suited to deal with these data. This chapter provides a brief introduction to conducting mixed models analysis of EMA data in R.
+EMA data are time-series that are characterised by complex correlational structures, irregular sampling intervals, missing data, and substantive individual differences. Mixed models are well-suited to deal with these data. This chapter provides a brief introduction to conducting mixed models analysis of EMA data in R.
 
 ## The Mixed Model
-Mixed modeling can be understood as a regression technique in which in separate regression functions are estimated for each cluster in the data set. In EMA data, these clusters are defined by the participants. Data from the same participant are expected to be correlated, and one way to honor this correlation is to conceptualize a separate regression for each participant. This idea, in the most simple regression model, can be expressed as: 
+Mixed modeling can be understood as a regression technique in which in separate regression functions are estimated for each cluster in the data set. In EMA data, these clusters are defined by the participants. Data from the same participant are expected to be correlated, and one way to honor this correlation is to conceptualise a separate regression for each participant. This idea, in the most simple regression model, can be expressed as: 
 
 \begin{equation} 
   Y_{ij} = intercept_{i} + \epsilon_{ij} 

@@ -164,7 +164,7 @@ ggplot(e, aes(x = t, y = s)) +
 
 Features do not necessarily have to be complex. Familiar measures of central tendency of EMA time-series, such as the mode or the mean, can be useful predictors of traditional clinical assessments. Standard measures of the variability of EMA scores, such as the standard deviation (SD), have been shown to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to consider these statistics when they help you to answer your research question.
 
-You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is *stationary*, @wiki_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and SD are biased statistics.
+You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarise a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is *stationary*, @wiki_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and SD are biased statistics.
 
 Our simulated EMA time-series is non-stationary, as can be seen in Figure \@ref(fig:fig8b). We observe a trend: the mood of the person increases over time. EMA scores tend to be below the mean in the beginning, and above the mean at the end. The overall mean (*M*  = `r round(mean(e$s), 1)`) overestimates the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and underestimates the scores of the last week (*M* = `r round(mean(e$s[e$t > 13]), 1)`). If you use the overall mean as a feature of the time-series in your analyses, you ignore the mood improvements over the three-week period. In clinical research, your would probably not want to miss this other important feature.
 
@@ -189,7 +189,7 @@ ggplot(e, aes(x = t, y = s)) +
 fm = lm(s ~ t, e)
 ```
 
-Now that we know that the overall mean and SD are sub-optimal features of this time-series, the question is how we can do better. What other features can we extract? One option would be to characterize the series in simple regression terms, via an intercept and a slope. By doing so, we can economically describe the dynamics of the series with two numbers.
+Now that we know that the overall mean and SD are sub-optimal features of this time-series, the question is how we can do better. What other features can we extract? One option would be to characterise the series in simple regression terms, via an intercept and a slope. By doing so, we can economically describe the dynamics of the series with two numbers.
 
 As can be seen in Figure \@ref(fig:fig8c), the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is `r round(coef(fm)[1], 1)`. This mean increases aproximately `r round(coef(fm)[2] * 7,  1)` points per day (the slope), to a final estimated mean of `r round(coef(fm)[1], 1) + round(coef(fm)[2] * 21, 1)`.
 

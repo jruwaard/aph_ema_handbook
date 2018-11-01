@@ -29,7 +29,7 @@ knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")
 ## Ilumivu
 \index{Ilumivu}
 
-Ilumivu (see https://ilumivu.com/) is an American commercial company specialized in mobile EMA application development. It offers a cross-platform (Android and IOS) smartphone app (mEMA) that researchers can use to collect data from study participants. Researchers can define the assessment plan of their study in an online back-office (i.e., without any assistance from Illumivu staff). 
+Ilumivu (see https://ilumivu.com/) is an American commercial company specialised in mobile EMA application development. It offers a cross-platform (Android and IOS) smartphone app (mEMA) that researchers can use to collect data from study participants. Researchers can define the assessment plan of their study in an online back-office (i.e., without any assistance from Illumivu staff). 
 
 The Ilumivu EMA toolbox library includes a rather complete set of survey elements, survey logic branching tools, and survey scheduling options. Passive EMA options include GPS tagging (of survey responses), GEO-fencing (triggering surveys at specific locations) and smartphone sensor logging (light and noise level, screen brightness, screen locked/unlocked, humidity, ambient temperature, barometric pressure, phone/SMS activity log, and basic device information). a limited number of smart watch devices can optionally be linked to the Ilumivu app for further passive data collection.  With the online back-office, researchers can invite participants, monitor study compliance and download data (in common data formats such as CSV). The company is open for custom development, when studies require features that are not included in the default app.
 
@@ -44,16 +44,16 @@ knitr::include_graphics(c(
    "images/instruments/ilumivu/iv-app-3.png"))
 ```
 
-## MoodBuster
+## Moodbuster
 \index{Moodbuster}
 
-MoodBuster (http://moodbuster.eu/) is a web-based treatment platform with an integrated EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ InGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu; @warmerdam2012) and E-COMPARED (see http://e-compared.eu; @Kleiboer2016; @VandeVen2017).
+Moodbuster (http://moodbuster.eu/) is a web-based treatment platform with an integrated EMA app. The platform was developed by an international non-profit research consortium, including VU, VUmc and GGZ inGeest, in two major EU-funded research projects: ICT4Depression (see ICT4Depression.eu; @warmerdam2012) and E-COMPARED (see http://e-compared.eu; @Kleiboer2016; @VandeVen2017).
 
-In the E-COMPARED trial, MoodBuster was used, in five EU-countries, to test blended treatment of major depression. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. E-COMPARED EMA data were used in several predictive machine learing studies [@mikus2018; @rocha2018]. In addition, the EMA app was used in a satellite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. MoodBuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
+In the E-COMPARED trial, Moodbuster was used, in five EU-countries, to test blended treatment of major depression. In this study, participants used the smartphone app to rate mood and various other depression-related variables, in the context of their treatment, over a period of up to 20 weeks. E-COMPARED EMA data were used in several predictive machine learing studies [@mikus2018; @rocha2018]. In addition, the EMA app was used in a satellite study designed to assess the effects of long-term EMA [@VanBallegooijen2016]. Moodbuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are in preparation.
 
-Currently, EMA assessment protocols are hard-coded in the MoodBuster app. New EMA assessments protocols can be implemented in collaboration with the MoodBuster development team. An online back-office is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
+Currently, EMA assessment protocols are hard-coded in the Moodbuster app. New EMA assessments protocols can be implemented in collaboration with the Moodbuster development team. An online back-office is in development. Previous studies used an Android version of the EMA app. Cross-platform versions of the app in development.
 
-More information on MoodBuster can be obtained from prof. dr. Heleen Riper (h.riper@vu.nl).
+More information on Moodbuster can be obtained from prof. dr. Heleen Riper (h.riper@vu.nl).
 
 ```{r moodbuster, echo = FALSE, fig.cap = "MoodBuster App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -66,7 +66,7 @@ knitr::include_graphics(c(
 ## Movisens
 \index{Movisens}
 
-Movisens (http://www.movisens.com) is a German company that is specialised in the development of hard- and software solutions for mobile sensing. The company sells small wearable devices that contain several high-precision sensors, including an accelerometer, gyroscope, barometer and thermometer. In addition, the company has developed an (Android) app, called MovisensXS, which can be used for active EMA research. The app can optionally be configured for smartphone logging (e.g., to log music that a study participant listens this). The wearable sensor can also be linked to the app, so that EMA questionnaires can be triggered based on targeted activity or energy expenditure patterns, such as extended periods of sedentary behavior. Specialized software to import, pre-process and analyse raw sensor data is available for download.
+Movisens (http://www.movisens.com) is a German company that is specialised in the development of hard- and software solutions for mobile sensing. The company sells small wearable devices that contain several high-precision sensors, including an accelerometer, gyroscope, barometer and thermometer. In addition, the company has developed an (Android) app, called MovisensXS, which can be used for active EMA research. The app can optionally be configured for smartphone logging (e.g., to log music that a study participant listens this). The wearable sensor can also be linked to the app, so that EMA questionnaires can be triggered based on targeted activity or energy expenditure patterns, such as extended periods of sedentary behaviour. Specialised software to import, pre-process and analyse raw sensor data is available for download.
 
 Like Ilumivu, researchers can define EMA sample schedules for their study in a web-based back-office (https://xs.movisens.com), using an online graphical editor. Once defined, participants can be invited to the study , through the back-office, to download the freely available Movisens App from Google Play store. The back-office also allows researchers to monitor study compliance and download data.
 
@@ -84,7 +84,7 @@ The PsyMate app (www.psymate.eu) was developed by the Department of Psychiatry a
 
 The app is free to download for iOS and Android devices on Apple and Google play stores. PsyMate is available in five languages (English, French, German, Dutch, Spanish). More translations are in preparation. Uses of the app include self-monitoring of mood states, delivering professional support during treatment, or conducting EMA-research. 
 
-The app can be customized to address specific client needs or research projects, with expertise from the Psymate development team, which includes an active working group that meets regularly to discuss and advise new projects. Researchers have access to the raw data without having to go through the Psymate development team. Communication from the Psymate back office to researchers about updates and assistance with technical problems could be a point for consideration for using this platform.
+The app can be customised to address specific client needs or research projects, with expertise from the Psymate development team, which includes an active working group that meets regularly to discuss and advise new projects. Researchers have access to the raw data without having to go through the Psymate development team. Communication from the Psymate back office to researchers about updates and assistance with technical problems could be a point for consideration for using this platform.
 
 ```{r psymate, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(

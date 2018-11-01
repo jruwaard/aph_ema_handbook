@@ -17,7 +17,7 @@ Mood is a common outcome in EMA research [@Myin-Germeys2016; @Desmet2016]. Havin
 \index{Mood definitions!Emotions}
 The definition of mood varies across studies. Usually the concept refers to a general affective state. Following this line of reasoning, a distinction can be made between mood states (e.g. irritable, cheerful, relaxed, etc.) and discrete emotions (e.g. happy, sad, anxious, etc.), where moods are thought to be less specific and more subjective, enduring and related to context [@Beedie2005; @Cranford2006; @Desmet2016].
 
-Depending on the study focus and research questions, mood measurement can be operationalized in several ways. Therefore, it is vital to consider the goal of measuring mood in your own study and to choose an operationalization that matches your hypothesis and theoretical framework. In this chapter, we will discuss the most commonly used options: 1) uni-dimensional mood assessment, 2) the 'bag of items' approach, and 3) dimensional models, namely the Circumplex model and Negative and Positive affect (NA/PA).
+Depending on the study focus and research questions, mood measurement can be operationalised in several ways. Therefore, it is vital to consider the goal of measuring mood in your own study and to choose an operationalization that matches your hypothesis and theoretical framework. In this chapter, we will discuss the most commonly used options: 1) uni-dimensional mood assessment, 2) the 'bag of items' approach, and 3) dimensional models, namely the Circumplex model and Negative and Positive affect (NA/PA).
 
 ## Unidimensional mood assessment
 \index{Mood assessment!Uni-dimensional}
@@ -79,7 +79,7 @@ The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues that
 knitr::include_graphics("images/outcomes/Russell1980.png")
 ```
 
-There are several options to operationalize the Circumplex model in EMA research. For example, respondents can rate valence and arousal on two VAS scales. The most pragmatic approach is to report both scale scores separately [@Asselbergs2016]. Alternatively, scores can be combined to give insight into which of the four mood states (quadrants) respondents fall:
+There are several options to operationalise the Circumplex model in EMA research. For example, respondents can rate valence and arousal on two VAS scales. The most pragmatic approach is to report both scale scores separately [@Asselbergs2016]. Alternatively, scores can be combined to give insight into which of the four mood states (quadrants) respondents fall:
 
 - Low aroused - unpleasant
 - Low aroused - pleasant

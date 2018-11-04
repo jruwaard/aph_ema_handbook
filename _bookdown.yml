@@ -9,26 +9,26 @@ delete_merged_file: TRUE
 rmd_files: [
   "index.rmd",
   
-  "01_EMA.Rmd",
-  "02_R.Rmd",
+  "EMA.Rmd",
+  "R.Rmd",
 
-  "03_study-design.Rmd",
-  "04_instruments.Rmd",
-  "05_datamanagement.Rmd",
+  "study-design.Rmd",
+  "instruments.Rmd",
+  "datamanagement.Rmd",
   
-  "06_mood.Rmd",
-  "07_activity.Rmd",
+  "mood.Rmd",
+  "activity.Rmd",
   
-  "08_features.Rmd",
-  "09_lmm.Rmd",
-  "10_networks.Rmd",
+  "features.Rmd",
+  "lmm.Rmd",
+  # "networks.Rmd",
   
-  "11_csd.Rmd",
-  "12_homerange.Rmd",
+  "csd.Rmd",
+  # "homerange.Rmd",
   
-  "13_aph-catalogue.Rmd",
-  "14_instruments_catalogue.Rmd",
-  "15_R-package-catalogue.Rmd",
+  "aph-catalogue.Rmd",
+  "instruments_catalogue.Rmd",
+  "R-package-catalogue.Rmd",
 
   "acknowledgements.Rmd",
   "references.Rmd"

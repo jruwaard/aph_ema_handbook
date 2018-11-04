@@ -23,7 +23,7 @@ Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulu
 
 
 ```{r network, fig.cap = "Simulated timeseries of 5 variables"}
-# Code snippet 10.1: Fitting symptom networks.
+# Fitting symptom networks.
 library(ggplot2)
 library(graphicalVAR)
 library(dplyr)
@@ -48,7 +48,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 
 
 ```{r fig.asp = .3, fig.cap = "Partial Contemporaneous Correlations (left) and Partial Directed Correlations (right)."}
-# Code snippet 10.2: plotting symptom networks
+# Plotting symptom networks
 Res <- graphicalVAR(data = d,     gamma = 0, 
                     nLambda = 10, verbose = FALSE)
 
@@ -71,7 +71,7 @@ Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulu
 - Outstrength
 
 ```{r fig.asp = .25, fig.cap = "Centrality plot of Partial Contemporaneous (top) and Directed (bottom) Correlations."}
-# Code snippet 10.3: Node Centrality plots.
+# Node Centrality plots.
 library(qgraph)
 centralityPlot(qgraph(Res$PCC, DoNotPlot = TRUE))
 centralityPlot(qgraph(Res$PDC, DoNotPlot = TRUE))
@@ -85,7 +85,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla ut massa tempor, ac dapibus dui viverra.  
 
 ```{r mlvarcode}
-# Code snippet 10.4: Fitting symptom networks of multiple subjects.
+# Fitting symptom networks of multiple subjects.
 library("mlVAR")
 library(methods)
 
@@ -100,7 +100,7 @@ fit1 <- mlVAR(Model$Data,          vars = Model$vars,
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper, sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec tortor interdum porta. Vestibulum hendrerit tempus condimentum. Donec a mollis sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu. Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque null aut massa tempor, ac dapibus dui viverra. 
 
 ```{r fig.cap = "True (left) vs estimated (right) contemporaneous  (top), temporal (middle) and between-subject relationships (bottom)", fig.asp = .6}
-# Code snippet 10.5: plotting symptom networks of multiple subjects.
+# Plotting symptom networks of multiple subjects.
 layout(matrix(c(1:6), ncol = 2, byrow = TRUE))
 
 plot(Model, "contemporaneous", layout = "circle", verbose = FALSE)

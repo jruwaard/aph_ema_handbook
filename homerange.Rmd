@@ -32,7 +32,7 @@ ut massa tempor, ac dapibus dui viverra.
 Package **adehabitatHR** [@Calenge2006] was created for the study of the habitat of wild animals, using accelerometer and GPS data. Defined procedures can be used for the analysis of human data as well.
 
 ```{r cs12a, eval = FALSE}
-# code snippet 12.1
+# loading the library
 library(adehabitatHR)
 ```
 

@@ -122,10 +122,10 @@ In "scripts/import", we find the scripts with which the raw data are imported an
 
 By making these scripts parts of your project, you ensure that you and others can always trace the decisions that were made to prepare the raw data for analysis. Raw data may be updated, for instance because more participants are recruited, or because new data exports are made from the data collection systems. You may also detect errors in the import routines during the analyses, or peer reviewers may request information that can only be found by going back to the raw data. In all these cases, the availability of ready-to-run raw data import routines is critical.
 
-Code snippet 5.1 below illustrates the kind of data transformations that you can expect to find in an import script. With a few lines of code, raw baseline questionnaire data are imported into R, participant id's that are specific to the data collection system are replaced by the proper global study id, variables of interest are selected, sum scores of the PHQ-9 are calculated, data ranges are checked (and corrected if needed), and data types are set (in accordance to the study code-book). Finally, the cleaned data set is saved to the "data/cleaned" folder, ready for further processing in the final analyses. 
+The code snippet below illustrates the kind of data transformations that you can expect to find in an import script. With a few lines of code, raw baseline questionnaire data are imported into R, participant id's that are specific to the data collection system are replaced by the proper global study id, variables of interest are selected, sum scores of the PHQ-9 are calculated, data ranges are checked (and corrected if needed), and data types are set (in accordance to the study code-book). Finally, the cleaned data set is saved to the "data/cleaned" folder, ready for further processing in the final analyses. 
 
 ```{r cs5a, eval = FALSE}
-# Code Snippet 5.1: data import example
+# Data import example
 
 # import raw questmanager baseline data (csv file)
 d <- read.csv("data/raw/questmanager/qm_baseline_2018_05_01.csv")
@@ -158,10 +158,10 @@ The code snippet above illustrates the importance of code documentation. You may
 
 When raw data stored, imported and cleaned, final analyses can be run. By basing these analyses on the cleaned data in "data/cleaned", you ensure that these analyses can be fully reproduced from the raw study data.
 
-code snippet 5.2 below illustrates a typical analysis file: cleaned data are loaded into the R work environment, after which EMA scores of a single participant are selected, plotted and analyzed in a simple linear regression. Both the plot and the result of the regression are saved in the analysis directory. The plot is saved as a PDF-file (ready for submission to the journal), and the regression results are saved in a standard R data structure. 
+The code snippet below illustrates a typical analysis file: cleaned data are loaded into the R work environment, after which EMA scores of a single participant are selected, plotted and analyzed in a simple linear regression. Both the plot and the result of the regression are saved in the analysis directory. The plot is saved as a PDF-file (ready for submission to the journal), and the regression results are saved in a standard R data structure. 
 
 ```{r cs5b, eval = FALSE}
-# Code Snippet 5.2: data analysis example
+# Data analysis example
 
 # import cleaned EMA mood study data
 load("data/cleaned/mood.Rda")
@@ -183,7 +183,7 @@ save(fm, file = "scripts/published/P001_regression.Rda")
 R's ability to save the results of analyses to disk is yet another example of how R promotes accountability in clinical research. Suppose you used the regression analysis of P001 in a manuscript that you submitted for publication. Reviewers ask you to send residual plots, to convince them that the residual errors are normally distributed. When the regression results are saved to disk, the following three lines are all you need to satisfy their request:
 
 ```{r cs5c, eval = FALSE}
-# Code Snippet 5.3: revisiting regression results, for a visual regression residual check  
+# Revisiting regression results, for a visual regression residual check  
 load("scripts/published/P001_regression.Rda")
 
 pdf(file = "scripts/publised/residual_plot.pdf")

@@ -27,7 +27,7 @@ Respondents usually rate these questions on a Visual Analogue Scale (VAS), aimed
 Plotting data from an unidimensional item in a graph is an easy way to visually inspect within-subject change in general mood:
 
 ```{r fig06a, fig.cap = "34 weeks of mood data, from a single participant"}
-# Code snippet 6.1: plotting data over time.
+# Plotting data over time.
 library(ggplot2) 
 library(emaph)
 
@@ -51,7 +51,7 @@ In order to make sure all constructs of interest are measured, you can also cons
 Combining data from multiple items, such as mood and loneliness, in one graph can provide respondents with insight in the interaction between the constructs. In R two variables can easily be plotted together:
 
 ```{r fig69b, fig.cap = "34 weeks of combined mood data, from a single participant"}
-# Code snippet 6.2: Plotting multiple variables in one graph.
+# Plotting multiple variables in one graph.
 library(ggplot2) 
 library(emaph)
 
@@ -114,7 +114,7 @@ PA and NA were calculated as the average score across all items and weighted for
 In r, such a factor analysis can be executed as follows: 
 
 ```{r fig06e, fig.cap = "Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
-# Code snippet 6.3: Performing a factor analysis.
+# Performing a factor analysis.
 library(dplyr)
 library(tibble)
 

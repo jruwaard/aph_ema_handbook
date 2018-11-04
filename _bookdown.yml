@@ -7,29 +7,35 @@ new_session: yes
 delete_merged_file: TRUE
 
 rmd_files: [
+  # front matter
   "index.rmd",
   
+  # part I
   "EMA.Rmd",
   "R.Rmd",
-
+  
+  # part II
   "study-design.Rmd",
   "instruments.Rmd",
   "datamanagement.Rmd",
   
+  # part III
   "mood.Rmd",
   "activity.Rmd",
   
+  # part IV
   "features.Rmd",
   "lmm.Rmd",
-  # "networks.Rmd",
   
+  # part V
   "csd.Rmd",
-  # "homerange.Rmd",
-  
+
+  # part VI
   "aph-catalogue.Rmd",
   "instruments_catalogue.Rmd",
   "R-package-catalogue.Rmd",
-
+  
+  # end matter
   "acknowledgements.Rmd",
   "references.Rmd"
 ]

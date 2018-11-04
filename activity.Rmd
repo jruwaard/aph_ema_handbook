@@ -50,7 +50,7 @@ fringilla. Sed at varius erat, id consequat nibh.
 
 
 ```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-seconds epochs (0.1 Hz)", echo = FALSE}
-# Code snippet 7.1: plot one hour of accelerometer data.
+# Plot one hour of accelerometer data.
 library(ggplot2)
 library(tidyr)
 library(dplyr)
@@ -117,7 +117,7 @@ Euclidian Norm minus one (ENMO):
 
 
 ```{r svm, out.width = "100%", fig.asp = 0.3, fig.cap = "One day of data of the two persons in the genea data set, summarised with ENMO, calculated from 15-minute epoch windows", echo = FALSE}
-# Code snippet 7.2: plot signal vector magnitude.
+# Plot signal vector magnitude.
 library(emaph)
 library(lubridate)
 library(ggplot2)
@@ -181,7 +181,7 @@ fringilla. Sed at varius erat, id consequat nibh.
 
 
 ```{r fig11b, fig.cap="Four-week Location history of two people, collected with Google Timeline", out.width = "100%", fig.asp = .4}
-# Code snippet 7.3: four-week location history.
+# Four-week location history.
 library(emaph)
 library(ggplot2)
 

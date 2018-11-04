@@ -62,7 +62,7 @@ Command are sent to R starts in the bottom-left pane, named "Console". To test t
 R will execute the command and return the answer back to the console.
 
 ```{r cs2a, eval = FALSE}
-# Code snippet 2.1: R is a calculator.
+# R is a calculator.
 1 + 1
 ```
 
@@ -71,7 +71,7 @@ assignment operator ("<-"). If you type the name of a variable, R returns its
 value.
 
 ```{r cs2b}
-# Code snippet 2.2: Using <- to declare and set a variable.
+# Using <- to declare and set a variable.
 N <- 50 + 50
 N
 ```
@@ -82,7 +82,7 @@ to 2) generate 100 random numbers from the normal distribution, and 3) plot a
 histogram of these numbers.
 
 ```{r cs2c, eval = FALSE}
-# Code snippet 2.3: Plotting the histogram of a sample from the normal distribution.
+# Plotting the histogram of a sample from the normal distribution.
 hist(rnorm(N))
 ```
 
@@ -149,7 +149,7 @@ knitr::include_graphics("images/R/csv_import.png")
 While RStudio's Data import wizard is useful, you will probably use it less over time. Most likely, you will convert to using the more efficient R commands to import data. For example, it takes only a single line to download and import the example data.
 
 ```{r cs2d}
-# Code snippet 2.4: Importing csv-data from the internet.
+# Importing csv-data from the internet.
 ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
 ```
 
@@ -161,14 +161,14 @@ it in other R commands. For example, to produce a more detailed summary of the
 first four columns of `ESMdata`, you type:
 
 ```{r cs2e, comment = NA}
-# Code snippet 2.5: Summarizing data.
+# Summarizing data.
 summary(ESMdata)
 ```
 
 To inspect the first 6 lines of data, type,
 
 ```{r cs2f, eval = TRUE}
-# Code snippet 2.6: Show first 6 lines of a data frame.
+# Show first 6 lines of a data frame.
 head(ESMdata)
 ```
 
@@ -176,7 +176,7 @@ To view all rows of data in a spreadsheet (as in Figure \@ref(fig:fig2b),
 type:
 
 ```{r cs2g, eval = FALSE}
-# Code snippet 2.7: Show data as spreadsheet.
+# Show data as spreadsheet.
 View(ESMdata)
 ```
 
@@ -184,7 +184,7 @@ To work with a specific variable in the dataset, use '$', For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 ```{r cs2h, eval = FALSE}
-# Code snippet 2.8: Accessing a single variable in a data frame.
+# Accessing a single variable in a data frame.
 head(ESMdata$mood_relaxed, n = 20)
 ```
 
@@ -192,7 +192,7 @@ This allows you to apply functions to specific variables. For example, to
 calculate the mean of scores in `mood_relaxed`, type:
 
 ```{r cs2i}
-# Code snippet 2.19: Calculating the mean of a variable.
+# Calculating the mean of a variable.
 mean(ESMdata$mood_relaxed)
 ```
 
@@ -217,7 +217,7 @@ If you find a package you like, you can install it via the RStudio menu system, 
 A popular package, `tidyverse`, is used extensively in the examples of this manual. Package tidyverse comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.
 
 ```{r cs2j, eval = FALSE}
-# Code snippet 2.10: Installing a package from CRAN.
+# Installing a package from CRAN.
 install.package(tidyverse)
 ```
 
@@ -232,7 +232,7 @@ Not all packages are at CRAN. Many 'unofficial' packages are shared at a site ca
 GitHub packages can be installed via the `install_github` function, which is defined in a package called 'devtools'. So, to install 'emaph', enter the following in the console:
 
 ```{r cs2k, eval = FALSE}
-# Code snippet 2.11: Install the GitHub 'emaph' package.
+# Install the GitHub 'emaph' package.
 install.packages("devtools")
 devtools::install_github("jruwaard/emaph")
 ```
@@ -245,7 +245,7 @@ To use packages, you have to tell R to load them. You do this with the `library`
 function. For example, to use package 'tidyverse' and 'emaph', type:
 
 ```{r cs2l, eval = TRUE}
-# Code snippet 2.12: Loading packages.
+# Loading packages.
 library(tidyverse)
 library(emaph)
 ```
@@ -256,7 +256,7 @@ To plot the irritation levels of this patient in the first six days, using the
 `ggplot` function from package 'ggplot2' (which is in 'tidyverse'), type:
 
 ```{r cs2m, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
-# Code snippet 2.13: Using ggplot to plot EMA time series.
+# Using ggplot to plot EMA time series.
 ggplot(data = subset(csd, dayno <= 6),
        mapping =  aes(x = beepno, y = mood_irritat)) + 
   geom_point() +  geom_step() + 
@@ -277,7 +277,7 @@ we used it in the previous section: it is 'rnorm'. To check the documentation of
 this function, type `?rnorm` in the console.
 
 ```{r cs2n, eval = FALSE}
-# Code snippet 2.14: Using '?' to find the documentation of a function.
+# Using '?' to find the documentation of a function.
 ?rnorm
 ```
 
@@ -289,7 +289,7 @@ worked in the previous examples). So, to generate the required numbers, you
 type:
 
 ```{r cs2o, eval = FALSE}
-# Code snippet 2.15: Plotting the histogram of a custom random sample
+# Plotting the histogram of a custom random sample
 hist(rnorm(1000, mean = 2, sd = 4))
 ```
 
@@ -311,7 +311,7 @@ documentation of this function (`?t.test`), you learn that, indeed, this is the
 function you were looking for.
 
 ```{r cs2p}
-# Code snippet 2.16: Running a t-test, on two simulated samples.
+# Running a t-test, on two simulated samples.
 
 # generate two samples (N = 100 per group) from the normal distribution
 A <- rnorm(100); B <- rnorm(100)
@@ -359,12 +359,11 @@ the R community. See https://cran.r-project.org/other-docs.html
 
 ### Online Courses
 
-- DataCamp, an online data science education platform, offers several high-
-quality interactive courses in R. See http://www.datacamp.com
+- DataCamp, an online data science education platform, offers several interactive courses in R. See http://www.datacamp.com
 
 - The Try-R course at the CodeSchool website provides an alternative to DataCamp. See: http://tryr.codeschool.com/
 
-- The Quick-R website provides a solid, concise, and rich introduction to R. See https://www.statmethods.net/
+- The Quick-R website provides a concise introduction to R. See https://www.statmethods.net/
 
 
 ### Learn R, in R
@@ -372,7 +371,7 @@ quality interactive courses in R. See http://www.datacamp.com
 Package 'swirl' comprises a set of interactive courses that teach many aspects of the R language. See http://swirlstats.com
 
 ```{r cs2r, eval = FALSE}
-# Code snippet 2.18: Starting the interactive swirl-course in R.
+# Starting the interactive swirl-course in R.
 install.packages("swirl")
 library("swirl")
 swirl()

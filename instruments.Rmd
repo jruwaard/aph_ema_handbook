@@ -8,36 +8,35 @@ Collection of EMA data has come a long way since the written diary. With technol
 
 ### Costs new development vs known player
 
-When considering a platform for collecting EMA data, do you choose a platform developed by a known player or consider creating one of your own? Using a currently available platform has its advantages but it might not have the flexibility to meet your research needs. For example, the EMA application might not be adapted to include items specific to your research. If deciding on the creating a new platform, keep in mind of the costs required in terms of time and financial. 
-
+When considering a platform for collecting EMA data, do you choose a platform developed by a known player or consider creating one of your own? Using a currently available platform has its advantages but it might not have the flexibility to meet your research needs. For example, the EMA application might not be adapted to include items specific to your research. If you decide to create a new platform for your study, keep time and financial resources in mind, and make sure that you have a strong development team in place.
 
 ### Low-tech versus high-tech
 
-Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether your study needs to have an advanced method of data collection. Maybe the humble written diary is sufficient for your study needs or that the you might still go ahead with the modern, more technologically advanced methods.    
-
+Technology has greatly increased the methods of EMA data collection. Nevertheless, it is worth considering whether your study needs to have an advanced method of data collection. Maybe the humble written diary is sufficient for your study needs. If so, you might save yourself from the technical difficulties that experienced EMA researchers know all to well. Modern EMA platforms, on the other hand, can be very efficient data collection tools that can save the researcher and the participants a lot of time. Careful assessment of options through field testing will give you the information you need to decide on the most suitable data collection method. 
 
 ### Access to a back-office 
 \index{Back-office} 
 
+An important consideration when deciding on an EMA platform is the autonomy available to the researcher to set up and run the EMA study. Does the platform include a backoffice? Some EMA platforms do allow configuration or customization to the needs of the researcher. Platforms such as MoviSense and Illumivu, for example, allow researchers to define items and sample schedules, enrol and monitor participants and downloadthe data once the study is completed.
 
-An important consideration when deciding on an EMA platform is the autonomy available to the researcher to define and decide on research items. In other words, is there access to the back-office? For example, some EMA platforms do allow configuration or customization to the needs of the researcher. Also, some back-offices offer advisory services to researchers when adapting items. For example, using EMA to collect depression data does not mean the wholesale transportation of a validated paper questionnaire onto the EMA platform. A subjective EMA survey is not similar to an online questionnaire.
-
+```{r movisensbackoffice, echo = FALSE, fig.cap = "Movisens sample scheme editor (left) and App Screenshots (right)", out.width = '100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+knitr::include_graphics(c(
+   "images/instruments/movisens/movisens.png"))
+```
 
 ### Validation and reliability
 
 Questions can also arise regarding the validity of EMA. Items used in subjective EMA have often not undergone rigorous psychometric testing, unlike traditional paper questionnaires. Also, EMA software are developed using algorithms which are not known or unavailable to the researcher to test for validity.
 
-
 ###  Data access
 \index{GENEActiv}
 \index{Fitbit}
 
-If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g. GENEActiv versus Fitbit). If the researcher has access to the raw data, how easily accessible is the data? Could the data be downloaded directly from the server of the EMA platform?
-
+If planning on using a commercial EMA platform, it is important to clarify whether the researcher has access to the raw data or is the data aggregated before provision to the researcher (e.g., GENEActiv versus Fitbit). If the researcher has access to the raw data, how easily accessible are the data? Could the data be downloaded directly from the server of the EMA platform?
 
 ### Demands on time     
 
-Subjective EMA could be burdensome to participants as data is collected multiple times a day for an extended period. In order to ensure continued participation, it is important that researchers have in place procedures and resources to manage study participants. Besides preparing a study protocol, it is also necessary to have a manual on how to operate the EMA device. Considerable time also needs to be invested for the training of participants; how EMA and the device works. The researcher might also have to factor in the time needed to contact the participant when data collection starts (e.g. the following day after start of study) to address possible problems, and after data collection (e.g. a debriefing).  
+Subjective EMA can be burdensome to participants as data are collected multiple times a day for an extended period. In order to ensure continued participation, it is important that researchers have procedures and resources in place to manage and assist study participants. Besides preparing a study protocol, it is also necessary to have a manual on how to operate the EMA device. Considerable time also needs to be invested in the training of participants; how does EMA work, how is it implemented in the device, and what is expected from the participant when prompts are made? The researcher might also have to factor in the time needed to contact the participant, when data collection starts (e.g. the following day after start of study) - to address possible problems -, or after data collection -  to debrief the participant and to assist the participant in de-installing the app.  
 
 
 ## Technical considerations
@@ -70,10 +69,14 @@ Also, in a subjective EMA study design, participants have to attend to multiple 
 
 ## Points to consider
 
-- Internet access: For example, consider 1) continuous or partial internet access during data collection, 2) whether participants require a certain amount of mobile data or access to WIFI, and 3) the required security of the Network used. 
-- Mode of delivery 1: EMA can be collected with a designated app, or via a web-based questionnaire for which a notification for completion of the survey is send via an email or SMS
-- Mode of delivery 2: It is possible to make use of participants’ own devices (fitness device, tablet, smartphone) or borrow them a designated device
-– Choosing the right mode of delivery: Consider possible issues such as 1) software updates, 2) compatibility issues if using participants device, 3) whether EMA data needs to be stored locally (because of lack of internet access) before it can be uploaded to the central system and the storage capacity of the device this requires.
--Stigma: Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.
+* Internet access: For example, consider 1) continuous or partial internet access during data collection, 2) whether participants require a certain amount of mobile data or access to WIFI, and 3) the required security of the Network used. 
+
+*  Mode of delivery 1: EMA can be collected with a designated app, or via a web-based questionnaire for which a notification for completion of the survey is send via an email or SMS
+
+*  Mode of delivery 2: It is possible to make use of participants’ own devices (fitness device, tablet, smartphone) or borrow them a designated device
+
+* Choosing the right mode of delivery: Consider possible issues such as 1) software updates, 2) compatibility issues if using participants device, 3) whether EMA data needs to be stored locally (because of lack of internet access) before it can be uploaded to the central system and the storage capacity of the device this requires.
+
+* Stigma: Issue of “stigma” of participating in an EMA study e.g. need to explain the carrying/wearing of a device that might not complement participants’ look/lifestyle.
 
 In a nutshell, before implementing an EMA study, it is advisable to do a pilot study using your own device. This will allow the researcher to experience the possible inconveniences faced by participants. And, make sure there is a Plan B!

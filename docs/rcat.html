@@ -416,7 +416,7 @@ code > span.in { font-style: italic; } /* Information */
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.058 secs .</span>
+<span class="co">#&gt; Processing took: 0.064 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -676,7 +676,7 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <span class="co">#&gt; Based on 10 simulations, (0 warnings, 0 errors)</span>
 <span class="co">#&gt; alpha = 0.05, nrow = 960</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Time elapsed: 0 h 0 m 2 s</span></code></pre></div>
+<span class="co">#&gt; Time elapsed: 0 h 0 m 1 s</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">
@@ -711,19 +711,19 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.75045 -0.60354 -0.01126  0.61940  2.27661 </span>
+<span class="co">#&gt; -2.22880 -0.80031  0.04816  0.91103  2.80390 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.57135    0.10562   5.409 4.63e-07 ***</span>
-<span class="co">#&gt; depression.l1 -0.03154    0.08925  -0.353    0.725    </span>
-<span class="co">#&gt; const          0.03560    0.09590   0.371    0.711    </span>
+<span class="co">#&gt; activity.l1    0.50093    0.10507   4.767 6.64e-06 ***</span>
+<span class="co">#&gt; depression.l1 -0.03111    0.09437  -0.330    0.742    </span>
+<span class="co">#&gt; const         -0.17152    0.11314  -1.516    0.133    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9522 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.2353, Adjusted R-squared:  0.2194 </span>
-<span class="co">#&gt; F-statistic: 14.77 on 2 and 96 DF,  p-value: 2.549e-06</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 1.114 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.1965, Adjusted R-squared:  0.1798 </span>
+<span class="co">#&gt; F-statistic: 11.74 on 2 and 96 DF,  p-value: 2.742e-05</span></code></pre></div>
 <p>AutovarCore is a simplified version of a more extensive package <em>autovar</em> [@<span class="citation">(A. Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(L. Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>, <span class="citation">A. C. Emerencia et al. (<a href="#ref-Emerencia2016">2016</a>)</span>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="package-qgraph" class="section level3">
@@ -873,17 +873,7 @@ lomb<span class="op">::</span><span class="kw">lsp</span>(ibex[<span class="dv">
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"google": false,
-"linkedin": false,
-"weibo": false,
-"instapper": false,
-"vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
-},
+"sharing": null,
 "fontsettings": {
 "theme": "white",
 "family": "sans",
@@ -893,7 +883,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["aph_ema.pdf"],
 "toc": {
 "collapse": "subsection"
 }

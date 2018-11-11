@@ -358,15 +358,15 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
 <p>We can now extract the fixed effects regression coefficients table, by calling the ‘summary’ function on the fitted model. The estimated intercept should be around 5 (as this is a finite sample, we expect some deviation):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Print fixed effects.</span>
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
-<span class="co">#&gt;             Value Std.Error   DF t-value   p-value</span>
-<span class="co">#&gt; (Intercept)  4.71     0.101 2000    46.6 1.28e-321</span></code></pre></div>
+<span class="co">#&gt;             Value Std.Error   DF t-value p-value</span>
+<span class="co">#&gt; (Intercept)   5.1     0.107 2000    47.8       0</span></code></pre></div>
 <p>Random effects and residual variance are shown by the ‘VarCorr’ function. Again, since we specified the data ourselves in this case, we know the ‘true’ value of these parameters: the random intercept variance should be around 1 and the residual error variance should be close to .5.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fitted random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1) </span>
 <span class="co">#&gt;             Variance StdDev</span>
-<span class="co">#&gt; (Intercept) 1.001    1.00  </span>
-<span class="co">#&gt; Residual    0.476    0.69</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 1.111    1.054 </span>
+<span class="co">#&gt; Residual    0.526    0.726</span></code></pre></div>
 <p>It can be instructive to plot the predicted values of the model, to make clear how the model ‘thinks’. As shown by Figure <a href="lmm.html#fig:fig9b">9.2</a>, the model predicts a series of straight lines, one for each participant, that vary around 5 (the red line).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Saving predicted values.</span>
 d1<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)</code></pre></div>
@@ -401,16 +401,16 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
           <span class="dt">data =</span> d2)
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
 <span class="co">#&gt;             Value Std.Error   DF t-value   p-value</span>
-<span class="co">#&gt; (Intercept)  5.24    0.1199 1999    43.7 2.05e-293</span>
-<span class="co">#&gt; time         0.47    0.0238 1999    19.8  1.69e-79</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 5.083    0.1149 1999    44.3 8.52e-299</span>
+<span class="co">#&gt; time        0.454    0.0252 1999    18.0  1.53e-67</span></code></pre></div>
 <p>The random effects now have four components: the variance of the intercept, the variance of the slope, the residual error <em>and</em> the correlation between the random intercept and the random slope.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Extracting random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1 + time) </span>
 <span class="co">#&gt;             Variance StdDev Corr  </span>
-<span class="co">#&gt; (Intercept) 1.3459   1.160  (Intr)</span>
-<span class="co">#&gt; time        0.0511   0.226  0.071 </span>
-<span class="co">#&gt; Residual    0.4598   0.678</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 1.2205   1.105  (Intr)</span>
+<span class="co">#&gt; time        0.0575   0.240  0.068 </span>
+<span class="co">#&gt; Residual    0.4965   0.705</span></code></pre></div>
 <p>Model predictions clearly show how the mixed model estimated varying intercepts and slopes, that, on average, approximate the fixed effect regression formula ‘Y ~ 5 + 0.5 * time’ that was used to generate the data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d2<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)
 
@@ -435,10 +435,10 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
           <span class="dt">data =</span> d3)
 <span class="kw">round</span>(<span class="kw">summary</span>(fm)<span class="op">$</span>tTable, <span class="dv">2</span>)
 <span class="co">#&gt;                     Value Std.Error   DF t-value p-value</span>
-<span class="co">#&gt; (Intercept)          4.68      0.11 3998   41.52    0.00</span>
-<span class="co">#&gt; time                 0.01      0.02 3998    0.57    0.57</span>
-<span class="co">#&gt; grouptreatment       0.56      0.16  198    3.51    0.00</span>
-<span class="co">#&gt; time:grouptreatment  0.46      0.02 3998   18.57    0.00</span></code></pre></div>
+<span class="co">#&gt; (Intercept)          5.14      0.11 3998   45.24    0.00</span>
+<span class="co">#&gt; time                -0.01      0.02 3998   -0.65    0.52</span>
+<span class="co">#&gt; grouptreatment      -0.05      0.16  198   -0.34    0.73</span>
+<span class="co">#&gt; time:grouptreatment  0.47      0.03 3998   17.79    0.00</span></code></pre></div>
 <p>In Figure <a href="lmm.html#fig:fig9e">9.4</a> below, EMA mood ratings predicted by the fitted model show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9e"></span>
 <img src="lmm_files/figure-html/fig9e-1.png" alt="Predicted mood ratings" width="100%" />
@@ -491,17 +491,7 @@ Figure 9.4: Predicted mood ratings
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"google": false,
-"linkedin": false,
-"weibo": false,
-"instapper": false,
-"vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
-},
+"sharing": null,
 "fontsettings": {
 "theme": "white",
 "family": "sans",
@@ -511,7 +501,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["aph_ema.pdf"],
 "toc": {
 "collapse": "subsection"
 }

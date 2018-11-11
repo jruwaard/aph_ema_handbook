@@ -79,14 +79,10 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
   theme_classic()
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/cs11b-1} 
-
-}
-
-\caption{SCL-90 depression score, over the study period}(\#fig:cs11b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="csd_files/figure-html/cs11b-1.png" alt="SCL-90 depression score, over the study period" width="100%" />
+<p class="caption">(\#fig:cs11b)SCL-90 depression score, over the study period</p>
+</div>
 
 
 ## Mental state EMA items
@@ -218,14 +214,10 @@ ggplot(na.omit(d),
   theme_classic()
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/cs11f-1} 
-
-}
-
-\caption{Results of the DFA analysis.}(\#fig:cs11f)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="csd_files/figure-html/cs11f-1.png" alt="Results of the DFA analysis." width="100%" />
+<p class="caption">(\#fig:cs11f)Results of the DFA analysis.</p>
+</div>
 
 
 ## Discussion

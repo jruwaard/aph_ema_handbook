@@ -407,7 +407,7 @@ p &lt;-<span class="st"> </span><span class="kw">numeric</span>(nsim)
 
 <span class="co"># power</span>
 <span class="kw">sum</span>(p <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.05</span>) <span class="op">/</span><span class="st"> </span>nsim
-<span class="co">#&gt; [1] 0.4756</span></code></pre></div>
+<span class="co">#&gt; [1] 0.479</span></code></pre></div>
 <p>As can be seen, the simulation results are very close to the output of ‘pwr.t.test’. There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited. Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, ‘mvrnorm’ in package MASS <span class="citation">(Venables &amp; Ripley, <a href="#ref-Venables2002">2002</a>)</span> can be used to generate correlated data, and package ‘simstudy’ <span class="citation">(Goldfeld, <a href="#ref-R-simstudy">2018</a>)</span> can be used to generate complex longitudinal and hierarchical data.</p>
 </div>
 <div id="what-are-the-ethical-aspects" class="section level2">
@@ -485,17 +485,7 @@ Figure 3.2: Flow-chart to determine whether study devices (including EMA apps) s
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
-"sharing": {
-"github": false,
-"facebook": true,
-"twitter": true,
-"google": false,
-"linkedin": false,
-"weibo": false,
-"instapper": false,
-"vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
-},
+"sharing": null,
 "fontsettings": {
 "theme": "white",
 "family": "sans",
@@ -505,7 +495,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": null,
+"download": ["aph_ema.pdf"],
 "toc": {
 "collapse": "subsection"
 }

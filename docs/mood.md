@@ -70,14 +70,10 @@ plotmood_down <- ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
 print(plotmood_down)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/fig06a-1} 
-
-}
-
-\caption{34 weeks of mood data, from a single participant}(\#fig:fig06a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="mood_files/figure-html/fig06a-1.png" alt="34 weeks of mood data, from a single participant" width="100%" />
+<p class="caption">(\#fig:fig06a)34 weeks of mood data, from a single participant</p>
+</div>
 
 ### Bipolar unidimensional items
 \index{Mood assessment!Bipolar uni-dimensional}
@@ -131,14 +127,10 @@ combined <- plotmood_down +
 print(combined)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/fig69b-1} 
-
-}
-
-\caption{34 weeks of combined mood data, from a single participant}(\#fig:fig69b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="mood_files/figure-html/fig69b-1.png" alt="34 weeks of combined mood data, from a single participant" width="100%" />
+<p class="caption">(\#fig:fig69b)34 weeks of combined mood data, from a single participant</p>
+</div>
 
 ## Multi-dimensional mood assessment
 \index{Mood assessment!Multi-dimensional}
@@ -163,14 +155,10 @@ affective states in a circle on one of four quadrants (\@ref(fig:fig06c)). State
 within one quadrant are believed to be positively correlated, while states in
 the opposing quadrant are thought to be negatively correlated.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.6\linewidth]{images/outcomes/Russell1980} 
-
-}
-
-\caption{Russell's Circumplex model of affect.}(\#fig:fig06c)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/outcomes/Russell1980.png" alt="Russell's Circumplex model of affect." width="60%" />
+<p class="caption">(\#fig:fig06c)Russell's Circumplex model of affect.</p>
+</div>
 
 There are several options to operationalize the Circumplex model in EMA
 research. For example, respondents can rate valence and arousal on two VAS
@@ -194,14 +182,10 @@ model and adds the third dimension "dominance" (level of experienced control
 over the mood state), rendering eight (instead of four) different mood states
 and one neutral state (\@ref(fig:fig09d)).
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{images/outcomes/Circumplex-Pick-A-Mood} 
-
-}
-
-\caption{The Pick-A-Mood Circle.}(\#fig:fig09d)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/outcomes/Circumplex-Pick-A-Mood.png" alt="The Pick-A-Mood Circle." width="50%" />
+<p class="caption">(\#fig:fig09d)The Pick-A-Mood Circle.</p>
+</div>
 
 ### Negative & Positive Affect
 \index{Positive and Negative Affect}
@@ -272,11 +256,7 @@ colnames(model$loadings) <- c("PA", "NA")
 psych::fa.diagram(model)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/fig06e-1} 
-
-}
-
-\caption{Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).}(\#fig:fig06e)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="mood_files/figure-html/fig06e-1.png" alt="Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)." width="100%" />
+<p class="caption">(\#fig:fig06e)Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).</p>
+</div>

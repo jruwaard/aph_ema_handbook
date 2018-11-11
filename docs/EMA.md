@@ -25,24 +25,16 @@ Ecological Momentary Assessment (EMA) has many aliases. It is known as 'Experien
 
 In EMA research, two forms of data collection are distinguished: 1) 'Active EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with which *observational* data are collected. Active EMA requires participants to consciously provide information, for example by rating their current mood in response to a question that is prompted on their smartphone (see Figure \@ref(fig:fig01a)). In passive EMA, information is collected through wearables or log files without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media (see Figure \@ref(fig:fig01b)).Studies may combine active and passive EMA. A study into sleep patterns, for example, may involve both a self-report sleep diary and an accelerometer sensor [@Meijden2016].
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/fig01a-1} 
-
-}
-
-\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:fig01a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="EMA_files/figure-html/fig01a-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
+<p class="caption">(\#fig:fig01a)Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. </p>
+</div>
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/fig01b-1} 
-
-}
-
-\caption{Passive EMA: data are collected automatically, for instance by accelerometers such as the GENEActive actiwatch.}(\#fig:fig01b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="EMA_files/figure-html/fig01b-1.png" alt="Passive EMA: data are collected automatically, for instance by accelerometers such as the GENEActive actiwatch." width="100%" />
+<p class="caption">(\#fig:fig01b)Passive EMA: data are collected automatically, for instance by accelerometers such as the GENEActive actiwatch.</p>
+</div>
 
 
 
@@ -82,14 +74,10 @@ In clinical research, a distinction is often made between *ideographic* and *nom
 
 In contrast to more qualitative idiographic methods, such as interviews and N = 1 case studies, EMA allows for the collection of large amounts of quantitative data on the individual level. Thus, EMA offers a quantitative method for idiographic research, measuring characteristics of (unique) individuals across time and context [@Shiffman2008]. This allows for a better understanding of intra-individual process, and of the factors that account for variability within and between individuals.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/fig01c-1} 
-
-}
-
-\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:fig01c)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="EMA_files/figure-html/fig01c-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
+<p class="caption">(\#fig:fig01c)An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).</p>
+</div>
 
 
 ### To enable EMI

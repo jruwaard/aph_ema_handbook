@@ -79,7 +79,7 @@ which further contain several tabbed windows.
 knitr::include_graphics("images/R/rstudio.png")
 ```
 
-Command are sent to R starts in the bottom-left pane, named "Console". To test
+Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
 ("\>"). Next, type the statement below (note that '\#' denotes a comment line; R
 ignores it, so there is no immediate need to type that). To execute, press
@@ -155,7 +155,7 @@ are in plain sight. In R, you first have to import the data.
 One way to load data into R is to use RStudio's data import wizard. Follow the
 steps below to see how this works with data stored in a comma-separated-values
 (csv) format, a common data format to which many programs, including SPSS and
-Excell, can export data to.
+Excel, can export data to.
  
 - Download the example csv data file at https://tinyurl.com/ybfafxxk (or create
 a csv-version of one of your own data files).
@@ -292,7 +292,7 @@ devtools::install_github("jruwaard/emaph")
 ### Using packages
 \index{R and RStudio!Packages} 
 
-To use packages, you have to tell R to load them. You do this with the `library`
+To use packages, you have to tell R to load them each session you want to work with them. You do this with the `library`
 function. For example, to use package 'tidyverse' and 'emaph', type:
 
 ```{r cs2l, eval = TRUE}

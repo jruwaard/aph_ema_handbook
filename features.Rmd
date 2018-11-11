@@ -97,7 +97,7 @@ You should check, though, whether the implicit assumptions behind the statistics
 are correct. When you use the mean and the standard deviation to summarize a
 time-series, you assume that the data-generating process behind the series is
 stable over time (in technical terms: that this process is *stationary*,
-@wiki\_Stationary\_process). If this assumption is incorrect (i.e., if the
+@wiki_Stationary_process). If this assumption is incorrect (i.e., if the
 process is unstable or non-stationary), the mean and SD are biased statistics.
 
 Our simulated EMA time-series is non-stationary, as can be seen in Figure
@@ -231,7 +231,7 @@ becomes important to think about the process that drives the missingness). If
 you decide to impute, there are several options. For example, you can replace
 missing values with the mean, the last-known value, an interpolated value or
 with a smoothing technique such as the Kalman-filter [see
-@hoogendoorn2017\_book, for a discussion]. Figure \@ref(fig:fig8f) illustrates
+@hoogendoorn2017, for a discussion]. Figure \@ref(fig:fig8f) illustrates
 the linear interpolation approach: missing values (marked by red dots) are
 replaced by values that lie between the non-missings. Imagine that we would have
 used the mean to impute. Can you see why that would have disrupted local

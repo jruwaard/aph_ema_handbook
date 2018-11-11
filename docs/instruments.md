@@ -46,10 +46,14 @@ to the needs of the researcher. Platforms such as MoviSense and Illumivu, for
 example, allow researchers to define items and sample schedules, enrol and
 monitor participants and downloadthe data once the study is completed.
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/movisens/movisens.png" alt="Movisens sample scheme editor (left) and App Screenshots (right)" width="100%" />
-<p class="caption">(\#fig:movisensbackoffice)Movisens sample scheme editor (left) and App Screenshots (right)</p>
-</div>
+\begin{figure}[!h]
+
+{\centering \includegraphics[width=1\linewidth]{images/instruments/movisens/movisens} 
+
+}
+
+\caption{Movisens sample scheme editor (left) and App Screenshots (right)}(\#fig:movisensbackoffice)
+\end{figure}
 
 ### Validation and reliability
 

@@ -11,4 +11,5 @@ Finally, we like to thank the project advisors, Prof. Dr. Heleen Riper and Prof.
 *Jeroen Ruwaard, Lisa Kooistra \& Melissa Thong*
 
 
-<img src="images/aph_consortium.png" width="98%" style="display: block; margin: auto;" />
+
+\begin{center}\includegraphics[width=0.98\linewidth]{images/aph_consortium} \end{center}

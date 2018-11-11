@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Ecological Momentary Assessment in Mental Health Research</title>
+  <meta name="description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies.">
+  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies." />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Ecological Momentary Assessment in Mental Health Research" />
+  
+  <meta name="twitter:description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies." />
+  <meta name="twitter:image" content="images/cover.png" />
+
+<meta name="author" content="Jeroen Ruwaard">
+<meta name="author" content="Lisa Kooistra">
+<meta name="author" content="Melissa Thong">
+
+
+<meta name="date" content="2018-11-11">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="rstudio.html">
+<link rel="next" href="instruments.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { font-weight: bold; } /* Keyword */
+code > span.dt { text-decoration: underline; } /* DataType */
+code > span.co { font-style: italic; } /* Comment */
+code > span.al { font-weight: bold; } /* Alert */
+code > span.er { font-weight: bold; } /* Error */
+code > span.wa { font-style: italic; } /* Warning */
+code > span.cf { font-weight: bold; } /* ControlFlow */
+code > span.pp { font-weight: bold; } /* Preprocessor */
+code > span.do { font-style: italic; } /* Documentation */
+code > span.an { font-style: italic; } /* Annotation */
+code > span.cv { font-style: italic; } /* CommentVar */
+code > span.in { font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">EMA research Manual</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="part"><span><b>I Introduction</b></span></li>
+<li class="chapter" data-level="1" data-path="introduction.html"><a href="introduction.html"><i class="fa fa-check"></i><b>1</b> Introducing EMA</a><ul>
+<li class="chapter" data-level="1.1" data-path="introduction.html"><a href="introduction.html#what-is-ema"><i class="fa fa-check"></i><b>1.1</b> What is EMA?</a><ul>
+<li class="chapter" data-level="1.1.1" data-path="introduction.html"><a href="introduction.html#active-versus-passive-ema"><i class="fa fa-check"></i><b>1.1.1</b> Active versus Passive EMA</a></li>
+<li class="chapter" data-level="1.1.2" data-path="introduction.html"><a href="introduction.html#ema-sampling"><i class="fa fa-check"></i><b>1.1.2</b> EMA sampling</a></li>
+</ul></li>
+<li class="chapter" data-level="1.2" data-path="introduction.html"><a href="introduction.html#why-ema"><i class="fa fa-check"></i><b>1.2</b> Why EMA?</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="introduction.html"><a href="introduction.html#to-minimize-recall-bias-in-assessment"><i class="fa fa-check"></i><b>1.2.1</b> To minimize recall bias in assessment</a></li>
+<li class="chapter" data-level="1.2.2" data-path="introduction.html"><a href="introduction.html#to-increase-the-ecological-validity-of-research-findings"><i class="fa fa-check"></i><b>1.2.2</b> To increase the ecological validity of research findings</a></li>
+<li class="chapter" data-level="1.2.3" data-path="introduction.html"><a href="introduction.html#to-advance-ideographic-research"><i class="fa fa-check"></i><b>1.2.3</b> To advance ideographic research</a></li>
+<li class="chapter" data-level="1.2.4" data-path="introduction.html"><a href="introduction.html#to-enable-emi"><i class="fa fa-check"></i><b>1.2.4</b> To enable EMI</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="introduction.html"><a href="introduction.html#ema-research-findings-a-birds-eye-view"><i class="fa fa-check"></i><b>1.3</b> EMA research findings: A birds-eye view</a><ul>
+<li class="chapter" data-level="1.3.1" data-path="introduction.html"><a href="introduction.html#active-ema"><i class="fa fa-check"></i><b>1.3.1</b> Active EMA</a></li>
+<li class="chapter" data-level="1.3.2" data-path="introduction.html"><a href="introduction.html#passive-ema"><i class="fa fa-check"></i><b>1.3.2</b> Passive EMA</a></li>
+<li class="chapter" data-level="1.3.3" data-path="introduction.html"><a href="introduction.html#limitations"><i class="fa fa-check"></i><b>1.3.3</b> Limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="introduction.html"><a href="introduction.html#what-is-in-this-manual"><i class="fa fa-check"></i><b>1.4</b> What is in this manual?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="rstudio.html"><a href="rstudio.html"><i class="fa fa-check"></i><b>2</b> Introducing R &amp; RStudio</a><ul>
+<li class="chapter" data-level="2.1" data-path="rstudio.html"><a href="rstudio.html#what-are-r-and-rstudio"><i class="fa fa-check"></i><b>2.1</b> What are R and RStudio?</a></li>
+<li class="chapter" data-level="2.2" data-path="rstudio.html"><a href="rstudio.html#why-r"><i class="fa fa-check"></i><b>2.2</b> Why R?</a></li>
+<li class="chapter" data-level="2.3" data-path="rstudio.html"><a href="rstudio.html#installing-r-rstudio"><i class="fa fa-check"></i><b>2.3</b> Installing R &amp; RStudio</a></li>
+<li class="chapter" data-level="2.4" data-path="rstudio.html"><a href="rstudio.html#interacting-with-r-through-the-rstudio-console"><i class="fa fa-check"></i><b>2.4</b> Interacting with R through the RStudio console</a></li>
+<li class="chapter" data-level="2.5" data-path="rstudio.html"><a href="rstudio.html#writing-r-scripts"><i class="fa fa-check"></i><b>2.5</b> Writing R-scripts</a></li>
+<li class="chapter" data-level="2.6" data-path="rstudio.html"><a href="rstudio.html#importing-your-data"><i class="fa fa-check"></i><b>2.6</b> Importing your data</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="rstudio.html"><a href="rstudio.html#using-rstudio-menus-to-import-data"><i class="fa fa-check"></i><b>2.6.1</b> Using RStudio menus to import data</a></li>
+<li class="chapter" data-level="2.6.2" data-path="rstudio.html"><a href="rstudio.html#using-functions-to-import-data"><i class="fa fa-check"></i><b>2.6.2</b> Using functions to import data</a></li>
+<li class="chapter" data-level="2.6.3" data-path="rstudio.html"><a href="rstudio.html#accessing-your-data"><i class="fa fa-check"></i><b>2.6.3</b> Accessing your data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="rstudio.html"><a href="rstudio.html#extending-r-with-packages"><i class="fa fa-check"></i><b>2.7</b> Extending R with Packages</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="rstudio.html"><a href="rstudio.html#installing-r-packages-from-cran"><i class="fa fa-check"></i><b>2.7.1</b> Installing R-packages from CRAN</a></li>
+<li class="chapter" data-level="2.7.2" data-path="rstudio.html"><a href="rstudio.html#installing-r-packages-from-github"><i class="fa fa-check"></i><b>2.7.2</b> Installing R-packages from GitHub</a></li>
+<li class="chapter" data-level="2.7.3" data-path="rstudio.html"><a href="rstudio.html#using-packages"><i class="fa fa-check"></i><b>2.7.3</b> Using packages</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="rstudio.html"><a href="rstudio.html#getting-help"><i class="fa fa-check"></i><b>2.8</b> Getting help</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="rstudio.html"><a href="rstudio.html#using-to-consult-the-documentation"><i class="fa fa-check"></i><b>2.8.1</b> Using ‘?’ to consult the documentation</a></li>
+<li class="chapter" data-level="2.8.2" data-path="rstudio.html"><a href="rstudio.html#using-rstudios-global-documentation-index-search"><i class="fa fa-check"></i><b>2.8.2</b> Using RStudio’s global documentation index search</a></li>
+<li class="chapter" data-level="2.8.3" data-path="rstudio.html"><a href="rstudio.html#learning-from-examples"><i class="fa fa-check"></i><b>2.8.3</b> Learning from examples</a></li>
+<li class="chapter" data-level="2.8.4" data-path="rstudio.html"><a href="rstudio.html#google"><i class="fa fa-check"></i><b>2.8.4</b> Google</a></li>
+<li class="chapter" data-level="2.8.5" data-path="rstudio.html"><a href="rstudio.html#read-books"><i class="fa fa-check"></i><b>2.8.5</b> Read books</a></li>
+<li class="chapter" data-level="2.8.6" data-path="rstudio.html"><a href="rstudio.html#online-courses"><i class="fa fa-check"></i><b>2.8.6</b> Online Courses</a></li>
+<li class="chapter" data-level="2.8.7" data-path="rstudio.html"><a href="rstudio.html#learn-r-in-r"><i class="fa fa-check"></i><b>2.8.7</b> Learn R, in R</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>II EMA Methods</b></span></li>
+<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Study Design</a><ul>
+<li class="chapter" data-level="3.1" data-path="methods.html"><a href="methods.html#what-is-the-research-question"><i class="fa fa-check"></i><b>3.1</b> What is the research question?</a></li>
+<li class="chapter" data-level="3.2" data-path="methods.html"><a href="methods.html#who-are-the-study-participants"><i class="fa fa-check"></i><b>3.2</b> Who are the study participants?</a></li>
+<li class="chapter" data-level="3.3" data-path="methods.html"><a href="methods.html#what-are-the-qualities-of-the-ema-measures"><i class="fa fa-check"></i><b>3.3</b> What are the qualities of the EMA measures?</a></li>
+<li class="chapter" data-level="3.4" data-path="methods.html"><a href="methods.html#what-is-the-sample-plan"><i class="fa fa-check"></i><b>3.4</b> What is the Sample Plan?</a></li>
+<li class="chapter" data-level="3.5" data-path="methods.html"><a href="methods.html#what-is-the-optimal-sample-size"><i class="fa fa-check"></i><b>3.5</b> What is the Optimal Sample Size?</a></li>
+<li class="chapter" data-level="3.6" data-path="methods.html"><a href="methods.html#what-are-the-ethical-aspects"><i class="fa fa-check"></i><b>3.6</b> What are the Ethical Aspects?</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="instruments.html"><a href="instruments.html"><i class="fa fa-check"></i><b>4</b> EMA instruments</a><ul>
+<li class="chapter" data-level="4.1" data-path="instruments.html"><a href="instruments.html#general-considerations"><i class="fa fa-check"></i><b>4.1</b> General considerations</a><ul>
+<li class="chapter" data-level="4.1.1" data-path="instruments.html"><a href="instruments.html#costs-new-development-vs-known-player"><i class="fa fa-check"></i><b>4.1.1</b> Costs new development vs known player</a></li>
+<li class="chapter" data-level="4.1.2" data-path="instruments.html"><a href="instruments.html#low-tech-versus-high-tech"><i class="fa fa-check"></i><b>4.1.2</b> Low-tech versus high-tech</a></li>
+<li class="chapter" data-level="4.1.3" data-path="instruments.html"><a href="instruments.html#access-to-a-back-office"><i class="fa fa-check"></i><b>4.1.3</b> Access to a back-office</a></li>
+<li class="chapter" data-level="4.1.4" data-path="instruments.html"><a href="instruments.html#validation-and-reliability"><i class="fa fa-check"></i><b>4.1.4</b> Validation and reliability</a></li>
+<li class="chapter" data-level="4.1.5" data-path="instruments.html"><a href="instruments.html#data-access"><i class="fa fa-check"></i><b>4.1.5</b> Data access</a></li>
+<li class="chapter" data-level="4.1.6" data-path="instruments.html"><a href="instruments.html#demands-on-time"><i class="fa fa-check"></i><b>4.1.6</b> Demands on time</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="instruments.html"><a href="instruments.html#technical-considerations"><i class="fa fa-check"></i><b>4.2</b> Technical considerations</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="instruments.html"><a href="instruments.html#internet-access"><i class="fa fa-check"></i><b>4.2.1</b> Internet access</a></li>
+<li class="chapter" data-level="4.2.2" data-path="instruments.html"><a href="instruments.html#device-limitations"><i class="fa fa-check"></i><b>4.2.2</b> Device limitations</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="instruments.html"><a href="instruments.html#participant-perspective"><i class="fa fa-check"></i><b>4.3</b> Participant perspective</a></li>
+<li class="chapter" data-level="4.4" data-path="instruments.html"><a href="instruments.html#points-to-consider"><i class="fa fa-check"></i><b>4.4</b> Points to consider</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="datamanagement.html"><a href="datamanagement.html"><i class="fa fa-check"></i><b>5</b> Data management</a><ul>
+<li class="chapter" data-level="5.1" data-path="datamanagement.html"><a href="datamanagement.html#using-rstudio-projects"><i class="fa fa-check"></i><b>5.1</b> Using RStudio-projects</a></li>
+<li class="chapter" data-level="5.2" data-path="datamanagement.html"><a href="datamanagement.html#an-example-project-directory-structure"><i class="fa fa-check"></i><b>5.2</b> An Example Project Directory Structure</a></li>
+<li class="chapter" data-level="5.3" data-path="datamanagement.html"><a href="datamanagement.html#data"><i class="fa fa-check"></i><b>5.3</b> Data</a></li>
+<li class="chapter" data-level="5.4" data-path="datamanagement.html"><a href="datamanagement.html#import-scripts"><i class="fa fa-check"></i><b>5.4</b> Import scripts</a></li>
+<li class="chapter" data-level="5.5" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>5.5</b> Reproducible Analyses</a></li>
+<li class="chapter" data-level="5.6" data-path="datamanagement.html"><a href="datamanagement.html#readme.txt"><i class="fa fa-check"></i><b>5.6</b> README.txt</a></li>
+<li class="chapter" data-level="5.7" data-path="datamanagement.html"><a href="datamanagement.html#a-final-note"><i class="fa fa-check"></i><b>5.7</b> A final note</a></li>
+</ul></li>
+<li class="part"><span><b>III EMA Outcomes</b></span></li>
+<li class="chapter" data-level="6" data-path="mood.html"><a href="mood.html"><i class="fa fa-check"></i><b>6</b> Mood</a><ul>
+<li class="chapter" data-level="6.1" data-path="mood.html"><a href="mood.html#unidimensional-mood-assessment"><i class="fa fa-check"></i><b>6.1</b> Unidimensional mood assessment</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="mood.html"><a href="mood.html#bipolar-unidimensional-items"><i class="fa fa-check"></i><b>6.1.1</b> Bipolar unidimensional items</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="mood.html"><a href="mood.html#bag-of-items"><i class="fa fa-check"></i><b>6.2</b> Bag-of-Items</a></li>
+<li class="chapter" data-level="6.3" data-path="mood.html"><a href="mood.html#multi-dimensional-mood-assessment"><i class="fa fa-check"></i><b>6.3</b> Multi-dimensional mood assessment</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="mood.html"><a href="mood.html#the-circumplex-model"><i class="fa fa-check"></i><b>6.3.1</b> The Circumplex Model</a></li>
+<li class="chapter" data-level="6.3.2" data-path="mood.html"><a href="mood.html#negative-positive-affect"><i class="fa fa-check"></i><b>6.3.2</b> Negative &amp; Positive Affect</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="activity.html"><a href="activity.html"><i class="fa fa-check"></i><b>7</b> Activity</a><ul>
+<li class="chapter" data-level="7.1" data-path="activity.html"><a href="activity.html#actigraphy"><i class="fa fa-check"></i><b>7.1</b> Actigraphy</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="activity.html"><a href="activity.html#data-cleaning"><i class="fa fa-check"></i><b>7.1.1</b> Data cleaning</a></li>
+<li class="chapter" data-level="7.1.2" data-path="activity.html"><a href="activity.html#feature-extraction"><i class="fa fa-check"></i><b>7.1.2</b> Feature extraction</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="activity.html"><a href="activity.html#geotracking"><i class="fa fa-check"></i><b>7.2</b> Geotracking</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate system</a></li>
+<li class="chapter" data-level="7.2.2" data-path="activity.html"><a href="activity.html#the-global-positioning-system"><i class="fa fa-check"></i><b>7.2.2</b> The Global Positioning System</a></li>
+<li class="chapter" data-level="7.2.3" data-path="activity.html"><a href="activity.html#gps-based-activity-measures"><i class="fa fa-check"></i><b>7.2.3</b> GPS-based activity measures</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>IV Analytic Approaches</b></span></li>
+<li class="chapter" data-level="8" data-path="features.html"><a href="features.html"><i class="fa fa-check"></i><b>8</b> Feature Extraction</a><ul>
+<li class="chapter" data-level="8.1" data-path="features.html"><a href="features.html#simulated-ema-time-series-example"><i class="fa fa-check"></i><b>8.1</b> Simulated EMA Time-series Example</a></li>
+<li class="chapter" data-level="8.2" data-path="features.html"><a href="features.html#central-tendency-and-variability"><i class="fa fa-check"></i><b>8.2</b> Central Tendency and Variability</a></li>
+<li class="chapter" data-level="8.3" data-path="features.html"><a href="features.html#modelling-the-trend"><i class="fa fa-check"></i><b>8.3</b> Modelling the Trend</a></li>
+<li class="chapter" data-level="8.4" data-path="features.html"><a href="features.html#missing-values"><i class="fa fa-check"></i><b>8.4</b> Missing Values</a></li>
+<li class="chapter" data-level="8.5" data-path="features.html"><a href="features.html#autocorrelation"><i class="fa fa-check"></i><b>8.5</b> Autocorrelation</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>8.5.1</b> Rolling statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>8.6</b> Periodicity</a></li>
+<li class="chapter" data-level="8.7" data-path="features.html"><a href="features.html#discussion"><i class="fa fa-check"></i><b>8.7</b> Discussion</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>9</b> Mixed Modeling</a><ul>
+<li class="chapter" data-level="9.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>9.1</b> The Mixed Model</a></li>
+<li class="chapter" data-level="9.2" data-path="lmm.html"><a href="lmm.html#simulating-example-data"><i class="fa fa-check"></i><b>9.2</b> Simulating Example Data</a></li>
+<li class="chapter" data-level="9.3" data-path="lmm.html"><a href="lmm.html#fitting-a-mixed-model-in-r"><i class="fa fa-check"></i><b>9.3</b> Fitting a Mixed Model in R</a></li>
+<li class="chapter" data-level="9.4" data-path="lmm.html"><a href="lmm.html#adding-time-as-a-predictor"><i class="fa fa-check"></i><b>9.4</b> Adding Time as a Predictor</a></li>
+<li class="chapter" data-level="9.5" data-path="lmm.html"><a href="lmm.html#adding-a-two-group-comparison"><i class="fa fa-check"></i><b>9.5</b> Adding a Two-Group Comparison</a></li>
+<li class="chapter" data-level="9.6" data-path="lmm.html"><a href="lmm.html#next-steps"><i class="fa fa-check"></i><b>9.6</b> Next Steps</a></li>
+</ul></li>
+<li class="part"><span><b>V A Case Study</b></span></li>
+<li class="chapter" data-level="10" data-path="csd.html"><a href="csd.html"><i class="fa fa-check"></i><b>10</b> Early Warning Signs of Depression</a><ul>
+<li class="chapter" data-level="10.1" data-path="csd.html"><a href="csd.html#critical-slowing-down"><i class="fa fa-check"></i><b>10.1</b> Critical Slowing Down</a></li>
+<li class="chapter" data-level="10.2" data-path="csd.html"><a href="csd.html#plotting-the-course-of-depression"><i class="fa fa-check"></i><b>10.2</b> Plotting the course of depression</a></li>
+<li class="chapter" data-level="10.3" data-path="csd.html"><a href="csd.html#mental-state-ema-items"><i class="fa fa-check"></i><b>10.3</b> Mental state EMA items</a></li>
+<li class="chapter" data-level="10.4" data-path="csd.html"><a href="csd.html#running-the-dfa"><i class="fa fa-check"></i><b>10.4</b> Running the DFA</a></li>
+<li class="chapter" data-level="10.5" data-path="csd.html"><a href="csd.html#results"><i class="fa fa-check"></i><b>10.5</b> Results</a></li>
+<li class="chapter" data-level="10.6" data-path="csd.html"><a href="csd.html#discussion-1"><i class="fa fa-check"></i><b>10.6</b> Discussion</a></li>
+</ul></li>
+<li class="part"><span><b>VI EMA Catalogues</b></span></li>
+<li class="chapter" data-level="11" data-path="catalogue.html"><a href="catalogue.html"><i class="fa fa-check"></i><b>11</b> EMA Research within the APH Mental Health Consortium</a><ul>
+<li class="chapter" data-level="11.1" data-path="catalogue.html"><a href="catalogue.html#depression"><i class="fa fa-check"></i><b>11.1</b> Depression</a><ul>
+<li class="chapter" data-level="11.1.1" data-path="catalogue.html"><a href="catalogue.html#bockting"><i class="fa fa-check"></i><b>11.1.1</b> Bockting</a></li>
+<li class="chapter" data-level="11.1.2" data-path="catalogue.html"><a href="catalogue.html#penninx-and-lamers"><i class="fa fa-check"></i><b>11.1.2</b> Penninx and Lamers</a></li>
+<li class="chapter" data-level="11.1.3" data-path="catalogue.html"><a href="catalogue.html#riper-and-smit"><i class="fa fa-check"></i><b>11.1.3</b> Riper and Smit</a></li>
+</ul></li>
+<li class="chapter" data-level="11.2" data-path="catalogue.html"><a href="catalogue.html#psychosomatic-symptoms"><i class="fa fa-check"></i><b>11.2</b> Psychosomatic symptoms</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="catalogue.html"><a href="catalogue.html#knoop"><i class="fa fa-check"></i><b>11.2.1</b> Knoop</a></li>
+<li class="chapter" data-level="11.2.2" data-path="catalogue.html"><a href="catalogue.html#sprangers"><i class="fa fa-check"></i><b>11.2.2</b> Sprangers</a></li>
+<li class="chapter" data-level="11.2.3" data-path="catalogue.html"><a href="catalogue.html#snoek"><i class="fa fa-check"></i><b>11.2.3</b> Snoek</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="catalogue.html"><a href="catalogue.html#suicidal-ideation"><i class="fa fa-check"></i><b>11.3</b> Suicidal Ideation</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="catalogue.html"><a href="catalogue.html#van-ballegooijen"><i class="fa fa-check"></i><b>11.3.1</b> Van Ballegooijen</a></li>
+</ul></li>
+<li class="chapter" data-level="11.4" data-path="catalogue.html"><a href="catalogue.html#psychotic-symptoms"><i class="fa fa-check"></i><b>11.4</b> Psychotic symptoms</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="catalogue.html"><a href="catalogue.html#van-der-gaag"><i class="fa fa-check"></i><b>11.4.1</b> Van der Gaag</a></li>
+<li class="chapter" data-level="11.4.2" data-path="catalogue.html"><a href="catalogue.html#vretp"><i class="fa fa-check"></i><b>11.4.2</b> VRETp</a></li>
+</ul></li>
+<li class="chapter" data-level="11.5" data-path="catalogue.html"><a href="catalogue.html#sleep"><i class="fa fa-check"></i><b>11.5</b> Sleep</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="catalogue.html"><a href="catalogue.html#van-someren"><i class="fa fa-check"></i><b>11.5.1</b> Van Someren</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="catalogue.html"><a href="catalogue.html#ambulatory-assessment"><i class="fa fa-check"></i><b>11.6</b> Ambulatory Assessment</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="catalogue.html"><a href="catalogue.html#de-geus"><i class="fa fa-check"></i><b>11.6.1</b> De Geus</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html"><i class="fa fa-check"></i><b>12</b> EMA Instruments Catalogue</a><ul>
+<li class="chapter" data-level="12.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ilumivu"><i class="fa fa-check"></i><b>12.2</b> Ilumivu</a></li>
+<li class="chapter" data-level="12.3" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#moodbuster"><i class="fa fa-check"></i><b>12.3</b> Moodbuster</a></li>
+<li class="chapter" data-level="12.4" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#movisens"><i class="fa fa-check"></i><b>12.4</b> Movisens</a></li>
+<li class="chapter" data-level="12.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#psymate"><i class="fa fa-check"></i><b>12.5</b> PsyMate</a></li>
+<li class="chapter" data-level="12.6" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.6</b> RoQua</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.6.1</b> VU-AMS</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>13</b> R Packages for EMA Research</a><ul>
+<li class="chapter" data-level="13.1" data-path="rcat.html"><a href="rcat.html#accelerometry"><i class="fa fa-check"></i><b>13.1</b> Accelerometry</a><ul>
+<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#package-genearead"><i class="fa fa-check"></i><b>13.1.1</b> Package GENEAread</a></li>
+<li class="chapter" data-level="13.1.2" data-path="rcat.html"><a href="rcat.html#package-ggir"><i class="fa fa-check"></i><b>13.1.2</b> Package ‘GGIR’</a></li>
+<li class="chapter" data-level="13.1.3" data-path="rcat.html"><a href="rcat.html#package-physicalactivity"><i class="fa fa-check"></i><b>13.1.3</b> Package ‘PhysicalActivity’</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>13.2</b> Data management &amp; Visual Exploration</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="rcat.html"><a href="rcat.html#package-dplyr"><i class="fa fa-check"></i><b>13.2.1</b> Package <code>dplyr</code></a></li>
+<li class="chapter" data-level="13.2.2" data-path="rcat.html"><a href="rcat.html#package-ggplot2"><i class="fa fa-check"></i><b>13.2.2</b> Package ‘ggplot2’</a></li>
+<li class="chapter" data-level="13.2.3" data-path="rcat.html"><a href="rcat.html#package-haven"><i class="fa fa-check"></i><b>13.2.3</b> Package ‘haven’</a></li>
+<li class="chapter" data-level="13.2.4" data-path="rcat.html"><a href="rcat.html#package-lubridate"><i class="fa fa-check"></i><b>13.2.4</b> Package ‘lubridate’</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>13.3</b> Mixed-effects modeling</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>13.3.1</b> nlme</a></li>
+<li class="chapter" data-level="13.3.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>13.3.2</b> lme4</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>13.4</b> Power analysis</a><ul>
+<li class="chapter" data-level="13.4.1" data-path="rcat.html"><a href="rcat.html#package-simr"><i class="fa fa-check"></i><b>13.4.1</b> Package ‘simr’</a></li>
+</ul></li>
+<li class="chapter" data-level="13.5" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>13.5</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="13.5.1" data-path="rcat.html"><a href="rcat.html#package-autovarcore"><i class="fa fa-check"></i><b>13.5.1</b> Package ’autovarCore`</a></li>
+<li class="chapter" data-level="13.5.2" data-path="rcat.html"><a href="rcat.html#package-qgraph"><i class="fa fa-check"></i><b>13.5.2</b> Package ’qgraph`</a></li>
+<li class="chapter" data-level="13.5.3" data-path="rcat.html"><a href="rcat.html#package-bootnet"><i class="fa fa-check"></i><b>13.5.3</b> Package ‘bootnet’</a></li>
+</ul></li>
+<li class="chapter" data-level="13.6" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>13.6</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="13.6.1" data-path="rcat.html"><a href="rcat.html#package-lomb"><i class="fa fa-check"></i><b>13.6.1</b> Package ‘lomb’</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>VII Closing Matters</b></span></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Ecological Momentary Assessment in Mental Health Research</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="methods" class="section level1">
+<h1><span class="header-section-number">Chapter 3</span> Study Design</h1>
+<p> </p>
+<p>As with all scientific research, EMA studies start with mindful consideration of the study design. Issues that need to be considered are the research question(s), the hypotheses, the population of interest, and the nature of the comparison groups <span class="citation">(Shiffman et al., <a href="#ref-Shiffman2008">2008</a>)</span>.</p>
+<p>Ample information on general study design issues can be found elsewhere (see for example, the APH quality handbook, at <a href="http://www.emgo.nl/kc/" class="uri">http://www.emgo.nl/kc/</a>). This chapter highlights key design aspects of EMA studies.</p>
+<div id="what-is-the-research-question" class="section level2">
+<h2><span class="header-section-number">3.1</span> What is the research question?</h2>
+<p>Given the plethora of new research options that emerged from the rapid development in EMA technologies, it can be tempting to dive straight into exploratory data collection, without giving much consideration to the theoretical background of the study. That, however, would be one pitfall of EMA research to avoid. Data mining is no substitute for theory. Asking participants to contribute data without a rationale is unethical. As in all scientific activities, defining the research question should be the first step.</p>
+<p>Ask yourself what EMA could bring to your topic of interest. How is it different from traditional assessment methods? What questions does it allow you to address that you could not answer without it? For this, you could use any of the EMA advantages discussed in Chapter <a href="introduction.html#introduction">1</a>. Are you interested in real-life behavior, in differences between participants, in changes within participants over time, or in potential causal pathways between health-related variables? What relationships do you expect to find, and why? A solid theoretical background, and clearly formulated explicit research questions and hypotheses will help to make the right choices when you have to decide on the other aspects of the study design.</p>
+</div>
+<div id="who-are-the-study-participants" class="section level2">
+<h2><span class="header-section-number">3.2</span> Who are the study participants?</h2>
+<p>Given the experimental nature of EMA, studies are often piloted in healthy or sub-clinical populations. This is a recommended first step, to test the experimental procedures and to avoid unnecessary burdening of vulnerable patient populations. You should be aware, though, that results obtained in non-patient populations do not necessarily generalize to patient populations. EMA mood ratings, for example, might be much more variable in patients compared to non-patients. Pilot studies should therefore also be conducted in the target population.</p>
+</div>
+<div id="what-are-the-qualities-of-the-ema-measures" class="section level2">
+<h2><span class="header-section-number">3.3</span> What are the qualities of the EMA measures?</h2>
+<p>  </p>
+<p>With the study hypotheses in place, theoretical constructs must be operationalized into quantitative measures. For this, you should consult the scientific literature on the reliability and validity of existing EMA measures.</p>
+<p>In active EMA research, complex multi-dimensional constructs such as mood and anxiety are often measured using single-item questions, to reduce the assessment burden of participants, who are prompted several times per day. You should ask yourself (and the scientific literature) what the psychometric properties are of these measures are. How do these EMA-measures compare to scores on traditional assessments (e.g., self-report questionnaires, clinical interviews)? What is known about the variability of items scores? And what is known about the measurement errors? Surprisingly, these last questions are often ignored in EMA research, even though it has been estimated that up to 30% to 50% of the observed variance in intensive repeated measures data can be attributable to measurement error <span class="citation">(Schuurman, Houtveen, &amp; Hamaker, <a href="#ref-Schuurman2015">2015</a>)</span>.</p>
+<p>In passive EMA research, it is important to be aware of the characteristics and limitations of the ‘data acquisition interfaces’ <span class="citation">(Stone &amp; Shiffman, <a href="#ref-Stone2002">2002</a>)</span>. For example, if you want to collect accelerometer data, a variety of options exist. You can collect these data via the built-in accelerometer of the smartphone of the participants, via cheap commercially available activity trackers, such as Fitbit, or via expensive wearable devices that are developed specifically for scientific research. Each option comes with specific advantages and disadvantages. Smartphone-based accelerometer data, for example, can be collected with relative ease, but these data can also be noisy and incomplete, since samples rates can often not be set and the precision of the built-in sensors varies considerably from device to device. Commercial accelerometers may have better precision and reliability (see, e.g., <span class="citation">K. R. Evenson et al. (<a href="#ref-Evenson2015">2015</a>)</span>), but manufacturers often limit access to raw data and data pre-processing algorithms, making it difficult (or even impossible) to fully analyze outcomes. Being aware of these issues when you plan the study, will help considerably in the analysis stage of your study.</p>
+</div>
+<div id="what-is-the-sample-plan" class="section level2">
+<h2><span class="header-section-number">3.4</span> What is the Sample Plan?</h2>
+
+<p>An important next step is to define the EMA data sample plan. Questions that need to be answered are:</p>
+<ul>
+<li>How many days will data collection last?</li>
+<li>On each day, how often are participants assessed?</li>
+<li>How and when are participants invited for assessment?</li>
+</ul>
+<p>The questions above should be answered as detailed as possible to best serve the research question and the statistical power (see below). In practice, however, it is often necessary to balance between research interests, respondent burden, and practical considerations, such as hardware limitations.</p>
+<p>When determining the appropriate sample plan, start with mapping the expected fluctuation or patterns, based on available knowledge. For example, when an event is rare, it can be sufficient to ask participants to initiate EMA whenever the event occurs, or prompt them with an end-of-day diary. Adding more prompts in this scenario would not lead to more reliable data <span class="citation">(Piasecki et al., <a href="#ref-Piasecki2007">2007</a>)</span>. Increasing the assessment frequency and study duration will allow for a more detailed assessment of the outcome of interest. It is tempting to collect often and for a long period of time. However, this may also increase respondent burden, which may, in turn, affect study adherence and accuracy. Measurement reactivity could also occur, where the EMA-induced enhanced focus on the outcome of interest causes participants to increase or decrease on this outcome <span class="citation">(Hufford, Shields, Shiffman, Paty, &amp; Balabanis, <a href="#ref-Hufford2002">2002</a>; Van Ballegooijen et al., <a href="#ref-VanBallegooijen2016">2016</a>)</span>.</p>
+<p>Issues related to hardware should also be considered. Electronic wearables have limited battery life and memory storage space. Memory space limitations of actigraphy watches may require participants to visit the research site. GPS-monitoring apps may have a negative impact on the battery life of the smartphone of the participants. These practical issues may also result in data loss and study drop-out.</p>
+<p>Once all decisions related to the sampling plan are made, the procedure should be thoroughly tested. As a first step, it can be insightful to simulate the sample plan, as is done below, using the ‘sample_plan’ function, which is part of package ‘emaph’:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulating a signal-contingent sample plan.</span>
+<span class="kw">library</span>(emaph)
+plan &lt;-<span class="st"> </span><span class="kw">sample_plan</span>(<span class="dt">n_participants =</span> <span class="dv">5</span>,
+                    <span class="dt">n_days =</span> <span class="dv">2</span>,
+                    <span class="dt">times =</span> <span class="kw">c</span>(<span class="st">&quot;09:00-11:00&quot;</span>, <span class="st">&quot;12:30&quot;</span>, <span class="st">&quot;17:00-19:00&quot;</span>),
+                    <span class="dt">plot =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<div class="figure" style="text-align: center"><span id="fig:fig3a"></span>
+<img src="study-design_files/figure-html/fig3a-1.png" alt="Generated two-day EMA sampling plan, for 5 participants" width="95%" />
+<p class="caption">
+Figure 3.1: Generated two-day EMA sampling plan, for 5 participants
+</p>
+</div>
+</div>
+<div id="what-is-the-optimal-sample-size" class="section level2">
+<h2><span class="header-section-number">3.5</span> What is the Optimal Sample Size?</h2>
+
+<p>The power of a statistical test is the probability that it will detect an effect when this effect, in reality, exists. It is a function of the strength of the effect size, sample size, the significance level (alpha), <em>and</em> the statistical model. Determining the power of the experiment is an important step in the design of any study - EMA studies included. Both underpowered and overpowered studies are a waste of time and resources.</p>
+<p>Conducting a power analysis can be easy or very difficult, depending on the complexity of the experimental design and the adopted statistical technique. For simple tests, such as the t-test and ANOVA, straightforward analytical solutions exist, which are implemented in readily available tools. In R, one of those tools is package ‘pwr’.</p>
+<p>For example, to use ‘pwr’ to calculate the power of a t.test to detect a moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided) significance level alpha of .05, type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Power analysis of a t-test</span>
+<span class="co"># (analytical approach).</span>
+
+<span class="kw">library</span>(pwr)
+<span class="kw">pwr.t.test</span>(<span class="dt">d =</span> <span class="fl">0.5</span>, 
+           <span class="dt">n =</span> <span class="dv">30</span>,
+           <span class="dt">sig.level =</span> <span class="fl">0.05</span>,
+           <span class="dt">type =</span> <span class="st">&quot;two.sample&quot;</span>,
+           <span class="dt">alternative =</span> <span class="st">&quot;two.sided&quot;</span>)
+<span class="co">#&gt; </span>
+<span class="co">#&gt;      Two-sample t test power calculation </span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt;               n = 30</span>
+<span class="co">#&gt;               d = 0.5</span>
+<span class="co">#&gt;       sig.level = 0.05</span>
+<span class="co">#&gt;           power = 0.4778965</span>
+<span class="co">#&gt;     alternative = two.sided</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; </span><span class="al">NOTE</span><span class="co">: n is number in *each* group</span></code></pre></div>
+<p>The power is 48% - not even close to the generally adopted standard of 80%. More participants are needed to detect the hypothesized effect.</p>
+<p>EMA study designs are often characterized by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happens, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Power analysis of a t-test</span>
+<span class="co"># (simulation approach).</span>
+
+m1 =<span class="st"> </span><span class="dv">0</span>   <span class="co"># mean in group 1  </span>
+m2 =<span class="st"> </span><span class="fl">0.5</span> <span class="co"># mean in group 2</span>
+sd =<span class="st"> </span><span class="dv">1</span>   <span class="co"># sd (in both groups)</span>
+n =<span class="st"> </span><span class="dv">30</span>   <span class="co"># sample size, per group</span>
+
+<span class="co"># conduct the experiment many times</span>
+nsim &lt;-<span class="st"> </span><span class="dv">10000</span>
+p &lt;-<span class="st"> </span><span class="kw">numeric</span>(nsim)
+<span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span>nsim) {
+  
+  data &lt;-<span class="st"> </span><span class="kw">data.frame</span>(
+    outcome &lt;-<span class="st"> </span><span class="kw">c</span>(
+      <span class="kw">rnorm</span>(n, m1, sd), <span class="co"># group 1 data</span>
+      <span class="kw">rnorm</span>(n, m2, sd)  <span class="co"># group 2 data</span>
+    ),
+    group &lt;-<span class="st"> </span><span class="kw">c</span>(
+      <span class="kw">rep</span>(<span class="dv">1</span>, n), <span class="co"># group 1 indicator</span>
+      <span class="kw">rep</span>(<span class="dv">2</span>, n)) <span class="co"># group 2 indicator</span>
+  )
+  
+  <span class="co"># save significance of test</span>
+  p[i] &lt;-<span class="st"> </span><span class="kw">t.test</span>(outcome <span class="op">~</span><span class="st"> </span>group, data)<span class="op">$</span>p.value
+}
+
+<span class="co"># power</span>
+<span class="kw">sum</span>(p <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.05</span>) <span class="op">/</span><span class="st"> </span>nsim
+<span class="co">#&gt; [1] 0.4648</span></code></pre></div>
+<p>As can be seen, the simulation results are very close to the output of ‘pwr.t.test’. There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited. Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, ‘mvrnorm’ in package MASS <span class="citation">(Venables &amp; Ripley, <a href="#ref-Venables2002">2002</a>)</span> can be used to generate correlated data, and package ‘simstudy’ <span class="citation">(Goldfeld, <a href="#ref-R-simstudy">2018</a>)</span> can be used to generate complex longitudinal and hierarchical data.</p>
+</div>
+<div id="what-are-the-ethical-aspects" class="section level2">
+<h2><span class="header-section-number">3.6</span> What are the Ethical Aspects?</h2>
+
+<p>All clinical studies that involve human participants need to be evaluated by a Medical Research and Ethics Committee (MERC; Dutch: ‘METC’). Recently, the committees have also been tasked to determine whether a medical device is used and to evaluate the safety and quality of the device. Researchers are therefore required to add a section in the research protocol, explaining why the software/device is or is not a medical device. The official definition of a medical device (Medical Device Act, or ‘Wet Medische Hulpmiddelen’) is as follows:</p>
+<blockquote>
+<p>“Any instrument, apparatus or appliance, any software or material or any other article that is used alone or in combination, including any accessory and the software required for its proper operation, that is intended by the manufacturer to be used specifically for diagnostic or therapeutic purposes, and is intended by the manufacturer to be used for human beings for the purpose of: - diagnosis, prevention, monitoring, treatment or alleviation of disease - diagnosis, monitoring, treatment, alleviation of or compensation for an injury or handicap - investigation, replacement or modification of the anatomy or of a physiological process - control of conception, and which does not achieve its principal intended action in or on the human body by pharmacological, immunological or metabolic means, but which may be assisted in its function by such means.” <span class="citation">(CCMO, <a href="#ref-ccmo_meddev">2018</a>)</span></p>
+</blockquote>
+<p>In short, software can be classified as a medical device when it collects patient-specific data and when it is specifically intended for one of the above-mentioned objectives. In practice, the definition of medical devices leaves a lot of room for confusion. Researchers often struggle with the question whether their assessment tools should be considered an medical device or not. For this purpose, flowcharts exist that help to determine whether an app of product should be classified as a medical device <span class="citation">(see, e.g., Ekker &amp; van Rest, <a href="#ref-Ekker2013">2013</a>, and <a href="http://cetool.nl/general/scanAid" class="uri">http://cetool.nl/general/scanAid</a>)</span>. Figure <a href="methods.html#fig:fig3b">3.2</a> shows such a flow-chart.</p>
+<p>While planning your EMA study, you should also be mindful of the rules and regulations that apply to data collection, storage and sharing. From May 2018 onward, the European Committee has enforced the General Data Protection Regulation (GDPR, see <a href="https://gdpr-info.eu/" class="uri">https://gdpr-info.eu/</a>; in Dutch, Algemene Verordening Gegevensbescherming - AVG), which protects the data and privacy of EU citizens. Complying to the GDPR can be a complex and time-consuming process, depending on nature of your study. Do not hesitate to consult local experts or standard guidelines provided by your organization (see, e.g., <a href="http://www.emgo.nl/kc/checklist-avg/" class="uri">http://www.emgo.nl/kc/checklist-avg/</a>).</p>
+<p>In EMA studies, an important GDPR-related issue concerns the Data Processing Agreement (DPA). When data processing is (partly) outsourced to a third party, a Data Processing Agreement (DPA) should be drafted, that specifies the agreements between the ‘controller’ and ‘processor’. In this context, a controller is the person or organization that determines the why and how of data collection (for example you as a researcher). The processor processes the data on behalf of the controller, for example by providing a data-collection service, or by storing raw study data on a cloud-server.</p>
+<p>Aspects of data processing that need to be addressed in this agreement include the context, duration and termination of agreement, the nature of the data collected, the duration of data storage, security measures taken to prevent unauthorized access, and agreements on data ownership, data sharing, the handling of personal data breaches, and liability. Most organizations offer model agreements in which all relevant issues are addressed. Third parties may offer model agreements as well. If so, however, these agreements need to be checked for compliance to local regulations.</p>
+<div class="figure" style="text-align: center"><span id="fig:fig3b"></span>
+<img src="images/outcomes/Flow_MD.png" alt="Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device." width="90%" />
+<p class="caption">
+Figure 3.2: Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.
+</p>
+</div>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Shiffman2008">
+<p>Shiffman, S., Stone, A. A., Hufford, M. R., Rev, A., Psychol, C., Shiffman, S., … Hufford, M. R. (2008). Ecological Momentary Assessment. <em>Annual Review of Clinical Psychology</em>, <em>4</em>(1), 1–32. <a href="https://doi.org/10.1146/annurev.clinpsy.3.022806.091415" class="uri">https://doi.org/10.1146/annurev.clinpsy.3.022806.091415</a></p>
+</div>
+<div id="ref-Schuurman2015">
+<p>Schuurman, N. K., Houtveen, J. H., &amp; Hamaker, E. L. (2015). Incorporating measurement error in n= 1 psychological autoregressive modeling. <em>Frontiers in Psychology</em>, <em>6</em>, 1038.</p>
+</div>
+<div id="ref-Stone2002">
+<p>Stone, A. A., &amp; Shiffman, S. (2002). Capturing momentary, self-report data: A proposal for reporting guidelines. <em>Annals of Behavioral Medicine</em>, <em>24</em>(3), 236–243. <a href="https://doi.org/10.1207/S15324796ABM2403_09" class="uri">https://doi.org/10.1207/S15324796ABM2403_09</a></p>
+</div>
+<div id="ref-Evenson2015">
+<p>Evenson, K. R., Goto, M. M., &amp; Furberg, R. D. (2015). Systematic review of the validity and reliability of consumer-wearable activity trackers. <em>International Journal of Behavioral Nutrition and Physical Activity</em>, <em>12</em>(1), 159.</p>
+</div>
+<div id="ref-Piasecki2007">
+<p>Piasecki, T. M., Hufford, M. R., Solhan, M., &amp; Trull, T. J. (2007). Assessing clients in their natural environments with electronic diaries: Rationale, benefits, limitations, and barriers. <em>Psychological Assessment</em>, <em>19</em>(1), 25–43. <a href="https://doi.org/10.1037/1040-3590.19.1.25" class="uri">https://doi.org/10.1037/1040-3590.19.1.25</a></p>
+</div>
+<div id="ref-Hufford2002">
+<p>Hufford, M. R., Shields, A. L., Shiffman, S., Paty, J., &amp; Balabanis, M. (2002). Reactivity to ecological momentary assessment: An example using undergraduate problem drinkers. <em>Psychology of Addictive Behaviors</em>, <em>16</em>(3), 205–211. <a href="https://doi.org/10.1037//0893-164X.16.3.205" class="uri">https://doi.org/10.1037//0893-164X.16.3.205</a></p>
+</div>
+<div id="ref-VanBallegooijen2016">
+<p>Van Ballegooijen, W., Ruwaard, J., Karyotaki, E., Ebert, D. D., Smit, J. H., &amp; Riper, H. (2016). Reactivity to smartphone-based ecological momentary assessment of depressive symptoms (MoodMonitor): Protocol of a randomised controlled trial. <em>BMC Psychiatry</em>, <em>16</em>(1), 359. <a href="https://doi.org/10.1186/s12888-016-1065-5" class="uri">https://doi.org/10.1186/s12888-016-1065-5</a></p>
+</div>
+<div id="ref-Venables2002">
+<p>Venables, W. N., &amp; Ripley, B. D. (2002). <em>Modern applied statistics with s</em> (Fourth). New York: Springer. Retrieved from <a href="http://www.stats.ox.ac.uk/pub/MASS4" class="uri">http://www.stats.ox.ac.uk/pub/MASS4</a></p>
+</div>
+<div id="ref-R-simstudy">
+<p>Goldfeld, K. (2018). <em>Simstudy: Simulation of study data</em>. Retrieved from <a href="https://CRAN.R-project.org/package=simstudy" class="uri">https://CRAN.R-project.org/package=simstudy</a></p>
+</div>
+<div id="ref-ccmo_meddev">
+<p>CCMO. (2018). Research with a medical device. Retrieved from <a href="http://www.ccmo.nl/en/research-with-a-medical-device" class="uri">http://www.ccmo.nl/en/research-with-a-medical-device</a></p>
+</div>
+<div id="ref-Ekker2013">
+<p>Ekker, A., &amp; van Rest, B. (2013). <em>Medische apps, is certificeren nodig? In 7 stappen naar een CE-markering voor uw app</em>. Den Haag: Nictiz. Retrieved from <a href="https://www.nictiz.nl/wp-content/uploads/2013/05/13005-Whitepaper-medische-apps.pdf" class="uri">https://www.nictiz.nl/wp-content/uploads/2013/05/13005-Whitepaper-medische-apps.pdf</a></p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="rstudio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="instruments.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

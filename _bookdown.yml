@@ -6,6 +6,8 @@ language:
 new_session: yes
 delete_merged_file: TRUE
 
+output_dir: "docs"
+
 rmd_files: [
   # front matter
   "index.rmd",

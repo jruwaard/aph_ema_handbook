@@ -292,7 +292,7 @@ devtools::install_github("jruwaard/emaph")
 ### Using packages
 \index{R and RStudio!Packages} 
 
-To use packages, you have to tell R to load them each session you want to work with them. You do this with the `library`
+To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library`
 function. For example, to use package 'tidyverse' and 'emaph', type:
 
 ```{r cs2l, eval = TRUE}

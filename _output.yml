@@ -12,6 +12,7 @@ bookdown::gitbook:
   highlight: monochrome
   pandoc_args: [ "--csl", "apa.csl" ]
   config:
+    sharing: null
     toc:
       before: |
         <li><a href="./">EMA research Manual</a></li>

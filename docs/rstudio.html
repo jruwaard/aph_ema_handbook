@@ -236,7 +236,6 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 <li class="chapter" data-level="11.4" data-path="catalogue.html"><a href="catalogue.html#psychotic-symptoms"><i class="fa fa-check"></i><b>11.4</b> Psychotic symptoms</a><ul>
 <li class="chapter" data-level="11.4.1" data-path="catalogue.html"><a href="catalogue.html#van-der-gaag"><i class="fa fa-check"></i><b>11.4.1</b> Van der Gaag</a></li>
-<li class="chapter" data-level="11.4.2" data-path="catalogue.html"><a href="catalogue.html#vretp"><i class="fa fa-check"></i><b>11.4.2</b> VRETp</a></li>
 </ul></li>
 <li class="chapter" data-level="11.5" data-path="catalogue.html"><a href="catalogue.html#sleep"><i class="fa fa-check"></i><b>11.5</b> Sleep</a><ul>
 <li class="chapter" data-level="11.5.1" data-path="catalogue.html"><a href="catalogue.html#van-someren"><i class="fa fa-check"></i><b>11.5.1</b> Van Someren</a></li>
@@ -399,7 +398,7 @@ Figure 2.2: RStudio’s CSV import wizard.
 <h3><span class="header-section-number">2.6.2</span> Using functions to import data</h3>
 <p>While RStudio’s Data import wizard is useful, you will probably use it less over time. Most likely, you will convert to using the more efficient R commands to import data. For example, it takes only a single line to download and import the example data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Import csv-data, from the internet.</span>
-ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;https://tinyurl.com/ybfafxxk&quot;</span>), <span class="dt">row.names =</span> <span class="ot">NULL</span>)</code></pre></div>
+ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="kw">url</span>(<span class="st">&quot;https://tinyurl.com/yczmjdat&quot;</span>), <span class="dt">row.names =</span> <span class="ot">NULL</span>)</code></pre></div>
 </div>
 <div id="accessing-your-data" class="section level3">
 <h3><span class="header-section-number">2.6.3</span> Accessing your data</h3>
@@ -521,13 +520,13 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; data:  A and B</span>
-<span class="co">#&gt; t = -1.9908, df = 195.63, p-value = 0.0479</span>
+<span class="co">#&gt; t = 0.1897, df = 197.2, p-value = 0.8497</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.558058497 -0.002619553</span>
+<span class="co">#&gt;  -0.2491142  0.3021409</span>
 <span class="co">#&gt; sample estimates:</span>
 <span class="co">#&gt;   mean of x   mean of y </span>
-<span class="co">#&gt; -0.05628652  0.22405250</span></code></pre></div>
+<span class="co">#&gt; -0.06811339 -0.09462675</span></code></pre></div>
 </div>
 <div id="learning-from-examples" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Learning from examples</h3>

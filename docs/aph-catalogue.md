@@ -230,7 +230,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 |             | http://research.vu.nl/en/persons/dpg-van-den-berg |
 
 
-### VRETp
+#### VRETp
 \index{VRETp}
 \index{PsyMate}
 

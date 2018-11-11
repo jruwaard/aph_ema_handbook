@@ -118,8 +118,8 @@ around 5 (as this is a finite sample, we expect some deviation):
 ```r
 # Print fixed effects.
 summary(fm)$tTable
-#>             Value Std.Error   DF t-value p-value
-#> (Intercept)  4.93    0.0952 2000    51.8       0
+#>             Value Std.Error   DF t-value   p-value
+#> (Intercept)  4.71     0.101 2000    46.6 1.28e-321
 ```
 
 Random effects and residual variance are shown by the 'VarCorr' function. Again,
@@ -133,8 +133,8 @@ residual error variance should be close to .5.
 VarCorr(fm)
 #> id = pdLogChol(1) 
 #>             Variance StdDev
-#> (Intercept) 0.882    0.939 
-#> Residual    0.520    0.721
+#> (Intercept) 1.001    1.00  
+#> Residual    0.476    0.69
 ```
 
 It can be instructive to plot the predicted values of the model, to make clear
@@ -201,8 +201,8 @@ fm <- lme(Y ~ 1 + time, random = ~ 1 + time | id,
           data = d2)
 summary(fm)$tTable
 #>             Value Std.Error   DF t-value   p-value
-#> (Intercept) 5.172    0.1145 1999    45.2 7.31e-308
-#> time        0.454    0.0248 1999    18.3  2.27e-69
+#> (Intercept)  5.24    0.1199 1999    43.7 2.05e-293
+#> time         0.47    0.0238 1999    19.8  1.69e-79
 ```
 
 The random effects now have four components: the variance of the intercept, the
@@ -215,9 +215,9 @@ random intercept and the random slope.
 VarCorr(fm)
 #> id = pdLogChol(1 + time) 
 #>             Variance StdDev Corr  
-#> (Intercept) 1.2103   1.100  (Intr)
-#> time        0.0555   0.236  -0.136
-#> Residual    0.5013   0.708
+#> (Intercept) 1.3459   1.160  (Intr)
+#> time        0.0511   0.226  0.071 
+#> Residual    0.4598   0.678
 ```
 
 Model predictions clearly show how the mixed model estimated varying intercepts
@@ -273,10 +273,10 @@ fm <- lme(Y ~ 1 + time * group, random = ~ 1 + time | id,
           data = d3)
 round(summary(fm)$tTable, 2)
 #>                     Value Std.Error   DF t-value p-value
-#> (Intercept)          4.93      0.11 3998   45.33    0.00
-#> time                 0.00      0.02 3998    0.04    0.97
-#> grouptreatment       0.24      0.15  198    1.58    0.12
-#> time:grouptreatment  0.45      0.03 3998   17.33    0.00
+#> (Intercept)          4.68      0.11 3998   41.52    0.00
+#> time                 0.01      0.02 3998    0.57    0.57
+#> grouptreatment       0.56      0.16  198    3.51    0.00
+#> time:grouptreatment  0.46      0.02 3998   18.57    0.00
 ```
 
 In Figure \@ref(fig:fig9e) below, EMA mood ratings predicted by the fitted model

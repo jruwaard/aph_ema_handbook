@@ -192,7 +192,7 @@ example data.
 
 ```r
 # Import csv-data, from the internet.
-ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
+ESMdata <- read.csv(url("https://tinyurl.com/yczmjdat"), row.names = NULL)
 ```
 
 ### Accessing your data
@@ -428,13 +428,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -1.9908, df = 195.63, p-value = 0.0479
+#> t = 0.1897, df = 197.2, p-value = 0.8497
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.558058497 -0.002619553
+#>  -0.2491142  0.3021409
 #> sample estimates:
 #>   mean of x   mean of y 
-#> -0.05628652  0.22405250
+#> -0.06811339 -0.09462675
 ```
 
 

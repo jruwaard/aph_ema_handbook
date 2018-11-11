@@ -85,7 +85,7 @@ library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.062 secs .
+#> Processing took: 0.058 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -394,7 +394,7 @@ powerSim(model1,
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 1 s
+#> Time elapsed: 0 h 0 m 2 s
 ```
 
 
@@ -448,27 +448,23 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datares)
+#> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
-#>     Min      1Q  Median      3Q     Max 
-#> -1.9584 -0.7243  0.0000  0.7052  1.8202 
+#>      Min       1Q   Median       3Q      Max 
+#> -2.75045 -0.60354 -0.01126  0.61940  2.27661 
 #> 
 #> Coefficients:
-#>               Estimate Std. Error t value Pr(>|t|)   
-#> activity.l1    0.36283    0.11226   3.232  0.00171 **
-#> depression.l1 -0.11749    0.09085  -1.293  0.19922   
-#> depression.l2 -0.08777    0.09247  -0.949  0.34506   
-#> const         -0.10949    0.10064  -1.088  0.27950   
-#> outlier_27    -2.18359    0.98550  -2.216  0.02921 * 
-#> outlier_50    -2.29015    0.97977  -2.337  0.02161 * 
-#> outlier_60     2.97802    0.99795   2.984  0.00365 **
+#>               Estimate Std. Error t value Pr(>|t|)    
+#> activity.l1    0.57135    0.10562   5.409 4.63e-07 ***
+#> depression.l1 -0.03154    0.08925  -0.353    0.725    
+#> const          0.03560    0.09590   0.371    0.711    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.9646 on 91 degrees of freedom
-#> Multiple R-squared:  0.2663,	Adjusted R-squared:  0.2179 
-#> F-statistic: 5.505 on 6 and 91 DF,  p-value: 6.699e-05
+#> Residual standard error: 0.9522 on 96 degrees of freedom
+#> Multiple R-squared:  0.2353,	Adjusted R-squared:  0.2194 
+#> F-statistic: 14.77 on 2 and 96 DF,  p-value: 2.549e-06
 ```
 
 AutovarCore is a simplified version of a more extensive package *autovar*

@@ -3,14 +3,24 @@
 
 # Feature Extraction {#features}
 
-EMA data are streams: time-series that represent processes which may span hours, days, weeks or even months. To the beginning EMA researcher, it may not be immediately clear how to deal with these data. How, for example, can these series be summarized to study differences between individuals or changes within individuals over time? What 'qualities' or 'features' of a time-series should be considered? What are the available options? In this chapter, we will discuss some of the features that can be extracted from EMA time-series.
+EMA data are streams: time-series that represent processes which may span hours,
+days, weeks or even months. To the beginning EMA researcher, it may not be
+immediately clear how to deal with these data. How, for example, can these
+series be summarized to study differences between individuals or changes within
+individuals over time? What 'qualities' or 'features' of a time-series should be
+considered? What are the available options? In this chapter, we will discuss
+some of the features that can be extracted from EMA time-series.
 
 
 ## Simulated EMA Time-series Example
 
-We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day. Figure \@ref(fig:fig8a) shows a plot of the simulated scores.
+We will focus on a simulated three-week time-series of EMA mood responses of a
+single person, in which ratings were collected five times per day. Figure
+\@ref(fig:fig8a) shows a plot of the simulated scores.
 
-Stare at the figure for a moment. How would you characterize the development of scores over time? What features would you want to extract? How would you quantify these features?
+Stare at the figure for a moment. How would you characterize the development of
+scores over time? What features would you want to extract? How would you
+quantify these features?
 
 ```{r echo = FALSE}
 ## Constructing the simulated EMA time-series
@@ -75,13 +85,41 @@ ggplot(e, aes(x = t, y = s)) +
 
 ## Central Tendency and Variability
 
-Features do not necessarily have to be complex. Familiar measures of central tendency of EMA time-series, such as the mode or the mean, can be useful predictors of traditional clinical assessments. Standard measures of the variability of EMA scores, such as the standard deviation (SD), have been shown to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to consider these statistics when they help you to answer your research question.
+Features do not necessarily have to be complex. Familiar measures of central
+tendency of EMA time-series, such as the mode or the mean, can be useful
+predictors of traditional clinical assessments. Standard measures of the
+variability of EMA scores, such as the standard deviation (SD), have been shown
+to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to
+consider these statistics when they help you to answer your research question.
 
-You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is *stationary*, @wiki_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and SD are biased statistics.
+\index{stationarity}
+You should check, though, whether the implicit assumptions behind the statistics
+are correct. When you use the mean and the standard deviation to summarize a
+time-series, you assume that the data-generating process behind the series is
+stable over time (in technical terms: that this process is *stationary*,
+@wiki\_Stationary\_process). If this assumption is incorrect (i.e., if the
+process is unstable or non-stationary), the mean and SD are biased statistics.
 
-Our simulated EMA time-series is non-stationary, as can be seen in Figure \@ref(fig:fig8b). We observe a trend: the mood of the person increases over time. EMA scores tend to be below the mean in the beginning, and above the mean at the end. The overall mean (*M*  = `r round(mean(e$s), 1)`) overestimates the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and underestimates the scores of the last week (*M* = `r round(mean(e$s[e$t > 13]), 1)`). If you use the overall mean as a feature of the time-series in your analyses, you ignore the mood improvements over the three-week period. In clinical research, your would probably not want to miss this other important feature.
+Our simulated EMA time-series is non-stationary, as can be seen in Figure
+\@ref(fig:fig8b). We observe a trend: the mood of the person increases over time.
+EMA scores tend to be below the mean in the beginning, and above the mean at the
+end. The overall mean (*M* = `r round(mean(e$s), 1)`) overestimates the EMA
+scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and
+underestimates the scores of the last week (*M* =
+`r round(mean(e$s[e$t > 13]), 1)`). If you use the overall mean as a feature of
+the time-series in your analyses, you ignore the mood improvements over the
+three-week period. In clinical research, your would probably not want to miss
+this other important feature.
 
-When a trend exists in a series, the overall standard deviation is overestimated, because of the extra variability that is introduced by the changes of the mean. This can be checked by comparing the SD of the full series to the SD of smaller parts. In our example, the overall SD is `r round(sd(e$s), 1)`. If we calculate the average of the SD of scores of each day, however, the estimated SD is `r round(mean(aggregate(e$s, by = list(day = floor(e$t)), FUN = sd)$x), 1)`. If the additional variability introduced by the trend is cancelled out, our estimate of variability decreases considerably.   
+When a trend exists in a series, the overall standard deviation is
+overestimated, because of the extra variability that is introduced by the
+changes of the mean. This can be checked by comparing the SD of the full series
+to the SD of smaller parts. In our example, the overall SD is
+`r round(sd(e$s), 1)`. If we calculate the average of the SD of scores of each
+day, however, the estimated SD is
+`r round(mean(aggregate(e$s, by = list(day = floor(e$t)), FUN = sd)$x), 1)`. If
+the additional variability introduced by the trend is cancelled out, our
+estimate of variability decreases considerably.  
 
 ```{r fig8b, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time."}
 # plot signal with mean and variance
@@ -102,7 +140,18 @@ ggplot(e, aes(x = t, y = s)) +
 fm = lm(s ~ t, e)
 ```
 
-Now that we know that the overall mean and SD are sub-optimal features of this time-series, the question is how we can do better. What other features can we extract? One option would be to characterize the series in simple regression terms, via an intercept and a slope. By doing so, we can economically describe the dynamics of the series with two numbers. As can be seen in Figure \@ref(fig:fig8c), the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is `r round(coef(fm)[1], 1)`. This mean increases approximately `r round(coef(fm)[2] * 7,  1)` points per day (the slope), to a final estimated mean of `r round(coef(fm)[1], 1) + round(coef(fm)[2] * 21, 1)`.  Comparing Figure \@ref(fig:fig8b) and Figure \@ref(fig:fig8c), we see that Figure \@ref(fig:fig8c) appears to be more successful in capturing the variation in the series. 
+Now that we know that the overall mean and SD are sub-optimal features of this
+time-series, the question is how we can do better. What other features can we
+extract? One option would be to characterize the series in simple regression
+terms, via an intercept and a slope. By doing so, we can economically describe
+the dynamics of the series with two numbers. As can be seen in Figure
+\@ref(fig:fig8c), the regression model provides a more realistic and informative
+summary. At the start, the estimated mean - the intercept - is
+`r round(coef(fm)[1], 1)`. This mean increases approximately
+`r round(coef(fm)[2] * 7,  1)` points per week (the slope), to a final estimated
+mean of `r round(coef(fm)[1], 1) + round(coef(fm)[2] * 21, 1)`. Comparing Figure
+\@ref(fig:fig8b) and Figure \@ref(fig:fig8c), we see that Figure \@ref(fig:fig8c)
+is more successful in capturing the variation in the series.
 
 ```{r fig8c, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)"}
 ggplot(e, aes(x = t, y = s)) +
@@ -115,7 +164,20 @@ ggplot(e, aes(x = t, y = s)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
 
-By using regression, we can also find a better estimate of the SD. Remember how the SD is conceptually defined as the average distance between the scores and the mean. Since the mean is modeled by the regression line, we can estimate the SD by calculating the standard deviation of the residuals of the regression model that we used to retrieve the intercept and slope. For our series, this results in an estimated SD of `r round(sd(resid(fm)), 1)`. The new SD estimate is smaller than the overall SD, as expected. By accounting for the extra variability introduced by the trend, we get a more accurate estimate of the variability around the mean at each point in time. However, the new estimate is still higher than the daily estimate that we calculated above. Figure \@ref(fig:fig8d) provides a first indication of what is going on. In the figure, absolution regression residuals are plotted over time, with a regression line superposed. This reveals that residuals increase as time goes by. We discovered a new feature of the series: heteroscedasticity. 
+By using regression, we can also find a better estimate of the SD. Remember how
+the SD is conceptually defined as the average distance between the scores and
+the mean. Since the mean is modeled by the regression line, we can estimate the
+SD by calculating the standard deviation of the residuals of the regression
+model that we used to retrieve the intercept and slope. For our series, this
+results in an estimated SD of `r round(sd(resid(fm)), 1)`. The new SD estimate
+is smaller than the overall SD, as expected. By accounting for the extra
+variability introduced by the trend, we get a more accurate estimate of the
+variability around the mean at each point in time. However, the new estimate is
+still higher than the daily estimate that we calculated above. Figure
+\@ref(fig:fig8d) provides a first indication of what is going on. In the figure,
+absolution regression residuals are plotted over time, with a regression line
+superposed. This reveals that residuals increase as time goes by. We discovered
+a new feature of the series: heteroscedasticity. 
 
 ```{r fig8d, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Plot of absolute regression residuals over time, revealing heteroscedasticity."}
 e$residuals <- rstandard(fm)
@@ -138,7 +200,19 @@ p <- subset(p, Var2 == TRUE)
 fm2 <- lm(p$Freq ~ as.numeric(p$Var1))
 ```
 
-In EMA research, you should be prepared to deal with missing values. Especially with active EMA, in which participants have to consciously respond to prompted questions several times a day, non-response is inevitable. Missing values are typically considered to be a nuisance rather than a feature of EMA time-series. Non-response, however, is an important characteristic, that may even have clinical relevance. Missing values are also present in our simulated EMA time-series example, as you may have found out already when you inspected Figure \@ref(fig:fig8a). The points, denoting the observed responses, are denser in the beginning of the series. Over the course of the study period, the probability of missed ratings increases. This becomes immediately clear from Figure \@ref(fig:fig8e), in which the percentage of missed ratings is plotted per day. Every week, the probability of missed ratings increases approximately `r round(coef(fm2)[2]*7*100)`%. 
+In EMA research, you should be prepared to deal with missing values. Especially
+with active EMA, in which participants have to consciously respond to prompted
+questions several times a day, non-response is inevitable. Missing values are
+typically considered to be a nuisance rather than a feature of EMA time-series.
+Non-response, however, is an important characteristic, that may even have
+clinical relevance. Missing values are also present in our simulated EMA
+time-series example, as you may have found out already when you inspected Figure
+\@ref(fig:fig8a). The points, denoting the observed responses, are denser in the
+beginning of the series. Over the course of the study period, the probability of
+missed ratings increases. This becomes immediately clear from Figure
+\@ref(fig:fig8e), in which the percentage of missed ratings is plotted per day.
+Every week, the probability of missed ratings increases approximately
+`r round(coef(fm2)[2]*7*100)`%.
 
 ```{r fig8e, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data."}
 ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) + 
@@ -149,7 +223,19 @@ ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
 
-Now that we now about these missing values, the question arises how to deal with them? You can choose to ignore the missing values (assuming that the occurrence of missing values was driven by a completely random process).  Alternatively, you could try to replace the missing values with plausible values (in which case it becomes important to think about the process that drives the missingness). If you decide to impute, there are several options. For example, you can replace missing values with the mean, the last-known value, an interpolated value or with a smoothing technique such as the Kalman-filter [see @hoogendoorn2017_book, for a discussion]. Figure \@ref(fig:fig8f) illustrates the linear interpolation approach: missing values (marked by red dots) are replaced by values that lie between the non-missings. Imagine that we would have used the mean to impute. Can you see why that would have disrupted local patterns in the series?
+Now that we now about these missing values, the question arises how to deal with
+them? You can choose to ignore the missing values (assuming that the occurrence
+of missing values was driven by a completely random process). Alternatively, you
+could try to replace the missing values with plausible values (in which case it
+becomes important to think about the process that drives the missingness). If
+you decide to impute, there are several options. For example, you can replace
+missing values with the mean, the last-known value, an interpolated value or
+with a smoothing technique such as the Kalman-filter [see
+@hoogendoorn2017\_book, for a discussion]. Figure \@ref(fig:fig8f) illustrates
+the linear interpolation approach: missing values (marked by red dots) are
+replaced by values that lie between the non-missings. Imagine that we would have
+used the mean to impute. Can you see why that would have disrupted local
+patterns in the series?
 
 ```{r fig8f, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time series, with missing values (red) imputed through interpolation."}
 # Imputation through interpolation 
@@ -180,7 +266,19 @@ ggplot(d, aes(x = t, y = s_imputed)) +
 
 ## Autocorrelation
 
-When a series is correlated with delayed copies of itself, we say that it is auto-correlated. In repeated measurements of natural phenomena, this auto-correlation can often be found. The temperature of today is correlated with the temperature of recent days. Similarly, EMA mood ratings, taken at time t, are typically correlated with ratings taken at t-1, t-2, etc. This is illustrated in Figure \@ref(fig:fig8g). Studying the auto-correlation of a time-series at different delays can be very revealing, as illustrated by the auto-correlation plot in Figure \@ref(fig:fig8g), in which the correlation of the EMA series with itself is plotted, for various delays (or 'lags' as these delays are called). First, the plot reveals that observations are correlated with previous values at lag 1: this series is auto-correlated. Second, there appears to be a pattern in the correlations at later lags: positive and negative correlations alternate, in a pattern that seems to reflect periodicity.   
+When a series is correlated with delayed copies of itself, we say that it is
+auto-correlated. In repeated measurements of natural phenomena, this
+auto-correlation can often be found. The temperature of today is correlated with
+the temperature of recent days. Similarly, EMA mood ratings, taken at time t,
+are typically correlated with ratings taken at t-1, t-2, etc. This is
+illustrated in Figure \@ref(fig:fig8g). Studying the auto-correlation of a
+time-series at different delays can be very revealing, as illustrated by the
+auto-correlation plot in Figure \@ref(fig:fig8g), in which the correlation of the
+EMA series with itself is plotted, for various delays (or 'lags' as these delays
+are called). First, the plot reveals that observations are correlated with
+previous values at lag 1: this series is auto-correlated. Second, there appears
+to be a pattern in the correlations at later lags: positive and negative
+correlations alternate, in a pattern that seems to reflect periodicity.  
 
 ```{r fig8g, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Autocorrelation plot of the EMA mood series, revealing periodicity."}
 op = par(mar = c(3, 3, 1, 1))
@@ -190,7 +288,14 @@ par(op)
 
 ### Rolling statistics
 
-From the auto-correlation analysis, we learned that describing the EMA series as a simple trend might be too simplistic. The mean does not increase in a simple linear fashion. There seem to be periodic components in the series as well: the signal appears also to be characterized by a series of increases and decreases in the mean mood level. In the plot of the raw series, this is not immediately clear. However, if we "smooth" the series, by calculating the mean as it develops over time, the periodicity in the series is becoming more clear. Figure \@ref(fig:fig8h) illustrates this.
+From the auto-correlation analysis, we learned that describing the EMA series as
+a simple trend might be too simplistic. The mean does not increase in a simple
+linear fashion. There seem to be periodic components in the series as well: the
+signal appears also to be characterized by a series of increases and decreases
+in the mean mood level. In the plot of the raw series, this is not immediately
+clear. However, if we "smooth" the series, by calculating the mean as it
+develops over time, the periodicity in the series is becoming more clear. Figure
+\@ref(fig:fig8h) illustrates this.
 
 ```{r fig8h, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA mood series, with a rolling mean superposed."}
 d$rolling_mean <-
@@ -219,7 +324,12 @@ ggplot(e, aes(x = t, y = rolling_mean)) +
 
 ## Periodicity
 
-Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the the strength ('power') of various frequencies can be quantified. Figure \@ref(fig:fig8i) shows what happens if we run a Fourier analysis of our time series (with R's built-in function 'spec.pgram').
+Both the auto-correlation analysis and the moving average plot suggest
+periodicity in the EMA time series. Suppose we want to know more about this
+periodicity. Is there a way to quantify it? Yes, there is. With a technique
+called Fourier Analysis, the the strength ('power') of various frequencies can
+be quantified. Figure \@ref(fig:fig8i) shows what happens if we run a Fourier
+analysis of our time series (with R's built-in function 'spec.pgram').
 
 ```{r fig8i, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "periodogram of the EMA time series, revealing a one-day and a one-week period."}
 fa <- spec.pgram(ts(impute_interpolation(d$s), frequency = n_measurements_per_day), 
@@ -230,16 +340,39 @@ fa <- spec.pgram(ts(impute_interpolation(d$s), frequency = n_measurements_per_da
                  spans = NULL, taper = 0.01, ci = FALSE)
 ```
 
-There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of `r round(fa$freq[order(fa$spec, decreasing = TRUE)][1], 2)` (about one week). This series is "circadian": mood ratings seem to follow a daily and a weekly pattern. This is a common characteristic of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) [@Doherty2018; @Frank2000; @Karatsoreos2014; @VanSomeren2000; @Tahmasian2013].
+There are two peaks in the figure: at a frequency of 1 (day) and at a frequency
+of `r round(fa$freq[order(fa$spec, decreasing = TRUE)][1], 2)` (about one week).
+This series is "circadian": mood ratings seem to follow a daily and a weekly
+pattern. This is a common characteristic of EMA data, because of the circadian
+rhythms in our body and in our environment (our biological clocks, day-night
+cycles, seasons) [@Doherty2018; @Frank2000; @Karatsoreos2014; @VanSomeren2000;
+@Tahmasian2013].
 
 
 ## Discussion
 
-In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or "features"), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure \@ref(fig:fig8a). The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye. 
+In this chapter, we used a number of statistical indicators to characterize a
+single time-series. By extracting these indicators (or "features"), we
+identified several regularities. We learned that the mean, variance and
+missingness increased over time, and we identified clear signs of circadian
+rhythmicity. You might have identified some of these features when you first
+inspected Figure \@ref(fig:fig8a). The increase in the mean was pretty easy to
+spot. However, the systematic increases in the variance and the missingness were
+less clear. Likewise, although you might have spotted the periodicity in the
+series, the circadian components were probably too subtle to spot for the naked
+eye.
 
-The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter \@ref(csd), for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.
+The aim of the chapter was to illustrate the options available to the EMA
+researcher to quantitatively summarize EMA series. Other options, of course,
+exist. In chapter \@ref(csd), for example, we will see how subtle changes in
+variation and auto-correlation in EMA mood scores can be summarized in a single
+dynamic statistical feature that may be predictive indicator of significant
+future state changes.
 
-Finally, you might have been disappointed by the lack of code examples in this chapter. We did not include them, to avoid unnecessary distraction from the conceptual explanation. Instead, we provide a full code listing below, to allow you learn how to apply the feature extraction techniques yourself.   
+Finally, you might have been disappointed by the lack of code examples in this
+chapter. We did not include them, to avoid unnecessary distraction from the
+conceptual explanation. Instead, we provide a full code listing below, to allow
+you learn how to apply the feature extraction techniques yourself. 
 
 
 ```{r csfeaturextraction, echo = TRUE, eval = FALSE}

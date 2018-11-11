@@ -52,3 +52,7 @@ ensurePackage(
     "zoo"
   )
 )
+
+
+install.packages("devtools")
+devtools::install_github("jruwaard/emaph")

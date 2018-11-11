@@ -11,9 +11,9 @@ In this chapter, we will discuss two passive EMA methods to assess physical acti
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure changes in velocity, typically simultanously on the vertical (Y), horizontal right-left (X) and horizontal front-back axis (Z). Through actigraphy, we can study the frequency, duration, and intensity of physical activity. 
 
-Figure \@ref(fig:genea-one-hour) shows one hour of data collected from a wrist-worn GENEActive accelerometer. As can be seen, five sensors were simultanously providing data: three accelerometers (X, Y, Z), but also temperature and light. Data were sampled with a frequency of 30Hz (thirty measurements per second), but subsampled here to 0.1Hz (one measurement every 10 seconds), for practical reasons. If we would have plotted the data at 30hz, the plot would have included 108.000 data points. At 0.1Hz, this reduces to 3600 points. 
+Figure \@ref(fig:genea-one-hour) shows one hour of data collected from a wrist-worn GENEActive accelerometer. As can be seen, three accelerometers (X, Y, Z) were simultanously providing data. Data were sampled with a frequency of 30Hz (thirty measurements per second), but subsampled here to 0.1Hz (one measurement every 10 seconds), for practical reasons. If we would have plotted the data at 30hz, the plot would have included 108.000 data points. At 0.1Hz, this reduces to 3600 points. 
 
-```{r genea-one-hour, fig.asp = 0.75, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)", echo = FALSE}
+```{r genea-one-hour, fig.asp = 0.5, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)", echo = FALSE}
 # Plot one hour of accelerometer data.
 library(ggplot2)
 library(tidyr)
@@ -31,63 +31,38 @@ d <- d %>% group_by(timestamp) %>% summarise_all(.funs = mean)
 
 d <- gather(d,
              key = "sensor", value = "value",
-             x, y, z, temperature, light)
+             x, y, z)
 ggplot(d, aes(timestamp, value)) +
-  geom_line() + 
-  facet_grid(rows = vars(sensor) , scales = "free_y")
+  geom_line() + geom_hline(yintercept = 0, linetype = 2) + 
+  facet_grid(rows = vars(sensor) , scales = "free_y") + 
+  ylab("acceleration") + 
+  theme_classic(14)
 ```
 
-### Data collection
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vehicula augue
-metus, in tincidunt urna luctus sit amet. Sed ultrices, erat at laoreet semper,
-sem tellus hendrerit mi, eget pulvinar massa nisl ac dolor. Nunc ac tellus nec
-tortor interdum porta. 
-
-1 g =  9.81 m/s^2 
-
-Vestibulum hendrerit tempus condimentum. Donec a mollis
-sem. Aenean lectus nunc, bibendum ut orci vel, tristique pellentesque arcu.
-Vestibulum id laoreet neque. Phasellus at ex velit. Vestibulum scelerisque nulla
-ut massa tempor, ac dapibus dui viverra.  
+Properties of the signals that are of interest are highly dependent on the focus of the study. Highly detailed analysis of local peaks in the signal might be needed, for instance to reveal an association between activity and reported events. But analyses can also be more global, for instance when accelerometer data are used to demonstrate circadian rhythms in activity.
 
 ### Data cleaning
 
 Raw accelerometer data need to be cleaned before analyses can be run. Typical data import work-flows include re-calibration (to reduce systematic measurement error), the detection of non-wear periods (to ensure that non-informative data are removed), and subsampling (to reduce analysis processing time) and filtering/aggregation (to smoothen the signal and reduce the impact of outliers, measurement error and occasional missing values). 
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
-
 ### Feature extraction
 
-Donec sed lectus at sem ultrices commodo. Proin a viverra metus, nec scelerisque
-odio. Morbi viverra tristique libero vel fringilla. Sed at varius erat, id
-consequat nibh. Ut eget leo blandit orci posuere tincidunt ac sed erat. Aenean
-metus metus, eleifend ut facilisis a, fringilla ut neque. Nunc hendrerit
-cursus eleifend. Pellentesque habitant morbi tristique senectus et netus et
-malesuada fames ac turpis egestas. Vivamus enim turpis, pulvinar volutpat
-purus nec, lobortis imperdiet diam.
+Several approaches exist to combine the x, y, z measurements are combined into a single meaningful metric. Two popular metrics are the Signal Vector Magnitude (SVM) and the Euclidian Norm Minus One (ENMO). Validation studies suggest that ENMO should be the preferred metric [@VanHeest2014, @VanHeest2015], although results also suggest that alternative metrics should also be considered when sedentary and light activities are of interest [@Bai2016]. 
 
-Several methods exists to combine the x, y, z measurements into a meaningful metric. Two popular metrics are the signal vector magnitude (SVM) and the Euclidian Norm minus one (ENMO). The two are closely related. SVM is the Euclidian distance:
+SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axials signals (the Euclidian distance):
 
 \begin{equation} \sqrt{x^2 + y^2 + z^2} \end{equation}
 
-ENMO is the corrected SVM: the 1g base acceleration that is measured when the device is at rest is subtracted. 
+ENMO is the corrected SVM: the vector magnitude remaining after removing one Earth standard
+gravitational unit (1g =  9.81 m/s^2).
 
-\begin{equation} \sqrt{x^2 + y^2 + z^2} - g \end{equation}
+\begin{equation} SVM - 1 \end{equation}
 
-Validation studies suggest that ENMO should be the preferred metric in clinical research [@VanHeest2014, @VanHeest2015].  
+The metrics can, in principle, be calculated for each x,y,z-data point. Typically, however, the metrics are calculated for time-windows (called 'epochs'), in which case the mean is used to characterize the activity in the epoch.
 
-```{r svm, out.width = "100%", fig.asp = 0.3, fig.cap = "One day of data of the two persons in the genea data set, summarised with ENMO, calculated from 15-minute epoch windows", echo = FALSE}
+Figure \@ref{fig:genea-one-day} shows the development of ENMO over one day, as sampled by GENEActive accelerometers that were worn by a young adult (top) and a middle-aged person (bottom). This figure is much easier to interpret than the plot of the raw x-y-z values in Figure \@ref{fig:genea-one-hour}. Activity levels over the day follow a similar pattern, but the activity levels in the two plots are strikingly different. Age appears to matter here: acitivity levels of the middle-aged person are consistently lower than those of the young adult.   
+
+```{r genea-one-day, out.width = "100%", fig.asp = 0.5, fig.cap = "One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-second epochs", echo = FALSE}
 # Plot signal vector magnitude.
 library(emaph)
 library(lubridate)
@@ -97,22 +72,23 @@ library(dplyr)
 d <-  subset(genea,
               timestamp > "2018-06-02 00:00" &
               timestamp < "2018-06-02 23:59")
-d$epoch <- round_date(d$timestamp, "10 minutes")
+d$time <- round_date(d$timestamp, "10 seconds")
 
-d <- d %>% group_by(id, epoch) %>% 
-  summarise(svm = sum(sqrt(x^2 + y^2 + z^2) -1) / length(x))
+d <- d %>% 
+  mutate(svm = sqrt(x^2 + y^2 + z^2) - 1) %>%
+  mutate(svm = ifelse(svm < 0, 0, svm)) %>%
+  group_by(id, time) %>% 
+  summarise(svm = mean(svm))
 
-ggplot(d, aes(epoch, svm)) +
-  geom_point(alpha = 1,  shape = 16, size = 1) +
-  geom_line() + 
-  facet_grid(rows = vars(id))
+ggplot(d, aes(time, svm)) +
+  geom_line() + ylab("ENMO") + 
+  geom_hline(yintercept = 0.1, color = "red") + 
+  facet_grid(rows = vars(id)) + 
+  theme_classic(14)
 ```
 
 
-### Analysis
-
-Properties of the signals that are of interest are highly dependent on the focus of the study. Highly detailed analysis of local peaks in the signal might be needed, for instance to reveal an association between activity and reported events. But analyses can also be more global, for instance when accelerometer data are used to demonstrate circadian rhythms in activity.
-
+MVPA (@Hildebrand2014)
 
 
 ## Geotracking

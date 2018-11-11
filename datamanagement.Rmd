@@ -67,7 +67,7 @@ collected via:
     study depression severity (with the PHQ-9 questionnaire, @Kroenke2009),
 2.  an active EMA smartphone app (Movisens - see Chapter
     \@ref(ema-instruments-catalogue)), to assess day-to-day changes in mood, and
-3.  an accelerometer (GENEActive - see Chapter \@ref(ema-instruments-catalogue)
+3.  an accelerometer (GENEActive - see Chapter \@ref(ema-instruments-catalogue))
     to assess activity levels
 
 ```{r fig5b, echo = FALSE, fig.cap="Example project directory structure", out.width = "85%"}
@@ -147,12 +147,13 @@ exported from the back-office of the MoviSens application.
 
 Finally, in "data/raw/geneactive", we see a series of ".bin" files: binary data
 files that were exported from the GENEActive smart watches that were worn by the
-participants. Actigraphy data are high-volume data. These files are typically
-large (500MB is no exception). By using the .bin format, in which data is
-compressed, disk space is saved. Unlike the survey and EMA mood data, each data
-file in this directory contains data of one participant. In this case, there are
-even two files for one participant (APC009), perhaps because this participant
-started the study with a faulty device, which was swapped during the study.
+participants. Actigraphy data are high-volume: these files are typically large
+(500MB is no exception). By using the .bin format, in which data are compressed,
+disk space is saved (in uncompressed format, data in a single .bin file can
+amount up to 2 Gb). Unlike the survey and EMA mood data, each data file in this
+directory contains data of one participant. In this case, there are even two
+files for one participant (APC009), perhaps because this participant started the
+study with a faulty device, which was swapped during the study.
 
 In "data/raw", a final very important file is "key\_file.csv". This file is
 important because it ties all the data together. It contains the unique

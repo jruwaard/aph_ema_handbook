@@ -184,7 +184,7 @@ example data.
 
 ```{r cs2d}
 # Import csv-data, from the internet.
-ESMdata <- read.csv(url("https://tinyurl.com/ybfafxxk"), row.names = NULL)
+ESMdata <- read.csv(url("https://tinyurl.com/yczmjdat"), row.names = NULL)
 ```
 
 ### Accessing your data

@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   collapse = TRUE,
   cache = FALSE,
-  out.width = "98%",
+  out.width = "100%",
   fig.align = 'center',
   fig.width = 7,
   fig.asp = 0.5,  # was: 0.618 (1 / phi)
@@ -28,14 +28,7 @@ library(emaph)
 # 
 # 
 # # theming ----------------------------------------------------------------------
-# 
-# # avoid long pint-out of numeric variables
-# #options(digits = 3)
-# 
-# # avoid long print-outs of tables
-# #options(dplyr.print_min = 6, dplyr.print_max = 6)
-# 
-# # common theme of all ggplot images
-# #theme_set(theme_bw(12))
-# 
-# 
+#
+# common theme of all ggplot images
+theme_set(theme_classic(12))
+

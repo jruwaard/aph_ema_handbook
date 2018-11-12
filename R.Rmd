@@ -157,7 +157,7 @@ steps below to see how this works with data stored in a comma-separated-values
 (csv) format, a common data format to which many programs, including SPSS and
 Excel, can export data to.
  
-- Download the example csv data file at https://tinyurl.com/ybfafxxk (or create
+- Download the example csv data file at <https://tinyurl.com/yczmjdat> (or create
 a csv-version of one of your own data files).
 
 - In RStudio's menu, choose `File > Import Dataset > From Text (base)`.

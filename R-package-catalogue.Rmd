@@ -131,7 +131,7 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 
 The *tidyverse* is a collection of well-designed packages, authored by the team
 behind RStudio, that together add a consistent, modern, and efficient extension
-of base R functionalities. The tidyverse includes popular packages such as
+of base R functions. The `tidyverse` includes popular packages such as
 `ggplot2` (for plotting), `haven` (to read SPSS files), `dplyr` (for data
 manipulation), and many more (see: <http://tidyverse.org> for a full list).
 
@@ -221,9 +221,9 @@ attributes(d$Species)
 \index{Datetime variables}
 \index{Packages!lubridate}
 
-EMA data analyses frequently require manipulations of datetime variables. For
+EMA data analyses frequently require manipulations of date-time variables. For
 this, package *lubridate* [@R-lubridate], which provides many functions for
-common date and datetime operations, can be very useful.
+common date and date time operations, can be very useful.
 
 In the code snippet below, for example, the `round_date` function is used to
 calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute
@@ -281,7 +281,7 @@ fixef(fm)
 ### lme4
 \index{Packages!lme4}
 
-Package *lme4* [@Bates2015] is a faster R-reimplementation of the
+Package *lme4* [@Bates2015] is a faster reimplementation of the
 mixed-effects model. With large data sets and complex hierarchical models, this
 package should probably be preferred. As can be seen below, model specifications
 in `lmer` are different from model specifications in `lme`.
@@ -302,7 +302,7 @@ fixef(fm)
 With package *simr* [@Green2016], power of mixed-effects models can be
 determined via simulation. As illustrated below, the procedure requires the
 researcher to define the true parameters of a mixed model, and a single data
-set. Then, function `simPower` can be used to simulate new datasets and tests
+set. Then, function `simPower` can be used to simulate new data sets and tests
 (of a specified parameter in the model), to determine the power of the test.
 
 ```{r cs15i}
@@ -358,14 +358,14 @@ conducting a network analysis, be sure to visit the Psycho-systems website, at
 
 \index{Vector autoregressive models}
 
-Vector autoregressive (VAR) models can be used to detect lagged relationships
-between multiple timeseries. In VAR, each variable is modelled as a linear
+Vector auto-regressive (VAR) models can be used to detect lagged relationships
+between multiple time-series. In VAR, each variable is modeled as a linear
 function of past values (lags) of itself and of present and past values of other
 variables. When EMA is used to capture multiple phenomena over time, VAR can
 provide insight in how these phenomena interact. One challenge in VAR modelling
 is that many alternative models potentially exist, Package *autovarCore*
 [@R-autovarCore] was developed to help researchers to find the VAR model with
-the best fit to a given timeseries data set.
+the best fit to a given time-series data set.
 
 In the (unrealistic) example below, function `autovar` is used to detect that
 changes in depression are positively related to past (lag 1) values of activity,
@@ -441,7 +441,7 @@ estimations will be small, while in unstable networks, the variance will be
 large. This idea is implemented in package *bootnet* [@Epskamp2018a].
 
 Below, the stability of the network that was fit in the previous example is
-examined with bootnet: fifty networks are fit, based on fifty bootstrapped
+examined with `bootnet`: fifty networks are fit, based on fifty bootstrapped
 samples. In the results plot, the red line marks the strength of the edges in
 the full sample, while grey confidence intervals mark the distribution of the
 edge weights in the bootstraps.
@@ -466,10 +466,10 @@ plot(results, order = "mean")
 Disturbances in circadian rhythms have been related to depressive symptoms
 [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhythms
 can be detected in EMA data (see Chapter \@ref(features)). Standard analysis
-techniques, however, expect regular timeseries, in which data are sampled at
+techniques, however, expect regular time-series, in which data are sampled at
 equidistant intervals. EMA data, typically, are not equidistant. One solution to
 this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976],
-which can be applied to unevenly-sampled timeseries as well. Package *lomb*
+which can be applied to unevenly-sampled time-series as well. Package *lomb*
 [@ruf1999] implements this procedure.
 
 ```{r cs15n, out.width='98%'}

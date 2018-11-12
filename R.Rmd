@@ -72,7 +72,7 @@ higher) of RStudio.
 \index{R and RStudio!Console} 
 
 If you open RStudio, you will be presented with the interface shown in Figure
-\@ref(fig:fig2a). Rstudio's main window is divided in four panes (subwindows),
+\@ref(fig:fig2a). RStudio's main window is divided in four panes (sub-windows),
 which further contain several tabbed windows.
 
 ```{r fig2a, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
@@ -214,7 +214,7 @@ type:
 View(ESMdata)
 ```
 
-To work with a specific variable in the dataset, use `$`, For instance, to print
+To work with a specific variable in the data set, use `$`, For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 ```{r cs2h, eval = FALSE}
@@ -239,7 +239,7 @@ point, the important milestone is that you imported and accessed data in R.
 
 R's attractiveness lies in the ease with which it can be extended with new
 functionality. Through so-called packages, which can be freely downloaded from
-the internet, specialized functions can be added to your workspace.
+the internet, specialized functions can be added to your work-space.
 
 ### Installing R-packages from CRAN
 \index{CRAN}
@@ -264,7 +264,7 @@ install.package(tidyverse)
 ```
 
 The `tidyverse` contains a package called `haven`, which allows you to read and
-write SPSS datafiles (.sav files). This is very convenient. You don't have to
+write SPSS data files (.sav files). This is very convenient. You don't have to
 convert all your SPSS data to csv files. See `?read_spss` to learn how to import
 an SPSS-file (or use the data import wizard, by choosing `File > Import
 Dataset > From SPSS`, in RStudio's top-right pane).
@@ -275,7 +275,7 @@ Dataset > From SPSS`, in RStudio's top-right pane).
 
 Not all packages are at CRAN. Many 'unofficial' packages are shared at a site
 called 'GitHub'. This book's companion R package `emaph`, for example, which
-contains specialized EMA functions datasets, is on GitHub. You need package
+contains specialized EMA functions data sets, is on GitHub. You need package
 emaph to run many examples in the book, so let's install this package now.
 
 GitHub packages can be installed via the `install_github` function, which is
@@ -301,8 +301,8 @@ library(tidyverse)
 library(emaph)
 ```
 
-Once loaded, you can use the functions and datasets of the packages. Package
-`emaph` provides dataset `csd`, which contains the data from the 'critical
+Once loaded, you can use the functions and data sets of the packages. Package
+`emaph` provides data set `csd`, which contains the data from the 'critical
 slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient
 recorded his mood, for 239 days (see also Chapter \@ref(csd)).
 
@@ -338,7 +338,7 @@ this function, type `?rnorm` in the console.
 ?rnorm
 ```
 
-This opens the documentation of the rnorm function in the 'Help'-tab, in the
+This opens the documentation of the `rnorm` function in the `Help`-tab, in the
 bottom right pane, from which you learn that that the `rnorm` function accepts
 `mean` and `sd` (standard deviation) as additional parameters, which are 0 and
 1 default, respectively (which explains why `rnorm(100)`

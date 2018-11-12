@@ -144,17 +144,17 @@ The power of a statistical test is the probability that it will detect an effect
 when this effect, in reality, exists. It is a function of the strength of the
 effect size, sample size, the significance level (alpha), *and* the statistical
 model. Determining the power of the experiment is an important step in the
-design of any study - EMA studies included. Both underpowered and overpowered
+design of any study - EMA studies included. Both under-powered and overpowered
 studies are a waste of time and resources.
 
 Conducting a power analysis can be easy or very difficult, depending on the
 complexity of the experimental design and the adopted statistical technique. For
-simple tests, such as the t-test and ANOVA, straightforward analytical solutions
+simple tests, such as the t-test and ANOVA, straightforward analytic solutions
 exist, which are implemented in readily available tools. In R, one of those
-tools is package 'pwr'.
+tools is package `pwr`.
 
-For example, to use `pwr` to calculate the power of a t.test to detect a
-moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided)
+For example, to use `pwr` to calculate the power of a t-test to detect a
+moderate effect size (*d* = 0.5), with n = 30 per group, and a (two-sided)
 significance level alpha of .05, type:
 
 ```{r}
@@ -262,7 +262,7 @@ flow-chart.
 While planning your EMA study, you should also be mindful of the rules and
 regulations that apply to data collection, storage and sharing. From May 2018
 onward, the European Committee has enforced the General Data Protection
-Regulation (GDPR; in Dutch: Algemene Verordening Gegevensbescherming - AVG; see
+Regulation (GDPR; in Dutch: "Algemene Verordening Gegevensbescherming - AVG""; see
 <https://gdpr-info.eu/>), which protects the data and privacy of EU citizens.
 Complying to the GDPR can be a complex and time-consuming process, depending on
 nature of your study. Do not hesitate to consult local experts or standard

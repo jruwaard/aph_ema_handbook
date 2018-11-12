@@ -157,7 +157,7 @@ files that were exported from the GENEActive smart watches that were worn by the
 participants. Actigraphy data are high-volume: these files are typically large
 (500MB is no exception). By using the '.bin' format, in which data are compressed,
 disk space is saved (in uncompressed format, data in a single .bin file can
-amount up to 2 Gb). Unlike the survey and EMA mood data, each data file in this
+amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this
 directory contains data of one participant. In this case, there are even two
 files for one participant ('APC009'), perhaps because this participant started the
 study with a faulty device, which was swapped during the study.

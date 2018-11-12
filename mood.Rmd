@@ -69,7 +69,7 @@ print(plotmood_down)
 ```  
 
 ### Bipolar unidimensional items
-\index{Mood assessment!Bipolar uni-dimensional}
+\index{Mood assessment!Bipolar unidimensional}
 
 Another option to assist respondents with the interpretation of one-item mood
 ratings, is to use a bipolar scale. These items place two opposing mood states
@@ -91,7 +91,7 @@ positives) [@Vanrijsbergen2014].
 
 In order to make sure all constructs of interest are measured, you can also
 consider including a number of specific mood items in your EMA questionnaire,
-rather than one general unipolar item or one bipolar item. For example, you can
+rather than one general uni-polar item or one bipolar item. For example, you can
 ask respondents *"How depressed are you feeling right now?"* and *"How anxious are
 you feeling right now?"* [@Starr2012]. This strategy often leads to a
 'bag-of-items' approach, where single items from various sources, such as

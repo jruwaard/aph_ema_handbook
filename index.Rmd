@@ -16,10 +16,10 @@ researchers who are planning Ecological Momentary Assessment (EMA) studies."
 # Preface {-}
 
 Given known limitations of retrospective self-report questionnaires, such as
-recall bias and poor generalisability of assessment results to real-life
+recall bias and poor generalizability of assessment results to real-life
 situations, mental health researchers increasingly adopt alternative assessment
 methods. One of the promising alternatives is Ecological Momentary Assessment
-(EMA), in which emotions and behaviours are repeatedly sampled in everyday life,
+(EMA), in which emotions and behaviors are repeatedly sampled in everyday life,
 through wearable electronic devices.
 
 Repeated measurement can reveal important characteristics of the dynamics of
@@ -39,16 +39,16 @@ fill this gap.
 The manual provides a practical introduction to EMA-research. It was written to
 aid beginning researchers of the Amsterdam School of Public Health (APH), who
 are looking for practical advice in conducting EMA studies. The manual provides
-an overview of EMA instruments, outcomes, methods and analytical techniques,
+an overview of EMA instruments, outcomes, methods and analytic techniques,
 guidelines for EMA-studies, and a catalogue of EMA research in the APH
 consortium.
 
-This manual was written in Bookdown [@R-bookdown\_book; @R-bookdown]. Sources
+This manual was written in Bookdown [@R-bookdown_book; @R-bookdown]. Sources
 are freely available at 'GitHub', via
 <https://github.com/jruwaard/aph_ema_handbook>. Please post your comments and
 suggestions there, or via e-mail, through <aph.ema@ggzingeest.nl>.
 
-This manual will be continously updated. In citations, please include explicit 
+This manual will be continuously updated. In citations, please include explicit 
 build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). *Ecological Momentary Assessment

@@ -40,10 +40,10 @@ decide on the most suitable data collection method.
 
 An important consideration when deciding on an EMA platform is the autonomy
 available to the researcher to set up and run the EMA study. Does the platform
-include a backoffice? Some EMA platforms do allow configuration or customization
-to the needs of the researcher. Platforms such as MoviSense and Illumivu, for
-example, allow researchers to define items and sample schedules, enrol and
-monitor participants and downloadthe data once the study is completed.
+include a back-office? Some EMA platforms do allow configuration or customization
+to the needs of the researcher. Platforms such as MoviSens and Ilumivu, for
+example, allow researchers to define items and sample schedules, enroll and
+monitor participants and download the data once the study is completed (see chapter \@ref(ema-instruments-catalogue)).
 
 ```{r movisensbackoffice, echo = FALSE, fig.cap = "Movisens sample scheme editor (left) and App Screenshots (right)", out.width = '100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics(c(
@@ -116,7 +116,7 @@ device needs to be factored in.
 
 These financial factors are a non-issue if participants use their own devices.
 Instead there are other potential problems, namely that of compatibility of the
-smart devices. Currently some apps are available either only on IoS or Android.
+smart devices. Currently some apps are available either only on iOS or Android.
 Besides considering the make of the participants device, one also needs to
 consider the model. Older models might not have the feature needed for the EMA
 collection. Another potential issue associated with using own devices is

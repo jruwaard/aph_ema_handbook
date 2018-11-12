@@ -40,7 +40,7 @@ response to a question that is prompted on their smartphone (see Figure
 \@ref(fig:fig01a)). In passive EMA, information is collected through wearables or
 log files without active involvement of participants, for example on heart-rate,
 activity, smartphone use or engagement on social media (see Figure
-\@ref(fig:fig01b)).Studies may combine active and passive EMA. A study into sleep
+\@ref(fig:fig01b)). Studies may combine active and passive EMA. A study into sleep
 patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
@@ -168,7 +168,7 @@ monitored in everyday-life through EMA, it should also be possible to intervene
 when EMA data reflect clear changes in these processes, in a way that is
 maximally effective given what is known about the individual. A key term in the
 last sentence, however, is "adequate". We should be aware of the
-"garbage-in/garbage-out principle". Before EMI's can be considered, the
+"garbage-in/garbage-out" principle. Before EMI's can be considered, the
 psychometric properties of EMA measures should be demonstrated first.
 
 ## EMA research findings: A birds-eye view
@@ -185,7 +185,7 @@ contributed to this.
 EMA-based research in mental health has produced an impressive trove of findings
 that have supported and, sometimes, challenged existing theories on behavior.
 EMA data, whether collected as self-report or via wearable device/sensor, have
-diagnostic, monitoring, management, or intervention applications (@Patel2012;
+diagnostic, monitoring, management, or intervention applications [@Patel2012;
 @Aung2017; @Evenson2015]. Its feasibility for mental health research is
 evidenced by its use in observational studies and randomized controlled trials
 on a wide range of topics and populations. Below, we present a non-exhaustive

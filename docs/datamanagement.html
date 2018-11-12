@@ -185,7 +185,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.1.2" data-path="activity.html"><a href="activity.html#feature-extraction"><i class="fa fa-check"></i><b>7.1.2</b> Feature extraction</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="activity.html"><a href="activity.html#geotracking"><i class="fa fa-check"></i><b>7.2</b> Geotracking</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate system</a></li>
+<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate System</a></li>
 <li class="chapter" data-level="7.2.2" data-path="activity.html"><a href="activity.html#the-global-positioning-system"><i class="fa fa-check"></i><b>7.2.2</b> The Global Positioning System</a></li>
 <li class="chapter" data-level="7.2.3" data-path="activity.html"><a href="activity.html#gps-based-activity-measures"><i class="fa fa-check"></i><b>7.2.3</b> GPS-based activity measures</a></li>
 </ul></li>
@@ -318,7 +318,7 @@ code > span.in { font-style: italic; } /* Information */
 Figure 5.1: creating a project in RStudio
 </p>
 </div>
-<p>One of the advantages of using RStudio Projects is that projects set the working directory to the project directory location. You can verify this by asking R to print the current working directory, by typing the ‘getwd()’ function in the console, while the project is open.</p>
+<p>One of the advantages of using RStudio Projects is that projects set the working directory to the project directory location. You can verify this by asking R to print the current working directory, by typing the <code>getwd()</code> function in the console, while the project is open.</p>
 <p>This may look like a trivial feature. It is, however, a great advantage, because it allows for the use of relative paths, which is very convenient. For example, to open a data source in a script, you no longer have to specify its full path (e.g., ‘D:/work/projects/my_ema_project/data/raw/ema_data.csv’). With relative paths, you can simply type ‘data/raw/ema_data.csv’. This saves typing, but, more importantly, it allows you to freely move your projects to other locations, without breaking the proper functioning of your scripts.</p>
 </div>
 <div id="an-example-project-directory-structure" class="section level2">
@@ -418,7 +418,7 @@ d<span class="op">$</span>gender &lt;-<span class="st"> </span><span class="kw">
 <span class="co"># save cleaned baseline data to data/cleaned, in R (.Rda) format</span>
 baseline &lt;-<span class="st"> </span>d
 <span class="kw">save</span>(baseline, <span class="dt">file =</span> <span class="st">&quot;baseline.Rda&quot;</span>)</code></pre></div>
-<p>The code snippet above illustrates the importance of code documentation. You may struggle to immediately understand some of the code segments. For instance, you might not be familiar with the <code>paste0()</code> function that is used to create the names of the variables that contain the PHQ-9 item scores. Fortunately, however, it becomes clear that the code statement calculates the sum of the item from the comment just above the code (the line starting with <code>#</code>). Use these comments in your code. You will do yourself and your colleagues a big favor by making it much easier to quickly grasp the meaning of your code.</p>
+<p>The code snippet above illustrates the importance of code documentation. You may struggle to immediately understand some of the code segments. For instance, you might not be familiar with the <code>paste0</code> function that is used to create the names of the variables that contain the PHQ-9 item scores. Fortunately, however, it becomes clear that the code statement calculates the sum of the item from the comment just above the code (the line starting with <code>#</code>). Use these comments in your code. You will do yourself and your colleagues a big favor by making it much easier to quickly grasp the meaning of your code.</p>
 </div>
 <div id="reproducible-analyses" class="section level2">
 <h2><span class="header-section-number">5.5</span> Reproducible Analyses</h2>

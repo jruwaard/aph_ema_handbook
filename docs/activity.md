@@ -13,7 +13,7 @@ utility of passive EMA with regard to various aspects of activity, such as
 (disturbed) sleep, sedentary behavior, and energy expenditure [see, e.g.,
 @Feehan2018; @Gomersall2016], an increasing number of mental health studies are
 including activity tracking devices to better understand sleep habits, circadian
-rhythm disorders and depression [see, e.g., @Saeb2015, @Saunders2016,
+rhythm disorders and depression [see, e.g., @Saeb2015; @Saunders2016;
 @Tahmasian2013].
 
 In this chapter, we will discuss two passive EMA methods to assess physical
@@ -98,6 +98,8 @@ Chapter \@ref(rcat)).
 
 
 ### Feature extraction
+\index{ENMO}
+\index{SVM}
 
 Properties of the signals that are of interest are highly dependent on the focus
 of the study. Highly detailed analysis of local peaks in the signal might be
@@ -137,6 +139,8 @@ middle-aged person are consistently lower than those of the young adult.
 \caption{One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs}(\#fig:genea-one-day)
 \end{figure}
 
+\index{MVPA}
+
 For SVM and ENMO, cut-off values for various activity classes have been
 determined [@Dasilva2014; @Hildebrand2014; @Rowlands2016]. The red line in
 Figure \@ref(fig:genea-one-day) marks the ENMO cut-off for
@@ -159,9 +163,11 @@ considerably for each person.
 
 
 ## Geotracking
-\index{GPS} \index{Longitude} \index{Latitude}
+\index{geotracking} 
 
-### The Geographic Coordinate system
+### The Geographic Coordinate System
+\index{Geographic Coordinate system}
+\index{Longitude} \index{Latitude}
 
 In the geographic coordinate system, each location on the earth is uniquely
 represented by two numbers: *Latitude* and *Longitude*. Latitude marks the
@@ -182,6 +188,7 @@ by punching these numbers in [Google maps](https://tinyurl.com/ybxxk99a).
 
 
 ### The Global Positioning System
+\index{GPS}
 
 The Global Positioning System (GPS) is a satellite-based radionavigation system
 that provides geolocation and time information. With GPS-receivers, latitude and
@@ -243,7 +250,7 @@ The problem with the (in)accuracy of GPS-data is further illustrated by Figure
 \@ref(fig:nightcrawl), in which all data points are plotted that were registered
 by the smartphone of person 2 between 02:00 and 06:00, At those hours, the
 person was sleeping, in the bedroom of his house. He did not move. Yet, if we
-would take the GPS-data for granted, he regularly took a random walk in the
+would take the GPS-data for granted, he regularly took a nightly random walk in the
 parc. The red dot in the figure marks the median coordinate. This coordinate is
 very accurate: it marks the bedroom. All individual data points, however, fail
 to identify this location.
@@ -254,7 +261,7 @@ to identify this location.
 
 }
 
-\caption{Nightly GPS-fluctuations at night, revealing inaccurate location measurements}(\#fig:nightcrawl)
+\caption{Nightly GPS-fluctuations, revealing inaccurate location measurements}(\#fig:nightcrawl)
 \end{figure}
 
 

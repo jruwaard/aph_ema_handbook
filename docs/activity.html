@@ -185,7 +185,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.1.2" data-path="activity.html"><a href="activity.html#feature-extraction"><i class="fa fa-check"></i><b>7.1.2</b> Feature extraction</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="activity.html"><a href="activity.html#geotracking"><i class="fa fa-check"></i><b>7.2</b> Geotracking</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate system</a></li>
+<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate System</a></li>
 <li class="chapter" data-level="7.2.2" data-path="activity.html"><a href="activity.html#the-global-positioning-system"><i class="fa fa-check"></i><b>7.2.2</b> The Global Positioning System</a></li>
 <li class="chapter" data-level="7.2.3" data-path="activity.html"><a href="activity.html#gps-based-activity-measures"><i class="fa fa-check"></i><b>7.2.3</b> GPS-based activity measures</a></li>
 </ul></li>
@@ -307,7 +307,7 @@ code > span.in { font-style: italic; } /* Information */
 <div id="activity" class="section level1">
 <h1><span class="header-section-number">Chapter 7</span> Activity</h1>
 <p>The objective study of human physical activity is one of the exciting opportunities created by passive EMA <span class="citation">(Marszalek et al., <a href="#ref-Marszalek2014">2014</a>)</span>. Through technological advances in mobile sensing, we are now able to continuously monitor (in-)activity of participants in every-day life, with little to no participant burden.</p>
-<p>While questions remain with regard to the validity, reliability and clinical utility of passive EMA with regard to various aspects of activity, such as (disturbed) sleep, sedentary behavior, and energy expenditure <span class="citation">(“Estimating physical activity and sedentary behavior in a free-living context,” <a href="#ref-Gomersall2016">2016</a>; see, e.g., Feehan et al., <a href="#ref-Feehan2018">2018</a>)</span>, an increasing number of mental health studies are including activity tracking devices to better understand sleep habits, circadian rhythm disorders and depression <span class="citation">(see, e.g., Saeb et al., <a href="#ref-Saeb2015">2015</a>, <span class="citation">Saunders et al. (<a href="#ref-Saunders2016">2016</a>)</span>, <span class="citation">Tahmasian, Khazaie, Golshani, &amp; Avis (<a href="#ref-Tahmasian2013">2013</a>)</span>)</span>.</p>
+<p>While questions remain with regard to the validity, reliability and clinical utility of passive EMA with regard to various aspects of activity, such as (disturbed) sleep, sedentary behavior, and energy expenditure <span class="citation">(see, e.g., Feehan et al., <a href="#ref-Feehan2018">2018</a>; Gomersall, Ng, Burton, Pavey, &amp; Gilson, <a href="#ref-Gomersall2016">2016</a>)</span>, an increasing number of mental health studies are including activity tracking devices to better understand sleep habits, circadian rhythm disorders and depression <span class="citation">(see, e.g., Saeb et al., <a href="#ref-Saeb2015">2015</a>; Saunders et al., <a href="#ref-Saunders2016">2016</a>; Tahmasian, Khazaie, Golshani, &amp; Avis, <a href="#ref-Tahmasian2013">2013</a>)</span>.</p>
 <p>In this chapter, we will discuss two passive EMA methods to assess physical activity: actigraphy and geotracking. Of these two, actigraphy has been used most in human clinical research. However, due to the massive adoption of smartphones, researchers increasingly collect geolocation data as well, inspired perhaps by the elaborate geolocation data analysis techniques that have been developed in the past decades in wildlife telemetry research <span class="citation">(Tomkiewicz, Fuller, Kie, &amp; Bates, <a href="#ref-tomkiewicz2010global">2010</a>)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:accgps"></span>
 <img src="activity_files/figure-html/accgps-1.png" alt="Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity." width="95%" />
@@ -344,6 +344,7 @@ d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span><span class="st"
 </div>
 <div id="feature-extraction" class="section level3">
 <h3><span class="header-section-number">7.1.2</span> Feature extraction</h3>
+<p> </p>
 <p>Properties of the signals that are of interest are highly dependent on the focus of the study. Highly detailed analysis of local peaks in the signal might be needed, for instance to reveal an association between activity and reported events. But analyses can also be more global, for instance when accelerometer data are used to study circadian rhythms in activity. Several approaches exist to combine the X, Y, Z measurements into a single meaningful metric. Two popular metrics are the ‘Signal Vector Magnitude’ (SVM) and the ‘Euclidian Norm Minus One’ (ENMO). Validation studies suggest that ENMO should be the preferred metric <span class="citation">(Van Hees et al., <a href="#ref-VanHeest2014">2014</a>, <a href="#ref-VanHeest2015">2015</a>)</span>, although recent findings also suggest that alternative metrics should perhaps be considered when sedentary and light activities are of interest <span class="citation">(Bai et al., <a href="#ref-Bai2016">2016</a>)</span>.</p>
 <p>SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axials signals (the Euclidian distance in the three-dimensional space), i.e. <em>SVM = sqrt(x^2 + y^2 + z^2)</em>. ENMO is the corrected SVM: the vector magnitude remaining after removing one Earth Standard Gravitational unit (1g = 9.81 m/s^2), i.e. <em>ENMO = SVM - 1</em>. The metrics can, in principle, be calculated for each {x, y, z}-data point in the raw series. Typically, however, the metrics are calculated for time-windows (called <em>epochs</em>), in which case the mean can be used to characterize the overall activity in each epoch.</p>
 <p>Figure <a href="activity.html#fig:genea-one-day">7.3</a> shows the development of ENMO over one day, as sampled by GENEActive accelerometers that were worn by a young adult (top) and a middle-aged person (bottom). This figure is much easier to interpret than the plot of the raw x-y-z values in Figure <a href="activity.html#fig:genea-one-hour">7.2</a>. Activity levels over the day follow a similar pattern, but the activity levels in the two plots are strikingly different. Age appears to matter here: activity levels of the middle-aged person are consistently lower than those of the young adult.</p>
@@ -353,6 +354,7 @@ d &lt;-<span class="st"> </span>d <span class="op">%&gt;%</span><span class="st"
 Figure 7.3: One day of data of the two persons in the GENEA data set of package ‘emaph’, summarised with ENMO, in 10-minute epochs
 </p>
 </div>
+
 <p>For SVM and ENMO, cut-off values for various activity classes have been determined <span class="citation">(Da silva et al., <a href="#ref-Dasilva2014">2014</a>; Hildebrand, Van Hees, Hansen, &amp; Ekelund, <a href="#ref-Hildebrand2014">2014</a>; Rowlands, Yates, Davies, Khunti, &amp; Edwardson, <a href="#ref-Rowlands2016">2016</a>)</span>. The red line in Figure <a href="activity.html#fig:genea-one-day">7.3</a> marks the ENMO cut-off for Moderate-to-Vigorous-Physical-Activity (MVPA), which is 0.1g (or 100 milligravity units).</p>
 <p>With this cut-off, we can summarize the two series shown in Figure <a href="activity.html#fig:genea-one-day">7.3</a> by the number of times on which ENMO is higher than the MVPA cut-off. The daily MVPA-count for the young adult is 26. For the middle-aged person, this is 5: considerably lower.</p>
 <p>You should be aware that the choice of the width of the epoch matters when MVPA-counts are calculated. By averaging values in each window, ENMO acts as a smoother, which may prevent you from the detection of short bursts of activity when the window is large. If we would have used a 5-second window to generate Figure <a href="activity.html#fig:genea-one-day">7.3</a>, for example, the MVPA-counts would go up considerably for each person.</p>
@@ -360,9 +362,10 @@ Figure 7.3: One day of data of the two persons in the GENEA data set of package 
 </div>
 <div id="geotracking" class="section level2">
 <h2><span class="header-section-number">7.2</span> Geotracking</h2>
-<p>  </p>
+
 <div id="the-geographic-coordinate-system" class="section level3">
-<h3><span class="header-section-number">7.2.1</span> The Geographic Coordinate system</h3>
+<h3><span class="header-section-number">7.2.1</span> The Geographic Coordinate System</h3>
+<p>  </p>
 <p>In the geographic coordinate system, each location on the earth is uniquely represented by two numbers: <em>Latitude</em> and <em>Longitude</em>. Latitude marks the north–south position of a point on the earth’s surface, and longitude marks the east-west position (see Figure <a href="activity.html#fig:longlat">7.4</a>). The center of Amsterdam, for example, is {latitude: 52.37022; longitude: 4.89517}, which can be verified by punching these numbers in <a href="https://tinyurl.com/ybxxk99a">Google maps</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:longlat"></span>
 <img src="images/activity/Latitude_and_Longitude_of_the_Earth.png" alt="Latitude and Longtitude of the Earth (source: WikiPedia)." width="75%" />
@@ -373,6 +376,7 @@ Figure 7.4: Latitude and Longtitude of the Earth (source: WikiPedia).
 </div>
 <div id="the-global-positioning-system" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> The Global Positioning System</h3>
+
 <p>The Global Positioning System (GPS) is a satellite-based radionavigation system that provides geolocation and time information. With GPS-receivers, latitude and longitude can be determined, to track geographical locations and movement. Due to the increasing ease with which GPS-data can be collected via modern smartphones, recent years have witnessed a marked increase in the use of GPS-based activity measures in the study of mental health.</p>
 <p>Figure <a href="activity.html#fig:fourweekgps">7.5</a> shows GPS-data of two people, collected over a period of four weeks, via the Google timeline smartphone app. Data can be found in the <code>emaph</code> package (see <code>?locations</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot four-week location history of emaph location data</span>
@@ -396,11 +400,11 @@ Figure 7.5: Four-week location history of two people, collected with Google Time
 </div>
 <p>Data-points are superposed, using transparent colors, to make a distinction between locations that were visited once (light areas) and places that were visitied many times (darker areas). From the plot, we learn that these two people both lived and worked in the Amsterdam area (latitude and longitude are close to the coordinates of Amsterdam center). We also see that they shared a frequently visited location (they were co-workers, working in the same building). Locations of person 1 reveal that this person’s home was probably in Amsterdam, while the locations of person 2 show that this person’s home was probably located in an Amsterdam suburb. Commuting patterns (i.e., the recurrent traveling between the place of residence and place of work) are clearly visible.</p>
 <p>It should be noted, though, that person 1 contributed much less data (n = 722) than person 2 (n = 14031). This can be explained by the different devices that were used by both: Person 1 used an iPhone (with standard GPS-settings) and Person 2 used a Sony Z1 Android (with high-precision GPS features enabled). This device-related variability in GPS sample rates and accuracy is one of the primary challenges of naturalistic EMA research and EMI applications.</p>
-<p>The problem with the (in)accuracy of GPS-data is further illustrated by Figure <a href="activity.html#fig:nightcrawl">7.6</a>, in which all data points are plotted that were registered by the smartphone of person 2 between 02:00 and 06:00, At those hours, the person was sleeping, in the bedroom of his house. He did not move. Yet, if we would take the GPS-data for granted, he regularly took a random walk in the parc. The red dot in the figure marks the median coordinate. This coordinate is very accurate: it marks the bedroom. All individual data points, however, fail to identify this location.</p>
+<p>The problem with the (in)accuracy of GPS-data is further illustrated by Figure <a href="activity.html#fig:nightcrawl">7.6</a>, in which all data points are plotted that were registered by the smartphone of person 2 between 02:00 and 06:00, At those hours, the person was sleeping, in the bedroom of his house. He did not move. Yet, if we would take the GPS-data for granted, he regularly took a nightly random walk in the parc. The red dot in the figure marks the median coordinate. This coordinate is very accurate: it marks the bedroom. All individual data points, however, fail to identify this location.</p>
 <div class="figure" style="text-align: center"><span id="fig:nightcrawl"></span>
-<img src="activity_files/figure-html/nightcrawl-1.png" alt="Nightly GPS-fluctuations at night, revealing inaccurate location measurements" width="100%" />
+<img src="activity_files/figure-html/nightcrawl-1.png" alt="Nightly GPS-fluctuations, revealing inaccurate location measurements" width="100%" />
 <p class="caption">
-Figure 7.6: Nightly GPS-fluctuations at night, revealing inaccurate location measurements
+Figure 7.6: Nightly GPS-fluctuations, revealing inaccurate location measurements
 </p>
 </div>
 </div>
@@ -455,11 +459,11 @@ Figure 7.6: Nightly GPS-fluctuations at night, revealing inaccurate location mea
 <div id="ref-Marszalek2014">
 <p>Marszalek, J., Morgulec-Adamowicz, N., Rutkowska, I., Kosmol, A., Marszalek, J., Morgulec-Adamowicz, N., … Kosmol, A. (2014). Using ecological momentary assessment to evaluate current physical activity. <em>BioMed Research International</em>, <em>2014,</em> e915172. <a href="https://doi.org/10.1155/2014/915172" class="uri">https://doi.org/10.1155/2014/915172</a></p>
 </div>
-<div id="ref-Gomersall2016">
-<p>Estimating physical activity and sedentary behavior in a free-living context: A pragmatic comparison of consumer-based activity trackers and actigraph accelerometry. (2016). <em>Journal of Medical Internet Research</em>. <a href="https://doi.org/10.2196/jmir.5531" class="uri">https://doi.org/10.2196/jmir.5531</a></p>
-</div>
 <div id="ref-Feehan2018">
 <p>Feehan, L. M., Geldman, J., Sayre, E. C., Park, C., Ezzat, A. M., Yoo, J. Y., … Li, L. C. (2018). Accuracy of fitbit devices: Systematic review and narrative syntheses of quantitative data. <em>Journal of Medical Internet Research</em>. <a href="https://doi.org/10.2196/10527" class="uri">https://doi.org/10.2196/10527</a></p>
+</div>
+<div id="ref-Gomersall2016">
+<p>Gomersall, S. R., Ng, N., Burton, N. W., Pavey, T. G., &amp; Gilson. (2016). Estimating physical activity and sedentary behavior in a free-living context: A pragmatic comparison of consumer-based activity trackers and actigraph accelerometry. <em>Journal of Medical Internet Research</em>. <a href="https://doi.org/10.2196/jmir.5531" class="uri">https://doi.org/10.2196/jmir.5531</a></p>
 </div>
 <div id="ref-Saeb2015">
 <p>Saeb, S., Zhang, M., Karr, C. J., Schueller, S. M., Corden, M. E., Kording, K. P., &amp; Mohr, D. C. (2015). Mobile phone sensor correlates of depressive symptom severity in daily-life behavior: An exploratory study. <em>Journal of Medical Internet Research</em>, <em>17</em>(7). <a href="https://doi.org/10.2196/jmir.4273" class="uri">https://doi.org/10.2196/jmir.4273</a></p>

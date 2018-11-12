@@ -250,7 +250,7 @@ of 0.14 (about one week).
 This series is *circadian*: mood ratings follow a daily and a weekly
 pattern. This is a common feature of EMA data, because of the circadian
 rhythms in our body and in our environment (our biological clocks, day-night
-cycles, seasons) [@Doherty2018; @Frank2000; @Karatsoreos2014; @VanSomeren2000;
+cycles, seasons) [@Doherty2018; @Frank2000; @Frank2007; @Karatsoreos2014; @VanSomeren2000;
 @Tahmasian2013].
 
 
@@ -282,7 +282,7 @@ you learn how to apply the feature extraction techniques yourself.
 
 
 ```r
-## Constructing the simulated EMA time-series
+## Extracting Features from a simulated EMA time-series
 
 # libraries ----------------
 library(ggplot2)

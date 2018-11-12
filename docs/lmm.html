@@ -185,7 +185,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.1.2" data-path="activity.html"><a href="activity.html#feature-extraction"><i class="fa fa-check"></i><b>7.1.2</b> Feature extraction</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="activity.html"><a href="activity.html#geotracking"><i class="fa fa-check"></i><b>7.2</b> Geotracking</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate system</a></li>
+<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate System</a></li>
 <li class="chapter" data-level="7.2.2" data-path="activity.html"><a href="activity.html#the-global-positioning-system"><i class="fa fa-check"></i><b>7.2.2</b> The Global Positioning System</a></li>
 <li class="chapter" data-level="7.2.3" data-path="activity.html"><a href="activity.html#gps-based-activity-measures"><i class="fa fa-check"></i><b>7.2.3</b> GPS-based activity measures</a></li>
 </ul></li>
@@ -359,14 +359,14 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Print fixed effects.</span>
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
 <span class="co">#&gt;             Value Std.Error   DF t-value p-value</span>
-<span class="co">#&gt; (Intercept)  4.92    0.0928 2000      53       0</span></code></pre></div>
+<span class="co">#&gt; (Intercept)  5.04    0.0889 2000    56.7       0</span></code></pre></div>
 <p>Random effects and residual variance are shown by the <code>VarCorr</code> function. Again, since we specified the data ourselves in this case, we know the ‘true’ value of these parameters: the random intercept variance should be around 1 and the residual error variance should be close to 0.5.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fitted random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1) </span>
 <span class="co">#&gt;             Variance StdDev</span>
-<span class="co">#&gt; (Intercept) 0.836    0.914 </span>
-<span class="co">#&gt; Residual    0.516    0.719</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 0.766    0.875 </span>
+<span class="co">#&gt; Residual    0.506    0.711</span></code></pre></div>
 <p>It can be instructive to plot the predicted values of the model, to make clear how the model ‘thinks’. As shown by Figure <a href="lmm.html#fig:fig9b">9.2</a>, the model predicts a series of straight lines, one for each participant, that vary around 5 (the red line).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Saving predicted values.</span>
 d1<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)</code></pre></div>
@@ -401,16 +401,16 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
           <span class="dt">data =</span> d2)
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
 <span class="co">#&gt;             Value Std.Error   DF t-value   p-value</span>
-<span class="co">#&gt; (Intercept) 5.224    0.1126 1999    46.4 1.30e-319</span>
-<span class="co">#&gt; time        0.426    0.0289 1999    14.7  1.02e-46</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 5.148     0.122 1999    42.2 9.74e-279</span>
+<span class="co">#&gt; time        0.483     0.027 1999    17.9  2.33e-66</span></code></pre></div>
 <p>The random effects now have four components: the variance of the intercept, the variance of the slope, the residual error <em>and</em> the correlation between the random intercept and the random slope.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Extracting random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1 + time) </span>
 <span class="co">#&gt;             Variance StdDev Corr  </span>
-<span class="co">#&gt; (Intercept) 1.1763   1.085  (Intr)</span>
-<span class="co">#&gt; time        0.0781   0.279  -0.025</span>
-<span class="co">#&gt; Residual    0.4606   0.679</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 1.3944   1.181  (Intr)</span>
+<span class="co">#&gt; time        0.0674   0.260  -0.176</span>
+<span class="co">#&gt; Residual    0.4742   0.689</span></code></pre></div>
 <p>Model predictions clearly show how the mixed model estimated varying intercepts and slopes, that, on average, approximate the fixed effect regression formula <code>Y = 5 + 0.5 * time</code> that was used to generate the data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d2<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)
 
@@ -435,10 +435,10 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
           <span class="dt">data =</span> d3)
 <span class="kw">round</span>(<span class="kw">summary</span>(fm)<span class="op">$</span>tTable, <span class="dv">2</span>)
 <span class="co">#&gt;                     Value Std.Error   DF t-value p-value</span>
-<span class="co">#&gt; (Intercept)          4.89      0.11 3998   46.20    0.00</span>
-<span class="co">#&gt; time                 0.01      0.02 3998    0.32    0.75</span>
-<span class="co">#&gt; grouptreatment       0.33      0.15  198    2.22    0.03</span>
-<span class="co">#&gt; time:grouptreatment  0.42      0.03 3998   13.88    0.00</span></code></pre></div>
+<span class="co">#&gt; (Intercept)          5.05      0.11 3998   46.51    0.00</span>
+<span class="co">#&gt; time                 0.00      0.02 3998   -0.08    0.94</span>
+<span class="co">#&gt; grouptreatment       0.10      0.15  198    0.65    0.51</span>
+<span class="co">#&gt; time:grouptreatment  0.48      0.03 3998   17.15    0.00</span></code></pre></div>
 <p>In Figure <a href="lmm.html#fig:fig9e">9.4</a> below, EMA mood ratings predicted by the fitted model show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9e"></span>
 <img src="lmm_files/figure-html/fig9e-1.png" alt="Predicted mood ratings" width="100%" />

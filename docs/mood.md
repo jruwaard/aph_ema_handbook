@@ -40,8 +40,8 @@ model and Negative and Positive affect (NA/PA).
 ## Unidimensional mood assessment
 \index{Mood assessment!Unidimensional}
 Perhaps the most seemingly straight-forward method to measure mood is to ask
-'face-valid' unidimensional questions such as "How is your mood right now"
-[@VanBallegooijen2016] or "How are you feeling right now" [@VandeVen2017].
+'face-valid' unidimensional questions such as *"How is your mood right now"*
+[@VanBallegooijen2016] or *"How are you feeling right now"* [@VandeVen2017].
 Respondents usually rate these questions on a Visual Analogue Scale (VAS), aimed
 to indicate mood intensity. Typically, VAS scales will range from zero (low or
 worst mood) to 10 or 100 (good or best mood). Keep in mind that the middle of a
@@ -103,8 +103,8 @@ positives) [@Vanrijsbergen2014].
 In order to make sure all constructs of interest are measured, you can also
 consider including a number of specific mood items in your EMA questionnaire,
 rather than one general unipolar item or one bipolar item. For example, you can
-ask respondents "How depressed are you feeling right now" and "How anxious are
-you feeling right now [@Starr2012]. This strategy often leads to a
+ask respondents *"How depressed are you feeling right now?"* and *"How anxious are
+you feeling right now?"* [@Starr2012]. This strategy often leads to a
 'bag-of-items' approach, where single items from various sources, such as
 existing questionnaires, are combined into a new EMA questionnaire. A benefit of
 this approach is that you can select items for which information on validity and
@@ -218,10 +218,10 @@ to distress [@Watson1988]. While bipolar-unidimensional assessment assumes
 that positive and negative affect are mutually exclusive, the PA/NA affect model
 assumes that these mood states can occur simultaneously. Watson and Clark
 [@Watson1997] for example, showed a moderate correlation between the two
-constructs (.32). In order to measure Positive and Negative Affect, a designated
+constructs (r = .32). In order to measure Positive and Negative Affect, a designated
 Positive and Negative Affect Schedule was developed by Watson, Clark and
-Tellegen [@Watson1988]. Respondents are asked to indicate "to what extent you
-feel this way right now" on 20 affect items. The scale uses a 5-point
+Tellegen [@Watson1988]. Respondents are asked to indicate *"to what extent you
+feel this way right now"* on 20 affect items. The scale uses a 5-point
 Likert-scale, ranging from 1 (very slightly or not at all) to 5 (very)
 [@Watson1999]. Items include:
 

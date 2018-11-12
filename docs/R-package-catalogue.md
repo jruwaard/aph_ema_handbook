@@ -85,7 +85,7 @@ library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.054 secs .
+#> Processing took: 0.059 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -469,27 +469,28 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datamat)
+#> lm(formula = y ~ -1 + ., data = datares)
 #> 
 #> Residuals:
 #>     Min      1Q  Median      3Q     Max 
-#> -2.1798 -0.8386 -0.0724  0.6467  3.4951 
+#> -2.3684 -0.7333  0.1296  0.7786  2.1469 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.59087    0.10917   5.412 4.57e-07 ***
-#> depression.l1 -0.08003    0.08921  -0.897    0.372    
-#> const          0.07108    0.11311   0.628    0.531    
+#> activity.l1    0.58689    0.09963   5.891 5.94e-08 ***
+#> depression.l1 -0.04602    0.08770  -0.525    0.601    
+#> depression.l2  0.03604    0.08795   0.410    0.683    
+#> const          0.07536    0.10665   0.707    0.482    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 1.12 on 96 degrees of freedom
-#> Multiple R-squared:  0.247,	Adjusted R-squared:  0.2313 
-#> F-statistic: 15.75 on 2 and 96 DF,  p-value: 1.219e-06
+#> Residual standard error: 1.054 on 94 degrees of freedom
+#> Multiple R-squared:  0.2718,	Adjusted R-squared:  0.2486 
+#> F-statistic:  11.7 on 3 and 94 DF,  p-value: 1.398e-06
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
-[@[@R-autovarCore], which was used in several publications
+[@R-autovarCore], which was used in several publications
 [@VanderKrieke2015, @Emerencia2016]. Further information can be found on
 [http://autovar.nl](https://autovar.nl/) and
 [http://autovarcore.nl](https://autovarcore.nl/)

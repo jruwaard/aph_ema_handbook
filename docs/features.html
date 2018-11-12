@@ -185,7 +185,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.1.2" data-path="activity.html"><a href="activity.html#feature-extraction"><i class="fa fa-check"></i><b>7.1.2</b> Feature extraction</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="activity.html"><a href="activity.html#geotracking"><i class="fa fa-check"></i><b>7.2</b> Geotracking</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate system</a></li>
+<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate System</a></li>
 <li class="chapter" data-level="7.2.2" data-path="activity.html"><a href="activity.html#the-global-positioning-system"><i class="fa fa-check"></i><b>7.2.2</b> The Global Positioning System</a></li>
 <li class="chapter" data-level="7.2.3" data-path="activity.html"><a href="activity.html#gps-based-activity-measures"><i class="fa fa-check"></i><b>7.2.3</b> GPS-based activity measures</a></li>
 </ul></li>
@@ -394,14 +394,14 @@ Figure 8.8: EMA mood series, with a rolling mean superposed.
 Figure 8.9: periodogram of the EMA time series, revealing a one-day and a one-week period.
 </p>
 </div>
-<p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; “Interpersonal and social rhythm therapy: Managing the chaos of bipolar disorder,” <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; E. J. W. Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
+<p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; Frank, Swartz, &amp; Boland, <a href="#ref-Frank2007">2007</a>; Frank, Swartz, &amp; Kupfer, <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; E. J. W. Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
 </div>
 <div id="discussion" class="section level2">
 <h2><span class="header-section-number">8.7</span> Discussion</h2>
 <p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure <a href="features.html#fig:fig8a">8.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
 <p>The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter <a href="csd.html#csd">10</a>, for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.</p>
 <p>Finally, you might have been disappointed by the lack of code examples in this chapter. We did not include them, to avoid unnecessary distraction from the conceptual explanation. Instead, we provide a full code listing below, to allow you learn how to apply the feature extraction techniques yourself.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Constructing the simulated EMA time-series
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Extracting Features from a simulated EMA time-series
 
 <span class="co"># libraries ----------------</span>
 <span class="kw">library</span>(ggplot2)
@@ -629,8 +629,11 @@ fa &lt;-
 <div id="ref-Doherty2018">
 <p>Doherty, A. (2018). Circadian rhythms and mental health: wearable sensing at scale. <a href="https://doi.org/10.1016/S2215-0366(18)30172-X" class="uri">https://doi.org/10.1016/S2215-0366(18)30172-X</a></p>
 </div>
+<div id="ref-Frank2007">
+<p>Frank, E., Swartz, H. A., &amp; Boland, E. (2007). Interpersonal and social rhythm therapy: An intervention addressing rhythm dysregulation in bipolar disorder. <em>Dialogues in Clinical Neuroscience</em>. <a href="https://doi.org/10.1002/jclp.20371" class="uri">https://doi.org/10.1002/jclp.20371</a></p>
+</div>
 <div id="ref-Frank2000">
-<p>Interpersonal and social rhythm therapy: Managing the chaos of bipolar disorder. (2000). <a href="https://doi.org/10.1016/S0006-3223(00)00969-0" class="uri">https://doi.org/10.1016/S0006-3223(00)00969-0</a></p>
+<p>Frank, E., Swartz, H. A., &amp; Kupfer, D. J. (2000). Interpersonal and social rhythm therapy: Managing the chaos of bipolar disorder. <em>Biological Psychiatry</em>. <a href="https://doi.org/10.1016/S0006-3223(00)00969-0" class="uri">https://doi.org/10.1016/S0006-3223(00)00969-0</a></p>
 </div>
 <div id="ref-Karatsoreos2014">
 <p>Karatsoreos, I. N. (2014). Links between Circadian Rhythms and Psychiatric Disease. <em>Frontiers in Behavioral Neuroscience</em>. <a href="https://doi.org/10.3389/fnbeh.2014.00162" class="uri">https://doi.org/10.3389/fnbeh.2014.00162</a></p>

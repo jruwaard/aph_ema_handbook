@@ -185,7 +185,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.1.2" data-path="activity.html"><a href="activity.html#feature-extraction"><i class="fa fa-check"></i><b>7.1.2</b> Feature extraction</a></li>
 </ul></li>
 <li class="chapter" data-level="7.2" data-path="activity.html"><a href="activity.html#geotracking"><i class="fa fa-check"></i><b>7.2</b> Geotracking</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate system</a></li>
+<li class="chapter" data-level="7.2.1" data-path="activity.html"><a href="activity.html#the-geographic-coordinate-system"><i class="fa fa-check"></i><b>7.2.1</b> The Geographic Coordinate System</a></li>
 <li class="chapter" data-level="7.2.2" data-path="activity.html"><a href="activity.html#the-global-positioning-system"><i class="fa fa-check"></i><b>7.2.2</b> The Global Positioning System</a></li>
 <li class="chapter" data-level="7.2.3" data-path="activity.html"><a href="activity.html#gps-based-activity-measures"><i class="fa fa-check"></i><b>7.2.3</b> GPS-based activity measures</a></li>
 </ul></li>
@@ -347,7 +347,7 @@ code > span.in { font-style: italic; } /* Information */
 Figure 2.1: The RStudio Interface
 </p>
 </div>
-<p>Commands are sent to R in the bottom-left pane, named “Console”. To test this, move your cursor to the bottom line, immediately after the prompt sign (<code>&gt;</code>). Next, type the statement below (note that <code>#</code> denotes a comment line; R ignores it, so there is no immediate need to type that). To execute, press ‘Enter’.</p>
+<p>Commands are sent to R in the bottom-left pane, named “Console”. To test this, move your cursor to the bottom line, immediately after the prompt sign (<code>&gt;</code>). Next, type the statement below (note that <code>#</code> denotes a comment line; R ignores it, so there is no immediate need to type that). To execute, press <code>Enter</code>.</p>
 <p>R will execute the command and return the answer back to the console.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R is a calculator.</span>
 <span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
@@ -475,7 +475,7 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load packages.</span>
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(emaph)</code></pre></div>
-<p>Once loaded, you can use the functions and datasets of the packages. Packge ‘emaph’ provides dataset <code>csd</code>, which contains the data from the ‘critical slowing down’-study <span class="citation">(Kossakowski, Groot, Haslbeck, Borsboom, &amp; Wichers, <a href="#ref-Kossakowski2017">2017</a>; Wichers, Groot, Psychosystems, ESM, &amp; EWS, <a href="#ref-Wichers2016">2016</a>)</span>, in which a patient recorded his mood, for 239 days (see also Chapter <a href="csd.html#csd">10</a>).</p>
+<p>Once loaded, you can use the functions and datasets of the packages. Package <code>emaph</code> provides dataset <code>csd</code>, which contains the data from the ‘critical slowing down’-study <span class="citation">(Kossakowski, Groot, Haslbeck, Borsboom, &amp; Wichers, <a href="#ref-Kossakowski2017">2017</a>; Wichers, Groot, Psychosystems, ESM, &amp; EWS, <a href="#ref-Wichers2016">2016</a>)</span>, in which a patient recorded his mood, for 239 days (see also Chapter <a href="csd.html#csd">10</a>).</p>
 <p>To plot the irritation levels of this patient in the first six days, using the <code>ggplot</code> function from package <code>ggplot2</code> (which is in <code>tidyverse</code>), type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Using ggplot to plot EMA time series.</span>
 <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(csd, dayno <span class="op">&lt;=</span><span class="st"> </span><span class="dv">6</span>),
@@ -500,10 +500,10 @@ Figure 2.3: Irritation levels of a single patient, in the first six days of an E
 <p>The good thing is that you already known the name of the function to use, since we used it in the previous section: it is <code>rnorm</code>. To check the documentation of this function, type <code>?rnorm</code> in the console.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Use &#39;?&#39; to find the documentation of a function.</span>
 ?rnorm</code></pre></div>
-<p>This opens the documentation of the rnorm function in the ‘Help’-tab, in the bottom right pane, from which you learn that that the <code>rnorm</code> function accepts <code>mean</code> and <code>sd</code> (standard deviation) as additional parameters, which are 0 and 1 default, respectively (which explains why <code>norm(100)</code> worked in the previous examples). So, to generate the required numbers, you type:</p>
+<p>This opens the documentation of the rnorm function in the ‘Help’-tab, in the bottom right pane, from which you learn that that the <code>rnorm</code> function accepts <code>mean</code> and <code>sd</code> (standard deviation) as additional parameters, which are 0 and 1 default, respectively (which explains why <code>rnorm(100)</code> worked in the previous examples). So, to generate the required numbers, you type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot the histogram of a custom random sample.</span>
 <span class="kw">hist</span>(<span class="kw">rnorm</span>(<span class="dv">1000</span>, <span class="dt">mean =</span> <span class="dv">2</span>, <span class="dt">sd =</span> <span class="dv">4</span>))</code></pre></div>
-<p>All functions in R are documented, and this documentation is shown in RStudio’s Help pane when you prepend ? to the name of the function in the console.</p>
+<p>All functions in R are documented, and this documentation is shown in RStudio’s Help pane when you prepend <code>?</code> to the name of the function in the console.</p>
 </div>
 <div id="using-rstudios-global-documentation-index-search" class="section level3">
 <h3><span class="header-section-number">2.8.2</span> Using RStudio’s global documentation index search</h3>
@@ -520,13 +520,13 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; data:  A and B</span>
-<span class="co">#&gt; t = -0.21095, df = 196.18, p-value = 0.8331</span>
+<span class="co">#&gt; t = -1.3791, df = 197.99, p-value = 0.1694</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.2896034  0.2336349</span>
+<span class="co">#&gt;  -0.49883110  0.08826122</span>
 <span class="co">#&gt; sample estimates:</span>
 <span class="co">#&gt;   mean of x   mean of y </span>
-<span class="co">#&gt; -0.01280389  0.01518036</span></code></pre></div>
+<span class="co">#&gt; -0.28022615 -0.07494121</span></code></pre></div>
 </div>
 <div id="learning-from-examples" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Learning from examples</h3>

@@ -32,7 +32,7 @@ a new window.
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
-print the current working directory, by typing the 'getwd()' function in the
+print the current working directory, by typing the `getwd()` function in the
 console, while the project is open.
 
 This may look like a trivial feature. It is, however, a great advantage, because
@@ -205,7 +205,7 @@ save(baseline, file = "baseline.Rda")
 
 The code snippet above illustrates the importance of code documentation. You may
 struggle to immediately understand some of the code segments. For instance, you
-might not be familiar with the `paste0()` function that is used to create the
+might not be familiar with the `paste0` function that is used to create the
 names of the variables that contain the PHQ-9 item scores. Fortunately, however,
 it becomes clear that the code statement calculates the sum of the item from the
 comment just above the code (the line starting with `#`). Use these comments in

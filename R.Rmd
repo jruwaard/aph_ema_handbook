@@ -146,7 +146,7 @@ through the script, step by step.
 ## Importing your data
 \index{R and RStudio!Data import} 
 
-Something that confuses new Rstudio users, who are more familiar with SPSS, is
+Something that confuses new RStudio users, who are more familiar with SPSS, is
 that it is not obvious how to import data into RStudio. In SPSS, the data
 are in plain sight. In R, you first have to import the data.
 

@@ -29,8 +29,8 @@ mean of all measurements of participant i, plus error. It defines a set of
 regression functions - one for each participant. The regression functions are,
 however, not independent. Mixed models divide the intercepts of the individual
 participant regression functions into two components: 1) the intercept of the
-group (*intercept~~g~~*; the mean intercept of all regression functions), and 2)
-a participant-specific component *intercept~~p~~* (i.e., the difference between
+group (*intercept~g~*; the mean intercept of all regression functions), and 2)
+a participant-specific component *intercept~p~* (i.e., the difference between
 the intercept of the participant and the mean intercept), i.e.:
 
 \begin{equation} 
@@ -50,11 +50,11 @@ the participant-specific intercept components around the group intercept. This
 
 To understand analysis techniques, it often helps to apply the technique to
 simulated data, in which parameters of interest are known. Here, we will use the
-'sim\_ema' function from package 'emaph', to simulate EMA mood assessments
+`sim_ema` function from package `emaph`, to simulate EMA mood assessments
 of 100 participants, who rate their mood, three times per day, for one week. As
-you can learn from the documentation of 'sim\_ema' (see '?sim\_ema'), the
+you can learn from the documentation of `sim_ema` (see `?sim\_ema`), the
 function expects at least two arguments: the definition of a sample plan (see
-'?sample\_plan'), and a specification of the data-generating model, in the form
+`?sample\_plan`), and a specification of the data-generating model, in the form
 of a list defining fixed effects, the random effects, and residual variance
 (i.e, the error).
 
@@ -75,8 +75,8 @@ d1 <- sim_ema(plan,
               lim = c(0, 10))
 ```
 
-From the code, you learn that we set the mean mood (intercept~~g~~) to 5, the
-variance around this mean - var(intercept~~i~~) - to 1, and the variance around
+From the code, you learn that we set the mean mood (intercept~g~) to 5, the
+variance around this mean - var(intercept~i~) - to 1, and the variance around
 these means within participants - the error - to .5. Figure \@ref(fig:fig9a)
 shows EMA mood ratings of the first 6 participants in the simulated data set,
 which we can use to check the simulation. As specified, mean mood ratings of the
@@ -97,11 +97,11 @@ good.
 \index{nlme} 
 
 Now, let's fit a mixed model to the data, to see whether the simulation
-parameters are detected. For this, we will use the 'lme' function, from package
-'nlme' [@R-nlme]. The code snippet below shows how to do this.
+parameters are detected. For this, we will use the `lme` function, from package
+`nlme` [@R-nlme]. The code snippet below shows how to do this.
 
-The first argument of the lme function, 'Y \~ 1', specifies the fixed 'effect'
-(in this case: the mean intercept). The second argument, 'random = \~ 1 | id'
+The first argument of the lme function, `Y ~ 1`, specifies the fixed 'effect'
+(in this case: the mean intercept). The second argument, `random =~ 1 | id`
 specifies the random effect. In this model, intercepts are allowed to vary
 between participants. The fitted model is assigned to a variable ('fm'), which
 we will use later to study the fitted model.
@@ -115,21 +115,21 @@ fm <- lme(Y ~ 1, random = ~ 1 | id,
 ```
 
 We can now extract the fixed effects regression coefficients table, by calling
-the 'summary' function on the fitted model. The estimated intercept should be
+the `summary` function on the fitted model. The estimated intercept should be
 around 5 (as this is a finite sample, we expect some deviation):
 
 
 ```r
 # Print fixed effects.
 summary(fm)$tTable
-#>             Value Std.Error   DF t-value   p-value
-#> (Intercept)     5     0.109 2000    45.7 7.48e-313
+#>             Value Std.Error   DF t-value p-value
+#> (Intercept)  5.07     0.096 2000    52.8       0
 ```
 
-Random effects and residual variance are shown by the 'VarCorr' function. Again,
+Random effects and residual variance are shown by the `VarCorr` function. Again,
 since we specified the data ourselves in this case, we know the 'true' value of
 these parameters: the random intercept variance should be around 1 and the
-residual error variance should be close to .5. 
+residual error variance should be close to 0.5. 
 
 
 ```r
@@ -137,8 +137,8 @@ residual error variance should be close to .5.
 VarCorr(fm)
 #> id = pdLogChol(1) 
 #>             Variance StdDev
-#> (Intercept) 1.17     1.08  
-#> Residual    0.49     0.70
+#> (Intercept) 0.896    0.947 
+#> Residual    0.513    0.716
 ```
 
 It can be instructive to plot the predicted values of the model, to make clear
@@ -170,7 +170,7 @@ no need to model a time effect. But suppose we would expect a systematic
 improvement of mood ratings over time, for instance in response to a mental
 health intervention?
 
-Let's first call 'sim\_ema' again, with parameters that will result in data in
+Let's first call `sim_ema` again, with parameters that will result in data in
 which mood rating increase over the course of the week, 0.5 scale points per
 day. Let's also assume that individual participants will vary in the degree of
 mood improvement: the mean time effect will be 0.5, but this parameter is
@@ -202,7 +202,7 @@ this data set is a random effect.
 
 To fit the extended mixed model, time can simply be added to both the fixed and
 random arguments of the 'lme' function. Fixed effects estimated of this model
-should be around 5 and .5, since that is how we specified the data. Calling
+should be around 5 and 0.5, since that is how we specified the data. Calling
 'summary' on this function, we see that the fixed time effect is significant.
 
 
@@ -212,9 +212,9 @@ library(nlme)
 fm <- lme(Y ~ 1 + time, random = ~ 1 + time | id, 
           data = d2)
 summary(fm)$tTable
-#>             Value Std.Error   DF t-value   p-value
-#> (Intercept) 5.295     0.121 1999    43.8 1.63e-294
-#> time        0.412     0.028 1999    14.7  1.24e-46
+#>             Value Std.Error   DF t-value  p-value
+#> (Intercept) 5.072    0.1057 1999    48.0 0.00e+00
+#> time        0.517    0.0263 1999    19.6 1.41e-78
 ```
 
 The random effects now have four components: the variance of the intercept, the
@@ -227,14 +227,14 @@ random intercept and the random slope.
 VarCorr(fm)
 #> id = pdLogChol(1 + time) 
 #>             Variance StdDev Corr  
-#> (Intercept) 1.3679   1.170  (Intr)
-#> time        0.0728   0.270  0.02  
-#> Residual    0.4649   0.682
+#> (Intercept) 1.0251   1.012  (Intr)
+#> time        0.0638   0.253  -0.042
+#> Residual    0.4585   0.677
 ```
 
 Model predictions clearly show how the mixed model estimated varying intercepts
-and slopes, that, on average, approximate the fixed effect regression formula 'Y
-\~ 5 + 0.5 \* time' that was used to generate the data.
+and slopes, that, on average, approximate the fixed effect regression formula `Y
+= 5 + 0.5 * time` that was used to generate the data.
 
 
 ```r
@@ -275,7 +275,7 @@ d3$group <- factor(c(rep(0, nrow(d1)), rep(1, nrow(d2))), labels = c("control", 
 d3$id[d3$group == "treatment"] <- d3$id[d3$group == "treatment"] + 100
 ```
 
-The effect of the intervention can be tested by adding a (fixed) 'time \* group'
+The effect of the intervention can be tested by adding a (fixed) 'time * group'
 interaction effect to the model. This effect, we know, is .5, and, as can be
 seen, this is what the model picks up:
 
@@ -287,10 +287,10 @@ fm <- lme(Y ~ 1 + time * group, random = ~ 1 + time | id,
           data = d3)
 round(summary(fm)$tTable, 2)
 #>                     Value Std.Error   DF t-value p-value
-#> (Intercept)          4.99      0.12 3998   42.53    0.00
-#> time                 0.00      0.02 3998    0.04    0.97
-#> grouptreatment       0.30      0.17  198    1.81    0.07
-#> time:grouptreatment  0.41      0.03 3998   14.14    0.00
+#> (Intercept)          5.05      0.10 3998   48.57    0.00
+#> time                 0.01      0.02 3998    0.31    0.76
+#> grouptreatment       0.02      0.15  198    0.15    0.88
+#> time:grouptreatment  0.51      0.03 3998   18.63    0.00
 ```
 
 In Figure \@ref(fig:fig9e) below, EMA mood ratings predicted by the fitted model

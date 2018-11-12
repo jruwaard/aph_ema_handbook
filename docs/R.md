@@ -87,7 +87,7 @@ which further contain several tabbed windows.
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
-("\>"). Next, type the statement below (note that '\#' denotes a comment line; R
+(`>`). Next, type the statement below (note that `#` denotes a comment line; R
 ignores it, so there is no immediate need to type that). To execute, press
 'Enter'.
 
@@ -100,7 +100,7 @@ R will execute the command and return the answer back to the console.
 ```
 
 Results of calculations can be saved into variables, by making use of the
-assignment operator ("\<-"). If you type the name of a variable, R returns its
+assignment operator (`<-`). If you type the name of a variable, R returns its
 value.
 
 
@@ -148,7 +148,7 @@ pane, and results are shown immediately, as was the case before, when you typed
 the commands in the console yourself.
 
 Scripts can also be run line by line. Move the cursor to the line you want to
-run, and press "Ctrl+Enter". The line is copied to the console and executed, and
+run, and press `Ctrl+Enter`. The line is copied to the console and executed, and
 the cursor in the script will move to the next line, allowing you to walk
 through the script, step by step.
 
@@ -167,7 +167,7 @@ steps below to see how this works with data stored in a comma-separated-values
 (csv) format, a common data format to which many programs, including SPSS and
 Excel, can export data to.
  
-- Download the example csv data file at https://tinyurl.com/ybfafxxk (or create
+- Download the example csv data file at <https://tinyurl.com/yczmjdat> (or create
 a csv-version of one of your own data files).
 
 - In RStudio's menu, choose `File > Import Dataset > From Text (base)`.
@@ -232,7 +232,7 @@ summary(ESMdata)
  NA's   :3      
 ```
 
-To inspect the first 6 lines of data, type,
+To inspect the first 6 lines of data, type:
 
 
 ```r
@@ -256,7 +256,7 @@ type:
 View(ESMdata)
 ```
 
-To work with a specific variable in the dataset, use '$', For instance, to print
+To work with a specific variable in the dataset, use `$`, For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 
@@ -299,7 +299,7 @@ choosing `Tools > packages`. But you can also use the console, via the
 `install.package` function.
 
 A popular package, `tidyverse`, is used extensively in the examples of this
-manual. Package tidyverse comprises a set of popular packages from the creators
+manual. This package  comprises a set of popular packages from the creators
 of RStudio, that greatly simplify working with R. So, while you are at it,
 install this package now.
 
@@ -309,23 +309,23 @@ install this package now.
 install.package(tidyverse)
 ```
 
-The tidyverse contains a package called 'haven', which allows you to read and
+The `tidyverse` contains a package called `haven`, which allows you to read and
 write SPSS datafiles (.sav files). This is very convenient. You don't have to
 convert all your SPSS data to csv files. See `?read_spss` to learn how to import
-an SPSS-file (or use the data import wizard, by choosing \`File \> Import
-Dataset \> From SPSS', in RStudio's top-right pane).
+an SPSS-file (or use the data import wizard, by choosing `File > Import
+Dataset > From SPSS`, in RStudio's top-right pane).
 
 
 ### Installing R-packages from GitHub
 \index{GitHub}
 
 Not all packages are at CRAN. Many 'unofficial' packages are shared at a site
-called 'GitHub'. This book's companion R package 'emaph', for example, which
+called 'GitHub'. This book's companion R package `emaph`, for example, which
 contains specialized EMA functions datasets, is on GitHub. You need package
 emaph to run many examples in the book, so let's install this package now.
 
 GitHub packages can be installed via the `install_github` function, which is
-defined in a package called 'devtools'. So, to install 'emaph', enter the
+defined in a package called 'devtools'. So, to install `emaph`, enter the
 following in the console:
 
 
@@ -340,7 +340,7 @@ devtools::install_github("jruwaard/emaph")
 \index{R and RStudio!Packages} 
 
 To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library`
-function. For example, to use package 'tidyverse' and 'emaph', type:
+function. For example, to use package `tidyverse` and `emaph`, type:
 
 
 ```r
@@ -350,12 +350,12 @@ library(emaph)
 ```
 
 Once loaded, you can use the functions and datasets of the packages. Packge
-'emaph' provides dataset 'csd', which contains the data from the 'critical
+'emaph' provides dataset `csd`, which contains the data from the 'critical
 slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient
 recorded his mood, for 239 days (see also Chapter \@ref(csd)).
 
 To plot the irritation levels of this patient in the first six days, using the
-`ggplot` function from package 'ggplot2' (which is in 'tidyverse'), type:
+`ggplot` function from package `ggplot2` (which is in `tidyverse`), type:
 
 
 ```r
@@ -388,7 +388,7 @@ standard deviation of 4? How to tell this to R?
 ### Using '?' to consult the documentation
 
 The good thing is that you already known the name of the function to use, since
-we used it in the previous section: it is 'rnorm'. To check the documentation of
+we used it in the previous section: it is `rnorm`. To check the documentation of
 this function, type `?rnorm` in the console.
 
 
@@ -419,7 +419,7 @@ Help pane when you prepend ? to the name of the function in the console.
 What if you do not know the name of a function? Suppose you want to run a t-test
 for independent groups. Does R have a function for that?
 
-At the top-right of the 'Help' pane, RStudio has a search input field, which
+At the top-right of the `Help` pane, RStudio has a search input field, which
 allows you to search through all documentation that is installed on your
 computer. The search field auto-completes your input. If you type a 't' in this
 field, you will be presented with a list of functions starting with a 't'. In
@@ -440,13 +440,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.10966, df = 197.97, p-value = 0.9128
+#> t = 1.0849, df = 195.01, p-value = 0.2793
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2618375  0.2342500
+#>  -0.1149820  0.3961749
 #> sample estimates:
 #>   mean of x   mean of y 
-#> -0.07927981 -0.06548607
+#> -0.04079411 -0.18139054
 ```
 
 
@@ -508,7 +508,7 @@ since excellent resources are readily available. A selection is presented below.
 
 ### Learn R, in R
 
-Package 'swirl' contains a set of interactive courses that teach many aspects
+Package `swirl` contains a set of interactive courses that teach many aspects
 of the R language. See <http://swirlstats.com>
 
 

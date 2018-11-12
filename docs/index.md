@@ -3,7 +3,7 @@
 title: "Ecological Momentary Assessment in Mental Health Research"
 subtitle: "A Practical Introduction, With Examples in R (1st edition)"
 author: ["Jeroen Ruwaard", "Lisa Kooistra", "Melissa Thong"]
-date: "2018-11-11"
+date: "2018-11-12"
 cover-image: "images/cover.png"
 site: bookdown::bookdown_site
 documentclass: book
@@ -45,7 +45,7 @@ guidelines for EMA-studies, and a catalogue of EMA research in the APH
 consortium.
 
 This manual was written in Bookdown [@R-bookdown\_book; @R-bookdown]. Sources
-are freely available at 'github', via
+are freely available at 'GitHub', via
 <https://github.com/jruwaard/aph_ema_handbook>. Please post your comments and
 suggestions there, or via e-mail, through <aph.ema@ggzingeest.nl>.
 
@@ -53,5 +53,5 @@ This manual will be continously updated. In citations, please include explicit
 build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). *Ecological Momentary Assessment
-in Mental Health Research: A Practical Introduction, With Examples in R (1st
-edition - build 2018-11-11)*. Amsterdam: APH Mental Health. 
+in Mental Health Research: A Practical Introduction, with Examples in R (1st
+edition - build 2018-11-12)*. Amsterdam: APH Mental Health. 

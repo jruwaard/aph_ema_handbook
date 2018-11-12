@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-11">
+<meta name="date" content="2018-11-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -321,7 +321,7 @@ Figure 8.1: A simulated three-week time-series of EMA mood ratings.
 <div id="central-tendency-and-variability" class="section level2">
 <h2><span class="header-section-number">8.2</span> Central Tendency and Variability</h2>
 <p>Features do not necessarily have to be complex. Familiar measures of central tendency of EMA time-series, such as the mode or the mean, can be useful predictors of traditional clinical assessments. Standard measures of the variability of EMA scores, such as the standard deviation (SD), have been shown to have diagnostic value (see, e.g., <span class="citation">R. Bowen, Baetz, Hawkes, &amp; Bowen (<a href="#ref-bowen2006">2006</a>)</span>). You should not hesitate to consider these statistics when they help you to answer your research question.</p>
-<p> You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time (in technical terms: that this process is <em>stationary</em>, <span class="citation">(<span class="citeproc-not-found" data-reference-id="wiki"><strong>???</strong></span>)</span>_Stationary_process). If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and SD are biased statistics.</p>
+<p> You should check, though, whether the implicit assumptions behind the statistics are correct. When you use the mean and the standard deviation to summarize a time-series, you assume that the data-generating process behind the series is stable over time - in technical terms: that this process is <em>stationary</em> <span class="citation">(Wikipedia, <a href="#ref-wikiStationary">2018</a>)</span>. If this assumption is incorrect (i.e., if the process is unstable or non-stationary), the mean and SD are biased statistics.</p>
 <p>Our simulated EMA time-series is non-stationary, as can be seen in Figure <a href="features.html#fig:fig8b">8.2</a>. We observe a trend: the mood of the person increases over time. EMA scores tend to be below the mean in the beginning, and above the mean at the end. The overall mean (<em>M</em> = 4.4) overestimates the EMA scores of the first week (<em>M</em> = 3.3), and underestimates the scores of the last week (<em>M</em> = 5.5). If you use the overall mean as a feature of the time-series in your analyses, you ignore the mood improvements over the three-week period. In clinical research, your would probably not want to miss this other important feature.</p>
 <p>When a trend exists in a series, the overall standard deviation is overestimated, because of the extra variability that is introduced by the changes of the mean. This can be checked by comparing the SD of the full series to the SD of smaller parts. In our example, the overall SD is 2.4. If we calculate the average of the SD of scores of each day, however, the estimated SD is 1.8. If the additional variability introduced by the trend is cancelled out, our estimate of variability decreases considerably.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8b"></span>
@@ -357,7 +357,7 @@ Figure 8.4: Plot of absolute regression residuals over time, revealing heterosce
 Figure 8.5: Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data.
 </p>
 </div>
-<p>Now that we now about these missing values, the question arises how to deal with them? You can choose to ignore the missing values (assuming that the occurrence of missing values was driven by a completely random process). Alternatively, you could try to replace the missing values with plausible values (in which case it becomes important to think about the process that drives the missingness). If you decide to impute, there are several options. For example, you can replace missing values with the mean, the last-known value, an interpolated value or with a smoothing technique such as the Kalman-filter <span class="citation">(see <span class="citeproc-not-found" data-reference-id="hoogendoorn2017"><strong>???</strong></span>_book, for a discussion)</span>. Figure <a href="features.html#fig:fig8f">8.6</a> illustrates the linear interpolation approach: missing values (marked by red dots) are replaced by values that lie between the non-missings. Imagine that we would have used the mean to impute. Can you see why that would have disrupted local patterns in the series?</p>
+<p>Now that we now about these missing values, the question arises how to deal with them? You can choose to ignore the missing values (assuming that the occurrence of missing values was driven by a completely random process). Alternatively, you could try to replace the missing values with plausible values (in which case it becomes important to think about the process that drives the missingness). If you decide to impute, there are several options. For example, you can replace missing values with the mean, the last-known value, an interpolated value or with a smoothing technique such as the Kalman-filter <span class="citation">(see Hoogendoorn &amp; Funk, <a href="#ref-hoogendoorn2017">2017</a>, for a discussion)</span>. Figure <a href="features.html#fig:fig8f">8.6</a> illustrates the linear interpolation approach: missing values (marked by red dots) are replaced by values that lie between the non-missings. Imagine that we would have used the mean to impute. Can you see why that would have disrupted local patterns in the series?</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8f"></span>
 <img src="features_files/figure-html/fig8f-1.png" alt="EMA time series, with missing values (red) imputed through interpolation." width="100%" />
 <p class="caption">
@@ -387,14 +387,14 @@ Figure 8.8: EMA mood series, with a rolling mean superposed.
 </div>
 <div id="periodicity" class="section level2">
 <h2><span class="header-section-number">8.6</span> Periodicity</h2>
-<p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the the strength (‘power’) of various frequencies can be quantified. Figure <a href="features.html#fig:fig8i">8.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function ‘spec.pgram’).</p>
+<p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the the strength (‘power’) of various frequencies can be quantified. Figure <a href="features.html#fig:fig8i">8.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8i"></span>
 <img src="features_files/figure-html/fig8i-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
 <p class="caption">
 Figure 8.9: periodogram of the EMA time series, revealing a one-day and a one-week period.
 </p>
 </div>
-<p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is “circadian”: mood ratings seem to follow a daily and a weekly pattern. This is a common characteristic of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; “Interpersonal and social rhythm therapy: Managing the chaos of bipolar disorder,” <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; E. J. W. Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
+<p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; “Interpersonal and social rhythm therapy: Managing the chaos of bipolar disorder,” <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; E. J. W. Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
 </div>
 <div id="discussion" class="section level2">
 <h2><span class="header-section-number">8.7</span> Discussion</h2>
@@ -619,6 +619,12 @@ fa &lt;-
 <div id="refs" class="references">
 <div id="ref-bowen2006">
 <p>Bowen, R., Baetz, M., Hawkes, J., &amp; Bowen, A. (2006). Mood variability in anxiety disorders. <em>Journal of Affective Disorders</em>, <em>91</em>(2-3), 165–170.</p>
+</div>
+<div id="ref-wikiStationary">
+<p>Wikipedia. (2018). Stationary process — Wikipedia, the free encyclopedia. <a href="http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327">http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327</a>.</p>
+</div>
+<div id="ref-hoogendoorn2017">
+<p>Hoogendoorn, M., &amp; Funk, B. (2017). Machine learning for the quantified self.</p>
 </div>
 <div id="ref-Doherty2018">
 <p>Doherty, A. (2018). Circadian rhythms and mental health: wearable sensing at scale. <a href="https://doi.org/10.1016/S2215-0366(18)30172-X" class="uri">https://doi.org/10.1016/S2215-0366(18)30172-X</a></p>

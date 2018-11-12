@@ -11,7 +11,7 @@ burden.
 While questions remain with regard to the validity, reliability and clinical
 utility of passive EMA with regard to various aspects of activity, such as
 (disturbed) sleep, sedentary behavior, and energy expenditure [see, e.g.,
-@Feehan2018, @Gomersall2016], an increasing number of mental health studies are
+@Feehan2018; @Gomersall2016], an increasing number of mental health studies are
 including activity tracking devices to better understand sleep habits, circadian
 rhythm disorders and depression [see, e.g., @Saeb2015, @Saunders2016,
 @Tahmasian2013].
@@ -59,12 +59,12 @@ have included 108.000 data points. At 0.1Hz, this reduces to 3600 points.
 \caption{One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)}(\#fig:genea-one-hour)
 \end{figure}
 
-Data shown are included in package 'emaph', and the R-code to reproduce the plot
+Data shown are included in package `emaph`, and the R-code to reproduce the plot
 is listed below. Use this to familiarize yourself with actigraphy data. If you
 want to see how subsampling affects the number of points to plot, for example,
-you can set different values in the 'round\_date' function. For example, to get
+you can set different values in the `round_date` function. For example, to get
 a point for each five seconds (0.2Hz), you would set the argument of this
-function to "5 seconds".
+function to `5 seconds`.
 
 
 ```r
@@ -93,7 +93,7 @@ filtering/aggregation (to smoothen the signal and reduce the impact of outliers,
 measurement error and occasional missing values). Study results can be highly
 dependent on these initial steps, which, unfortunately, are also complex and
 time-consuming. Specialized R-packages exist to help you with this (see, for
-example, package 'GGIR' and 'GENEARead', which are described in more detail in
+example, package `GGIR` and `GENEARead`, which are described in more detail in
 Chapter \@ref(rcat)).
 
 
@@ -104,20 +104,20 @@ of the study. Highly detailed analysis of local peaks in the signal might be
 needed, for instance to reveal an association between activity and reported
 events. But analyses can also be more global, for instance when accelerometer
 data are used to study circadian rhythms in activity. Several approaches exist
-to combine the x, y, z measurements are combined into a single meaningful
-metric. Two popular metrics are the Signal Vector Magnitude (SVM) and the
-Euclidian Norm Minus One (ENMO). Validation studies suggest that ENMO should be
+to combine the X, Y, Z measurements into a single meaningful
+metric. Two popular metrics are the 'Signal Vector Magnitude' (SVM) and the
+'Euclidian Norm Minus One' (ENMO). Validation studies suggest that ENMO should be
 the preferred metric [@VanHeest2014; @VanHeest2015], although recent findings
 also suggest that alternative metrics should perhaps be considered when
 sedentary and light activities are of interest [@Bai2016].
 
 SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axials
-signals (the Euclidian distance in the three-dimensional space), i.e. 
-$SVM = sqrt{x^2 + y^2 + z^2}$. ENMO is the corrected SVM: the vector magnitude
+signals (the Euclidian distance in the three-dimensional space), i.e. *SVM =
+sqrt(x^2 + y^2 + z^2)*. ENMO is the corrected SVM: the vector magnitude
 remaining after removing one Earth Standard Gravitational unit (1g = 9.81
-m/s^2), i.e. SVM - 1. The metrics can, in principle, be calculated for each {x,
-y, z}-data point in the raw series. Typically, however, the metrics are
-calculated for time-windows (called 'epochs'), in which case the mean can be
+m/s^2), i.e. *ENMO = SVM - 1*. The metrics can, in principle, be calculated for
+each {x, y, z}-data point in the raw series. Typically, however, the metrics are
+calculated for time-windows (called *epochs*), in which case the mean can be
 used to characterize the overall activity in each epoch.
 
 Figure \@ref(fig:genea-one-day) shows the development of ENMO over one day, as sampled
@@ -192,7 +192,7 @@ GPS-based activity measures in the study of mental health.
 
 Figure \@ref(fig:fourweekgps) shows GPS-data of two people, collected over a
 period of four weeks, via the Google timeline smartphone app. Data can be found
-in the 'emaph' package (see '?locations'). 
+in the `emaph` package (see `?locations`). 
 
 
 ```r

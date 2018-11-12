@@ -159,9 +159,10 @@ The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues
 that all mood states are a linear combination of two independent, bipolar
 scales: valence (ranging from unpleasant to pleasant) and arousal/activation
 (ranging from low to high arousal). Combining scores on these scales places the
-affective states in a circle on one of four quadrants (\@ref(fig:fig06c)). States
-within one quadrant are believed to be positively correlated, while states in
-the opposing quadrant are thought to be negatively correlated.
+affective states in a circle on one of four quadrants (see Figure
+\@ref(fig:fig06c)). States within one quadrant are believed to be positively
+correlated, while states in the opposing quadrant are thought to be negatively
+correlated.
 
 \begin{figure}
 
@@ -192,7 +193,7 @@ purpose, DeSmet and colleagues developed the pick-a-mood scale, which is a
 pictorial self-report scale [@Desmet2016]. The scale builds on the circumplex
 model and adds the third dimension "dominance" (level of experienced control
 over the mood state), rendering eight (instead of four) different mood states
-and one neutral state (\@ref(fig:fig09d)).
+and one neutral state (see Figure \@ref(fig:fig09d)).
 
 \begin{figure}
 

@@ -81,7 +81,7 @@ disadvantages. Smartphone-based accelerometer data, for example, can be
 collected with relative ease, but these data can also be noisy and incomplete,
 since samples rates can often not be set and the precision of the built-in
 sensors varies considerably from device to device. Commercial accelerometers may
-have better precision and reliability (see, e.g., @Evenson2015), but
+have better precision and reliability [see, e.g., @Evenson2015], but
 manufacturers often limit access to raw data and data pre-processing algorithms,
 making it difficult (or even impossible) to fully analyze outcomes. Being aware
 of these issues when you plan the study, will help considerably in the analysis
@@ -125,8 +125,8 @@ loss and study drop-out.
 
 Once all decisions related to the sampling plan are made, the procedure should
 be thoroughly tested. As a first step, it can be insightful to simulate the
-sample plan, as is done below, using the 'sample\_plan' function, which is part
-of package 'emaph':
+sample plan, as is done below, using the `sample_plan` function, which is part
+of package `emaph`:
 
 
 ```r
@@ -164,7 +164,7 @@ simple tests, such as the t-test and ANOVA, straightforward analytical solutions
 exist, which are implemented in readily available tools. In R, one of those
 tools is package 'pwr'.
 
-For example, to use 'pwr' to calculate the power of a t.test to detect a
+For example, to use `pwr` to calculate the power of a t.test to detect a
 moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided)
 significance level alpha of .05, type:
 
@@ -235,17 +235,17 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4881
+#> [1] 0.482
 ```
 
 As can be seen, the simulation results are very close to the output of
-'pwr.t.test'. There was no immediate need to run this simulation. We already
+`pwr.t.test`. There was no immediate need to run this simulation. We already
 knew that the power was 48%. The example illustrates, however, that simulation
 is a valid option when power calculators are too limited. Simulating the right
 data, of course, can be challenging as well, but you will find that R has
-packages that simplify data simulation. For example, 'mvrnorm' in package MASS
+packages that simplify data simulation. For example, `mvrnorm` in package `MASS`
 [@Venables2002] can be used to generate correlated data, and package
-'simstudy' [@R-simstudy] can be used to generate complex longitudinal and
+`simstudy` [@R-simstudy] can be used to generate complex longitudinal and
 hierarchical data.
 
 
@@ -253,7 +253,7 @@ hierarchical data.
 \index{Methods!Ethical considerations}
 
 All clinical studies that involve human participants need to be evaluated by a
-Medical Research and Ethics Committee (MERC; Dutch: 'METC'). Recently, the
+Medical Research and Ethics Committee (MREC; Dutch: 'METC'). Recently, the
 committees have also been tasked to determine whether a medical device is used
 and to evaluate the safety and quality of the device. Researchers are therefore
 required to add a section in the research protocol, explaining why the
@@ -286,8 +286,8 @@ flow-chart.
 While planning your EMA study, you should also be mindful of the rules and
 regulations that apply to data collection, storage and sharing. From May 2018
 onward, the European Committee has enforced the General Data Protection
-Regulation (GDPR, see <https://gdpr-info.eu/>; in Dutch, Algemene Verordening
-Gegevensbescherming - AVG), which protects the data and privacy of EU citizens.
+Regulation (GDPR; in Dutch: Algemene Verordening Gegevensbescherming - AVG; see
+<https://gdpr-info.eu/>), which protects the data and privacy of EU citizens.
 Complying to the GDPR can be a complex and time-consuming process, depending on
 nature of your study. Do not hesitate to consult local experts or standard
 guidelines provided by your organization (see, e.g.,

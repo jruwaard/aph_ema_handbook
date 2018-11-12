@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-11">
+<meta name="date" content="2018-11-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -347,11 +347,11 @@ code > span.in { font-style: italic; } /* Information */
 Figure 2.1: The RStudio Interface
 </p>
 </div>
-<p>Commands are sent to R in the bottom-left pane, named “Console”. To test this, move your cursor to the bottom line, immediately after the prompt sign (“&gt;”). Next, type the statement below (note that ‘#’ denotes a comment line; R ignores it, so there is no immediate need to type that). To execute, press ‘Enter’.</p>
+<p>Commands are sent to R in the bottom-left pane, named “Console”. To test this, move your cursor to the bottom line, immediately after the prompt sign (<code>&gt;</code>). Next, type the statement below (note that <code>#</code> denotes a comment line; R ignores it, so there is no immediate need to type that). To execute, press ‘Enter’.</p>
 <p>R will execute the command and return the answer back to the console.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># R is a calculator.</span>
 <span class="dv">1</span> <span class="op">+</span><span class="st"> </span><span class="dv">1</span></code></pre></div>
-<p>Results of calculations can be saved into variables, by making use of the assignment operator (“&lt;-”). If you type the name of a variable, R returns its value.</p>
+<p>Results of calculations can be saved into variables, by making use of the assignment operator (<code>&lt;-</code>). If you type the name of a variable, R returns its value.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Use &lt;- to declare and set a variable.</span>
 N &lt;-<span class="st"> </span><span class="dv">50</span> <span class="op">+</span><span class="st"> </span><span class="dv">50</span>
 N
@@ -372,7 +372,7 @@ N
 <li><p>Press <code>Ctrl+Enter</code> to run the script.</p></li>
 </ul>
 <p>All commands in the script are executed. The commands are echoed in the console pane, and results are shown immediately, as was the case before, when you typed the commands in the console yourself.</p>
-<p>Scripts can also be run line by line. Move the cursor to the line you want to run, and press “Ctrl+Enter”. The line is copied to the console and executed, and the cursor in the script will move to the next line, allowing you to walk through the script, step by step.</p>
+<p>Scripts can also be run line by line. Move the cursor to the line you want to run, and press <code>Ctrl+Enter</code>. The line is copied to the console and executed, and the cursor in the script will move to the next line, allowing you to walk through the script, step by step.</p>
 </div>
 <div id="importing-your-data" class="section level2">
 <h2><span class="header-section-number">2.6</span> Importing your data</h2>
@@ -382,7 +382,7 @@ N
 <h3><span class="header-section-number">2.6.1</span> Using RStudio menus to import data</h3>
 <p>One way to load data into R is to use RStudio’s data import wizard. Follow the steps below to see how this works with data stored in a comma-separated-values (csv) format, a common data format to which many programs, including SPSS and Excel, can export data to.</p>
 <ul>
-<li><p>Download the example csv data file at <a href="https://tinyurl.com/ybfafxxk" class="uri">https://tinyurl.com/ybfafxxk</a> (or create a csv-version of one of your own data files).</p></li>
+<li><p>Download the example csv data file at <a href="https://tinyurl.com/yczmjdat" class="uri">https://tinyurl.com/yczmjdat</a> (or create a csv-version of one of your own data files).</p></li>
 <li><p>In RStudio’s menu, choose <code>File &gt; Import Dataset &gt; From Text (base)</code>.</p></li>
 <li><p>In the window that appears, click on <code>Browse</code> to locate the csv- file on your computer, and click <code>Import</code> in the next window (see Figure <a href="rstudio.html#fig:fig2b">2.2</a>).</p></li>
 </ul>
@@ -422,7 +422,7 @@ ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <span class="st"> 3rd Qu.:3.000  </span>
 <span class="st"> Max.   :7.000  </span>
 <span class="st"> NA&#39;</span>s   <span class="op">:</span><span class="dv">3</span>      </code></pre></div>
-<p>To inspect the first 6 lines of data, type,</p>
+<p>To inspect the first 6 lines of data, type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show first 6 lines of a data frame.</span>
 <span class="kw">head</span>(ESMdata)
 <span class="co">#&gt;   dayno beepno mood_relaxed mood_down mood_irritat</span>
@@ -435,7 +435,7 @@ ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p>To view all rows of data in a spreadsheet (as in Figure <a href="rstudio.html#fig:fig2b">2.2</a>, type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show data as spreadsheet.</span>
 <span class="kw">View</span>(ESMdata)</code></pre></div>
-<p>To work with a specific variable in the dataset, use ‘$’, For instance, to print the first 20 numbers in the <code>mood_relaxed</code> variable, type:</p>
+<p>To work with a specific variable in the dataset, use <code>$</code>, For instance, to print the first 20 numbers in the <code>mood_relaxed</code> variable, type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Access a single variable in a data frame.</span>
 <span class="kw">head</span>(ESMdata<span class="op">$</span>mood_relaxed, <span class="dt">n =</span> <span class="dv">20</span>)</code></pre></div>
 <p>This allows you to apply functions to specific variables. For example, to calculate the mean of scores in <code>mood_relaxed</code>, type:</p>
@@ -454,16 +454,16 @@ ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <p> </p>
 <p>Packages can be found at the CRAN website. To browse through the impressive list of available packages, see <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" class="uri">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
 <p>If you find a package you like, you can install it via the RStudio menu system, choosing <code>Tools &gt; packages</code>. But you can also use the console, via the <code>install.package</code> function.</p>
-<p>A popular package, <code>tidyverse</code>, is used extensively in the examples of this manual. Package tidyverse comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.</p>
+<p>A popular package, <code>tidyverse</code>, is used extensively in the examples of this manual. This package comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install a package from CRAN.</span>
 <span class="kw">install.package</span>(tidyverse)</code></pre></div>
-<p>The tidyverse contains a package called ‘haven’, which allows you to read and write SPSS datafiles (.sav files). This is very convenient. You don’t have to convert all your SPSS data to csv files. See <code>?read_spss</code> to learn how to import an SPSS-file (or use the data import wizard, by choosing `File &gt; Import Dataset &gt; From SPSS’, in RStudio’s top-right pane).</p>
+<p>The <code>tidyverse</code> contains a package called <code>haven</code>, which allows you to read and write SPSS datafiles (.sav files). This is very convenient. You don’t have to convert all your SPSS data to csv files. See <code>?read_spss</code> to learn how to import an SPSS-file (or use the data import wizard, by choosing <code>File &gt; Import Dataset &gt; From SPSS</code>, in RStudio’s top-right pane).</p>
 </div>
 <div id="installing-r-packages-from-github" class="section level3">
 <h3><span class="header-section-number">2.7.2</span> Installing R-packages from GitHub</h3>
 
-<p>Not all packages are at CRAN. Many ‘unofficial’ packages are shared at a site called ‘GitHub’. This book’s companion R package ‘emaph’, for example, which contains specialized EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let’s install this package now.</p>
-<p>GitHub packages can be installed via the <code>install_github</code> function, which is defined in a package called ‘devtools’. So, to install ‘emaph’, enter the following in the console:</p>
+<p>Not all packages are at CRAN. Many ‘unofficial’ packages are shared at a site called ‘GitHub’. This book’s companion R package <code>emaph</code>, for example, which contains specialized EMA functions datasets, is on GitHub. You need package emaph to run many examples in the book, so let’s install this package now.</p>
+<p>GitHub packages can be installed via the <code>install_github</code> function, which is defined in a package called ‘devtools’. So, to install <code>emaph</code>, enter the following in the console:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install the GitHub &#39;emaph&#39; package.</span>
 <span class="kw">install.packages</span>(<span class="st">&quot;devtools&quot;</span>)
 devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;jruwaard/emaph&quot;</span>)</code></pre></div>
@@ -471,12 +471,12 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <div id="using-packages" class="section level3">
 <h3><span class="header-section-number">2.7.3</span> Using packages</h3>
 
-<p>To use packages, you have to tell R to load them, each session you want to work with them. You do this with the <code>library</code> function. For example, to use package ‘tidyverse’ and ‘emaph’, type:</p>
+<p>To use packages, you have to tell R to load them, each session you want to work with them. You do this with the <code>library</code> function. For example, to use package <code>tidyverse</code> and <code>emaph</code>, type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load packages.</span>
 <span class="kw">library</span>(tidyverse)
 <span class="kw">library</span>(emaph)</code></pre></div>
-<p>Once loaded, you can use the functions and datasets of the packages. Packge ‘emaph’ provides dataset ‘csd’, which contains the data from the ‘critical slowing down’-study <span class="citation">(Kossakowski, Groot, Haslbeck, Borsboom, &amp; Wichers, <a href="#ref-Kossakowski2017">2017</a>; Wichers, Groot, Psychosystems, ESM, &amp; EWS, <a href="#ref-Wichers2016">2016</a>)</span>, in which a patient recorded his mood, for 239 days (see also Chapter <a href="csd.html#csd">10</a>).</p>
-<p>To plot the irritation levels of this patient in the first six days, using the <code>ggplot</code> function from package ‘ggplot2’ (which is in ‘tidyverse’), type:</p>
+<p>Once loaded, you can use the functions and datasets of the packages. Packge ‘emaph’ provides dataset <code>csd</code>, which contains the data from the ‘critical slowing down’-study <span class="citation">(Kossakowski, Groot, Haslbeck, Borsboom, &amp; Wichers, <a href="#ref-Kossakowski2017">2017</a>; Wichers, Groot, Psychosystems, ESM, &amp; EWS, <a href="#ref-Wichers2016">2016</a>)</span>, in which a patient recorded his mood, for 239 days (see also Chapter <a href="csd.html#csd">10</a>).</p>
+<p>To plot the irritation levels of this patient in the first six days, using the <code>ggplot</code> function from package <code>ggplot2</code> (which is in <code>tidyverse</code>), type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Using ggplot to plot EMA time series.</span>
 <span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="kw">subset</span>(csd, dayno <span class="op">&lt;=</span><span class="st"> </span><span class="dv">6</span>),
        <span class="dt">mapping =</span>  <span class="kw">aes</span>(<span class="dt">x =</span> beepno, <span class="dt">y =</span> mood_irritat)) <span class="op">+</span><span class="st"> </span>
@@ -497,7 +497,7 @@ Figure 2.3: Irritation levels of a single patient, in the first six days of an E
 <p>R has no point-and-click menu’s that you can browse through to select a statistical procedure. This is a problem for many new users. What if you want, for example, to generate random numbers from a distribution with a mean of 2 and standard deviation of 4? How to tell this to R?</p>
 <div id="using-to-consult-the-documentation" class="section level3">
 <h3><span class="header-section-number">2.8.1</span> Using ‘?’ to consult the documentation</h3>
-<p>The good thing is that you already known the name of the function to use, since we used it in the previous section: it is ‘rnorm’. To check the documentation of this function, type <code>?rnorm</code> in the console.</p>
+<p>The good thing is that you already known the name of the function to use, since we used it in the previous section: it is <code>rnorm</code>. To check the documentation of this function, type <code>?rnorm</code> in the console.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Use &#39;?&#39; to find the documentation of a function.</span>
 ?rnorm</code></pre></div>
 <p>This opens the documentation of the rnorm function in the ‘Help’-tab, in the bottom right pane, from which you learn that that the <code>rnorm</code> function accepts <code>mean</code> and <code>sd</code> (standard deviation) as additional parameters, which are 0 and 1 default, respectively (which explains why <code>norm(100)</code> worked in the previous examples). So, to generate the required numbers, you type:</p>
@@ -508,7 +508,7 @@ Figure 2.3: Irritation levels of a single patient, in the first six days of an E
 <div id="using-rstudios-global-documentation-index-search" class="section level3">
 <h3><span class="header-section-number">2.8.2</span> Using RStudio’s global documentation index search</h3>
 <p>What if you do not know the name of a function? Suppose you want to run a t-test for independent groups. Does R have a function for that?</p>
-<p>At the top-right of the ‘Help’ pane, RStudio has a search input field, which allows you to search through all documentation that is installed on your computer. The search field auto-completes your input. If you type a ‘t’ in this field, you will be presented with a list of functions starting with a ‘t’. In this list, you find a likely candidate: a function called <code>t.test</code>. From the documentation of this function (<code>?t.test</code>), you learn that, indeed, this is the function you were looking for.</p>
+<p>At the top-right of the <code>Help</code> pane, RStudio has a search input field, which allows you to search through all documentation that is installed on your computer. The search field auto-completes your input. If you type a ‘t’ in this field, you will be presented with a list of functions starting with a ‘t’. In this list, you find a likely candidate: a function called <code>t.test</code>. From the documentation of this function (<code>?t.test</code>), you learn that, indeed, this is the function you were looking for.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Run a t-test, on two simulated samples.</span>
 
 <span class="co"># generate two samples (N = 100 per group) from the normal distribution</span>
@@ -520,13 +520,13 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; data:  A and B</span>
-<span class="co">#&gt; t = -0.54294, df = 196.13, p-value = 0.5878</span>
+<span class="co">#&gt; t = -0.21095, df = 196.18, p-value = 0.8331</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.3509054  0.1994016</span>
+<span class="co">#&gt;  -0.2896034  0.2336349</span>
 <span class="co">#&gt; sample estimates:</span>
 <span class="co">#&gt;   mean of x   mean of y </span>
-<span class="co">#&gt; -0.14374774 -0.06799584</span></code></pre></div>
+<span class="co">#&gt; -0.01280389  0.01518036</span></code></pre></div>
 </div>
 <div id="learning-from-examples" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Learning from examples</h3>
@@ -561,7 +561,7 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 </div>
 <div id="learn-r-in-r" class="section level3">
 <h3><span class="header-section-number">2.8.7</span> Learn R, in R</h3>
-<p>Package ‘swirl’ contains a set of interactive courses that teach many aspects of the R language. See <a href="http://swirlstats.com" class="uri">http://swirlstats.com</a></p>
+<p>Package <code>swirl</code> contains a set of interactive courses that teach many aspects of the R language. See <a href="http://swirlstats.com" class="uri">http://swirlstats.com</a></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Start the interactive swirl-course.</span>
 <span class="kw">install.packages</span>(<span class="st">&quot;swirl&quot;</span>)
 <span class="kw">library</span>(<span class="st">&quot;swirl&quot;</span>)

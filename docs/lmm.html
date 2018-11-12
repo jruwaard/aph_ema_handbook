@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-11">
+<meta name="date" content="2018-11-12">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -315,7 +315,7 @@ code > span.in { font-style: italic; } /* Information */
 <span class="math display">\[\begin{equation} 
   Y_{ij} = intercept_{i} + \epsilon_{ij} 
 \end{equation}\]</span>
-<p>This models the expected value of the j-th measurement of participant i as the mean of all measurements of participant i, plus error. It defines a set of regression functions - one for each participant. The regression functions are, however, not independent. Mixed models divide the intercepts of the individual participant regression functions into two components: 1) the intercept of the group (<em>intercept<del>g</del></em>; the mean intercept of all regression functions), and 2) a participant-specific component <em>intercept<del>p</del></em> (i.e., the difference between the intercept of the participant and the mean intercept), i.e.:</p>
+<p>This models the expected value of the j-th measurement of participant i as the mean of all measurements of participant i, plus error. It defines a set of regression functions - one for each participant. The regression functions are, however, not independent. Mixed models divide the intercepts of the individual participant regression functions into two components: 1) the intercept of the group (<em>intercept<sub>g</sub></em>; the mean intercept of all regression functions), and 2) a participant-specific component <em>intercept<sub>p</sub></em> (i.e., the difference between the intercept of the participant and the mean intercept), i.e.:</p>
 <span class="math display">\[\begin{equation} 
   intercept_{i} = intercept_{g} + intercept_{p} 
 \end{equation}\]</span>
@@ -324,7 +324,7 @@ code > span.in { font-style: italic; } /* Information */
 <div id="simulating-example-data" class="section level2">
 <h2><span class="header-section-number">9.2</span> Simulating Example Data</h2>
 
-<p>To understand analysis techniques, it often helps to apply the technique to simulated data, in which parameters of interest are known. Here, we will use the ‘sim_ema’ function from package ‘emaph’, to simulate EMA mood assessments of 100 participants, who rate their mood, three times per day, for one week. As you can learn from the documentation of ‘sim_ema’ (see ‘?sim_ema’), the function expects at least two arguments: the definition of a sample plan (see ‘?sample_plan’), and a specification of the data-generating model, in the form of a list defining fixed effects, the random effects, and residual variance (i.e, the error).</p>
+<p>To understand analysis techniques, it often helps to apply the technique to simulated data, in which parameters of interest are known. Here, we will use the <code>sim_ema</code> function from package <code>emaph</code>, to simulate EMA mood assessments of 100 participants, who rate their mood, three times per day, for one week. As you can learn from the documentation of <code>sim_ema</code> (see <code>?sim\_ema</code>), the function expects at least two arguments: the definition of a sample plan (see <code>?sample\_plan</code>), and a specification of the data-generating model, in the form of a list defining fixed effects, the random effects, and residual variance (i.e, the error).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulating ema data.</span>
 <span class="kw">library</span>(emaph)
 plan &lt;-<span class="st"> </span><span class="kw">sample_plan</span>(<span class="dt">n_participants =</span> <span class="dv">100</span>, 
@@ -338,7 +338,7 @@ d1 &lt;-<span class="st"> </span><span class="kw">sim_ema</span>(plan,
                             <span class="dt">random =</span> <span class="kw">c</span>(<span class="dt">intercept =</span> <span class="dv">1</span>),
                             <span class="dt">error =</span> .<span class="dv">5</span>),
               <span class="dt">lim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</code></pre></div>
-<p>From the code, you learn that we set the mean mood (intercept<del>g</del>) to 5, the variance around this mean - var(intercept<del>i</del>) - to 1, and the variance around these means within participants - the error - to .5. Figure <a href="lmm.html#fig:fig9a">9.1</a> shows EMA mood ratings of the first 6 participants in the simulated data set, which we can use to check the simulation. As specified, mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line). So far, so good.</p>
+<p>From the code, you learn that we set the mean mood (intercept<sub>g</sub>) to 5, the variance around this mean - var(intercept<sub>i</sub>) - to 1, and the variance around these means within participants - the error - to .5. Figure <a href="lmm.html#fig:fig9a">9.1</a> shows EMA mood ratings of the first 6 participants in the simulated data set, which we can use to check the simulation. As specified, mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line). So far, so good.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9a"></span>
 <img src="lmm_files/figure-html/fig9a-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
 <p class="caption">
@@ -349,24 +349,24 @@ Figure 9.1: Simulated EMA data of Six Participants.
 <div id="fitting-a-mixed-model-in-r" class="section level2">
 <h2><span class="header-section-number">9.3</span> Fitting a Mixed Model in R</h2>
 
-<p>Now, let’s fit a mixed model to the data, to see whether the simulation parameters are detected. For this, we will use the ‘lme’ function, from package ‘nlme’ <span class="citation">(J. Pinheiro, Bates, DebRoy, Sarkar, &amp; R Core Team, <a href="#ref-R-nlme">2018</a>)</span>. The code snippet below shows how to do this.</p>
-<p>The first argument of the lme function, ‘Y ~ 1’, specifies the fixed ‘effect’ (in this case: the mean intercept). The second argument, ‘random = ~ 1 | id’ specifies the random effect. In this model, intercepts are allowed to vary between participants. The fitted model is assigned to a variable (‘fm’), which we will use later to study the fitted model.</p>
+<p>Now, let’s fit a mixed model to the data, to see whether the simulation parameters are detected. For this, we will use the <code>lme</code> function, from package <code>nlme</code> <span class="citation">(Pinheiro, Bates, DebRoy, Sarkar, &amp; R Core Team, <a href="#ref-R-nlme">2018</a>)</span>. The code snippet below shows how to do this.</p>
+<p>The first argument of the lme function, <code>Y ~ 1</code>, specifies the fixed ‘effect’ (in this case: the mean intercept). The second argument, <code>random =~ 1 | id</code> specifies the random effect. In this model, intercepts are allowed to vary between participants. The fitted model is assigned to a variable (‘fm’), which we will use later to study the fitted model.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fitting a mixed model with lme.</span>
 <span class="kw">library</span>(nlme)
 fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">random =</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>id, 
           <span class="dt">data =</span> d1)</code></pre></div>
-<p>We can now extract the fixed effects regression coefficients table, by calling the ‘summary’ function on the fitted model. The estimated intercept should be around 5 (as this is a finite sample, we expect some deviation):</p>
+<p>We can now extract the fixed effects regression coefficients table, by calling the <code>summary</code> function on the fitted model. The estimated intercept should be around 5 (as this is a finite sample, we expect some deviation):</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Print fixed effects.</span>
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
 <span class="co">#&gt;             Value Std.Error   DF t-value p-value</span>
-<span class="co">#&gt; (Intercept)   5.1     0.107 2000    47.8       0</span></code></pre></div>
-<p>Random effects and residual variance are shown by the ‘VarCorr’ function. Again, since we specified the data ourselves in this case, we know the ‘true’ value of these parameters: the random intercept variance should be around 1 and the residual error variance should be close to .5.</p>
+<span class="co">#&gt; (Intercept)  4.92    0.0928 2000      53       0</span></code></pre></div>
+<p>Random effects and residual variance are shown by the <code>VarCorr</code> function. Again, since we specified the data ourselves in this case, we know the ‘true’ value of these parameters: the random intercept variance should be around 1 and the residual error variance should be close to 0.5.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fitted random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1) </span>
 <span class="co">#&gt;             Variance StdDev</span>
-<span class="co">#&gt; (Intercept) 1.111    1.054 </span>
-<span class="co">#&gt; Residual    0.526    0.726</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 0.836    0.914 </span>
+<span class="co">#&gt; Residual    0.516    0.719</span></code></pre></div>
 <p>It can be instructive to plot the predicted values of the model, to make clear how the model ‘thinks’. As shown by Figure <a href="lmm.html#fig:fig9b">9.2</a>, the model predicts a series of straight lines, one for each participant, that vary around 5 (the red line).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Saving predicted values.</span>
 d1<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)</code></pre></div>
@@ -380,7 +380,7 @@ Figure 9.2: EMA ratings, of each participant in the simulated data set, as predi
 <div id="adding-time-as-a-predictor" class="section level2">
 <h2><span class="header-section-number">9.4</span> Adding Time as a Predictor</h2>
 <p>Now that we know how to fit a simple mixed model, we can consider a more complex scenario. In the first data set, participants’ mood ratings did not change over time. Scores varied around a stable mean during the full week. Hence, there was no need to model a time effect. But suppose we would expect a systematic improvement of mood ratings over time, for instance in response to a mental health intervention?</p>
-<p>Let’s first call ‘sim_ema’ again, with parameters that will result in data in which mood rating increase over the course of the week, 0.5 scale points per day. Let’s also assume that individual participants will vary in the degree of mood improvement: the mean time effect will be 0.5, but this parameter is allowed to vary between participants, with a variance of 0.1.</p>
+<p>Let’s first call <code>sim_ema</code> again, with parameters that will result in data in which mood rating increase over the course of the week, 0.5 scale points per day. Let’s also assume that individual participants will vary in the degree of mood improvement: the mean time effect will be 0.5, but this parameter is allowed to vary between participants, with a variance of 0.1.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulating ema data (time effect).</span>
 d2 &lt;-<span class="st"> </span><span class="kw">sim_ema</span>(plan, 
               <span class="dt">mm_par =</span> <span class="kw">list</span>(<span class="dt">fixed  =</span> <span class="kw">c</span>(<span class="dt">intercept =</span> <span class="dv">5</span>, <span class="dt">time =</span> <span class="fl">0.5</span>),
@@ -394,24 +394,24 @@ d2 &lt;-<span class="st"> </span><span class="kw">sim_ema</span>(plan,
 Figure 9.3: Simulated EMA data of Six Participants (Time-varying model).
 </p>
 </div>
-<p>To fit the extended mixed model, time can simply be added to both the fixed and random arguments of the ‘lme’ function. Fixed effects estimated of this model should be around 5 and .5, since that is how we specified the data. Calling ‘summary’ on this function, we see that the fixed time effect is significant.</p>
+<p>To fit the extended mixed model, time can simply be added to both the fixed and random arguments of the ‘lme’ function. Fixed effects estimated of this model should be around 5 and 0.5, since that is how we specified the data. Calling ‘summary’ on this function, we see that the fixed time effect is significant.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A mixed model, with a random slope.</span>
 <span class="kw">library</span>(nlme)
 fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>time, <span class="dt">random =</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>time <span class="op">|</span><span class="st"> </span>id, 
           <span class="dt">data =</span> d2)
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
 <span class="co">#&gt;             Value Std.Error   DF t-value   p-value</span>
-<span class="co">#&gt; (Intercept) 5.083    0.1149 1999    44.3 8.52e-299</span>
-<span class="co">#&gt; time        0.454    0.0252 1999    18.0  1.53e-67</span></code></pre></div>
+<span class="co">#&gt; (Intercept) 5.224    0.1126 1999    46.4 1.30e-319</span>
+<span class="co">#&gt; time        0.426    0.0289 1999    14.7  1.02e-46</span></code></pre></div>
 <p>The random effects now have four components: the variance of the intercept, the variance of the slope, the residual error <em>and</em> the correlation between the random intercept and the random slope.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Extracting random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1 + time) </span>
 <span class="co">#&gt;             Variance StdDev Corr  </span>
-<span class="co">#&gt; (Intercept) 1.2205   1.105  (Intr)</span>
-<span class="co">#&gt; time        0.0575   0.240  0.068 </span>
-<span class="co">#&gt; Residual    0.4965   0.705</span></code></pre></div>
-<p>Model predictions clearly show how the mixed model estimated varying intercepts and slopes, that, on average, approximate the fixed effect regression formula ‘Y ~ 5 + 0.5 * time’ that was used to generate the data.</p>
+<span class="co">#&gt; (Intercept) 1.1763   1.085  (Intr)</span>
+<span class="co">#&gt; time        0.0781   0.279  -0.025</span>
+<span class="co">#&gt; Residual    0.4606   0.679</span></code></pre></div>
+<p>Model predictions clearly show how the mixed model estimated varying intercepts and slopes, that, on average, approximate the fixed effect regression formula <code>Y = 5 + 0.5 * time</code> that was used to generate the data.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">d2<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)
 
 <span class="kw">ggplot</span>(d2, <span class="kw">aes</span>(<span class="dt">x =</span> time, <span class="dt">y =</span> predicted, <span class="dt">group =</span> id)) <span class="op">+</span><span class="st"> </span>
@@ -435,10 +435,10 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
           <span class="dt">data =</span> d3)
 <span class="kw">round</span>(<span class="kw">summary</span>(fm)<span class="op">$</span>tTable, <span class="dv">2</span>)
 <span class="co">#&gt;                     Value Std.Error   DF t-value p-value</span>
-<span class="co">#&gt; (Intercept)          5.14      0.11 3998   45.24    0.00</span>
-<span class="co">#&gt; time                -0.01      0.02 3998   -0.65    0.52</span>
-<span class="co">#&gt; grouptreatment      -0.05      0.16  198   -0.34    0.73</span>
-<span class="co">#&gt; time:grouptreatment  0.47      0.03 3998   17.79    0.00</span></code></pre></div>
+<span class="co">#&gt; (Intercept)          4.89      0.11 3998   46.20    0.00</span>
+<span class="co">#&gt; time                 0.01      0.02 3998    0.32    0.75</span>
+<span class="co">#&gt; grouptreatment       0.33      0.15  198    2.22    0.03</span>
+<span class="co">#&gt; time:grouptreatment  0.42      0.03 3998   13.88    0.00</span></code></pre></div>
 <p>In Figure <a href="lmm.html#fig:fig9e">9.4</a> below, EMA mood ratings predicted by the fitted model show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9e"></span>
 <img src="lmm_files/figure-html/fig9e-1.png" alt="Predicted mood ratings" width="100%" />
@@ -450,7 +450,7 @@ Figure 9.4: Predicted mood ratings
 <div id="next-steps" class="section level2">
 <h2><span class="header-section-number">9.6</span> Next Steps</h2>
 <p>In this chapter, we introduced mixed model analysis of EMA data in R. To do so, we could only touch upon the theoretical foundations of mixed models, and we deliberately used simple examples with clean simulated data. Readers, who consider the application of mixed models, are strongly advised to study additional resources.</p>
-<p>The authoritative reference for mixed effect modeling in R is a book by Pinheiro and Bates <span class="citation">(<a href="#ref-Pinheiro2000">2000</a>)</span>. To fully appreciate this book, however, a strong background in mathematical statistics is required. Thorough introductions in the topic are further found in the work of Prof. dr. Jos Twisk <span class="citation">(J. Twisk, <a href="#ref-twisk2006">2006</a>; J. W. Twisk, <a href="#ref-twisk2013">2013</a>)</span>, who also teaches an applied mixed models course at the Department of Epidemiology and Biostatistics at the Vrije Universiteit Medical Center (see: <a href="http://epidm.nl/en/courses/mixed-models/" class="uri">http://epidm.nl/en/courses/mixed-models/</a>).</p>
+<p>The authoritative reference for mixed effect modeling in R is a book by Pinheiro and Bates <span class="citation">(<a href="#ref-Pinheiro2000">2000</a>)</span>. To fully appreciate this book, however, a strong background in mathematical statistics is required. Thorough introductions in the topic are further found in the work of Prof. dr. Jos Twisk <span class="citation">(Twisk, <a href="#ref-twisk2006">2006</a>, <a href="#ref-twisk2013">2013</a>)</span>, who also teaches an applied mixed models course at the Department of Epidemiology and Biostatistics at the Vrije Universiteit Medical Center (see: <a href="http://epidm.nl/en/courses/mixed-models/" class="uri">http://epidm.nl/en/courses/mixed-models/</a>).</p>
 
 </div>
 </div>
@@ -463,13 +463,13 @@ Figure 9.4: Predicted mood ratings
 <p>Pinheiro, J., Bates, D., DebRoy, S., Sarkar, D., &amp; R Core Team. (2018). <em>nlme: Linear and nonlinear mixed effects models</em>. Retrieved from <a href="https://CRAN.R-project.org/package=nlme" class="uri">https://CRAN.R-project.org/package=nlme</a></p>
 </div>
 <div id="ref-Pinheiro2000">
-<p>Pinheiro, J. C., &amp; Bates, D. M. (2000). <em>Mixed effects models in S and S-Plus</em>. New York: Springer Verlag. <a href="https://doi.org/10.1198/tech.2001.s574" class="uri">https://doi.org/10.1198/tech.2001.s574</a></p>
+<p>Pinheiro, J., &amp; Bates, D. M. (2000). <em>Mixed effects models in S and S-Plus</em>. New York: Springer Verlag. <a href="https://doi.org/10.1198/tech.2001.s574" class="uri">https://doi.org/10.1198/tech.2001.s574</a></p>
 </div>
 <div id="ref-twisk2006">
 <p>Twisk, J. (2006). <em>Applied multilevel analysis: A practical guide</em>. Cambridge University Press.</p>
 </div>
 <div id="ref-twisk2013">
-<p>Twisk, J. W. (2013). <em>Applied longitudinal data analysis for epidemiology: A practical guide (2nd revised edition)</em>. Cambridge University Press.</p>
+<p>Twisk, J. (2013). <em>Applied longitudinal data analysis for epidemiology: A practical guide (2nd revised edition)</em>. Cambridge University Press.</p>
 </div>
 </div>
             </section>

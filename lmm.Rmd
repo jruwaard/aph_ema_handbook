@@ -1,8 +1,9 @@
 # Mixed Modeling {#lmm}
 \index{Mixed Modeling}
 
-```{r setdigits, include = FALSE}
+```{r setdigits_setseed, include = FALSE}
 options(digits = 3)
+set.seed(20181112)
 ```
 
 EMA data are time-series that are characterized by complex correlational

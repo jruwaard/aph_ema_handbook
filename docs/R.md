@@ -73,17 +73,13 @@ higher) of RStudio.
 \index{R and RStudio!Console} 
 
 If you open RStudio, you will be presented with the interface shown in Figure
-\@ref(fig:fig2a). Rstudio's main window is divided in four panes (subwindows),
+\@ref(fig:fig2a). RStudio's main window is divided in four panes (sub-windows),
 which further contain several tabbed windows.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
-
-}
-
-\caption{The RStudio Interface}(\#fig:fig2a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
+<p class="caption">(\#fig:fig2a)The RStudio Interface</p>
+</div>
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -156,7 +152,7 @@ through the script, step by step.
 ## Importing your data
 \index{R and RStudio!Data import} 
 
-Something that confuses new Rstudio users, who are more familiar with SPSS, is
+Something that confuses new RStudio users, who are more familiar with SPSS, is
 that it is not obvious how to import data into RStudio. In SPSS, the data
 are in plain sight. In R, you first have to import the data.
 
@@ -181,14 +177,10 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
-
-}
-
-\caption{RStudio's CSV import wizard.}(\#fig:fig2b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
+<p class="caption">(\#fig:fig2b)RStudio's CSV import wizard.</p>
+</div>
 
 ### Using functions to import data
 
@@ -256,7 +248,7 @@ type:
 View(ESMdata)
 ```
 
-To work with a specific variable in the dataset, use `$`, For instance, to print
+To work with a specific variable in the data set, use `$`, For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 
@@ -284,7 +276,7 @@ point, the important milestone is that you imported and accessed data in R.
 
 R's attractiveness lies in the ease with which it can be extended with new
 functionality. Through so-called packages, which can be freely downloaded from
-the internet, specialized functions can be added to your workspace.
+the internet, specialized functions can be added to your work-space.
 
 ### Installing R-packages from CRAN
 \index{CRAN}
@@ -310,7 +302,7 @@ install.package(tidyverse)
 ```
 
 The `tidyverse` contains a package called `haven`, which allows you to read and
-write SPSS datafiles (.sav files). This is very convenient. You don't have to
+write SPSS data files (.sav files). This is very convenient. You don't have to
 convert all your SPSS data to csv files. See `?read_spss` to learn how to import
 an SPSS-file (or use the data import wizard, by choosing `File > Import
 Dataset > From SPSS`, in RStudio's top-right pane).
@@ -321,7 +313,7 @@ Dataset > From SPSS`, in RStudio's top-right pane).
 
 Not all packages are at CRAN. Many 'unofficial' packages are shared at a site
 called 'GitHub'. This book's companion R package `emaph`, for example, which
-contains specialized EMA functions datasets, is on GitHub. You need package
+contains specialized EMA functions data sets, is on GitHub. You need package
 emaph to run many examples in the book, so let's install this package now.
 
 GitHub packages can be installed via the `install_github` function, which is
@@ -349,8 +341,8 @@ library(tidyverse)
 library(emaph)
 ```
 
-Once loaded, you can use the functions and datasets of the packages. Package
-`emaph` provides dataset `csd`, which contains the data from the 'critical
+Once loaded, you can use the functions and data sets of the packages. Package
+`emaph` provides data set `csd`, which contains the data from the 'critical
 slowing down'-study [@Kossakowski2017; @Wichers2016], in which a patient
 recorded his mood, for 239 days (see also Chapter \@ref(csd)).
 
@@ -367,14 +359,10 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/cs2m-1} 
-
-}
-
-\caption{Irritation levels of a single patient, in the first six days of an EMA study.}(\#fig:cs2m)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R_files/figure-html/cs2m-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
+<p class="caption">(\#fig:cs2m)Irritation levels of a single patient, in the first six days of an EMA study.</p>
+</div>
 
 
 ## Getting help
@@ -397,7 +385,7 @@ this function, type `?rnorm` in the console.
 ?rnorm
 ```
 
-This opens the documentation of the rnorm function in the 'Help'-tab, in the
+This opens the documentation of the `rnorm` function in the `Help`-tab, in the
 bottom right pane, from which you learn that that the `rnorm` function accepts
 `mean` and `sd` (standard deviation) as additional parameters, which are 0 and
 1 default, respectively (which explains why `rnorm(100)`
@@ -440,13 +428,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 0.12915, df = 191.26, p-value = 0.8974
+#> t = -0.28912, df = 196.41, p-value = 0.7728
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2704647  0.3083654
+#>  -0.3556848  0.2647304
 #> sample estimates:
-#>   mean of x   mean of y 
-#> -0.01666773 -0.03561811
+#>  mean of x  mean of y 
+#> -0.1982245 -0.1527473
 ```
 
 

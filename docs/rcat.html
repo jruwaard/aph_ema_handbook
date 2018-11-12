@@ -416,7 +416,7 @@ code > span.in { font-style: italic; } /* Information */
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.059 secs .</span>
+<span class="co">#&gt; Processing took: 0.054 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -467,7 +467,7 @@ Figure 13.2: Activity Counts (5-minute windows), in a Three-day Accelerometer da
 <div id="data-management-visual-exploration" class="section level2">
 <h2><span class="header-section-number">13.2</span> Data management &amp; Visual Exploration</h2>
 
-<p>The <em>tidyverse</em> is a collection of well-designed packages, authored by the team behind RStudio, that together add a consistent, modern, and efficient extension of base R functionalities. The tidyverse includes popular packages such as <code>ggplot2</code> (for plotting), <code>haven</code> (to read SPSS files), <code>dplyr</code> (for data manipulation), and many more (see: <a href="http://tidyverse.org" class="uri">http://tidyverse.org</a> for a full list).</p>
+<p>The <em>tidyverse</em> is a collection of well-designed packages, authored by the team behind RStudio, that together add a consistent, modern, and efficient extension of base R functions. The <code>tidyverse</code> includes popular packages such as <code>ggplot2</code> (for plotting), <code>haven</code> (to read SPSS files), <code>dplyr</code> (for data manipulation), and many more (see: <a href="http://tidyverse.org" class="uri">http://tidyverse.org</a> for a full list).</p>
 <div id="package-dplyr" class="section level3">
 <h3><span class="header-section-number">13.2.1</span> Package <code>dplyr</code></h3>
 
@@ -541,7 +541,7 @@ d &lt;-<span class="st"> </span><span class="kw">read_sav</span>(path)
 <div id="package-lubridate" class="section level3">
 <h3><span class="header-section-number">13.2.4</span> Package ‘lubridate’</h3>
 <p> </p>
-<p>EMA data analyses frequently require manipulations of datetime variables. For this, package <em>lubridate</em> <span class="citation">(Grolemund &amp; Wickham, <a href="#ref-R-lubridate">2011</a>)</span>, which provides many functions for common date and datetime operations, can be very useful.</p>
+<p>EMA data analyses frequently require manipulations of date-time variables. For this, package <em>lubridate</em> <span class="citation">(Grolemund &amp; Wickham, <a href="#ref-R-lubridate">2011</a>)</span>, which provides many functions for common date and date time operations, can be very useful.</p>
 <p>In the code snippet below, for example, the <code>round_date</code> function is used to calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute epoch windows.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Rounding dates.</span>
 <span class="kw">library</span>(emaph)
@@ -619,7 +619,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(distance <span clas
 <div id="lme4" class="section level3">
 <h3><span class="header-section-number">13.3.2</span> lme4</h3>
 
-<p>Package <em>lme4</em> <span class="citation">(Bates et al., <a href="#ref-Bates2015">2015</a>)</span> is a faster R-reimplementation of the mixed-effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, model specifications in <code>lmer</code> are different from model specifications in <code>lme</code>.</p>
+<p>Package <em>lme4</em> <span class="citation">(Bates et al., <a href="#ref-Bates2015">2015</a>)</span> is a faster reimplementation of the mixed-effects model. With large data sets and complex hierarchical models, this package should probably be preferred. As can be seen below, model specifications in <code>lmer</code> are different from model specifications in <code>lme</code>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fit a linear mixed model, with lme.</span>
 <span class="kw">library</span>(lme4)
 fm &lt;-<span class="st"> </span><span class="kw">lmer</span>(distance <span class="op">~</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>Sex <span class="op">+</span><span class="st"> </span>(<span class="dv">1</span> <span class="op">|</span><span class="st"> </span>Subject), <span class="dt">data =</span> Orthodont)
@@ -634,7 +634,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lmer</span>(distance <span cla
 <div id="package-simr" class="section level3">
 <h3><span class="header-section-number">13.4.1</span> Package ‘simr’</h3>
 
-<p>With package <em>simr</em> <span class="citation">(P. Green &amp; MacLeod, <a href="#ref-Green2016">2016</a>)</span>, power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the true parameters of a mixed model, and a single data set. Then, function <code>simPower</code> can be used to simulate new datasets and tests (of a specified parameter in the model), to determine the power of the test.</p>
+<p>With package <em>simr</em> <span class="citation">(P. Green &amp; MacLeod, <a href="#ref-Green2016">2016</a>)</span>, power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the true parameters of a mixed model, and a single data set. Then, function <code>simPower</code> can be used to simulate new data sets and tests (of a specified parameter in the model), to determine the power of the test.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Power analysis of a two-group repeated measures design</span>
 <span class="co"># (simulation approach).</span>
 <span class="kw">library</span>(simr)
@@ -676,7 +676,7 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <span class="co">#&gt; Based on 10 simulations, (0 warnings, 0 errors)</span>
 <span class="co">#&gt; alpha = 0.05, nrow = 960</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Time elapsed: 0 h 0 m 2 s</span></code></pre></div>
+<span class="co">#&gt; Time elapsed: 0 h 0 m 1 s</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">
@@ -687,7 +687,7 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <h3><span class="header-section-number">13.5.1</span> Package ’autovarCore`</h3>
 <p> </p>
 
-<p>Vector autoregressive (VAR) models can be used to detect lagged relationships between multiple timeseries. In VAR, each variable is modelled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package <em>autovarCore</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span> was developed to help researchers to find the VAR model with the best fit to a given timeseries data set.</p>
+<p>Vector auto-regressive (VAR) models can be used to detect lagged relationships between multiple time-series. In VAR, each variable is modeled as a linear function of past values (lags) of itself and of present and past values of other variables. When EMA is used to capture multiple phenomena over time, VAR can provide insight in how these phenomena interact. One challenge in VAR modelling is that many alternative models potentially exist, Package <em>autovarCore</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span> was developed to help researchers to find the VAR model with the best fit to a given time-series data set.</p>
 <p>In the (unrealistic) example below, function <code>autovar</code> is used to detect that changes in depression are positively related to past (lag 1) values of activity, in a simulated data set:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Autovar analysis.</span>
 <span class="kw">library</span>(autovarCore)
@@ -707,24 +707,23 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="kw">summary</span>(models_found[[<span class="dv">1</span>]]<span class="op">$</span>varest<span class="op">$</span>varresult<span class="op">$</span>depression)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
-<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
+<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.68843 -0.57778  0.06509  0.59828  3.12010 </span>
+<span class="co">#&gt; -2.22447 -0.53659 -0.02942  0.53158  2.84273 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.38203    0.10209   3.742 0.000314 ***</span>
-<span class="co">#&gt; depression.l1 -0.03393    0.09562  -0.355 0.723489    </span>
-<span class="co">#&gt; depression.l2  0.01713    0.09557   0.179 0.858144    </span>
-<span class="co">#&gt; const          0.12960    0.10105   1.283 0.202811    </span>
+<span class="co">#&gt; activity.l1    0.59376    0.10140   5.855 6.63e-08 ***</span>
+<span class="co">#&gt; depression.l1  0.12815    0.08766   1.462    0.147    </span>
+<span class="co">#&gt; const          0.03261    0.09754   0.334    0.739    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9759 on 94 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.1309, Adjusted R-squared:  0.1032 </span>
-<span class="co">#&gt; F-statistic:  4.72 on 3 and 94 DF,  p-value: 0.004109</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9595 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.2685, Adjusted R-squared:  0.2533 </span>
+<span class="co">#&gt; F-statistic: 17.62 on 2 and 96 DF,  p-value: 3.035e-07</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>, <span class="citation">Emerencia et al. (<a href="#ref-Emerencia2016">2016</a>)</span>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="package-qgraph" class="section level3">
@@ -761,7 +760,7 @@ Figure 13.4: Network of mood items from CSD data set
 <h3><span class="header-section-number">13.5.3</span> Package ‘bootnet’</h3>
 
 <p>In the interpretation of fitted network plots, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on large data sets. One solution is to fit a large number of networks on subsets of the original data, through bootstrapping. In stable networks, the variance of edges estimations will be small, while in unstable networks, the variance will be large. This idea is implemented in package <em>bootnet</em> <span class="citation">(Epskamp, Borsboom, &amp; Fried, <a href="#ref-Epskamp2018a">2018</a>)</span>.</p>
-<p>Below, the stability of the network that was fit in the previous example is examined with bootnet: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps.</p>
+<p>Below, the stability of the network that was fit in the previous example is examined with <code>bootnet</code>: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A bootstrapped network. </span>
 <span class="kw">library</span>(bootnet)
 
@@ -777,7 +776,7 @@ results &lt;-<span class="st"> </span><span class="kw">bootnet</span>(g, <span c
 <div id="package-lomb" class="section level3">
 <h3><span class="header-section-number">13.6.1</span> Package ‘lomb’</h3>
 <p> </p>
-<p>Disturbances in circadian rhythms have been related to depressive symptoms <span class="citation">(see, e.g., Saeb et al., <a href="#ref-Saeb2015">2015</a>)</span>. With so-called periodograms, these circadian rhythms can be detected in EMA data (see Chapter <a href="features.html#features">8</a>). Standard analysis techniques, however, expect regular timeseries, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure <span class="citation">(Lomb, <a href="#ref-Lomb1976">1976</a>)</span>, which can be applied to unevenly-sampled timeseries as well. Package <em>lomb</em> <span class="citation">(Ruf, <a href="#ref-ruf1999">1999</a>)</span> implements this procedure.</p>
+<p>Disturbances in circadian rhythms have been related to depressive symptoms <span class="citation">(see, e.g., Saeb et al., <a href="#ref-Saeb2015">2015</a>)</span>. With so-called periodograms, these circadian rhythms can be detected in EMA data (see Chapter <a href="features.html#features">8</a>). Standard analysis techniques, however, expect regular time-series, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure <span class="citation">(Lomb, <a href="#ref-Lomb1976">1976</a>)</span>, which can be applied to unevenly-sampled time-series as well. Package <em>lomb</em> <span class="citation">(Ruf, <a href="#ref-ruf1999">1999</a>)</span> implements this procedure.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculating a Lomb-Scargle periodogram.</span>
 <span class="kw">data</span>(ibex, <span class="dt">package =</span> <span class="st">&quot;lomb&quot;</span>) 
 lomb<span class="op">::</span><span class="kw">lsp</span>(ibex[<span class="dv">2</span><span class="op">:</span><span class="dv">3</span>]) </code></pre></div>

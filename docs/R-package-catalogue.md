@@ -85,7 +85,7 @@ library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.059 secs .
+#> Processing took: 0.054 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -100,14 +100,10 @@ ggplot(d, aes(x = timestamp, y = value)) +
   facet_wrap(~sensor, scales = "free_y")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/unnamed-chunk-2-1} 
-
-}
-
-\caption{Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).}(\#fig:unnamed-chunk-2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/unnamed-chunk-2-1.png" alt="Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-2)Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).</p>
+</div>
 
 
 ### Package 'GGIR'
@@ -140,14 +136,10 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
   xlab("Time") + ylab("Activity Counts")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/fig15a-1} 
-
-}
-
-\caption{Activity Counts (5-minute windows), in a Three-day Accelerometer data set.}(\#fig:fig15a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/fig15a-1.png" alt="Activity Counts (5-minute windows), in a Three-day Accelerometer data set." width="100%" />
+<p class="caption">(\#fig:fig15a)Activity Counts (5-minute windows), in a Three-day Accelerometer data set.</p>
+</div>
 
 
 ## Data management & Visual Exploration
@@ -155,7 +147,7 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 
 The *tidyverse* is a collection of well-designed packages, authored by the team
 behind RStudio, that together add a consistent, modern, and efficient extension
-of base R functionalities. The tidyverse includes popular packages such as
+of base R functions. The `tidyverse` includes popular packages such as
 `ggplot2` (for plotting), `haven` (to read SPSS files), `dplyr` (for data
 manipulation), and many more (see: <http://tidyverse.org> for a full list).
 
@@ -226,14 +218,10 @@ g <- g + geom_smooth(); g
 g + facet_wrap(~ ID)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-1} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-2} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-3} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-4} 
-
-}
-
-\caption{Plotting layers with ggplot2}(\#fig:cs15d)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/cs15d-1.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-2.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-3.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-4.png" alt="Plotting layers with ggplot2" width="45%" />
+<p class="caption">(\#fig:cs15d)Plotting layers with ggplot2</p>
+</div>
 
 
 ### Package 'haven'
@@ -266,9 +254,9 @@ attributes(d$Species)
 \index{Datetime variables}
 \index{Packages!lubridate}
 
-EMA data analyses frequently require manipulations of datetime variables. For
+EMA data analyses frequently require manipulations of date-time variables. For
 this, package *lubridate* [@R-lubridate], which provides many functions for
-common date and datetime operations, can be very useful.
+common date and date time operations, can be very useful.
 
 In the code snippet below, for example, the `round_date` function is used to
 calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute
@@ -292,23 +280,14 @@ d <- d %>% group_by(id, epoch) %>%
 ```
 
 
-\begin{tabular}{r|l|r}
-\hline
-id & epoch & svm\\
-\hline
-1 & 2018-06-02 12:00:00 & -0.0009766\\
-\hline
-1 & 2018-06-02 12:01:00 & 0.0072235\\
-\hline
-1 & 2018-06-02 12:02:00 & 0.0023875\\
-\hline
-1 & 2018-06-02 12:03:00 & 0.0070644\\
-\hline
-1 & 2018-06-02 12:04:00 & 0.0265187\\
-\hline
-1 & 2018-06-02 12:05:00 & 0.0969168\\
-\hline
-\end{tabular}
+ id  epoch                         svm
+---  --------------------  -----------
+  1  2018-06-02 12:00:00    -0.0009766
+  1  2018-06-02 12:01:00     0.0072235
+  1  2018-06-02 12:02:00     0.0023875
+  1  2018-06-02 12:03:00     0.0070644
+  1  2018-06-02 12:04:00     0.0265187
+  1  2018-06-02 12:05:00     0.0969168
 
 To learn more about handling dates and times with `lubridate`,
 [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data
@@ -345,7 +324,7 @@ fixef(fm)
 ### lme4
 \index{Packages!lme4}
 
-Package *lme4* [@Bates2015] is a faster R-reimplementation of the
+Package *lme4* [@Bates2015] is a faster reimplementation of the
 mixed-effects model. With large data sets and complex hierarchical models, this
 package should probably be preferred. As can be seen below, model specifications
 in `lmer` are different from model specifications in `lme`.
@@ -369,7 +348,7 @@ fixef(fm)
 With package *simr* [@Green2016], power of mixed-effects models can be
 determined via simulation. As illustrated below, the procedure requires the
 researcher to define the true parameters of a mixed model, and a single data
-set. Then, function `simPower` can be used to simulate new datasets and tests
+set. Then, function `simPower` can be used to simulate new data sets and tests
 (of a specified parameter in the model), to determine the power of the test.
 
 
@@ -415,7 +394,7 @@ powerSim(model1,
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 2 s
+#> Time elapsed: 0 h 0 m 1 s
 ```
 
 
@@ -436,14 +415,14 @@ conducting a network analysis, be sure to visit the Psycho-systems website, at
 
 \index{Vector autoregressive models}
 
-Vector autoregressive (VAR) models can be used to detect lagged relationships
-between multiple timeseries. In VAR, each variable is modelled as a linear
+Vector auto-regressive (VAR) models can be used to detect lagged relationships
+between multiple time-series. In VAR, each variable is modeled as a linear
 function of past values (lags) of itself and of present and past values of other
 variables. When EMA is used to capture multiple phenomena over time, VAR can
 provide insight in how these phenomena interact. One challenge in VAR modelling
 is that many alternative models potentially exist, Package *autovarCore*
 [@R-autovarCore] was developed to help researchers to find the VAR model with
-the best fit to a given timeseries data set.
+the best fit to a given time-series data set.
 
 In the (unrealistic) example below, function `autovar` is used to detect that
 changes in depression are positively related to past (lag 1) values of activity,
@@ -469,24 +448,23 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datares)
+#> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
-#>     Min      1Q  Median      3Q     Max 
-#> -2.3684 -0.7333  0.1296  0.7786  2.1469 
+#>      Min       1Q   Median       3Q      Max 
+#> -2.22447 -0.53659 -0.02942  0.53158  2.84273 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.58689    0.09963   5.891 5.94e-08 ***
-#> depression.l1 -0.04602    0.08770  -0.525    0.601    
-#> depression.l2  0.03604    0.08795   0.410    0.683    
-#> const          0.07536    0.10665   0.707    0.482    
+#> activity.l1    0.59376    0.10140   5.855 6.63e-08 ***
+#> depression.l1  0.12815    0.08766   1.462    0.147    
+#> const          0.03261    0.09754   0.334    0.739    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 1.054 on 94 degrees of freedom
-#> Multiple R-squared:  0.2718,	Adjusted R-squared:  0.2486 
-#> F-statistic:  11.7 on 3 and 94 DF,  p-value: 1.398e-06
+#> Residual standard error: 0.9595 on 96 degrees of freedom
+#> Multiple R-squared:  0.2685,	Adjusted R-squared:  0.2533 
+#> F-statistic: 17.62 on 2 and 96 DF,  p-value: 3.035e-07
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -528,14 +506,10 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
        layout = "spring")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/cs15l-1} 
-
-}
-
-\caption{Network of mood items from CSD data set}(\#fig:cs15l)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/cs15l-1.png" alt="Network of mood items from CSD data set" width="100%" />
+<p class="caption">(\#fig:cs15l)Network of mood items from CSD data set</p>
+</div>
 
 
 ### Package 'bootnet'
@@ -550,7 +524,7 @@ estimations will be small, while in unstable networks, the variance will be
 large. This idea is implemented in package *bootnet* [@Epskamp2018a].
 
 Below, the stability of the network that was fit in the previous example is
-examined with bootnet: fifty networks are fit, based on fifty bootstrapped
+examined with `bootnet`: fifty networks are fit, based on fifty bootstrapped
 samples. In the results plot, the red line marks the strength of the edges in
 the full sample, while grey confidence intervals mark the distribution of the
 edge weights in the bootstraps.
@@ -566,9 +540,7 @@ results <- bootnet(g, nBoots = 50, verbose = FALSE)
 plot(results, order = "mean")
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/cs15m-1} \end{center}
+<img src="R-package-catalogue_files/figure-html/cs15m-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## Timeseries analysis
@@ -580,10 +552,10 @@ plot(results, order = "mean")
 Disturbances in circadian rhythms have been related to depressive symptoms
 [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhythms
 can be detected in EMA data (see Chapter \@ref(features)). Standard analysis
-techniques, however, expect regular timeseries, in which data are sampled at
+techniques, however, expect regular time-series, in which data are sampled at
 equidistant intervals. EMA data, typically, are not equidistant. One solution to
 this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976],
-which can be applied to unevenly-sampled timeseries as well. Package *lomb*
+which can be applied to unevenly-sampled time-series as well. Package *lomb*
 [@ruf1999] implements this procedure.
 
 
@@ -593,6 +565,4 @@ data(ibex, package = "lomb")
 lomb::lsp(ibex[2:3]) 
 ```
 
-
-
-\begin{center}\includegraphics[width=0.98\linewidth]{R-package-catalogue_files/figure-latex/cs15n-1} \end{center}
+<img src="R-package-catalogue_files/figure-html/cs15n-1.png" width="98%" style="display: block; margin: auto;" />

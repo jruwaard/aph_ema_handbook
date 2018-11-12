@@ -25,14 +25,10 @@ quantify these features?
 
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8a-1} 
-
-}
-
-\caption{A simulated three-week time-series of EMA mood ratings.}(\#fig:fig8a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8a-1.png" alt="A simulated three-week time-series of EMA mood ratings." width="100%" />
+<p class="caption">(\#fig:fig8a)A simulated three-week time-series of EMA mood ratings.</p>
+</div>
 
 ## Central Tendency and Variability
 
@@ -72,14 +68,10 @@ day, however, the estimated SD is
 the additional variability introduced by the trend is cancelled out, our
 estimate of variability decreases considerably.  
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8b-1} 
-
-}
-
-\caption{EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time.}(\#fig:fig8b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8b-1.png" alt="EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time." width="100%" />
+<p class="caption">(\#fig:fig8b)EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time.</p>
+</div>
 
 ## Modelling the Trend
 
@@ -97,14 +89,10 @@ mean of 5.9. Comparing Figure
 \@ref(fig:fig8b) and Figure \@ref(fig:fig8c), we see that Figure \@ref(fig:fig8c)
 is more successful in capturing the variation in the series.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8c-1} 
-
-}
-
-\caption{EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)}(\#fig:fig8c)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8c-1.png" alt="EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)" width="100%" />
+<p class="caption">(\#fig:fig8c)EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)</p>
+</div>
 
 By using regression, we can also find a better estimate of the SD. Remember how
 the SD is conceptually defined as the average distance between the scores and
@@ -121,14 +109,10 @@ absolution regression residuals are plotted over time, with a regression line
 superposed. This reveals that residuals increase as time goes by. We discovered
 a new feature of the series: heteroscedasticity. 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8d-1} 
-
-}
-
-\caption{Plot of absolute regression residuals over time, revealing heteroscedasticity.}(\#fig:fig8d)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8d-1.png" alt="Plot of absolute regression residuals over time, revealing heteroscedasticity." width="100%" />
+<p class="caption">(\#fig:fig8d)Plot of absolute regression residuals over time, revealing heteroscedasticity.</p>
+</div>
 
 ## Missing Values
 
@@ -148,14 +132,10 @@ missed ratings increases. This becomes immediately clear from Figure
 Every week, the probability of missed ratings increases approximately
 16%.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8e-1} 
-
-}
-
-\caption{Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data.}(\#fig:fig8e)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8e-1.png" alt="Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data." width="100%" />
+<p class="caption">(\#fig:fig8e)Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data.</p>
+</div>
 
 Now that we now about these missing values, the question arises how to deal with
 them? You can choose to ignore the missing values (assuming that the occurrence
@@ -171,14 +151,10 @@ replaced by values that lie between the non-missings. Imagine that we would have
 used the mean to impute. Can you see why that would have disrupted local
 patterns in the series?
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8f-1} 
-
-}
-
-\caption{EMA time series, with missing values (red) imputed through interpolation.}(\#fig:fig8f)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8f-1.png" alt="EMA time series, with missing values (red) imputed through interpolation." width="100%" />
+<p class="caption">(\#fig:fig8f)EMA time series, with missing values (red) imputed through interpolation.</p>
+</div>
 
 
 ## Autocorrelation
@@ -197,14 +173,10 @@ previous values at lag 1: this series is auto-correlated. Second, there appears
 to be a pattern in the correlations at later lags: positive and negative
 correlations alternate, in a pattern that seems to reflect periodicity.  
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8g-1} 
-
-}
-
-\caption{Autocorrelation plot of the EMA mood series, revealing periodicity.}(\#fig:fig8g)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8g-1.png" alt="Autocorrelation plot of the EMA mood series, revealing periodicity." width="100%" />
+<p class="caption">(\#fig:fig8g)Autocorrelation plot of the EMA mood series, revealing periodicity.</p>
+</div>
 
 ### Rolling statistics
 
@@ -217,14 +189,10 @@ clear. However, if we "smooth" the series, by calculating the mean as it
 develops over time, the periodicity in the series is becoming more clear. Figure
 \@ref(fig:fig8h) illustrates this.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8h-1} 
-
-}
-
-\caption{EMA mood series, with a rolling mean superposed.}(\#fig:fig8h)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8h-1.png" alt="EMA mood series, with a rolling mean superposed." width="100%" />
+<p class="caption">(\#fig:fig8h)EMA mood series, with a rolling mean superposed.</p>
+</div>
 
 
 ## Periodicity
@@ -236,14 +204,10 @@ called Fourier Analysis, the the strength ('power') of various frequencies can
 be quantified. Figure \@ref(fig:fig8i) shows what happens if we run a Fourier
 analysis of our time series (with R's built-in function `spec.pgram`).
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{features_files/figure-latex/fig8i-1} 
-
-}
-
-\caption{periodogram of the EMA time series, revealing a one-day and a one-week period.}(\#fig:fig8i)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="features_files/figure-html/fig8i-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
+<p class="caption">(\#fig:fig8i)periodogram of the EMA time series, revealing a one-day and a one-week period.</p>
+</div>
 
 There are two peaks in the figure: at a frequency of 1 (day) and at a frequency
 of 0.14 (about one week).

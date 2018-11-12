@@ -312,12 +312,12 @@ code > span.in { font-style: italic; } /* Information */
 <h2><span class="header-section-number">10.1</span> Critical Slowing Down</h2>
 <p>Critical Slowing Down (CSD) is a concept from dynamic systems theory. In dynamic systems, state transitions are preceded by a change in which the system reacts to disturbances. In a stable state, the system quickly recovers from disturbances. Prior to a transition to a new state, however, the system takes more and more time to recover back to its current state: the variance and auto-correlation of the system increases <span class="citation">(Dakos et al., <a href="#ref-Dakos2008">2008</a>; Scheffer et al., <a href="#ref-Scheffer2009">2009</a>)</span>.</p>
 <p>In this chapter, we re-analyze data from a study that aimed to demonstrate CSD in EMA-data of a single patient with a history of major depression <span class="citation">(Groot, <a href="#ref-Groot2010">2010</a>, <span class="citation">Kossakowski et al. (<a href="#ref-Kossakowski2017">2017</a>)</span>; Wichers et al., <a href="#ref-Wichers2016">2016</a>)</span>. The patient, a 57-year old male, used EMA to monitor himself during a 239-day single-case double-blind medication reduction trial. During the experiment, he experienced a relapse, and Wichers and colleagues showed how variance and auto-correlation in the EMA data increased, several weeks prior to this relapse. The transition appeared to be preceded by CSD.</p>
-<p>We will try to reconstruct the finding, using an alternative analysis strategy. One of the limitations of the Wichers et al analysis is that autocorrelation was analyzed at lag 1 only (i.e., only the correlation between t and t-1 was considered). With another analysis technique, called ‘Detrended Fluctuation Analysis’, all lags can be considered.</p>
+<p>We will try to reconstruct the finding, using an alternative analysis strategy. One of the limitations of the Wichers et al analysis is that auto-correlation was analyzed at lag 1 only (i.e., only the correlation between t and t-1 was considered). With another analysis technique, called ‘Detrended Fluctuation Analysis’, all lags can be considered.</p>
 <p>To conduct the analysis, we need three R packages:</p>
 <ul>
-<li><p>Raw EMA data of this study were published in the public domain <span class="citation">(Kossakowski et al., <a href="#ref-Kossakowski2017">2017</a>)</span>. We included the data in the emaph package.</p></li>
-<li><p>To manipulate the raw data and reconstruct the plots of the article, we are going to use several functions from the tidyverse.</p></li>
-<li><p>DFA is implemented in package ‘nonlinearTseries’, so we will need that as well.</p></li>
+<li><p>Raw EMA data of this study were published in the public domain <span class="citation">(Kossakowski et al., <a href="#ref-Kossakowski2017">2017</a>)</span>. We included the data in the <code>emaph</code> package.</p></li>
+<li><p>To manipulate the raw data and reconstruct the plots of the article, we are going to use several functions from <code>tidyverse</code> packages.</p></li>
+<li><p>DFA is implemented in package <code>nonlinearTseries</code>, so we will need that as well.</p></li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Required libraries for the CSD-study re-analysis.</span>
 <span class="kw">library</span>(emaph)
@@ -346,7 +346,7 @@ Figure 10.1: SCL-90 depression score, over the study period
 </div>
 <div id="mental-state-ema-items" class="section level2">
 <h2><span class="header-section-number">10.3</span> Mental state EMA items</h2>
-<p>Wichers and colleagues selected 13 items from the full EMA dataset, which they grouped in 5 factors: positive affect (pa; 4 items), negative affect (na; 4 items), mental unrest (mu; 3 items), suspiciousness (su; 1 item), and worrying (wo; 1 item). From these factors, an overall mental state sum score can be calculated.</p>
+<p>Wichers and colleagues selected 13 items from the full EMA data set, which they grouped in 5 factors: positive affect (pa; 4 items), negative affect (<code>na</code>; 4 items), mental unrest (<code>mu</code>; 3 items), suspiciousness (<code>su</code>; 1 item), and worrying (<code>wo</code>; 1 item). From these factors, an overall mental state sum score can be calculated.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Mood states calculation.</span>
 
 <span class="co"># positive affect</span>
@@ -446,7 +446,7 @@ Figure 10.2: Results of the DFA analysis.
 </div>
 <div id="discussion-1" class="section level2">
 <h2><span class="header-section-number">10.6</span> Discussion</h2>
-<p>Our re-analysis replicates the main finding of the Wichers et al article (<span class="citation">(Wichers et al., <a href="#ref-Wichers2016">2016</a>)</span>): several weeks prior to a depression relapse, as predicted by complex systems theory, the variance and autocorrelation in EMA mood ratings increased.</p>
+<p>Our re-analysis replicates the main finding of the Wichers et al article (<span class="citation">(Wichers et al., <a href="#ref-Wichers2016">2016</a>)</span>): several weeks prior to a depression relapse, as predicted by complex systems theory, the variance and auto-correlation in EMA mood ratings increased.</p>
 <p>Potential clinical applications, of course, are clear. If clinically relevant changes can be predicted algorithmically from EMA ratings, automated patient feedback systems could help to prevent pending deterioration or consolidate the path towards recovery.</p>
 <p>One swallow, however, does not make summer. Yes, in this case, the DFA-indicator peaked prior to the relapse. This could be a mere coincidence. The predictive power of CSD needs to be confirmed in larger samples and prospective studies. Given the theoretical background, successful applications of CSD in other domains, and the present finding, the spending of resources on such studies seems warranted.</p>
 <p>Important additional questions remain to be answered. When it predicts a state change, what is the expected delay between this prediction and the change? Does a critical DFA-value exist? Given that critical value, are false positive and false negative rates of this prediction acceptable? These are important questions that should be answered before any clinical application of DFA can be considered.</p>

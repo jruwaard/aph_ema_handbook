@@ -25,14 +25,10 @@ developed in the past decades in wildlife telemetry research
 [@tomkiewicz2010global].
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.95\linewidth]{activity_files/figure-latex/accgps-1} 
-
-}
-
-\caption{Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.}(\#fig:accgps)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/accgps-1.png" alt="Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity." width="95%" />
+<p class="caption">(\#fig:accgps)Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.</p>
+</div>
 
 ## Actigraphy
 \index{Actigraphy} 
@@ -40,28 +36,24 @@ developed in the past decades in wildlife telemetry research
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure changes
 in acceleration (of the device, relative to earth's gravity), typically
-simultanously on the vertical (Y), horizontal right-left (X) and horizontal
+simultaneously on the vertical (Y), horizontal right-left (X) and horizontal
 front-back axis (Z). Through actigraphy, we study the frequency, duration, and
 intensity of physical activity. Figure \@ref(fig:genea-one-hour) shows one hour
 of data collected from a wrist-worn GENEActive accelerometer. As can be seen,
-three accelerometers (X, Y, Z) were simultanously providing data. Data were
-sampled with a frequency of 30 Herz (Hz; thirty measurements per second - which
-is common), but subsampled here to 0.1Hz (one measurement every 10 seconds), for
-practical reasons. If we would have plotted the data at 30hz, the plot would
+three accelerometers (X, Y, Z) were simultaneously providing data. Data were
+sampled with a frequency of 30 Hertz (Hz; thirty measurements per second - which
+is common), but sub-sampled here to 0.1Hz (one measurement every 10 seconds), for
+practical reasons. If we would have plotted the data at 30Hz, the plot would
 have included 108.000 data points. At 0.1Hz, this reduces to 3600 points.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-hour-1} 
-
-}
-
-\caption{One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)}(\#fig:genea-one-hour)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/genea-one-hour-1.png" alt="One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)" width="100%" />
+<p class="caption">(\#fig:genea-one-hour)One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)</p>
+</div>
 
 Data shown are included in package `emaph`, and the R-code to reproduce the plot
 is listed below. Use this to familiarize yourself with actigraphy data. If you
-want to see how subsampling affects the number of points to plot, for example,
+want to see how sub-sampling affects the number of points to plot, for example,
 you can set different values in the `round_date` function. For example, to get
 a point for each five seconds (0.2Hz), you would set the argument of this
 function to `5 seconds`.
@@ -88,7 +80,7 @@ ggplot(d, aes(timestamp, value)) + geom_line() +
 Raw accelerometer data need to be cleaned before analyses can be run. Typical
 data import work-flows include re-calibration (to reduce systematic measurement
 error), the detection of non-wear periods (to ensure that non-informative data
-are removed), subsampling (reducing the sample rate to reduce analysis time) and
+are removed), sub-sampling (reducing the sample rate to reduce analysis time) and
 filtering/aggregation (to smoothen the signal and reduce the impact of outliers,
 measurement error and occasional missing values). Study results can be highly
 dependent on these initial steps, which, unfortunately, are also complex and
@@ -108,13 +100,13 @@ events. But analyses can also be more global, for instance when accelerometer
 data are used to study circadian rhythms in activity. Several approaches exist
 to combine the X, Y, Z measurements into a single meaningful
 metric. Two popular metrics are the 'Signal Vector Magnitude' (SVM) and the
-'Euclidian Norm Minus One' (ENMO). Validation studies suggest that ENMO should be
+'Euclidean Norm Minus One' (ENMO). Validation studies suggest that ENMO should be
 the preferred metric [@VanHeest2014; @VanHeest2015], although recent findings
 also suggest that alternative metrics should perhaps be considered when
 sedentary and light activities are of interest [@Bai2016].
 
-SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axials
-signals (the Euclidian distance in the three-dimensional space), i.e. *SVM =
+SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axial
+signals (the Euclidean distance in the three-dimensional space), i.e. *SVM =
 sqrt(x^2 + y^2 + z^2)*. ENMO is the corrected SVM: the vector magnitude
 remaining after removing one Earth Standard Gravitational unit (1g = 9.81
 m/s^2), i.e. *ENMO = SVM - 1*. The metrics can, in principle, be calculated for
@@ -130,14 +122,10 @@ over the day follow a similar pattern, but the activity levels in the two plots
 are strikingly different. Age appears to matter here: activity levels of the
 middle-aged person are consistently lower than those of the young adult.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-day-1} 
-
-}
-
-\caption{One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs}(\#fig:genea-one-day)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/genea-one-day-1.png" alt="One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs" width="100%" />
+<p class="caption">(\#fig:genea-one-day)One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs</p>
+</div>
 
 \index{MVPA}
 
@@ -177,20 +165,16 @@ for example, is {latitude: 52.37022; longitude: 4.89517}, which can be verified
 by punching these numbers in [Google maps](https://tinyurl.com/ybxxk99a).
 
 
-\begin{figure}[!h]
-
-{\centering \includegraphics[width=0.75\linewidth]{images/activity/Latitude_and_Longitude_of_the_Earth} 
-
-}
-
-\caption{Latitude and Longtitude of the Earth (source: WikiPedia).}(\#fig:longlat)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/activity/Latitude_and_Longitude_of_the_Earth.png" alt="Latitude and Longtitude of the Earth (source: WikiPedia)." width="75%" />
+<p class="caption">(\#fig:longlat)Latitude and Longtitude of the Earth (source: WikiPedia).</p>
+</div>
 
 
 ### The Global Positioning System
 \index{GPS}
 
-The Global Positioning System (GPS) is a satellite-based radionavigation system
+The Global Positioning System (GPS) is a satellite-based radio-navigation system
 that provides geolocation and time information. With GPS-receivers, latitude and
 longitude can be determined, to track geographical locations and movement. Due
 to the increasing ease with which GPS-data can be collected via modern
@@ -218,18 +202,14 @@ ggplot(d, aes(lon, lat)) +
   facet_wrap(~ id) + theme_classic(12)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/fourweekgps-1} 
-
-}
-
-\caption{Four-week location history of two people, collected with Google Timeline.}(\#fig:fourweekgps)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/fourweekgps-1.png" alt="Four-week location history of two people, collected with Google Timeline." width="100%" />
+<p class="caption">(\#fig:fourweekgps)Four-week location history of two people, collected with Google Timeline.</p>
+</div>
 
 Data-points are superposed, using transparent colors, to make a distinction
 between locations that were visited once (light areas) and places that were
-visitied many times (darker areas). From the plot, we learn that these two
+visited many times (darker areas). From the plot, we learn that these two
 people both lived and worked in the Amsterdam area (latitude and longitude are
 close to the coordinates of Amsterdam center). We also see that they shared a
 frequently visited location (they were co-workers, working in the same
@@ -251,18 +231,14 @@ The problem with the (in)accuracy of GPS-data is further illustrated by Figure
 by the smartphone of person 2 between 02:00 and 06:00, At those hours, the
 person was sleeping, in the bedroom of his house. He did not move. Yet, if we
 would take the GPS-data for granted, he regularly took a nightly random walk in the
-parc. The red dot in the figure marks the median coordinate. This coordinate is
+park. The red dot in the figure marks the median coordinate. This coordinate is
 very accurate: it marks the bedroom. All individual data points, however, fail
 to identify this location.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/nightcrawl-1} 
-
-}
-
-\caption{Nightly GPS-fluctuations, revealing inaccurate location measurements}(\#fig:nightcrawl)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/nightcrawl-1.png" alt="Nightly GPS-fluctuations, revealing inaccurate location measurements" width="100%" />
+<p class="caption">(\#fig:nightcrawl)Nightly GPS-fluctuations, revealing inaccurate location measurements</p>
+</div>
 
 
 ### GPS-based activity measures
@@ -273,10 +249,10 @@ measures of activity can be extracted from these data.
 Table \@ref(tab:GPSfeatures) shows some of the measures that were derived from
 GPS data in a small (n = 28) study exploring the correlation between passive EMA
 data and depression, conducted by researchers of Northwestern University
-[@Saeb2015]. The reseachers calculated total distance, location variance, the
+[@Saeb2015]. The researchers calculated total distance, location variance, the
 number of places visited by the participants during the study, the percentage of
 time spent at home (defined as a top 3 place which was most frequently visited
-between 24:00 and 6:00), and circadian movent - the consistency of location
+between 24:00 and 6:00), and circadian movement - the consistency of location
 visits based on a 24-hour period. Circadian movement and location variance were
 found to be correlated with PHQ-9 scores in this study, but not - however - in a
 follow-up study, which included more participants [@Saeb2017].

@@ -138,14 +138,10 @@ plan <- sample_plan(n_participants = 5,
                     plot = TRUE)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.95\linewidth]{study-design_files/figure-latex/fig3a-1} 
-
-}
-
-\caption{Generated two-day EMA sampling plan, for 5 participants}(\#fig:fig3a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="study-design_files/figure-html/fig3a-1.png" alt="Generated two-day EMA sampling plan, for 5 participants" width="95%" />
+<p class="caption">(\#fig:fig3a)Generated two-day EMA sampling plan, for 5 participants</p>
+</div>
 
 
 ##  What is the Optimal Sample Size?
@@ -155,17 +151,17 @@ The power of a statistical test is the probability that it will detect an effect
 when this effect, in reality, exists. It is a function of the strength of the
 effect size, sample size, the significance level (alpha), *and* the statistical
 model. Determining the power of the experiment is an important step in the
-design of any study - EMA studies included. Both underpowered and overpowered
+design of any study - EMA studies included. Both under-powered and overpowered
 studies are a waste of time and resources.
 
 Conducting a power analysis can be easy or very difficult, depending on the
 complexity of the experimental design and the adopted statistical technique. For
-simple tests, such as the t-test and ANOVA, straightforward analytical solutions
+simple tests, such as the t-test and ANOVA, straightforward analytic solutions
 exist, which are implemented in readily available tools. In R, one of those
-tools is package 'pwr'.
+tools is package `pwr`.
 
-For example, to use `pwr` to calculate the power of a t.test to detect a
-moderate effect size (d = 0.5), with n = 30 per group, and a (two-sided)
+For example, to use `pwr` to calculate the power of a t-test to detect a
+moderate effect size (*d* = 0.5), with n = 30 per group, and a (two-sided)
 significance level alpha of .05, type:
 
 
@@ -235,7 +231,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4896
+#> [1] 0.4654
 ```
 
 As can be seen, the simulation results are very close to the output of
@@ -286,7 +282,7 @@ flow-chart.
 While planning your EMA study, you should also be mindful of the rules and
 regulations that apply to data collection, storage and sharing. From May 2018
 onward, the European Committee has enforced the General Data Protection
-Regulation (GDPR; in Dutch: Algemene Verordening Gegevensbescherming - AVG; see
+Regulation (GDPR; in Dutch: "Algemene Verordening Gegevensbescherming - AVG""; see
 <https://gdpr-info.eu/>), which protects the data and privacy of EU citizens.
 Complying to the GDPR can be a complex and time-consuming process, depending on
 nature of your study. Do not hesitate to consult local experts or standard
@@ -311,11 +307,7 @@ model agreements in which all relevant issues are addressed. Third parties may
 offer model agreements as well. If so, however, these agreements need to be
 checked for compliance to local regulations.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{images/outcomes/Flow_MD} 
-
-}
-
-\caption{Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.}(\#fig:fig3b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/outcomes/Flow_MD.png" alt="Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device." width="90%" />
+<p class="caption">(\#fig:fig3b)Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.</p>
+</div>

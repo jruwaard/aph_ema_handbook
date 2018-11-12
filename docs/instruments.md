@@ -41,19 +41,15 @@ decide on the most suitable data collection method.
 
 An important consideration when deciding on an EMA platform is the autonomy
 available to the researcher to set up and run the EMA study. Does the platform
-include a backoffice? Some EMA platforms do allow configuration or customization
-to the needs of the researcher. Platforms such as MoviSense and Illumivu, for
-example, allow researchers to define items and sample schedules, enrol and
-monitor participants and downloadthe data once the study is completed.
+include a back-office? Some EMA platforms do allow configuration or customization
+to the needs of the researcher. Platforms such as MoviSens and Ilumivu, for
+example, allow researchers to define items and sample schedules, enroll and
+monitor participants and download the data once the study is completed (see chapter \@ref(ema-instruments-catalogue)).
 
-\begin{figure}[!h]
-
-{\centering \includegraphics[width=1\linewidth]{images/instruments/movisens/movisens} 
-
-}
-
-\caption{Movisens sample scheme editor (left) and App Screenshots (right)}(\#fig:movisensbackoffice)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/instruments/movisens/movisens.png" alt="Movisens sample scheme editor (left) and App Screenshots (right)" width="100%" />
+<p class="caption">(\#fig:movisensbackoffice)Movisens sample scheme editor (left) and App Screenshots (right)</p>
+</div>
 
 ### Validation and reliability
 
@@ -121,7 +117,7 @@ device needs to be factored in.
 
 These financial factors are a non-issue if participants use their own devices.
 Instead there are other potential problems, namely that of compatibility of the
-smart devices. Currently some apps are available either only on IoS or Android.
+smart devices. Currently some apps are available either only on iOS or Android.
 Besides considering the make of the participants device, one also needs to
 consider the model. Older models might not have the feature needed for the EMA
 collection. Another potential issue associated with using own devices is

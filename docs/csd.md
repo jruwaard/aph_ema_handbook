@@ -31,7 +31,7 @@ several weeks prior to this relapse. The transition appeared to be preceded by
 CSD.
 
 We will try to reconstruct the finding, using an alternative analysis strategy.
-One of the limitations of the Wichers et al analysis is that autocorrelation was
+One of the limitations of the Wichers et al analysis is that auto-correlation was
 analyzed at lag 1 only (i.e., only the correlation between t and t-1 was
 considered). With another analysis technique, called 'Detrended Fluctuation
 Analysis', all lags can be considered.
@@ -39,12 +39,12 @@ Analysis', all lags can be considered.
 To conduct the analysis, we need three R packages:
 
 - Raw EMA data of this study were published in the public domain
-[@Kossakowski2017]. We included the data in the emaph package.
+[@Kossakowski2017]. We included the data in the `emaph` package.
 
 - To manipulate the raw data and reconstruct the plots of the article, we are
-going to use several functions from the tidyverse.
+going to use several functions from `tidyverse` packages.
 
-- DFA is implemented in package 'nonlinearTseries', so we will need that as well.
+- DFA is implemented in package `nonlinearTseries`, so we will need that as well.
 
 
 ```r
@@ -79,22 +79,18 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
   theme_classic()
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/cs11b-1} 
-
-}
-
-\caption{SCL-90 depression score, over the study period}(\#fig:cs11b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="csd_files/figure-html/cs11b-1.png" alt="SCL-90 depression score, over the study period" width="100%" />
+<p class="caption">(\#fig:cs11b)SCL-90 depression score, over the study period</p>
+</div>
 
 
 ## Mental state EMA items
 
-Wichers and colleagues selected 13 items from the full EMA dataset, which they
-grouped in 5 factors: positive affect (pa; 4 items), negative affect (na; 4
-items), mental unrest (mu; 3 items), suspiciousness (su; 1 item), and worrying
-(wo; 1 item). From these factors, an overall mental state sum score can be
+Wichers and colleagues selected 13 items from the full EMA data set, which they
+grouped in 5 factors: positive affect (pa; 4 items), negative affect (`na`; 4
+items), mental unrest (`mu`; 3 items), suspiciousness (`su`; 1 item), and worrying
+(`wo`; 1 item). From these factors, an overall mental state sum score can be
 calculated.
 
 
@@ -218,21 +214,17 @@ ggplot(na.omit(d),
   theme_classic()
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/cs11f-1} 
-
-}
-
-\caption{Results of the DFA analysis.}(\#fig:cs11f)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="csd_files/figure-html/cs11f-1.png" alt="Results of the DFA analysis." width="100%" />
+<p class="caption">(\#fig:cs11f)Results of the DFA analysis.</p>
+</div>
 
 
 ## Discussion
 
 Our re-analysis replicates the main finding of the Wichers et al article
 ([@Wichers2016]): several weeks prior to a depression relapse, as predicted by
-complex systems theory, the variance and autocorrelation in EMA mood ratings
+complex systems theory, the variance and auto-correlation in EMA mood ratings
 increased.
 
 Potential clinical applications, of course, are clear. If clinically relevant

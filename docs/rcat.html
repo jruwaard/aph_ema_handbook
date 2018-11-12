@@ -12,7 +12,7 @@
   <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:image" content="images/cover.png" />
+  <meta property="og:image" content="images/cover/smallcover.jpg" />
   <meta property="og:description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies." />
   
 
@@ -20,7 +20,7 @@
   <meta name="twitter:title" content="Ecological Momentary Assessment in Mental Health Research" />
   
   <meta name="twitter:description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies." />
-  <meta name="twitter:image" content="images/cover.png" />
+  <meta name="twitter:image" content="images/cover/smallcover.jpg" />
 
 <meta name="author" content="Jeroen Ruwaard">
 <meta name="author" content="Lisa Kooistra">
@@ -416,7 +416,7 @@ code > span.in { font-style: italic; } /* Information */
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.054 secs .</span>
+<span class="co">#&gt; Processing took: 0.065 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -710,20 +710,20 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.22447 -0.53659 -0.02942  0.53158  2.84273 </span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -3.4563 -0.6590 -0.0635  0.7779  3.6147 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
-<span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.59376    0.10140   5.855 6.63e-08 ***</span>
-<span class="co">#&gt; depression.l1  0.12815    0.08766   1.462    0.147    </span>
-<span class="co">#&gt; const          0.03261    0.09754   0.334    0.739    </span>
+<span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)   </span>
+<span class="co">#&gt; activity.l1    0.35532    0.10481   3.390  0.00101 **</span>
+<span class="co">#&gt; depression.l1 -0.06265    0.09783  -0.640  0.52348   </span>
+<span class="co">#&gt; const         -0.10498    0.11179  -0.939  0.35005   </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9595 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.2685, Adjusted R-squared:  0.2533 </span>
-<span class="co">#&gt; F-statistic: 17.62 on 2 and 96 DF,  p-value: 3.035e-07</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 1.108 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.107,  Adjusted R-squared:  0.08836 </span>
+<span class="co">#&gt; F-statistic: 5.749 on 2 and 96 DF,  p-value: 0.004382</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>, <span class="citation">Emerencia et al. (<a href="#ref-Emerencia2016">2016</a>)</span>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="package-qgraph" class="section level3">

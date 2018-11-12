@@ -44,16 +44,24 @@ activity, smartphone use or engagement on social media (see Figure
 patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/fig01a-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
-<p class="caption">(\#fig:fig01a)Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. </p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/fig01a-1} 
+
+}
+
+\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:fig01a)
+\end{figure}
 
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/fig01b-1.png" alt="Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer " width="100%" />
-<p class="caption">(\#fig:fig01b)Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer </p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/fig01b-1} 
+
+}
+
+\caption{Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer }(\#fig:fig01b)
+\end{figure}
 
 
 
@@ -139,10 +147,14 @@ time and context [@Shiffman2008]. This allows for a better understanding of
 intra-individual process, and of the factors that account for variability within
 and between individuals.
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/fig01c-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
-<p class="caption">(\#fig:fig01c)An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/fig01c-1} 
+
+}
+
+\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:fig01c)
+\end{figure}
 
 
 ### To enable EMI

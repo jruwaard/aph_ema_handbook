@@ -46,10 +46,14 @@ to the needs of the researcher. Platforms such as MoviSens and Ilumivu, for
 example, allow researchers to define items and sample schedules, enroll and
 monitor participants and download the data once the study is completed (see chapter \@ref(ema-instruments-catalogue)).
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/movisens/movisens.png" alt="Movisens sample scheme editor (left) and App Screenshots (right)" width="100%" />
-<p class="caption">(\#fig:movisensbackoffice)Movisens sample scheme editor (left) and App Screenshots (right)</p>
-</div>
+\begin{figure}[!h]
+
+{\centering \includegraphics[width=1\linewidth]{images/instruments/movisens/movisens} 
+
+}
+
+\caption{Movisens sample scheme editor (left) and App Screenshots (right)}(\#fig:movisensbackoffice)
+\end{figure}
 
 ### Validation and reliability
 

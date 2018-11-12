@@ -76,10 +76,14 @@ If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:fig2a). RStudio's main window is divided in four panes (sub-windows),
 which further contain several tabbed windows.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
-<p class="caption">(\#fig:fig2a)The RStudio Interface</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
+
+}
+
+\caption{The RStudio Interface}(\#fig:fig2a)
+\end{figure}
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -177,10 +181,14 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
-<p class="caption">(\#fig:fig2b)RStudio's CSV import wizard.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
+
+}
+
+\caption{RStudio's CSV import wizard.}(\#fig:fig2b)
+\end{figure}
 
 ### Using functions to import data
 
@@ -359,10 +367,14 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R_files/figure-html/cs2m-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
-<p class="caption">(\#fig:cs2m)Irritation levels of a single patient, in the first six days of an EMA study.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/cs2m-1} 
+
+}
+
+\caption{Irritation levels of a single patient, in the first six days of an EMA study.}(\#fig:cs2m)
+\end{figure}
 
 
 ## Getting help
@@ -428,13 +440,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.28912, df = 196.41, p-value = 0.7728
+#> t = 0.47503, df = 192.1, p-value = 0.6353
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.3556848  0.2647304
+#>  -0.2166622  0.3541331
 #> sample estimates:
-#>  mean of x  mean of y 
-#> -0.1982245 -0.1527473
+#>   mean of x   mean of y 
+#>  0.05173820 -0.01699723
 ```
 
 

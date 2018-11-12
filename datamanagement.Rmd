@@ -16,7 +16,7 @@ orderly fashion.
 
 RStudio projects can be opened by double-clicking existing projects, or by
 creating new projects from RStudio's file menu. To create a new project, choose
-"File | New Project...". You will be asked to specify the project name and its
+`File > New Project...`. You will be asked to specify the project name and its
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
@@ -32,8 +32,8 @@ console, while the project is open.
 This may look like a trivial feature. It is, however, a great advantage, because
 it allows for the use of relative paths, which is very convenient. For example,
 to open a data source in a script, you no longer have to specify its full path
-(e.g., "D:/Data/work/projects/my_ema_project/data/raw/ema_data.csv"). With
-relative paths, you can simply type "data/raw/ema_data.csv". This save typing,
+(e.g., 'D:/work/projects/my_ema_project/data/raw/ema_data.csv'). With
+relative paths, you can simply type 'data/raw/ema_data.csv'. This saves typing,
 but, more importantly, it allows you to freely move your projects to other
 locations, without breaking the proper functioning of your scripts.
 
@@ -47,14 +47,19 @@ following research guidelines:
 
   - You should adhere strictly to a clear and logical directory structure, to
     ensure that co-workers and external auditors can quickly grasp and replicate
-    your work
+    your work;
+    
   - Raw data should be part of your project, so that results can be traced back
-    to their source
+    to their source;
+    
   - Cleaned data should be separated from raw data, and data cleaning procedures
-    should be explicit and replicable
-  - Data and analyses should be clearly separated
-  - All analyses should be explicit and replicable
-  - Output of (published) analyses should be saved
+    should be explicit and replicable;
+    
+  - Data and analyses should be clearly separated;
+  
+  - All analyses should be explicit and replicable;
+  
+  - Output of (published) analyses should be saved.
 
 A directory structure based on these guidelines is listed in Figure
 \@ref(fig:fig5b). It depicts the organization of a project in which data were
@@ -65,10 +70,12 @@ collected via:
 
 1.  an online survey system (QuestManager), to assess demographics and pre/post
     study depression severity (with the PHQ-9 questionnaire, @Kroenke2009),
+    
 2.  an active EMA smartphone app (Movisens - see Chapter
     \@ref(ema-instruments-catalogue)), to assess day-to-day changes in mood, and
+    
 3.  an accelerometer (GENEActive - see Chapter \@ref(ema-instruments-catalogue))
-    to assess activity levels
+    to assess activity levels.
 
 ```{r fig5b, echo = FALSE, fig.cap="Example project directory structure", out.width = "85%"}
 # Figure 5.2: Show the EMA R-project directory structure.
@@ -130,43 +137,43 @@ in your project.
 
 In the example project, unprocessed data files exported from the three data
 collection systems (i.e., QuestManager, Movisens and GeneaActive) are stored in
-the "data/raw"-directory, in separate sub-directories per system.
+the 'data/raw"-directory', in separate sub-directories per system.
 
-In "data/raw/questmanager", we find two files: 1)
-"qm\_baseline\_2018\_05\_01.csv", containing the results of demographic
+In 'data/raw/questmanager', we find two files: 1)
+'qm_baseline_2018_05_01.csv', containing the results of demographic
 questionnaire and the PHQ-9 pre-test, and 2) and
-"qm\_posttest\_2018\_05\_01.csv", containing the results of the PHQ-9 post-test.
+'qm_posttest_2018_05_01.csv', containing the results of the PHQ-9 post-test.
 In exports of such survey systems, data from all participants are typically
 stored in one file per assessment moment. Note how the export date is added to
 the files, to make sure that future updates are only used in the analysis when
 explicitly noted. 
 
-In "data/raw/movisens", we find one file: "ms\_mood\_2018\_05\_01.csv",
+In 'data/raw/movisens', we find one file: 'ms_mood_2018_05_01.csv',
 containing the results of the EMA mood measurements of all participants,
 exported from the back-office of the MoviSens application.
 
-Finally, in "data/raw/geneactive", we see a series of ".bin" files: binary data
+Finally, in 'data/raw/geneactive', we see a series of '.bin' files: binary data
 files that were exported from the GENEActive smart watches that were worn by the
 participants. Actigraphy data are high-volume: these files are typically large
-(500MB is no exception). By using the .bin format, in which data are compressed,
+(500MB is no exception). By using the '.bin' format, in which data are compressed,
 disk space is saved (in uncompressed format, data in a single .bin file can
 amount up to 2 Gb). Unlike the survey and EMA mood data, each data file in this
 directory contains data of one participant. In this case, there are even two
-files for one participant (APC009), perhaps because this participant started the
+files for one participant ('APC009'), perhaps because this participant started the
 study with a faulty device, which was swapped during the study.
 
-In "data/raw", a final very important file is "key\_file.csv". This file is
+In 'data/raw', a final very important file is 'key_file.csv'. This file is
 important because it ties all the data together. It contains the unique
-identifiers that are assigned to the study participants in the various data
+identifiers (IDs) that are assigned to the study participants in the various data
 collection systems. Ideally, of course, participants would be designated by a
 single ID in each data collection system. In practice, unfortunately, this is
 often not possible due to limitations of the systems used. As a result,
 researchers are forced to deal with the fact that participants are known under
-different ID's in each system. With a key-file, data can be tied together
+different IDs in each system. With a key-file, data can be tied together
 through scripts.
 
 In the example key-file below, we find four columns. The first column defines
-the global study id for each participant (i.e., the ID that the researcher
+the global study ID for each participant (i.e., the ID that the researcher
 intends to use as the "official" ID). The other three columns define how the
 participant is identified in each of the data collection systems.
 
@@ -181,8 +188,8 @@ Table: (\#tab:tab5a) Example Study Key-file
 
 ## Import scripts
 
-In "scripts/import", we find the scripts with which the raw data are imported
-and cleaned, to produce ready-to-analyze data that is stored in "data/cleaned".
+In 'scripts/import', we find the scripts with which the raw data are imported
+and cleaned, to produce ready-to-analyze data that is stored in 'data/cleaned'.
 
 By making these scripts parts of your project, you ensure that you and others
 can always trace the decisions that were made to prepare the raw data for
@@ -191,7 +198,7 @@ recruited, or because new data exports are made from the data collection
 systems. You may also detect errors in the import routines during the analyses,
 or peer reviewers may request information that can only be found by going back
 to the raw data. In all these cases, the availability of ready-to-run raw data
-import routines is critical.
+import routines is crucial.
 
 The code snippet below illustrates the kind of data transformations that you can
 expect to find in an import script. With a few lines of code, raw baseline
@@ -200,7 +207,7 @@ the data collection system are replaced by the proper global study id, variables
 of interest are selected, sum scores of the PHQ-9 are calculated, data ranges
 are checked (and corrected if needed), and data types are set (in accordance to
 the study code-book). Finally, the cleaned data set is saved to the
-"data/cleaned" folder, ready for further processing in the final analyses.
+'data/cleaned' folder, ready for further processing in the final analyses.
 
 ```{r cs5a, eval = FALSE}
 # Data import example
@@ -213,7 +220,7 @@ keys <- read.csv("data/raw/keyfile.csv")
 d <- merge(d, keys)
 
 # only keep variables of interest 
-d <- d[c("ID", "gender", "age", paste("phq", 1:9)]
+d <- d[c("ID", "gender", "age", paste0("phq", 1:9)]
 
 # calculate PHQ-9 sum score
 d$phq <- rowSums(d[paste0("phq", 1:9)])
@@ -232,17 +239,17 @@ save(baseline, file = "baseline.Rda")
 
 The code snippet above illustrates the importance of code documentation. You may
 struggle to immediately understand some of the code segments. For instance, you
-might not be familiar with the 'paste0()' function that is used to create the
+might not be familiar with the `paste0()` function that is used to create the
 names of the variables that contain the PHQ-9 item scores. Fortunately, however,
 it becomes clear that the code statement calculates the sum of the item from the
-comment just above the code (the line starting with "\#"). Use these comments in
+comment just above the code (the line starting with `#`). Use these comments in
 your code. You will do yourself and your colleagues a big favor by making it
 much easier to quickly grasp the meaning of your code.
 
 ## Reproducible Analyses
 
 When raw data stored, imported and cleaned, final analyses can be run. By basing
-these analyses on the cleaned data in "data/cleaned", you ensure that these
+these analyses on the cleaned data in 'data/cleaned', you ensure that these
 analyses can be fully reproduced from the raw study data.
 
 The code snippet below illustrates a typical analysis file: cleaned data are
@@ -274,7 +281,7 @@ save(fm, file = "scripts/published/P001_regression.Rda")
 
 R's ability to save the results of analyses to disk is yet another example of
 how R promotes accountability in clinical research. Suppose you used the
-regression analysis of P001 in a manuscript that you submitted for publication.
+regression analysis of 'P001' in a manuscript that you submitted for publication.
 Reviewers ask you to send residual plots, to convince them that the residual
 errors are normally distributed. When the regression results are saved to disk,
 the following three lines are all you need to satisfy their request:
@@ -291,7 +298,7 @@ dev.off()
 
 ## README.txt
 
-Note, finally, the "README.txt"" file in the root of the project directory. This
+Note, finally, the 'README.txt' file in the root of the project directory. This
 file should contain a brief summary of the project, to quickly inform others
 (and your future self) of the context of the project and the contents of the
 project directory.

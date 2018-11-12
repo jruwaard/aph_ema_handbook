@@ -155,10 +155,10 @@ alerts. These alerts might occur at an inconvenient social moment.
 
   - Mode of delivery 1: EMA can be collected with a designated app, or via a
     web-based questionnaire for which a notification for completion of the
-    survey is send via an email or SMS
+    survey is send via an email or SMS.
 
   - Mode of delivery 2: It is possible to make use of participants’ own devices
-    (fitness device, tablet, smartphone) or borrow them a designated device
+    (fitness device, tablet, smartphone) or borrow them a designated device.
 
   - Choosing the right mode of delivery: Consider possible issues such as 1)
     software updates, 2) compatibility issues if using participants device, 3)

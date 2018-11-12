@@ -108,8 +108,8 @@ activity research: [GENEActiv](https://www.geneactiv.org/),
 ### Package 'PhysicalActivity'
 \index{Packages!PhysicalActivity}
 
-Package *'PhysicalActivity'* [@R-PhysicalActivity] provides an alternative to
-package 'GGIR', when ActiGraph data are available.
+Package *PhysicalActivity* [@R-PhysicalActivity] provides an alternative to
+package `GGIR`, when ActiGraph data are available.
 
 ```{r fig15a, fig.cap="Activity Counts (5-minute windows), in a Three-day Accelerometer data set.", out.width = "100%", fig.asp = .4}
 # Plotting activity counts.
@@ -132,15 +132,15 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 The *tidyverse* is a collection of well-designed packages, authored by the team
 behind RStudio, that together add a consistent, modern, and efficient extension
 of base R functionalities. The tidyverse includes popular packages such as
-"ggplot2" (for plotting), "haven" (to read SPSS files), "dplyr" (for data
+`ggplot2` (for plotting), `haven` (to read SPSS files), `dplyr` (for data
 manipulation), and many more (see: <http://tidyverse.org> for a full list).
 
 ### Package `dplyr`
 \index{Packages!dplyr}
 
-Package *'dplyr'* [@R-dplyr] implements the 'split-apply-combine'-strategy.
-With 'dplyr', elementary data manipulations can be e chained (using the pipe
-operator '%\>%') to elegantly implement complex data transformations. 
+Package *dplyr* [@R-dplyr] implements the 'split-apply-combine'-strategy.
+With `dplyr`, elementary data manipulations can be e chained (using the pipe
+operator `%\>%`) to elegantly implement complex data transformations. 
 
 ```{r cs15c}
 # Aggregate data by ID, through a 'pipe'.
@@ -156,7 +156,7 @@ b <- as_tibble(d) %>%
   summarize(mean_score = mean(score))
 ```
 
-A good introduction to dplyr can be found in the book 'R for Data Science'
+A good introduction to `dplyr` can be found in the book 'R for Data Science'
 [@wickham2016r], which can be freely accessed online
 (<http://r4ds.had.co.nz/>).
 
@@ -164,7 +164,7 @@ A good introduction to dplyr can be found in the book 'R for Data Science'
 ### Package 'ggplot2'
 \index{Packages!ggplot2}
 
-Package *'ggplot2* [@wickham2016ggplot2] provides a collection of high-level
+Package *ggplot2* [@wickham2016ggplot2] provides a collection of high-level
 plotting commands with which graphs can be build up in layers. It is based on
 'The Grammar of Graphics' [@wilkinson2006], an influential analysis of the
 structure of scientific graphs. Systematic introductions are available on the
@@ -225,7 +225,7 @@ EMA data analyses frequently require manipulations of datetime variables. For
 this, package *lubridate* [@R-lubridate], which provides many functions for
 common date and datetime operations, can be very useful.
 
-In the code snippet below, for example, the 'round\_date' function is used to
+In the code snippet below, for example, the `round_date` function is used to
 calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute
 epoch windows.
 
@@ -249,7 +249,7 @@ d <- d %>% group_by(id, epoch) %>%
 knitr::kable(head(d))
 ```
 
-To learn more about handling dates and times with 'lubridate',
+To learn more about handling dates and times with `lubridate`,
 [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data
 Science' [@wickham2016r] provides a good introduction.
 
@@ -266,9 +266,9 @@ actively used, as both provide unique functionalities.
 \index{Packages!nlme}
 
 Package *nlme* is introduced in Chapter \@ref(lmm). It is an older package (in
-comparison to package lme4), that is still used a lot because it provides
+comparison to `lme4`), that is still used a lot because it provides
 options to model correlational structures that are not implemented (yet) in
-lme4.
+`lme4`.
 
 ```{r cs15g, nlme_example}
 # Fit a linear mixed model, with lme.
@@ -284,7 +284,7 @@ fixef(fm)
 Package *lme4* [@Bates2015] is a faster R-reimplementation of the
 mixed-effects model. With large data sets and complex hierarchical models, this
 package should probably be preferred. As can be seen below, model specifications
-in 'lmer' are different from model specifications in 'lme'.
+in `lmer` are different from model specifications in `lme`.
 
 ```{r cs15h, lme4_example, eval = TRUE}
 # Fit a linear mixed model, with lme.
@@ -299,10 +299,10 @@ fixef(fm)
 ### Package 'simr'
 \index{Packages!simr}
 
-With package 'simr' [@Green2016], power of mixed-effects models can be
+With package *simr* [@Green2016], power of mixed-effects models can be
 determined via simulation. As illustrated below, the procedure requires the
-researcher to define the "true" parameters of a mixed model, and a single data
-set. Then, function 'simPower' can be used to simulate new datasets and tests
+researcher to define the true parameters of a mixed model, and a single data
+set. Then, function `simPower` can be used to simulate new datasets and tests
 (of a specified parameter in the model), to determine the power of the test.
 
 ```{r cs15i}
@@ -363,11 +363,11 @@ between multiple timeseries. In VAR, each variable is modelled as a linear
 function of past values (lags) of itself and of present and past values of other
 variables. When EMA is used to capture multiple phenomena over time, VAR can
 provide insight in how these phenomena interact. One challenge in VAR modelling
-is that many alternative models potentially exist, Package *'autovarCore'*
+is that many alternative models potentially exist, Package *autovarCore*
 [@R-autovarCore] was developed to help researchers to find the VAR model with
 the best fit to a given timeseries data set.
 
-In the (unrealistic) example below, function 'autovar' is used to detect that
+In the (unrealistic) example below, function `autovar` is used to detect that
 changes in depression are positively related to past (lag 1) values of activity,
 in a simulated data set:
 
@@ -390,7 +390,7 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 ```
 
-AutovarCore is a simplified version of a more extensive package *autovar*
+`AutovarCore` is a simplified version of a more extensive package *autovar*
 [@[@R-autovarCore], which was used in several publications
 [@VanderKrieke2015, @Emerencia2016]. Further information can be found on
 [http://autovar.nl](https://autovar.nl/) and
@@ -400,11 +400,11 @@ AutovarCore is a simplified version of a more extensive package *autovar*
 ### Package 'qgraph`
 \index{Packages!qgraph}
 
-Package *'qgraph'* [@Epskamp2012] can be used to fit, visualize and analyze
+Package *qgraph* [@Epskamp2012] can be used to fit, visualize and analyze
 graphical networks.
 
-In the example below, qgraph is used to fit a network on the 'Critical Slowing
-Down' (CSD) data set, which is included in package 'emaph' (see Chapter
+In the example below, `qgraph` is used to fit a network on the 'Critical Slowing
+Down' (CSD) data set, which is included in package `emaph` (see Chapter
 \@ref(csd)).
 
 ```{r cs15l, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
@@ -438,7 +438,7 @@ small sample data sets will be less stable than networks based on large data
 sets. One solution is to fit a large number of networks on subsets of the
 original data, through bootstrapping. In stable networks, the variance of edges
 estimations will be small, while in unstable networks, the variance will be
-large. This idea is implemented in package *'bootnet'* [@Epskamp2018a].
+large. This idea is implemented in package *bootnet* [@Epskamp2018a].
 
 Below, the stability of the network that was fit in the previous example is
 examined with bootnet: fifty networks are fit, based on fifty bootstrapped
@@ -469,7 +469,7 @@ can be detected in EMA data (see Chapter \@ref(features)). Standard analysis
 techniques, however, expect regular timeseries, in which data are sampled at
 equidistant intervals. EMA data, typically, are not equidistant. One solution to
 this problem is to use the Lomb-Scargle periodogram procedure [@Lomb1976],
-which can be applied to unevenly-sampled timeseries as well. Package *'lomb'*
+which can be applied to unevenly-sampled timeseries as well. Package *lomb*
 [@ruf1999] implements this procedure.
 
 ```{r cs15n, out.width='98%'}

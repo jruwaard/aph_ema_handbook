@@ -391,7 +391,7 @@ summary(models_found[[1]]$varest$varresult$depression)
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
-[@[@R-autovarCore], which was used in several publications
+[@R-autovarCore], which was used in several publications
 [@VanderKrieke2015, @Emerencia2016]. Further information can be found on
 [http://autovar.nl](https://autovar.nl/) and
 [http://autovarcore.nl](https://autovarcore.nl/)

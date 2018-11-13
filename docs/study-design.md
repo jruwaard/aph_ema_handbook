@@ -15,7 +15,7 @@ Ample information on general study design issues can be found elsewhere (see for
 example, the APH quality handbook, at <http://www.emgo.nl/kc/>). This chapter
 highlights key design aspects of EMA studies.
 
-## What is the research question?
+## What is the EMA Research Question?
 
 Given the plethora of new research options that emerged from the rapid
 development in EMA technologies, it can be tempting to dive straight into
@@ -37,7 +37,7 @@ hypotheses will help to make the right choices when you have to decide on the
 other aspects of the study design.
 
 
-## Who are the study participants?
+## Who are the Study Participants?
 
 Given the experimental nature of EMA, studies are often piloted in healthy or
 sub-clinical populations. This is a recommended first step, to test the
@@ -49,7 +49,7 @@ non-patients. Pilot studies should therefore also be conducted in the target
 population.
 
 
-## What are the qualities of the EMA measures?
+## What are the Qualities of the EMA Measures?
 \index{EMA!Passive EMA}
 \index{EMA!Active EMA}
 \index{Measurement error}
@@ -231,7 +231,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4801
+#> [1] 0.4758
 ```
 
 As can be seen, the simulation results are very close to the output of

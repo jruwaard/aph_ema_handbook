@@ -57,7 +57,7 @@ accelerometer sensor [@Meijden2016].
 
 
 
-### EMA sampling
+### EMA Sampling
 \index{Sampling!Signal-contingent}
 \index{Sampling!Event-contingent} 
 \index{Sample plan|see{Sampling}}
@@ -93,7 +93,7 @@ in activity level is detected [@Smyth2003].
 
 ## Why EMA?
 
-### To minimize recall bias in assessment
+### To Minimize Recall Bias
 
 \index{Recall bias}
 
@@ -105,7 +105,7 @@ circumvents this recall bias, by asking participants to rate their *current
 state*, rather than asking them to reflect on past experiences.
 
 
-### To increase the ecological validity of research findings
+### To Maximize Ecological Validity
 
 \index{Ecological validity} 
 
@@ -117,7 +117,7 @@ better generalization to the subject’s lived experience in real-world settings
 Practical applications derived from EMA data are therefore expected to be more
 relevant to real-life situations.
 
-### To advance ideographic research
+### To Advance Ideographic Research
 \index{Nomothetic research} \index{Ideographic research} 
 \index{Intra-individual process|see{Ideographic research}}
 
@@ -145,7 +145,7 @@ and between individuals.
 </div>
 
 
-### To enable EMI
+### To Enable EMI
 \index{Ecological Momentary Intervention}
 \index{EMI|see{Ecological Momentary Intervention}}
 
@@ -159,7 +159,7 @@ last sentence, however, is "adequately". We should be aware of the
 "garbage-in/garbage-out" principle. Before EMI's can be considered, the
 psychometric properties of EMA measures should be demonstrated first.
 
-## EMA research findings: A birds-eye view
+## EMA Research Findings: A Birds-eye View
 
 The use of EMA in mental health research might seem novel but this methodology
 has a long track record. Already in the 1980's, early pioneers used electronic
@@ -276,7 +276,7 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 | @Dogan2017         | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems |
 
 
-## What is in this manual?
+## What is in this Manual?
 
 This manual comprises six parts, in which various aspects of EMA research are
 discussed.

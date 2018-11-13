@@ -89,7 +89,7 @@ example, package `GGIR` and `GENEARead`, which are described in more detail in
 Chapter \@ref(rcat)).
 
 
-### Feature extraction
+### Feature Extraction
 \index{ENMO}
 \index{SVM}
 
@@ -241,7 +241,7 @@ to identify this location.
 </div>
 
 
-### GPS-based activity measures
+### GPS-based Activity Measures
 
 Raw GPS-data reflect series of locations rather than activity per se. However,
 measures of activity can be extracted from these data. 

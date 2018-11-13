@@ -69,7 +69,7 @@ will be working with version 3.4.2 (or higher) of R, and version 1.1.414 (or
 higher) of RStudio.
 
 
-## Interacting with R through the RStudio console
+## Interacting with R through the RStudio Console
 \index{R and RStudio!Console} 
 
 If you open RStudio, you will be presented with the interface shown in Figure
@@ -149,14 +149,14 @@ the cursor in the script will move to the next line, allowing you to walk
 through the script, step by step.
 
 
-## Importing your data
+## Importing Your Data
 \index{R and RStudio!Data import} 
 
 Something that confuses new RStudio users, who are more familiar with SPSS, is
 that it is not obvious how to import data into RStudio. In SPSS, the data
 are in plain sight. In R, you first have to import the data.
 
-### Using RStudio menus to import data 
+### Using RStudio Menus to Import Data 
 
 One way to load data into R is to use RStudio's data import wizard. Follow the
 steps below to see how this works with data stored in a comma-separated-values
@@ -182,7 +182,7 @@ will see a brief summary of the contents of the data.
 <p class="caption">(\#fig:fig2b)RStudio's CSV import wizard.</p>
 </div>
 
-### Using functions to import data
+### Using Functions to Import Data
 
 While RStudio's Data import wizard is useful, you will probably use it less over
 time. Most likely, you will convert to using the more efficient R commands to
@@ -195,7 +195,7 @@ example data.
 ESMdata <- read.csv(url("https://tinyurl.com/yczmjdat"), row.names = NULL)
 ```
 
-### Accessing your data
+### Accessing your Data
 \index{R and RStudio!Data access} 
 
 Since the data is now in the environment (under the name `ESMdata`), you can use
@@ -328,7 +328,7 @@ devtools::install_github("jruwaard/emaph")
 ```
 
 
-### Using packages
+### Using Packages
 \index{R and RStudio!Packages} 
 
 To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library`
@@ -365,7 +365,7 @@ ggplot(data = subset(csd, dayno <= 6),
 </div>
 
 
-## Getting help
+## Getting Help
 \index{R and RStudio!Help} 
 
 R has no point-and-click menu's that you can browse through to select a
@@ -373,7 +373,7 @@ statistical procedure. This is a problem for many new users. What if you want,
 for example, to generate random numbers from a distribution with a mean of 2 and
 standard deviation of 4? How to tell this to R?
 
-### Using '?' to consult the documentation
+### Using '?' to Consult the Documentation
 
 The good thing is that you already known the name of the function to use, since
 we used it in the previous section: it is `rnorm`. To check the documentation of
@@ -402,7 +402,7 @@ All functions in R are documented, and this documentation is shown in RStudio's
 Help pane when you prepend `?` to the name of the function in the console.
 
 
-### Using RStudio's global documentation index search
+### Using RStudio's Global Documentation Index Search
 
 What if you do not know the name of a function? Suppose you want to run a t-test
 for independent groups. Does R have a function for that?
@@ -428,17 +428,17 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 0.75635, df = 189.2, p-value = 0.4504
+#> t = -0.3026, df = 198, p-value = 0.7625
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2004830  0.4498378
+#>  -0.2934139  0.2153457
 #> sample estimates:
-#>   mean of x   mean of y 
-#>  0.03579095 -0.08888645
+#>  mean of x  mean of y 
+#> 0.02402507 0.06305917
 ```
 
 
-### Learning from examples
+### Learning from Examples
 
 This book contains many R code snippets. By studying these examples, you will
 become more familiar with R.
@@ -461,7 +461,7 @@ resources are:
   - SearchR (see: <http://search.r-project.org/>)
 
 
-### Read books
+### Read Books
 
 This book does not provide a comprehensive tutorial. There is no need for that,
 since excellent resources are readily available. A selection is presented below.

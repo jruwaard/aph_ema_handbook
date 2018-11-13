@@ -157,7 +157,7 @@ patterns in the series?
 </div>
 
 
-## Autocorrelation
+## Auto-correlation
 
 When a series is correlated with delayed copies of itself, we say that it is
 auto-correlated. In repeated measurements of natural phenomena, this
@@ -178,7 +178,7 @@ periodicity.
 <p class="caption">(\#fig:fig8g)Autocorrelation plot of the EMA mood series, revealing periodicity.</p>
 </div>
 
-### Rolling statistics
+### Rolling Statistics
 
 From the auto-correlation analysis, we learned that describing the EMA series as
 a simple trend might be too simplistic. The mean does not increase in a simple

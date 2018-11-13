@@ -30,7 +30,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 | Van Ballegooijen    | CASPAR                  | VU                  |
 | **Sleep**           |                         |                     |
 | Van Someren         |                         | AMC / GGZ inGeest   |
-| **Symptom Networks**|                         |                     |
+| **Stress & Emotion**|                         |                     |
 | De Geus         | VU-AMS                      | VU                  |
 
 
@@ -119,7 +119,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 |                   | http://research.vumc.nl/en/persons/lise-kemmeren |
 
 
-## Psychosomatic symptoms
+## Psychosomatic Symptoms
 
 ### Knoop
 \index{Chronic Fatigue}
@@ -264,7 +264,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 |             | http://herseninstituut.nl/over-ons/de-organisatie/medewerkers/wisse-van-der-meijden/ |
 
 
-## Ambulatory Assessment
+## Stress & Emotion
 
 ### De Geus
 \index{VU-AMS}

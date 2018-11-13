@@ -69,7 +69,7 @@ detected, and summarizing measures, such as activity counts and
 energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs). 
 
-### Package GENEAread
+### GENEAread
 
 GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that
 is often used in clinical research studies. With package **GENEAread**
@@ -462,6 +462,7 @@ plot(results, order = "mean")
 ### lomb
 \index{Lomb-Scargle periodogram}
 \index{unevenly-sampled timeseries}
+\index{Packages!lomb}
 
 Disturbances in circadian rhythms have been related to depressive symptoms
 [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhythms

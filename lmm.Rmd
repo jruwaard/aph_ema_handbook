@@ -96,8 +96,8 @@ ggplot(subset(d1, id %in% unique(d1$id)[1:6]),
 ```
 
 
-## Fitting a Mixed Model in R
-\index{nlme} 
+## Fitting a Mixed Model in R 
+\index{Packages!nlme}
 
 Now, let's fit a mixed model to the data, to see whether the simulation
 parameters are detected. For this, we will use the `lme` function, from package
@@ -236,12 +236,12 @@ intervention (data-set 2) against a waiting list condition (data-set 1). By
 combining the two data-sets, we can illustrate how to conduct a group comparison
 with `lme`.
 
-Since the two data-sets are already available (in variables `d1` and `d2`), the new data set
-can be created with just three lines of code (below). In the first line, the
-`rbind` function is used to combine the rows of data-set 1 and 2 into a new
-variable: d3. The second line adds a group indicator to `d3`. The third line
-updates the ids of the participants in the second group, to differentiate the
-participants in the second group from the participants in the first group.
+Since the two data-sets are already available (in variables `d1` and `d2`), the
+new data set can be created with just three lines of code (below). In the first
+line, the `rbind` function is used to combine the rows of data-set 1 and 2 into
+a new variable: d3. The second line adds a group indicator to `d3`. The third
+line updates the IDs of the participants in the second group, to differentiate
+the participants in the second group from the participants in the first group.
 
 ```{r cs9i}
 # Two-group simulation.

@@ -191,6 +191,7 @@ ggplot(subset(e, week < 20), aes(x = t, y = abs(residuals))) +
 ```
 
 ## Missing Values
+\index{missing values}
 
 ```{r echo = FALSE, include = FALSE}
 d$t_g <- cut(t, 21, labels = 1:21)
@@ -265,6 +266,7 @@ ggplot(d, aes(x = t, y = s_imputed)) +
 
 
 ## Auto-correlation
+\index{auto-correlation}
 
 When a series is correlated with delayed copies of itself, we say that it is
 auto-correlated. In repeated measurements of natural phenomena, this
@@ -323,6 +325,7 @@ ggplot(e, aes(x = t, y = rolling_mean)) +
 
 
 ## Periodicity
+\index{circadian rhythms}
 
 Both the auto-correlation analysis and the moving average plot suggest
 periodicity in the EMA time series. Suppose we want to know more about this

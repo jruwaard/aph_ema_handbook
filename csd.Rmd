@@ -45,6 +45,8 @@ going to use several functions from `tidyverse` packages.
 
 - DFA is implemented in package `nonlinearTseries`, so we will need that as well.
 
+\index{Packages!nonlinearTseries}
+
 ```{r cs11a, warning=FALSE}
 # Required libraries for the CSD-study re-analysis.
 library(emaph)

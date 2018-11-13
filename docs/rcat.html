@@ -419,7 +419,7 @@ code > span.in { font-style: italic; } /* Information */
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.055 secs .</span>
+<span class="co">#&gt; Processing took: 0.082 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -637,7 +637,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lmer</span>(distance <span cla
 <div id="simr" class="section level3">
 <h3><span class="header-section-number">13.4.1</span> simr</h3>
 
-<p>With package <em>simr</em> <span class="citation">(P. Green &amp; MacLeod, <a href="#ref-Green2016">2016</a>)</span>, power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the true parameters of a mixed model, and a single data set. Then, function <code>simPower</code> can be used to simulate new data sets and tests (of a specified parameter in the model), to determine the power of the test.</p>
+<p>With package <em>simr</em> <span class="citation">(P. Green &amp; MacLeod, <a href="#ref-Green2016">2016</a>)</span>, power of mixed-effects models can be determined via simulation. As illustrated below, the procedure requires the researcher to define the true parameters of a mixed model, and a single data set. Next, function <code>simPower</code> can be used to simulate new data sets and tests (of a specified parameter in the model), to determine the power of the test.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Power analysis of a two-group repeated measures design</span>
 <span class="co"># (simulation approach).</span>
 <span class="kw">library</span>(simr)
@@ -710,23 +710,27 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="kw">summary</span>(models_found[[<span class="dv">1</span>]]<span class="op">$</span>varest<span class="op">$</span>varresult<span class="op">$</span>depression)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
-<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
+<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -1.69557 -0.53470 -0.02473  0.54676  2.25358 </span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -1.9894 -0.5537  0.0000  0.6634  2.3361 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.61856    0.08650   7.151  1.7e-10 ***</span>
-<span class="co">#&gt; depression.l1  0.07340    0.08274   0.887    0.377    </span>
-<span class="co">#&gt; const          0.03005    0.09032   0.333    0.740    </span>
+<span class="co">#&gt; activity.l1    0.51086    0.09222   5.540 2.92e-07 ***</span>
+<span class="co">#&gt; depression.l1 -0.05470    0.08999  -0.608    0.545    </span>
+<span class="co">#&gt; depression.l2  0.13433    0.09314   1.442    0.153    </span>
+<span class="co">#&gt; const         -0.02479    0.09651  -0.257    0.798    </span>
+<span class="co">#&gt; outlier_42    -0.42332    0.94911  -0.446    0.657    </span>
+<span class="co">#&gt; outlier_50    -0.03441    0.94716  -0.036    0.971    </span>
+<span class="co">#&gt; outlier_59    -0.66779    0.96835  -0.690    0.492    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.8961 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.3595, Adjusted R-squared:  0.3462 </span>
-<span class="co">#&gt; F-statistic: 26.95 on 2 and 96 DF,  p-value: 5.146e-10</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9401 on 91 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.263,  Adjusted R-squared:  0.2144 </span>
+<span class="co">#&gt; F-statistic: 5.413 on 6 and 91 DF,  p-value: 8.025e-05</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>, <span class="citation">Emerencia et al. (<a href="#ref-Emerencia2016">2016</a>)</span>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="qgraph" class="section level3">
@@ -854,7 +858,7 @@ lomb<span class="op">::</span><span class="kw">lsp</span>(ibex[<span class="dv">
 <p>Lomb, N. R. (1976). Least-squares frequency analysis of unequally spaced data. <em>Astrophysics and Space Science</em>. <a href="https://doi.org/10.1007/BF00648343" class="uri">https://doi.org/10.1007/BF00648343</a></p>
 </div>
 <div id="ref-ruf1999">
-<p>Ruf, T. (1999). The lomb-scargle periodogram in biological rhythm research: Analysis of incomplete and unequally spaced time-series. <em>Biological Rhythm Research</em>, <em>30</em>, 178–201.</p>
+<p>Ruf, T. (1999). The lomb-scargle periodogram in biological rhythm research: Analysis of incomplete and unequally spaced time-series. <em>Biological Rhythm Research</em>, <em>30</em>, 178–201. <a href="https://doi.org/10.1076/brhm.30.2.178.1422" class="uri">https://doi.org/10.1076/brhm.30.2.178.1422</a></p>
 </div>
 </div>
             </section>

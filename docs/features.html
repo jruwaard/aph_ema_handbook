@@ -404,7 +404,7 @@ Figure 8.9: periodogram of the EMA time series, revealing a one-day and a one-we
 <p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure <a href="features.html#fig:fig8a">8.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
 <p>The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter <a href="csd.html#csd">10</a>, for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.</p>
 <p>Finally, you might have been disappointed by the lack of code examples in this chapter. We did not include them, to avoid unnecessary distraction from the conceptual explanation. Instead, we provide a full code listing below, to allow you learn how to apply the feature extraction techniques yourself.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Extracting Features from a simulated EMA time-series
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## (De)constructing a simulated EMA time-series
 
 <span class="co"># libraries ----------------</span>
 <span class="kw">library</span>(ggplot2)
@@ -440,7 +440,7 @@ s &lt;-<span class="st"> </span>s <span class="op">+</span><span class="st"> </s
                <span class="dt">mean =</span> <span class="kw">seq</span>(m, m <span class="op">+</span><span class="st"> </span>trend, <span class="dt">length.out =</span> n),
                <span class="dt">sd =</span> <span class="fl">0.5</span>)
 
-
+<span class="co">#3 auto-correlation</span>
 s &lt;-<span class="st"> </span>s <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span><span class="kw">arima.sim</span>(<span class="dt">model =</span> <span class="kw">list</span>(<span class="dt">ar =</span> autocorrelation), <span class="dt">n =</span> n)
 
 ## missingness
@@ -621,16 +621,16 @@ fa &lt;-
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-bowen2006">
-<p>Bowen, R., Baetz, M., Hawkes, J., &amp; Bowen, A. (2006). Mood variability in anxiety disorders. <em>Journal of Affective Disorders</em>, <em>91</em>(2-3), 165–170.</p>
+<p>Bowen, R., Baetz, M., Hawkes, J., &amp; Bowen, A. (2006). Mood variability in anxiety disorders. <em>Journal of Affective Disorders</em>, <em>91</em>(2-3), 165–170. <a href="https://doi.org/10.1016/j.jad.2005.12.050" class="uri">https://doi.org/10.1016/j.jad.2005.12.050</a></p>
 </div>
 <div id="ref-wikiStationary">
 <p>Wikipedia. (2018). Stationary process — Wikipedia, the free encyclopedia. <a href="http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327">http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327</a>.</p>
 </div>
 <div id="ref-hoogendoorn2017">
-<p>Hoogendoorn, M., &amp; Funk, B. (2017). Machine learning for the quantified self.</p>
+<p>Hoogendoorn, M., &amp; Funk, B. (2017). <em>Machine learning for the quantified self: On the art of learning from sensory data</em>. Springer International Publishing. Retrieved from <a href="https://books.google.nl/books?id=WZs3DwAAQBAJ" class="uri">https://books.google.nl/books?id=WZs3DwAAQBAJ</a></p>
 </div>
 <div id="ref-Doherty2018">
-<p>Doherty, A. (2018). Circadian rhythms and mental health: wearable sensing at scale. <a href="https://doi.org/10.1016/S2215-0366(18)30172-X" class="uri">https://doi.org/10.1016/S2215-0366(18)30172-X</a></p>
+<p>Doherty, A. (2018). Circadian rhythms and mental health: wearable sensing at scale. <em>The Lancet Psychiatry</em>. <a href="https://doi.org/10.1016/S2215-0366(18)30172-X" class="uri">https://doi.org/10.1016/S2215-0366(18)30172-X</a></p>
 </div>
 <div id="ref-Frank2007">
 <p>Frank, E., Swartz, H. A., &amp; Boland, E. (2007). Interpersonal and social rhythm therapy: An intervention addressing rhythm dysregulation in bipolar disorder. <em>Dialogues in Clinical Neuroscience</em>. <a href="https://doi.org/10.1002/jclp.20371" class="uri">https://doi.org/10.1002/jclp.20371</a></p>

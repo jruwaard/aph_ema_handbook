@@ -376,7 +376,7 @@ you learn how to apply the feature extraction techniques yourself.
 
 
 ```{r csfeaturextraction, echo = TRUE, eval = FALSE}
-## Extracting Features from a simulated EMA time-series
+## (De)constructing a simulated EMA time-series
 
 # libraries ----------------
 library(ggplot2)
@@ -412,7 +412,7 @@ s <- s + rnorm(n,
                mean = seq(m, m + trend, length.out = n),
                sd = 0.5)
 
-
+#3 auto-correlation
 s <- s + 1 * arima.sim(model = list(ar = autocorrelation), n = n)
 
 ## missingness

@@ -302,7 +302,7 @@ fixef(fm)
 With package *simr* [@Green2016], power of mixed-effects models can be
 determined via simulation. As illustrated below, the procedure requires the
 researcher to define the true parameters of a mixed model, and a single data
-set. Then, function `simPower` can be used to simulate new data sets and tests
+set. Next, function `simPower` can be used to simulate new data sets and tests
 (of a specified parameter in the model), to determine the power of the test.
 
 ```{r cs15i}

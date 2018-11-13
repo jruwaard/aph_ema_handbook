@@ -16,7 +16,7 @@ Table: (\#tab:14a) EMA Instruments.
 | PsyMate      | PsyMate           | Android/iOS EMA app           |
 | RoQua        | RoQua             | SMS / Browser-based active EMA|
 | **Wearables**|                   |                               |
-| GENEActive   | activinsights     | Wrist-worn accelerometer      |
+| GENEActive   | Activinsights     | Wrist-worn accelerometer      |
 | VU-AMS       | VU                | Wearable for autonomic nervous system assessments|
 
 
@@ -201,8 +201,8 @@ knitr::include_graphics(c(
 ### GENEActive
 \index{GENEActive}
 
-GENEActive, sold by UK-based company Activinsights (activinsights.com), is a
-waterproof wrist-worn device with a high-precision, configurable 3-axial
+GENEActive, sold by UK-based company Activinsights (<http://activinsights.com>),
+is a waterproof wrist-worn device with a high-precision, configurable 3-axial
 accelerometer (range: +/- 8g), an ambient light sensor, a (near-body)
 temperature sensor, and an event logger (a button that users can press to mark a
 targeted event). GENEActive was developed to accurately assess human activity in

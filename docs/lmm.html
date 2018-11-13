@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-12">
+<meta name="date" content="2018-11-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -245,13 +245,16 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html"><i class="fa fa-check"></i><b>12</b> EMA Instruments Catalogue</a><ul>
-<li class="chapter" data-level="12.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.1</b> GENEActive</a></li>
-<li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ilumivu"><i class="fa fa-check"></i><b>12.2</b> Ilumivu</a></li>
-<li class="chapter" data-level="12.3" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#moodbuster"><i class="fa fa-check"></i><b>12.3</b> Moodbuster</a></li>
-<li class="chapter" data-level="12.4" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#movisens"><i class="fa fa-check"></i><b>12.4</b> Movisens</a></li>
-<li class="chapter" data-level="12.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#psymate"><i class="fa fa-check"></i><b>12.5</b> PsyMate</a></li>
-<li class="chapter" data-level="12.6" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.6</b> RoQua</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.6.1</b> VU-AMS</a></li>
+<li class="chapter" data-level="12.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ema-platforms-apps"><i class="fa fa-check"></i><b>12.1</b> EMA Platforms &amp; Apps</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ilumivu"><i class="fa fa-check"></i><b>12.1.1</b> Ilumivu</a></li>
+<li class="chapter" data-level="12.1.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#moodbuster"><i class="fa fa-check"></i><b>12.1.2</b> Moodbuster</a></li>
+<li class="chapter" data-level="12.1.3" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#movisens"><i class="fa fa-check"></i><b>12.1.3</b> Movisens</a></li>
+<li class="chapter" data-level="12.1.4" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#psymate"><i class="fa fa-check"></i><b>12.1.4</b> PsyMate</a></li>
+<li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>13</b> R Packages for EMA Research</a><ul>
@@ -324,7 +327,7 @@ code > span.in { font-style: italic; } /* Information */
 <div id="simulating-example-data" class="section level2">
 <h2><span class="header-section-number">9.2</span> Simulating Example Data</h2>
 
-<p>To understand analysis techniques, it often helps to apply the technique to simulated data, in which parameters of interest are known. Here, we will use the <code>sim_ema</code> function from package <code>emaph</code>, to simulate EMA mood assessments of 100 participants, who rate their mood, three times per day, for one week. As you can learn from the documentation of <code>sim_ema</code> (see <code>?sim\_ema</code>), the function expects at least two arguments: the definition of a sample plan (see <code>?sample\_plan</code>), and a specification of the data-generating model, in the form of a list defining fixed effects, the random effects, and residual variance (i.e, the error).</p>
+<p>To understand analysis techniques, it often helps to apply the technique to simulated data, in which parameters of interest are known. Here, we will use the <code>sim_ema</code> function from package <code>emaph</code>, to simulate EMA mood assessments of 100 participants, who rate their mood, three times per day, for one week. As you can learn from the documentation of <code>sim_ema</code> (see <code>?sim_ema</code>), the function expects at least two arguments: the definition of a sample plan (see <code>?sample_plan</code>), and a specification of the data-generating model, in the form of a list defining fixed effects, the random effects, and residual variance (i.e, the error).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Simulating ema data.</span>
 <span class="kw">library</span>(emaph)
 plan &lt;-<span class="st"> </span><span class="kw">sample_plan</span>(<span class="dt">n_participants =</span> <span class="dv">100</span>, 
@@ -338,7 +341,7 @@ d1 &lt;-<span class="st"> </span><span class="kw">sim_ema</span>(plan,
                             <span class="dt">random =</span> <span class="kw">c</span>(<span class="dt">intercept =</span> <span class="dv">1</span>),
                             <span class="dt">error =</span> .<span class="dv">5</span>),
               <span class="dt">lim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</code></pre></div>
-<p>From the code, you learn that we set the mean mood (intercept<sub>g</sub>) to 5, the variance around this mean - var(intercept<sub>i</sub>) - to 1, and the variance around these means within participants - the error - to .5. Figure <a href="lmm.html#fig:fig9a">9.1</a> shows EMA mood ratings of the first 6 participants in the simulated data set, which we can use to check the simulation. As specified, mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line). So far, so good.</p>
+<p>From the code, you learn that we set the mean mood (intercept<sub>g</sub>) to 5, the variance around this mean - var(intercept<sub>p</sub>) - to 1, and the variance around these means within participants - the error - to .5. Figure <a href="lmm.html#fig:fig9a">9.1</a> shows EMA mood ratings of the first 6 participants in the simulated data set, which we can use to check the simulation. As specified, mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line). So far, so good.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9a"></span>
 <img src="lmm_files/figure-html/fig9a-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
 <p class="caption">
@@ -350,7 +353,7 @@ Figure 9.1: Simulated EMA data of Six Participants.
 <h2><span class="header-section-number">9.3</span> Fitting a Mixed Model in R</h2>
 
 <p>Now, let’s fit a mixed model to the data, to see whether the simulation parameters are detected. For this, we will use the <code>lme</code> function, from package <code>nlme</code> <span class="citation">(Pinheiro, Bates, DebRoy, Sarkar, &amp; R Core Team, <a href="#ref-R-nlme">2018</a>)</span>. The code snippet below shows how to do this.</p>
-<p>The first argument of the lme function, <code>Y ~ 1</code>, specifies the fixed ‘effect’ (in this case: the mean intercept). The second argument, <code>random =~ 1 | id</code> specifies the random effect. In this model, intercepts are allowed to vary between participants. The fitted model is assigned to a variable (‘fm’), which we will use later to study the fitted model.</p>
+<p>The first argument of the lme function, <code>Y ~ 1</code>, specifies the fixed ‘effect’ (in this case: the mean intercept). The second argument, <code>random =~ 1 | id</code> specifies the random effect. In this model, intercepts are allowed to vary between participants. The fitted model is assigned to a variable (<code>fm</code>), which we will use later to study the fitted model.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fitting a mixed model with lme.</span>
 <span class="kw">library</span>(nlme)
 fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">random =</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>id, 
@@ -422,13 +425,13 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
 </div>
 <div id="adding-a-two-group-comparison" class="section level2">
 <h2><span class="header-section-number">9.5</span> Adding a Two-Group Comparison</h2>
-<p>In data-set 1, mood ratings did not change during the week, while in data-set 2, the mood ratings increased. Suppose the two data-sets reflect the data that you collect in a two-group RCT, in which you compare the effects of a mental health intervention (data-set 2) against a waiting list condition (data-set 1). By combining the two data-sets, we can illustrate how to conduct a group comparison with ‘lme’.</p>
-<p>Since the two data-sets are already available (in d1 and d2), the new data set can be created with just three lines of code (below). In the first line, the ‘rbind’ function is used to combine the rows of data-set 1 and 2 into a new variable: d3. The second line adds a group indicator to d3. The third line updates the ids of the participants in the second group, to differentiate the participants in the second group from the participants in the first group.</p>
+<p>In data-set 1, mood ratings did not change during the week, while in data-set 2, the mood ratings increased. Suppose the two data-sets reflect the data that you collect in a two-group RCT, in which you compare the effects of a mental health intervention (data-set 2) against a waiting list condition (data-set 1). By combining the two data-sets, we can illustrate how to conduct a group comparison with <code>lme</code>.</p>
+<p>Since the two data-sets are already available (in variables <code>d1</code> and <code>d2</code>), the new data set can be created with just three lines of code (below). In the first line, the <code>rbind</code> function is used to combine the rows of data-set 1 and 2 into a new variable: d3. The second line adds a group indicator to <code>d3</code>. The third line updates the ids of the participants in the second group, to differentiate the participants in the second group from the participants in the first group.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Two-group simulation.</span>
 d3 &lt;-<span class="st"> </span><span class="kw">rbind</span>(d1, d2)
 d3<span class="op">$</span>group &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">nrow</span>(d1)), <span class="kw">rep</span>(<span class="dv">1</span>, <span class="kw">nrow</span>(d2))), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;control&quot;</span>, <span class="st">&quot;treatment&quot;</span>))
 d3<span class="op">$</span>id[d3<span class="op">$</span>group <span class="op">==</span><span class="st"> &quot;treatment&quot;</span>] &lt;-<span class="st"> </span>d3<span class="op">$</span>id[d3<span class="op">$</span>group <span class="op">==</span><span class="st"> &quot;treatment&quot;</span>] <span class="op">+</span><span class="st"> </span><span class="dv">100</span></code></pre></div>
-<p>The effect of the intervention can be tested by adding a (fixed) ‘time * group’ interaction effect to the model. This effect, we know, is .5, and, as can be seen, this is what the model picks up:</p>
+<p>The effect of the intervention can be tested by adding a (fixed) ‘time * group’ interaction effect to the model. This effect, we know, is 0.5, and, as can be seen, this is what the model picks up:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># A mixed model, with two groups.</span>
 <span class="kw">library</span>(nlme)
 fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>time <span class="op">*</span><span class="st"> </span>group, <span class="dt">random =</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">+</span><span class="st"> </span>time <span class="op">|</span><span class="st"> </span>id, 

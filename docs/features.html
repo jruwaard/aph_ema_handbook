@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-12">
+<meta name="date" content="2018-11-13">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -245,13 +245,16 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html"><i class="fa fa-check"></i><b>12</b> EMA Instruments Catalogue</a><ul>
-<li class="chapter" data-level="12.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.1</b> GENEActive</a></li>
-<li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ilumivu"><i class="fa fa-check"></i><b>12.2</b> Ilumivu</a></li>
-<li class="chapter" data-level="12.3" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#moodbuster"><i class="fa fa-check"></i><b>12.3</b> Moodbuster</a></li>
-<li class="chapter" data-level="12.4" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#movisens"><i class="fa fa-check"></i><b>12.4</b> Movisens</a></li>
-<li class="chapter" data-level="12.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#psymate"><i class="fa fa-check"></i><b>12.5</b> PsyMate</a></li>
-<li class="chapter" data-level="12.6" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.6</b> RoQua</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.6.1</b> VU-AMS</a></li>
+<li class="chapter" data-level="12.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ema-platforms-apps"><i class="fa fa-check"></i><b>12.1</b> EMA Platforms &amp; Apps</a><ul>
+<li class="chapter" data-level="12.1.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#ilumivu"><i class="fa fa-check"></i><b>12.1.1</b> Ilumivu</a></li>
+<li class="chapter" data-level="12.1.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#moodbuster"><i class="fa fa-check"></i><b>12.1.2</b> Moodbuster</a></li>
+<li class="chapter" data-level="12.1.3" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#movisens"><i class="fa fa-check"></i><b>12.1.3</b> Movisens</a></li>
+<li class="chapter" data-level="12.1.4" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#psymate"><i class="fa fa-check"></i><b>12.1.4</b> PsyMate</a></li>
+<li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
+</ul></li>
+<li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>13</b> R Packages for EMA Research</a><ul>
@@ -367,7 +370,7 @@ Figure 8.6: EMA time series, with missing values (red) imputed through interpola
 </div>
 <div id="autocorrelation" class="section level2">
 <h2><span class="header-section-number">8.5</span> Autocorrelation</h2>
-<p>When a series is correlated with delayed copies of itself, we say that it is auto-correlated. In repeated measurements of natural phenomena, this auto-correlation can often be found. The temperature of today is correlated with the temperature of recent days. Similarly, EMA mood ratings, taken at time t, are typically correlated with ratings taken at t-1, t-2, etc. This is illustrated in Figure <a href="features.html#fig:fig8g">8.7</a>. Studying the auto-correlation of a time-series at different delays can be very revealing, as illustrated by the auto-correlation plot in Figure <a href="features.html#fig:fig8g">8.7</a>, in which the correlation of the EMA series with itself is plotted, for various delays (or ‘lags’ as these delays are called). First, the plot reveals that observations are correlated with previous values at lag 1: this series is auto-correlated. Second, there appears to be a pattern in the correlations at later lags: positive and negative correlations alternate, in a pattern that seems to reflect periodicity.</p>
+<p>When a series is correlated with delayed copies of itself, we say that it is auto-correlated. In repeated measurements of natural phenomena, this auto-correlation can often be found. The temperature of today is correlated with the temperature of recent days. Similarly, EMA mood ratings, taken at time t, are typically correlated with ratings taken at t-1, t-2, etc. Studying the auto-correlation of a time-series at different delays can be very revealing, as illustrated by the auto-correlation plot in Figure <a href="features.html#fig:fig8g">8.7</a>, in which the correlation of the EMA series with itself is plotted, for various delays (or ‘lags’ as these delays are called). First, the plot reveals that observations are correlated with previous values at lag 1: this series is auto-correlated. Second, there appears to be a pattern in the correlations at later lags: positive and negative correlations alternate, in a pattern that seems to reflect periodicity.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8g"></span>
 <img src="features_files/figure-html/fig8g-1.png" alt="Autocorrelation plot of the EMA mood series, revealing periodicity." width="100%" />
 <p class="caption">

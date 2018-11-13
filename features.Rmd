@@ -264,7 +264,7 @@ ggplot(d, aes(x = t, y = s_imputed)) +
 ```
 
 
-## Autocorrelation
+## Auto-correlation
 
 When a series is correlated with delayed copies of itself, we say that it is
 auto-correlated. In repeated measurements of natural phenomena, this
@@ -286,7 +286,7 @@ acf(e$s, type = "partial", lag.max = 35, main = "", ylab = "corr", xlab = "lag")
 par(op)
 ```
 
-### Rolling statistics
+### Rolling Statistics
 
 From the auto-correlation analysis, we learned that describing the EMA series as
 a simple trend might be too simplistic. The mean does not increase in a simple

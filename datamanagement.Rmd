@@ -1,5 +1,5 @@
 
-# Data management {#datamanagement}
+# Data Management {#datamanagement}
 \index{Datamanagement}
 
 In a typical EMA study, lots of data are collected. Repeated self-reports,
@@ -92,8 +92,7 @@ path <- c(
     "project/data/raw/geneactive/ga_APC009_b_2018_05_01.bin", 
     "project/data/raw/geneactive/ga_APC010_2018_05_01.bin",
     "project/data/raw/geneactive/ga_APC011_2018_05_01.bin", 
-    "project/data/cleaned/demographics.Rda", 
-    "project/data/cleaned/depression.Rda", 
+    "project/data/cleaned/baseline.Rda", 
     "project/data/cleaned/mood.Rda",
     "project/data/cleaned/activity.Rda",
     "project/scripts/import/import_questmanager.R", 
@@ -103,7 +102,7 @@ path <- c(
     "project/scripts/publish/analysis.R",
     "project/scripts/publish/P001_regression.Rda",
     "project/scripts/publish/figure1.pdf",
-    "project/README.txt"
+    "project/README"
 )
 
 x <- lapply(strsplit(path, "/"), function(z) as.data.frame(t(z)))
@@ -186,10 +185,10 @@ Table: (\#tab:tab5a) Example Study Key-file
 | P003       |  QM01230 | 192.B220.00N   | APC011         |
 
 
-## Import scripts
+## Import Scripts
 
 In 'scripts/import', we find the scripts with which the raw data are imported
-and cleaned, to produce ready-to-analyze data that is stored in 'data/cleaned'.
+and cleaned, to produce ready-to-analyze data that are stored in 'data/cleaned'.
 
 By making these scripts parts of your project, you ensure that you and others
 can always trace the decisions that were made to prepare the raw data for
@@ -234,7 +233,7 @@ d$gender <- factor(d$gender, levels = c("M", "F"))
 
 # save cleaned baseline data to data/cleaned, in R (.Rda) format
 baseline <- d
-save(baseline, file = "baseline.Rda")
+save(baseline, file = "data/cleaned/baseline.Rda")
 ```
 
 The code snippet above illustrates the importance of code documentation. You may
@@ -296,16 +295,16 @@ dev.off()
 ```
 
 
-## README.txt
+## README
 
-Note, finally, the 'README.txt' file in the root of the project directory. This
+Note, finally, the 'README' file in the root of the project directory. This
 file should contain a brief summary of the project, to quickly inform others
 (and your future self) of the context of the project and the contents of the
 project directory.
 
 | Element        | Description                          |
 |:---------------|:-------------------------------------|
-| Title          | Project title & Acronym             |
+| Title          | Project title & Acronym              |
 | Description    | One-paragraph project description    |
 | Author         | author name, e-mail affiliation      |
 | Getting Started| instructions on how to get the project up and running on a local machine for development. |
@@ -314,20 +313,19 @@ project directory.
 | Restrictions   | Notes about potential data access limitations |
 
 
-## A final note
+## A Final Note
 
 In this chapter, we aimed to show how adopting the RStudio Project can help you
-to implement key principles of EMA data management, such as accountability,
-transparency and reproducibility. To do so, we discussed the project structure
-of an illustrative small-scale EMA study. No doubt, your project will differ
-from this example in many ways, forcing you to deviate from the example
-structure. The example may be too elaborate, for example, if your project only
-requires you to analyze a single data file. The structure it certainly too
-limited to support the requirements of a full PHD project (such as the one
-described, for example, in the APH quality handbook - see
-<http://www.emgo.nl/kc/folders-and-file-names/>). But as we mentioned earlier,
-RStudio Projects are flexible. It should be relatively straightforward to scale
-down or scale up the example that we discussed. 
+to implement key principles of EMA data management, such as reproducibility. To
+do so, we discussed the project structure of an illustrative small-scale EMA
+study. No doubt, your project will differ from this example in many ways,
+forcing you to deviate from the example structure. The example may be too
+elaborate, for example, if your project only requires you to analyze a single
+data file. The structure it certainly too limited to support the requirements of
+a full PHD project (such as the one described, for example, in the APH quality
+handbook - see <http://www.emgo.nl/kc/folders-and-file-names/>). But as we
+mentioned earlier, RStudio Projects are flexible. It should be relatively
+straightforward to scale down or scale up the example that we discussed. 
 
 If you want to learn more about data management with R and RStudio, the book
 *"Reproducible Research with R and RStudio"* [@gandrud2015] would be a good

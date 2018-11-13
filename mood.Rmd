@@ -36,7 +36,7 @@ discuss the most commonly used options: 1) unidimensional mood assessment, 2)
 the 'bag of items' approach, and 3) dimensional models, namely the Circumplex
 model and Negative and Positive affect (NA/PA).
 
-## Unidimensional mood assessment
+## Unidimensional Mood Assessment
 \index{Mood assessment!Unidimensional}
 Perhaps the most seemingly straight-forward method to measure mood is to ask
 'face-valid' unidimensional questions such as *"How is your mood right now"*
@@ -68,7 +68,7 @@ plotmood_down <- ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
 print(plotmood_down)
 ```  
 
-### Bipolar unidimensional items
+### Bipolar Unidimensional Items
 \index{Mood assessment!Bipolar unidimensional}
 
 Another option to assist respondents with the interpretation of one-item mood
@@ -119,7 +119,7 @@ combined <- plotmood_down +
 print(combined)
 ```  
 
-## Multi-dimensional mood assessment
+## Multi-dimensional Mood Assessment
 \index{Mood assessment!Multi-dimensional}
 
 Dimensional models assume that every affective state or emotion should be

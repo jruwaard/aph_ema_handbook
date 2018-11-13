@@ -53,7 +53,7 @@ library(nonlinearTseries)
 ```
 
 
-## Plotting the course of depression 
+## Plotting the Course of Depression 
 
 Let's take a look at the development of the depressive symptoms of the patient
 first. These were tapped with weekly assessments of the depression scale of the
@@ -77,7 +77,7 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
 ```
 
 
-## Mental state EMA items
+## Mental state EMA Items
 
 Wichers and colleagues selected 13 items from the full EMA data set, which they
 grouped in 5 factors: positive affect (pa; 4 items), negative affect (`na`; 4

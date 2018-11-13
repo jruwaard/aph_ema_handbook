@@ -96,7 +96,7 @@ ggplot(d, aes(x = timestamp, y = value)) +
 ```
 
 
-### Package 'GGIR'
+### GGIR
 \index{Packages!GGIR}
 
 Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data
@@ -105,7 +105,7 @@ activity research: [GENEActiv](https://www.geneactiv.org/),
 [ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
 
 
-### Package 'PhysicalActivity'
+### PhysicalActivity
 \index{Packages!PhysicalActivity}
 
 Package *PhysicalActivity* [@R-PhysicalActivity] provides an alternative to
@@ -135,7 +135,7 @@ of base R functions. The `tidyverse` includes popular packages such as
 `ggplot2` (for plotting), `haven` (to read SPSS files), `dplyr` (for data
 manipulation), and many more (see: <http://tidyverse.org> for a full list).
 
-### Package `dplyr`
+### dplyr
 \index{Packages!dplyr}
 
 Package *dplyr* [@R-dplyr] implements the 'split-apply-combine'-strategy.
@@ -161,7 +161,7 @@ A good introduction to `dplyr` can be found in the book 'R for Data Science'
 (<http://r4ds.had.co.nz/>).
 
 
-### Package 'ggplot2'
+### ggplot2
 \index{Packages!ggplot2}
 
 Package *ggplot2* [@wickham2016ggplot2] provides a collection of high-level
@@ -201,7 +201,7 @@ g + facet_wrap(~ ID)
 ```
 
 
-### Package 'haven'
+### haven
 \index{Packages!haven}
 \index{SPSS}
 
@@ -217,7 +217,7 @@ d <- read_sav(path)
 attributes(d$Species)
 ```
 
-### Package 'lubridate'
+### lubridate
 \index{Datetime variables}
 \index{Packages!lubridate}
 
@@ -254,7 +254,7 @@ To learn more about handling dates and times with `lubridate`,
 Science' [@wickham2016r] provides a good introduction.
 
 
-## Mixed-effects modeling
+## Mixed-effects Modeling
 \index{mixed effects}
 
 Several R-packages for mixed-effects modelling exist. The most popular are
@@ -296,7 +296,7 @@ fixef(fm)
 
 ## Power analysis
 
-### Package 'simr'
+### simr
 \index{Packages!simr}
 
 With package *simr* [@Green2016], power of mixed-effects models can be
@@ -352,7 +352,7 @@ conducting a network analysis, be sure to visit the Psycho-systems website, at
 <http://psychosystems.org>.
 
 
-### Package 'autovarCore`
+### autovarCore
 \index{Packages!autovarCore}
 \index{Packages!autovar}
 
@@ -397,7 +397,7 @@ summary(models_found[[1]]$varest$varresult$depression)
 [http://autovarcore.nl](https://autovarcore.nl/)
 
 
-### Package 'qgraph`
+### qgraph
 \index{Packages!qgraph}
 
 Package *qgraph* [@Epskamp2012] can be used to fit, visualize and analyze
@@ -429,7 +429,7 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
 ```
 
 
-### Package 'bootnet'
+### bootnet
 \index{Packages!bootnet}
 
 In the interpretation of fitted network plots, it is important to take the
@@ -459,7 +459,7 @@ plot(results, order = "mean")
 
 ## Timeseries analysis
 
-### Package 'lomb'
+### lomb
 \index{Lomb-Scargle periodogram}
 \index{unevenly-sampled timeseries}
 

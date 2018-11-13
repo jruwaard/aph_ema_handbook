@@ -1,12 +1,17 @@
-# Best Practices in Ecological Momentary Assessment
+# Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, With Examples in R
 
-This is code and text behind the research manual [Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, With Examples in R](https://github.com/jruwaard/aph_ema_handbook). 
+This is code and text behind the APH research manual [Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, With Examples in R](https://github.com/jruwaard/aph_ema_handbook). 
 
-The manual is built using [bookdown package](https://github.com/rstudio/bookdown).
+This repository will reflect the latest version of the manual. 
+
+## How to build the book
+To build the manual, you need:
+* RStudio (which has built-in [pandoc](http://johnmacfarlane.net/pandoc/)
 
 ## R packages required 
+The manual is built using [bookdown package](https://github.com/rstudio/bookdown).
 
-The R packages that are used in the manual can be installed via:
+R packages that are used in the manual can be installed via:
 
 ```{r}
 ensurePackage <- function (pkgs) {
@@ -71,10 +76,10 @@ In addition, you need to install the accompanying R-package 'emaph' (from github
 devtools::install_github("jruwaard/emaph")
 ```
 
-## How to building the PDF
+
+
+## How to build the PDF
 
 To build the PDF of the manual, you need:
-
-* RStudio (which has built-in [pandoc](http://johnmacfarlane.net/pandoc/)
 * Miktex (>= version 2.9); make sure xelatex can be found in your path.
 

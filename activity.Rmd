@@ -8,11 +8,11 @@ advances in mobile sensing, we are now able to continuously monitor
 burden.
 
 While questions remain with regard to the validity, reliability and clinical
-utility of passive EMA with regard to various aspects of activity, such as
-(disturbed) sleep, sedentary behavior, and energy expenditure [see, e.g.,
-@Feehan2018; @Gomersall2016], an increasing number of mental health studies are
-including activity tracking devices to better understand sleep habits, circadian
-rhythm disorders and depression [see, e.g., @Saeb2015; @Saunders2016;
+utility of passive EMA of specific activities, such as (disturbed) sleep,
+sedentary behavior, and energy expenditure [see, e.g., @Feehan2018;
+@Gomersall2016], an increasing number of mental health studies are including
+activity tracking devices to better understand sleep habits, circadian rhythm
+disorders and depression [see, e.g., @Saeb2015; @Saunders2016;
 @Tahmasian2013].
 
 In this chapter, we will discuss two passive EMA methods to assess physical

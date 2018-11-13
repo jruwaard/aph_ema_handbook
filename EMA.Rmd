@@ -232,7 +232,7 @@ natural settings [@heron2010]. If dynamic disease processes can be adequately
 monitored in everyday-life through EMA, it should also be possible to intervene
 when EMA data reflect clear changes in these processes, in a way that is
 maximally effective given what is known about the individual. A key term in the
-last sentence, however, is "adequate". We should be aware of the
+last sentence, however, is "adequately". We should be aware of the
 "garbage-in/garbage-out" principle. Before EMI's can be considered, the
 psychometric properties of EMA measures should be demonstrated first.
 
@@ -358,7 +358,7 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 This manual comprises six parts, in which various aspects of EMA research are
 discussed.
 
-  - Chapter \@ref(rstudio), the second chapter of part I, introduces R, the
+  - Chapter \@ref(rstudio), the second chapter of **Part I**, introduces R, the
     statistical program that is an indispensable tool for the EMA researcher.
 
   - **Part II** focuses on EMA study design (Chapter \@ref(methods), EMA

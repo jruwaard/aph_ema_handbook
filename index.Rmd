@@ -45,7 +45,7 @@ an overview of EMA instruments, outcomes, methods and analytic techniques,
 guidelines for EMA-studies, and a catalogue of EMA research in the APH
 consortium.
 
-This manual was written in Bookdown [@R-bookdown_book; @R-bookdown]. Sources
+This manual was written in Bookdown [@R-bookdown_book]. Sources
 are freely available at 'GitHub', via
 <https://github.com/jruwaard/aph_ema_handbook>. Please post your comments and
 suggestions there, or via e-mail, through <aph.ema@ggzingeest.nl>.

@@ -270,15 +270,15 @@ When a series is correlated with delayed copies of itself, we say that it is
 auto-correlated. In repeated measurements of natural phenomena, this
 auto-correlation can often be found. The temperature of today is correlated with
 the temperature of recent days. Similarly, EMA mood ratings, taken at time t,
-are typically correlated with ratings taken at t-1, t-2, etc. This is
-illustrated in Figure \@ref(fig:fig8g). Studying the auto-correlation of a
-time-series at different delays can be very revealing, as illustrated by the
-auto-correlation plot in Figure \@ref(fig:fig8g), in which the correlation of the
-EMA series with itself is plotted, for various delays (or 'lags' as these delays
-are called). First, the plot reveals that observations are correlated with
-previous values at lag 1: this series is auto-correlated. Second, there appears
-to be a pattern in the correlations at later lags: positive and negative
-correlations alternate, in a pattern that seems to reflect periodicity.  
+are typically correlated with ratings taken at t-1, t-2, etc. Studying the
+auto-correlation of a time-series at different delays can be very revealing, as
+illustrated by the auto-correlation plot in Figure \@ref(fig:fig8g), in which the
+correlation of the EMA series with itself is plotted, for various delays (or
+'lags' as these delays are called). First, the plot reveals that observations
+are correlated with previous values at lag 1: this series is auto-correlated.
+Second, there appears to be a pattern in the correlations at later lags:
+positive and negative correlations alternate, in a pattern that seems to reflect
+periodicity.  
 
 ```{r fig8g, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Autocorrelation plot of the EMA mood series, revealing periodicity."}
 op = par(mar = c(4, 4, 1, 1))

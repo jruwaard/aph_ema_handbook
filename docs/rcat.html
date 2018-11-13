@@ -259,7 +259,7 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 <li class="chapter" data-level="13" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>13</b> R Packages for EMA Research</a><ul>
 <li class="chapter" data-level="13.1" data-path="rcat.html"><a href="rcat.html#accelerometry"><i class="fa fa-check"></i><b>13.1</b> Accelerometry</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#package-genearead"><i class="fa fa-check"></i><b>13.1.1</b> Package GENEAread</a></li>
+<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#genearead"><i class="fa fa-check"></i><b>13.1.1</b> GENEAread</a></li>
 <li class="chapter" data-level="13.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>13.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="13.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>13.1.3</b> PhysicalActivity</a></li>
 </ul></li>
@@ -410,8 +410,8 @@ code > span.in { font-style: italic; } /* Information */
 <div id="accelerometry" class="section level2">
 <h2><span class="header-section-number">13.1</span> Accelerometry</h2>
 <p>Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-calibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and energy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs).</p>
-<div id="package-genearead" class="section level3">
-<h3><span class="header-section-number">13.1.1</span> Package GENEAread</h3>
+<div id="genearead" class="section level3">
+<h3><span class="header-section-number">13.1.1</span> GENEAread</h3>
 <p>GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that is often used in clinical research studies. With package <strong>GENEAread</strong> <span class="citation">(Fang, Langford, &amp; Sweetland, <a href="#ref-R_GENEAread">2018</a>)</span>, raw data can be imported into R for further processing, as illustrated below.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Reading raw GENEActive data.</span>
 <span class="kw">library</span>(GENEAread)
@@ -419,7 +419,7 @@ code > span.in { font-style: italic; } /* Information */
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.082 secs .</span>
+<span class="co">#&gt; Processing took: 0.071 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -710,27 +710,23 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="kw">summary</span>(models_found[[<span class="dv">1</span>]]<span class="op">$</span>varest<span class="op">$</span>varresult<span class="op">$</span>depression)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
-<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
+<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
-<span class="co">#&gt; -1.9894 -0.5537  0.0000  0.6634  2.3361 </span>
+<span class="co">#&gt; -2.7103 -0.7511 -0.0213  0.6422  2.4037 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.51086    0.09222   5.540 2.92e-07 ***</span>
-<span class="co">#&gt; depression.l1 -0.05470    0.08999  -0.608    0.545    </span>
-<span class="co">#&gt; depression.l2  0.13433    0.09314   1.442    0.153    </span>
-<span class="co">#&gt; const         -0.02479    0.09651  -0.257    0.798    </span>
-<span class="co">#&gt; outlier_42    -0.42332    0.94911  -0.446    0.657    </span>
-<span class="co">#&gt; outlier_50    -0.03441    0.94716  -0.036    0.971    </span>
-<span class="co">#&gt; outlier_59    -0.66779    0.96835  -0.690    0.492    </span>
+<span class="co">#&gt; activity.l1    0.45851    0.10897   4.208 5.81e-05 ***</span>
+<span class="co">#&gt; depression.l1 -0.02320    0.09571  -0.242    0.809    </span>
+<span class="co">#&gt; const          0.05031    0.10120   0.497    0.620    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9401 on 91 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.263,  Adjusted R-squared:  0.2144 </span>
-<span class="co">#&gt; F-statistic: 5.413 on 6 and 91 DF,  p-value: 8.025e-05</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 1 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.1564, Adjusted R-squared:  0.1388 </span>
+<span class="co">#&gt; F-statistic: 8.897 on 2 and 96 DF,  p-value: 0.0002854</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>, <span class="citation">Emerencia et al. (<a href="#ref-Emerencia2016">2016</a>)</span>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="qgraph" class="section level3">
@@ -782,7 +778,7 @@ results &lt;-<span class="st"> </span><span class="kw">bootnet</span>(g, <span c
 <h2><span class="header-section-number">13.6</span> Timeseries analysis</h2>
 <div id="lomb" class="section level3">
 <h3><span class="header-section-number">13.6.1</span> lomb</h3>
-<p> </p>
+<p>  </p>
 <p>Disturbances in circadian rhythms have been related to depressive symptoms <span class="citation">(see, e.g., Saeb et al., <a href="#ref-Saeb2015">2015</a>)</span>. With so-called periodograms, these circadian rhythms can be detected in EMA data (see Chapter <a href="features.html#features">8</a>). Standard analysis techniques, however, expect regular time-series, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure <span class="citation">(Lomb, <a href="#ref-Lomb1976">1976</a>)</span>, which can be applied to unevenly-sampled time-series as well. Package <em>lomb</em> <span class="citation">(Ruf, <a href="#ref-ruf1999">1999</a>)</span> implements this procedure.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculating a Lomb-Scargle periodogram.</span>
 <span class="kw">data</span>(ibex, <span class="dt">package =</span> <span class="st">&quot;lomb&quot;</span>) 

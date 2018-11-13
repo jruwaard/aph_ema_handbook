@@ -259,7 +259,7 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 <li class="chapter" data-level="13" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>13</b> R Packages for EMA Research</a><ul>
 <li class="chapter" data-level="13.1" data-path="rcat.html"><a href="rcat.html#accelerometry"><i class="fa fa-check"></i><b>13.1</b> Accelerometry</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#package-genearead"><i class="fa fa-check"></i><b>13.1.1</b> Package GENEAread</a></li>
+<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#genearead"><i class="fa fa-check"></i><b>13.1.1</b> GENEAread</a></li>
 <li class="chapter" data-level="13.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>13.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="13.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>13.1.3</b> PhysicalActivity</a></li>
 </ul></li>
@@ -426,7 +426,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
 <div id="adding-a-two-group-comparison" class="section level2">
 <h2><span class="header-section-number">9.5</span> Adding a Two-Group Comparison</h2>
 <p>In data-set 1, mood ratings did not change during the week, while in data-set 2, the mood ratings increased. Suppose the two data-sets reflect the data that you collect in a two-group RCT, in which you compare the effects of a mental health intervention (data-set 2) against a waiting list condition (data-set 1). By combining the two data-sets, we can illustrate how to conduct a group comparison with <code>lme</code>.</p>
-<p>Since the two data-sets are already available (in variables <code>d1</code> and <code>d2</code>), the new data set can be created with just three lines of code (below). In the first line, the <code>rbind</code> function is used to combine the rows of data-set 1 and 2 into a new variable: d3. The second line adds a group indicator to <code>d3</code>. The third line updates the ids of the participants in the second group, to differentiate the participants in the second group from the participants in the first group.</p>
+<p>Since the two data-sets are already available (in variables <code>d1</code> and <code>d2</code>), the new data set can be created with just three lines of code (below). In the first line, the <code>rbind</code> function is used to combine the rows of data-set 1 and 2 into a new variable: d3. The second line adds a group indicator to <code>d3</code>. The third line updates the IDs of the participants in the second group, to differentiate the participants in the second group from the participants in the first group.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Two-group simulation.</span>
 d3 &lt;-<span class="st"> </span><span class="kw">rbind</span>(d1, d2)
 d3<span class="op">$</span>group &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="kw">rep</span>(<span class="dv">0</span>, <span class="kw">nrow</span>(d1)), <span class="kw">rep</span>(<span class="dv">1</span>, <span class="kw">nrow</span>(d2))), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;control&quot;</span>, <span class="st">&quot;treatment&quot;</span>))

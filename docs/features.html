@@ -259,7 +259,7 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 <li class="chapter" data-level="13" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>13</b> R Packages for EMA Research</a><ul>
 <li class="chapter" data-level="13.1" data-path="rcat.html"><a href="rcat.html#accelerometry"><i class="fa fa-check"></i><b>13.1</b> Accelerometry</a><ul>
-<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#package-genearead"><i class="fa fa-check"></i><b>13.1.1</b> Package GENEAread</a></li>
+<li class="chapter" data-level="13.1.1" data-path="rcat.html"><a href="rcat.html#genearead"><i class="fa fa-check"></i><b>13.1.1</b> GENEAread</a></li>
 <li class="chapter" data-level="13.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>13.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="13.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>13.1.3</b> PhysicalActivity</a></li>
 </ul></li>
@@ -353,6 +353,7 @@ Figure 8.4: Plot of absolute regression residuals over time, revealing heterosce
 </div>
 <div id="missing-values" class="section level2">
 <h2><span class="header-section-number">8.4</span> Missing Values</h2>
+
 <p>In EMA research, you should be prepared to deal with missing values. Especially with active EMA, in which participants have to consciously respond to prompted questions several times a day, non-response is inevitable. Missing values are typically considered to be a nuisance rather than a feature of EMA time-series. Non-response, however, is an important characteristic, that may even have clinical relevance. Missing values are also present in our simulated EMA time-series example, as you may have found out already when you inspected Figure <a href="features.html#fig:fig8a">8.1</a>. The points, denoting the observed responses, are denser in the beginning of the series. Over the course of the study period, the probability of missed ratings increases. This becomes immediately clear from Figure <a href="features.html#fig:fig8e">8.5</a>, in which the percentage of missed ratings is plotted per day. Every week, the probability of missed ratings increases approximately 16%.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8e"></span>
 <img src="features_files/figure-html/fig8e-1.png" alt="Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data." width="100%" />
@@ -370,6 +371,7 @@ Figure 8.6: EMA time series, with missing values (red) imputed through interpola
 </div>
 <div id="auto-correlation" class="section level2">
 <h2><span class="header-section-number">8.5</span> Auto-correlation</h2>
+
 <p>When a series is correlated with delayed copies of itself, we say that it is auto-correlated. In repeated measurements of natural phenomena, this auto-correlation can often be found. The temperature of today is correlated with the temperature of recent days. Similarly, EMA mood ratings, taken at time t, are typically correlated with ratings taken at t-1, t-2, etc. Studying the auto-correlation of a time-series at different delays can be very revealing, as illustrated by the auto-correlation plot in Figure <a href="features.html#fig:fig8g">8.7</a>, in which the correlation of the EMA series with itself is plotted, for various delays (or ‘lags’ as these delays are called). First, the plot reveals that observations are correlated with previous values at lag 1: this series is auto-correlated. Second, there appears to be a pattern in the correlations at later lags: positive and negative correlations alternate, in a pattern that seems to reflect periodicity.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8g"></span>
 <img src="features_files/figure-html/fig8g-1.png" alt="Autocorrelation plot of the EMA mood series, revealing periodicity." width="100%" />
@@ -390,6 +392,7 @@ Figure 8.8: EMA mood series, with a rolling mean superposed.
 </div>
 <div id="periodicity" class="section level2">
 <h2><span class="header-section-number">8.6</span> Periodicity</h2>
+
 <p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the the strength (‘power’) of various frequencies can be quantified. Figure <a href="features.html#fig:fig8i">8.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8i"></span>
 <img src="features_files/figure-html/fig8i-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />

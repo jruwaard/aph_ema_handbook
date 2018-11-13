@@ -83,18 +83,14 @@ which we can use to check the simulation. As specified, mean mood ratings of the
 participants (the red lines) vary around 5 (the grey dashed line). So far, so
 good.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/fig9a-1} 
-
-}
-
-\caption{Simulated EMA data of Six Participants.}(\#fig:fig9a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/fig9a-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
+<p class="caption">(\#fig:fig9a)Simulated EMA data of Six Participants.</p>
+</div>
 
 
-## Fitting a Mixed Model in R
-\index{nlme} 
+## Fitting a Mixed Model in R 
+\index{Packages!nlme}
 
 Now, let's fit a mixed model to the data, to see whether the simulation
 parameters are detected. For this, we will use the `lme` function, from package
@@ -152,14 +148,10 @@ line).
 d1$predicted <- predict(fm)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/fig9b-1} 
-
-}
-
-\caption{EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.}(\#fig:fig9b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/fig9b-1.png" alt="EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model." width="100%" />
+<p class="caption">(\#fig:fig9b)EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.</p>
+</div>
 
 ## Adding Time as a Predictor
 
@@ -191,14 +183,10 @@ second data set. Both the intercept and the slope vary across the participants.
 Some participants improve more over time, and others improve less: the slope in
 this data set is a random effect.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/fig9c-1} 
-
-}
-
-\caption{Simulated EMA data of Six Participants (Time-varying model).}(\#fig:fig9c)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/fig9c-1.png" alt="Simulated EMA data of Six Participants (Time-varying model)." width="100%" />
+<p class="caption">(\#fig:fig9c)Simulated EMA data of Six Participants (Time-varying model).</p>
+</div>
 
 To fit the extended mixed model, time can simply be added to both the fixed and
 random arguments of the 'lme' function. Fixed effects estimated of this model
@@ -246,9 +234,7 @@ ggplot(d2, aes(x = time, y = predicted, group = id)) +
   coord_cartesian(ylim = c(0, 10)) + theme_classic()
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{lmm_files/figure-latex/fig9d-1} \end{center}
+<img src="lmm_files/figure-html/fig9d-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## Adding a Two-Group Comparison
@@ -260,12 +246,12 @@ intervention (data-set 2) against a waiting list condition (data-set 1). By
 combining the two data-sets, we can illustrate how to conduct a group comparison
 with `lme`.
 
-Since the two data-sets are already available (in variables `d1` and `d2`), the new data set
-can be created with just three lines of code (below). In the first line, the
-`rbind` function is used to combine the rows of data-set 1 and 2 into a new
-variable: d3. The second line adds a group indicator to `d3`. The third line
-updates the ids of the participants in the second group, to differentiate the
-participants in the second group from the participants in the first group.
+Since the two data-sets are already available (in variables `d1` and `d2`), the
+new data set can be created with just three lines of code (below). In the first
+line, the `rbind` function is used to combine the rows of data-set 1 and 2 into
+a new variable: d3. The second line adds a group indicator to `d3`. The third
+line updates the IDs of the participants in the second group, to differentiate
+the participants in the second group from the participants in the first group.
 
 
 ```r
@@ -297,14 +283,10 @@ In Figure \@ref(fig:fig9e) below, EMA mood ratings predicted by the fitted model
 show how the model detects 1) the fixed between-group effect, and 2) the
 variance in intercepts and slopes in both groups.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/fig9e-1} 
-
-}
-
-\caption{Predicted mood ratings}(\#fig:fig9e)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/fig9e-1.png" alt="Predicted mood ratings" width="100%" />
+<p class="caption">(\#fig:fig9e)Predicted mood ratings</p>
+</div>
 
 
 ## Next Steps

@@ -72,10 +72,9 @@ higher) of RStudio.
 \index{R and RStudio!Console} 
 
 If you open RStudio, you will be presented with the interface shown in Figure
-\@ref(fig:fig2a). RStudio's main window is divided in four panes (sub-windows),
-which further contain several tabbed windows.
+\@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
-```{r fig2a, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
+```{r r-interface, fig.cap="The RStudio Interface", out.width="98%", echo=FALSE}
 knitr::include_graphics("images/R/rstudio.png")
 ```
 
@@ -87,7 +86,7 @@ ignores it, so there is no immediate need to type that). To execute, press
 
 R will execute the command and return the answer back to the console.
 
-```{r cs2a, eval = FALSE}
+```{r r-calc, eval = FALSE}
 # R is a calculator.
 1 + 1
 ```
@@ -96,7 +95,7 @@ Results of calculations can be saved into variables, by making use of the
 assignment operator (`<-`). If you type the name of a variable, R returns its
 value.
 
-```{r cs2b}
+```{r r-assign}
 # Use <- to declare and set a variable.
 N <- 50 + 50
 N
@@ -107,12 +106,12 @@ the following command, which, in one line, 1) uses the variable N, just created,
 to 2) generate 100 random numbers from the normal distribution, and 3) plot a
 histogram of these numbers.
 
-```{r cs2c, eval = FALSE}
+```{r r-hist-norm, eval = FALSE}
 # Plot the histogram of a sample from the normal distribution.
 hist(rnorm(N))
 ```
 
-The plot appears in the bottom-right pane, as in Figure \@ref(fig:fig2a). 
+The plot appears in the bottom-right pane, as in Figure \@ref(fig:r-interface). 
 
 
 ## Writing R-scripts
@@ -164,14 +163,14 @@ a csv-version of one of your own data files).
 
 - In the window that appears, click on `Browse` to locate the csv-
 file on your computer, and click `Import` in the next window (see Figure
-\@ref(fig:fig2b)).
+\@ref(fig:r-import)).
 
 RStudio shows the data, in tabular view, in the top-left window, ready for
 analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-```{r fig2b, fig.cap="RStudio's CSV import wizard.", out.width="98%", echo=FALSE}
+```{r r-import, fig.cap="RStudio's CSV import wizard.", out.width="98%", echo=FALSE}
 knitr::include_graphics("images/R/csv_import.png")
 ```
 
@@ -182,7 +181,7 @@ time. Most likely, you will convert to using the more efficient R commands to
 import data. For example, it takes only a single line to download and import the
 example data.
 
-```{r cs2d}
+```{r r-read-url}
 # Import csv-data, from the internet.
 ESMdata <- read.csv(url("https://tinyurl.com/yczmjdat"), row.names = NULL)
 ```
@@ -194,22 +193,22 @@ Since the data is now in the environment (under the name `ESMdata`), you can use
 it in other R commands. For example, to produce a more detailed summary of the
 first four columns of `ESMdata`, you type:
 
-```{r cs2e, comment = NA}
+```{r r-summary, comment = NA}
 # Summarize data.
 summary(ESMdata)
 ```
 
 To inspect the first 6 lines of data, type:
 
-```{r cs2f, eval = TRUE}
+```{r r-head, eval = TRUE}
 # Show first 6 lines of a data frame.
 head(ESMdata)
 ```
 
-To view all rows of data in a spreadsheet (as in Figure \@ref(fig:fig2b),
+To view all rows of data in a spreadsheet (as in Figure \@ref(fig:r-import),
 type:
 
-```{r cs2g, eval = FALSE}
+```{r r-view, eval = FALSE}
 # Show data as spreadsheet.
 View(ESMdata)
 ```
@@ -217,7 +216,7 @@ View(ESMdata)
 To work with a specific variable in the data set, use `$`, For instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
-```{r cs2h, eval = FALSE}
+```{r r-head-var, eval = FALSE}
 # Access a single variable in a data frame.
 head(ESMdata$mood_relaxed, n = 20)
 ```
@@ -225,7 +224,7 @@ head(ESMdata$mood_relaxed, n = 20)
 This allows you to apply functions to specific variables. For example, to
 calculate the mean of scores in `mood_relaxed`, type:
 
-```{r cs2i}
+```{r r-mean}
 # Calculate the mean of a variable.
 mean(ESMdata$mood_relaxed)
 ```
@@ -258,7 +257,7 @@ manual. This package  comprises a set of popular packages from the creators
 of RStudio, that greatly simplify working with R. So, while you are at it,
 install this package now.
 
-```{r cs2j, eval = FALSE}
+```{r r-install, eval = FALSE}
 # Install a package from CRAN.
 install.package(tidyverse)
 ```
@@ -283,7 +282,7 @@ GitHub packages can be installed via the `install_github` function, which is
 defined in a package called 'devtools'. So, to install `emaph`, enter the
 following in the console:
 
-```{r cs2k, eval = FALSE}
+```{r r-install-emaph, eval = FALSE}
 # Install the GitHub 'emaph' package.
 install.packages("devtools")
 devtools::install_github("jruwaard/emaph")
@@ -293,8 +292,7 @@ devtools::install_github("jruwaard/emaph")
 ### Using Packages
 \index{R and RStudio!Packages} 
 
-To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library`
-function. For example, to use package `tidyverse` and `emaph`, type:
+To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library` function. For example, to use package `tidyverse` and `emaph`, type:
 
 ```{r cs2l, eval = TRUE}
 # Load packages.
@@ -310,7 +308,7 @@ recorded his mood, for 239 days (see also Chapter \@ref(csd)).
 To plot the irritation levels of this patient in the first six days, using the
 `ggplot` function from package `ggplot2` (which is in `tidyverse`), type:
 
-```{r cs2m, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
+```{r r-irriplot, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
 # Using ggplot to plot EMA time series.
 ggplot(data = subset(csd, dayno <= 6),
        mapping =  aes(x = beepno, y = mood_irritat)) + 
@@ -334,7 +332,7 @@ The good thing is that you already known the name of the function to use, since
 we used it in the previous section: it is `rnorm`. To check the documentation of
 this function, type `?rnorm` in the console.
 
-```{r cs2n, eval = FALSE}
+```{r r-help, eval = FALSE}
 # Use '?' to find the documentation of a function.
 ?rnorm
 ```
@@ -346,7 +344,7 @@ bottom right pane, from which you learn that that the `rnorm` function accepts
 worked in the previous examples). So, to generate the required numbers, you
 type:
 
-```{r cs2o, eval = FALSE}
+```{r r-hist, eval = FALSE}
 # Plot the histogram of a custom random sample.
 hist(rnorm(1000, mean = 2, sd = 4))
 ```
@@ -368,7 +366,7 @@ this list, you find a likely candidate: a function called `t.test`. From the
 documentation of this function (`?t.test`), you learn that, indeed, this is the
 function you were looking for.
 
-```{r cs2p}
+```{r r-ttest-sim}
 # Run a t-test, on two simulated samples.
 
 # generate two samples (N = 100 per group) from the normal distribution
@@ -441,7 +439,7 @@ since excellent resources are readily available. A selection is presented below.
 Package `swirl` contains a set of interactive courses that teach many aspects
 of the R language. See <http://swirlstats.com>
 
-```{r cs2r, eval = FALSE}
+```{r r-swirl, eval = FALSE}
 # Start the interactive swirl-course.
 install.packages("swirl")
 library("swirl")

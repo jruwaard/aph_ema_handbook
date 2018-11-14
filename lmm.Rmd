@@ -61,7 +61,7 @@ function expects at least two arguments: the definition of a sample plan (see
 of a list defining fixed effects, the random effects, and residual variance
 (i.e, the error).
 
-```{r cs9a_}
+```{r lmm-sim}
 # Simulating ema data.
 library(emaph)
 plan <- sample_plan(n_participants = 100, 
@@ -79,13 +79,13 @@ d1 <- sim_ema(plan,
 
 From the code, you learn that we set the mean mood (intercept~g~) to 5, the
 variance around this mean - var(intercept~p~) - to 1, and the variance around
-these means within participants - the error - to .5. Figure \@ref(fig:fig9a)
+these means within participants - the error - to .5. Figure \@ref(fig:lmm-plot)
 shows EMA mood ratings of the first 6 participants in the simulated data set,
 which we can use to check the simulation. As specified, mean mood ratings of the
 participants (the red lines) vary around 5 (the grey dashed line). So far, so
 good.
 
-```{r fig9a, out.width = "100%", fig.asp = .5, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants."}
+```{r lmm-plot, out.width = "100%", fig.asp = .5, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants."}
 library(ggplot2)
 ggplot(subset(d1, id %in% unique(d1$id)[1:6]), 
        aes(x = time, y = Y, group = id)) + 
@@ -110,7 +110,7 @@ specifies the random effect. In this model, intercepts are allowed to vary
 between participants. The fitted model is assigned to a variable (`fm`), which
 we will use later to study the fitted model.
 
-```{r cs9b}
+```{r lmm-lme1}
 # Fitting a mixed model with lme.
 library(nlme)
 fm <- lme(Y ~ 1, random = ~ 1 | id, 
@@ -121,8 +121,8 @@ We can now extract the fixed effects regression coefficients table, by calling
 the `summary` function on the fitted model. The estimated intercept should be
 around 5 (as this is a finite sample, we expect some deviation):
 
-```{r cs9c}
-# Print fixed effects.
+```{r lmm-lme1-summ}
+# Fixed effects.
 summary(fm)$tTable
 ```
 
@@ -131,22 +131,22 @@ since we specified the data ourselves in this case, we know the 'true' value of
 these parameters: the random intercept variance should be around 1 and the
 residual error variance should be close to 0.5. 
 
-```{r cs9d}
-# Fitted random effects.
+```{r lmm-lme1-vc}
+# Random effects.
 VarCorr(fm)
 ```
 
 It can be instructive to plot the predicted values of the model, to make clear
-how the model 'thinks'. As shown by Figure \@ref(fig:fig9b), the model predicts a
-series of straight lines, one for each participant, that vary around 5 (the red
-line).
+how the model 'thinks'. As shown by Figure \@ref(fig:lmm-lme1-plot), the model
+predicts a series of straight lines, one for each participant, that vary
+around 5 (the red line).
 
-```{r cs9e}
+```{r lmm-lme1-pred}
 # Saving predicted values.
 d1$predicted <- predict(fm)
 ```
 
-```{r fig9b, out.width = "100%", fig.asp = 0.3, fig.cap = "EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.", echo = FALSE}
+```{r lmm-lme1-plot, out.width = "100%", fig.asp = 0.3, fig.cap = "EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.", echo = FALSE}
 ggplot(d1, aes(x = time, y = predicted, group = id)) + 
   geom_line(alpha = .075, size = .6) + 
   geom_smooth(aes(group = NULL), method = "lm", color = "red") + 
@@ -168,7 +168,7 @@ day. Let's also assume that individual participants will vary in the degree of
 mood improvement: the mean time effect will be 0.5, but this parameter is
 allowed to vary between participants, with a variance of 0.1.
 
-```{r cs9f}
+```{r lmm-sim2}
 # Simulating ema data (time effect).
 d2 <- sim_ema(plan, 
               mm_par = list(fixed  = c(intercept = 5, time = 0.5),
@@ -177,12 +177,12 @@ d2 <- sim_ema(plan,
               lim = c(0, 10))
 ```
 
-Figure \@ref(fig:fig9c) shows the data of the first six participants in the
+Figure \@ref(fig:lmm-plot2) shows the data of the first six participants in the
 second data set. Both the intercept and the slope vary across the participants.
 Some participants improve more over time, and others improve less: the slope in
 this data set is a random effect.
 
-```{r fig9c, out.width = "100%", fig.asp = .4, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants (Time-varying model)."}
+```{r lmm-plot2, out.width = "100%", fig.asp = .4, echo = FALSE, warning = FALSE, message = FALSE, fig.cap = "Simulated EMA data of Six Participants (Time-varying model)."}
 ggplot(subset(d2, id %in% unique(d2$id)[1:6]), 
        aes(x = time, y = Y, group = id)) + 
   geom_point(size = 1.4) + 
@@ -197,7 +197,7 @@ random arguments of the 'lme' function. Fixed effects estimated of this model
 should be around 5 and 0.5, since that is how we specified the data. Calling
 `summary` on this function, we see that the fixed time effect is significant.
 
-```{r cs9g}
+```{r lmm-lme2}
 # A mixed model, with a random slope.
 library(nlme)
 fm <- lme(Y ~ 1 + time, random = ~ 1 + time | id, 
@@ -209,7 +209,7 @@ The random effects now have four components: the variance of the intercept, the
 variance of the slope, the residual error *and* the correlation between the
 random intercept and the random slope.
 
-```{r cs9h}
+```{r lmm-lme2-vc}
 # Extracting random effects.
 VarCorr(fm)
 ```
@@ -218,7 +218,7 @@ Model predictions clearly show how the mixed model estimated varying intercepts
 and slopes, that, on average, approximate the fixed effect regression formula `Y
 = 5 + 0.5 * time` that was used to generate the data.
 
-```{r fig9d, out.width = "100%", fig.asp = 0.4}
+```{r lmm-lme2-pred, out.width = "100%", fig.asp = 0.4}
 d2$predicted <- predict(fm)
 
 ggplot(d2, aes(x = time, y = predicted, group = id)) + 
@@ -244,7 +244,7 @@ a new variable: d3. The second line adds a group indicator to `d3`. The third
 line updates the IDs of the participants in the second group, to differentiate
 the participants in the second group from the participants in the first group.
 
-```{r cs9i}
+```{r lmm-two-group}
 # Two-group simulation.
 d3 <- rbind(d1, d2)
 d3$group <- factor(c(rep(0, nrow(d1)), rep(1, nrow(d2))), labels = c("control", "treatment"))
@@ -255,7 +255,7 @@ The effect of the intervention can be tested by adding a (fixed) 'time * group'
 interaction effect to the model. This effect, we know, is 0.5, and, as can be
 seen, this is what the model picks up:
 
-```{r cs9j}
+```{r lmm-lme3}
 # A mixed model, with two groups.
 library(nlme)
 fm <- lme(Y ~ 1 + time * group, random = ~ 1 + time | id, 
@@ -263,11 +263,11 @@ fm <- lme(Y ~ 1 + time * group, random = ~ 1 + time | id,
 round(summary(fm)$tTable, 2)
 ```
 
-In Figure \@ref(fig:fig9e) below, EMA mood ratings predicted by the fitted model
+In Figure \@ref(fig:lmm-lme3-pred) below, EMA mood ratings predicted by the fitted model
 show how the model detects 1) the fixed between-group effect, and 2) the
 variance in intercepts and slopes in both groups.
 
-```{r fig9e, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "Predicted mood ratings"}
+```{r lmm-lme3-pred, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "Predicted mood ratings"}
 d3$predicted <- predict(fm)
 ggplot(d3, aes(x = time, y = predicted, group = id)) + 
   geom_line(color = "grey", size = .6, alpha = .3) +  

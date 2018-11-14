@@ -47,7 +47,7 @@ going to use several functions from `tidyverse` packages.
 
 \index{Packages!nonlinearTseries}
 
-```{r cs11a, warning=FALSE}
+```{r csd-lib, warning=FALSE}
 # Required libraries for the CSD-study re-analysis.
 library(emaph)
 library(tidyverse)
@@ -66,7 +66,7 @@ The code below reconstructs Figure 1 of the Wichers et al article. It plots the
 SCL90-R depression scale score over the time. Around day 120, the depression
 score increased considerable: the patient experienced a relapse.
 
-```{r cs11b, out.width = "100%", fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
+```{r csd-scl90plot, out.width = "100%", fig.cap = "SCL-90 depression score, over the study period", fig.asp = .3}
 # Plot depression score.
 dep <- csd %>% select(dayno, scl90r_dep) %>%
   filter(!is.na(scl90r_dep)) %>% unique
@@ -87,7 +87,7 @@ items), mental unrest (`mu`; 3 items), suspiciousness (`su`; 1 item), and worryi
 (`wo`; 1 item). From these factors, an overall mental state sum score can be
 calculated.
 
-```{r cs13c}
+```{r csd-calc-ms}
 # Mood states calculation.
 
 # positive affect
@@ -127,7 +127,7 @@ the analysis. In a full analysis, options to impute the missing values could and
 should be considered. However, since only 3 of the 1476 rows have missing item
 scores, not much is probably lost by running a simple complete-case analysis.
 
-```{r cs11d}
+```{r csd-na}
 # Missing values removal.
 
 # count number of items with missing items, per row
@@ -148,7 +148,7 @@ calculate the DFA of each window and save that value so that we can compare it
 to the weekly depression assessments.
 
 
-```{r cs11e}
+```{r csd-dfa}
 # Running the DFA.
 
 # prepare result rows: one row for each day
@@ -190,7 +190,7 @@ to the onset of the relapse, around day 110 (where the color changes to red).
 Interestingly, a second peak is reached at the end of the experiment, around
 day 239, indicating - perhaps - a recovery from the relapse.
 
-```{r cs11f, eval = TRUE, out.width = "100%", fig.asp = .35, fig.cap = "Results of the DFA analysis.", warning = FALSE}
+```{r csd-dfaplot, eval = TRUE, out.width = "100%", fig.asp = .35, fig.cap = "Results of the DFA analysis.", warning = FALSE}
 # Plot DFA results.
 ggplot(na.omit(d),
       aes(x = dayno, y = ms_dfa, 

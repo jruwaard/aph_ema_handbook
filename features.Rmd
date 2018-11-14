@@ -17,13 +17,13 @@ some of the features that can be extracted from EMA time-series.
 
 We will focus on a simulated three-week time-series of EMA mood responses of a
 single person, in which ratings were collected five times per day. Figure
-\@ref(fig:fig8a) shows a plot of the simulated scores.
+\@ref(fig:feat-plot) shows a plot of the simulated scores.
 
 Stare at the figure for a moment. How would you characterize the development of
 scores over time? What features would you want to extract? How would you
 quantify these features?
 
-```{r echo = FALSE}
+```{r feat-sim, echo = FALSE}
 ## Constructing the simulated EMA time-series
 
 # libraries
@@ -73,7 +73,7 @@ s[s < 0] <- 0
 d <- data.frame(t, s)
 ```
 
-```{r fig8a, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "A simulated three-week time-series of EMA mood ratings."}
+```{r feat-plot, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "A simulated three-week time-series of EMA mood ratings."}
 # plot signal
 e <- subset(d, !is.na(s))
 ggplot(e, aes(x = t, y = s)) + 
@@ -90,7 +90,7 @@ Features do not necessarily have to be complex. Familiar measures of central
 tendency of EMA time-series, such as the mode or the mean, can be useful
 predictors of traditional clinical assessments. Standard measures of the
 variability of EMA scores, such as the standard deviation (SD), have been shown
-to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to
+to have diagnostic value [see, e.g., @bowen2006]. You should not hesitate to
 consider these statistics when they help you to answer your research question.
 
 \index{Stationarity}
@@ -102,10 +102,10 @@ stable over time - in technical terms: that this process is *stationary*
 process is unstable or non-stationary), the mean and SD are biased statistics.
 
 Our simulated EMA time-series is non-stationary, as can be seen in Figure
-\@ref(fig:fig8b). We observe a trend: the mood of the person increases over time.
-EMA scores tend to be below the mean in the beginning, and above the mean at the
-end. The overall mean (*M* = `r round(mean(e$s), 1)`) overestimates the EMA
-scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and
+\@ref(fig:feat-plot-mean). We observe a trend: the mood of the person increases
+over time. EMA scores tend to be below the mean in the beginning, and above the
+mean at the end. The overall mean (*M* = `r round(mean(e$s), 1)`) overestimates
+the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and
 underestimates the scores of the last week (*M* =
 `r round(mean(e$s[e$t > 13]), 1)`). If you use the overall mean as a feature of
 the time-series in your analyses, you ignore the mood improvements over the
@@ -120,9 +120,9 @@ to the SD of smaller parts. In our example, the overall SD is
 day, however, the estimated SD is
 `r round(mean(aggregate(e$s, by = list(day = floor(e$t)), FUN = sd)$x), 1)`. If
 the additional variability introduced by the trend is cancelled out, our
-estimate of variability decreases considerably.  
+estimate of variability decreases considerably. 
 
-```{r fig8b, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time."}
+```{r feat-plot-mean, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time."}
 # plot signal with mean and variance
 e <- subset(d, !is.na(s))
 ggplot(e, aes(x = t, y = s)) +
@@ -137,7 +137,7 @@ ggplot(e, aes(x = t, y = s)) +
 ```
 
 ## Modelling the Trend
-```{r echo=FALSE, include=FALSE}
+```{r feat-lm, echo=FALSE, include=FALSE}
 fm = lm(s ~ t, e)
 ```
 
@@ -146,15 +146,15 @@ time-series, the question is how we can do better. What other features can we
 extract? One option would be to characterize the series in simple regression
 terms, via an intercept and a slope. By doing so, we can economically describe
 the dynamics of the series with two numbers. As can be seen in Figure
-\@ref(fig:fig8c), the regression model provides a more realistic and informative
-summary. At the start, the estimated mean - the intercept - is
+\@ref(fig:feat-plot-lm), the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is
 `r round(coef(fm)[1], 1)`. This mean increases approximately
 `r round(coef(fm)[2] * 7,  1)` points per week (the slope), to a final estimated
 mean of `r round(coef(fm)[1], 1) + round(coef(fm)[2] * 21, 1)`. Comparing Figure
-\@ref(fig:fig8b) and Figure \@ref(fig:fig8c), we see that Figure \@ref(fig:fig8c)
-is more successful in capturing the variation in the series.
+\@ref(fig:feat-plot-mean) and Figure \@ref(fig:feat-plot-lm), we see that
+Figure \@ref(fig:feat-plot-lm) is more successful in capturing the variation in
+the series.
 
-```{r fig8c, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)"}
+```{r feat-plot-lm, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)"}
 ggplot(e, aes(x = t, y = s)) +
   geom_smooth(method = "lm", color = "red", se = FALSE) +
   geom_abline(intercept = coef(fm)[1] + sd(resid(fm)), slope = coef(fm)[2], color = "blue", linetype = 2) + 
@@ -175,12 +175,12 @@ is smaller than the overall SD, as expected. By accounting for the extra
 variability introduced by the trend, we get a more accurate estimate of the
 variability around the mean at each point in time. However, the new estimate is
 still higher than the daily estimate that we calculated above. Figure
-\@ref(fig:fig8d) provides a first indication of what is going on. In the figure,
-absolution regression residuals are plotted over time, with a regression line
-superposed. This reveals that residuals increase as time goes by. We discovered
-a new feature of the series: heteroscedasticity. 
+\@ref(fig:feat-plot-resid) provides a first indication of what is going on. In
+the figure, absolution regression residuals are plotted over time, with a
+regression line superposed. This reveals that residuals increase as time goes
+by. We discovered a new feature of the series: heteroscedasticity. 
 
-```{r fig8d, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Plot of absolute regression residuals over time, revealing heteroscedasticity."}
+```{r feat-plot-resid, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Plot of absolute regression residuals over time, revealing heteroscedasticity."}
 e$residuals <- rstandard(fm)
 e$week <- (e$t %/% 1 )+ 1
 
@@ -194,7 +194,7 @@ ggplot(subset(e, week < 20), aes(x = t, y = abs(residuals))) +
 ## Missing Values
 \index{Missing values}
 
-```{r echo = FALSE, include = FALSE}
+```{r feat-plot-na-fm, echo = FALSE, include = FALSE}
 d$t_g <- cut(t, 21, labels = 1:21)
 p <- prop.table(table(d$t_g, is.na(d$s)), 1)
 p <- as.data.frame(p)
@@ -209,14 +209,14 @@ typically considered to be a nuisance rather than a feature of EMA time-series.
 Non-response, however, is an important characteristic, that may even have
 clinical relevance. Missing values are also present in our simulated EMA
 time-series example, as you may have found out already when you inspected Figure
-\@ref(fig:fig8a). The points, denoting the observed responses, are denser in the
-beginning of the series. Over the course of the study period, the probability of
-missed ratings increases. This becomes immediately clear from Figure
-\@ref(fig:fig8e), in which the percentage of missed ratings is plotted per day.
-Every week, the probability of missed ratings increases approximately
-`r round(coef(fm2)[2]*7*100)`%.
+\@ref(fig:feat-plot). The points, denoting the observed responses, are denser in
+the beginning of the series. Over the course of the study period, the
+probability of missed ratings increases. This becomes immediately clear from
+Figure \@ref(fig:feat-plot-na), in which the percentage of missed ratings is
+plotted per day. Every week, the probability of missed ratings increases
+approximately `r round(coef(fm2)[2]*7*100)`%.
 
-```{r fig8e, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data."}
+```{r feat-plot-na, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data."}
 ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) + 
   geom_smooth(method = "lm", color = "red", se = FALSE) +  
   geom_point() + 
@@ -232,14 +232,14 @@ could try to replace the missing values with plausible values (in which case it
 becomes important to think about the process that drives the missingness). If
 you decide to impute, there are several options. For example, you can replace
 missing values with the mean, the last-known value, an interpolated value or
-with a smoothing technique such as the Kalman-filter [see
-@hoogendoorn2017, for a discussion]. Figure \@ref(fig:fig8f) illustrates
-the linear interpolation approach: missing values (marked by red dots) are
-replaced by values that lie between the non-missings. Imagine that we would have
-used the mean to impute. Can you see why that would have disrupted local
-patterns in the series?
+with a smoothing technique such as the Kalman-filter [see @hoogendoorn2017, for
+a discussion]. Figure \@ref(fig:feat-plot-interpolation) illustrates the
+linear interpolation approach: missing values (marked by red dots) are replaced
+by values that lie between the non-missings. Imagine that we would have used the
+mean to impute. Can you see why that would have disrupted local patterns in the
+series?
 
-```{r fig8f, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time series, with missing values (red) imputed through interpolation."}
+```{r feat-plot-interpolation, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA time series, with missing values (red) imputed through interpolation."}
 # Imputation through interpolation 
 impute_interpolation <- function(x) {
   require(zoo)
@@ -275,15 +275,15 @@ auto-correlation can often be found. The temperature of today is correlated with
 the temperature of recent days. Similarly, EMA mood ratings, taken at time t,
 are typically correlated with ratings taken at t-1, t-2, etc. Studying the
 auto-correlation of a time-series at different delays can be very revealing, as
-illustrated by the auto-correlation plot in Figure \@ref(fig:fig8g), in which the
-correlation of the EMA series with itself is plotted, for various delays (or
-'lags' as these delays are called). First, the plot reveals that observations
-are correlated with previous values at lag 1: this series is auto-correlated.
-Second, there appears to be a pattern in the correlations at later lags:
-positive and negative correlations alternate, in a pattern that seems to reflect
-periodicity.  
+illustrated by the auto-correlation plot in Figure
+\@ref(fig:feat-plot-autocorr), in which the correlation of the EMA series with
+itself is plotted, for various delays (or 'lags' as these delays are called).
+First, the plot reveals that observations are correlated with previous values at
+lag 1: this series is auto-correlated. Second, there appears to be a pattern in
+the correlations at later lags: positive and negative correlations alternate, in
+a pattern that seems to reflect periodicity.
 
-```{r fig8g, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Autocorrelation plot of the EMA mood series, revealing periodicity."}
+```{r feat-plot-autocorr, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "Autocorrelation plot of the EMA mood series, revealing periodicity."}
 op = par(mar = c(4, 4, 1, 1))
 acf(e$s, type = "partial", lag.max = 35, main = "", ylab = "corr", xlab = "lag")
 par(op)
@@ -298,9 +298,9 @@ signal appears also to be characterized by a series of increases and decreases
 in the mean mood level. In the plot of the raw series, this is not immediately
 clear. However, if we "smooth" the series, by calculating the mean as it
 develops over time, the periodicity in the series is becoming more clear. Figure
-\@ref(fig:fig8h) illustrates this.
+\@ref(fig:feat-plot-roll) illustrates this.
 
-```{r fig8h, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA mood series, with a rolling mean superposed."}
+```{r feat-plot-roll, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA mood series, with a rolling mean superposed."}
 d$rolling_mean <-
   as.numeric(
     zoo::rollapply(
@@ -332,10 +332,9 @@ Both the auto-correlation analysis and the moving average plot suggest
 periodicity in the EMA time series. Suppose we want to know more about this
 periodicity. Is there a way to quantify it? Yes, there is. With a technique
 called Fourier Analysis, the strength ('power') of various frequencies can
-be quantified. Figure \@ref(fig:fig8i) shows what happens if we run a Fourier
-analysis of our time series (with R's built-in function `spec.pgram`).
+be quantified. Figure \@ref(fig:feat-plot-pow) shows what happens if we run a Fourier analysis of our time series (with R's built-in function `spec.pgram`).
 
-```{r fig8i, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "periodogram of the EMA time series, revealing a one-day and a one-week period."}
+```{r feat-plot-pow, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "periodogram of the EMA time series, revealing a one-day and a one-week period."}
 fa <- spec.pgram(ts(impute_interpolation(d$s), frequency = n_measurements_per_day), 
                  detrend = TRUE, demean = TRUE, 
                  main = "periodogram",  sub = "",
@@ -360,11 +359,11 @@ single time-series. By extracting these indicators (or "features"), we
 identified several regularities. We learned that the mean, variance and
 missingness increased over time, and we identified clear signs of circadian
 rhythmicity. You might have identified some of these features when you first
-inspected Figure \@ref(fig:fig8a). The increase in the mean was pretty easy to
-spot. However, the systematic increases in the variance and the missingness were
-less clear. Likewise, although you might have spotted the periodicity in the
-series, the circadian components were probably too subtle to spot for the naked
-eye.
+inspected Figure \@ref(fig:feat-plot). The increase in the mean was pretty easy
+to spot. However, the systematic increases in the variance and the missingness
+were less clear. Likewise, although you might have spotted the periodicity in
+the series, the circadian components were probably too subtle to spot for the
+naked eye.
 
 The aim of the chapter was to illustrate the options available to the EMA
 researcher to quantitatively summarize EMA series. Other options, of course,
@@ -380,7 +379,7 @@ you learn how to apply the feature extraction techniques yourself.
 
 \index{Simulating data} 
 
-```{r csfeaturextraction, echo = TRUE, eval = FALSE}
+```{r feat-allcode, echo = TRUE, eval = FALSE}
 ## (De)constructing a simulated EMA time-series
 
 # libraries ----------------

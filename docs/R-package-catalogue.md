@@ -85,7 +85,7 @@ library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.059 secs .
+#> Processing took: 0.047 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -473,19 +473,19 @@ summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Residuals:
 #>      Min       1Q   Median       3Q      Max 
-#> -2.22272 -0.67247  0.04901  0.69239  1.80427 
+#> -2.94888 -0.60633  0.01431  0.72635  2.22665 
 #> 
 #> Coefficients:
-#>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.43665    0.08433   5.178 1.23e-06 ***
-#> depression.l1 -0.10590    0.09095  -1.164    0.247    
-#> const          0.08946    0.09430   0.949    0.345    
+#>                Estimate Std. Error t value Pr(>|t|)  
+#> activity.l1    0.231736   0.103311   2.243   0.0272 *
+#> depression.l1  0.027866   0.100427   0.277   0.7820  
+#> const         -0.003557   0.101625  -0.035   0.9721  
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.9351 on 96 degrees of freedom
-#> Multiple R-squared:  0.2202,	Adjusted R-squared:  0.204 
-#> F-statistic: 13.56 on 2 and 96 DF,  p-value: 6.517e-06
+#> Residual standard error: 1.01 on 96 degrees of freedom
+#> Multiple R-squared:  0.0504,	Adjusted R-squared:  0.03061 
+#> F-statistic: 2.547 on 2 and 96 DF,  p-value: 0.08357
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*

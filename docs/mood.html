@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ecological Momentary Assessment in Mental Health Research</title>
   <meta name="description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies.">
-  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
   <meta property="og:type" content="book" />
@@ -38,6 +38,7 @@
 <link rel="next" href="activity.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -328,8 +329,8 @@ plotmood_down &lt;-<span class="st"> </span><span class="kw">ggplot</span>(csd, 
   <span class="dt">colour=</span><span class="st">&quot;dodgerblue2&quot;</span>) <span class="op">+</span><span class="st">  </span><span class="kw">scale_x_date</span>() <span class="op">+</span><span class="st"> </span><span class="kw">scale_y_continuous</span>(<span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">7</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">xlab</span>(<span class="st">&quot;Time&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">ylab</span>(<span class="st">&quot;Mood&quot;</span>) 
 <span class="kw">print</span>(plotmood_down)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:fig06a"></span>
-<img src="mood_files/figure-html/fig06a-1.png" alt="34 weeks of mood data, from a single participant" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:moodplot"></span>
+<img src="mood_files/figure-html/moodplot-1.png" alt="34 weeks of mood data, from a single participant" width="100%" />
 <p class="caption">
 Figure 6.1: 34 weeks of mood data, from a single participant
 </p>
@@ -356,8 +357,8 @@ combined &lt;-<span class="st"> </span>plotmood_down <span class="op">+</span><s
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">data=</span>csd, <span class="kw">aes</span>(date,<span class="kw">as.numeric</span>(mood_lonely)), 
     <span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">span =</span> .<span class="dv">05</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">colour=</span><span class="st">&quot;indianred2&quot;</span>)
 <span class="kw">print</span>(combined)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:fig69b"></span>
-<img src="mood_files/figure-html/fig69b-1.png" alt="34 weeks of combined mood data, from a single participant" width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:moodplotcombined"></span>
+<img src="mood_files/figure-html/moodplotcombined-1.png" alt="34 weeks of combined mood data, from a single participant" width="100%" />
 <p class="caption">
 Figure 6.2: 34 weeks of combined mood data, from a single participant
 </p>
@@ -370,8 +371,8 @@ Figure 6.2: 34 weeks of combined mood data, from a single participant
 <div id="the-circumplex-model" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> The Circumplex Model</h3>
 <p>  </p>
-<p>The Circumplex Model of affect <span class="citation">(Posner, Russell, &amp; Peterson, <a href="#ref-Posner2005">2005</a>; Russell, <a href="#ref-russell1980circumplex">1980</a>)</span> argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from unpleasant to pleasant) and arousal/activation (ranging from low to high arousal). Combining scores on these scales places the affective states in a circle on one of four quadrants (see Figure <a href="mood.html#fig:fig06c">6.3</a>). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig06c"></span>
+<p>The Circumplex Model of affect <span class="citation">(Posner, Russell, &amp; Peterson, <a href="#ref-Posner2005">2005</a>; Russell, <a href="#ref-russell1980circumplex">1980</a>)</span> argues that all mood states are a linear combination of two independent, bipolar scales: valence (ranging from unpleasant to pleasant) and arousal/activation (ranging from low to high arousal). Combining scores on these scales places the affective states in a circle on one of four quadrants (see Figure <a href="mood.html#fig:circumplexrussel">6.3</a>). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.</p>
+<div class="figure" style="text-align: center"><span id="fig:circumplexrussel"></span>
 <img src="images/outcomes/Russell1980.png" alt="Russell's Circumplex model of affect." width="60%" />
 <p class="caption">
 Figure 6.3: Russell’s Circumplex model of affect.
@@ -384,8 +385,8 @@ Figure 6.3: Russell’s Circumplex model of affect.
 <li>High aroused - unpleasant</li>
 <li>High aroused - pleasant</li>
 </ul>
-<p>A downside of the Circumplex model is that the concepts of valence and arousal can be hard to convey to respondents, especially when translated to other languages, such as Dutch. One alternative is to adjust the scale ends, for example using “extreme sleepiness” and “extreme high energy” <span class="citation">(Sharar et al., <a href="#ref-sharar2016">2016</a>)</span>. Another option is to use pictures or emoticons, rather than language. For this purpose, DeSmet and colleagues developed the pick-a-mood scale, which is a pictorial self-report scale <span class="citation">(Desmet et al., <a href="#ref-Desmet2016">2016</a>)</span>. The scale builds on the circumplex model and adds the third dimension “dominance” (level of experienced control over the mood state), rendering eight (instead of four) different mood states and one neutral state (see Figure <a href="mood.html#fig:fig09d">6.4</a>).</p>
-<div class="figure" style="text-align: center"><span id="fig:fig09d"></span>
+<p>A downside of the Circumplex model is that the concepts of valence and arousal can be hard to convey to respondents, especially when translated to other languages, such as Dutch. One alternative is to adjust the scale ends, for example using “extreme sleepiness” and “extreme high energy” <span class="citation">(Sharar et al., <a href="#ref-sharar2016">2016</a>)</span>. Another option is to use pictures or emoticons, rather than language. For this purpose, DeSmet and colleagues developed the pick-a-mood scale, which is a pictorial self-report scale <span class="citation">(Desmet et al., <a href="#ref-Desmet2016">2016</a>)</span>. The scale builds on the circumplex model and adds the third dimension “dominance” (level of experienced control over the mood state), rendering eight (instead of four) different mood states and one neutral state (see Figure <a href="mood.html#fig:pickamood">6.4</a>).</p>
+<div class="figure" style="text-align: center"><span id="fig:pickamood"></span>
 <img src="images/outcomes/Circumplex-Pick-A-Mood.png" alt="The Pick-A-Mood Circle." width="50%" />
 <p class="caption">
 Figure 6.4: The Pick-A-Mood Circle.
@@ -432,8 +433,8 @@ model &lt;-<span class="st"> </span><span class="kw">fa</span>(items2,
 
 <span class="kw">colnames</span>(model<span class="op">$</span>loadings) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;PA&quot;</span>, <span class="st">&quot;NA&quot;</span>)
 psych<span class="op">::</span><span class="kw">fa.diagram</span>(model)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:fig06e"></span>
-<img src="mood_files/figure-html/fig06e-1.png" alt="Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)." width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:moodfa"></span>
+<img src="mood_files/figure-html/moodfa-1.png" alt="Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)." width="100%" />
 <p class="caption">
 Figure 6.5: Factor analysis of scores of 9 EMA items, revealing two factors: Positive Affect (PA) and Negative Affect (NA).
 </p>
@@ -572,7 +573,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

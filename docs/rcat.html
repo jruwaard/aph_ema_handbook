@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ecological Momentary Assessment in Mental Health Research</title>
   <meta name="description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies.">
-  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
   <meta property="og:type" content="book" />
@@ -38,6 +38,7 @@
 <link rel="next" href="acknowledgements.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -419,7 +420,7 @@ code > span.in { font-style: italic; } /* Information */
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.055 secs .</span>
+<span class="co">#&gt; Processing took: 0.062 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -714,20 +715,20 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.83926 -0.61083 -0.05007  0.50167  2.29569 </span>
+<span class="co">#&gt; -2.55596 -0.58172 -0.02157  0.48931  2.74390 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.46890    0.11523   4.069 9.68e-05 ***</span>
-<span class="co">#&gt; depression.l1 -0.01563    0.09475  -0.165   0.8693    </span>
-<span class="co">#&gt; const         -0.22476    0.10861  -2.070   0.0412 *  </span>
+<span class="co">#&gt; activity.l1    0.50201    0.09959   5.041 2.18e-06 ***</span>
+<span class="co">#&gt; depression.l1  0.14875    0.09005   1.652    0.102    </span>
+<span class="co">#&gt; const         -0.09423    0.09956  -0.946    0.346    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 1.008 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.1473, Adjusted R-squared:  0.1296 </span>
-<span class="co">#&gt; F-statistic: 8.294 on 2 and 96 DF,  p-value: 0.0004757</span></code></pre></div>
-<p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>, <span class="citation">Emerencia et al. (<a href="#ref-Emerencia2016">2016</a>)</span>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
+<span class="co">#&gt; Residual standard error: 0.9811 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.2528, Adjusted R-squared:  0.2372 </span>
+<span class="co">#&gt; F-statistic: 16.24 on 2 and 96 DF,  p-value: 8.43e-07</span></code></pre></div>
+<p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="qgraph" class="section level3">
 <h3><span class="header-section-number">13.5.2</span> qgraph</h3>
@@ -835,11 +836,11 @@ lomb<span class="op">::</span><span class="kw">lsp</span>(ibex[<span class="dv">
 <div id="ref-R-autovarCore">
 <p>Emerencia, A. C. (2018). <em>AutovarCore: Automated vector autoregression models and networks</em>. Retrieved from <a href="https://CRAN.R-project.org/package=autovarCore" class="uri">https://CRAN.R-project.org/package=autovarCore</a></p>
 </div>
-<div id="ref-VanderKrieke2015">
-<p>Van der Krieke, L., Emerencia, A. C., Bos, H. E., Rosmalen, G. J., Riese, H., Aiello, M., … de Jonge, P. (2015). Ecological momentary assessments and automated time series analysis to promote tailored health care: A proof-of-principle study. <em>JMIR Research Protocols</em>, <em>4</em>(3), e100. <a href="https://doi.org/10.2196/resprot.4000" class="uri">https://doi.org/10.2196/resprot.4000</a></p>
-</div>
 <div id="ref-Emerencia2016">
 <p>Emerencia, A. C., Van der Krieke, L., Bos, E. H., De Jonge, P., Petkov, N., &amp; Aiello, M. (2016). Automating vector autoregression on electronic patient diary data. <em>IEEE Journal of Biomedical and Health Informatics</em>. <a href="https://doi.org/10.1109/JBHI.2015.2402280" class="uri">https://doi.org/10.1109/JBHI.2015.2402280</a></p>
+</div>
+<div id="ref-VanderKrieke2015">
+<p>Van der Krieke, L., Emerencia, A. C., Bos, H. E., Rosmalen, G. J., Riese, H., Aiello, M., … de Jonge, P. (2015). Ecological momentary assessments and automated time series analysis to promote tailored health care: A proof-of-principle study. <em>JMIR Research Protocols</em>, <em>4</em>(3), e100. <a href="https://doi.org/10.2196/resprot.4000" class="uri">https://doi.org/10.2196/resprot.4000</a></p>
 </div>
 <div id="ref-Epskamp2012">
 <p>Epskamp, S., Cramer, A. O. J., Waldorp, L. J., Schmittmann, V. D., &amp; Borsboom, D. (2012). Qgraph: Network visualizations of relationships in psychometric data. <em>Journal of Statistical Software</em>, <em>48</em>(4), 1–18. <a href="https://doi.org/10.18637/jss.v048.i04" class="uri">https://doi.org/10.18637/jss.v048.i04</a></p>
@@ -900,7 +901,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ecological Momentary Assessment in Mental Health Research</title>
   <meta name="description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies.">
-  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
   <meta property="og:type" content="book" />
@@ -38,6 +38,7 @@
 <link rel="next" href="methods.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -523,13 +524,13 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; data:  A and B</span>
-<span class="co">#&gt; t = -0.0095814, df = 197.62, p-value = 0.9924</span>
+<span class="co">#&gt; t = 0.74454, df = 172.19, p-value = 0.4576</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.3047955  0.3018480</span>
+<span class="co">#&gt;  -0.1576348  0.3485803</span>
 <span class="co">#&gt; sample estimates:</span>
-<span class="co">#&gt;  mean of x  mean of y </span>
-<span class="co">#&gt; 0.02238865 0.02386238</span></code></pre></div>
+<span class="co">#&gt;   mean of x   mean of y </span>
+<span class="co">#&gt; -0.01981274 -0.11528547</span></code></pre></div>
 </div>
 <div id="learning-from-examples" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Learning from Examples</h3>
@@ -635,7 +636,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

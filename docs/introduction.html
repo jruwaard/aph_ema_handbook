@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ecological Momentary Assessment in Mental Health Research</title>
   <meta name="description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies.">
-  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
   <meta property="og:type" content="book" />
@@ -38,6 +38,7 @@
 <link rel="next" href="rstudio.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -316,17 +317,17 @@ code > span.in { font-style: italic; } /* Information */
 <div id="active-versus-passive-ema" class="section level3">
 <h3><span class="header-section-number">1.1.1</span> Active versus Passive EMA</h3>
 <p>   </p>
-<p>In EMA research, two forms of data collection are distinguished: 1) ‘Active EMA’, with which <em>self-report</em> data are collected, and 2) ‘Passive EMA’, with which <em>observational</em> data are collected. Active EMA requires participants to consciously provide information, for example by rating their current mood in response to a question that is prompted on their smartphone (see Figure <a href="introduction.html#fig:fig01a">1.1</a>). In passive EMA, information is collected through wearables or log files without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media (see Figure <a href="introduction.html#fig:fig01b">1.2</a>). Studies may combine active and passive EMA. A study into sleep patterns, for example, may involve both a self-report sleep diary and an accelerometer sensor <span class="citation">(Van der Meijden et al., <a href="#ref-Meijden2016">2016</a>)</span>.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig01a"></span>
-<img src="EMA_files/figure-html/fig01a-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
+<p>In EMA research, two forms of data collection are distinguished: 1) ‘Active EMA’, with which <em>self-report</em> data are collected, and 2) ‘Passive EMA’, with which <em>observational</em> data are collected. Active EMA requires participants to consciously provide information, for example by rating their current mood in response to a question that is prompted on their smartphone (see Figure <a href="introduction.html#fig:activeema">1.1</a>). In passive EMA, information is collected through wearables or log files without active involvement of participants, for example on heart-rate, activity, smartphone use or engagement on social media (see Figure <a href="introduction.html#fig:passiveema">1.2</a>). Studies may combine active and passive EMA. A study into sleep patterns, for example, may involve both a self-report sleep diary and an accelerometer sensor <span class="citation">(Van der Meijden et al., <a href="#ref-Meijden2016">2016</a>)</span>.</p>
+<div class="figure" style="text-align: center"><span id="fig:activeema"></span>
+<img src="EMA_files/figure-html/activeema-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
 <p class="caption">
 Figure 1.1: Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster.
 </p>
 </div>
-<div class="figure" style="text-align: center"><span id="fig:fig01b"></span>
-<img src="EMA_files/figure-html/fig01b-1.png" alt="Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer " width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:passiveema"></span>
+<img src="EMA_files/figure-html/passiveema-1.png" alt="Passive EMA: data are collected automatically, for instance by a wearable devices such as the wrist-worn GENEActive accelerometer." width="100%" />
 <p class="caption">
-Figure 1.2: Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer
+Figure 1.2: Passive EMA: data are collected automatically, for instance by a wearable devices such as the wrist-worn GENEActive accelerometer.
 </p>
 </div>
 </div>
@@ -354,10 +355,10 @@ Figure 1.2: Passive EMA: data are collected automatically, for instance by accel
 <div id="to-advance-ideographic-research" class="section level3">
 <h3><span class="header-section-number">1.2.3</span> To Advance Ideographic Research</h3>
 <p>  </p>
-<p>In clinical research, a distinction is often made between <em>ideographic</em> and <em>nomothetic</em> methods <span class="citation">(Allport, <a href="#ref-allport1937">1937</a>)</span>. Idiographic methods are those that “aim to identify patterns of behavior within the person across a population of experiences or situations, and nomothetic methods[are] those that aim to identify patterns of behavior across a population of individuals, rather than for any given individual” <span class="citation">(Conner, Tennen, Fleeson, &amp; Barrett, <a href="#ref-Conner2009">2009</a>)</span>. The difference is important. As is increasingly recognized, group-level findings do not necessarily generalize to the individual members of the group, as shown by Figure <a href="introduction.html#fig:fig01c">1.3</a> <span class="citation">(Hamaker, <a href="#ref-Hamaker2012">2012</a>)</span>.</p>
+<p>In clinical research, a distinction is often made between <em>ideographic</em> and <em>nomothetic</em> methods <span class="citation">(Allport, <a href="#ref-allport1937">1937</a>)</span>. Idiographic methods are those that “aim to identify patterns of behavior within the person across a population of experiences or situations, and nomothetic methods[are] those that aim to identify patterns of behavior across a population of individuals, rather than for any given individual” <span class="citation">(Conner, Tennen, Fleeson, &amp; Barrett, <a href="#ref-Conner2009">2009</a>)</span>. The difference is important. As is increasingly recognized, group-level findings do not necessarily generalize to the individual members of the group, as shown by Figure <a href="introduction.html#fig:idiographic">1.3</a> <span class="citation">(Hamaker, <a href="#ref-Hamaker2012">2012</a>)</span>.</p>
 <p>In contrast to more qualitative idiographic methods, such as interviews and N = 1 case studies, EMA allows for the collection of large amounts of quantitative data on the individual level. Thus, EMA offers a quantitative method for idiographic research, measuring characteristics of (unique) individuals across time and context <span class="citation">(Shiffman et al., <a href="#ref-Shiffman2008">2008</a>)</span>. This allows for a better understanding of intra-individual process, and of the factors that account for variability within and between individuals.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig01c"></span>
-<img src="EMA_files/figure-html/fig01c-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:idiographic"></span>
+<img src="EMA_files/figure-html/idiographic-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
 <p class="caption">
 Figure 1.3: An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).
 </p>
@@ -666,7 +667,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

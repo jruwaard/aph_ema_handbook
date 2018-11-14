@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Ecological Momentary Assessment in Mental Health Research</title>
   <meta name="description" content="This is an Amsterdam Public Health (APH) Research Manual, written for researchers who are planning Ecological Momentary Assessment (EMA) studies.">
-  <meta name="generator" content="bookdown 0.7.13 and GitBook 2.6.7">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
   <meta property="og:title" content="Ecological Momentary Assessment in Mental Health Research" />
   <meta property="og:type" content="book" />
@@ -38,6 +38,7 @@
 <link rel="next" href="rcat.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -427,7 +428,7 @@ Figure 12.4: PsyMate App Screenshots
 <h3><span class="header-section-number">12.1.5</span> RoQua</h3>
 
 <p>RoQua (<a href="http://www.roqua.nl/" class="uri">http://www.roqua.nl/</a>) is a web-based Routine Outcome Monitoring system, developed and maintained by a Dutch non-profit development and service organization that is funded by several by northern GGZ organizations and the Department of Psychiatry, University Medical Center Groningen. RoQUA has a sophisticated and user-friendly online back-office portal, with which researchers can define assessment protocols and invite study participants - through e-mail or SMS - to complete questionnaires online (on desktop or mobile devices).</p>
-<p>By inviting study participants several times a day to complete a questionnaire via the standard web browser of their mobile phone, active EMA an be implemented. This approach was taken in several large-scale studies, including ‘NESDA’ <span class="citation">(<a href="http://nesda.nl" class="uri">http://nesda.nl</a>; see also Chapter <a href="catalogue.html#catalogue">11</a>) and “HowNutsAreTheDutch” (<a href="http://www.hoegekis.nl" class="uri">http://www.hoegekis.nl</a>; Van der Krieke et al., <a href="#ref-VanDerKrieke2017">2017</a>, <a href="#ref-VanDerKrieke2016">2016</a>)</span>]. At present, RoQua does not support the collection of passive EMA data. However, preliminary results have been reported with a system called ‘Physiqual’ <span class="citation">(Blaauw et al., <a href="#ref-Blaauw2016">2016</a>)</span>, with which active EMA data, collected with RoQUA, can be combined with wearable sensor data.</p>
+<p>By inviting study participants several times a day to complete a questionnaire via the standard web browser of their mobile phone, active EMA an be implemented. This approach was taken in several large-scale studies, including ‘NESDA’ <span class="citation">(<a href="http://nesda.nl" class="uri">http://nesda.nl</a>; see also Chapter <a href="catalogue.html#catalogue">11</a>) and “HowNutsAreTheDutch” (<a href="http://www.hoegekis.nl" class="uri">http://www.hoegekis.nl</a>; Van der Krieke et al., <a href="#ref-VanDerKrieke2017">2017</a>, <a href="#ref-VanDerKrieke2016">2016</a>)</span>. At present, RoQua does not support the collection of passive EMA data. However, preliminary results have been reported with a system called ‘Physiqual’ <span class="citation">(Blaauw et al., <a href="#ref-Blaauw2016">2016</a>)</span>, with which active EMA data, collected with RoQUA, can be combined with wearable sensor data.</p>
 <div class="figure" style="text-align: center"><span id="fig:roqua"></span>
 <img src="images/instruments/roqua/roqua_p1.jpg" alt="Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system" width="25%" /><img src="images/instruments/roqua/roqua_p2.jpg" alt="Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system" width="25%" /><img src="images/instruments/roqua/roqua_p3.jpg" alt="Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system" width="25%" />
 <p class="caption">
@@ -442,7 +443,7 @@ Figure 12.5: Screenshots of the participant feedback web-page of the ‘HowNutsA
 <h3><span class="header-section-number">12.2.1</span> GENEActive</h3>
 
 <p>GENEActive, sold by UK-based company Activinsights (<a href="http://activinsights.com" class="uri">http://activinsights.com</a>), is a waterproof wrist-worn device with a high-precision, configurable 3-axial accelerometer (range: +/- 8g), an ambient light sensor, a (near-body) temperature sensor, and an event logger (a button that users can press to mark a targeted event). GENEActive was developed to accurately assess human activity in scientific studies. The device has a storage capacity of 0.5GB of raw data. At 10Hz, the device can log activity up to one month. July 2018, the price for one unit was approximately 250 euro.</p>
-<p>GENEActive is used in a growing number of clinical studies to measure activity and sleep-wake cycles, in natural conditions, over longer periods of time. Dedicated R-packages to pre-process and analyze the raw data exist (see Chapter <a href="rcat.html#rcat">13</a>). Matlab users should consider the open source ‘Actant - Activity Analysis Toolbox’ (<a href="https://github.com/maximosipov/actant" class="uri">https://github.com/maximosipov/actant</a>), by Osipov &amp; te Lindert, which includes functionality for visualization and analysis of behavioral and environmental timeseries, acquired using GENEActiv (and other) accelerometers. No accompanying app exists with which study participants can be provided feedback about their activity. This might negatively affect wear-time and study compliance in research participants, who are accustomed to consumer activity-sampling devices, such as Fitbit, where many options for real-time feedback exist.</p>
+<p>GENEActive is used in a growing number of clinical studies to measure activity and sleep-wake cycles, in natural conditions, over longer periods of time. Dedicated R-packages to pre-process and analyze the raw data exist (see Chapter <a href="rcat.html#rcat">13</a>). Matlab users should consider the open source ‘Actant - Activity Analysis Toolbox’ (<a href="https://github.com/maximosipov/actant" class="uri">https://github.com/maximosipov/actant</a>), by Osipov &amp; Te Lindert, which includes functionality for visualization and analysis of behavioral and environmental timeseries, acquired using GENEActiv (and other) accelerometers. No accompanying app exists with which study participants can be provided feedback about their activity. This might negatively affect wear-time and study compliance in research participants, who are accustomed to consumer activity-sampling devices, such as Fitbit, where many options for real-time feedback exist.</p>
 <div class="figure" style="text-align: center"><span id="fig:geneactive"></span>
 <img src="images/instruments/geneactive/geneactive-pack.png" alt="The GENEActive Accelerometer" width="100%" />
 <p class="caption">
@@ -537,7 +538,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

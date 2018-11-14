@@ -37,30 +37,30 @@ EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with
 which *observational* data are collected. Active EMA requires participants to
 consciously provide information, for example by rating their current mood in
 response to a question that is prompted on their smartphone (see Figure
-\@ref(fig:fig01a)). In passive EMA, information is collected through wearables or
+\@ref(fig:activeema)). In passive EMA, information is collected through wearables or
 log files without active involvement of participants, for example on heart-rate,
 activity, smartphone use or engagement on social media (see Figure
-\@ref(fig:fig01b)). Studies may combine active and passive EMA. A study into sleep
+\@ref(fig:passiveema)). Studies may combine active and passive EMA. A study into sleep
 patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/fig01a-1} 
+{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/activeema-1} 
 
 }
 
-\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:fig01a)
+\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:activeema)
 \end{figure}
 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/fig01b-1} 
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/passiveema-1} 
 
 }
 
-\caption{Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer }(\#fig:fig01b)
+\caption{Passive EMA: data are collected automatically, for instance by a wearable devices such as the wrist-worn GENEActive accelerometer.}(\#fig:passiveema)
 \end{figure}
 
 
@@ -136,7 +136,7 @@ experiences or situations, and nomothetic methods[are] those that aim to
 identify patterns of behavior across a population of individuals, rather than
 for any given individual" [@Conner2009]. The difference is important. As is
 increasingly recognized, group-level findings do not necessarily generalize to
-the individual members of the group, as shown by Figure \@ref(fig:fig01c)
+the individual members of the group, as shown by Figure \@ref(fig:idiographic)
 [@Hamaker2012].
 
 In contrast to more qualitative idiographic methods, such as interviews and N
@@ -149,11 +149,11 @@ and between individuals.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/fig01c-1} 
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/idiographic-1} 
 
 }
 
-\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:fig01c)
+\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:idiographic)
 \end{figure}
 
 

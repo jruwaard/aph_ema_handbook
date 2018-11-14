@@ -235,7 +235,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4756
+#> [1] 0.4779
 ```
 
 As can be seen, the simulation results are very close to the output of

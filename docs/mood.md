@@ -72,11 +72,11 @@ print(plotmood_down)
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/fig06a-1} 
+{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodplot-1} 
 
 }
 
-\caption{34 weeks of mood data, from a single participant}(\#fig:fig06a)
+\caption{34 weeks of mood data, from a single participant}(\#fig:moodplot)
 \end{figure}
 
 ### Bipolar Unidimensional Items
@@ -133,11 +133,11 @@ print(combined)
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/fig69b-1} 
+{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodplotcombined-1} 
 
 }
 
-\caption{34 weeks of combined mood data, from a single participant}(\#fig:fig69b)
+\caption{34 weeks of combined mood data, from a single participant}(\#fig:moodplotcombined)
 \end{figure}
 
 ## Multi-dimensional Mood Assessment
@@ -160,9 +160,7 @@ that all mood states are a linear combination of two independent, bipolar
 scales: valence (ranging from unpleasant to pleasant) and arousal/activation
 (ranging from low to high arousal). Combining scores on these scales places the
 affective states in a circle on one of four quadrants (see Figure
-\@ref(fig:fig06c)). States within one quadrant are believed to be positively
-correlated, while states in the opposing quadrant are thought to be negatively
-correlated.
+\@ref(fig:circumplexrussel)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.
 
 \begin{figure}
 
@@ -170,7 +168,7 @@ correlated.
 
 }
 
-\caption{Russell's Circumplex model of affect.}(\#fig:fig06c)
+\caption{Russell's Circumplex model of affect.}(\#fig:circumplexrussel)
 \end{figure}
 
 There are several options to operationalize the Circumplex model in EMA
@@ -193,7 +191,7 @@ purpose, DeSmet and colleagues developed the pick-a-mood scale, which is a
 pictorial self-report scale [@Desmet2016]. The scale builds on the circumplex
 model and adds the third dimension "dominance" (level of experienced control
 over the mood state), rendering eight (instead of four) different mood states
-and one neutral state (see Figure \@ref(fig:fig09d)).
+and one neutral state (see Figure \@ref(fig:pickamood)).
 
 \begin{figure}
 
@@ -201,7 +199,7 @@ and one neutral state (see Figure \@ref(fig:fig09d)).
 
 }
 
-\caption{The Pick-A-Mood Circle.}(\#fig:fig09d)
+\caption{The Pick-A-Mood Circle.}(\#fig:pickamood)
 \end{figure}
 
 ### Negative & Positive Affect
@@ -275,9 +273,9 @@ psych::fa.diagram(model)
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/fig06e-1} 
+{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodfa-1} 
 
 }
 
-\caption{Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).}(\#fig:fig06e)
+\caption{Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).}(\#fig:moodfa)
 \end{figure}

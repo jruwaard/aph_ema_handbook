@@ -5,6 +5,6 @@ This repository contains the source of the [Ecological Momentary Assessment in M
 The R packages used in this book can be installed via
 
 ```{r}
-devtools::install_github("jruwaard/emaph")
+devtools::install_github("jruwaard/aph_ema_handbook")
 ```
 

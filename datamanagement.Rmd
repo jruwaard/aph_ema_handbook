@@ -66,7 +66,7 @@ A directory structure based on these guidelines is listed in Figure
 collected via:
 \index{QuestManager}
 \index{Movisens}
-\index{GENEActive}
+\index{GENEActiv}
 
 1.  an online survey system (QuestManager), to assess demographics and pre/post
     study depression severity (with the PHQ-9 questionnaire, @Kroenke2009),
@@ -74,7 +74,7 @@ collected via:
 2.  an active EMA smartphone app (Movisens - see Chapter
     \@ref(ema-instruments-catalogue)), to assess day-to-day changes in mood, and
     
-3.  an accelerometer (GENEActive - see Chapter \@ref(ema-instruments-catalogue))
+3.  an accelerometer (GENEActiv - see Chapter \@ref(ema-instruments-catalogue))
     to assess activity levels.
 
 ```{r fig5b, echo = FALSE, fig.cap="Example project directory structure", out.width = "85%"}
@@ -88,16 +88,16 @@ path <- c(
     "project/data/raw/questmanager/qm_baseline_2018_05_01.csv", 
     "project/data/raw/questmanager/qm_posttest_2018_05_01.csv", 
     "project/data/raw/movisens/ms_export_2018_05_01.csv", 
-    "project/data/raw/geneactive/ga_APC009_2018_04_26.bin", 
-    "project/data/raw/geneactive/ga_APC009_b_2018_05_01.bin", 
-    "project/data/raw/geneactive/ga_APC010_2018_05_01.bin",
-    "project/data/raw/geneactive/ga_APC011_2018_05_01.bin", 
+    "project/data/raw/geneactiv/ga_APC009_2018_04_26.bin", 
+    "project/data/raw/geneactiv/ga_APC009_b_2018_05_01.bin", 
+    "project/data/raw/geneactiv/ga_APC010_2018_05_01.bin",
+    "project/data/raw/geneactiv/ga_APC011_2018_05_01.bin", 
     "project/data/cleaned/baseline.Rda", 
     "project/data/cleaned/mood.Rda",
     "project/data/cleaned/activity.Rda",
     "project/scripts/import/import_questmanager.R", 
     "project/scripts/import/import_movisens.R", 
-    "project/scripts/import/import_geneactive.R", 
+    "project/scripts/import/import_geneactiv.R", 
     "project/scripts/import/explore.R",
     "project/scripts/publish/analysis.R",
     "project/scripts/publish/P001_regression.Rda",
@@ -128,7 +128,7 @@ knitr::include_graphics("images/datamanagement/project_tree.png")
 
 
 ## Data
-\index{Datamanagement!raw data}
+\index{Datamanagement!Raw data}
 
 Full replicability implies that raw data can be traced back to the source.
 Wherever possible, this should translate to the availability of raw study data
@@ -151,8 +151,8 @@ In 'data/raw/movisens', we find one file: 'ms_mood_2018_05_01.csv',
 containing the results of the EMA mood measurements of all participants,
 exported from the back-office of the MoviSens application.
 
-Finally, in 'data/raw/geneactive', we see a series of '.bin' files: binary data
-files that were exported from the GENEActive smart watches that were worn by the
+Finally, in 'data/raw/geneactiv', we see a series of '.bin' files: binary data
+files that were exported from the GENEActiv smart watches that were worn by the
 participants. Actigraphy data are high-volume: these files are typically large
 (500MB is no exception). By using the '.bin' format, in which data are compressed,
 disk space is saved (in uncompressed format, data in a single .bin file can
@@ -178,7 +178,7 @@ participant is identified in each of the data collection systems.
 
 Table: (\#tab:tab5a) Example Study Key-file
 
-|  ID        | QM_ID    | MoviSens_ID    | GeneActive_ID  |
+|  ID        | QM_ID    | MoviSens_ID    | GENEActiv_ID   |
 |:-----------|:---------|:---------------|:---------------|
 | P001       |  QM01221 | 192.A102.83A   | APC009         |
 | P002       |  QM01228 | 192.B106.73X   | APC010         |

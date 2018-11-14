@@ -71,13 +71,13 @@ y, x) data, often in several time windows (i.e., epochs).
 
 ### GENEAread
 
-GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that
+GENEActiv, sold by Activinsights, is a wrist-worn tri-axial accelerometer that
 is often used in clinical research studies. With package **GENEAread**
 [@R_GENEAread], raw data can be imported into R for further processing, as
 illustrated below.   
 
-```{r out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).", message = FALSE, warning = FALSE}
-# Reading raw GENEActive data.
+```{r out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).", message = FALSE, warning = FALSE}
+# Reading raw GENEActiv data.
 library(GENEAread)
 library(tidyr)
 
@@ -343,6 +343,7 @@ powerSim(model1,
 
 ## Symptom Network Analysis
 \index{Symptom networks}
+\index{Network analysis}
 
 When EMA is used to tap various symptoms, network analysis can reveal the
 dynamic interplay between these symptoms [@Borsboom2013]. Various packages
@@ -461,7 +462,7 @@ plot(results, order = "mean")
 
 ### lomb
 \index{Lomb-Scargle periodogram}
-\index{unevenly-sampled timeseries}
+\index{Unevenly-sampled timeseries}
 \index{Packages!lomb}
 
 Disturbances in circadian rhythms have been related to depressive symptoms

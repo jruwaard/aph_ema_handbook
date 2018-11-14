@@ -16,7 +16,7 @@ Table: (\#tab:14a) EMA Instruments.
 | PsyMate      | PsyMate           | Android/iOS EMA app           |
 | RoQua        | RoQua             | SMS / Browser-based active EMA|
 | **Wearables**|                   |                               |
-| GENEActive   | Activinsights     | Wrist-worn accelerometer      |
+| GENEActiv    | Activinsights     | Wrist-worn accelerometer      |
 | VU-AMS       | VU                | Wearable for autonomic nervous system assessments|
 
 
@@ -152,10 +152,10 @@ Spanish). More translations are in preparation.
 Uses of the app include self-monitoring of mood states, delivering professional
 support during treatment, or conducting EMA-research. The app can be customized
 to address specific client needs or research projects, with expertise from the
-Psymate development team, which includes an active working group that meets
+PsyMate development team, which includes an active working group that meets
 regularly to discuss and advise new projects. Researchers have access to the raw
-data without having to go through the Psymate development team. Communication
-from the Psymate back office to researchers about updates and assistance with
+data without having to go through the PsyMate development team. Communication
+from the PsyMate back office to researchers about updates and assistance with
 technical problems could be a point for consideration for using this platform.
 
 ```{r psymate, echo=FALSE, fig.cap = "PsyMate App Screenshots", out.width='25%', fig.align = 'center', fig.show = 'hold', fig.pos = "!t"}
@@ -198,19 +198,19 @@ knitr::include_graphics(c(
 
 ## Wearables
 
-### GENEActive
-\index{GENEActive}
+### GENEActiv
+\index{GENEActiv}
 
-GENEActive, sold by UK-based company Activinsights (<http://activinsights.com>),
+GENEActiv, sold by UK-based company Activinsights (<http://activinsights.com>),
 is a waterproof wrist-worn device with a high-precision, configurable 3-axial
 accelerometer (range: +/- 8g), an ambient light sensor, a (near-body)
 temperature sensor, and an event logger (a button that users can press to mark a
-targeted event). GENEActive was developed to accurately assess human activity in
+targeted event). GENEActiv was developed to accurately assess human activity in
 scientific studies. The device has a storage capacity of 0.5GB of raw data.
 At 10Hz, the device can log activity up to one month. July 2018, the price for
 one unit was approximately 250 euro.
 
-GENEActive is used in a growing number of clinical studies to measure activity
+GENEActiv is used in a growing number of clinical studies to measure activity
 and sleep-wake cycles, in natural conditions, over longer periods of time.
 Dedicated R-packages to pre-process and analyze the raw data exist (see Chapter
 \@ref(rcat)). Matlab users should consider the open source 'Actant - Activity Analysis Toolbox' (https://github.com/maximosipov/actant), by Osipov & Te Lindert, which includes functionality for visualization and analysis of behavioral
@@ -221,7 +221,7 @@ negatively affect wear-time and study compliance in research participants, who
 are accustomed to consumer activity-sampling devices, such as Fitbit, where many
 options for real-time feedback exist.
 
-```{r geneactive, echo = FALSE, fig.cap = "The GENEActive Accelerometer", out.width='100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
+```{r geneactiv, echo = FALSE, fig.cap = "The GENEActiv Accelerometer", out.width='100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")
 ```
 
@@ -239,7 +239,9 @@ Rate, Stroke Volume (SV) and Cardiac Output, Skin Conductance Level (SCL) and
 Skin Conductance Responses (SCRs) and Tri-Axial Accelerometry (of Body
 Movement). For the processing of VU-AMS data, a dedicated software suite called
 the 'Data Analysis and Management Software' (VU-DAMS) is available (for Windows
-and Mac).
+and Mac). VU-AMS is used worldwide by many research groups, to study stress and
+emotion in both laboratory and naturalistic settings [@DeGeus1995; @Geus1996;
+@Willemsen1996].
 
 ```{r vu-ams, echo = FALSE, fig.cap = "VU-AMS device (left) and VU-DAMS screenshot (right)", out.width = '100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!t"}
 knitr::include_graphics(c(

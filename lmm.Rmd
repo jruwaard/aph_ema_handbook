@@ -13,7 +13,6 @@ This chapter provides a brief introduction to conducting mixed model analysis of
 EMA data in R.
 
 ## The Mixed Model
-\index{mixed model} 
 
 Mixed modeling can be understood as a regression technique in which separate
 regression functions are estimated for each cluster in the data set. In EMA
@@ -194,7 +193,7 @@ ggplot(subset(d2, id %in% unique(d2$id)[1:6]),
 To fit the extended mixed model, time can simply be added to both the fixed and
 random arguments of the 'lme' function. Fixed effects estimated of this model
 should be around 5 and 0.5, since that is how we specified the data. Calling
-'summary' on this function, we see that the fixed time effect is significant.
+`summary` on this function, we see that the fixed time effect is significant.
 
 ```{r cs9g}
 # A mixed model, with a random slope.

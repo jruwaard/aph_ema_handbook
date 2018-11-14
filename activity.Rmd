@@ -76,14 +76,14 @@ in acceleration (of the device, relative to earth's gravity), typically
 simultaneously on the vertical (Y), horizontal right-left (X) and horizontal
 front-back axis (Z). Through actigraphy, we study the frequency, duration, and
 intensity of physical activity. Figure \@ref(fig:genea-one-hour) shows one hour
-of data collected from a wrist-worn GENEActive accelerometer. As can be seen,
+of data collected from a wrist-worn GENEActiv accelerometer. As can be seen,
 three accelerometers (X, Y, Z) were simultaneously providing data. Data were
 sampled with a frequency of 30 Hertz (Hz; thirty measurements per second - which
 is common), but sub-sampled here to 0.1Hz (one measurement every 10 seconds), for
 practical reasons. If we would have plotted the data at 30Hz, the plot would
 have included 108.000 data points. At 0.1Hz, this reduces to 3600 points.
 
-```{r genea-one-hour, fig.asp = 0.5, fig.cap = "One hour of raw data collected with a wrist-worn GENEActive  accelerometer, sub-sampled to 10-second epochs (0.1 Hz)", echo = FALSE}
+```{r genea-one-hour, fig.asp = 0.5, fig.cap = "One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)", echo = FALSE}
 # Plot one hour of accelerometer data.
 library(ggplot2)
 library(tidyr)
@@ -171,8 +171,8 @@ each {x, y, z}-data point in the raw series. Typically, however, the metrics are
 calculated for time-windows (called *epochs*), in which case the mean can be
 used to characterize the overall activity in each epoch.
 
-Figure \@ref(fig:genea-one-day) shows the development of ENMO over one day, as sampled
-by GENEActive accelerometers that were worn by a young adult (top) and a
+Figure \@ref(fig:genea-one-day) shows the development of ENMO over one day, as
+sampled by GENEActiv accelerometers that were worn by a young adult (top) and a
 middle-aged person (bottom). This figure is much easier to interpret than the
 plot of the raw x-y-z values in Figure \@ref(fig:genea-one-hour). Activity levels
 over the day follow a similar pattern, but the activity levels in the two plots
@@ -230,7 +230,7 @@ considerably for each person.
 
 
 ## Geotracking
-\index{geotracking} 
+\index{Geotracking} 
 
 ### The Geographic Coordinate System
 \index{Geographic Coordinate system}

@@ -131,7 +131,6 @@ Negative/Positive affect (NA/PA) theory [@watson1985].
 
 ### The Circumplex Model
 \index{Mood assessment!Circumplex model}
-\index{Circumplex model}
 \index{Mood assessment!Pick-a-mood scale}
 
 The Circumplex Model of affect [@russell1980circumplex; @Posner2005] argues

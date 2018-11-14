@@ -68,8 +68,8 @@ knitr::include_graphics(c(
 Moodbuster (<http://moodbuster.eu/>) is a web-based treatment platform with an
 integrated EMA app. The platform was developed by an international non-profit
 research consortium, including VU, VUmc and GGZ inGeest, in two major EU-funded
-research projects: ICT4Depression (see ICT4Depression.eu; @warmerdam2012) and
-E-COMPARED (see <http://e-compared.eu>; @Kleiboer2016; @VandeVen2017). 
+research projects: ICT4Depression [see ICT4Depression.eu; @warmerdam2012] and
+E-COMPARED [see <http://e-compared.eu>; @Kleiboer2016; @VandeVen2017]. 
 
 In the E-COMPARED trial, Moodbuster was used, in five EU-countries, to test blended
 treatment of major depression. In this study, participants used the smartphone
@@ -85,7 +85,7 @@ preparation. Currently, EMA assessment protocols are hard-coded in the
 Moodbuster app. New EMA assessments protocols can be implemented in
 collaboration with the Moodbuster development team. An online back-office is in
 development. Previous studies used an Android version of the EMA app.
-Cross-platform versions of the app in development.
+Cross-platform versions of the app are in development.
 
 More information on Moodbuster can be obtained from prof. dr. Heleen Riper
 (<h.riper@vu.nl>).
@@ -181,9 +181,9 @@ devices).
 By inviting study participants several times a day to complete a
 questionnaire via the standard web browser of their mobile phone, active EMA an
 be implemented. This approach was taken in several large-scale studies,
-including 'NESDA' (<http://nesda.nl>; see also Chapter \@ref(catalogue)) and
-'HowNutsAreTheDutch' (<http://www.hoegekis.nl>; see [@VanDerKrieke2017;
-@VanDerKrieke2016]). At present, RoQua does not support the collection of
+including 'NESDA' [<http://nesda.nl>; see also Chapter \@ref(catalogue)) and
+'HowNutsAreTheDutch' (<http://www.hoegekis.nl>; @VanDerKrieke2017;
+@VanDerKrieke2016]]. At present, RoQua does not support the collection of
 passive EMA data. However, preliminary results have been reported with a system
 called 'Physiqual' [@Blaauw2016], with which active EMA data, collected with RoQUA,
 can be combined with wearable sensor data.
@@ -213,7 +213,9 @@ one unit was approximately 250 euro.
 GENEActive is used in a growing number of clinical studies to measure activity
 and sleep-wake cycles, in natural conditions, over longer periods of time.
 Dedicated R-packages to pre-process and analyze the raw data exist (see Chapter
-\@ref(rcat)). Note, however, that no accompanying app exists with which study
+\@ref(rcat)). Matlab users should consider the open source 'Actant - Activity Analysis Toolbox' (https://github.com/maximosipov/actant), by Osipov & te Lindert, which includes functionality for visualization and analysis of behavioral
+and environmental timeseries, acquired using GENEActiv (and other)
+accelerometers. No accompanying app exists with which study
 participants can be provided feedback about their activity. This might
 negatively affect wear-time and study compliance in research participants, who
 are accustomed to consumer activity-sampling devices, such as Fitbit, where many
@@ -229,14 +231,15 @@ knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")
 
 The VU University Ambulatory Monitoring System (VU-AMS;
 <http://www.vu-ams.nl/>), developed by the department of Biological Psychology
-and the Technical Department (ITM) of the Faculty of Behavioral and Movement Sciences,
-allows ambulatory recording of autonomic and cardiovascular activity. VU-AMS
-measures heart rate, heart rate variability, Respiratory Sinus Arrhythmia,
-Pre-Ejection Period, Left Ventricular Ejection Time, Respiration Rate, Stroke
-Volume (SV) and Cardiac Output, Skin Conductance Level (SCL) and Skin
-Conductance Responses (SCRs) and Tri-Axial Accelerometry (of Body Movement). For
-the processing of VU-AMS data, a dedicated software suite called the 'Data
-Analysis and Management Software' (VU-DAMS) is available (for Windows and Mac).
+and the Technical Department (ITM) of the Faculty of Behavioral and Movement
+Sciences, allows ambulatory recording of autonomic and cardiovascular activity.
+VU-AMS measures heart rate, heart rate variability, Respiratory Sinus
+Arrhythmia, Pre-Ejection Period, Left Ventricular Ejection Time, Respiration
+Rate, Stroke Volume (SV) and Cardiac Output, Skin Conductance Level (SCL) and
+Skin Conductance Responses (SCRs) and Tri-Axial Accelerometry (of Body
+Movement). For the processing of VU-AMS data, a dedicated software suite called
+the 'Data Analysis and Management Software' (VU-DAMS) is available (for Windows
+and Mac).
 
 ```{r vu-ams, echo = FALSE, fig.cap = "VU-AMS device (left) and VU-DAMS screenshot (right)", out.width = '100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!t"}
 knitr::include_graphics(c(

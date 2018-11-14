@@ -52,6 +52,6 @@ Imports:
  zoo
 Remotes: 
  rstudio/bookdown,
- rstudio/rmarkdown
+ rstudio/rmarkdown,
  jruwaard/emaph
  

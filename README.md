@@ -1,4 +1,4 @@
-# Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, With Examples in R
+# Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, with Examples in R
 
 This repository contains the source of the [Ecological Momentary Assessment in Mental Health Research](https://jruwaard.github.io/aph_ema_handbook/) manual. The manual is built using [bookdown](https://github.com/rstudio/bookdown).
 

@@ -13,6 +13,8 @@ This chapter provides a brief introduction to conducting mixed model analysis of
 EMA data in R.
 
 ## The Mixed Model
+\index{Fixed effects}
+\index{Random effects}
 
 Mixed modeling can be understood as a regression technique in which separate
 regression functions are estimated for each cluster in the data set. In EMA

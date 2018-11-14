@@ -13,6 +13,7 @@ some of the features that can be extracted from EMA time-series.
 
 
 ## Simulated EMA Time-series Example
+\index{Simulating data} 
 
 We will focus on a simulated three-week time-series of EMA mood responses of a
 single person, in which ratings were collected five times per day. Figure
@@ -377,6 +378,7 @@ chapter. We did not include them, to avoid unnecessary distraction from the
 conceptual explanation. Instead, we provide a full code listing below, to allow
 you learn how to apply the feature extraction techniques yourself. 
 
+\index{Simulating data} 
 
 ```{r csfeaturextraction, echo = TRUE, eval = FALSE}
 ## (De)constructing a simulated EMA time-series

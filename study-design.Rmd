@@ -182,6 +182,8 @@ test reaches significance, if it is run, many times, on simulated data, in which
 the hypothesized effect is present. To illustrate how this works, we will
 calculate the power of the t-test again, through simulation:
 
+\index{Simulating data} 
+
 ```{r}
 # Power analysis of a t-test
 # (simulation approach).

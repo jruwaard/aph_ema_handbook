@@ -75,10 +75,14 @@ higher) of RStudio.
 If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
-<p class="caption">(\#fig:r-interface)The RStudio Interface</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
+
+}
+
+\caption{The RStudio Interface}(\#fig:r-interface)
+\end{figure}
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -176,10 +180,14 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
-<p class="caption">(\#fig:r-import)RStudio's CSV import wizard.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
+
+}
+
+\caption{RStudio's CSV import wizard.}(\#fig:r-import)
+\end{figure}
 
 ### Using Functions to Import Data
 
@@ -358,10 +366,14 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
-<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/r-irriplot-1} 
+
+}
+
+\caption{Irritation levels of a single patient, in the first six days of an EMA study.}(\#fig:r-irriplot)
+\end{figure}
 
 
 ## Getting Help
@@ -427,13 +439,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 0.17418, df = 195.12, p-value = 0.8619
+#> t = -1.7826, df = 188.51, p-value = 0.07626
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2950978  0.3522722
+#>  -0.52973282  0.02680598
 #> sample estimates:
 #>   mean of x   mean of y 
-#> -0.01224174 -0.04082897
+#> -0.18234197  0.06912146
 ```
 
 

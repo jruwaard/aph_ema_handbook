@@ -86,7 +86,7 @@ library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.064 secs .
+#> Processing took: 0.147 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -101,10 +101,14 @@ ggplot(d, aes(x = timestamp, y = value)) +
   facet_wrap(~sensor, scales = "free_y")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/unnamed-chunk-2-1.png" alt="Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-2)Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/unnamed-chunk-2-1} 
+
+}
+
+\caption{Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).}(\#fig:unnamed-chunk-2)
+\end{figure}
 
 
 ### GGIR
@@ -137,10 +141,14 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
   xlab("Time") + ylab("Activity Counts")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/fig15a-1.png" alt="Activity Counts (5-minute windows), in a Three-day Accelerometer data set." width="100%" />
-<p class="caption">(\#fig:fig15a)Activity Counts (5-minute windows), in a Three-day Accelerometer data set.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/fig15a-1} 
+
+}
+
+\caption{Activity Counts (5-minute windows), in a Three-day Accelerometer data set.}(\#fig:fig15a)
+\end{figure}
 
 
 ## Data management & Visual Exploration
@@ -219,10 +227,14 @@ g <- g + geom_smooth(); g
 g + facet_wrap(~ ID)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/cs15d-1.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-2.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-3.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-4.png" alt="Plotting layers with ggplot2" width="45%" />
-<p class="caption">(\#fig:cs15d)Plotting layers with ggplot2</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-1} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-2} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-3} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-4} 
+
+}
+
+\caption{Plotting layers with ggplot2}(\#fig:cs15d)
+\end{figure}
 
 
 ### haven
@@ -281,14 +293,23 @@ d <- d %>% group_by(id, epoch) %>%
 ```
 
 
- id  epoch                         svm
----  --------------------  -----------
-  1  2018-06-02 12:00:00    -0.0009766
-  1  2018-06-02 12:01:00     0.0072235
-  1  2018-06-02 12:02:00     0.0023875
-  1  2018-06-02 12:03:00     0.0070644
-  1  2018-06-02 12:04:00     0.0265187
-  1  2018-06-02 12:05:00     0.0969168
+\begin{tabular}{r|l|r}
+\hline
+id & epoch & svm\\
+\hline
+1 & 2018-06-02 12:00:00 & -0.0009766\\
+\hline
+1 & 2018-06-02 12:01:00 & 0.0072235\\
+\hline
+1 & 2018-06-02 12:02:00 & 0.0023875\\
+\hline
+1 & 2018-06-02 12:03:00 & 0.0070644\\
+\hline
+1 & 2018-06-02 12:04:00 & 0.0265187\\
+\hline
+1 & 2018-06-02 12:05:00 & 0.0969168\\
+\hline
+\end{tabular}
 
 To learn more about handling dates and times with `lubridate`,
 [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data
@@ -395,7 +416,7 @@ powerSim(model1,
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 2 s
+#> Time elapsed: 0 h 0 m 1 s
 ```
 
 
@@ -453,20 +474,29 @@ summary(models_found[[1]]$varest$varresult$depression)
 #> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
-#>      Min       1Q   Median       3Q      Max 
-#> -2.47229 -0.82592 -0.01577  0.60038  2.76658 
+#>     Min      1Q  Median      3Q     Max 
+#> -1.6658 -0.4813  0.0000  0.5249  1.4460 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.44044    0.12721   3.462 0.000802 ***
-#> depression.l1  0.01822    0.10066   0.181 0.856757    
-#> const          0.07440    0.10608   0.701 0.484741    
+#> activity.l1    0.58203    0.08169   7.125 2.86e-10 ***
+#> depression.l1  0.05166    0.08307   0.622  0.53563    
+#> const         -0.39421    0.22300  -1.768  0.08061 .  
+#> day_1          0.45230    0.31281   1.446  0.15179    
+#> day_2          0.99590    0.30586   3.256  0.00161 ** 
+#> day_3          0.28128    0.31950   0.880  0.38107    
+#> day_4          0.46804    0.31075   1.506  0.13565    
+#> day_5          0.64556    0.31006   2.082  0.04027 *  
+#> day_6          0.50949    0.31635   1.611  0.11090    
+#> outlier_35     1.94422    0.83433   2.330  0.02211 *  
+#> outlier_52     1.99895    0.84902   2.354  0.02080 *  
+#> outlier_90    -2.72751    0.84765  -3.218  0.00182 ** 
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 1.051 on 96 degrees of freedom
-#> Multiple R-squared:  0.1239,	Adjusted R-squared:  0.1056 
-#> F-statistic: 6.787 on 2 and 96 DF,  p-value: 0.00175
+#> Residual standard error: 0.8033 on 87 degrees of freedom
+#> Multiple R-squared:  0.4667,	Adjusted R-squared:  0.3993 
+#> F-statistic: 6.922 on 11 and 87 DF,  p-value: 2.87e-08
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -508,10 +538,14 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
        layout = "spring")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/cs15l-1.png" alt="Network of mood items from CSD data set" width="100%" />
-<p class="caption">(\#fig:cs15l)Network of mood items from CSD data set</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/cs15l-1} 
+
+}
+
+\caption{Network of mood items from CSD data set}(\#fig:cs15l)
+\end{figure}
 
 
 ### bootnet
@@ -542,7 +576,9 @@ results <- bootnet(g, nBoots = 50, verbose = FALSE)
 plot(results, order = "mean")
 ```
 
-<img src="R-package-catalogue_files/figure-html/cs15m-1.png" width="100%" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/cs15m-1} \end{center}
 
 
 ## Timeseries analysis
@@ -568,4 +604,6 @@ data(ibex, package = "lomb")
 lomb::lsp(ibex[2:3]) 
 ```
 
-<img src="R-package-catalogue_files/figure-html/cs15n-1.png" width="98%" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics[width=0.98\linewidth]{R-package-catalogue_files/figure-latex/cs15n-1} \end{center}

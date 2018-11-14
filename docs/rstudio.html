@@ -344,8 +344,8 @@ code > span.in { font-style: italic; } /* Information */
 <div id="interacting-with-r-through-the-rstudio-console" class="section level2">
 <h2><span class="header-section-number">2.4</span> Interacting with R through the RStudio Console</h2>
 
-<p>If you open RStudio, you will be presented with the interface shown in Figure <a href="rstudio.html#fig:fig2a">2.1</a>. RStudio’s main window is divided in four panes (sub-windows), which further contain several tabbed windows.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig2a"></span>
+<p>If you open RStudio, you will be presented with the interface shown in Figure <a href="rstudio.html#fig:r-interface">2.1</a>. RStudio’s main window is divided in four panes (sub-windows), which further contain several tabbed windows.</p>
+<div class="figure" style="text-align: center"><span id="fig:r-interface"></span>
 <img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
 <p class="caption">
 Figure 2.1: The RStudio Interface
@@ -363,7 +363,7 @@ N
 <p>To understand why R is such a popular tool for statistical computing, consider the following command, which, in one line, 1) uses the variable N, just created, to 2) generate 100 random numbers from the normal distribution, and 3) plot a histogram of these numbers.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot the histogram of a sample from the normal distribution.</span>
 <span class="kw">hist</span>(<span class="kw">rnorm</span>(N))</code></pre></div>
-<p>The plot appears in the bottom-right pane, as in Figure <a href="rstudio.html#fig:fig2a">2.1</a>.</p>
+<p>The plot appears in the bottom-right pane, as in Figure <a href="rstudio.html#fig:r-interface">2.1</a>.</p>
 </div>
 <div id="writing-r-scripts" class="section level2">
 <h2><span class="header-section-number">2.5</span> Writing R-scripts</h2>
@@ -388,10 +388,10 @@ N
 <ul>
 <li><p>Download the example csv data file at <a href="https://tinyurl.com/yczmjdat" class="uri">https://tinyurl.com/yczmjdat</a> (or create a csv-version of one of your own data files).</p></li>
 <li><p>In RStudio’s menu, choose <code>File &gt; Import Dataset &gt; From Text (base)</code>.</p></li>
-<li><p>In the window that appears, click on <code>Browse</code> to locate the csv- file on your computer, and click <code>Import</code> in the next window (see Figure <a href="rstudio.html#fig:fig2b">2.2</a>).</p></li>
+<li><p>In the window that appears, click on <code>Browse</code> to locate the csv- file on your computer, and click <code>Import</code> in the next window (see Figure <a href="rstudio.html#fig:r-import">2.2</a>).</p></li>
 </ul>
 <p>RStudio shows the data, in tabular view, in the top-left window, ready for analysis. You will also find a new entry in the <code>Environment</code>-tab in the top-right pane. When you click the small arrow, at the left of the name, you will see a brief summary of the contents of the data.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig2b"></span>
+<div class="figure" style="text-align: center"><span id="fig:r-import"></span>
 <img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
 <p class="caption">
 Figure 2.2: RStudio’s CSV import wizard.
@@ -436,7 +436,7 @@ ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <span class="co">#&gt; 4   227      8            4         0            1</span>
 <span class="co">#&gt; 5   227      9            4         0            2</span>
 <span class="co">#&gt; 6   227     10            5         0            1</span></code></pre></div>
-<p>To view all rows of data in a spreadsheet (as in Figure <a href="rstudio.html#fig:fig2b">2.2</a>, type:</p>
+<p>To view all rows of data in a spreadsheet (as in Figure <a href="rstudio.html#fig:r-import">2.2</a>, type:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Show data as spreadsheet.</span>
 <span class="kw">View</span>(ESMdata)</code></pre></div>
 <p>To work with a specific variable in the data set, use <code>$</code>, For instance, to print the first 20 numbers in the <code>mood_relaxed</code> variable, type:</p>
@@ -487,8 +487,8 @@ devtools<span class="op">::</span><span class="kw">install_github</span>(<span c
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st">  </span><span class="kw">geom_step</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">scale_x_continuous</span>(<span class="dt">breaks =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">10</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>dayno, <span class="dt">nrow =</span> <span class="dv">2</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:cs2m"></span>
-<img src="R_files/figure-html/cs2m-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:r-irriplot"></span>
+<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
 <p class="caption">
 Figure 2.3: Irritation levels of a single patient, in the first six days of an EMA study.
 </p>
@@ -524,13 +524,13 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; data:  A and B</span>
-<span class="co">#&gt; t = -0.2843, df = 196.59, p-value = 0.7765</span>
+<span class="co">#&gt; t = 0.17418, df = 195.12, p-value = 0.8619</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.3158564  0.2362626</span>
+<span class="co">#&gt;  -0.2950978  0.3522722</span>
 <span class="co">#&gt; sample estimates:</span>
-<span class="co">#&gt; mean of x mean of y </span>
-<span class="co">#&gt; 0.1377186 0.1775155</span></code></pre></div>
+<span class="co">#&gt;   mean of x   mean of y </span>
+<span class="co">#&gt; -0.01224174 -0.04082897</span></code></pre></div>
 </div>
 <div id="learning-from-examples" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Learning from Examples</h3>

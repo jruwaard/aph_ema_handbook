@@ -82,8 +82,8 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="csd_files/figure-html/cs11b-1.png" alt="SCL-90 depression score, over the study period" width="100%" />
-<p class="caption">(\#fig:cs11b)SCL-90 depression score, over the study period</p>
+<img src="csd_files/figure-html/csd-scl90plot-1.png" alt="SCL-90 depression score, over the study period" width="100%" />
+<p class="caption">(\#fig:csd-scl90plot)SCL-90 depression score, over the study period</p>
 </div>
 
 
@@ -217,8 +217,8 @@ ggplot(na.omit(d),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="csd_files/figure-html/cs11f-1.png" alt="Results of the DFA analysis." width="100%" />
-<p class="caption">(\#fig:cs11f)Results of the DFA analysis.</p>
+<img src="csd_files/figure-html/csd-dfaplot-1.png" alt="Results of the DFA analysis." width="100%" />
+<p class="caption">(\#fig:csd-dfaplot)Results of the DFA analysis.</p>
 </div>
 
 

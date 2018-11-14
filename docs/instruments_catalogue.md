@@ -193,6 +193,7 @@ can be combined with wearable sensor data.
 
 ### GENEActiv
 \index{GENEActiv}
+\index{Actant - Activity Analysis Toolbox}
 
 GENEActiv, sold by UK-based company Activinsights (<http://activinsights.com>),
 is a waterproof wrist-worn device with a high-precision, configurable 3-axial
@@ -222,6 +223,8 @@ options for real-time feedback exist.
 
 ### VU-AMS
 \index{VU-AMS}
+\index{DAMS}
+\index{Autonomic and cardiovascular activity}
 
 The VU University Ambulatory Monitoring System (VU-AMS;
 <http://www.vu-ams.nl/>), developed by the department of Biological Psychology

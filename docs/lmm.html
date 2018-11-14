@@ -342,9 +342,9 @@ d1 &lt;-<span class="st"> </span><span class="kw">sim_ema</span>(plan,
                             <span class="dt">random =</span> <span class="kw">c</span>(<span class="dt">intercept =</span> <span class="dv">1</span>),
                             <span class="dt">error =</span> .<span class="dv">5</span>),
               <span class="dt">lim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</code></pre></div>
-<p>From the code, you learn that we set the mean mood (intercept<sub>g</sub>) to 5, the variance around this mean - var(intercept<sub>p</sub>) - to 1, and the variance around these means within participants - the error - to .5. Figure <a href="lmm.html#fig:fig9a">9.1</a> shows EMA mood ratings of the first 6 participants in the simulated data set, which we can use to check the simulation. As specified, mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line). So far, so good.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig9a"></span>
-<img src="lmm_files/figure-html/fig9a-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
+<p>From the code, you learn that we set the mean mood (intercept<sub>g</sub>) to 5, the variance around this mean - var(intercept<sub>p</sub>) - to 1, and the variance around these means within participants - the error - to .5. Figure <a href="lmm.html#fig:lmm-plot">9.1</a> shows EMA mood ratings of the first 6 participants in the simulated data set, which we can use to check the simulation. As specified, mean mood ratings of the participants (the red lines) vary around 5 (the grey dashed line). So far, so good.</p>
+<div class="figure" style="text-align: center"><span id="fig:lmm-plot"></span>
+<img src="lmm_files/figure-html/lmm-plot-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
 <p class="caption">
 Figure 9.1: Simulated EMA data of Six Participants.
 </p>
@@ -360,22 +360,22 @@ Figure 9.1: Simulated EMA data of Six Participants.
 fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">~</span><span class="st"> </span><span class="dv">1</span>, <span class="dt">random =</span> <span class="op">~</span><span class="st"> </span><span class="dv">1</span> <span class="op">|</span><span class="st"> </span>id, 
           <span class="dt">data =</span> d1)</code></pre></div>
 <p>We can now extract the fixed effects regression coefficients table, by calling the <code>summary</code> function on the fitted model. The estimated intercept should be around 5 (as this is a finite sample, we expect some deviation):</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Print fixed effects.</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fixed effects.</span>
 <span class="kw">summary</span>(fm)<span class="op">$</span>tTable
 <span class="co">#&gt;             Value Std.Error   DF t-value   p-value</span>
 <span class="co">#&gt; (Intercept)  4.95     0.106 2000    46.7 1.28e-322</span></code></pre></div>
 <p>Random effects and residual variance are shown by the <code>VarCorr</code> function. Again, since we specified the data ourselves in this case, we know the ‘true’ value of these parameters: the random intercept variance should be around 1 and the residual error variance should be close to 0.5.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Fitted random effects.</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Random effects.</span>
 <span class="kw">VarCorr</span>(fm)
 <span class="co">#&gt; id = pdLogChol(1) </span>
 <span class="co">#&gt;             Variance StdDev</span>
 <span class="co">#&gt; (Intercept) 1.097    1.048 </span>
 <span class="co">#&gt; Residual    0.502    0.709</span></code></pre></div>
-<p>It can be instructive to plot the predicted values of the model, to make clear how the model ‘thinks’. As shown by Figure <a href="lmm.html#fig:fig9b">9.2</a>, the model predicts a series of straight lines, one for each participant, that vary around 5 (the red line).</p>
+<p>It can be instructive to plot the predicted values of the model, to make clear how the model ‘thinks’. As shown by Figure <a href="lmm.html#fig:lmm-lme1-plot">9.2</a>, the model predicts a series of straight lines, one for each participant, that vary around 5 (the red line).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Saving predicted values.</span>
 d1<span class="op">$</span>predicted &lt;-<span class="st"> </span><span class="kw">predict</span>(fm)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:fig9b"></span>
-<img src="lmm_files/figure-html/fig9b-1.png" alt="EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model." width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:lmm-lme1-plot"></span>
+<img src="lmm_files/figure-html/lmm-lme1-plot-1.png" alt="EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model." width="100%" />
 <p class="caption">
 Figure 9.2: EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.
 </p>
@@ -391,9 +391,9 @@ d2 &lt;-<span class="st"> </span><span class="kw">sim_ema</span>(plan,
                             <span class="dt">random =</span> <span class="kw">c</span>(<span class="dt">intercept =</span> <span class="dv">1</span>, <span class="dt">time =</span> <span class="fl">0.1</span>),
                             <span class="dt">error =</span> .<span class="dv">5</span>),
               <span class="dt">lim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>))</code></pre></div>
-<p>Figure <a href="lmm.html#fig:fig9c">9.3</a> shows the data of the first six participants in the second data set. Both the intercept and the slope vary across the participants. Some participants improve more over time, and others improve less: the slope in this data set is a random effect.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig9c"></span>
-<img src="lmm_files/figure-html/fig9c-1.png" alt="Simulated EMA data of Six Participants (Time-varying model)." width="100%" />
+<p>Figure <a href="lmm.html#fig:lmm-plot2">9.3</a> shows the data of the first six participants in the second data set. Both the intercept and the slope vary across the participants. Some participants improve more over time, and others improve less: the slope in this data set is a random effect.</p>
+<div class="figure" style="text-align: center"><span id="fig:lmm-plot2"></span>
+<img src="lmm_files/figure-html/lmm-plot2-1.png" alt="Simulated EMA data of Six Participants (Time-varying model)." width="100%" />
 <p class="caption">
 Figure 9.3: Simulated EMA data of Six Participants (Time-varying model).
 </p>
@@ -422,7 +422,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">alpha =</span> .<span class="dv">1</span>, <span class="dt">size =</span> .<span class="dv">6</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">group =</span> <span class="ot">NULL</span>), <span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">coord_cartesian</span>(<span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">10</span>)) <span class="op">+</span><span class="st"> </span><span class="kw">theme_classic</span>()</code></pre></div>
-<p><img src="lmm_files/figure-html/fig9d-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p><img src="lmm_files/figure-html/lmm-lme2-pred-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="adding-a-two-group-comparison" class="section level2">
 <h2><span class="header-section-number">9.5</span> Adding a Two-Group Comparison</h2>
@@ -443,9 +443,9 @@ fm &lt;-<span class="st"> </span><span class="kw">lme</span>(Y <span class="op">
 <span class="co">#&gt; time                 0.00      0.02 3998    0.21    0.83</span>
 <span class="co">#&gt; grouptreatment       0.18      0.16  198    1.14    0.25</span>
 <span class="co">#&gt; time:grouptreatment  0.46      0.03 3998   16.71    0.00</span></code></pre></div>
-<p>In Figure <a href="lmm.html#fig:fig9e">9.4</a> below, EMA mood ratings predicted by the fitted model show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups.</p>
-<div class="figure" style="text-align: center"><span id="fig:fig9e"></span>
-<img src="lmm_files/figure-html/fig9e-1.png" alt="Predicted mood ratings" width="100%" />
+<p>In Figure <a href="lmm.html#fig:lmm-lme3-pred">9.4</a> below, EMA mood ratings predicted by the fitted model show how the model detects 1) the fixed between-group effect, and 2) the variance in intercepts and slopes in both groups.</p>
+<div class="figure" style="text-align: center"><span id="fig:lmm-lme3-pred"></span>
+<img src="lmm_files/figure-html/lmm-lme3-pred-1.png" alt="Predicted mood ratings" width="100%" />
 <p class="caption">
 Figure 9.4: Predicted mood ratings
 </p>

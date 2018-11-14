@@ -78,15 +78,15 @@ d1 <- sim_ema(plan,
 
 From the code, you learn that we set the mean mood (intercept~g~) to 5, the
 variance around this mean - var(intercept~p~) - to 1, and the variance around
-these means within participants - the error - to .5. Figure \@ref(fig:fig9a)
+these means within participants - the error - to .5. Figure \@ref(fig:lmm-plot)
 shows EMA mood ratings of the first 6 participants in the simulated data set,
 which we can use to check the simulation. As specified, mean mood ratings of the
 participants (the red lines) vary around 5 (the grey dashed line). So far, so
 good.
 
 <div class="figure" style="text-align: center">
-<img src="lmm_files/figure-html/fig9a-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
-<p class="caption">(\#fig:fig9a)Simulated EMA data of Six Participants.</p>
+<img src="lmm_files/figure-html/lmm-plot-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
+<p class="caption">(\#fig:lmm-plot)Simulated EMA data of Six Participants.</p>
 </div>
 
 
@@ -117,7 +117,7 @@ around 5 (as this is a finite sample, we expect some deviation):
 
 
 ```r
-# Print fixed effects.
+# Fixed effects.
 summary(fm)$tTable
 #>             Value Std.Error   DF t-value   p-value
 #> (Intercept)  4.95     0.106 2000    46.7 1.28e-322
@@ -130,7 +130,7 @@ residual error variance should be close to 0.5.
 
 
 ```r
-# Fitted random effects.
+# Random effects.
 VarCorr(fm)
 #> id = pdLogChol(1) 
 #>             Variance StdDev
@@ -139,9 +139,9 @@ VarCorr(fm)
 ```
 
 It can be instructive to plot the predicted values of the model, to make clear
-how the model 'thinks'. As shown by Figure \@ref(fig:fig9b), the model predicts a
-series of straight lines, one for each participant, that vary around 5 (the red
-line).
+how the model 'thinks'. As shown by Figure \@ref(fig:lmm-lme1-plot), the model
+predicts a series of straight lines, one for each participant, that vary
+around 5 (the red line).
 
 
 ```r
@@ -150,8 +150,8 @@ d1$predicted <- predict(fm)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="lmm_files/figure-html/fig9b-1.png" alt="EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model." width="100%" />
-<p class="caption">(\#fig:fig9b)EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.</p>
+<img src="lmm_files/figure-html/lmm-lme1-plot-1.png" alt="EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model." width="100%" />
+<p class="caption">(\#fig:lmm-lme1-plot)EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.</p>
 </div>
 
 ## Adding Time as a Predictor
@@ -179,14 +179,14 @@ d2 <- sim_ema(plan,
               lim = c(0, 10))
 ```
 
-Figure \@ref(fig:fig9c) shows the data of the first six participants in the
+Figure \@ref(fig:lmm-plot2) shows the data of the first six participants in the
 second data set. Both the intercept and the slope vary across the participants.
 Some participants improve more over time, and others improve less: the slope in
 this data set is a random effect.
 
 <div class="figure" style="text-align: center">
-<img src="lmm_files/figure-html/fig9c-1.png" alt="Simulated EMA data of Six Participants (Time-varying model)." width="100%" />
-<p class="caption">(\#fig:fig9c)Simulated EMA data of Six Participants (Time-varying model).</p>
+<img src="lmm_files/figure-html/lmm-plot2-1.png" alt="Simulated EMA data of Six Participants (Time-varying model)." width="100%" />
+<p class="caption">(\#fig:lmm-plot2)Simulated EMA data of Six Participants (Time-varying model).</p>
 </div>
 
 To fit the extended mixed model, time can simply be added to both the fixed and
@@ -235,7 +235,7 @@ ggplot(d2, aes(x = time, y = predicted, group = id)) +
   coord_cartesian(ylim = c(0, 10)) + theme_classic()
 ```
 
-<img src="lmm_files/figure-html/fig9d-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="lmm_files/figure-html/lmm-lme2-pred-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## Adding a Two-Group Comparison
@@ -280,13 +280,13 @@ round(summary(fm)$tTable, 2)
 #> time:grouptreatment  0.46      0.03 3998   16.71    0.00
 ```
 
-In Figure \@ref(fig:fig9e) below, EMA mood ratings predicted by the fitted model
+In Figure \@ref(fig:lmm-lme3-pred) below, EMA mood ratings predicted by the fitted model
 show how the model detects 1) the fixed between-group effect, and 2) the
 variance in intercepts and slopes in both groups.
 
 <div class="figure" style="text-align: center">
-<img src="lmm_files/figure-html/fig9e-1.png" alt="Predicted mood ratings" width="100%" />
-<p class="caption">(\#fig:fig9e)Predicted mood ratings</p>
+<img src="lmm_files/figure-html/lmm-lme3-pred-1.png" alt="Predicted mood ratings" width="100%" />
+<p class="caption">(\#fig:lmm-lme3-pred)Predicted mood ratings</p>
 </div>
 
 

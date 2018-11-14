@@ -73,12 +73,11 @@ higher) of RStudio.
 \index{R and RStudio!Console} 
 
 If you open RStudio, you will be presented with the interface shown in Figure
-\@ref(fig:fig2a). RStudio's main window is divided in four panes (sub-windows),
-which further contain several tabbed windows.
+\@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
 <div class="figure" style="text-align: center">
 <img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
-<p class="caption">(\#fig:fig2a)The RStudio Interface</p>
+<p class="caption">(\#fig:r-interface)The RStudio Interface</p>
 </div>
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
@@ -118,7 +117,7 @@ histogram of these numbers.
 hist(rnorm(N))
 ```
 
-The plot appears in the bottom-right pane, as in Figure \@ref(fig:fig2a). 
+The plot appears in the bottom-right pane, as in Figure \@ref(fig:r-interface). 
 
 
 ## Writing R-scripts
@@ -170,7 +169,7 @@ a csv-version of one of your own data files).
 
 - In the window that appears, click on `Browse` to locate the csv-
 file on your computer, and click `Import` in the next window (see Figure
-\@ref(fig:fig2b)).
+\@ref(fig:r-import)).
 
 RStudio shows the data, in tabular view, in the top-left window, ready for
 analysis. You will also find a new entry in the `Environment`-tab in
@@ -179,7 +178,7 @@ will see a brief summary of the contents of the data.
 
 <div class="figure" style="text-align: center">
 <img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
-<p class="caption">(\#fig:fig2b)RStudio's CSV import wizard.</p>
+<p class="caption">(\#fig:r-import)RStudio's CSV import wizard.</p>
 </div>
 
 ### Using Functions to Import Data
@@ -239,7 +238,7 @@ head(ESMdata)
 #> 6   227     10            5         0            1
 ```
 
-To view all rows of data in a spreadsheet (as in Figure \@ref(fig:fig2b),
+To view all rows of data in a spreadsheet (as in Figure \@ref(fig:r-import),
 type:
 
 
@@ -332,8 +331,7 @@ devtools::install_github("jruwaard/emaph")
 ### Using Packages
 \index{R and RStudio!Packages} 
 
-To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library`
-function. For example, to use package `tidyverse` and `emaph`, type:
+To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library` function. For example, to use package `tidyverse` and `emaph`, type:
 
 
 ```r
@@ -361,8 +359,8 @@ ggplot(data = subset(csd, dayno <= 6),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="R_files/figure-html/cs2m-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
-<p class="caption">(\#fig:cs2m)Irritation levels of a single patient, in the first six days of an EMA study.</p>
+<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
+<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study.</p>
 </div>
 
 
@@ -429,13 +427,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.2843, df = 196.59, p-value = 0.7765
+#> t = 0.17418, df = 195.12, p-value = 0.8619
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.3158564  0.2362626
+#>  -0.2950978  0.3522722
 #> sample estimates:
-#> mean of x mean of y 
-#> 0.1377186 0.1775155
+#>   mean of x   mean of y 
+#> -0.01224174 -0.04082897
 ```
 
 

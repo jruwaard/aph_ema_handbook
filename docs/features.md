@@ -18,7 +18,7 @@ some of the features that can be extracted from EMA time-series.
 
 We will focus on a simulated three-week time-series of EMA mood responses of a
 single person, in which ratings were collected five times per day. Figure
-\@ref(fig:fig8a) shows a plot of the simulated scores.
+\@ref(fig:feat-plot) shows a plot of the simulated scores.
 
 Stare at the figure for a moment. How would you characterize the development of
 scores over time? What features would you want to extract? How would you
@@ -27,8 +27,8 @@ quantify these features?
 
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8a-1.png" alt="A simulated three-week time-series of EMA mood ratings." width="100%" />
-<p class="caption">(\#fig:fig8a)A simulated three-week time-series of EMA mood ratings.</p>
+<img src="features_files/figure-html/feat-plot-1.png" alt="A simulated three-week time-series of EMA mood ratings." width="100%" />
+<p class="caption">(\#fig:feat-plot)A simulated three-week time-series of EMA mood ratings.</p>
 </div>
 
 ## Central Tendency and Variability
@@ -37,7 +37,7 @@ Features do not necessarily have to be complex. Familiar measures of central
 tendency of EMA time-series, such as the mode or the mean, can be useful
 predictors of traditional clinical assessments. Standard measures of the
 variability of EMA scores, such as the standard deviation (SD), have been shown
-to have diagnostic value (see, e.g., @bowen2006). You should not hesitate to
+to have diagnostic value [see, e.g., @bowen2006]. You should not hesitate to
 consider these statistics when they help you to answer your research question.
 
 \index{Stationarity}
@@ -49,10 +49,10 @@ stable over time - in technical terms: that this process is *stationary*
 process is unstable or non-stationary), the mean and SD are biased statistics.
 
 Our simulated EMA time-series is non-stationary, as can be seen in Figure
-\@ref(fig:fig8b). We observe a trend: the mood of the person increases over time.
-EMA scores tend to be below the mean in the beginning, and above the mean at the
-end. The overall mean (*M* = 4.4) overestimates the EMA
-scores of the first week (*M* = 3.3), and
+\@ref(fig:feat-plot-mean). We observe a trend: the mood of the person increases
+over time. EMA scores tend to be below the mean in the beginning, and above the
+mean at the end. The overall mean (*M* = 4.4) overestimates
+the EMA scores of the first week (*M* = 3.3), and
 underestimates the scores of the last week (*M* =
 5.5). If you use the overall mean as a feature of
 the time-series in your analyses, you ignore the mood improvements over the
@@ -67,11 +67,11 @@ to the SD of smaller parts. In our example, the overall SD is
 day, however, the estimated SD is
 1.8. If
 the additional variability introduced by the trend is cancelled out, our
-estimate of variability decreases considerably.  
+estimate of variability decreases considerably. 
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8b-1.png" alt="EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time." width="100%" />
-<p class="caption">(\#fig:fig8b)EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time.</p>
+<img src="features_files/figure-html/feat-plot-mean-1.png" alt="EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time." width="100%" />
+<p class="caption">(\#fig:feat-plot-mean)EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time.</p>
 </div>
 
 ## Modelling the Trend
@@ -82,17 +82,17 @@ time-series, the question is how we can do better. What other features can we
 extract? One option would be to characterize the series in simple regression
 terms, via an intercept and a slope. By doing so, we can economically describe
 the dynamics of the series with two numbers. As can be seen in Figure
-\@ref(fig:fig8c), the regression model provides a more realistic and informative
-summary. At the start, the estimated mean - the intercept - is
+\@ref(fig:feat-plot-lm), the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is
 3.2. This mean increases approximately
 0.9 points per week (the slope), to a final estimated
 mean of 5.9. Comparing Figure
-\@ref(fig:fig8b) and Figure \@ref(fig:fig8c), we see that Figure \@ref(fig:fig8c)
-is more successful in capturing the variation in the series.
+\@ref(fig:feat-plot-mean) and Figure \@ref(fig:feat-plot-lm), we see that
+Figure \@ref(fig:feat-plot-lm) is more successful in capturing the variation in
+the series.
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8c-1.png" alt="EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)" width="100%" />
-<p class="caption">(\#fig:fig8c)EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)</p>
+<img src="features_files/figure-html/feat-plot-lm-1.png" alt="EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)" width="100%" />
+<p class="caption">(\#fig:feat-plot-lm)EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)</p>
 </div>
 
 By using regression, we can also find a better estimate of the SD. Remember how
@@ -105,14 +105,14 @@ is smaller than the overall SD, as expected. By accounting for the extra
 variability introduced by the trend, we get a more accurate estimate of the
 variability around the mean at each point in time. However, the new estimate is
 still higher than the daily estimate that we calculated above. Figure
-\@ref(fig:fig8d) provides a first indication of what is going on. In the figure,
-absolution regression residuals are plotted over time, with a regression line
-superposed. This reveals that residuals increase as time goes by. We discovered
-a new feature of the series: heteroscedasticity. 
+\@ref(fig:feat-plot-resid) provides a first indication of what is going on. In
+the figure, absolution regression residuals are plotted over time, with a
+regression line superposed. This reveals that residuals increase as time goes
+by. We discovered a new feature of the series: heteroscedasticity. 
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8d-1.png" alt="Plot of absolute regression residuals over time, revealing heteroscedasticity." width="100%" />
-<p class="caption">(\#fig:fig8d)Plot of absolute regression residuals over time, revealing heteroscedasticity.</p>
+<img src="features_files/figure-html/feat-plot-resid-1.png" alt="Plot of absolute regression residuals over time, revealing heteroscedasticity." width="100%" />
+<p class="caption">(\#fig:feat-plot-resid)Plot of absolute regression residuals over time, revealing heteroscedasticity.</p>
 </div>
 
 ## Missing Values
@@ -127,16 +127,16 @@ typically considered to be a nuisance rather than a feature of EMA time-series.
 Non-response, however, is an important characteristic, that may even have
 clinical relevance. Missing values are also present in our simulated EMA
 time-series example, as you may have found out already when you inspected Figure
-\@ref(fig:fig8a). The points, denoting the observed responses, are denser in the
-beginning of the series. Over the course of the study period, the probability of
-missed ratings increases. This becomes immediately clear from Figure
-\@ref(fig:fig8e), in which the percentage of missed ratings is plotted per day.
-Every week, the probability of missed ratings increases approximately
-16%.
+\@ref(fig:feat-plot). The points, denoting the observed responses, are denser in
+the beginning of the series. Over the course of the study period, the
+probability of missed ratings increases. This becomes immediately clear from
+Figure \@ref(fig:feat-plot-na), in which the percentage of missed ratings is
+plotted per day. Every week, the probability of missed ratings increases
+approximately 16%.
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8e-1.png" alt="Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data." width="100%" />
-<p class="caption">(\#fig:fig8e)Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data.</p>
+<img src="features_files/figure-html/feat-plot-na-1.png" alt="Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data." width="100%" />
+<p class="caption">(\#fig:feat-plot-na)Percentage of missed mood ratings, per day, over the three-week study period, with a regression line (red) superposed, revealing a familiar trend in EMA data.</p>
 </div>
 
 Now that we now about these missing values, the question arises how to deal with
@@ -146,16 +146,16 @@ could try to replace the missing values with plausible values (in which case it
 becomes important to think about the process that drives the missingness). If
 you decide to impute, there are several options. For example, you can replace
 missing values with the mean, the last-known value, an interpolated value or
-with a smoothing technique such as the Kalman-filter [see
-@hoogendoorn2017, for a discussion]. Figure \@ref(fig:fig8f) illustrates
-the linear interpolation approach: missing values (marked by red dots) are
-replaced by values that lie between the non-missings. Imagine that we would have
-used the mean to impute. Can you see why that would have disrupted local
-patterns in the series?
+with a smoothing technique such as the Kalman-filter [see @hoogendoorn2017, for
+a discussion]. Figure \@ref(fig:feat-plot-interpolation) illustrates the
+linear interpolation approach: missing values (marked by red dots) are replaced
+by values that lie between the non-missings. Imagine that we would have used the
+mean to impute. Can you see why that would have disrupted local patterns in the
+series?
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8f-1.png" alt="EMA time series, with missing values (red) imputed through interpolation." width="100%" />
-<p class="caption">(\#fig:fig8f)EMA time series, with missing values (red) imputed through interpolation.</p>
+<img src="features_files/figure-html/feat-plot-interpolation-1.png" alt="EMA time series, with missing values (red) imputed through interpolation." width="100%" />
+<p class="caption">(\#fig:feat-plot-interpolation)EMA time series, with missing values (red) imputed through interpolation.</p>
 </div>
 
 
@@ -168,17 +168,17 @@ auto-correlation can often be found. The temperature of today is correlated with
 the temperature of recent days. Similarly, EMA mood ratings, taken at time t,
 are typically correlated with ratings taken at t-1, t-2, etc. Studying the
 auto-correlation of a time-series at different delays can be very revealing, as
-illustrated by the auto-correlation plot in Figure \@ref(fig:fig8g), in which the
-correlation of the EMA series with itself is plotted, for various delays (or
-'lags' as these delays are called). First, the plot reveals that observations
-are correlated with previous values at lag 1: this series is auto-correlated.
-Second, there appears to be a pattern in the correlations at later lags:
-positive and negative correlations alternate, in a pattern that seems to reflect
-periodicity.  
+illustrated by the auto-correlation plot in Figure
+\@ref(fig:feat-plot-autocorr), in which the correlation of the EMA series with
+itself is plotted, for various delays (or 'lags' as these delays are called).
+First, the plot reveals that observations are correlated with previous values at
+lag 1: this series is auto-correlated. Second, there appears to be a pattern in
+the correlations at later lags: positive and negative correlations alternate, in
+a pattern that seems to reflect periodicity.
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8g-1.png" alt="Autocorrelation plot of the EMA mood series, revealing periodicity." width="100%" />
-<p class="caption">(\#fig:fig8g)Autocorrelation plot of the EMA mood series, revealing periodicity.</p>
+<img src="features_files/figure-html/feat-plot-autocorr-1.png" alt="Autocorrelation plot of the EMA mood series, revealing periodicity." width="100%" />
+<p class="caption">(\#fig:feat-plot-autocorr)Autocorrelation plot of the EMA mood series, revealing periodicity.</p>
 </div>
 
 ### Rolling Statistics
@@ -190,11 +190,11 @@ signal appears also to be characterized by a series of increases and decreases
 in the mean mood level. In the plot of the raw series, this is not immediately
 clear. However, if we "smooth" the series, by calculating the mean as it
 develops over time, the periodicity in the series is becoming more clear. Figure
-\@ref(fig:fig8h) illustrates this.
+\@ref(fig:feat-plot-roll) illustrates this.
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8h-1.png" alt="EMA mood series, with a rolling mean superposed." width="100%" />
-<p class="caption">(\#fig:fig8h)EMA mood series, with a rolling mean superposed.</p>
+<img src="features_files/figure-html/feat-plot-roll-1.png" alt="EMA mood series, with a rolling mean superposed." width="100%" />
+<p class="caption">(\#fig:feat-plot-roll)EMA mood series, with a rolling mean superposed.</p>
 </div>
 
 
@@ -205,12 +205,11 @@ Both the auto-correlation analysis and the moving average plot suggest
 periodicity in the EMA time series. Suppose we want to know more about this
 periodicity. Is there a way to quantify it? Yes, there is. With a technique
 called Fourier Analysis, the strength ('power') of various frequencies can
-be quantified. Figure \@ref(fig:fig8i) shows what happens if we run a Fourier
-analysis of our time series (with R's built-in function `spec.pgram`).
+be quantified. Figure \@ref(fig:feat-plot-pow) shows what happens if we run a Fourier analysis of our time series (with R's built-in function `spec.pgram`).
 
 <div class="figure" style="text-align: center">
-<img src="features_files/figure-html/fig8i-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
-<p class="caption">(\#fig:fig8i)periodogram of the EMA time series, revealing a one-day and a one-week period.</p>
+<img src="features_files/figure-html/feat-plot-pow-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
+<p class="caption">(\#fig:feat-plot-pow)periodogram of the EMA time series, revealing a one-day and a one-week period.</p>
 </div>
 
 There are two peaks in the figure: at a frequency of 1 (day) and at a frequency
@@ -229,11 +228,11 @@ single time-series. By extracting these indicators (or "features"), we
 identified several regularities. We learned that the mean, variance and
 missingness increased over time, and we identified clear signs of circadian
 rhythmicity. You might have identified some of these features when you first
-inspected Figure \@ref(fig:fig8a). The increase in the mean was pretty easy to
-spot. However, the systematic increases in the variance and the missingness were
-less clear. Likewise, although you might have spotted the periodicity in the
-series, the circadian components were probably too subtle to spot for the naked
-eye.
+inspected Figure \@ref(fig:feat-plot). The increase in the mean was pretty easy
+to spot. However, the systematic increases in the variance and the missingness
+were less clear. Likewise, although you might have spotted the periodicity in
+the series, the circadian components were probably too subtle to spot for the
+naked eye.
 
 The aim of the chapter was to illustrate the options available to the EMA
 researcher to quantitatively summarize EMA series. Other options, of course,

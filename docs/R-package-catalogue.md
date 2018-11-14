@@ -71,6 +71,7 @@ energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs). 
 
 ### GENEAread
+\index{Packages!GENEAread}
 
 GENEActiv, sold by Activinsights, is a wrist-worn tri-axial accelerometer that
 is often used in clinical research studies. With package **GENEAread**
@@ -85,7 +86,7 @@ library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.068 secs .
+#> Processing took: 0.064 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -452,29 +453,20 @@ summary(models_found[[1]]$varest$varresult$depression)
 #> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
-#>     Min      1Q  Median      3Q     Max 
-#> -1.9412 -0.5981  0.0000  0.4831  2.0748 
+#>      Min       1Q   Median       3Q      Max 
+#> -2.47229 -0.82592 -0.01577  0.60038  2.76658 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.68472    0.11104   6.166 2.13e-08 ***
-#> depression.l1  0.07974    0.08317   0.959  0.34031    
-#> const          0.22314    0.25591   0.872  0.38564    
-#> day_1         -0.70065    0.36291  -1.931  0.05679 .  
-#> day_2         -0.64779    0.34881  -1.857  0.06667 .  
-#> day_3          0.34294    0.36754   0.933  0.35337    
-#> day_4         -0.59815    0.36071  -1.658  0.10087    
-#> day_5          0.36787    0.36117   1.019  0.31124    
-#> day_6         -0.87916    0.35910  -2.448  0.01636 *  
-#> outlier_31     2.66632    0.97507   2.734  0.00757 ** 
-#> outlier_40    -2.42871    0.97189  -2.499  0.01433 *  
-#> outlier_66    -2.82862    0.97614  -2.898  0.00475 ** 
+#> activity.l1    0.44044    0.12721   3.462 0.000802 ***
+#> depression.l1  0.01822    0.10066   0.181 0.856757    
+#> const          0.07440    0.10608   0.701 0.484741    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.9299 on 87 degrees of freedom
-#> Multiple R-squared:  0.4576,	Adjusted R-squared:  0.389 
-#> F-statistic: 6.673 on 11 and 87 DF,  p-value: 5.518e-08
+#> Residual standard error: 1.051 on 96 degrees of freedom
+#> Multiple R-squared:  0.1239,	Adjusted R-squared:  0.1056 
+#> F-statistic: 6.787 on 2 and 96 DF,  p-value: 0.00175
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*

@@ -1,7 +1,7 @@
 
 --- 
 title: "Ecological Momentary Assessment in Mental Health Research"
-subtitle: "A Practical Introduction, With Examples in R (1st edition)"
+subtitle: "A Practical Introduction, with Examples in R (1st edition)"
 author: ["Jeroen Ruwaard", "Lisa Kooistra", "Melissa Thong"]
 date: "2018-11-14"
 cover-image: "images/cover/smallcover.jpg"

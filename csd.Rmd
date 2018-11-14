@@ -142,10 +142,10 @@ csd <- csd %>% filter(nna == 0)
 
 ## Running the DFA
 
-We are now ready to run the DFA analysis. We split the full series in 32-day
-windows, in steps of 7 days (i.e., day 1-32, day 7 to 39, etc), calculate the
-DFA of each window and save that value so that we can compare it to the weekly
-depression assessments.
+We are now ready to run the DFA analysis. We split the full series in 31-day
+overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc),
+calculate the DFA of each window and save that value so that we can compare it
+to the weekly depression assessments.
 
 
 ```{r cs11e}
@@ -158,8 +158,8 @@ d <- csd %>%
   summarise(ms = mean(ms))
 d$ms_dfa = NA
 
-# determine DFA, in a moving window of 32 days, in steps of 7 days
-window <- 32
+# determine DFA, in a moving window of 31 days
+window <- 31
 for (i in seq(window, max(csd$dayno), 1)) {
 
   # get the sliding window data

@@ -5,7 +5,9 @@ We would like to thank the APH consortium, for giving us the opportunity to writ
 
 We also thank the APH researchers, to whom we spoke during the project, for sharing their knowledge, experience and insights. We are also indebted to the researchers who contributed data, analyses scripts, and other materials that are presented in this manual.
 
-Finally, we like to thank the project advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their valuable support and input.
+We particulary like to thank the project advisors, Prof. Dr. Heleen Riper and Prof. Dr. Johannes Smit, for their support and valuable input.
+
+This manual was written in RMarkdown with [Bookdown](http://bookdown.org) [@R-bookdown_book]. We thank Yihui Xie for this wonderful package.
 
 *Jeroen Ruwaard, Lisa Kooistra \& Melissa Thong*
 

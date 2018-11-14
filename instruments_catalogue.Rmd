@@ -183,7 +183,7 @@ questionnaire via the standard web browser of their mobile phone, active EMA an
 be implemented. This approach was taken in several large-scale studies,
 including 'NESDA' [<http://nesda.nl>; see also Chapter \@ref(catalogue)) and
 'HowNutsAreTheDutch' (<http://www.hoegekis.nl>; @VanDerKrieke2017;
-@VanDerKrieke2016]]. At present, RoQua does not support the collection of
+@VanDerKrieke2016]. At present, RoQua does not support the collection of
 passive EMA data. However, preliminary results have been reported with a system
 called 'Physiqual' [@Blaauw2016], with which active EMA data, collected with RoQUA,
 can be combined with wearable sensor data.
@@ -213,7 +213,7 @@ one unit was approximately 250 euro.
 GENEActive is used in a growing number of clinical studies to measure activity
 and sleep-wake cycles, in natural conditions, over longer periods of time.
 Dedicated R-packages to pre-process and analyze the raw data exist (see Chapter
-\@ref(rcat)). Matlab users should consider the open source 'Actant - Activity Analysis Toolbox' (https://github.com/maximosipov/actant), by Osipov & te Lindert, which includes functionality for visualization and analysis of behavioral
+\@ref(rcat)). Matlab users should consider the open source 'Actant - Activity Analysis Toolbox' (https://github.com/maximosipov/actant), by Osipov & Te Lindert, which includes functionality for visualization and analysis of behavioral
 and environmental timeseries, acquired using GENEActiv (and other)
 accelerometers. No accompanying app exists with which study
 participants can be provided feedback about their activity. This might

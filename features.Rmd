@@ -330,7 +330,7 @@ ggplot(e, aes(x = t, y = rolling_mean)) +
 Both the auto-correlation analysis and the moving average plot suggest
 periodicity in the EMA time series. Suppose we want to know more about this
 periodicity. Is there a way to quantify it? Yes, there is. With a technique
-called Fourier Analysis, the the strength ('power') of various frequencies can
+called Fourier Analysis, the strength ('power') of various frequencies can
 be quantified. Figure \@ref(fig:fig8i) shows what happens if we run a Fourier
 analysis of our time series (with R's built-in function `spec.pgram`).
 

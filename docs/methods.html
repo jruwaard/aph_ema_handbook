@@ -254,7 +254,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactiv"><i class="fa fa-check"></i><b>12.2.1</b> GENEActiv</a></li>
 <li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
@@ -382,6 +382,7 @@ Figure 3.1: Generated two-day EMA sampling plan, for 5 participants
 <span class="co">#&gt; </span><span class="al">NOTE</span><span class="co">: n is number in *each* group</span></code></pre></div>
 <p>The power is 48% - not even close to the generally adopted standard of 80%. More participants are needed to detect the hypothesized effect.</p>
 <p>EMA study designs are often characterized by repeated measures, complex multi-level structures and the application of advanced statistical techniques. You may find that available power calculators are too limited to properly take key aspects of your design into account. If this happens, simulation techniques may help. If power is the probability that a test will detect an effect it is exists, it can be determined by noting the proportion of times a statistical test reaches significance, if it is run, many times, on simulated data, in which the hypothesized effect is present. To illustrate how this works, we will calculate the power of the t-test again, through simulation:</p>
+
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Power analysis of a t-test</span>
 <span class="co"># (simulation approach).</span>
 
@@ -411,7 +412,7 @@ p &lt;-<span class="st"> </span><span class="kw">numeric</span>(nsim)
 
 <span class="co"># power</span>
 <span class="kw">sum</span>(p <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.05</span>) <span class="op">/</span><span class="st"> </span>nsim
-<span class="co">#&gt; [1] 0.4731</span></code></pre></div>
+<span class="co">#&gt; [1] 0.4908</span></code></pre></div>
 <p>As can be seen, the simulation results are very close to the output of <code>pwr.t.test</code>. There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited. Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, <code>mvrnorm</code> in package <code>MASS</code> <span class="citation">(Venables &amp; Ripley, <a href="#ref-Venables2002">2002</a>)</span> can be used to generate correlated data, and package <code>simstudy</code> <span class="citation">(Goldfeld, <a href="#ref-R-simstudy">2018</a>)</span> can be used to generate complex longitudinal and hierarchical data.</p>
 </div>
 <div id="what-are-the-ethical-aspects" class="section level2">

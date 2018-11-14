@@ -254,7 +254,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactiv"><i class="fa fa-check"></i><b>12.2.1</b> GENEActiv</a></li>
 <li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
@@ -397,7 +397,7 @@ csd &lt;-<span class="st"> </span>csd <span class="op">%&gt;%</span><span class=
 </div>
 <div id="running-the-dfa" class="section level2">
 <h2><span class="header-section-number">10.4</span> Running the DFA</h2>
-<p>We are now ready to run the DFA analysis. We split the full series in 32-day windows, in steps of 7 days (i.e., day 1-32, day 7 to 39, etc), calculate the DFA of each window and save that value so that we can compare it to the weekly depression assessments.</p>
+<p>We are now ready to run the DFA analysis. We split the full series in 31-day overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc), calculate the DFA of each window and save that value so that we can compare it to the weekly depression assessments.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Running the DFA.</span>
 
 <span class="co"># prepare result rows: one row for each day</span>
@@ -407,8 +407,8 @@ d &lt;-<span class="st"> </span>csd <span class="op">%&gt;%</span><span class="s
 <span class="st">  </span><span class="kw">summarise</span>(<span class="dt">ms =</span> <span class="kw">mean</span>(ms))
 d<span class="op">$</span>ms_dfa =<span class="st"> </span><span class="ot">NA</span>
 
-<span class="co"># determine DFA, in a moving window of 32 days, in steps of 7 days</span>
-window &lt;-<span class="st"> </span><span class="dv">32</span>
+<span class="co"># determine DFA, in a moving window of 31 days</span>
+window &lt;-<span class="st"> </span><span class="dv">31</span>
 <span class="cf">for</span> (i <span class="cf">in</span> <span class="kw">seq</span>(window, <span class="kw">max</span>(csd<span class="op">$</span>dayno), <span class="dv">1</span>)) {
 
   <span class="co"># get the sliding window data</span>

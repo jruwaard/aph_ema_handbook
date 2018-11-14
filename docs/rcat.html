@@ -254,7 +254,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactiv"><i class="fa fa-check"></i><b>12.2.1</b> GENEActiv</a></li>
 <li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
@@ -413,14 +413,14 @@ code > span.in { font-style: italic; } /* Information */
 <p>Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-calibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and energy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs).</p>
 <div id="genearead" class="section level3">
 <h3><span class="header-section-number">13.1.1</span> GENEAread</h3>
-<p>GENEActive, sold by Activinsights, is a wrist-worn tri-axial accelerometer that is often used in clinical research studies. With package <strong>GENEAread</strong> <span class="citation">(Fang, Langford, &amp; Sweetland, <a href="#ref-R_GENEAread">2018</a>)</span>, raw data can be imported into R for further processing, as illustrated below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Reading raw GENEActive data.</span>
+<p>GENEActiv, sold by Activinsights, is a wrist-worn tri-axial accelerometer that is often used in clinical research studies. With package <strong>GENEAread</strong> <span class="citation">(Fang, Langford, &amp; Sweetland, <a href="#ref-R_GENEAread">2018</a>)</span>, raw data can be imported into R for further processing, as illustrated below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Reading raw GENEActiv data.</span>
 <span class="kw">library</span>(GENEAread)
 <span class="kw">library</span>(tidyr)
 
 dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
                 <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
-<span class="co">#&gt; Processing took: 0.062 secs .</span>
+<span class="co">#&gt; Processing took: 0.068 secs .</span>
 <span class="co">#&gt; Loaded 1560 records (Approx  0 MB of RAM)</span>
 <span class="co">#&gt; 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)</span>
 
@@ -434,9 +434,9 @@ d<span class="op">$</span>timestamp &lt;-<span class="st"> </span><span class="k
 <span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sensor, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)</code></pre></div>
 <div class="figure" style="text-align: center"><span id="fig:unnamed-chunk-2"></span>
-<img src="R-package-catalogue_files/figure-html/unnamed-chunk-2-1.png" alt="Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
+<img src="R-package-catalogue_files/figure-html/unnamed-chunk-2-1.png" alt="Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
 <p class="caption">
-Figure 13.1: Raw sensor data of a GENEActive wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).
+Figure 13.1: Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).
 </p>
 </div>
 </div>
@@ -680,12 +680,12 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <span class="co">#&gt; Based on 10 simulations, (0 warnings, 0 errors)</span>
 <span class="co">#&gt; alpha = 0.05, nrow = 960</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Time elapsed: 0 h 0 m 1 s</span></code></pre></div>
+<span class="co">#&gt; Time elapsed: 0 h 0 m 2 s</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">
 <h2><span class="header-section-number">13.5</span> Symptom Network Analysis</h2>
-
+<p> </p>
 <p>When EMA is used to tap various symptoms, network analysis can reveal the dynamic interplay between these symptoms <span class="citation">(Borsboom &amp; Cramer, <a href="#ref-Borsboom2013">2013</a>)</span>. Various packages exist to fit these networks in R. With these packages, it is relatively easy to fit a graphical network on multivariate data sets. If you are interested in conducting a network analysis, be sure to visit the Psycho-systems website, at <a href="http://psychosystems.org" class="uri">http://psychosystems.org</a>.</p>
 <div id="autovarcore" class="section level3">
 <h3><span class="header-section-number">13.5.1</span> autovarCore</h3>
@@ -714,20 +714,29 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.55596 -0.58172 -0.02157  0.48931  2.74390 </span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -1.9412 -0.5981  0.0000  0.4831  2.0748 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.50201    0.09959   5.041 2.18e-06 ***</span>
-<span class="co">#&gt; depression.l1  0.14875    0.09005   1.652    0.102    </span>
-<span class="co">#&gt; const         -0.09423    0.09956  -0.946    0.346    </span>
+<span class="co">#&gt; activity.l1    0.68472    0.11104   6.166 2.13e-08 ***</span>
+<span class="co">#&gt; depression.l1  0.07974    0.08317   0.959  0.34031    </span>
+<span class="co">#&gt; const          0.22314    0.25591   0.872  0.38564    </span>
+<span class="co">#&gt; day_1         -0.70065    0.36291  -1.931  0.05679 .  </span>
+<span class="co">#&gt; day_2         -0.64779    0.34881  -1.857  0.06667 .  </span>
+<span class="co">#&gt; day_3          0.34294    0.36754   0.933  0.35337    </span>
+<span class="co">#&gt; day_4         -0.59815    0.36071  -1.658  0.10087    </span>
+<span class="co">#&gt; day_5          0.36787    0.36117   1.019  0.31124    </span>
+<span class="co">#&gt; day_6         -0.87916    0.35910  -2.448  0.01636 *  </span>
+<span class="co">#&gt; outlier_31     2.66632    0.97507   2.734  0.00757 ** </span>
+<span class="co">#&gt; outlier_40    -2.42871    0.97189  -2.499  0.01433 *  </span>
+<span class="co">#&gt; outlier_66    -2.82862    0.97614  -2.898  0.00475 ** </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9811 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.2528, Adjusted R-squared:  0.2372 </span>
-<span class="co">#&gt; F-statistic: 16.24 on 2 and 96 DF,  p-value: 8.43e-07</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9299 on 87 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.4576, Adjusted R-squared:  0.389 </span>
+<span class="co">#&gt; F-statistic: 6.673 on 11 and 87 DF,  p-value: 5.518e-08</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="qgraph" class="section level3">

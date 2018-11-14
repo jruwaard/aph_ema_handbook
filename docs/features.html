@@ -254,7 +254,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactiv"><i class="fa fa-check"></i><b>12.2.1</b> GENEActiv</a></li>
 <li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
@@ -313,6 +313,7 @@ code > span.in { font-style: italic; } /* Information */
 <p>EMA data are streams: time-series that represent processes which may span hours, days, weeks or even months. To the beginning EMA researcher, it may not be immediately clear how to deal with these data. How, for example, can these series be summarized to study differences between individuals or changes within individuals over time? What ‘qualities’ or ‘features’ of a time-series should be considered? What are the available options? In this chapter, we will discuss some of the features that can be extracted from EMA time-series.</p>
 <div id="simulated-ema-time-series-example" class="section level2">
 <h2><span class="header-section-number">8.1</span> Simulated EMA Time-series Example</h2>
+
 <p>We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day. Figure <a href="features.html#fig:fig8a">8.1</a> shows a plot of the simulated scores.</p>
 <p>Stare at the figure for a moment. How would you characterize the development of scores over time? What features would you want to extract? How would you quantify these features?</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8a"></span>
@@ -408,6 +409,7 @@ Figure 8.9: periodogram of the EMA time series, revealing a one-day and a one-we
 <p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure <a href="features.html#fig:fig8a">8.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
 <p>The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter <a href="csd.html#csd">10</a>, for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.</p>
 <p>Finally, you might have been disappointed by the lack of code examples in this chapter. We did not include them, to avoid unnecessary distraction from the conceptual explanation. Instead, we provide a full code listing below, to allow you learn how to apply the feature extraction techniques yourself.</p>
+
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## (De)constructing a simulated EMA time-series
 
 <span class="co"># libraries ----------------</span>

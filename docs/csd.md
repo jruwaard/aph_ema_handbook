@@ -81,14 +81,10 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
   theme_classic()
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/cs11b-1} 
-
-}
-
-\caption{SCL-90 depression score, over the study period}(\#fig:cs11b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="csd_files/figure-html/cs11b-1.png" alt="SCL-90 depression score, over the study period" width="100%" />
+<p class="caption">(\#fig:cs11b)SCL-90 depression score, over the study period</p>
+</div>
 
 
 ## Mental state EMA Items
@@ -156,10 +152,10 @@ csd <- csd %>% filter(nna == 0)
 
 ## Running the DFA
 
-We are now ready to run the DFA analysis. We split the full series in 32-day
-windows, in steps of 7 days (i.e., day 1-32, day 7 to 39, etc), calculate the
-DFA of each window and save that value so that we can compare it to the weekly
-depression assessments.
+We are now ready to run the DFA analysis. We split the full series in 31-day
+overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc),
+calculate the DFA of each window and save that value so that we can compare it
+to the weekly depression assessments.
 
 
 
@@ -173,8 +169,8 @@ d <- csd %>%
   summarise(ms = mean(ms))
 d$ms_dfa = NA
 
-# determine DFA, in a moving window of 32 days, in steps of 7 days
-window <- 32
+# determine DFA, in a moving window of 31 days
+window <- 31
 for (i in seq(window, max(csd$dayno), 1)) {
 
   # get the sliding window data
@@ -220,14 +216,10 @@ ggplot(na.omit(d),
   theme_classic()
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/cs11f-1} 
-
-}
-
-\caption{Results of the DFA analysis.}(\#fig:cs11f)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="csd_files/figure-html/cs11f-1.png" alt="Results of the DFA analysis." width="100%" />
+<p class="caption">(\#fig:cs11f)Results of the DFA analysis.</p>
+</div>
 
 
 ## Discussion

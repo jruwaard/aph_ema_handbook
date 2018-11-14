@@ -40,7 +40,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 \index{StayFine}
 \index{Imagine your Mood}
 \index{RoQua}
-\index{Psymate}
+\index{PsyMate}
 
 *Prof. dr. Claudi Bockting* is affiliated with the AMC psychiatry department and the Rijksuniversiteit Groningen. Her group focuses on etiology, treatment and relapse prevention of (severe) depressive disorder and related common mental health disorders. In two studies of the group, EMA measures are included. 
 
@@ -110,7 +110,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 |:------------------|:-------------------------------------------------------------|
 | **Project team**  | Heleen Riper, PhD, Jan Smit, PhD, Lise Kemmeren (GGz InGeest) and the Moodbuster/E-COMPARED consortium |
 | **APH site**  | Vrije Universiteit Amsterdam; GGZ inGeest (and other organisations)|
-| **Project(s)**    | Moodbuster was developed in the European FP7 project “ICT4Depression” (@warmerdam2012; http://www.ict4depression.eu/), and applied in the Horizon 2020 FP7 EU-project E-COMPARED [European COMPARative Effectiveness research on blended Depression treatment versus treatment-as-usual; @Kleiboer2016; @kemmeren2016; http://www.e-compared.eu/], Moodbuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are currently (October 2018) in preparation. |
+| **Project(s)**    | Moodbuster was developed in the European FP7 project “ICT4Depression” (@warmerdam2012; http://www.ict4depression.eu/), and applied in the Horizon 2020 FP7 EU-project E-COMPARED [European COMPARative Effectiveness research on blended Depression treatment versus treatment-as-usual; @Kleiboer2016; @kemmeren2016; <http://www.e-compared.eu/>], Moodbuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are currently (October 2018) in preparation. |
 | **EMA measures**  | In the ICT4Depression project, the Moodbuster platform included a complex set of active and passive EMA measures, including physiological sensors, accelerometers, wearables to measure sympathetic nervous system responses (chest strap and glove), and an Android EMA smartphone app. |
 |                   | For the E-COMPARED study, the Moodbuster website and smartphone app were adapted to deliver (blended) treatment to patients with MDD, in 5 routine practice settings across Europe. A therapist portal was added, in order to allow therapists to monitor patients’ progress and send feedback messages. Smartphone-based EMA was used to asses sleep, mood, worrying, self-esteem, activities (2 items) and social contacts. Prompts were sent at a random time point between 10:00 and 22:00. At the beginning and during the final phase of treatment, patients received two additional prompts per day for one week. In the morning (around 10:00), sleep, worrying and self-esteem items were assessed. In the evening (around 22:00), these questions were repeated, along with the activity and social interaction items. Patients rated these EMA items on a visual analogue scale, ranging from 0 (low) to 10 (high). EMA data were used in several machine learning projects [@mikus2018; @rocha2018; @VanBreda2018; @VandeVen2017]. |
 | **Platform used** | Moodbuster (http://www.moodbuster.eu; see also Chapter \@ref(ema-instruments-catalogue))). |
@@ -146,7 +146,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 #### FAntasTIGUE
 \index{FAntasTIQUE}
-\index{Psymate}
+\index{PsyMate}
 
 | **Aspect**       | **Description**                                              | 
 |:-----------------|:-------------------------------------------------------------|

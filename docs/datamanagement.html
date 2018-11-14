@@ -254,7 +254,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.5" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#roqua"><i class="fa fa-check"></i><b>12.1.5</b> RoQua</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#wearables"><i class="fa fa-check"></i><b>12.2</b> Wearables</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactive"><i class="fa fa-check"></i><b>12.2.1</b> GENEActive</a></li>
+<li class="chapter" data-level="12.2.1" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#geneactiv"><i class="fa fa-check"></i><b>12.2.1</b> GENEActiv</a></li>
 <li class="chapter" data-level="12.2.2" data-path="ema-instruments-catalogue.html"><a href="ema-instruments-catalogue.html#vu-ams"><i class="fa fa-check"></i><b>12.2.2</b> VU-AMS</a></li>
 </ul></li>
 </ul></li>
@@ -341,7 +341,7 @@ Figure 5.1: creating a project in RStudio
 <ol style="list-style-type: decimal">
 <li><p>an online survey system (QuestManager), to assess demographics and pre/post study depression severity (with the PHQ-9 questionnaire, <span class="citation">Kroenke et al. (<a href="#ref-Kroenke2009">2009</a>)</span>),</p></li>
 <li><p>an active EMA smartphone app (Movisens - see Chapter <a href="ema-instruments-catalogue.html#ema-instruments-catalogue">12</a>), to assess day-to-day changes in mood, and</p></li>
-<li><p>an accelerometer (GENEActive - see Chapter <a href="ema-instruments-catalogue.html#ema-instruments-catalogue">12</a>) to assess activity levels.</p></li>
+<li><p>an accelerometer (GENEActiv - see Chapter <a href="ema-instruments-catalogue.html#ema-instruments-catalogue">12</a>) to assess activity levels.</p></li>
 </ol>
 <div class="figure" style="text-align: center"><span id="fig:fig5b"></span>
 <img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="85%" />
@@ -357,7 +357,7 @@ Figure 5.2: Example project directory structure
 <p>In the example project, unprocessed data files exported from the three data collection systems (i.e., QuestManager, Movisens and GeneaActive) are stored in the ’data/raw“-directory’, in separate sub-directories per system.</p>
 <p>In ‘data/raw/questmanager’, we find two files: 1) ‘qm_baseline_2018_05_01.csv’, containing the results of demographic questionnaire and the PHQ-9 pre-test, and 2) and ‘qm_posttest_2018_05_01.csv’, containing the results of the PHQ-9 post-test. In exports of such survey systems, data from all participants are typically stored in one file per assessment moment. Note how the export date is added to the files, to make sure that future updates are only used in the analysis when explicitly noted.</p>
 <p>In ‘data/raw/movisens’, we find one file: ‘ms_mood_2018_05_01.csv’, containing the results of the EMA mood measurements of all participants, exported from the back-office of the MoviSens application.</p>
-<p>Finally, in ‘data/raw/geneactive’, we see a series of ‘.bin’ files: binary data files that were exported from the GENEActive smart watches that were worn by the participants. Actigraphy data are high-volume: these files are typically large (500MB is no exception). By using the ‘.bin’ format, in which data are compressed, disk space is saved (in uncompressed format, data in a single .bin file can amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this directory contains data of one participant. In this case, there are even two files for one participant (‘APC009’), perhaps because this participant started the study with a faulty device, which was swapped during the study.</p>
+<p>Finally, in ‘data/raw/geneactiv’, we see a series of ‘.bin’ files: binary data files that were exported from the GENEActiv smart watches that were worn by the participants. Actigraphy data are high-volume: these files are typically large (500MB is no exception). By using the ‘.bin’ format, in which data are compressed, disk space is saved (in uncompressed format, data in a single .bin file can amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this directory contains data of one participant. In this case, there are even two files for one participant (‘APC009’), perhaps because this participant started the study with a faulty device, which was swapped during the study.</p>
 <p>In ‘data/raw’, a final very important file is ‘key_file.csv’. This file is important because it ties all the data together. It contains the unique identifiers (IDs) that are assigned to the study participants in the various data collection systems. Ideally, of course, participants would be designated by a single ID in each data collection system. In practice, unfortunately, this is often not possible due to limitations of the systems used. As a result, researchers are forced to deal with the fact that participants are known under different IDs in each system. With a key-file, data can be tied together through scripts.</p>
 <p>In the example key-file below, we find four columns. The first column defines the global study ID for each participant (i.e., the ID that the researcher intends to use as the “official” ID). The other three columns define how the participant is identified in each of the data collection systems.</p>
 <table>
@@ -367,7 +367,7 @@ Figure 5.2: Example project directory structure
 <th align="left">ID</th>
 <th align="left">QM_ID</th>
 <th align="left">MoviSens_ID</th>
-<th align="left">GeneActive_ID</th>
+<th align="left">GENEActiv_ID</th>
 </tr>
 </thead>
 <tbody>

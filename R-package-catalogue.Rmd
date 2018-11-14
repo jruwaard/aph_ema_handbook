@@ -70,6 +70,7 @@ energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs). 
 
 ### GENEAread
+\index{Packages!GENEAread}
 
 GENEActiv, sold by Activinsights, is a wrist-worn tri-axial accelerometer that
 is often used in clinical research studies. With package **GENEAread**

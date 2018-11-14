@@ -268,6 +268,7 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 ### De Geus
 \index{VU-AMS}
 \index{DAMS}
+\index{Autonomic and cardiovascular activity}
 
 *Prof. dr. Eco de Geus* is head of the department of Biological Psychology and co-director of the Netherlands Twin Registry at the VU University. De Geus has been the driving force behind the development of the VU University Ambulatory Monitoring System (VU-AMS; http://www.vu-ams.nl/vu-ams/), a non-invasive wearable device that is used for continuous ambulatory measurement of the autonomic nervous system.
 

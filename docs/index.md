@@ -3,7 +3,7 @@
 title: "Ecological Momentary Assessment in Mental Health Research"
 subtitle: "A Practical Introduction, With Examples in R (1st edition)"
 author: ["Jeroen Ruwaard", "Lisa Kooistra", "Melissa Thong"]
-date: "2018-11-13"
+date: "2018-11-14"
 cover-image: "images/cover/smallcover.jpg"
 site: bookdown::bookdown_site
 documentclass: book
@@ -16,7 +16,7 @@ researchers who are planning Ecological Momentary Assessment (EMA) studies."
 
 # Preface {-}
 
-<img src="./images/cover/smallcover.jpg" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" />
+
 
 Given known limitations of retrospective self-report questionnaires, such as
 recall bias and poor generalizability of assessment results to real-life
@@ -56,4 +56,4 @@ build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). *Ecological Momentary Assessment
 in Mental Health Research: A Practical Introduction, with Examples in R (1st
-edition - build 2018-11-13)*. Amsterdam: APH Mental Health. 
+edition - build 2018-11-14)*. Amsterdam: APH Mental Health. 

@@ -26,8 +26,8 @@ should you invest in R?
     for something that you can get for free?
 
   - R is cutting-edge. Methodological innovations first appear in R. Network
-    analyses, for example (see Chapter \@ref(lmm)), can be run in R, but not
-    (yet) in SPSS. For some analyses, you need this alternative.
+    analyses, for example, can be run in R, but not (yet) in SPSS. For some
+    analyses, you need this alternative.
 
   - Mastering R improves your connection to the statisticians in your team. They
     probably prefer R over SPSS. It is more efficient and less error-prone to
@@ -76,10 +76,14 @@ If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:fig2a). RStudio's main window is divided in four panes (sub-windows),
 which further contain several tabbed windows.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
-<p class="caption">(\#fig:fig2a)The RStudio Interface</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
+
+}
+
+\caption{The RStudio Interface}(\#fig:fig2a)
+\end{figure}
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -177,10 +181,14 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
-<p class="caption">(\#fig:fig2b)RStudio's CSV import wizard.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
+
+}
+
+\caption{RStudio's CSV import wizard.}(\#fig:fig2b)
+\end{figure}
 
 ### Using Functions to Import Data
 
@@ -360,10 +368,14 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R_files/figure-html/cs2m-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
-<p class="caption">(\#fig:cs2m)Irritation levels of a single patient, in the first six days of an EMA study.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/cs2m-1} 
+
+}
+
+\caption{Irritation levels of a single patient, in the first six days of an EMA study.}(\#fig:cs2m)
+\end{figure}
 
 
 ## Getting Help
@@ -429,13 +441,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.20957, df = 194.92, p-value = 0.8342
+#> t = 0.34383, df = 197.98, p-value = 0.7313
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2837836  0.2292662
+#>  -0.2342913  0.3332422
 #> sample estimates:
 #>     mean of x     mean of y 
-#> -0.0274313116 -0.0001726201
+#> -0.0005682651 -0.0500437148
 ```
 
 

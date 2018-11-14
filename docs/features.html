@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-13">
+<meta name="date" content="2018-11-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -393,14 +393,14 @@ Figure 8.8: EMA mood series, with a rolling mean superposed.
 <div id="periodicity" class="section level2">
 <h2><span class="header-section-number">8.6</span> Periodicity</h2>
 
-<p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the the strength (‘power’) of various frequencies can be quantified. Figure <a href="features.html#fig:fig8i">8.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
+<p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the strength (‘power’) of various frequencies can be quantified. Figure <a href="features.html#fig:fig8i">8.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8i"></span>
 <img src="features_files/figure-html/fig8i-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
 <p class="caption">
 Figure 8.9: periodogram of the EMA time series, revealing a one-day and a one-week period.
 </p>
 </div>
-<p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; Frank, Swartz, &amp; Boland, <a href="#ref-Frank2007">2007</a>; Frank, Swartz, &amp; Kupfer, <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; E. J. W. Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
+<p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; Frank, Swartz, &amp; Boland, <a href="#ref-Frank2007">2007</a>; Frank, Swartz, &amp; Kupfer, <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
 </div>
 <div id="discussion" class="section level2">
 <h2><span class="header-section-number">8.7</span> Discussion</h2>
@@ -627,7 +627,7 @@ fa &lt;-
 <p>Bowen, R., Baetz, M., Hawkes, J., &amp; Bowen, A. (2006). Mood variability in anxiety disorders. <em>Journal of Affective Disorders</em>, <em>91</em>(2-3), 165–170. <a href="https://doi.org/10.1016/j.jad.2005.12.050" class="uri">https://doi.org/10.1016/j.jad.2005.12.050</a></p>
 </div>
 <div id="ref-wikiStationary">
-<p>Wikipedia. (2018). Stationary process — Wikipedia, the free encyclopedia. <a href="http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327">http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327</a>.</p>
+<p>Wikipedia. (2018). Stationary process — Wikipedia, The free encyclopedia. <a href="http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327">http://en.wikipedia.org/w/index.php?title=Stationary%20process&amp;oldid=866157327</a>.</p>
 </div>
 <div id="ref-hoogendoorn2017">
 <p>Hoogendoorn, M., &amp; Funk, B. (2017). <em>Machine learning for the quantified self: On the art of learning from sensory data</em>. Springer International Publishing. Retrieved from <a href="https://books.google.nl/books?id=WZs3DwAAQBAJ" class="uri">https://books.google.nl/books?id=WZs3DwAAQBAJ</a></p>
@@ -648,7 +648,7 @@ fa &lt;-
 <p>Tahmasian, M., Khazaie, H., Golshani, S., &amp; Avis, K. T. (2013). Clinical application of actigraphy in psychotic disorders: A systematic review. <em>Current Psychiatry Reports</em>. <a href="https://doi.org/10.1007/s11920-013-0359-2" class="uri">https://doi.org/10.1007/s11920-013-0359-2</a></p>
 </div>
 <div id="ref-VanSomeren2000">
-<p>Van Someren, E. J. W. (2000). Circadian rhythms and sleep in human aging. <em>Chronobiology International</em>. <a href="https://doi.org/10.1081/CBI-100101046" class="uri">https://doi.org/10.1081/CBI-100101046</a></p>
+<p>Van Someren, E. (2000). Circadian rhythms and sleep in human aging. <em>Chronobiology International</em>. <a href="https://doi.org/10.1081/CBI-100101046" class="uri">https://doi.org/10.1081/CBI-100101046</a></p>
 </div>
 </div>
             </section>

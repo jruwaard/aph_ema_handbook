@@ -1,20 +1,57 @@
-Package: placeholder
-Title: EMA.
-Version: 0.0.1
+Package: apa_ema_handbook
+Title: Ecological Momentary Assessment in Mental Health Research
+Version: 1.0
+Authors@R: c(
+  person("Jeroen", "Ruwaard", , "jeroen.ruwaard@ggzingeest.nl", c("aut", "cre")),
+  person("Lisa", "Kooistra", , "l.kooistra@ggzingeest.nl", "aut"),
+  person("Melissa", "Thong", , "m.thong@ggzingeest.nl", "aut")
+  )
+Depends: R (>= 3.4.0)
+URL: https://github.com/hadley/r4ds
 Imports: 
-  bookdown,
-  emaph,
-  tidyverse,
-  adehabitatHR,
-  data.tree,
-  GPArotation, 
-  graphicalVAR,
-  kableExtra,
-  lme4,
-  mlVAR,
-  nlme,
-  psych,
-  qgraph,
-  stats,
-  zoo
-Remotes: rstudio/bookdown
+ autovarCore,
+ bookdown,
+ bootnet,
+ digest,
+ DiagrammeRsvg,
+ ecp,
+ emaph,
+ tidyverse,
+ adehabitatHR,
+ data.tree,
+ ggplot2,
+ GPArotation,
+ GENEAread,
+ GGIR,
+ ggmap,
+ graphicalVAR,
+ grid,
+ gridExtra,
+ kableExtra,
+ haven,
+ iterators,
+ jpeg,
+ lme4,
+ lomb,
+ lubridate,
+ nlme,
+ mlVAR,
+ nonlinearTseries, 
+ powerlmm,
+ psych,
+ pwr,
+ PhysicalActivity,
+ qgraph,
+ png,
+ rlang,
+ rgl,
+ rsvg,
+ scales,
+ simstudy,
+ simr,
+ zoo
+Remotes: 
+ rstudio/bookdown,
+ rstudio/rmarkdown
+ jruwaard/emaph
+ 

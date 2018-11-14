@@ -243,7 +243,7 @@ the internet, specialized functions can be added to your work-space.
 
 ### Installing R-packages from CRAN
 \index{CRAN}
-\index{Packages!Tidyverse}
+\index{Packages!tidyverse}
 
 Packages can be found at the CRAN website. To browse through the impressive list
 of available packages, see

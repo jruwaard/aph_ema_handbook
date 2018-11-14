@@ -1,4 +1,4 @@
-Package: apa_ema_handbook
+Package: apa.ema.handbook
 Title: Ecological Momentary Assessment in Mental Health Research
 Version: 1.0
 Authors@R: c(

@@ -36,14 +36,14 @@ EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with
 which *observational* data are collected. Active EMA requires participants to
 consciously provide information, for example by rating their current mood in
 response to a question that is prompted on their smartphone (see Figure
-\@ref(fig:fig01a)). In passive EMA, information is collected through wearables or
+\@ref(fig:activeema)). In passive EMA, information is collected through wearables or
 log files without active involvement of participants, for example on heart-rate,
 activity, smartphone use or engagement on social media (see Figure
-\@ref(fig:fig01b)). Studies may combine active and passive EMA. A study into sleep
+\@ref(fig:passiveema)). Studies may combine active and passive EMA. A study into sleep
 patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
-```{r fig01a, echo = FALSE, out.width = '95%', fig.asp = .25, fig.align='center', fig.cap='Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. '}
+```{r activeema, echo = FALSE, out.width = '95%', fig.asp = .25, fig.align='center', fig.cap='Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. '}
 library(png)
 library(grid)
 library(gridExtra)
@@ -64,7 +64,7 @@ grid.arrange(g, b, ncol=2, widths = c(100, 500))
 ```
 
 
-```{r fig01b, echo = FALSE, out.width = '100%', fig.asp = .25, fig.align='center', fig.cap='Passive EMA: data are collected automatically, for instance by accelerometers such as the wrist-worn GENEActive accelerometer '}
+```{r passiveema, echo = FALSE, out.width = '100%', fig.asp = .25, fig.align='center', fig.cap='Passive EMA: data are collected automatically, for instance by a wearable devices such as the wrist-worn GENEActive accelerometer.'}
 library(jpeg)
 library(grid)
 library(gridExtra)
@@ -173,7 +173,7 @@ experiences or situations, and nomothetic methods[are] those that aim to
 identify patterns of behavior across a population of individuals, rather than
 for any given individual" [@Conner2009]. The difference is important. As is
 increasingly recognized, group-level findings do not necessarily generalize to
-the individual members of the group, as shown by Figure \@ref(fig:fig01c)
+the individual members of the group, as shown by Figure \@ref(fig:idiographic)
 [@Hamaker2012].
 
 In contrast to more qualitative idiographic methods, such as interviews and N
@@ -184,7 +184,7 @@ time and context [@Shiffman2008]. This allows for a better understanding of
 intra-individual process, and of the factors that account for variability within
 and between individuals.
 
-```{r fig01c, fig.asp = .4, out.width = "100%", echo = FALSE, fig.cap = "An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)."}
+```{r idiographic, fig.asp = .4, out.width = "100%", echo = FALSE, fig.cap = "An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)."}
 
 # simulate individual
 sim_p <- function(id = 1, intercept = 0, x_start = 0){

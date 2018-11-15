@@ -21,14 +21,10 @@ creating new projects from RStudio's file menu. To create a new project, choose
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{images/datamanagement/new_project} 
-
-}
-
-\caption{creating a project in RStudio}(\#fig:fig5a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/datamanagement/new_project.png" alt="creating a project in RStudio" width="70%" />
+<p class="caption">(\#fig:fig5a)creating a project in RStudio</p>
+</div>
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
@@ -83,14 +79,10 @@ collected via:
 3.  an accelerometer (GENEActiv - see Chapter \@ref(ema-instruments-catalogue))
     to assess activity levels.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.75\linewidth]{images/datamanagement/project_tree} 
-
-}
-
-\caption{Example project directory structure}(\#fig:fig5b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="75%" />
+<p class="caption">(\#fig:fig5b)Example project directory structure</p>
+</div>
 
 
 ## Data

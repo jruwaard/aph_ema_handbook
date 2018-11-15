@@ -84,14 +84,10 @@ which we can use to check the simulation. As specified, mean mood ratings of the
 participants (the red lines) vary around 5 (the grey dashed line). So far, so
 good.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/lmm-plot-1} 
-
-}
-
-\caption{Simulated EMA data of Six Participants.}(\#fig:lmm-plot)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/lmm-plot-1.png" alt="Simulated EMA data of Six Participants." width="100%" />
+<p class="caption">(\#fig:lmm-plot)Simulated EMA data of Six Participants.</p>
+</div>
 
 
 ## Fitting a Mixed Model in R 
@@ -153,14 +149,10 @@ around 5 (the red line).
 d1$predicted <- predict(fm)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/lmm-lme1-plot-1} 
-
-}
-
-\caption{EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.}(\#fig:lmm-lme1-plot)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/lmm-lme1-plot-1.png" alt="EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model." width="100%" />
+<p class="caption">(\#fig:lmm-lme1-plot)EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.</p>
+</div>
 
 ## Adding Time as a Predictor
 
@@ -192,14 +184,10 @@ second data set. Both the intercept and the slope vary across the participants.
 Some participants improve more over time, and others improve less: the slope in
 this data set is a random effect.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/lmm-plot2-1} 
-
-}
-
-\caption{Simulated EMA data of Six Participants (Time-varying model).}(\#fig:lmm-plot2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/lmm-plot2-1.png" alt="Simulated EMA data of Six Participants (Time-varying model)." width="100%" />
+<p class="caption">(\#fig:lmm-plot2)Simulated EMA data of Six Participants (Time-varying model).</p>
+</div>
 
 To fit the extended mixed model, time can simply be added to both the fixed and
 random arguments of the 'lme' function. Fixed effects estimated of this model
@@ -243,13 +231,11 @@ d2$predicted <- predict(fm)
 
 ggplot(d2, aes(x = time, y = predicted, group = id)) + 
   geom_line(alpha = .1, size = .6) + 
-  geom_smooth(aes(group = NULL), method = "lm", color = "red") + 
+  geom_smooth(aes(group = NULL), method = "lm", color = "red", size = 1.2, linetype = 2) + 
   coord_cartesian(ylim = c(0, 10)) + theme_classic()
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{lmm_files/figure-latex/lmm-lme2-pred-1} \end{center}
+<img src="lmm_files/figure-html/lmm-lme2-pred-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## Adding a Two-Group Comparison
@@ -298,14 +284,10 @@ In Figure \@ref(fig:lmm-lme3-pred) below, EMA mood ratings predicted by the fitt
 show how the model detects 1) the fixed between-group effect, and 2) the
 variance in intercepts and slopes in both groups.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{lmm_files/figure-latex/lmm-lme3-pred-1} 
-
-}
-
-\caption{Predicted mood ratings}(\#fig:lmm-lme3-pred)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="lmm_files/figure-html/lmm-lme3-pred-1.png" alt="Predicted mood ratings" width="100%" />
+<p class="caption">(\#fig:lmm-lme3-pred)Predicted mood ratings</p>
+</div>
 
 
 ## Next Steps

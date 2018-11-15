@@ -199,8 +199,8 @@ d <- d %>%
   summarise(svm = mean(svm))
 
 ggplot(d, aes(time, svm)) +
+  geom_hline(yintercept = 0.125, color = "red", linetype = 2) + 
   geom_line() + ylab("ENMO") + 
-  geom_hline(yintercept = 0.125, color = "red") + 
   facet_grid(rows = vars(id)) + 
   theme_classic(12)
 ```
@@ -208,9 +208,11 @@ ggplot(d, aes(time, svm)) +
 \index{MVPA}
 
 For SVM and ENMO, cut-off values for various activity classes have been
-determined [@Dasilva2014; @Hildebrand2014; @Kim2017; @Rowlands2016]. Although these cut-offs vary somewhat from study to study, a common ENMO cut-off for
-Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g [or 125
-milligravity units, @LamersENMOcutoff]. The red line in Figure \@ref(fig:genea-one-day) marks this cut-off.
+determined [@Dasilva2014; @Hildebrand2014; @Kim2017; @Rowlands2016]. Although
+these cut-offs vary somewhat from study to study, a common ENMO cut-off for
+Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g (125 milligravity units;
+Femke Lamers, personal communication, 15 november 2018). The dotted line in Figure
+\@ref(fig:genea-one-day) marks this cut-off.
 
 ```{r echo = FALSE}
 t <- table(d$id, d$svm > 0.125)

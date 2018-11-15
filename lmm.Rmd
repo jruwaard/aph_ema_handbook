@@ -149,7 +149,7 @@ d1$predicted <- predict(fm)
 ```{r lmm-lme1-plot, out.width = "100%", fig.asp = 0.3, fig.cap = "EMA ratings, of each participant in the simulated data set, as predicted by the intercept-only mixed linear model.", echo = FALSE}
 ggplot(d1, aes(x = time, y = predicted, group = id)) + 
   geom_line(alpha = .075, size = .6) + 
-  geom_smooth(aes(group = NULL), method = "lm", color = "red") + 
+  geom_smooth(aes(group = NULL), method = "lm", color = "red", linetype = 2) + 
   coord_cartesian(ylim = c(0, 10)) + theme_classic()
 ```
 
@@ -223,7 +223,7 @@ d2$predicted <- predict(fm)
 
 ggplot(d2, aes(x = time, y = predicted, group = id)) + 
   geom_line(alpha = .1, size = .6) + 
-  geom_smooth(aes(group = NULL), method = "lm", color = "red") + 
+  geom_smooth(aes(group = NULL), method = "lm", color = "red", size = 1.2, linetype = 2) + 
   coord_cartesian(ylim = c(0, 10)) + theme_classic()
 ```
 
@@ -271,7 +271,7 @@ variance in intercepts and slopes in both groups.
 d3$predicted <- predict(fm)
 ggplot(d3, aes(x = time, y = predicted, group = id)) + 
   geom_line(color = "grey", size = .6, alpha = .3) +  
-  geom_smooth(aes(group = NULL), method = "lm", se = FALSE, color = "red") +
+  geom_smooth(aes(group = NULL), method = "lm", se = FALSE, color = "red", size = 1.2, linetype = 2) +
   facet_wrap(~group) + coord_cartesian(ylim = c(0, 10)) + theme_classic() 
 ```
 

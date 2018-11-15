@@ -205,7 +205,7 @@ To inspect the first 6 lines of data, type:
 head(ESMdata)
 ```
 
-To view all rows of data in a spreadsheet (as in Figure \@ref(fig:r-import),
+To view all rows of data in a spreadsheet (as in Figure \@ref(fig:r-import)),
 type:
 
 ```{r r-view, eval = FALSE}
@@ -213,7 +213,7 @@ type:
 View(ESMdata)
 ```
 
-To work with a specific variable in the data set, use `$`, For instance, to print
+To work with a specific variable in the data set, use `$`, for instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 ```{r r-head-var, eval = FALSE}
@@ -230,7 +230,7 @@ mean(ESMdata$mood_relaxed)
 ```
 
 There are many ways in which you can summarize and manipulate your data. At this
-point, the important milestone is that you imported and accessed data in R.
+point, the important milestone is that you have imported and accessed data in R.
 
 
 ## Extending R with Packages
@@ -329,7 +329,7 @@ standard deviation of 4? How to tell this to R?
 
 ### Using '?' to Consult the Documentation
 
-The good thing is that you already known the name of the function to use, since
+The good thing is that you already know the name of the function to use, since
 we used it in the previous section: it is `rnorm`. To check the documentation of
 this function, type `?rnorm` in the console.
 

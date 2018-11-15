@@ -77,8 +77,8 @@ collected via:
 3.  an accelerometer (GENEActiv - see Chapter \@ref(ema-instruments-catalogue))
     to assess activity levels.
 
-```{r fig5b, echo = FALSE, fig.cap="Example project directory structure", out.width = "85%"}
-# Figure 5.2: Show the EMA R-project directory structure.
+```{r fig5b, echo = FALSE, fig.cap="Example project directory structure", out.width = "75%"}
+# Show the EMA R-project directory structure.
 
 library(DiagrammeR)
 library(data.tree)

@@ -131,7 +131,7 @@ participants may not appreciate prompts after 22:00 and before 7:30).
 With 'event-contingent sampling', the sample rate is determined by the
 occurrence rate of the event. One way to implement this is to simply ask study
 participants to complete a questionnaire whenever the event occurs. When active
-EMA is combined with passive EMA, it may be also be possible to trigger
+EMA is combined with passive EMA, it may also be possible to trigger
 event-based prompts automatically based on changes in passive data, for example
 by triggering an EMA questionnaire automatically whenever a significant change
 in activity level is detected [@Smyth2003].
@@ -361,9 +361,8 @@ discussed.
   - Chapter \@ref(rstudio), the second chapter of **Part I**, introduces R, the
     statistical program that is an indispensable tool for the EMA researcher.
 
-  - **Part II** focuses on EMA study design (Chapter \@ref(methods), EMA
-    instruments (Chapter \@ref(instruments)) and EMA data management (Chapter
-    \@ref(datamanagement)).
+   - **Part II** focuses on EMA study design (Chapter \@ref(methods), and EMA data
+     management (Chapter \@ref(datamanagement)).
 
   - **Part III** details the momentary assessment of two specific outcomes: Mood
     (Chapter \@ref(mood)) and Activity (Chapter \@ref(activity)).

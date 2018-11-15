@@ -18,7 +18,6 @@ rmd_files: [
   
   # part II
   "study-design.Rmd",
-  # "instruments.Rmd",
   "datamanagement.Rmd",
   
   # part III

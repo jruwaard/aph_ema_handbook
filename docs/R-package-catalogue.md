@@ -450,24 +450,23 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datares)
+#> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
 #>      Min       1Q   Median       3Q      Max 
-#> -2.36361 -0.51779 -0.08835  0.63414  1.84484 
+#> -2.17783 -0.71063  0.01998  0.61903  3.15200 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.68204    0.08377   8.142 1.61e-12 ***
-#> depression.l1 -0.03963    0.07597  -0.522    0.603    
-#> depression.l2 -0.02329    0.07893  -0.295    0.769    
-#> const          0.03845    0.08661   0.444    0.658    
+#> activity.l1    0.69552    0.09514   7.310 7.94e-11 ***
+#> depression.l1 -0.02113    0.08242  -0.256    0.798    
+#> const         -0.04070    0.10347  -0.393    0.695    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.8569 on 94 degrees of freedom
-#> Multiple R-squared:  0.4303,	Adjusted R-squared:  0.4121 
-#> F-statistic: 23.67 on 3 and 94 DF,  p-value: 1.7e-11
+#> Residual standard error: 1.029 on 96 degrees of freedom
+#> Multiple R-squared:   0.36,	Adjusted R-squared:  0.3467 
+#> F-statistic:    27 on 2 and 96 DF,  p-value: 4.973e-10
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*

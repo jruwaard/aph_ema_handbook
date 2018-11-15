@@ -697,24 +697,23 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="kw">summary</span>(models_found[[<span class="dv">1</span>]]<span class="op">$</span>varest<span class="op">$</span>varresult<span class="op">$</span>depression)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
-<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
+<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.36361 -0.51779 -0.08835  0.63414  1.84484 </span>
+<span class="co">#&gt; -2.17783 -0.71063  0.01998  0.61903  3.15200 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.68204    0.08377   8.142 1.61e-12 ***</span>
-<span class="co">#&gt; depression.l1 -0.03963    0.07597  -0.522    0.603    </span>
-<span class="co">#&gt; depression.l2 -0.02329    0.07893  -0.295    0.769    </span>
-<span class="co">#&gt; const          0.03845    0.08661   0.444    0.658    </span>
+<span class="co">#&gt; activity.l1    0.69552    0.09514   7.310 7.94e-11 ***</span>
+<span class="co">#&gt; depression.l1 -0.02113    0.08242  -0.256    0.798    </span>
+<span class="co">#&gt; const         -0.04070    0.10347  -0.393    0.695    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.8569 on 94 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.4303, Adjusted R-squared:  0.4121 </span>
-<span class="co">#&gt; F-statistic: 23.67 on 3 and 94 DF,  p-value: 1.7e-11</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 1.029 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:   0.36,  Adjusted R-squared:  0.3467 </span>
+<span class="co">#&gt; F-statistic:    27 on 2 and 96 DF,  p-value: 4.973e-10</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 <div id="qgraph" class="section level3">
@@ -880,7 +879,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["aph_ema.pdf"],
+"download": ["EMA_in_Mental_Health_Research.pdf"],
 "toc": {
 "collapse": "subsection"
 }

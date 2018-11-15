@@ -1,4 +1,5 @@
 
+
 # Introducing R & RStudio {#rstudio}
 \index{R and RStudio} 
 
@@ -360,8 +361,8 @@ ggplot(data = subset(csd, dayno <= 6),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irration varied most at day 3." width="100%" />
-<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irration varied most at day 3.</p>
+<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3." width="100%" />
+<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.</p>
 </div>
 
 
@@ -428,13 +429,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.46123, df = 195.02, p-value = 0.6451
+#> t = 1.1444, df = 189.3, p-value = 0.2539
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.3508402  0.2178444
+#>  -0.1146557  0.4315523
 #> sample estimates:
-#> mean of x mean of y 
-#> 0.1018414 0.1683393
+#>   mean of x   mean of y 
+#>  0.13989017 -0.01855812
 ```
 
 

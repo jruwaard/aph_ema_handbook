@@ -361,7 +361,7 @@ discussed.
   - Chapter \@ref(rstudio), the second chapter of **Part I**, introduces R, the
     statistical program that is an indispensable tool for the EMA researcher.
 
-   - **Part II** focuses on EMA study design (Chapter \@ref(methods), and EMA data
+   - **Part II** focuses on EMA study design (Chapter \@ref(methods)), and EMA data
      management (Chapter \@ref(datamanagement)).
 
   - **Part III** details the momentary assessment of two specific outcomes: Mood

@@ -31,7 +31,7 @@ electronic wearable devices* [@Shiffman2008].
 \index{EMA!Passive EMA} \index{EMA!Observational EMA|see{Passive EMA}}
 \index{EMA!Active EMA} \index{EMA!Self-report EMA|see{Active EMA}}
 
-In EMA research, two forms of data collection are distinguished: 1) 'Active
+In EMA research, we distinguishe two forms of data collection: 1) 'Active
 EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with
 which *observational* data are collected. Active EMA requires participants to
 consciously provide information, for example by rating their current mood in
@@ -39,8 +39,8 @@ response to a question that is prompted on their smartphone (see Figure
 \@ref(fig:activeema)). In passive EMA, information is collected through wearables or
 log files without active involvement of participants, for example on heart-rate,
 activity, smartphone use or engagement on social media (see Figure
-\@ref(fig:passiveema)). Studies may combine active and passive EMA. A study into sleep
-patterns, for example, may involve both a self-report sleep diary and an
+\@ref(fig:passiveema)). Studies may combine active and passive EMA. A study into
+sleep patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
 ```{r activeema, echo = FALSE, out.width = '95%', fig.asp = .25, fig.align='center', fig.cap='Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. '}
@@ -221,6 +221,9 @@ ggplot(dt, aes(x = X, y = Y, group = id)) +
         panel.background = element_blank())
 ```
 
+### To study dynamic processes
+To do add refs
+
 
 ### To Enable EMI
 \index{Ecological Momentary Intervention}
@@ -361,9 +364,8 @@ discussed.
   - Chapter \@ref(rstudio), the second chapter of **Part I**, introduces R, the
     statistical program that is an indispensable tool for the EMA researcher.
 
-  - **Part II** focuses on EMA study design (Chapter \@ref(methods), EMA
-    instruments (Chapter \@ref(instruments)) and EMA data management (Chapter
-    \@ref(datamanagement)).
+  - **Part II** focuses on EMA study design (Chapter \@ref(methods), and EMA 
+  data management (Chapter \@ref(datamanagement)).
 
   - **Part III** details the momentary assessment of two specific outcomes: Mood
     (Chapter \@ref(mood)) and Activity (Chapter \@ref(activity)).

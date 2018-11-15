@@ -220,7 +220,7 @@ accelerometers. No accompanying app exists with which study
 participants can be provided feedback about their activity. This might
 negatively affect wear-time and study compliance in research participants, who
 are accustomed to consumer activity-sampling devices, such as Fitbit, where many
-options for real-time feedback exist.
+options for real-time feedback exist. Further, researchers we spoke with noted that the event logger was hard to use in practice. This resulted in low compliance in field studies. 
 
 ```{r geneactiv, echo = FALSE, fig.cap = "The GENEActiv Accelerometer", out.width='100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")

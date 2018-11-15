@@ -30,7 +30,7 @@ Technology has greatly increased the methods of EMA data collection.
 Nevertheless, it is worth considering whether your study needs to have an
 advanced method of data collection. Maybe the humble written diary is sufficient
 for your study needs. If so, you might save yourself from the technical
-difficulties that experienced EMA researchers know all to well. Modern EMA
+difficulties that experienced EMA researchers know all too well. Modern EMA
 platforms, on the other hand, can be very efficient data collection tools that
 can save the researcher and the participants a lot of time. Careful assessment
 of options through field testing will give you the information you need to
@@ -118,7 +118,7 @@ device needs to be factored in.
 These financial factors are a non-issue if participants use their own devices.
 Instead there are other potential problems, namely that of compatibility of the
 smart devices. Currently some apps are available either only on iOS or Android.
-Besides considering the make of the participants device, one also needs to
+Besides considering the make of the participants' device, one also needs to
 consider the model. Older models might not have the feature needed for the EMA
 collection. Another potential issue associated with using own devices is
 adequate memory/storage capacity, i.e. to install the EMA app and collect the
@@ -159,7 +159,7 @@ alerts. These alerts might occur at an inconvenient social moment.
     survey is send via an email or SMS.
 
   - *Mode of delivery 2*: It is possible to make use of participants’ own devices
-    (fitness device, tablet, smartphone) or borrow them a designated device.
+    (fitness device, tablet, smartphone) or lend them a designated device.
 
   - *Choosing the right mode of delivery*: Consider possible issues such as 1)
     software updates, 2) compatibility issues if using participants device, 3)

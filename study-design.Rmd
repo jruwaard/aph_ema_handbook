@@ -45,7 +45,7 @@ populations. You should be aware, though, that results obtained in non-patient
 populations do not necessarily generalize to patient populations. EMA mood
 ratings, for example, might be much more variable in patients compared to
 non-patients. Pilot studies should therefore also be conducted in the target
-population.
+population. It is also advisable to write a manual on how to operate the EMA device and spend time on briefing participants on what is expected of them during the study. Depending on your study topic and EMA method, de-briefing might also be nescesarry, along with instructions on how to return a wearable or de-install an EMA app. 
 
 
 ## What are the Qualities of the EMA Measures?
@@ -61,7 +61,7 @@ In active EMA research, complex multi-dimensional constructs such as mood and
 anxiety are often measured using single-item questions, to reduce the assessment
 burden of participants, who are prompted several times per day. You should ask
 yourself (and the scientific literature) what the psychometric properties are of
-these measures are. How do these EMA-measures compare to scores on traditional
+these measures. How do these EMA-measures compare to scores on traditional
 assessments (e.g., self-report questionnaires, clinical interviews)? What is
 known about the variability of items scores? And what is known about the
 measurement errors? Surprisingly, these last questions are often ignored in EMA
@@ -82,9 +82,11 @@ since samples rates can often not be set and the precision of the built-in
 sensors varies considerably from device to device. Commercial accelerometers may
 have better precision and reliability [see, e.g., @Evenson2015], but
 manufacturers often limit access to raw data and data pre-processing algorithms,
-making it difficult (or even impossible) to fully analyze outcomes. Being aware
-of these issues when you plan the study, will help considerably in the analysis
-stage of your study. 
+making it difficult (or even impossible) to fully analyze outcomes.'Scientific
+wearables' do offer this access, but often choose function over form (design). 
+They can therefore draw attention, prompting unwanted questions to partcipants. 
+Being aware of these issues when you plan the study, will help
+considerably in the analysis stage of your study. 
 
 
 ## What is the Sample Plan?
@@ -99,7 +101,7 @@ need to be answered are:
 
 The questions above should be answered as detailed as possible to best serve the
 research question and the statistical power (see below). In practice, however,
-it is often necessary to balance between research interests, respondent burden,
+it is often necessary to balance research interests, respondent burden,
 and practical considerations, such as hardware limitations.
 
 When determining the appropriate sample plan, start with mapping the expected

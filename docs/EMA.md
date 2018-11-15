@@ -32,7 +32,7 @@ electronic wearable devices* [@Shiffman2008].
 \index{EMA!Passive EMA} \index{EMA!Observational EMA|see{Passive EMA}}
 \index{EMA!Active EMA} \index{EMA!Self-report EMA|see{Active EMA}}
 
-In EMA research, two forms of data collection are distinguished: 1) 'Active
+In EMA research, we distinguish two forms of data collection: 1) 'Active
 EMA', with which *self-report* data are collected, and 2) 'Passive EMA', with
 which *observational* data are collected. Active EMA requires participants to
 consciously provide information, for example by rating their current mood in
@@ -40,20 +40,28 @@ response to a question that is prompted on their smartphone (see Figure
 \@ref(fig:activeema)). In passive EMA, information is collected through wearables or
 log files without active involvement of participants, for example on heart-rate,
 activity, smartphone use or engagement on social media (see Figure
-\@ref(fig:passiveema)). Studies may combine active and passive EMA. A study into sleep
-patterns, for example, may involve both a self-report sleep diary and an
+\@ref(fig:passiveema)). Studies may combine active and passive EMA. A study into
+sleep patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/activeema-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
-<p class="caption">(\#fig:activeema)Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. </p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/activeema-1} 
+
+}
+
+\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:activeema)
+\end{figure}
 
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/passiveema-1.png" alt="Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer." width="100%" />
-<p class="caption">(\#fig:passiveema)Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/passiveema-1} 
+
+}
+
+\caption{Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer.}(\#fig:passiveema)
+\end{figure}
 
 
 
@@ -86,7 +94,7 @@ participants may not appreciate prompts after 22:00 and before 7:30).
 With 'event-contingent sampling', the sample rate is determined by the
 occurrence rate of the event. One way to implement this is to simply ask study
 participants to complete a questionnaire whenever the event occurs. When active
-EMA is combined with passive EMA, it may be also be possible to trigger
+EMA is combined with passive EMA, it may also be possible to trigger
 event-based prompts automatically based on changes in passive data, for example
 by triggering an EMA questionnaire automatically whenever a significant change
 in activity level is detected [@Smyth2003].
@@ -136,21 +144,27 @@ In contrast to more qualitative idiographic methods, such as interviews and N
 data on the individual level. Thus, EMA offers a quantitative method for
 idiographic research, measuring characteristics of (unique) individuals across
 time and context [@Shiffman2008]. This allows for a better understanding of
-intra-individual process, and of the factors that account for variability within
-and between individuals.
+the factors that account for the variability within and between individuals.
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/idiographic-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
-<p class="caption">(\#fig:idiographic)An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).</p>
-</div>
+\begin{figure}
 
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/idiographic-1} 
+
+}
+
+\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:idiographic)
+\end{figure}
+
+### To Understand the Dynamic Interplay between Symptoms
+
+In the Network Theory of Psychopathology [@Borsboom2013; @Borsboom2017], mental health disorders are conceptualized as networks of psychopathology symptoms, in which recurrent causal loops keep the network in a "disorder" state (e.g., sleeping problem -> fatigue -> rumination -> sleeping problem). Network Theory encourages the identification of patient-specific symptom networks, so that central symptoms can be targeted with personalized interventions, to break the self-sustaining loops. The identification of these networks requires repeated assessments of symptoms in real life [see, e.g., @Bringmann2015], a task for which EMA is particularly well suited. 
 
 ### To Enable EMI
 \index{Ecological Momentary Intervention}
 \index{EMI|see{Ecological Momentary Intervention}}
 
-EMA enables Ecological Momentary Interventions (EMI): interventions that that
-are provided to people during their everyday lives, in real time, and in their
+EMA enables Ecological Momentary Interventions (EMI): interventions that are
+provided to people during their everyday lives, in real time, and in their
 natural settings [@heron2010]. If dynamic disease processes can be adequately
 monitored in everyday-life through EMA, it should also be possible to intervene
 when EMA data reflect clear changes in these processes, in a way that is
@@ -254,26 +268,26 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 | **Topic** / **Author (Year)** | **Summary**                                             |
 |:------------------------------|:--------------------------------------------------------|
 | **Anxiety disorders**  | | 
-| @Walz2014              | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviors, and situational cues. Combination of EMA and ambulatory assessment of physiological variables and treatment evaluations. |
-| @schueller2017         | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation |
+| @Walz2014              | Provides insights to the temporal variability of symptoms, and associations between daily affect, behaviors, and situational cues. Discusses the combination of EMA and ambulatory assessment of physiological variables in treatment evaluations. |
+| @schueller2017         | Provides an overview of the distinction of EMIs from other types of treatment. Also discusses the considerations of conducting EMI research, such as design, deployment, and evaluation. |
 | **Eating disorders**   | |
-| @Engel2016 | An overview of studies on eating disorders, obesity, and bariatric surgery using EMA |
-| **Mood disorders** | |
-| @AanhetRot2012     | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, pediatric populations, MDD/BD specificity, and links with neuroscience |
-| @Aung2017          | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
-| @burton2013        | Focuses on diurnal variations in activity levels among depressed individuals. |
-| @Telford2012       | Identifies six themes of EMA research in MDD: methodology; positive and negative affect; cortisol secretion; antidepressant treatment; work performance; genetic risk factors |
-| @Wenze2010         | Provides an overview of EMA in mood disorder research comprising techniques used, types of population assessed, types of research questions, and a discussion of the potential of EMA in treatment settings |
-| @Wichers2011       | Provides an overview for the potential clinical application of EMA in the diagnostic and treatment of MDD.  |
-| @Versluis2016      | Provides an overview of interventions (EMI) addressing anxiety, depression, and perceived stress on positive psychological outcomes |
-| @Dubad2018         | Provides an overview of the feasibility and clinical impact of mood-monitoring applications targeting young populations (10-24 years old) |
+| @Engel2016 | An overview of studies on eating disorders, obesity, and bariatric surgery using EMA.|
+| **Mood disorders**     | |
+| @AanhetRot2012         | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, pediatric populations, MDD/BD specificity, and links with neuroscience, |
+| @Aung2017              | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
+| @burton2013            | Focuses on diurnal variations in activity levels among depressed individuals. |
+| @Telford2012           | Identifies six themes of EMA research in MDD: methodology, positive and negative affect, cortisol secretion, antidepressant treatment, work performance, and genetic risk factors. |
+| @Wenze2010             | Provides an overview of EMA in mood disorder research comprising techniques used, types of population assessed, types of research questions, and a discussion of the potential of EMA in treatment settings. |
+| @Wichers2011           | Provides an overview for the potential clinical application of EMA in the diagnostic and treatment of MDD.  |
+| @Versluis2016          | Provides an overview of interventions (EMI) addressing anxiety, depression, and perceived stress on positive psychological outcomes. |
+| @Dubad2018             | Provides an overview of the feasibility and clinical impact of mood-monitoring applications targeting young populations (10-24 years old). |
 | **Substance-related disorders**| |
-| @Shiffman2009      | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires |
-| @Swendsen2016      | Conceptual review of the use of mobile technologies for research on addiction and its treatment |
+| @Shiffman2009          | Review of processes that drive substance use, cessation, and relapse, sometimes in contrast with theory-driven studies that are largely derived from global reports collected through questionnaires. |
+| @Swendsen2016          | Conceptual review of the use of mobile technologies for research on addiction and its treatment. |
 | **Mental health/ Well-being** | | 
-| @Cornet2017        | Outlines the potential and challenges of passive sensing to detect status change and behavior change following feedback on behavior. |
-| @kirchner2016      | Provides an overview of ' geographically explicit momentary assessment' (GEMA) research to enrich EMA research in mental health and well-being |
-| @Dogan2017         | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems |
+| @Cornet2017            | Outlines the potential and challenges of passive sensing to detect status change and behavior change following feedback on behavior. |
+| @kirchner2016          | Provides an overview of ' geographically explicit momentary assessment' (GEMA) research to enrich EMA research in mental health and well-being. |
+| @Dogan2017             | Provides an overview of studies that combine subjective ratings with objective EMA-data collected using smartphone-based systems. |
 
 
 ## What is in this Manual?
@@ -284,9 +298,8 @@ discussed.
   - Chapter \@ref(rstudio), the second chapter of **Part I**, introduces R, the
     statistical program that is an indispensable tool for the EMA researcher.
 
-  - **Part II** focuses on EMA study design (Chapter \@ref(methods), EMA
-    instruments (Chapter \@ref(instruments)) and EMA data management (Chapter
-    \@ref(datamanagement)).
+   - **Part II** focuses on EMA study design (Chapter \@ref(methods)), and EMA data
+     management (Chapter \@ref(datamanagement)).
 
   - **Part III** details the momentary assessment of two specific outcomes: Mood
     (Chapter \@ref(mood)) and Activity (Chapter \@ref(activity)).

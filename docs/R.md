@@ -75,10 +75,14 @@ higher) of RStudio.
 If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
-<p class="caption">(\#fig:r-interface)The RStudio Interface</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
+
+}
+
+\caption{The RStudio Interface}(\#fig:r-interface)
+\end{figure}
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -176,10 +180,14 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
-<p class="caption">(\#fig:r-import)RStudio's CSV import wizard.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
+
+}
+
+\caption{RStudio's CSV import wizard.}(\#fig:r-import)
+\end{figure}
 
 ### Using Functions to Import Data
 
@@ -238,7 +246,7 @@ head(ESMdata)
 #> 6   227     10            5         0            1
 ```
 
-To view all rows of data in a spreadsheet (as in Figure \@ref(fig:r-import),
+To view all rows of data in a spreadsheet (as in Figure \@ref(fig:r-import)),
 type:
 
 
@@ -247,7 +255,7 @@ type:
 View(ESMdata)
 ```
 
-To work with a specific variable in the data set, use `$`, For instance, to print
+To work with a specific variable in the data set, use `$`, for instance, to print
 the first 20 numbers in the `mood_relaxed` variable, type:
 
 
@@ -267,7 +275,7 @@ mean(ESMdata$mood_relaxed)
 ```
 
 There are many ways in which you can summarize and manipulate your data. At this
-point, the important milestone is that you imported and accessed data in R.
+point, the important milestone is that you have imported and accessed data in R.
 
 
 ## Extending R with Packages
@@ -354,14 +362,19 @@ To plot the irritation levels of this patient in the first six days, using the
 ggplot(data = subset(csd, dayno <= 6),
        mapping =  aes(x = beepno, y = mood_irritat)) + 
   geom_point() +  geom_step() + 
+  ylab("Irritation level") + 
   scale_x_continuous(breaks = 1:10) +
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study." width="100%" />
-<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/r-irriplot-1} 
+
+}
+
+\caption{Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irration varied most at day 3.}(\#fig:r-irriplot)
+\end{figure}
 
 
 ## Getting Help
@@ -374,7 +387,7 @@ standard deviation of 4? How to tell this to R?
 
 ### Using '?' to Consult the Documentation
 
-The good thing is that you already known the name of the function to use, since
+The good thing is that you already know the name of the function to use, since
 we used it in the previous section: it is `rnorm`. To check the documentation of
 this function, type `?rnorm` in the console.
 
@@ -427,13 +440,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 0.11216, df = 191.77, p-value = 0.9108
+#> t = 0.41397, df = 197.56, p-value = 0.6793
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2339834  0.2621981
+#>  -0.2242306  0.3433848
 #> sample estimates:
 #>   mean of x   mean of y 
-#> 0.021468514 0.007361142
+#> 0.061399974 0.001822916
 ```
 
 

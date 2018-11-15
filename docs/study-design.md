@@ -46,7 +46,7 @@ populations. You should be aware, though, that results obtained in non-patient
 populations do not necessarily generalize to patient populations. EMA mood
 ratings, for example, might be much more variable in patients compared to
 non-patients. Pilot studies should therefore also be conducted in the target
-population.
+population. It is also advisable to write a manual on how to operate the EMA device and spend time on briefing participants on what is expected of them during the study. Depending on your study topic and EMA method, de-briefing might also be nescesarry, along with instructions on how to return a wearable or de-install an EMA app. 
 
 
 ## What are the Qualities of the EMA Measures?
@@ -56,13 +56,13 @@ population.
 
 With the study hypotheses in place, theoretical constructs must be
 operationalized into quantitative measures. For this, you should consult the
-scientific literature on the reliability and validity of existing EMA measures.
+scientific literature on the reliability and validity of existing EMA measures [e.g., @Moore2016; @Rijsbergen2012].
 
 In active EMA research, complex multi-dimensional constructs such as mood and
 anxiety are often measured using single-item questions, to reduce the assessment
 burden of participants, who are prompted several times per day. You should ask
 yourself (and the scientific literature) what the psychometric properties are of
-these measures are. How do these EMA-measures compare to scores on traditional
+these measures. How do these EMA-measures compare to scores on traditional
 assessments (e.g., self-report questionnaires, clinical interviews)? What is
 known about the variability of items scores? And what is known about the
 measurement errors? Surprisingly, these last questions are often ignored in EMA
@@ -83,9 +83,11 @@ since samples rates can often not be set and the precision of the built-in
 sensors varies considerably from device to device. Commercial accelerometers may
 have better precision and reliability [see, e.g., @Evenson2015], but
 manufacturers often limit access to raw data and data pre-processing algorithms,
-making it difficult (or even impossible) to fully analyze outcomes. Being aware
-of these issues when you plan the study, will help considerably in the analysis
-stage of your study. 
+making it difficult (or even impossible) to fully analyze outcomes.'Scientific
+wearables' do offer this access, but often choose function over form (design). 
+They can therefore draw attention, prompting unwanted questions to partcipants. 
+Being aware of these issues when you plan the study, will help
+considerably in the analysis stage of your study. 
 
 
 ## What is the Sample Plan?
@@ -100,7 +102,7 @@ need to be answered are:
 
 The questions above should be answered as detailed as possible to best serve the
 research question and the statistical power (see below). In practice, however,
-it is often necessary to balance between research interests, respondent burden,
+it is often necessary to balance research interests, respondent burden,
 and practical considerations, such as hardware limitations.
 
 When determining the appropriate sample plan, start with mapping the expected
@@ -138,10 +140,14 @@ plan <- sample_plan(n_participants = 5,
                     plot = TRUE)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="study-design_files/figure-html/fig3a-1.png" alt="Generated two-day EMA sampling plan, for 5 participants" width="95%" />
-<p class="caption">(\#fig:fig3a)Generated two-day EMA sampling plan, for 5 participants</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{study-design_files/figure-latex/fig3a-1} 
+
+}
+
+\caption{Generated two-day EMA sampling plan, for 5 participants}(\#fig:fig3a)
+\end{figure}
 
 
 ##  What is the Optimal Sample Size?
@@ -158,7 +164,7 @@ Conducting a power analysis can be easy or very difficult, depending on the
 complexity of the experimental design and the adopted statistical technique. For
 simple tests, such as the t-test and ANOVA, straightforward analytic solutions
 exist, which are implemented in readily available tools. In R, one of those
-tools is package `pwr`.
+tools is package `pwr` (which you can install, as you now know, via `install.packages('pwr')`).
 
 For example, to use `pwr` to calculate the power of a t-test to detect a
 moderate effect size (*d* = 0.5), with n = 30 per group, and a (two-sided)
@@ -188,7 +194,7 @@ pwr.t.test(d = 0.5,
 ```
 
 The power is 48% - not even close to the generally adopted standard of 80%. More
-participants are needed to detect the hypothesized effect.
+participants are needed to detect the hypothesized effect. Can you find the `n` for which power is 80%? 
 
 EMA study designs are often characterized by repeated measures, complex
 multi-level structures and the application of advanced statistical techniques.
@@ -233,7 +239,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4868
+#> [1] 0.4729
 ```
 
 As can be seen, the simulation results are very close to the output of
@@ -275,11 +281,11 @@ In short, software can be classified as a medical device when it collects
 patient-specific data and when it is specifically intended for one of the
 above-mentioned objectives. In practice, the definition of medical devices
 leaves a lot of room for confusion. Researchers often struggle with the question
-whether their assessment tools should be considered an medical device or not.
-For this purpose, flowcharts exist that help to determine whether an app of
-product should be classified as a medical device [see, e.g., @Ekker2013, and
-http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows such a
-flow-chart.
+whether their assessment tools should be considered a medical device or not. For
+this purpose, flowcharts exist that help to determine whether an app or another
+software product should be classified as a medical device [see, e.g.,
+@Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows
+such a flow-chart.
 
 While planning your EMA study, you should also be mindful of the rules and
 regulations that apply to data collection, storage and sharing. From May 2018
@@ -309,7 +315,11 @@ model agreements in which all relevant issues are addressed. Third parties may
 offer model agreements as well. If so, however, these agreements need to be
 checked for compliance to local regulations.
 
-<div class="figure" style="text-align: center">
-<img src="images/outcomes/Flow_MD.png" alt="Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device." width="90%" />
-<p class="caption">(\#fig:fig3b)Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{images/outcomes/Flow_MD} 
+
+}
+
+\caption{Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.}(\#fig:fig3b)
+\end{figure}

@@ -25,31 +25,40 @@ developed in the past decades in wildlife telemetry research
 [@tomkiewicz2010global].
 
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/accgps-1.png" alt="Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity." width="95%" />
-<p class="caption">(\#fig:accgps)Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{activity_files/figure-latex/accgps-1} 
+
+}
+
+\caption{Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.}(\#fig:accgps)
+\end{figure}
 
 ## Actigraphy
 \index{Actigraphy} 
 \index{Accelerometer} 
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure changes
-in acceleration (of the device, relative to earth's gravity), typically
-simultaneously on the vertical (Y), horizontal right-left (X) and horizontal
-front-back axis (Z). Through actigraphy, we study the frequency, duration, and
-intensity of physical activity. Figure \@ref(fig:genea-one-hour) shows one hour
-of data collected from a wrist-worn GENEActiv accelerometer. As can be seen,
-three accelerometers (X, Y, Z) were simultaneously providing data. Data were
-sampled with a frequency of 30 Hertz (Hz; thirty measurements per second - which
-is common), but sub-sampled here to 0.1Hz (one measurement every 10 seconds), for
-practical reasons. If we would have plotted the data at 30Hz, the plot would
-have included 108.000 data points. At 0.1Hz, this reduces to 3600 points.
+in acceleration forces (i.e., both static forces - earth's gravity - and dynamic
+forces - caused by movement), typically simultaneously on the vertical (Y),
+horizontal right-left (X) and horizontal front-back axis (Z). Through
+actigraphy, we study the frequency, duration, and intensity of physical
+activity. Figure \@ref(fig:genea-one-hour) shows one hour of data collected from
+a wrist-worn GENEActiv accelerometer. As can be seen, three accelerometers (X,
+Y, Z) were simultaneously providing data. Data were sampled with a frequency
+of 30 Hertz (Hz; thirty measurements per second - which is common), but
+sub-sampled here to 0.1Hz (one measurement every 10 seconds), for practical
+reasons. If we would have plotted the data at 30Hz, the plot would have
+included 108.000 data points. At 0.1Hz, this reduces to 360 points.
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/genea-one-hour-1.png" alt="One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)" width="100%" />
-<p class="caption">(\#fig:genea-one-hour)One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-hour-1} 
+
+}
+
+\caption{One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)}(\#fig:genea-one-hour)
+\end{figure}
 
 Data shown are included in package `emaph`, and the R-code to reproduce the plot
 is listed below. Use this to familiarize yourself with actigraphy data. If you
@@ -122,24 +131,27 @@ over the day follow a similar pattern, but the activity levels in the two plots
 are strikingly different. Age appears to matter here: activity levels of the
 middle-aged person are consistently lower than those of the young adult.
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/genea-one-day-1.png" alt="One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs" width="100%" />
-<p class="caption">(\#fig:genea-one-day)One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-day-1} 
+
+}
+
+\caption{One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs}(\#fig:genea-one-day)
+\end{figure}
 
 \index{MVPA}
 
 For SVM and ENMO, cut-off values for various activity classes have been
-determined [@Dasilva2014; @Hildebrand2014; @Rowlands2016]. The red line in
-Figure \@ref(fig:genea-one-day) marks the ENMO cut-off for
-Moderate-to-Vigorous-Physical-Activity (MVPA), which is 0.1g (or 100
-milligravity units).
+determined [@Dasilva2014; @Hildebrand2014; @Kim2017; @Rowlands2016]. Although these cut-offs vary somewhat from study to study, a common ENMO cut-off for
+Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g [or 125
+milligravity units, @LamersENMOcutoff]. The red line in Figure \@ref(fig:genea-one-day) marks this cut-off.
 
 
 
 With this cut-off, we can summarize the two series shown in Figure
 \@ref(fig:genea-one-day) by the number of times on which ENMO is higher than the
-MVPA cut-off. The daily MVPA-count for the young adult is 26. For the
+MVPA cut-off. The daily MVPA-count for the young adult is 17. For the
 middle-aged person, this is 5: considerably lower.
 
 You should be aware that the choice of the width of the epoch matters when
@@ -165,10 +177,14 @@ for example, is {latitude: 52.37022; longitude: 4.89517}, which can be verified
 by punching these numbers in [Google maps](https://tinyurl.com/ybxxk99a).
 
 
-<div class="figure" style="text-align: center">
-<img src="images/activity/Latitude_and_Longitude_of_the_Earth.png" alt="Latitude and Longtitude of the Earth (source: WikiPedia)." width="75%" />
-<p class="caption">(\#fig:longlat)Latitude and Longtitude of the Earth (source: WikiPedia).</p>
-</div>
+\begin{figure}[!h]
+
+{\centering \includegraphics[width=0.75\linewidth]{images/activity/Latitude_and_Longitude_of_the_Earth} 
+
+}
+
+\caption{Latitude and Longtitude of the Earth (source: WikiPedia).}(\#fig:longlat)
+\end{figure}
 
 
 ### The Global Positioning System
@@ -192,20 +208,25 @@ library(ggplot2)
 library(emaph)
 
 d <- subset(locations,
-            accuracy <= 100 &
+            accuracy <= 50 &
               lon >=  4.80 & lon <=  5.00 &
-              lat >= 52.25 & lat <= 52.50)
-
+              lat >= 52.25 & lat <= 52.50) %>% 
+  sample_n(4000)
+  
 ggplot(d, aes(lon, lat)) +
-  geom_point(alpha = .1,  shape = 21, size = 3) +
+  geom_point(alpha = .2,  shape = 21, size = 3) +
   xlab("longitude") + ylab("latitude") + 
-  facet_wrap(~ id) + theme_classic(12)
+  facet_wrap(~ id)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/fourweekgps-1.png" alt="Four-week location history of two people, collected with Google Timeline." width="100%" />
-<p class="caption">(\#fig:fourweekgps)Four-week location history of two people, collected with Google Timeline.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/fourweekgps-1} 
+
+}
+
+\caption{Four-week location history of two people, collected with Google Timeline.}(\#fig:fourweekgps)
+\end{figure}
 
 Data-points are superposed, using transparent colors, to make a distinction
 between locations that were visited once (light areas) and places that were
@@ -235,10 +256,14 @@ park. The red dot in the figure marks the median coordinate. This coordinate is
 very accurate: it marks the bedroom. All individual data points, however, fail
 to identify this location.
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/nightcrawl-1.png" alt="Nightly GPS-fluctuations, revealing inaccurate location measurements" width="100%" />
-<p class="caption">(\#fig:nightcrawl)Nightly GPS-fluctuations, revealing inaccurate location measurements</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/nightcrawl-1} 
+
+}
+
+\caption{Nightly GPS-fluctuations, revealing inaccurate location measurements}(\#fig:nightcrawl)
+\end{figure}
 
 
 ### GPS-based Activity Measures

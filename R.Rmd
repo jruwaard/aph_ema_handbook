@@ -308,11 +308,12 @@ recorded his mood, for 239 days (see also Chapter \@ref(csd)).
 To plot the irritation levels of this patient in the first six days, using the
 `ggplot` function from package `ggplot2` (which is in `tidyverse`), type:
 
-```{r r-irriplot, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study.", fig.asp = 0.4}
+```{r r-irriplot, eval = TRUE, warning = FALSE, fig.cap = "Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irration varied most at day 3.", fig.asp = 0.4}
 # Using ggplot to plot EMA time series.
 ggplot(data = subset(csd, dayno <= 6),
        mapping =  aes(x = beepno, y = mood_irritat)) + 
   geom_point() +  geom_step() + 
+  ylab("Irritation level") + 
   scale_x_continuous(breaks = 1:10) +
   facet_wrap(~ dayno, nrow = 2)
 ```

@@ -11,22 +11,22 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 +-----------------+-------------------+-----------------------------------------+
 | **Category**    |**Package**        | **Description**                         |
 +:================+:==================+:========================================+
-| Accelerometry   | GENEAread         | Import GENEActive data into R           |
+| Accelerometry   | GENEAread         | Import GENEActive data into R.          |
 +-----------------+-------------------+-----------------------------------------+
-|                 | GGIR              | Pre-process and analyze raw multi-day    |
+|                 | GGIR              | Pre-process and analyze raw multi-day   |
 |                 |                   | multi-day accelerometer data.           | 
 +-----------------+-------------------+-----------------------------------------+
 |                 | PhysicalActivity  | Analyze actigraph accelerometer data.   | 
 +-----------------+-------------------+-----------------------------------------+
-| Data Management | dplyr             | Data transformation                     | 
+| Data Management | dplyr             | Data transformation.                    | 
 | & Visual        |                   |                                         |
 | Exploration     |                   |                                         |
 +-----------------+-------------------+-----------------------------------------+
-|                 | ggplot2           | Create graphs                           |
+|                 | ggplot2           | Create graphs.                          |
 +-----------------+-------------------+-----------------------------------------+
-|                 | haven             | Import and export SPSS data files       |
+|                 | haven             | Import and export SPSS data files.      |
 +-----------------+-------------------+-----------------------------------------+
-|                 | lubridate         | Manipulate date and time variables      |
+|                 | lubridate         | Manipulate date and time variables.     |
 +-----------------+-------------------+-----------------------------------------+
 | Mixed-effects   | lme4              | Fit linear and nonlinear mixed-effects  |
 | Modeling        |                   | models. Fast alternative to             |
@@ -347,12 +347,12 @@ powerSim(model1,
 \index{Network analysis}
 
 When EMA is used to tap various symptoms, network analysis can reveal the
-dynamic interplay between these symptoms [@Borsboom2013]. Various packages
-exist to fit these networks in R. With these packages, it is relatively easy to
-fit a graphical network on multivariate data sets. If you are interested in
-conducting a network analysis, be sure to visit the Psycho-systems website, at
-<http://psychosystems.org>.
-
+dynamic interplay between these symptoms [@Borsboom2013; @Borsboom2017;
+@Bringmann2015]. Various packages exist to fit these networks in R. With these
+packages, it is relatively easy to fit a graphical network on multivariate data
+sets. If you are interested in conducting a network analysis, be sure to visit
+the Psycho-systems website, at <http://psychosystems.org>, or to register for the UvA 
+network school course (see: <http://psychosystems.org/NetworkSchool>).
 
 ### autovarCore
 \index{Packages!autovarCore}

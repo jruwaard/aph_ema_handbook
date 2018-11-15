@@ -306,8 +306,8 @@ project directory.
 |:---------------|:-------------------------------------|
 | Title          | Project title & Acronym              |
 | Description    | One-paragraph project description    |
-| Author         | author name, e-mail affiliation      |
-| Getting Started| instructions on how to get the project up and running on a local machine for development. |
+| Author         | Author name, e-mail affiliation      |
+| Getting Started| Instructions on how to get the project up and running on a local machine for development. |
 | Prerequisites  | A listing of software required (i.e. R packages), and instructions on how to install this software |
 | Contents       | A listing of project directories, with a brief description of their contents |
 | Restrictions   | Notes about potential data access limitations |

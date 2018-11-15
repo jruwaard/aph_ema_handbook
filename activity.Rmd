@@ -41,7 +41,7 @@ d <-  subset(genea,
               id == 1)
 
 # resample to 30 seconds
-d$timestamp <- lubridate::round_date(d$timestamp, "10 seconds")
+d$timestamp <- lubridate::round_date(d$timestamp, "30 seconds")
 d <- d %>% group_by(timestamp) %>% summarise_all(.funs = mean)
 
 d <- gather(d,
@@ -55,12 +55,12 @@ acc <- ggplot(subset(d, sensor == "x"), aes(timestamp, value)) +
 
 # gps
 d <-  subset(locations,
-              accuracy <= 100 &
+              accuracy <= 50 &
               lon >=  4.80 & lon <=  4.93 &
               lat >= 52.32 & lat <= 52.50)
 
 gps <- ggplot(subset(d, id == 1), aes(lon, lat)) +
-   geom_point(alpha = .1,  shape = 21, size = 3) + 
+   geom_point(alpha = .3,  shape = 21, size = 3) + 
    xlab("longitude") + ylab("latitude") +
    theme_classic(14)
 
@@ -72,16 +72,17 @@ grid.arrange(acc, gps, ncol=2, widths = c(500, 500))
 \index{Accelerometer} 
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure changes
-in acceleration (of the device, relative to earth's gravity), typically
-simultaneously on the vertical (Y), horizontal right-left (X) and horizontal
-front-back axis (Z). Through actigraphy, we study the frequency, duration, and
-intensity of physical activity. Figure \@ref(fig:genea-one-hour) shows one hour
-of data collected from a wrist-worn GENEActiv accelerometer. As can be seen,
-three accelerometers (X, Y, Z) were simultaneously providing data. Data were
-sampled with a frequency of 30 Hertz (Hz; thirty measurements per second - which
-is common), but sub-sampled here to 0.1Hz (one measurement every 10 seconds), for
-practical reasons. If we would have plotted the data at 30Hz, the plot would
-have included 108.000 data points. At 0.1Hz, this reduces to 3600 points.
+in acceleration forces (i.e., both static forces - earth's gravity - and dynamic
+forces - caused by movement), typically simultaneously on the vertical (Y),
+horizontal right-left (X) and horizontal front-back axis (Z). Through
+actigraphy, we study the frequency, duration, and intensity of physical
+activity. Figure \@ref(fig:genea-one-hour) shows one hour of data collected from
+a wrist-worn GENEActiv accelerometer. As can be seen, three accelerometers (X,
+Y, Z) were simultaneously providing data. Data were sampled with a frequency
+of 30 Hertz (Hz; thirty measurements per second - which is common), but
+sub-sampled here to 0.1Hz (one measurement every 10 seconds), for practical
+reasons. If we would have plotted the data at 30Hz, the plot would have
+included 108.000 data points. At 0.1Hz, this reduces to 360 points.
 
 ```{r genea-one-hour, fig.asp = 0.5, fig.cap = "One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)", echo = FALSE}
 # Plot one hour of accelerometer data.
@@ -199,7 +200,7 @@ d <- d %>%
 
 ggplot(d, aes(time, svm)) +
   geom_line() + ylab("ENMO") + 
-  geom_hline(yintercept = 0.1, color = "red") + 
+  geom_hline(yintercept = 0.125, color = "red") + 
   facet_grid(rows = vars(id)) + 
   theme_classic(12)
 ```
@@ -207,13 +208,12 @@ ggplot(d, aes(time, svm)) +
 \index{MVPA}
 
 For SVM and ENMO, cut-off values for various activity classes have been
-determined [@Dasilva2014; @Hildebrand2014; @Rowlands2016]. The red line in
-Figure \@ref(fig:genea-one-day) marks the ENMO cut-off for
-Moderate-to-Vigorous-Physical-Activity (MVPA), which is 0.1g (or 100
-milligravity units).
+determined [@Dasilva2014; @Hildebrand2014; @Kim2017; @Rowlands2016]. Although these cut-offs vary somewhat from study to study, a common ENMO cut-off for
+Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g [or 125
+milligravity units, @LamersENMOcutoff]. The red line in Figure \@ref(fig:genea-one-day) marks this cut-off.
 
 ```{r echo = FALSE}
-t <- table(d$id, d$svm > 0.1)
+t <- table(d$id, d$svm > 0.125)
 ```
 
 With this cut-off, we can summarize the two series shown in Figure
@@ -270,14 +270,15 @@ library(ggplot2)
 library(emaph)
 
 d <- subset(locations,
-            accuracy <= 100 &
+            accuracy <= 50 &
               lon >=  4.80 & lon <=  5.00 &
-              lat >= 52.25 & lat <= 52.50)
-
+              lat >= 52.25 & lat <= 52.50) %>% 
+  sample_n(4000)
+  
 ggplot(d, aes(lon, lat)) +
-  geom_point(alpha = .1,  shape = 21, size = 3) +
+  geom_point(alpha = .2,  shape = 21, size = 3) +
   xlab("longitude") + ylab("latitude") + 
-  facet_wrap(~ id) + theme_classic(12)
+  facet_wrap(~ id)
 ```
 
 Data-points are superposed, using transparent colors, to make a distinction

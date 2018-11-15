@@ -55,7 +55,7 @@ population.
 
 With the study hypotheses in place, theoretical constructs must be
 operationalized into quantitative measures. For this, you should consult the
-scientific literature on the reliability and validity of existing EMA measures.
+scientific literature on the reliability and validity of existing EMA measures [e.g., @Moore2016; @Rijsbergen2012].
 
 In active EMA research, complex multi-dimensional constructs such as mood and
 anxiety are often measured using single-item questions, to reduce the assessment
@@ -151,7 +151,7 @@ Conducting a power analysis can be easy or very difficult, depending on the
 complexity of the experimental design and the adopted statistical technique. For
 simple tests, such as the t-test and ANOVA, straightforward analytic solutions
 exist, which are implemented in readily available tools. In R, one of those
-tools is package `pwr`.
+tools is package `pwr` (which you can install, as you now know, via `install.packages('pwr')`).
 
 For example, to use `pwr` to calculate the power of a t-test to detect a
 moderate effect size (*d* = 0.5), with n = 30 per group, and a (two-sided)
@@ -170,7 +170,7 @@ pwr.t.test(d = 0.5,
 ```
 
 The power is 48% - not even close to the generally adopted standard of 80%. More
-participants are needed to detect the hypothesized effect.
+participants are needed to detect the hypothesized effect. Can you find the `n` for which power is 80%? 
 
 EMA study designs are often characterized by repeated measures, complex
 multi-level structures and the application of advanced statistical techniques.
@@ -255,11 +255,11 @@ In short, software can be classified as a medical device when it collects
 patient-specific data and when it is specifically intended for one of the
 above-mentioned objectives. In practice, the definition of medical devices
 leaves a lot of room for confusion. Researchers often struggle with the question
-whether their assessment tools should be considered an medical device or not.
-For this purpose, flowcharts exist that help to determine whether an app of
-product should be classified as a medical device [see, e.g., @Ekker2013, and
-http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows such a
-flow-chart.
+whether their assessment tools should be considered a medical device or not. For
+this purpose, flowcharts exist that help to determine whether an app or another
+software product should be classified as a medical device [see, e.g.,
+@Ekker2013, and http://cetool.nl/general/scanAid]. Figure \@ref(fig:fig3b) shows
+such a flow-chart.
 
 While planning your EMA study, you should also be mindful of the rules and
 regulations that apply to data collection, storage and sharing. From May 2018

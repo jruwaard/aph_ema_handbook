@@ -3,8 +3,8 @@
 
 Many R packages exist that can help you in the management and analysis of EMA
 data. In this chapter, a selection of these packages is discussed. For each, we
-provide a summary description, a code example code, and pointers to further
-documentation, to give you a head start in using the packages for your work.
+provide a summary description, example code, and pointers to further
+documentation, to give you a head start in using these packages for your work.
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
@@ -17,7 +17,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 |                 | haven             | Import and export SPSS data files.      |
 |                 | lubridate         | Manipulate date and time variables.     |
 | **Auto-regressive modeling**| autovarCore| Automate the construction of vector autoregressive models. |
-| **Mixed-effects Modeling** | lme4   | Fit linear and nonlinear mixed-effects models. Fast alternative to package 'nlme'.|   
+| **Mixed-effects Modeling** | lme4   | Fit linear and nonlinear mixed-effects models. Fast alternative to package `nlme`.|   
 |                 | nlme              | Fit linear and nonlinear mixed effects models. Pre-dates package `lme4`, but is still used because it a provides advanced options to model correlational structures |
 | **Simulation**  | simr              | Simulation-based power calculations for mixed models.|
 |                 | simstudy          | Simulate complex study data. | 
@@ -35,7 +35,7 @@ detected, and summarizing measures, such as activity counts and
 energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs). 
 
-### GENEAread / GGIR
+### GENEAread
 \index{Packages!GENEAread}
 \index{Packages!GGIR}
 
@@ -52,14 +52,13 @@ library(GENEAread)
 library(ggplot2)
 library(tidyr)
 
-dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
-                verbose = FALSE, downsample = 20)
+out <- capture.output(
+  dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
+                  verbose = FALSE, downsample = 20))
 
 d <- as.data.frame(dat$data.out)
 d <- gather(d, key = "sensor", value = "value", -timestamp)
-d$timestamp <- as.POSIXct(d$timestamp, 
-                          origin = "1970-01-01",
-                          tz = "UTC")
+d$timestamp <- as.POSIXct(d$timestamp, origin = "1970-01-01", tz = "UTC")
 
 ggplot(d, aes(x = timestamp, y = value)) + 
   geom_line() + 
@@ -104,9 +103,7 @@ phenomena over time, VAR can provide insight in how these phenomena interact.
 One challenge in VAR modelling is that many alternative models potentially
 exist, Package *autovarCore* [@R-autovarCore] was developed to help
 researchers to find the VAR model with the best fit to a given time-series data
-set.
-
-In the (unrealistic) example below, function `autovar` is used to detect that
+set. In the example below, function `autovar` is used to detect that
 changes in depression are positively related to past (lag 1) values of activity,
 in a simulated data set:
 
@@ -216,7 +213,9 @@ g + facet_wrap(~ ID)
 \index{Packages!haven}
 \index{SPSS}
 
-With package *haven* [@R-haven], SPSS, STATA and SAS files can be read into R. A particular advantage is that variables definitions are retained (in attributes of the columns in the R `data.frames`).
+With package *haven* [@R-haven], SPSS, STATA and SAS files can be read into R.
+A particular advantage of the `read.sav` function is that SPSS variables
+definitions are retained (in attributes of the columns in the R `data.frames`).
 
 ```{r haven-example, warning = FALSE, message = FALSE}
 # Read SPSS data
@@ -310,7 +309,7 @@ fm <- lmer(distance ~ age + Sex + (1 | Subject), data = nlme::Orthodont)
 fixef(fm)
 ```
 
-## Power analysis
+## Simulation
 
 ### simr
 \index{Packages!simr}
@@ -357,6 +356,19 @@ powerSim(model1,
 ```
 
 
+## simstudy
+
+```{r simstudy-example}
+library(simstudy)
+
+def <- defData(varname = "nr", dist = "nonrandom", formula = 7, id = "idnum")
+def <- defData(def, varname = "x1", dist = "uniform", formula = "10;20")
+def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
+
+genData(5, def)
+```
+
+
 ## Symptom Network Analysis
 \index{Symptom networks}
 \index{Network analysis}
@@ -383,7 +395,7 @@ In the example below, `qgraph` is used to fit a network on the 'Critical Slowing
 Down' (CSD) data set, which is included in package `emaph` (see Chapter
 \@ref(csd)).
 
-```{r qgraph-example, out.width = "100%", fig.asp = .4, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
+```{r qgraph-example, out.width = "100%", fig.asp = .3, message = FALSE, warning = FALSE, fig.cap="Network of mood items from CSD data set"}
 # Fitting a network, with qgraph.
 
 library(qgraph)
@@ -406,7 +418,7 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
 
 Package `qgraph` also provides functions to analyze qualities of fitted networks, such as the centrality of nodes in the network. In the network plot above, node `md_s` appears to be a central node in the network. This is confirmed by calling `centralityPlot`:   
 
-```{r qgraph-centrality-example, warning = FALSE, message = FALSE, out.width="100%", fig.asp = .4}
+```{r qgraph-centrality-example, warning = FALSE, message = FALSE, out.width="100%", fig.asp = .3}
 centralityPlot(g)
 ```
 

@@ -9,28 +9,28 @@ This chapter summarizes recent EMA research projects within the APH Mental Healt
 Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 | Focus / PI          | Project                 | APH MH Organization |
-|:--------------------|:------------------------|:--------------------|
-| **Depression**      |                         |                     |
-| Bockting            | Imagine Your Mood       | AMC                 |
-|                     | Stay Fine               |                     |
-| Penninx and Lamers  | NESDA                   | VUmc / GGZ inGeest  |
-|                     | RADAR-CNS               | VUmc / GGZ inGeest  |
-| Riper and Smit      | ICT4Depression          | VU / GGZ inGeest    |
-|                     | E-COMPARED              | VU / GGZ inGeest    |
+|:----------------------|:----------------------|:--------------------|
+| **Depression**        |                       |                     |
+| Bockting              | Imagine Your Mood     | AMC                 |
+|                       | Stay Fine             |                     |
+| Penninx and Lamers    | NESDA                 | VUmc / GGZ inGeest  |
+|                       | RADAR-CNS             | VUmc / GGZ inGeest  |
+| Riper and Smit        | ICT4Depression        | VU / GGZ inGeest    |
+|                       | E-COMPARED            | VU / GGZ inGeest    |
 | **Psychosomatic symptoms** |                  |                     |
-| Knoop               | Chronic Fatigue study   | AMC                 |
-| Snoek               | MERITS (type 1 diabetes)| VUmc                |
-| Sprangers           | FAntasTIGUE (fatigue)   | AMC                 |
-|                     | IMPACT (Heart failure)  | AMC                 |
+| Knoop                 | Chronic Fatigue study | AMC                 |
+| Snoek                 | MERITS                | VUmc                |
+| Sprangers             | FAntasTIGUE           | AMC                 |
+|                       | IMPACT                | AMC                 |
 | **Psychotic symptoms**|                       |                     |
-| Van der Gaag        | TemStem                 | VU                  |  
-|                     | VRETp                   | VU                  |
-| **Suicidal ideation**  |                      |                     |
-| Van Ballegooijen    | CASPAR                  | VU                  |
-| **Sleep**           |                         |                     |
-| Van Someren         |                         | AMC / GGZ inGeest   |
-| **Stress & Emotion**|                         |                     |
-| De Geus         | VU-AMS                      | VU                  |
+| Van der Gaag          | TemStem               | VU                  |  
+|                       | VRETp                 | VU                  |
+| **Suicidal ideation** |                       |                     |
+| Van Ballegooijen      | CASPAR                | VU                  |
+| **Sleep**             |                       |                     |
+| Van Someren           |                       | AMC / GGZ inGeest   |
+| **Stress & Emotion**  |                       |                     |
+| De Geus               | VU-AMS                | VU                  |
 
 
 ## Depression
@@ -68,8 +68,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 \index{NESDA}
 \index{RoQua}
 
-| **Aspect**     | **Description**                                              | 
-|:---------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team** | Femke Lamers, PhD, Brenda Penninx, PhD (VUmc), Harriette Riese, PhD (UMCG), Robert Schoevers, PhD (UMCG), the NESDA consortium|
 | **APH site** | VUmc, GGZ inGeest, Amsterdam|
 | **Project(s)**   | The main aim of NESDA is to examine the long-term course and prognosis of anxiety and depression [@Penninx2008]. Within the 9-year follow-up of the NESDA study (2015 - 2017), NESDA participants (n = 384) were invited for an EMA diary/actigraphy study. |
@@ -84,8 +84,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 #### RADAR-CNS
 \index{RADAR-CNS}
 
-| **Aspect**       | **Description**                                              | 
-|:-----------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team** | Femke Lamers, PhD; Brenda Penninx, PhD; Sonia Difrancesco, MSc, and the RADAR consortium.  |
 | **APH site** | VUmc, GGZ inGeest |
 | **Project** | The European (EU H2020-IMI) *RADAR-CNS* project (Remote Assessment of Disease and Relapse - Central Nervous System; http://www.radar-cns.org/) aims to study the potential of wearable devices and smartphone technology to help prevent and treat depression, multiple sclerosis and epilepsy. The project, which started in 2016, was designed to examine how remote measurement technologies can monitor and improve quality of life and psychological well-being of patients. Within this project, the VUmc/GGZ inGeest research site focuses on depression (RADAR-MDD), in collaboration with King's College, London (KCL). |
@@ -105,8 +105,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 *Prof. dr. Heleen Riper* is affiliated with the department of clinical, neuro- and developmental psychology of the Vrije Universiteit and specialized mental health organization GGZ inGeest, Amsterdam. *Prof. dr. Jan Smit* is affiliated with the department of psychiatry of the Vrije Universiteit Medical Center (VUmc) and GGZ inGeest, Amsterdam. Riper and Smit have been driving forces behind the development of *Moodbuster* (http://www.ict4depression.eu/moodbuster/), a research platform for the delivery of online and blended psychotherapy, which has built-in, integrated EMA functionality.
 
-| **Aspect**        | **Description**                                              | 
-|:------------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team**  | Heleen Riper, PhD, Jan Smit, PhD, Lise Kemmeren (GGz InGeest) and the Moodbuster/E-COMPARED consortium |
 | **APH site**  | Vrije Universiteit Amsterdam; GGZ inGeest (and other organisations)|
 | **Project(s)**    | Moodbuster was developed in the European FP7 project “ICT4Depression” (@warmerdam2012; http://www.ict4depression.eu/), and applied in the Horizon 2020 FP7 EU-project E-COMPARED [European COMPARative Effectiveness research on blended Depression treatment versus treatment-as-usual; @Kleiboer2016; @kemmeren2016; <http://www.e-compared.eu/>], Moodbuster will also be used in the EU ImpleMentAll project (http://www.implementall.eu) and in several other clinical trials that are currently (October 2018) in preparation. |
@@ -126,8 +126,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 **Prof. dr. Hans Knoop** is professor of evidence-based psychological and behavioral interventions for medical conditions and somatic symptoms at the department of Medical Psychology of the Amsterdam Medical Center (AMC). In 2015/2016, Knoop and colleagues ran an EMA study at the Expert Centre for Chronic Fatigue (ECCF; http://nkcv.nl/).
 
-| **Aspect**     | **Description**                                                  | 
-|:---------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team** | Margreet Worm-Smeitink, MSc; Hans Knoop, PhD, in collaboration with Judith Rosmalen, PhD, Anne van Gils, MSc, Rei Monden, PhD, and others |
 | **APH site** | AMC |
 | **Project** | The *CFS EMA study* was designed to investigate - through time-series analyses - whether there are differences in perpetuators of fatigue between individual patients. |
@@ -147,8 +147,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 \index{FAntasTIQUE}
 \index{PsyMate}
 
-| **Aspect**       | **Description**                                              | 
-|:-----------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team** | Mirjam Sprangers, PhD, in collaboration with Martijn Spruit, PhD (PI); Yvonne Goërtz, MSc; Zjala Ebadi (from July 2018), MSc, Melissa Thong, PhD, Daisy Janssen, MD, PhD, Jeanette Peters, PhD, Jan Vercoulen, PhD, Chris Burtin, MSc, Yvonne Meertens-Kerris, Arnold Coors, Jean Muris, MD, PhD, Emiel Wouters, MD, PhD, Judith Prins, PhD, and Martijn Spruit, PhD |
 | **APH site**| AMC (in collaboration with Ciro-Horn, Maastricht UMC, Radboud UMC, and Hasselt University) |
 | **Project goals**| The *FAntasTIGUE* study examines fatigue in patients with chronic obstructive pulmonary disease (COPD; n = 400), by evaluating the course of fatigue, precipitating/perpetuating factors and hospitalization. A secondary aim is to identify diurnal fluctuations in fatigue, by using EMA in a sub-sample of participants (n = 40) [@Goertz2018].|
@@ -160,8 +160,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 \index{IMPACT}
 \index{PsyMate}
 
-| **Aspect**        | **Description**                                              | 
-|:------------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team**  | Mirjam Sprangers, PhD, with Iris Hartog, MSc; Justine Netjes (until 2017), MSc; Tom Oreel, MSc; Pythia Nieuwkerk, PhD; Michael Scherer-Rath, PhD; José Henriques, MD, PhD; Hanneke van Laarhoven, MD, PhD  |
 | **APH site**  | AMC |
 | **Project**       | The *IMPACT* project (<http://www.impactonderzoek.nl/>) is an NWO-funded study targeting the Quality of Life (QoL) of patients with multiple chronic morbidities, specifically those undergoing a cardiac intervention. The project aims to improve the conceptualization of QoL and enhance the sensitivity and comprehensiveness of its measurement by taking the trait-state distinction, contextual factors, and response shift into account). Participants are cardiac patients with comorbidities who were scheduled for elective percutaneous coronary intervention (PCI) or elective coronary artery bypass graft (CABG) (N = 320). In a sub-sample of participants, QoL is monitored through EMA (n = 37), to monitor QoL states. The study has a longitudinal design, with three EMA data collection periods: 1) pre-treatment, 2) two weeks after treatment for PCI patients or 3 months post-treatment for CABG patients, and 3) six months post-treatment. |
@@ -176,8 +176,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 **Prof. dr. Frank Snoek** is Professor of Medical Psychology, specialized in psycho-social diabetology. He heads the Diabetes Psychology Research Group (http://www.vumc.com/branch/diabetes-psychology/) and is consulting clinical psychologist for the VUmc Diabetes Center http://www.vumc.nl/afdelingen/diabetescentrum/). Snoek and co-workers use EMA to study the relationship between blood glucose variability and wellbeing.
 
-| **Aspect**       | **Description**                                              | 
-|:-----------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team** | Frank J. Snoek, PhD, Maartje de Wit, PhD, Cat Racca, MSC, Linda T. Muijs, MSc |
 | **APH site** | VUmc |
 | **Project**      | In the MERITS study ('Momentary assessment of patient Experiences in Real life of Insulin Glargine 300 in Type 1 diabetes'), Snoek an co-workers use EMA to explorer whether a) blood glucose variability is associated with changes in wellbeing (mood / energy) during waking time, whether b)  switching to U-300 results in less glucose variability and translates into improved mood over time within patients, and whether c) if individual differences (profiles) can be distinguished with regard to the (strength of the) association between glucose variability and changes in mood. 
@@ -185,8 +185,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 | **Platform used**| Ilumivu (http://ilumivu.com, see also Chapter \@ref(ema-instruments-catalogue)). |
 | **Contact**      | http://research.vumc.nl/en/persons/frank-snoek |
 |                  | http://research.vumc.nl/en/persons/maartje-de-wit |
-                  | http://research.vumc.nl/en/persons/cati-racca |
-                  | http://research.vumc.nl/en/persons/linda-muijs |
+|                  | http://research.vumc.nl/en/persons/cati-racca |
+|                  | http://research.vumc.nl/en/persons/linda-muijs |
 
 
 ## Suicidal Ideation
@@ -197,8 +197,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 **Dr. Wouter Van Ballegooijen** is a post-doctoral researcher at the VU and GGZ inGeest, specialized in the use of information and communication technology in mental health care and suicide prevention. In the 'Continuous Assessment for Suicide Prevention And Research' study [*CASPAR*; @Nuij2018] Van Ballegooijen and colleagues use EMA to study pathways to suicidal behavior.
 
-| **Aspect**       | **Description**                                              | 
-|:-----------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Project team** | Wouter van Ballegooijen, PhD; Chani Nuij, MSc.; Ad Kerkhof, PhD; Jan Smit, PhD; Heleen Riper, PhD, and others |
 | **APH site** | VU, VUmc, GGZ inGeest |
 | **Project**      |  The 'Continuous Assessment for Suicide Prevention And Research' (CASPAR) study ([@Nuij2018) aims to evaluate the feasibility of mobile safety planning and daily mobile self-monitoring in routine care treatment for patients with major depression or dysthymia and suicide risk in mental health care. Feasibility will be operationalized in terms of uptake, usage, acceptability, usability and patient satisfaction. EMA data will be used to: (a) empirically validate hypothesized psychological processes and stages of suicide pathways, (b) identify individual pathways to suicidal behavior, and (c) profile (sub)types of suicidality. The project is expected to result in 1) an interactive smartphone-based safety plan that patients can access 24/7, 2) increased disease awareness of patients due to self-monitoring, and 3) input for the national and international field of mental health care by sharing our results and our data, ultimately contributing to more personalized interventions according to precision medicine principles, and more effective suicide prevention. |
@@ -219,8 +219,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 #### TemStem
 \index{TemStem}
 
-| **Aspect**       | **Description**                                              | 
-|:-----------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Team** | Mark van der Gaag, PhD, Alyssa Jongeneel, MSc, David van den Berg, PhD, Dorien Scheffers, MSc |
 | **APH site** | Vrije Universiteit Amsterdam, Parnassia Psychiatric Institute
 | **Project** | The TemStem project focusses on people who suffer from hearing voices and are obstructed by them in their daily life. Study participants install an app that contains both an EMI and EMA function, which is designed to reduce distress and dysfunction caused by auditory verbal hallucinations [@jongeneel2018]. Components of the app include 1) coping: addressing verbal working memory phonological loop with a language task, thereby blocking the hearing of voices, 2) positive reinforcement: decreasing self-reported negative self-esteem themes, 3) treatment: reducing emotional response to memories associated with voices by taxing the auditory working memory during recall of negative auditory memories (as in EMDR therapy). The TemStem study aims to explore the effect of the app on distress and dysfunction in an RCT, specifically with regard to the effect of TemStem on frequency and severity of AVH. Additional analyses will focus on the identification of working mechanisms (predictors and mediators of effects), and the usability of TemStem.|
@@ -235,8 +235,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 \index{VRETp}
 \index{PsyMate}
 
-| **Aspect**       | **Description**                                              | 
-|:-----------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Team**         | Mark van der Gaag, PhD, Roos Pot-Kolder, MSc, with others
 | **APH site** | Vrije Universiteit Amsterdam, VUmc, (in collaboration with UMC Groningen, Maastricht University) |
 | **Project**      | In the context of a trail exploring the effect of virtual reality exposure therapy on social participation in people with a psychotic disorder [VRETp; n = 116, @pot2016], EMA data were collected to assess changes in social functioning and paranoid ideation.
@@ -253,8 +253,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 *Prof. dr. Eus van Someren* is affiliated with the department of sleep and cognition of the Netherlands Institute for Neuroscience (http://herseninstituut.nl/), the Department of Psychiatry of VUmc and GGZ inGeest, Amsterdam. His group focusses on the study of healthy and disturbed sleep, using neuro-imaging, actigraphy and EMA. Here, two examples of such studies are provided. 
 
-| **Aspect**     | **Description**                                          | 
-|:---------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Team** | Eus van Someren, PhD (department head), with Bart te Lindert, MSc, Wisse van der Meijden, MSc, Tessa Blanken, MSc, Michele Colombo, PhD, Kim Dekker, MSc, Jeanne Leerssen, MSc, Rick Wassing, MSc.  |
 | **APH site** | The Netherlands Institute for Neuroscience, VUmc, GGZ inGeest,  |
 | **Project(s)** | The Van Someren group is involved in a variety of projects in which sensory data are collected [see, e.g., @VanSomeren2011, @VanSomeren2000]. Exemplary of current research activity is the work of PhD candidates *Wisse van der Meijden* and *Bart te Lindert*. Van der Meijden studies, among other things, the interplay between light, vigilance, and sleep. A recent study associated the post-illumination pupil response (PIPR) to blue light with multiple indices of sleep timing: a) a questionnaire on habitual lights-out time, sleep onset latency, and final wake-up time (Munich Chronotype Questionnaire, MTCQ [@Roenneberg2003]); b) a one-week sleep diary on actual wake/sleep times; and c) actigraphy.  Participants (adolescents and young adults, n = 71) with a later sleep timing had a stronger responsiveness to blue light. The mid-sleep timing estimates from sleep diaries and actigraphy shared 94.5% of their inter-individual variance [@Meijden2016]. | 
@@ -274,8 +274,8 @@ Table: (\#tab:APHresearch) Overview of EMA research in the APH MH consortium.
 
 *Prof. dr. Eco de Geus* is head of the department of Biological Psychology and co-director of the Netherlands Twin Registry at the VU University. De Geus has been the driving force behind the development of the VU University Ambulatory Monitoring System (VU-AMS; http://www.vu-ams.nl/vu-ams/), a non-invasive wearable device that is used for continuous ambulatory measurement of the autonomic nervous system.
 
-| Aspect         | Description                                                  | 
-|:---------------|:-------------------------------------------------------------|
+| **Aspect**           | **Description**                                              | 
+|:---------------------|:-------------------------------------------------------------|
 | **Team** | Eco de Geus, PhD; Gonneke Willemsen, PhD; Martin Gevonden, PhD; Denise van der Mee, MSc, Mandy Tjew-A-Sin, MSc; Cor Stoof, MSc |
 | **APH site** | VU |
 | **Project** | VU-AMS was developed at the department of Biological Psychology of the Vrije Universiteit Amsterdam. The system is used worldwide by many research groups, to study stress and emotion in both laboratory and naturalistic settings [@DeGeus1995; @Geus1996; @Willemsen1996]. VU-AMS has been used in the study of ADHD, aggression, anxiety and depressive disorders, mental, social and work-related stress, circadian rhythms, hyperventilation, migraine, sleep, and in studies linking the autonomic nervous system to metabolic and immunological risk factors (see <http://www.vu-ams.nl/research/publications/> and <http://www.vu-ams.nl/research/phd-theses/>). Current projects include: 

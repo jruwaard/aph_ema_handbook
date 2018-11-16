@@ -31,7 +31,7 @@ library(emaph)
 d <- generate_features_dataset(seed = 123)
 ```
 
-```{r feat-plot, echo = FALSE, out.width = "100%", fig.asp = .5, fig.cap = "A simulated three-week time-series of EMA mood ratings."}
+```{r feat-plot, echo = FALSE, out.width = "100%", fig.asp = .4, fig.cap = "A simulated three-week time-series of EMA mood ratings."}
 # plot signal
 e <- subset(d, !is.na(s))
 ggplot(e, aes(x = t, y = s)) + 

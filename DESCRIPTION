@@ -1,6 +1,7 @@
-Package: apa.ema.handbook
+Package: aph.ema.handbook
 Title: Ecological Momentary Assessment in Mental Health Research
 Version: 1.0
+Date: 2018-11-17
 Authors@R: c(
   person("Jeroen", "Ruwaard", , "jeroen.ruwaard@ggzingeest.nl", c("aut", "cre")),
   person("Lisa", "Kooistra", , "l.kooistra@ggzingeest.nl", "aut"),

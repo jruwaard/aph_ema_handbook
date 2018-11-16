@@ -1187,13 +1187,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.4027, df = 197.42, p-value = 0.6876}
+\CommentTok{#> t = -0.63201, df = 197.18, p-value = 0.5281}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.3236175  0.2138621}
+\CommentTok{#>  -0.3808144  0.1959674}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.02988323  0.02499448}
+\CommentTok{#> -0.01695238  0.07547113}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1546,7 +1546,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4751}
+\CommentTok{#> [1] 0.4717}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5475,7 +5475,7 @@ using the packages for your work.
 \caption{\label{tab:rcat} List of R packages that are useful in EMA
 research.}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.21\columnwidth}\raggedright\strut
 \textbf{Category}\strut
 \end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\raggedright\strut
 \textbf{Package}\strut
@@ -5485,7 +5485,7 @@ research.}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.21\columnwidth}\raggedright\strut
 \textbf{Category}\strut
 \end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\raggedright\strut
 \textbf{Package}\strut
@@ -5494,132 +5494,107 @@ research.}\tabularnewline
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \textbf{Accelerometry}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-GENEAread\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Import GENEActive data into R.\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+GENEAread / GGIR\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Import, pre-process and analyze raw accelerometer data.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-GGIR\\
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Pre-process and analyze raw multi-day\\
-multi-day accelerometer data.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
 PhysicalActivity\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Analyze actigraph accelerometer data.\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Analyze Actigraph accelerometer data.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\textbf{Data Management }\& Visual** *Exploration**\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-**\textbar{} dplyr \textbar{} \textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Data transformation.\\[2\baselineskip]\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\textbf{Data Management \& Visual Exploration}\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+dplyr\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Data transformation.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
 ggplot2\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Create graphs.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
 haven\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Import and export SPSS data files.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
 lubridate\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Manipulate date and time variables.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \textbf{Auto-regressive modeling}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-autovarCore\\
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Automate the construction of vector\\
-autoregressive models.\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+autovarCore\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Automate the construction of vector autoregressive models.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \textbf{Mixed-effects Modeling}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-lme4\\[2\baselineskip]\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Fit linear and nonlinear mixed-effects\\
-models. Fast alternative to\\
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+lme4\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Fit linear and nonlinear mixed-effects models. Fast alternative to
 package `nlme'.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-nlme\\[4\baselineskip]\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Fit linear and nonlinear mixed effects\\
-models. Pre-dates package `lme4', but is\\
-still used because it a provides more\\
-advanced options to model correlational\\
-structures in the data.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-**Power Analysis*\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-*\textbar{} simr \textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Simulation-based power calculations for\\
-mixed models.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-\textbf{Simulation}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-simstudy\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Simulate study data.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
-\textbf{Spatio-temporal analysis}\strut
 \end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-** \textbar{} adehabitatHR \textbar{} \textbar{}\strut
+nlme\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-\textbar{} Developed for home range estimation of \textbar{} wild
-animals from GPS data. Useful for \textbar{} human data as well.\strut
+Fit linear and nonlinear mixed effects models. Pre-dates package
+\texttt{lme4}, but is still used because it a provides advanced options
+to model correlational structures\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-**Symptom Network\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-s** \textbar{} bootnet \textbar{}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Assess the stability of symptom\\
-networks.\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\textbf{Simulation}\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+simr\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Simulation-based power calculations for mixed models.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+simstudy\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Simulate complex study data.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\textbf{Symptom Networks}\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+bootnet\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Assess the stability of symptom networks.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
 qgraph\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Estimate and plot symptom networks.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \textbf{Time series analysis}\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-lomb\\
-\strut
-\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
-Calculate the Lomb-Scargle Periodogram\\
-for unevenly sampled time series.\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+lomb\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Calculate the Lomb-Scargle Periodogram for unevenly sampled time
+series.\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -5634,14 +5609,18 @@ as activity counts and energy-expenditure measures, have to be
 calculated from imputed triangular (x, y, x) data, often in several time
 windows (i.e., epochs).
 
-\subsection{GENEAread}\label{genearead}
+\subsection{GENEAread / GGIR}\label{genearead-ggir}
 
-\index{Packages!GENEAread}
+\index{Packages!GENEAread} \index{Packages!GGIR}
 
-GENEActiv, sold by Activinsights, is a wrist-worn tri-axial
-accelerometer that is often used in clinical research studies. With
-package \textbf{GENEAread} \citep{R_GENEAread}, raw data can be imported
-into R for further processing, as illustrated below.
+Package \emph{GGIR} \citep{R-GGIR} is a package to pre-process raw
+accelerometry data from three brands of wearables that are widely used
+in sleep and physical activity research:
+\href{https://www.geneactiv.org/}{GENEActiv},
+\href{http://actigraphcorp.com/}{ActiGraph} and
+\href{http://axivity.com/}{Axivity}. GGIR includes package
+\textbf{GENEAread} \citep[GENEAread]{R}, with which raw data can be
+imported into R for further processing, as illustrated below.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5652,7 +5631,7 @@ into R for further processing, as illustrated below.
 
 \NormalTok{dat <-}\StringTok{ }\KeywordTok{read.bin}\NormalTok{(}\KeywordTok{system.file}\NormalTok{(}\StringTok{"binfile/TESTfile.bin"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"GENEAread"}\NormalTok{),}
                 \DataTypeTok{verbose =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{downsample =} \DecValTok{20}\NormalTok{)}
-\CommentTok{#> Processing took: 0.085 secs .}
+\CommentTok{#> Processing took: 0.178 secs .}
 \CommentTok{#> Loaded 1560 records (Approx  0 MB of RAM)}
 \CommentTok{#> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)}
 
@@ -5677,23 +5656,13 @@ into R for further processing, as illustrated below.
 \caption{Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).}\label{fig:genearead-example}
 \end{figure}
 
-\subsection{GGIR}\label{ggir}
-
-\index{Packages!GGIR}
-
-Package \emph{GGIR} \citep{R-GGIR} is a package to pre-process raw
-accelerometry data from three brands of wearables that are widely used
-in sleep and physical activity research:
-\href{https://www.geneactiv.org/}{GENEActiv},
-\href{http://actigraphcorp.com/}{ActiGraph} and
-\href{http://axivity.com/}{Axivity}.
-
 \subsection{PhysicalActivity}\label{physicalactivity}
 
 \index{Packages!PhysicalActivity}
 
 Package \emph{PhysicalActivity} \citep{R-PhysicalActivity} provides an
-alternative to package \texttt{GGIR}, when ActiGraph data are available.
+alternative to packages \texttt{GGIR} and \texttt{GENEAread}, when
+\href{https://actigraphcorp.com/}{ActiGraph} data are available.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5763,24 +5732,23 @@ values of activity, in a simulated data set:
 \KeywordTok{summary}\NormalTok{(models_found[[}\DecValTok{1}\NormalTok{]]}\OperatorTok{$}\NormalTok{varest}\OperatorTok{$}\NormalTok{varresult}\OperatorTok{$}\NormalTok{depression)}
 \CommentTok{#> }
 \CommentTok{#> Call:}
-\CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
+\CommentTok{#> lm(formula = y ~ -1 + ., data = datamat)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.19318 -0.50293 -0.02582  0.59448  2.06502 }
+\CommentTok{#> -2.16684 -0.70663 -0.07416  0.55735  2.51048 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.56051    0.08640   6.488 4.04e-09 ***}
-\CommentTok{#> depression.l1  0.01631    0.08619   0.189    0.850    }
-\CommentTok{#> depression.l2 -0.02220    0.08759  -0.253    0.800    }
-\CommentTok{#> const          0.11889    0.09230   1.288    0.201    }
+\CommentTok{#> activity.l1    0.50159    0.10708   4.684 9.25e-06 ***}
+\CommentTok{#> depression.l1  0.14209    0.09166   1.550    0.124    }
+\CommentTok{#> const          0.09227    0.10229   0.902    0.369    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.9049 on 94 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.3133, Adjusted R-squared:  0.2914 }
-\CommentTok{#> F-statistic: 14.29 on 3 and 94 DF,  p-value: 9.507e-08}
+\CommentTok{#> Residual standard error: 1.015 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.2048, Adjusted R-squared:  0.1882 }
+\CommentTok{#> F-statistic: 12.36 on 2 and 96 DF,  p-value: 1.669e-05}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5835,15 +5803,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & -0.4404972\\
+1 & 0.3668117\\
 \hline
-2 & -0.4235974\\
+2 & 0.1445131\\
 \hline
-3 & 0.0937901\\
+3 & 0.4324790\\
 \hline
-4 & -0.4157054\\
+4 & -0.1027515\\
 \hline
-5 & -0.0391835\\
+5 & -0.3770372\\
 \hline
 \end{tabular}
 
@@ -6093,7 +6061,7 @@ the model), to determine the power of the test.
          \DataTypeTok{nsim =} \DecValTok{10}\NormalTok{, }\CommentTok{# set to high value for better results}
          \DataTypeTok{progress =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> Power for predictor 'time:group', (95% confidence interval):}
-\CommentTok{#>       100.0% (69.15, 100.0)}
+\CommentTok{#>       90.00% (55.50, 99.75)}
 \CommentTok{#> }
 \CommentTok{#> Test: Likelihood ratio}
 \CommentTok{#>       Effect size for time:group is -0.50}
@@ -6101,7 +6069,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 5 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6117,9 +6085,12 @@ easy to fit a graphical network on multivariate data sets. If you are
 interested in conducting a network analysis, be sure to visit the
 Psycho-systems website, at \url{http://psychosystems.org}, or to
 register for the UvA network school course (see:
-\url{http://psychosystems.org/NetworkSchool}). Excellent introductions
-in how to fit networks on R can also be found at
-\url{http://sachaepskamp.com/files/Cookbook.html} and
+\url{http://psychosystems.org/NetworkSchool}). A complete list of
+software related to network analysis from the Psycho-systems group is
+maintained at \url{http://psychosystems.org/software/}. Excellent
+tutorials can also be found at
+\url{http://psych-networks.com/tutorials/} and at
+\url{http://sachaepskamp.com/files/Cookbook.html}.
 
 \subsection{qgraph}\label{qgraph}
 
@@ -6167,7 +6138,7 @@ In the example below, \texttt{qgraph} is used to fit a network on the
 Package \texttt{qgraph} also provides functions to analyze qualities of
 fitted networks, such as the centrality of nodes in the network. In the
 network plot above, node \texttt{md\_s} appears to be a central node in
-the network. This is confirmed by the \texttt{centralityPlot}:
+the network. This is confirmed by calling \texttt{centralityPlot}:
 
 \begin{Shaded}
 \begin{Highlighting}[]

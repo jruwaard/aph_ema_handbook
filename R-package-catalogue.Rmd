@@ -8,56 +8,22 @@ documentation, to give you a head start in using the packages for your work.
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
-+-----------------+-------------------+------------------------------------------+
-| **Category**    |**Package**        | **Description**                          |
-+:================+:==================+:=========================================+
-| **Accelerometry**| GENEAread         | Import GENEActive data into R.          |
-+------------------+-------------------+-----------------------------------------+
-|                  | GGIR              | Pre-process and analyze raw multi-day   |
-|                  |                   | multi-day accelerometer data.           | 
-+------------------+-------------------+-----------------------------------------+
-|                  | PhysicalActivity  | Analyze actigraph accelerometer data.   | 
-+------------------+-------------------+-----------------------------------------+
-| **Data Management**| dplyr           | Data transformation.                    | 
-| **& Visual**     |                   |                                         |
-| *Exploration**   |                   |                                         |
-+------------------+-------------------+-----------------------------------------+
-|                  | ggplot2           | Create graphs.                          |
-+------------------+-------------------+-----------------------------------------+
-|                  | haven             | Import and export SPSS data files.      |
-+------------------+-------------------+-----------------------------------------+
-|                  | lubridate         | Manipulate date and time variables.     |
-+------------------+-------------------+-----------------------------------------+
-| **Auto-regressive| autovarCore       | Automate the construction of vector     |     
-| modeling**       |                   | autoregressive models.                  |
-+------------------+-------------------+-----------------------------------------+
-| **Mixed-effects  | lme4              | Fit linear and nonlinear mixed-effects  |
-| Modeling**       |                   | models. Fast alternative to             |
-|                  |                   | package 'nlme'.                         |
-+------------------+-------------------+-----------------------------------------+
-|                  | nlme              | Fit linear and nonlinear mixed effects  |
-|                  |                   | models. Pre-dates package 'lme4', but is|
-|                  |                   | still used because it a provides more   |
-|                  |                   | advanced options to model correlational |
-|                  |                   | structures in the data.                 |
-+------------------+-------------------+-----------------------------------------+
-| **Power Analysis**| simr              | Simulation-based power calculations for |
-|                   |                   | mixed models.                           | 
-+-------------------+-------------------+-----------------------------------------+
-| **Simulation**    | simstudy          | Simulate study data.                    | 
-+-------------------+-------------------+-----------------------------------------+
-| **Spatio-temporal** | adehabitatHR      | Developed for home range estimation of  |
-| analysis**        |                   | wild animals from GPS data. Useful for  |
-|                   |                   | human data as well.                     | 
-+-------------------+-------------------+-----------------------------------------+
-| **Symptom Networks** | bootnet        | Assess the stability of symptom         |
-|                   |                   | networks.                               |
-+-------------------+-------------------+-----------------------------------------+
-|                   | qgraph            | Estimate and plot symptom networks.     |  
-+-------------------+-------------------+-----------------------------------------+
-| **Time series     | lomb              | Calculate the Lomb-Scargle Periodogram  |
-| analysis**        |                   | for unevenly sampled time series.       |
-+-------------------+-------------------+-----------------------------------------+
+| **Category**    |**Package**        | **Description**                         |
+|:----------------|:------------------|:----------------------------------------|
+| **Accelerometry**| GENEAread / GGIR | Import, pre-process and analyze raw accelerometer data. |
+|                 | PhysicalActivity  | Analyze Actigraph accelerometer data.   | 
+| **Data Management & Visual Exploration**| dplyr | Data transformation.            |
+|                 | ggplot2           | Create graphs.                          |
+|                 | haven             | Import and export SPSS data files.      |
+|                 | lubridate         | Manipulate date and time variables.     |
+| **Auto-regressive modeling**| autovarCore| Automate the construction of vector autoregressive models. |
+| **Mixed-effects Modeling** | lme4   | Fit linear and nonlinear mixed-effects models. Fast alternative to package 'nlme'.|   
+|                 | nlme              | Fit linear and nonlinear mixed effects models. Pre-dates package `lme4`, but is still used because it a provides advanced options to model correlational structures |
+| **Simulation**  | simr              | Simulation-based power calculations for mixed models.|
+|                 | simstudy          | Simulate complex study data. | 
+| **Symptom Networks**| bootnet       | Assess the stability of symptom networks.|
+|                 | qgraph            | Estimate and plot symptom networks.|  
+| **Time series analysis** | lomb     | Calculate the Lomb-Scargle Periodogram for unevenly sampled time series. |
 
 
 ## Accelerometry
@@ -69,13 +35,16 @@ detected, and summarizing measures, such as activity counts and
 energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs). 
 
-### GENEAread
+### GENEAread / GGIR
 \index{Packages!GENEAread}
+\index{Packages!GGIR}
 
-GENEActiv, sold by Activinsights, is a wrist-worn tri-axial accelerometer that
-is often used in clinical research studies. With package **GENEAread**
-[@R_GENEAread], raw data can be imported into R for further processing, as
-illustrated below.   
+Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data
+from three brands of wearables that are widely used in sleep and physical
+activity research: [GENEActiv](https://www.geneactiv.org/),
+[ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/). GGIR
+includes package **GENEAread** [@R\_GENEAread], with which raw data can be
+imported into R for further processing, as illustrated below.
 
 ```{r genearead-example, out.with = "100%", fig.asp = .4, fig.cap = "Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).", message = FALSE, warning = FALSE}
 # Reading raw GENEActiv data.
@@ -97,21 +66,12 @@ ggplot(d, aes(x = timestamp, y = value)) +
   facet_wrap(~sensor, scales = "free_y")
 ```
 
-
-### GGIR
-\index{Packages!GGIR}
-
-Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data
-from three brands of wearables that are widely used in sleep and physical
-activity research: [GENEActiv](https://www.geneactiv.org/),
-[ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/).
-
-
 ### PhysicalActivity
 \index{Packages!PhysicalActivity}
 
 Package *PhysicalActivity* [@R-PhysicalActivity] provides an alternative to
-package `GGIR`, when ActiGraph data are available.
+packages `GGIR` and `GENEAread`, when [ActiGraph](https://actigraphcorp.com/)
+data are available.
 
 ```{r fig15a, fig.cap="Activity Counts (5-minute windows), in a Three-day Accelerometer data set.", out.width = "100%", fig.asp = .4,  warning = FALSE, message = FALSE}
 # Plotting activity counts.
@@ -126,7 +86,6 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
   geom_line(size = .5, alpha = .5) +
   xlab("Time") + ylab("Activity Counts")
 ```
-
 
 
 ## Autoregressive modeling
@@ -407,9 +366,12 @@ dynamic interplay between these symptoms [@Borsboom2013; @Borsboom2017;
 @Bringmann2015]. Various packages exist to fit these networks in R. With these
 packages, it is relatively easy to fit a graphical network on multivariate data
 sets. If you are interested in conducting a network analysis, be sure to visit
-the Psycho-systems website, at <http://psychosystems.org>, or to register for the UvA 
-network school course (see: <http://psychosystems.org/NetworkSchool>). Excellent introductions in how to fit networks on R can also be found at <http://sachaepskamp.com/files/Cookbook.html> and 
-
+the Psycho-systems website, at <http://psychosystems.org>, or to register for
+the UvA network school course (see: <http://psychosystems.org/NetworkSchool>). A
+complete list of software related to network analysis from the Psycho-systems
+group is maintained at <http://psychosystems.org/software/>. Excellent tutorials
+can also be found at <http://psych-networks.com/tutorials/> and at
+<http://sachaepskamp.com/files/Cookbook.html>.
 
 ### qgraph
 \index{Packages!qgraph}
@@ -442,7 +404,7 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
        layout = "spring")
 ```
 
-Package `qgraph` also provides functions to analyze qualities of fitted networks, such as the centrality of nodes in the network. In the network plot above, node `md_s` appears to be a central node in the network. This is confirmed by the `centralityPlot`:   
+Package `qgraph` also provides functions to analyze qualities of fitted networks, such as the centrality of nodes in the network. In the network plot above, node `md_s` appears to be a central node in the network. This is confirmed by calling `centralityPlot`:   
 
 ```{r qgraph-centrality-example, warning = FALSE, message = FALSE, out.width="100%", fig.asp = .4}
 centralityPlot(g)

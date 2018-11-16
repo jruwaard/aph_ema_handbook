@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-15">
+<meta name="date" content="2018-11-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -150,9 +150,15 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="4.2" data-path="datamanagement.html"><a href="datamanagement.html#an-example-project-directory-structure"><i class="fa fa-check"></i><b>4.2</b> An Example Project Directory Structure</a></li>
 <li class="chapter" data-level="4.3" data-path="datamanagement.html"><a href="datamanagement.html#data"><i class="fa fa-check"></i><b>4.3</b> Data</a></li>
 <li class="chapter" data-level="4.4" data-path="datamanagement.html"><a href="datamanagement.html#import-scripts"><i class="fa fa-check"></i><b>4.4</b> Import Scripts</a></li>
-<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.5</b> Reproducible Analyses</a></li>
-<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.6</b> README</a></li>
-<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#a-final-note"><i class="fa fa-check"></i><b>4.7</b> A Final Note</a></li>
+<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#cleaning"><i class="fa fa-check"></i><b>4.5</b> Cleaning</a></li>
+<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#pre-process"><i class="fa fa-check"></i><b>4.6</b> Pre-process</a></li>
+<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#combine"><i class="fa fa-check"></i><b>4.7</b> Combine</a></li>
+<li class="chapter" data-level="4.8" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.8</b> Reproducible Analyses</a></li>
+<li class="chapter" data-level="4.9" data-path="datamanagement.html"><a href="datamanagement.html#documentation"><i class="fa fa-check"></i><b>4.9</b> Documentation</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="datamanagement.html"><a href="datamanagement.html#protocol"><i class="fa fa-check"></i><b>4.9.1</b> Protocol</a></li>
+<li class="chapter" data-level="4.9.2" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.9.2</b> README</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="datamanagement.html"><a href="datamanagement.html#discussion"><i class="fa fa-check"></i><b>4.10</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>III EMA Outcomes</b></span></li>
 <li class="chapter" data-level="5" data-path="mood.html"><a href="mood.html"><i class="fa fa-check"></i><b>5</b> Mood</a><ul>
@@ -186,7 +192,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -203,7 +209,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="9.3" data-path="csd.html"><a href="csd.html#mental-state-ema-items"><i class="fa fa-check"></i><b>9.3</b> Mental state EMA Items</a></li>
 <li class="chapter" data-level="9.4" data-path="csd.html"><a href="csd.html#running-the-dfa"><i class="fa fa-check"></i><b>9.4</b> Running the DFA</a></li>
 <li class="chapter" data-level="9.5" data-path="csd.html"><a href="csd.html#results"><i class="fa fa-check"></i><b>9.5</b> Results</a></li>
-<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-1"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
+<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-2"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>VI EMA Catalogues</b></span></li>
 <li class="chapter" data-level="10" data-path="catalogue.html"><a href="catalogue.html"><i class="fa fa-check"></i><b>10</b> EMA Research within the APH Mental Health Consortium</a><ul>
@@ -249,26 +255,28 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>12.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="12.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.3</b> PhysicalActivity</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.2</b> Data management &amp; Visual Exploration</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.2.1</b> dplyr</a></li>
-<li class="chapter" data-level="12.2.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.2.2</b> ggplot2</a></li>
-<li class="chapter" data-level="12.2.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.2.3</b> haven</a></li>
-<li class="chapter" data-level="12.2.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.2.4</b> lubridate</a></li>
+<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#autoregressive-modeling"><i class="fa fa-check"></i><b>12.2</b> Autoregressive modeling</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.2.1</b> autovarCore</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.3</b> Mixed-effects Modeling</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.3.1</b> nlme</a></li>
-<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.3.2</b> lme4</a></li>
+<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.3</b> Data management &amp; Visual Exploration</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.3.2</b> ggplot2</a></li>
+<li class="chapter" data-level="12.3.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.3.3</b> haven</a></li>
+<li class="chapter" data-level="12.3.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.3.4</b> lubridate</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.4</b> Power analysis</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.4.1</b> simr</a></li>
+<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.4</b> Mixed-effects Modeling</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.4.1</b> nlme</a></li>
+<li class="chapter" data-level="12.4.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.4.2</b> lme4</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.5</b> Symptom Network Analysis</a><ul>
-<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.5.1</b> autovarCore</a></li>
-<li class="chapter" data-level="12.5.2" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.5.2</b> qgraph</a></li>
-<li class="chapter" data-level="12.5.3" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.5.3</b> bootnet</a></li>
+<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.5</b> Power analysis</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.5.1</b> simr</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.6</b> Timeseries analysis</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.6.1</b> lomb</a></li>
+<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.6</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.6.1</b> qgraph</a></li>
+<li class="chapter" data-level="12.6.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.6.2</b> bootnet</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.7</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.7.1</b> lomb</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VII Closing Matters</b></span></li>
@@ -322,14 +330,14 @@ Figure 4.1: creating a project in RStudio
 <li><p>All analyses should be explicit and replicable;</p></li>
 <li><p>Output of (published) analyses should be saved.</p></li>
 </ul>
-<p>A directory structure based on these guidelines is listed in Figure <a href="datamanagement.html#fig:fig5b">4.2</a>. It depicts the organization of a project in which data were collected via:   </p>
+<p>A directory structure based on these guidelines is listed in Figure <a href="datamanagement.html#fig:dm-project-tree">4.2</a>. It shows the organization of a (hypothetical) project in which data were collected via:</p>
 <ol style="list-style-type: decimal">
-<li><p>an online survey system (QuestManager), to assess demographics and pre/post study depression severity (with the PHQ-9 questionnaire, <span class="citation">Kroenke et al. (<a href="#ref-Kroenke2009">2009</a>)</span>),</p></li>
-<li><p>an active EMA smartphone app (Movisens - see Chapter <a href="ema-instruments-catalogue.html#ema-instruments-catalogue">11</a>), to assess day-to-day changes in mood, and</p></li>
-<li><p>an accelerometer (GENEActiv - see Chapter <a href="ema-instruments-catalogue.html#ema-instruments-catalogue">11</a>) to assess activity levels.</p></li>
+<li><p>an online survey system, to assess demographics and pre/post study depression severity (with the PHQ-9 questionnaire, <span class="citation">Kroenke et al. (<a href="#ref-Kroenke2009">2009</a>)</span>),</p></li>
+<li><p>an active EMA smartphone app, to assess day-to-day changes in mood, and</p></li>
+<li><p>an accelerometer to assess activity levels.</p></li>
 </ol>
-<div class="figure" style="text-align: center"><span id="fig:fig5b"></span>
-<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="75%" />
+<div class="figure" style="text-align: center"><span id="fig:dm-project-tree"></span>
+<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="65%" />
 <p class="caption">
 Figure 4.2: Example project directory structure
 </p>
@@ -339,20 +347,20 @@ Figure 4.2: Example project directory structure
 <h2><span class="header-section-number">4.3</span> Data</h2>
 
 <p>Full replicability implies that raw data can be traced back to the source. Wherever possible, this should translate to the availability of raw study data in your project.</p>
-<p>In the example project, unprocessed data files exported from the three data collection systems (i.e., QuestManager, Movisens and GeneaActive) are stored in the ’data/raw“-directory’, in separate sub-directories per system.</p>
-<p>In ‘data/raw/questmanager’, we find two files: 1) ‘qm_baseline_2018_05_01.csv’, containing the results of demographic questionnaire and the PHQ-9 pre-test, and 2) and ‘qm_posttest_2018_05_01.csv’, containing the results of the PHQ-9 post-test. In exports of such survey systems, data from all participants are typically stored in one file per assessment moment. Note how the export date is added to the files, to make sure that future updates are only used in the analysis when explicitly noted.</p>
-<p>In ‘data/raw/movisens’, we find one file: ‘ms_mood_2018_05_01.csv’, containing the results of the EMA mood measurements of all participants, exported from the back-office of the MoviSens application.</p>
-<p>Finally, in ‘data/raw/geneactiv’, we see a series of ‘.bin’ files: binary data files that were exported from the GENEActiv smart watches that were worn by the participants. Actigraphy data are high-volume: these files are typically large (500MB is no exception). By using the ‘.bin’ format, in which data are compressed, disk space is saved (in uncompressed format, data in a single .bin file can amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this directory contains data of one participant. In this case, there are even two files for one participant (‘APC009’), perhaps because this participant started the study with a faulty device, which was swapped during the study.</p>
+<p>In the example project, unprocessed data files exported from the three data collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in the ’data/raw“-directory’, in separate sub-directories per data type.</p>
+<p>In ‘data/raw/survey’, we find two files: 1) ‘sur_t0_2018_05_01.csv’, containing the results of demographic questionnaire and the PHQ-9 pre-test, and 2) and ‘sur_t1_2018_05_01.csv’, containing the results of the PHQ-9 post-test. In exports of such survey systems, data from all participants are typically stored in one file per assessment moment. Note how the export date is added to the files, to make sure that future updates are only used in the analysis when explicitly noted.</p>
+<p>In ‘data/raw/ema’, we find one file: ‘ema_2018_05_01.csv’, containing the results of the EMA mood measurements of all participants, exported from the back-office of the EMA platform.</p>
+<p>Finally, in ‘data/raw/actigraphy’, we see a series of ‘.bin’ files: binary data files that were exported from, e.g., GENEActiv smart watches, that were worn by the participants. Actigraphy data are high-volume data: these files are typically large (500MB is no exception). By using the ‘.bin’ format, in which data are compressed, disk space is saved (in uncompressed format, data in a single .bin file can amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this directory contains data of one participant. In this case, there are even two files for one participant (‘APC009’), perhaps because this participant started the study with a faulty device, which was swapped during the study.</p>
 <p>In ‘data/raw’, a final very important file is ‘key_file.csv’. This file is important because it ties all the data together. It contains the unique identifiers (IDs) that are assigned to the study participants in the various data collection systems. Ideally, of course, participants would be designated by a single ID in each data collection system. In practice, unfortunately, this is often not possible due to limitations of the systems used. As a result, researchers are forced to deal with the fact that participants are known under different IDs in each system. With a key-file, data can be tied together through scripts.</p>
-<p>In the example key-file below, we find four columns. The first column defines the global study ID for each participant (i.e., the ID that the researcher intends to use as the “official” ID). The other three columns define how the participant is identified in each of the data collection systems.</p>
+<p>In the example key-file below, we find four columns. The first column defines the global study ID for each participant (i.e., the ID that the researcher intends to use as the “official” ID). The other three columns define how the participant is identified in each data collection system.</p>
 <table>
 <caption><span id="tab:tab5a">Table 4.1: </span> Example Study Key-file</caption>
 <thead>
 <tr class="header">
 <th align="left">ID</th>
-<th align="left">QM_ID</th>
-<th align="left">MoviSens_ID</th>
-<th align="left">GENEActiv_ID</th>
+<th align="left">Survey_ID</th>
+<th align="left">EMA_ID</th>
+<th align="left">Actigraphy_ID</th>
 </tr>
 </thead>
 <tbody>
@@ -379,48 +387,103 @@ Figure 4.2: Example project directory structure
 </div>
 <div id="import-scripts" class="section level2">
 <h2><span class="header-section-number">4.4</span> Import Scripts</h2>
+</div>
+<div id="cleaning" class="section level2">
+<h2><span class="header-section-number">4.5</span> Cleaning</h2>
 <p>In ‘scripts/import’, we find the scripts with which the raw data are imported and cleaned, to produce ready-to-analyze data that are stored in ‘data/cleaned’.</p>
 <p>By making these scripts parts of your project, you ensure that you and others can always trace the decisions that were made to prepare the raw data for analysis. Raw data may be updated, for instance because more participants are recruited, or because new data exports are made from the data collection systems. You may also detect errors in the import routines during the analyses, or peer reviewers may request information that can only be found by going back to the raw data. In all these cases, the availability of ready-to-run raw data import routines is crucial.</p>
-<p>The code snippet below illustrates the kind of data transformations that you can expect to find in an import script. With a few lines of code, raw baseline questionnaire data are imported into R, participant id’s that are specific to the data collection system are replaced by the proper global study id, variables of interest are selected, sum scores of the PHQ-9 are calculated, data ranges are checked (and corrected if needed), and data types are set (in accordance to the study code-book). Finally, the cleaned data set is saved to the ‘data/cleaned’ folder, ready for further processing in the final analyses.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Data import example</span>
+<p>The code snippet below illustrates the kind of data transformations that you can expect to find in an import script. With a few lines of code, raw baseline questionnaire data are imported into R, participant id’s that are specific to the data collection system are replaced by the proper global study id, variables of interest are selected, data ranges are checked (and corrected if needed), and data types are set (in accordance to the study code-book). Finally, the cleaned data set is saved to the ‘data/cleaned’ folder, ready for further processing in the final analyses.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ------------------------------------------------------------</span>
+<span class="co"># Clean data </span>
+<span class="co"># JR - 2018-10-16</span>
+<span class="co"># ------------------------------------------------------------</span>
 
-<span class="co"># import raw questmanager baseline data (csv file)</span>
-d &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/questmanager/qm_baseline_2018_05_01.csv&quot;</span>)
+<span class="co"># import raw baseline survey data (csv file) -----------------</span>
+t0 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/survey/sur_t0_2018_05_01.csv&quot;</span>)
 
-<span class="co"># inject study ID, from study key file</span>
+<span class="co"># inject study ID, from study key file -----------------------</span>
 keys &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/keyfile.csv&quot;</span>)
-d &lt;-<span class="st"> </span><span class="kw">merge</span>(d, keys)
+t0 &lt;-<span class="st"> </span><span class="kw">merge</span>(t0, keys)
 
-<span class="co"># only keep variables of interest </span>
-d &lt;-<span class="st"> </span>d[<span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>, <span class="st">&quot;gender&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)]
+<span class="co"># only keep variables of interest ----------------------------</span>
+<span class="co"># (gender, age, phq item scores)</span>
+t0 &lt;-<span class="st"> </span>t0[<span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>, <span class="st">&quot;gender&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)]
 
-<span class="co"># calculate PHQ-9 sum score</span>
-d<span class="op">$</span>phq &lt;-<span class="st"> </span><span class="kw">rowSums</span>(d[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)])
+<span class="co"># turn gender into a proper factor ---------------------------</span>
+t0<span class="op">$</span>gender &lt;-<span class="st"> </span><span class="kw">factor</span>(t0<span class="op">$</span>gender, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>))
 
-<span class="co"># replace out-of-range data with missing values (NA)</span>
-d<span class="op">$</span>age[d<span class="op">$</span>age <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
-d<span class="op">$</span>age[d<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
+<span class="co"># replace out-of-range data with missing values (NA) ---------</span>
+t0<span class="op">$</span>age[t0<span class="op">$</span>age <span class="op">&gt;</span><span class="st"> </span><span class="dv">100</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
+t0<span class="op">$</span>age[t0<span class="op">$</span>age <span class="op">&lt;</span><span class="st"> </span><span class="dv">5</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
 
-<span class="co"># turn gender into a proper factor</span>
-d<span class="op">$</span>gender &lt;-<span class="st"> </span><span class="kw">factor</span>(d<span class="op">$</span>gender, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>))
+<span class="co"># replace out-of-range phq item data with missing values -----</span>
+t0[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)] &lt;-<span class="st"> </span><span class="kw">lapply</span>(
+  t0[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], 
+  <span class="cf">function</span>(x) {
+    x[x <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
+    x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
+  })
 
-<span class="co"># save cleaned baseline data to data/cleaned, in R (.Rda) format</span>
-baseline &lt;-<span class="st"> </span>d
-<span class="kw">save</span>(baseline, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/baseline.Rda&quot;</span>)</code></pre></div>
-<p>The code snippet above illustrates the importance of code documentation. You may struggle to immediately understand some of the code segments. For instance, you might not be familiar with the <code>paste0</code> function that is used to create the names of the variables that contain the PHQ-9 item scores. Fortunately, however, it becomes clear that the code statement calculates the sum of the item from the comment just above the code (the line starting with <code>#</code>). Use these comments in your code. You will do yourself and your colleagues a big favor by making it much easier to quickly grasp the meaning of your code.</p>
+<span class="co"># save cleaned baseline data --------------------------------- </span>
+<span class="kw">save</span>(t0, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t0.Rda&quot;</span>)</code></pre></div>
+<p>The code snippet above illustrates the importance of code documentation. You may struggle to immediately understand some of the code segments. For instance, you might not be familiar with the <code>paste0</code> function that is used to create the names of the variables that contain the PHQ-9 item scores. Fortunately, however, the comment (the lines starting with <code>#</code>) make it clear that the function is used to select individual PHQ-9 items. Comment your code. You will do yourself and your colleagues a big favor by making it much easier to quickly grasp the meaning of your code.</p>
+</div>
+<div id="pre-process" class="section level2">
+<h2><span class="header-section-number">4.6</span> Pre-process</h2>
+<p>Once data are cleaned, you can enrich the data sets with variables that can be derived from the raw data, such as, e.g., survey scale and subscale scores, if needed), or actigraphy summary measures (see Chapter <a href="activity.html#activity">6</a>). The example below calculates the PHQ-9 sum scores from the item scores in the cleaned baseline data:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ------------------------------------------------------------</span>
+<span class="co"># Pre-process data </span>
+<span class="co"># JR - 2018-10-16</span>
+<span class="co"># ------------------------------------------------------------</span>
+
+<span class="co"># import cleaned baseline survey data ------------------------</span>
+<span class="kw">load</span>(<span class="st">&quot;data/cleaned/baseline.Rda&quot;</span>)
+<span class="kw">load</span>(<span class="st">&quot;data/cleaned/posttest.Rda&quot;</span>)
+
+<span class="co"># add PHQ-9 sum scores ---------------------------------------</span>
+baseline<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">rowSums</span>(baseline[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], 
+                         <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+posttest<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">rowSums</span>(posttest[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], 
+                         <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+
+<span class="co"># re-save baseline data --------------------------------------</span>
+<span class="kw">save</span>(baseline, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/baseline.Rda&quot;</span>)
+<span class="kw">save</span>(baseline, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/posttest.Rda&quot;</span>)</code></pre></div>
+</div>
+<div id="combine" class="section level2">
+<h2><span class="header-section-number">4.7</span> Combine</h2>
+<p>While working on your project, you will probably want to re-run the cleaning and pre-processing scripts a lot, for instance in response to additional data coming in, or to fix bugs in the import routines. For this, it can be helpful to create one file in which all import scripts are executed in proper sequence. For this, you can use R’s <code>source</code> command, with which scripts can be read and executed directly from disk:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ------------------------------------------------------------</span>
+<span class="co"># Import (clean &amp; pre-process) all data files </span>
+<span class="co"># JR - 2018-10-16</span>
+<span class="co"># ------------------------------------------------------------</span>
+
+<span class="co"># clean -------------------------------</span>
+<span class="kw">source</span>(<span class="st">&quot;scripts/import/clean_surveys.R&quot;</span>) 
+<span class="kw">source</span>(<span class="st">&quot;scripts/import/clean_ema.R&quot;</span>) 
+<span class="kw">source</span>(<span class="st">&quot;scripts/import/clean_actigraphy.R&quot;</span>) 
+
+<span class="co"># pre-process----------------------------</span>
+<span class="kw">source</span>(<span class="st">&quot;scripts/import/calc_surveys.R&quot;</span>) 
+<span class="kw">source</span>(<span class="st">&quot;scripts/import/calc_ema.R&quot;</span>)
+<span class="kw">source</span>(<span class="st">&quot;scripts/import/calc_actigraphy.R&quot;</span>) </code></pre></div>
 </div>
 <div id="reproducible-analyses" class="section level2">
-<h2><span class="header-section-number">4.5</span> Reproducible Analyses</h2>
+<h2><span class="header-section-number">4.8</span> Reproducible Analyses</h2>
 <p>When raw data stored, imported and cleaned, final analyses can be run. By basing these analyses on the cleaned data in ‘data/cleaned’, you ensure that these analyses can be fully reproduced from the raw study data.</p>
 <p>The code snippet below illustrates a typical analysis file: cleaned data are loaded into the R work environment, after which EMA scores of a single participant are selected, plotted and analyzed in a simple linear regression. Both the plot and the result of the regression are saved in the analysis directory. The plot is saved as a PDF-file (ready for submission to the journal), and the regression results are saved in a standard R data structure.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Data analysis example</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># -------------------------------------------------------------</span>
+<span class="co"># N = 1 Analysis (P001)</span>
+<span class="co"># note: part of manuscript!</span>
+<span class="co"># JR - 2018-10-16</span>
+<span class="co"># ------------------------------------------------------------</span>
 
-<span class="co"># import cleaned EMA mood study data</span>
-<span class="kw">load</span>(<span class="st">&quot;data/cleaned/mood.Rda&quot;</span>)
+<span class="co"># import cleaned EMA mood study data --------------------------</span>
+<span class="kw">load</span>(<span class="st">&quot;data/cleaned/ema.Rda&quot;</span>)
 
 <span class="co"># create and save Figure 1: EMA mood data, of participant P001 </span>
 d &lt;-<span class="st"> </span><span class="kw">subset</span>(mood, ID <span class="op">==</span><span class="st"> &quot;P001&quot;</span>)
-<span class="kw">pdf</span>(<span class="dt">file =</span> <span class="st">&quot;scripts/publised/figure1.pdf&quot;</span>)
+<span class="kw">pdf</span>(<span class="dt">file =</span> <span class="st">&quot;scripts/published/figure1.pdf&quot;</span>)
 <span class="kw">plot</span>(mood <span class="op">~</span><span class="st"> </span>time, d)
 <span class="kw">dev.off</span>()
 
@@ -438,8 +501,14 @@ fm &lt;-<span class="st"> </span><span class="kw">lm</span>(mood <span class="op
 <span class="kw">plot</span>(fm)
 <span class="kw">dev.off</span>()</code></pre></div>
 </div>
-<div id="readme" class="section level2">
-<h2><span class="header-section-number">4.6</span> README</h2>
+<div id="documentation" class="section level2">
+<h2><span class="header-section-number">4.9</span> Documentation</h2>
+<div id="protocol" class="section level3">
+<h3><span class="header-section-number">4.9.1</span> Protocol</h3>
+<p>In “docs/protocol”, we find the “protocol.docx” file, which should contain a detailed description of the study. This file provides information on the background of the study, the methods, analysis techniques, defines the codebook of the study, and should include full descriptions of all surveys, assessment protocols, etc.. If needed, you can use this folder to store additional background material, such as PDFs of published psychometric studies.</p>
+</div>
+<div id="readme" class="section level3">
+<h3><span class="header-section-number">4.9.2</span> README</h3>
 <p>Note, finally, the ‘README’ file in the root of the project directory. This file should contain a brief summary of the project, to quickly inform others (and your future self) of the context of the project and the contents of the project directory.</p>
 <table style="width:78%;">
 <colgroup>
@@ -455,15 +524,15 @@ fm &lt;-<span class="st"> </span><span class="kw">lm</span>(mood <span class="op
 <tbody>
 <tr class="odd">
 <td align="left">Title</td>
-<td align="left">Project title &amp; Acronym</td>
+<td align="left">Project title &amp; Acronym .</td>
 </tr>
 <tr class="even">
 <td align="left">Description</td>
-<td align="left">One-paragraph project description</td>
+<td align="left">One-paragraph project description.</td>
 </tr>
 <tr class="odd">
 <td align="left">Author</td>
-<td align="left">Author name, e-mail affiliation</td>
+<td align="left">Author name, e-mail affiliation.</td>
 </tr>
 <tr class="even">
 <td align="left">Getting Started</td>
@@ -471,22 +540,23 @@ fm &lt;-<span class="st"> </span><span class="kw">lm</span>(mood <span class="op
 </tr>
 <tr class="odd">
 <td align="left">Prerequisites</td>
-<td align="left">A listing of software required (i.e. R packages), and instructions on how to install this software</td>
+<td align="left">A listing of software required (i.e. R packages), and instructions on how to install this software.</td>
 </tr>
 <tr class="even">
 <td align="left">Contents</td>
-<td align="left">A listing of project directories, with a brief description of their contents</td>
+<td align="left">A listing of project directories, with a brief description of their contents.</td>
 </tr>
 <tr class="odd">
 <td align="left">Restrictions</td>
-<td align="left">Notes about potential data access limitations</td>
+<td align="left">Notes about potential data access limitations.</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="a-final-note" class="section level2">
-<h2><span class="header-section-number">4.7</span> A Final Note</h2>
-<p>In this chapter, we aimed to show how adopting the RStudio Project can help you to implement key principles of EMA data management, such as reproducibility. To do so, we discussed the project structure of an illustrative small-scale EMA study. No doubt, your project will differ from this example in many ways, forcing you to deviate from the example structure. The example may be too elaborate, for example, if your project only requires you to analyze a single data file. The structure it certainly too limited to support the requirements of a full PHD project (such as the one described, for example, in the APH quality handbook - see <a href="http://www.emgo.nl/kc/folders-and-file-names/" class="uri">http://www.emgo.nl/kc/folders-and-file-names/</a>). But as we mentioned earlier, RStudio Projects are flexible. It should be relatively straightforward to scale down or scale up the example that we discussed.</p>
+</div>
+<div id="discussion" class="section level2">
+<h2><span class="header-section-number">4.10</span> Discussion</h2>
+<p>In this chapter, we aimed to show how adopting the RStudio Project can help you to implement key principles of EMA data management. To illustrate this, we discussed the project structure of a small-scale EMA study. No doubt, your project will differ from this example in many ways, forcing you to deviate from the example structure. The example may be too elaborate, for example, if your project only requires you to analyze a single data file. The structure is certainly too limited to support the requirements of a full PHD project (such as the one described, for example, in the APH quality handbook - see <a href="http://www.emgo.nl/kc/folders-and-file-names/" class="uri">http://www.emgo.nl/kc/folders-and-file-names/</a>). But as we mentioned earlier, RStudio Projects are flexible. It should be relatively straightforward to scale down or scale up the example that we discussed.</p>
 <p>If you want to learn more about data management with R and RStudio, the book <em>“Reproducible Research with R and RStudio”</em> <span class="citation">(Gandrud, <a href="#ref-gandrud2015">2015</a>)</span> would be a good place to start. You may also be informed by the data management techniques that are described in the first two chapters of the book <em>“Using Rand RStudio for Data Management, Statistical Analysis, and Graphics”</em> <span class="citation">(Horton &amp; Kleinman, <a href="#ref-horton2015">2015</a>)</span>.</p>
 
 </div>

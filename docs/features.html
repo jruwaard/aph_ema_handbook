@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-15">
+<meta name="date" content="2018-11-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -150,9 +150,15 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="4.2" data-path="datamanagement.html"><a href="datamanagement.html#an-example-project-directory-structure"><i class="fa fa-check"></i><b>4.2</b> An Example Project Directory Structure</a></li>
 <li class="chapter" data-level="4.3" data-path="datamanagement.html"><a href="datamanagement.html#data"><i class="fa fa-check"></i><b>4.3</b> Data</a></li>
 <li class="chapter" data-level="4.4" data-path="datamanagement.html"><a href="datamanagement.html#import-scripts"><i class="fa fa-check"></i><b>4.4</b> Import Scripts</a></li>
-<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.5</b> Reproducible Analyses</a></li>
-<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.6</b> README</a></li>
-<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#a-final-note"><i class="fa fa-check"></i><b>4.7</b> A Final Note</a></li>
+<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#cleaning"><i class="fa fa-check"></i><b>4.5</b> Cleaning</a></li>
+<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#pre-process"><i class="fa fa-check"></i><b>4.6</b> Pre-process</a></li>
+<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#combine"><i class="fa fa-check"></i><b>4.7</b> Combine</a></li>
+<li class="chapter" data-level="4.8" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.8</b> Reproducible Analyses</a></li>
+<li class="chapter" data-level="4.9" data-path="datamanagement.html"><a href="datamanagement.html#documentation"><i class="fa fa-check"></i><b>4.9</b> Documentation</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="datamanagement.html"><a href="datamanagement.html#protocol"><i class="fa fa-check"></i><b>4.9.1</b> Protocol</a></li>
+<li class="chapter" data-level="4.9.2" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.9.2</b> README</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="datamanagement.html"><a href="datamanagement.html#discussion"><i class="fa fa-check"></i><b>4.10</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>III EMA Outcomes</b></span></li>
 <li class="chapter" data-level="5" data-path="mood.html"><a href="mood.html"><i class="fa fa-check"></i><b>5</b> Mood</a><ul>
@@ -186,7 +192,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -203,7 +209,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="9.3" data-path="csd.html"><a href="csd.html#mental-state-ema-items"><i class="fa fa-check"></i><b>9.3</b> Mental state EMA Items</a></li>
 <li class="chapter" data-level="9.4" data-path="csd.html"><a href="csd.html#running-the-dfa"><i class="fa fa-check"></i><b>9.4</b> Running the DFA</a></li>
 <li class="chapter" data-level="9.5" data-path="csd.html"><a href="csd.html#results"><i class="fa fa-check"></i><b>9.5</b> Results</a></li>
-<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-1"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
+<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-2"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>VI EMA Catalogues</b></span></li>
 <li class="chapter" data-level="10" data-path="catalogue.html"><a href="catalogue.html"><i class="fa fa-check"></i><b>10</b> EMA Research within the APH Mental Health Consortium</a><ul>
@@ -249,26 +255,28 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>12.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="12.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.3</b> PhysicalActivity</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.2</b> Data management &amp; Visual Exploration</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.2.1</b> dplyr</a></li>
-<li class="chapter" data-level="12.2.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.2.2</b> ggplot2</a></li>
-<li class="chapter" data-level="12.2.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.2.3</b> haven</a></li>
-<li class="chapter" data-level="12.2.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.2.4</b> lubridate</a></li>
+<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#autoregressive-modeling"><i class="fa fa-check"></i><b>12.2</b> Autoregressive modeling</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.2.1</b> autovarCore</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.3</b> Mixed-effects Modeling</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.3.1</b> nlme</a></li>
-<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.3.2</b> lme4</a></li>
+<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.3</b> Data management &amp; Visual Exploration</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.3.2</b> ggplot2</a></li>
+<li class="chapter" data-level="12.3.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.3.3</b> haven</a></li>
+<li class="chapter" data-level="12.3.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.3.4</b> lubridate</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.4</b> Power analysis</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.4.1</b> simr</a></li>
+<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.4</b> Mixed-effects Modeling</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.4.1</b> nlme</a></li>
+<li class="chapter" data-level="12.4.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.4.2</b> lme4</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.5</b> Symptom Network Analysis</a><ul>
-<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.5.1</b> autovarCore</a></li>
-<li class="chapter" data-level="12.5.2" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.5.2</b> qgraph</a></li>
-<li class="chapter" data-level="12.5.3" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.5.3</b> bootnet</a></li>
+<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.5</b> Power analysis</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.5.1</b> simr</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.6</b> Timeseries analysis</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.6.1</b> lomb</a></li>
+<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.6</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.6.1</b> qgraph</a></li>
+<li class="chapter" data-level="12.6.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.6.2</b> bootnet</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.7</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.7.1</b> lomb</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VII Closing Matters</b></span></li>
@@ -299,7 +307,7 @@ code > span.in { font-style: italic; } /* Information */
 <div id="simulated-ema-time-series-example" class="section level2">
 <h2><span class="header-section-number">7.1</span> Simulated EMA Time-series Example</h2>
 
-<p>We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day. Figure <a href="features.html#fig:feat-plot">7.1</a> shows a plot of the simulated scores.</p>
+<p>We will focus on a simulated three-week time-series of EMA mood responses of a single person, in which ratings were collected five times per day (using the <code>generate_features_dataset</code> function of package <code>emaph</code>). Figure <a href="features.html#fig:feat-plot">7.1</a> shows a plot of the simulated scores.</p>
 <p>Stare at the figure for a moment. How would you characterize the development of scores over time? What features would you want to extract? How would you quantify these features?</p>
 <div class="figure" style="text-align: center"><span id="fig:feat-plot"></span>
 <img src="features_files/figure-html/feat-plot-1.png" alt="A simulated three-week time-series of EMA mood ratings." width="100%" />
@@ -380,7 +388,7 @@ Figure 7.8: EMA mood series, with a rolling mean superposed.
 <div id="periodicity" class="section level2">
 <h2><span class="header-section-number">7.6</span> Periodicity</h2>
 
-<p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the strength (‘power’) of various frequencies can be quantified. Figure <a href="features.html#fig:feat-plot-pow">7.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
+<p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the strength (‘power’) of the evidence for the presence of various frequencies can be quantified. Figure <a href="features.html#fig:feat-plot-pow">7.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
 <div class="figure" style="text-align: center"><span id="fig:feat-plot-pow"></span>
 <img src="features_files/figure-html/feat-plot-pow-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
 <p class="caption">
@@ -389,7 +397,7 @@ Figure 7.9: periodogram of the EMA time series, revealing a one-day and a one-we
 </div>
 <p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; Frank, Swartz, &amp; Boland, <a href="#ref-Frank2007">2007</a>; Frank, Swartz, &amp; Kupfer, <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
 </div>
-<div id="discussion" class="section level2">
+<div id="discussion-1" class="section level2">
 <h2><span class="header-section-number">7.7</span> Discussion</h2>
 <p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure <a href="features.html#fig:feat-plot">7.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
 <p>The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter <a href="csd.html#csd">9</a>, for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.</p>
@@ -402,49 +410,10 @@ Figure 7.9: periodogram of the EMA time series, revealing a one-day and a one-we
 <span class="kw">library</span>(gridExtra)
 <span class="kw">library</span>(psych)
 <span class="kw">library</span>(zoo)
+<span class="kw">library</span>(emaph)
 
-<span class="co"># simulate the signal -------</span>
-<span class="kw">set.seed</span>(<span class="dv">123</span>)
-n_measurements_per_day &lt;-<span class="st"> </span><span class="dv">5</span>
-n_days &lt;-<span class="st"> </span><span class="dv">21</span>
-n &lt;-<span class="st"> </span>n_measurements_per_day <span class="op">*</span><span class="st"> </span>(n_days)
-m &lt;-<span class="st"> </span><span class="dv">3</span>
-sdev_min &lt;-<span class="st"> </span><span class="dv">1</span>
-sdev_max &lt;-<span class="st"> </span><span class="dv">4</span>
-trend  &lt;-<span class="st"> </span><span class="dv">3</span>
-missingness_prob =<span class="st"> </span><span class="kw">c</span>(<span class="fl">0.1</span>, <span class="fl">0.5</span>)
-autocorrelation =<span class="st"> </span>.<span class="dv">6</span>
-
-## time
-t &lt;-<span class="st"> </span><span class="kw">seq</span>(<span class="dv">0</span>, (n <span class="op">-</span><span class="st"> </span><span class="dv">1</span>) <span class="op">*</span><span class="st"> </span><span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">5</span>, <span class="dt">by =</span>  <span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">5</span>)
-
-## signal
-s &lt;-<span class="st"> </span><span class="kw">numeric</span>(<span class="kw">length</span>(t))
-
-## periodicity
-s &lt;-<span class="st"> </span><span class="kw">seq</span>(sdev_min, sdev_max, <span class="dt">length.out =</span> n) <span class="op">*</span><span class="st"> </span><span class="kw">sin</span>(<span class="dv">1</span>   <span class="op">*</span><span class="st"> </span>t <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>pi)
-s &lt;-
-<span class="st">  </span>s <span class="op">+</span><span class="st"> </span><span class="fl">0.5</span> <span class="op">*</span><span class="st"> </span><span class="kw">seq</span>(sdev_min, sdev_max, <span class="dt">length.out =</span> n) <span class="op">*</span><span class="st"> </span><span class="kw">sin</span>(<span class="dv">1</span> <span class="op">/</span><span class="st"> </span><span class="dv">7</span> <span class="op">*</span><span class="st"> </span>t <span class="op">*</span><span class="st"> </span><span class="dv">2</span> <span class="op">*</span><span class="st"> </span>pi)
-
-## mean + trend + sd (heteroscedastic)
-s &lt;-<span class="st"> </span>s <span class="op">+</span><span class="st"> </span><span class="kw">rnorm</span>(n,
-               <span class="dt">mean =</span> <span class="kw">seq</span>(m, m <span class="op">+</span><span class="st"> </span>trend, <span class="dt">length.out =</span> n),
-               <span class="dt">sd =</span> <span class="fl">0.5</span>)
-
-<span class="co">#3 auto-correlation</span>
-s &lt;-<span class="st"> </span>s <span class="op">+</span><span class="st"> </span><span class="dv">1</span> <span class="op">*</span><span class="st"> </span><span class="kw">arima.sim</span>(<span class="dt">model =</span> <span class="kw">list</span>(<span class="dt">ar =</span> autocorrelation), <span class="dt">n =</span> n)
-
-## missingness
-m1 &lt;-
-<span class="st">  </span><span class="kw">rbinom</span>(n, <span class="dv">1</span>, <span class="kw">seq</span>(missingness_prob[<span class="dv">1</span>], missingness_prob[<span class="dv">2</span>], <span class="dt">length.out =</span> n))
-s[m1 <span class="op">==</span><span class="st"> </span><span class="dv">1</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
-
-## in range
-s[s <span class="op">&gt;</span><span class="st"> </span><span class="dv">10</span>] &lt;-<span class="st"> </span><span class="dv">10</span>
-s[s <span class="op">&lt;</span><span class="st"> </span><span class="dv">0</span>] &lt;-<span class="st"> </span><span class="dv">0</span>
-
-## combine in data.frame
-d &lt;-<span class="st"> </span><span class="kw">data.frame</span>(t, s)
+<span class="co"># simulate the signal (using emaph function) -------</span>
+d &lt;-<span class="st"> </span><span class="kw">generate_features_dataset</span>(<span class="dt">seed =</span> <span class="dv">123</span>)
 
 <span class="co"># plot -------------------------</span>
 e &lt;-<span class="st"> </span><span class="kw">subset</span>(d,<span class="op">!</span><span class="kw">is.na</span>(s))

@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-15}
+    \date{2018-11-16}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -201,7 +201,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-15)}.
+Introduction, with Examples in R (1st edition - build 2018-11-16)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -1187,13 +1187,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.1765, df = 195.04, p-value = 0.8601}
+\CommentTok{#> t = -0.4027, df = 197.42, p-value = 0.6876}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.3069932  0.2565600}
+\CommentTok{#>  -0.3236175  0.2138621}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.07547674 -0.05026012}
+\CommentTok{#> -0.02988323  0.02499448}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1546,7 +1546,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.478}
+\CommentTok{#> [1] 0.4751}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1719,32 +1719,29 @@ best to implement the following research guidelines:
 \end{itemize}
 
 A directory structure based on these guidelines is listed in Figure
-\ref{fig:fig5b}. It depicts the organization of a project in which data
-were collected via: \index{QuestManager} \index{Movisens}
-\index{GENEActiv}
+\ref{fig:dm-project-tree}. It shows the organization of a (hypothetical)
+project in which data were collected via:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \item
-  an online survey system (QuestManager), to assess demographics and
-  pre/post study depression severity (with the PHQ-9 questionnaire,
+  an online survey system, to assess demographics and pre/post study
+  depression severity (with the PHQ-9 questionnaire,
   \citet{Kroenke2009}),
 \item
-  an active EMA smartphone app (Movisens - see Chapter
-  \ref{ema-instruments-catalogue}), to assess day-to-day changes in
-  mood, and
+  an active EMA smartphone app, to assess day-to-day changes in mood,
+  and
 \item
-  an accelerometer (GENEActiv - see Chapter
-  \ref{ema-instruments-catalogue}) to assess activity levels.
+  an accelerometer to assess activity levels.
 \end{enumerate}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.75\linewidth]{images/datamanagement/project_tree} 
+{\centering \includegraphics[width=0.65\linewidth]{images/datamanagement/project_tree} 
 
 }
 
-\caption{Example project directory structure}\label{fig:fig5b}
+\caption{Example project directory structure}\label{fig:dm-project-tree}
 \end{figure}
 
 \section{Data}\label{data}
@@ -1756,33 +1753,33 @@ source. Wherever possible, this should translate to the availability of
 raw study data in your project.
 
 In the example project, unprocessed data files exported from the three
-data collection systems (i.e., QuestManager, Movisens and GeneaActive)
-are stored in the 'data/raw``-directory', in separate sub-directories
-per system.
+data collection systems (i.e., survey data, EMA data, and actigraphy
+data) are stored in the 'data/raw``-directory', in separate
+sub-directories per data type.
 
-In `data/raw/questmanager', we find two files: 1)
-`qm\_baseline\_2018\_05\_01.csv', containing the results of demographic
-questionnaire and the PHQ-9 pre-test, and 2) and
-`qm\_posttest\_2018\_05\_01.csv', containing the results of the PHQ-9
-post-test. In exports of such survey systems, data from all participants
-are typically stored in one file per assessment moment. Note how the
-export date is added to the files, to make sure that future updates are
-only used in the analysis when explicitly noted.
+In `data/raw/survey', we find two files: 1) `sur\_t0\_2018\_05\_01.csv',
+containing the results of demographic questionnaire and the PHQ-9
+pre-test, and 2) and `sur\_t1\_2018\_05\_01.csv', containing the results
+of the PHQ-9 post-test. In exports of such survey systems, data from all
+participants are typically stored in one file per assessment moment.
+Note how the export date is added to the files, to make sure that future
+updates are only used in the analysis when explicitly noted.
 
-In `data/raw/movisens', we find one file: `ms\_mood\_2018\_05\_01.csv',
-containing the results of the EMA mood measurements of all participants,
-exported from the back-office of the MoviSens application.
+In `data/raw/ema', we find one file: `ema\_2018\_05\_01.csv', containing
+the results of the EMA mood measurements of all participants, exported
+from the back-office of the EMA platform.
 
-Finally, in `data/raw/geneactiv', we see a series of `.bin' files:
-binary data files that were exported from the GENEActiv smart watches
-that were worn by the participants. Actigraphy data are high-volume:
-these files are typically large (500MB is no exception). By using the
-`.bin' format, in which data are compressed, disk space is saved (in
-uncompressed format, data in a single .bin file can amount up to 2 GB).
-Unlike the survey and EMA mood data, each data file in this directory
-contains data of one participant. In this case, there are even two files
-for one participant (`APC009'), perhaps because this participant started
-the study with a faulty device, which was swapped during the study.
+Finally, in `data/raw/actigraphy', we see a series of `.bin' files:
+binary data files that were exported from, e.g., GENEActiv smart
+watches, that were worn by the participants. Actigraphy data are
+high-volume data: these files are typically large (500MB is no
+exception). By using the `.bin' format, in which data are compressed,
+disk space is saved (in uncompressed format, data in a single .bin file
+can amount up to 2 GB). Unlike the survey and EMA mood data, each data
+file in this directory contains data of one participant. In this case,
+there are even two files for one participant (`APC009'), perhaps because
+this participant started the study with a faulty device, which was
+swapped during the study.
 
 In `data/raw', a final very important file is `key\_file.csv'. This file
 is important because it ties all the data together. It contains the
@@ -1797,17 +1794,17 @@ With a key-file, data can be tied together through scripts.
 In the example key-file below, we find four columns. The first column
 defines the global study ID for each participant (i.e., the ID that the
 researcher intends to use as the ``official'' ID). The other three
-columns define how the participant is identified in each of the data
-collection systems.
+columns define how the participant is identified in each data collection
+system.
 
 \begin{longtable}[]{@{}llll@{}}
 \caption{\label{tab:tab5a} Example Study Key-file}\tabularnewline
 \toprule
-ID & QM\_ID & MoviSens\_ID & GENEActiv\_ID\tabularnewline
+ID & Survey\_ID & EMA\_ID & Actigraphy\_ID\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-ID & QM\_ID & MoviSens\_ID & GENEActiv\_ID\tabularnewline
+ID & Survey\_ID & EMA\_ID & Actigraphy\_ID\tabularnewline
 \midrule
 \endhead
 P001 & QM01221 & 192.A102.83A & APC009\tabularnewline
@@ -1817,6 +1814,8 @@ P003 & QM01230 & 192.B220.00N & APC011\tabularnewline
 \end{longtable}
 
 \section{Import Scripts}\label{import-scripts}
+
+\section{Cleaning}\label{cleaning}
 
 In `scripts/import', we find the scripts with which the raw data are
 imported and cleaned, to produce ready-to-analyze data that are stored
@@ -1836,39 +1835,47 @@ The code snippet below illustrates the kind of data transformations that
 you can expect to find in an import script. With a few lines of code,
 raw baseline questionnaire data are imported into R, participant id's
 that are specific to the data collection system are replaced by the
-proper global study id, variables of interest are selected, sum scores
-of the PHQ-9 are calculated, data ranges are checked (and corrected if
-needed), and data types are set (in accordance to the study code-book).
-Finally, the cleaned data set is saved to the `data/cleaned' folder,
-ready for further processing in the final analyses.
+proper global study id, variables of interest are selected, data ranges
+are checked (and corrected if needed), and data types are set (in
+accordance to the study code-book). Finally, the cleaned data set is
+saved to the `data/cleaned' folder, ready for further processing in the
+final analyses.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Data import example}
+\CommentTok{# ------------------------------------------------------------}
+\CommentTok{# Clean data }
+\CommentTok{# JR - 2018-10-16}
+\CommentTok{# ------------------------------------------------------------}
 
-\CommentTok{# import raw questmanager baseline data (csv file)}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/questmanager/qm_baseline_2018_05_01.csv"}\NormalTok{)}
+\CommentTok{# import raw baseline survey data (csv file) -----------------}
+\NormalTok{t0 <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/survey/sur_t0_2018_05_01.csv"}\NormalTok{)}
 
-\CommentTok{# inject study ID, from study key file}
+\CommentTok{# inject study ID, from study key file -----------------------}
 \NormalTok{keys <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/keyfile.csv"}\NormalTok{)}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(d, keys)}
+\NormalTok{t0 <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(t0, keys)}
 
-\CommentTok{# only keep variables of interest }
-\NormalTok{d <-}\StringTok{ }\NormalTok{d[}\KeywordTok{c}\NormalTok{(}\StringTok{"ID"}\NormalTok{, }\StringTok{"gender"}\NormalTok{, }\StringTok{"age"}\NormalTok{, }\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)]}
+\CommentTok{# only keep variables of interest ----------------------------}
+\CommentTok{# (gender, age, phq item scores)}
+\NormalTok{t0 <-}\StringTok{ }\NormalTok{t0[}\KeywordTok{c}\NormalTok{(}\StringTok{"ID"}\NormalTok{, }\StringTok{"gender"}\NormalTok{, }\StringTok{"age"}\NormalTok{, }\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)]}
 
-\CommentTok{# calculate PHQ-9 sum score}
-\NormalTok{d}\OperatorTok{$}\NormalTok{phq <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(d[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)])}
+\CommentTok{# turn gender into a proper factor ---------------------------}
+\NormalTok{t0}\OperatorTok{$}\NormalTok{gender <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(t0}\OperatorTok{$}\NormalTok{gender, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"M"}\NormalTok{, }\StringTok{"F"}\NormalTok{))}
 
-\CommentTok{# replace out-of-range data with missing values (NA)}
-\NormalTok{d}\OperatorTok{$}\NormalTok{age[d}\OperatorTok{$}\NormalTok{age }\OperatorTok{>}\StringTok{ }\DecValTok{100}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
-\NormalTok{d}\OperatorTok{$}\NormalTok{age[d}\OperatorTok{$}\NormalTok{age }\OperatorTok{<}\StringTok{ }\DecValTok{5}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
+\CommentTok{# replace out-of-range data with missing values (NA) ---------}
+\NormalTok{t0}\OperatorTok{$}\NormalTok{age[t0}\OperatorTok{$}\NormalTok{age }\OperatorTok{>}\StringTok{ }\DecValTok{100}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
+\NormalTok{t0}\OperatorTok{$}\NormalTok{age[t0}\OperatorTok{$}\NormalTok{age }\OperatorTok{<}\StringTok{ }\DecValTok{5}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
 
-\CommentTok{# turn gender into a proper factor}
-\NormalTok{d}\OperatorTok{$}\NormalTok{gender <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(d}\OperatorTok{$}\NormalTok{gender, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"M"}\NormalTok{, }\StringTok{"F"}\NormalTok{))}
+\CommentTok{# replace out-of-range phq item data with missing values -----}
+\NormalTok{t0[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)] <-}\StringTok{ }\KeywordTok{lapply}\NormalTok{(}
+\NormalTok{  t0[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }
+  \ControlFlowTok{function}\NormalTok{(x) \{}
+\NormalTok{    x[x }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
+\NormalTok{    x[x }\OperatorTok{>}\StringTok{ }\DecValTok{3}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
+\NormalTok{  \})}
 
-\CommentTok{# save cleaned baseline data to data/cleaned, in R (.Rda) format}
-\NormalTok{baseline <-}\StringTok{ }\NormalTok{d}
-\KeywordTok{save}\NormalTok{(baseline, }\DataTypeTok{file =} \StringTok{"data/cleaned/baseline.Rda"}\NormalTok{)}
+\CommentTok{# save cleaned baseline data --------------------------------- }
+\KeywordTok{save}\NormalTok{(t0, }\DataTypeTok{file =} \StringTok{"data/cleaned/t0.Rda"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1876,11 +1883,71 @@ The code snippet above illustrates the importance of code documentation.
 You may struggle to immediately understand some of the code segments.
 For instance, you might not be familiar with the \texttt{paste0}
 function that is used to create the names of the variables that contain
-the PHQ-9 item scores. Fortunately, however, it becomes clear that the
-code statement calculates the sum of the item from the comment just
-above the code (the line starting with \texttt{\#}). Use these comments
-in your code. You will do yourself and your colleagues a big favor by
-making it much easier to quickly grasp the meaning of your code.
+the PHQ-9 item scores. Fortunately, however, the comment (the lines
+starting with \texttt{\#}) make it clear that the function is used to
+select individual PHQ-9 items. Comment your code. You will do yourself
+and your colleagues a big favor by making it much easier to quickly
+grasp the meaning of your code.
+
+\section{Pre-process}\label{pre-process}
+
+Once data are cleaned, you can enrich the data sets with variables that
+can be derived from the raw data, such as, e.g., survey scale and
+subscale scores, if needed), or actigraphy summary measures (see Chapter
+\ref{activity}). The example below calculates the PHQ-9 sum scores from
+the item scores in the cleaned baseline data:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# ------------------------------------------------------------}
+\CommentTok{# Pre-process data }
+\CommentTok{# JR - 2018-10-16}
+\CommentTok{# ------------------------------------------------------------}
+
+\CommentTok{# import cleaned baseline survey data ------------------------}
+\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/baseline.Rda"}\NormalTok{)}
+\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/posttest.Rda"}\NormalTok{)}
+
+\CommentTok{# add PHQ-9 sum scores ---------------------------------------}
+\NormalTok{baseline}\OperatorTok{$}\NormalTok{phq9 <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(baseline[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }
+                         \DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{posttest}\OperatorTok{$}\NormalTok{phq9 <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(posttest[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }
+                         \DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+
+\CommentTok{# re-save baseline data --------------------------------------}
+\KeywordTok{save}\NormalTok{(baseline, }\DataTypeTok{file =} \StringTok{"data/cleaned/baseline.Rda"}\NormalTok{)}
+\KeywordTok{save}\NormalTok{(baseline, }\DataTypeTok{file =} \StringTok{"data/cleaned/posttest.Rda"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\section{Combine}\label{combine}
+
+While working on your project, you will probably want to re-run the
+cleaning and pre-processing scripts a lot, for instance in response to
+additional data coming in, or to fix bugs in the import routines. For
+this, it can be helpful to create one file in which all import scripts
+are executed in proper sequence. For this, you can use R's
+\texttt{source} command, with which scripts can be read and executed
+directly from disk:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# ------------------------------------------------------------}
+\CommentTok{# Import (clean & pre-process) all data files }
+\CommentTok{# JR - 2018-10-16}
+\CommentTok{# ------------------------------------------------------------}
+
+\CommentTok{# clean -------------------------------}
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/import/clean_surveys.R"}\NormalTok{) }
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/import/clean_ema.R"}\NormalTok{) }
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/import/clean_actigraphy.R"}\NormalTok{) }
+
+\CommentTok{# pre-process----------------------------}
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/import/calc_surveys.R"}\NormalTok{) }
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/import/calc_ema.R"}\NormalTok{)}
+\KeywordTok{source}\NormalTok{(}\StringTok{"scripts/import/calc_actigraphy.R"}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
 
 \section{Reproducible Analyses}\label{reproducible-analyses}
 
@@ -1899,14 +1966,18 @@ standard R data structure.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Data analysis example}
+\CommentTok{# -------------------------------------------------------------}
+\CommentTok{# N = 1 Analysis (P001)}
+\CommentTok{# note: part of manuscript!}
+\CommentTok{# JR - 2018-10-16}
+\CommentTok{# ------------------------------------------------------------}
 
-\CommentTok{# import cleaned EMA mood study data}
-\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/mood.Rda"}\NormalTok{)}
+\CommentTok{# import cleaned EMA mood study data --------------------------}
+\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/ema.Rda"}\NormalTok{)}
 
 \CommentTok{# create and save Figure 1: EMA mood data, of participant P001 }
 \NormalTok{d <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(mood, ID }\OperatorTok{==}\StringTok{ "P001"}\NormalTok{)}
-\KeywordTok{pdf}\NormalTok{(}\DataTypeTok{file =} \StringTok{"scripts/publised/figure1.pdf"}\NormalTok{)}
+\KeywordTok{pdf}\NormalTok{(}\DataTypeTok{file =} \StringTok{"scripts/published/figure1.pdf"}\NormalTok{)}
 \KeywordTok{plot}\NormalTok{(mood }\OperatorTok{~}\StringTok{ }\NormalTok{time, d)}
 \KeywordTok{dev.off}\NormalTok{()}
 
@@ -1938,7 +2009,19 @@ all you need to satisfy their request:
 \end{Highlighting}
 \end{Shaded}
 
-\section{README}\label{readme}
+\section{Documentation}\label{documentation}
+
+\subsection{Protocol}\label{protocol}
+
+In ``docs/protocol'', we find the ``protocol.docx'' file, which should
+contain a detailed description of the study. This file provides
+information on the background of the study, the methods, analysis
+techniques, defines the codebook of the study, and should include full
+descriptions of all surveys, assessment protocols, etc.. If needed, you
+can use this folder to store additional background material, such as
+PDFs of published psychometric studies.
+
+\subsection{README}\label{readme}
 
 Note, finally, the `README' file in the root of the project directory.
 This file should contain a brief summary of the project, to quickly
@@ -1957,17 +2040,17 @@ Description\strut
 \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
 Title\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright\strut
-Project title \& Acronym\strut
+Project title \& Acronym .\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
 Description\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright\strut
-One-paragraph project description\strut
+One-paragraph project description.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
 Author\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright\strut
-Author name, e-mail affiliation\strut
+Author name, e-mail affiliation.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
 Getting Started\strut
@@ -1979,35 +2062,35 @@ for development.\strut
 Prerequisites\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright\strut
 A listing of software required (i.e.~R packages), and instructions on
-how to install this software\strut
+how to install this software.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
 Contents\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright\strut
 A listing of project directories, with a brief description of their
-contents\strut
+contents.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
 Restrictions\strut
 \end{minipage} & \begin{minipage}[t]{0.51\columnwidth}\raggedright\strut
-Notes about potential data access limitations\strut
+Notes about potential data access limitations.\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
 
-\section{A Final Note}\label{a-final-note}
+\section{Discussion}\label{discussion}
 
 In this chapter, we aimed to show how adopting the RStudio Project can
-help you to implement key principles of EMA data management, such as
-reproducibility. To do so, we discussed the project structure of an
-illustrative small-scale EMA study. No doubt, your project will differ
-from this example in many ways, forcing you to deviate from the example
-structure. The example may be too elaborate, for example, if your
-project only requires you to analyze a single data file. The structure
-it certainly too limited to support the requirements of a full PHD
-project (such as the one described, for example, in the APH quality
-handbook - see \url{http://www.emgo.nl/kc/folders-and-file-names/}). But
-as we mentioned earlier, RStudio Projects are flexible. It should be
+help you to implement key principles of EMA data management. To
+illustrate this, we discussed the project structure of a small-scale EMA
+study. No doubt, your project will differ from this example in many
+ways, forcing you to deviate from the example structure. The example may
+be too elaborate, for example, if your project only requires you to
+analyze a single data file. The structure is certainly too limited to
+support the requirements of a full PHD project (such as the one
+described, for example, in the APH quality handbook - see
+\url{http://www.emgo.nl/kc/folders-and-file-names/}). But as we
+mentioned earlier, RStudio Projects are flexible. It should be
 relatively straightforward to scale down or scale up the example that we
 discussed.
 
@@ -2706,8 +2789,9 @@ Example}\label{simulated-ema-time-series-example}
 
 We will focus on a simulated three-week time-series of EMA mood
 responses of a single person, in which ratings were collected five times
-per day. Figure \ref{fig:feat-plot} shows a plot of the simulated
-scores.
+per day (using the \texttt{generate\_features\_dataset} function of
+package \texttt{emaph}). Figure \ref{fig:feat-plot} shows a plot of the
+simulated scores.
 
 Stare at the figure for a moment. How would you characterize the
 development of scores over time? What features would you want to
@@ -2929,10 +3013,11 @@ clear. Figure \ref{fig:feat-plot-roll} illustrates this.
 Both the auto-correlation analysis and the moving average plot suggest
 periodicity in the EMA time series. Suppose we want to know more about
 this periodicity. Is there a way to quantify it? Yes, there is. With a
-technique called Fourier Analysis, the strength (`power') of various
-frequencies can be quantified. Figure \ref{fig:feat-plot-pow} shows what
-happens if we run a Fourier analysis of our time series (with R's
-built-in function \texttt{spec.pgram}).
+technique called Fourier Analysis, the strength (`power') of the
+evidence for the presence of various frequencies can be quantified.
+Figure \ref{fig:feat-plot-pow} shows what happens if we run a Fourier
+analysis of our time series (with R's built-in function
+\texttt{spec.pgram}).
 
 \begin{figure}
 
@@ -2950,7 +3035,7 @@ feature of EMA data, because of the circadian rhythms in our body and in
 our environment (our biological clocks, day-night cycles, seasons)
 \citep{Doherty2018, Frank2000, Frank2007, Karatsoreos2014, VanSomeren2000, Tahmasian2013}.
 
-\section{Discussion}\label{discussion}
+\section{Discussion}\label{discussion-1}
 
 In this chapter, we used a number of statistical indicators to
 characterize a single time-series. By extracting these indicators (or
@@ -2987,49 +3072,10 @@ extraction techniques yourself.
 \KeywordTok{library}\NormalTok{(gridExtra)}
 \KeywordTok{library}\NormalTok{(psych)}
 \KeywordTok{library}\NormalTok{(zoo)}
+\KeywordTok{library}\NormalTok{(emaph)}
 
-\CommentTok{# simulate the signal -------}
-\KeywordTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{)}
-\NormalTok{n_measurements_per_day <-}\StringTok{ }\DecValTok{5}
-\NormalTok{n_days <-}\StringTok{ }\DecValTok{21}
-\NormalTok{n <-}\StringTok{ }\NormalTok{n_measurements_per_day }\OperatorTok{*}\StringTok{ }\NormalTok{(n_days)}
-\NormalTok{m <-}\StringTok{ }\DecValTok{3}
-\NormalTok{sdev_min <-}\StringTok{ }\DecValTok{1}
-\NormalTok{sdev_max <-}\StringTok{ }\DecValTok{4}
-\NormalTok{trend  <-}\StringTok{ }\DecValTok{3}
-\NormalTok{missingness_prob =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\FloatTok{0.5}\NormalTok{)}
-\NormalTok{autocorrelation =}\StringTok{ }\NormalTok{.}\DecValTok{6}
-
-\NormalTok{## time}
-\NormalTok{t <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, (n }\OperatorTok{-}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{*}\StringTok{ }\DecValTok{1} \OperatorTok{/}\StringTok{ }\DecValTok{5}\NormalTok{, }\DataTypeTok{by =}  \DecValTok{1} \OperatorTok{/}\StringTok{ }\DecValTok{5}\NormalTok{)}
-
-\NormalTok{## signal}
-\NormalTok{s <-}\StringTok{ }\KeywordTok{numeric}\NormalTok{(}\KeywordTok{length}\NormalTok{(t))}
-
-\NormalTok{## periodicity}
-\NormalTok{s <-}\StringTok{ }\KeywordTok{seq}\NormalTok{(sdev_min, sdev_max, }\DataTypeTok{length.out =}\NormalTok{ n) }\OperatorTok{*}\StringTok{ }\KeywordTok{sin}\NormalTok{(}\DecValTok{1}   \OperatorTok{*}\StringTok{ }\NormalTok{t }\OperatorTok{*}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{pi)}
-\NormalTok{s <-}
-\StringTok{  }\NormalTok{s }\OperatorTok{+}\StringTok{ }\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\KeywordTok{seq}\NormalTok{(sdev_min, sdev_max, }\DataTypeTok{length.out =}\NormalTok{ n) }\OperatorTok{*}\StringTok{ }\KeywordTok{sin}\NormalTok{(}\DecValTok{1} \OperatorTok{/}\StringTok{ }\DecValTok{7} \OperatorTok{*}\StringTok{ }\NormalTok{t }\OperatorTok{*}\StringTok{ }\DecValTok{2} \OperatorTok{*}\StringTok{ }\NormalTok{pi)}
-
-\NormalTok{## mean + trend + sd (heteroscedastic)}
-\NormalTok{s <-}\StringTok{ }\NormalTok{s }\OperatorTok{+}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(n,}
-               \DataTypeTok{mean =} \KeywordTok{seq}\NormalTok{(m, m }\OperatorTok{+}\StringTok{ }\NormalTok{trend, }\DataTypeTok{length.out =}\NormalTok{ n),}
-               \DataTypeTok{sd =} \FloatTok{0.5}\NormalTok{)}
-
-\CommentTok{#3 auto-correlation}
-\NormalTok{s <-}\StringTok{ }\NormalTok{s }\OperatorTok{+}\StringTok{ }\DecValTok{1} \OperatorTok{*}\StringTok{ }\KeywordTok{arima.sim}\NormalTok{(}\DataTypeTok{model =} \KeywordTok{list}\NormalTok{(}\DataTypeTok{ar =}\NormalTok{ autocorrelation), }\DataTypeTok{n =}\NormalTok{ n)}
-
-\NormalTok{## missingness}
-\NormalTok{m1 <-}
-\StringTok{  }\KeywordTok{rbinom}\NormalTok{(n, }\DecValTok{1}\NormalTok{, }\KeywordTok{seq}\NormalTok{(missingness_prob[}\DecValTok{1}\NormalTok{], missingness_prob[}\DecValTok{2}\NormalTok{], }\DataTypeTok{length.out =}\NormalTok{ n))}
-\NormalTok{s[m1 }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
-
-\NormalTok{## in range}
-\NormalTok{s[s }\OperatorTok{>}\StringTok{ }\DecValTok{10}\NormalTok{] <-}\StringTok{ }\DecValTok{10}
-\NormalTok{s[s }\OperatorTok{<}\StringTok{ }\DecValTok{0}\NormalTok{] <-}\StringTok{ }\DecValTok{0}
-
-\NormalTok{## combine in data.frame}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(t, s)}
+\CommentTok{# simulate the signal (using emaph function) -------}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{generate_features_dataset}\NormalTok{(}\DataTypeTok{seed =} \DecValTok{123}\NormalTok{)}
 
 \CommentTok{# plot -------------------------}
 \NormalTok{e <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(d,}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(s))}
@@ -3788,7 +3834,7 @@ recovery from the relapse.
 \caption{Results of the DFA analysis.}\label{fig:csd-dfaplot}
 \end{figure}
 
-\section{Discussion}\label{discussion-1}
+\section{Discussion}\label{discussion-2}
 
 Our re-analysis replicates the main finding of the Wichers et al article
 (\citep{Wichers2016}): several weeks prior to a depression relapse, as
@@ -3857,9 +3903,9 @@ Riper and Smit & ICT4Depression & VU / GGZ inGeest\tabularnewline
 & E-COMPARED & VU / GGZ inGeest\tabularnewline
 \textbf{Psychosomatic symptoms} & &\tabularnewline
 Knoop & Chronic Fatigue study & AMC\tabularnewline
-Snoek & MERITS (type 1 diabetes) & VUmc\tabularnewline
-Sprangers & FAntasTIGUE (fatigue) & AMC\tabularnewline
-& IMPACT (Heart failure) & AMC\tabularnewline
+Snoek & MERITS & VUmc\tabularnewline
+Sprangers & FAntasTIGUE & AMC\tabularnewline
+& IMPACT & AMC\tabularnewline
 \textbf{Psychotic symptoms} & &\tabularnewline
 Van der Gaag & TemStem & VU\tabularnewline
 & VRETp & VU\tabularnewline
@@ -3997,35 +4043,35 @@ System'-project; \emph{RADAR-CNS}; \url{http://www.radar-cns.org}).
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Femke Lamers, PhD, Brenda Penninx, PhD (VUmc), Harriette Riese, PhD
 (UMCG), Robert Schoevers, PhD (UMCG), the NESDA consortium\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VUmc, GGZ inGeest, Amsterdam\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project(s)}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The main aim of NESDA is to examine the long-term course and prognosis
 of anxiety and depression \citep{Penninx2008}. Within the 9-year
 follow-up of the NESDA study (2015 - 2017), NESDA participants (n = 384)
 were invited for an EMA diary/actigraphy study.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 NESDA EMA study data were collected to explore the dynamic interplay
 between cognitions, emotions, behavior and environment in daily life of
 depressed versus non-depressed participants. EMA participants started
@@ -4040,9 +4086,9 @@ weeks. Recording started on the evening prior to the first EMA
 assessment and continued until the morning after the last
 assessment.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Participants were prompted five times a day to complete a self-report
 questionnaire comprising \textasciitilde{}30 items. Items (7-point
 Likert scale, ranging from `not {[}at all{]}' to `very') tapped 1) mood
@@ -4062,25 +4108,25 @@ Interdisciplinary Center of Psychopathology and Emotion regulation
 (ICPE), such as the Mood and Movement in Daily life (MOOVD) study
 \citep{Booij2015}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 RoQua (\url{http://www.roqua.nl/}), GENEActiv accelerometer. See also
 Chapter \ref{ema-instruments-catalogue}).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact Information}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/brenda-penninx}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/femke-lamers}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://www.nesda.nl/}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4092,27 +4138,27 @@ Chapter \ref{ema-instruments-catalogue}).\strut
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Femke Lamers, PhD; Brenda Penninx, PhD; Sonia Difrancesco, MSc, and the
 RADAR consortium.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VUmc, GGZ inGeest\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The European (EU H2020-IMI) \emph{RADAR-CNS} project (Remote Assessment
 of Disease and Relapse - Central Nervous System;
 \url{http://www.radar-cns.org/}) aims to study the potential of wearable
@@ -4123,9 +4169,9 @@ improve quality of life and psychological well-being of patients. Within
 this project, the VUmc/GGZ inGeest research site focuses on depression
 (RADAR-MDD), in collaboration with King's College, London (KCL).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Technical goals of the project are to 1) build an end-to-end open source
 system with generalized data aggregation capabilities, and 2) explore
 (technological aspects of) big data solutions. Clinical goals of the
@@ -4133,9 +4179,9 @@ project are to 1) assess the feasibility of continuous monitoring of
 patients, and 2) predict disease onset or relapse with big data
 prevention and risk assessment approaches.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA Measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Data are collected during a 2-year period, in which EMA will be
 activated every 6 weeks for 6 consecutive days. Active EMA outcomes
 include (variability in) sleep quality, activity, social interactions,
@@ -4145,9 +4191,9 @@ actigraphy), skin temperature, galvanic skin conductance, heart rate
 (-variability), voice recognition, social interaction data (call/message
 logs), and smartphone app usage patterns.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform(s)}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 In the RADAR project, an comprehensive EMA platform is developed (the
 RADAR RMT application; see \url{http://thehyve.nl/cases/radar-cns} and
 \url{http://github.com/RADAR-base}); This platform focuses on classes of
@@ -4159,19 +4205,19 @@ several wearable device (including the
 Pebble 2 Smart-watch, Biovotion VSM, Faros 180, and
 \href{http://www.fitbit.com/home}{Fitbit}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/femke-lamers}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/brenda-penninx}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://www.radar-cns.org/}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4194,28 +4240,28 @@ built-in, integrated EMA functionality.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Heleen Riper, PhD, Jan Smit, PhD, Lise Kemmeren (GGz InGeest) and the
 Moodbuster/E-COMPARED consortium\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Vrije Universiteit Amsterdam; GGZ inGeest (and other
 organisations)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project(s)}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Moodbuster was developed in the European FP7 project ``ICT4Depression''
 (\citet{warmerdam2012}; \url{http://www.ict4depression.eu/}), and
 applied in the Horizon 2020 FP7 EU-project E-COMPARED {[}European
@@ -4226,18 +4272,18 @@ EU ImpleMentAll project (\url{http://www.implementall.eu}) and in
 several other clinical trials that are currently (October 2018) in
 preparation.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 In the ICT4Depression project, the Moodbuster platform included a
 complex set of active and passive EMA measures, including physiological
 sensors, accelerometers, wearables to measure sympathetic nervous system
 responses (chest strap and glove), and an Android EMA smartphone
 app.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 For the E-COMPARED study, the Moodbuster website and the smartphone app
 were adapted to deliver (blended) treatment to patients with MDD, in 5
 routine practice settings across Europe. A therapist portal was added,
@@ -4254,25 +4300,25 @@ analogue scale, ranging from 0 (low) to 10 (high). EMA data were used in
 several machine learning projects
 \citep{mikus2018, rocha2018, VanBreda2018, VandeVen2017}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Moodbuster (\url{http://www.moodbuster.eu}; see also Chapter
 \ref{ema-instruments-catalogue})).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/heleen-riper}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/jan-smit}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/lise-kemmeren}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4293,35 +4339,35 @@ an EMA study at the Expert Centre for Chronic Fatigue (ECCF;
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Margreet Worm-Smeitink, MSc; Hans Knoop, PhD, in collaboration with
 Judith Rosmalen, PhD, Anne van Gils, MSc, Rei Monden, PhD, and
 others\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 AMC\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The \emph{CFS EMA study} was designed to investigate - through
 time-series analyses - whether there are differences in perpetuators of
 fatigue between individual patients.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 **EMA measures\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 New patients attending the ECCF (n = 102) were asked to complete an
 e-diary, 5 times a day, for 2 weeks. The times were fixed in
 consultation with the participant, with a 3-hour break between each
@@ -4334,21 +4380,21 @@ package was used to conduct network analyses. Results are forthcoming.
 Identified determinants of fatigue will used to personalize treatment of
 CFS-patients.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 RoQua (\url{http://www.roqua.nl}; see Chapter
 \ref{ema-instruments-catalogue})). Participants received a link to the
 (web-based) e-diary via an SMS to their personal smartphone.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://www.amc.nl/web/research-75/publications/prof.-dr.-j.a.-knoop.htm}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://nkcv.nl/onderzoek/expert-centre-chronic-fatigue/}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4374,16 +4420,16 @@ undergoing a cardiac intervention.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Mirjam Sprangers, PhD, in collaboration with Martijn Spruit, PhD (PI);
 Yvonne Goërtz, MSc; Zjala Ebadi (from July 2018), MSc, Melissa Thong,
 PhD, Daisy Janssen, MD, PhD, Jeanette Peters, PhD, Jan Vercoulen, PhD,
@@ -4391,24 +4437,24 @@ Chris Burtin, MSc, Yvonne Meertens-Kerris, Arnold Coors, Jean Muris, MD,
 PhD, Emiel Wouters, MD, PhD, Judith Prins, PhD, and Martijn Spruit,
 PhD\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 AMC (in collaboration with Ciro-Horn, Maastricht UMC, Radboud UMC, and
 Hasselt University)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project goals}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The \emph{FAntasTIGUE} study examines fatigue in patients with chronic
 obstructive pulmonary disease (COPD; n = 400), by evaluating the course
 of fatigue, precipitating/perpetuating factors and hospitalization. A
 secondary aim is to identify diurnal fluctuations in fatigue, by using
 EMA in a sub-sample of participants (n = 40) \citep{Goertz2018}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The project comprises four data collection periods (baseline, and 4, 8,
 and 12-month follow-up). During data collection periods, patients are
 provided with iPods, on which an EMA application will be pre-installed.
@@ -4426,15 +4472,15 @@ going to bed. During the EMA data collection period, patients will also
 be asked to wear an actigraph (activity monitor), 24 hours a day, for
 one week.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Psymate (\url{http://psymate.eu}; see Chapter
 \ref{ema-instruments-catalogue}).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://www.amc.nl/web/research-75/publications/prof.-dr.-m.a.g.-sprangers-publications.htm}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4446,28 +4492,28 @@ Psymate (\url{http://psymate.eu}; see Chapter
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Mirjam Sprangers, PhD, with Iris Hartog, MSc; Justine Netjes (until
 2017), MSc; Tom Oreel, MSc; Pythia Nieuwkerk, PhD; Michael Scherer-Rath,
 PhD; José Henriques, MD, PhD; Hanneke van Laarhoven, MD, PhD\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 AMC\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The \emph{IMPACT} project (\url{http://www.impactonderzoek.nl/}) is an
 NWO-funded study targeting the Quality of Life (QoL) of patients with
 multiple chronic morbidities, specifically those undergoing a cardiac
@@ -4483,9 +4529,9 @@ three EMA data collection periods: 1) pre-treatment, 2) two weeks after
 treatment for PCI patients or 3 months post-treatment for CABG patients,
 and 3) six months post-treatment.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Participants are prompted to answer nine general and one evening
 questionnaire per day, for seven consecutive days. During the day,
 patients are beeped randomly between 7:30 and 22:30 to complete a
@@ -4503,17 +4549,17 @@ of the day. This item is rated on a visual analogue scale from 0 (worst)
 to 100 (best). Data will be analyzed with vector auto-regressive models,
 using R.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 PsyMate (\url{http://psymate.eu}; see Chapter
 \ref{ema-instruments-catalogue})); Participants are provided with iPods
 with a pre-installed EMA application, or, if they prefer, can use their
 own device.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.71\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://www.amc.nl/web/research-75/publications/prof.-dr.-m.a.g.-sprangers-publications.htm}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4534,27 +4580,27 @@ variability and wellbeing.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Frank J. Snoek, PhD, Maartje de Wit, PhD, Cat Racca, MSC, Linda T.
 Muijs, MSc\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VUmc\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 In the MERITS study (`Momentary assessment of patient Experiences in
 Real life of Insulin Glargine 300 in Type 1 diabetes'), Snoek an
 co-workers use EMA to explorer whether a) blood glucose variability is
@@ -4565,38 +4611,38 @@ if individual differences (profiles) can be distinguished with regard to
 the (strength of the) association between glucose variability and
 changes in mood.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Adult patients (N = 70) with type 1 diabetes, will be (randomly)
 prompted to answer questions on mood (based on POMS questionnaire),
 diabetes distress, fear of hypoglycemia and sleep.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Ilumivu (\url{http://ilumivu.com}, see also Chapter
 \ref{ema-instruments-catalogue}).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/frank-snoek}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/maartje-de-wit}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/cati-racca}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
-\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
-\url{http://research.vumc.nl/en/persons/linda-muijs}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
+\url{http://research.vumc.nl/en/persons/linda-muijs}\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -4616,27 +4662,27 @@ EMA to study pathways to suicidal behavior.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project team}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Wouter van Ballegooijen, PhD; Chani Nuij, MSc.; Ad Kerkhof, PhD; Jan
 Smit, PhD; Heleen Riper, PhD, and others\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VU, VUmc, GGZ inGeest\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The `Continuous Assessment for Suicide Prevention And Research' (CASPAR)
 study ({[}\citet{Nuij2018}) aims to evaluate the feasibility of mobile
 safety planning and daily mobile self-monitoring in routine care
@@ -4654,9 +4700,9 @@ our results and our data, ultimately contributing to more personalized
 interventions according to precision medicine principles, and more
 effective suicide prevention.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 In the project, adult suicidal patients (N = 80) with major depression
 or dysthymia and suicide risk in mental health care will be prompted,
 three times a day, to answer eight self-report items (e.g. \emph{`I feel
@@ -4671,20 +4717,20 @@ also gathered to assess movement patterns and daily rhythms. Planned
 variables also include accelerometer data and smartphone usage patterns.
 These data are not visible to study participants.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Ilumivu (\url{http://ilumivu.com}, see Chapter
 \ref{ema-instruments-catalogue}).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/wouter-van-ballegooijen}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/chani-nuij}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4708,27 +4754,27 @@ colleagues used EMA outcomes to collect in-the-moment data.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Team}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Mark van der Gaag, PhD, Alyssa Jongeneel, MSc, David van den Berg, PhD,
 Dorien Scheffers, MSc\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Vrije Universiteit Amsterdam, Parnassia Psychiatric Institute\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The TemStem project focusses on people who suffer from hearing voices
 and are obstructed by them in their daily life. Study participants
 install an app that contains both an EMI and EMA function, which is
@@ -4746,9 +4792,9 @@ severity of AVH. Additional analyses will focus on the identification of
 working mechanisms (predictors and mediators of effects), and the
 usability of TemStem.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 TemStem users are encouraged to fill-in nine self-report items on a
 daily basis. Items tap: 1) hearing voices: 6 items (e.g. \emph{``Today,
 the voices were disturbing''}), 2) mood, 3) self-esteem, 4) the use of
@@ -4764,26 +4810,26 @@ voices. Users can choose to provide additional information on age,
 gender, which county in the Netherlands they are currently located, how
 they found the app, and why they want to use it\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The TemStem app was developed by Reframing Studio, in collaboration with
 Parnassia Psychiatric Institute and TU Delft. The app is available for
 IOS and Android.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/m-van-der-gaag}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/alyssa-jongeneel}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/dpg-van-den-berg}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4795,35 +4841,35 @@ IOS and Android.\strut
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Team}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Mark van der Gaag, PhD, Roos Pot-Kolder, MSc, with others\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Vrije Universiteit Amsterdam, VUmc, (in collaboration with UMC
 Groningen, Maastricht University)\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 In the context of a trail exploring the effect of virtual reality
 exposure therapy on social participation in people with a psychotic
 disorder \citep[VRETp; n = 116,][]{pot2016}, EMA data were collected to
 assess changes in social functioning and paranoid ideation.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 EMA included momentary assessment of 1) Anxiety (one item, e.g.
 \emph{``I feel anxious''}), 2) Perceived social threat (four items, e.g.
 \emph{``In this company, I feel accepted''}), 3) Paranoia (three items,
@@ -4844,22 +4890,22 @@ suggest that the addition of VR-CBT to standard treatment can reduce
 paranoid ideation and momentary anxiety in patients with a psychotic
 disorder \citep{pot2018}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform used}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 PsyMate (\url{http://www.psymate.eu/}, see Chapter
 \ref{ema-instruments-catalogue}). Because the PsyMate application was
 not finished at the time of the trial, participants were provided with a
 small palmtop device for the duration of the study.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/m-van-der-gaag}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.22\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.72\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{https://www.researchgate.net/profile/Roos_Pot-Kolder}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4880,28 +4926,28 @@ examples of such studies are provided.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
 \textbf{Aspect}\strut
-\end{minipage} & \begin{minipage}[b]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
 \textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Team}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Eus van Someren, PhD (department head), with Bart te Lindert, MSc, Wisse
 van der Meijden, MSc, Tessa Blanken, MSc, Michele Colombo, PhD, Kim
 Dekker, MSc, Jeanne Leerssen, MSc, Rick Wassing, MSc.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The Netherlands Institute for Neuroscience, VUmc, GGZ inGeest,\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project(s)}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The Van Someren group is involved in a variety of projects in which
 sensory data are collected \citep[see,
 e.g.,][\citet{VanSomeren2000}]{VanSomeren2011}. Exemplary of current
@@ -4918,9 +4964,9 @@ timing had a stronger responsiveness to blue light. The mid-sleep timing
 estimates from sleep diaries and actigraphy shared 94.5\% of their
 inter-individual variance \citep{Meijden2016}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \emph{Bart te Lindert} studies the effect of the environment on
 sleepiness, for example by measuring light, (skin) temperature, posture,
 and psychological variables. A recent study focused on the effect of
@@ -4946,9 +4992,9 @@ groups in Positive mood and Negative mood. Participants with insomnia
 did have a different diurnal profile of Positive mood and Negative mood
 \citep{Lindert2018}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform(s) used}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Philips Actiwatch Spectrum; Microelectromechanical accelerometer (Move
 II, Movisens GmbH). Sleep onset and final wake-up time were estimated
 using an algorithm that is implemented in Matlab
@@ -4956,19 +5002,19 @@ using an algorithm that is implemented in Matlab
 platform was used (\url{https://xs.movisens.com/}, see Chapter
 \ref{ema-instruments-catalogue}).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vumc.nl/en/persons/eus-jw-van-someren}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://herseninstituut.nl/over-ons/de-organisatie/medewerkers/bart-te-lindert/}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://herseninstituut.nl/over-ons/de-organisatie/medewerkers/wisse-van-der-meijden/}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -4991,27 +5037,27 @@ system.
 
 \begin{longtable}[]{@{}ll@{}}
 \toprule
-\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
-Aspect\strut
-\end{minipage} & \begin{minipage}[b]{0.74\columnwidth}\raggedright\strut
-Description\strut
+\begin{minipage}[b]{0.25\columnwidth}\raggedright\strut
+\textbf{Aspect}\strut
+\end{minipage} & \begin{minipage}[b]{0.69\columnwidth}\raggedright\strut
+\textbf{Description}\strut
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Team}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Eco de Geus, PhD; Gonneke Willemsen, PhD; Martin Gevonden, PhD; Denise
 van der Mee, MSc, Mandy Tjew-A-Sin, MSc; Cor Stoof, MSc\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VU\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VU-AMS was developed at the department of Biological Psychology of the
 Vrije Universiteit Amsterdam. The system is used worldwide by many
 research groups, to study stress and emotion in both laboratory and
@@ -5024,9 +5070,9 @@ autonomic nervous system to metabolic and immunological risk factors
 \url{http://www.vu-ams.nl/research/phd-theses/}). Current projects
 include:\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 1) Validation of a wristwatch-based technology, developed by Philips, to
 measure skin conductance responses in a laboratory (\textasciitilde{}2.5
 h) and ambulatory (\textasciitilde{}22h, including the night) setting on
@@ -5042,9 +5088,9 @@ the current stress level, alongside a one-hour prediction of changes in
 stress level and cognitive functioning (Cognitive Zone Changes;
 \url{http://www.ip.philips.com/licensing/program/121})\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 2) Ambulatory study on self-regulation among youth (Tjew A Sin et al.,
 2018-2019). This study is conducted at the schools as part of the
 NeuroLab project. A total of 50 students, will wear the VU-AMS device
@@ -5054,9 +5100,9 @@ collected continuously over the course of a regular school day
 multiple components of self-regulation, including emotion-regulation,
 cognitive functioning, impulsivity and inhibition\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The VU-AMS device is a battery powered wearable that can record up to 48
 hours of data (4GB storage). It measures the electrocardiogram, the
 impedance cardiogram, and skin conductance. With VU-AMS, the following
@@ -5068,9 +5114,9 @@ Cardiac Output (CO), Respiration Rate (RR), Skin Conductance Level (SCL)
 and Skin Conductance Responses (SCRs), Movement (Hip-worn tri-axial
 accelerometer signals (g).\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 The freely available `Data Analysis and Management System' (DAMS)
 package is used for extraction and processing of VU-AMS data (see
 \url{http://www.vu-ams.nl/support/downloads/software/}). The DAMS tool
@@ -5080,34 +5126,34 @@ of final IBI time series, event/diary-based data labeling, IBI spectral
 power calculation, automated scoring of RR, RSA, and PEP from the
 combined ECG.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Platform(s) used}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 VU-AMS / DAMS (see Chapter \ref{ema-instruments-catalogue}.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Contact}\strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/jcn-de-geus}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/ahm-willemsen}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{http://research.vu.nl/en/persons/martin-gevonden}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{https://research.vu.nl/en/persons/denise-van-der-mee}\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.74\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 \url{https://research.vu.nl/en/persons/mandy-tjew-a-sin}\strut
 \end{minipage}\tabularnewline
 \bottomrule
@@ -5429,7 +5475,7 @@ using the packages for your work.
 \caption{\label{tab:rcat} List of R packages that are useful in EMA
 research.}\tabularnewline
 \toprule
-\begin{minipage}[b]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
 \textbf{Category}\strut
 \end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\raggedright\strut
 \textbf{Package}\strut
@@ -5439,7 +5485,7 @@ research.}\tabularnewline
 \midrule
 \endfirsthead
 \toprule
-\begin{minipage}[b]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[b]{0.20\columnwidth}\raggedright\strut
 \textbf{Category}\strut
 \end{minipage} & \begin{minipage}[b]{0.23\columnwidth}\raggedright\strut
 \textbf{Package}\strut
@@ -5448,123 +5494,132 @@ research.}\tabularnewline
 \end{minipage}\tabularnewline
 \midrule
 \endhead
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Accelerometry\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\textbf{Accelerometry}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 GENEAread\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Import GENEActive data into R.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-GGIR\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Pre-process and analyze raw multi-day multi-day accelerometer
-data.\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+GGIR\\
+\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Pre-process and analyze raw multi-day\\
+multi-day accelerometer data.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 PhysicalActivity\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Analyze actigraph accelerometer data.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Data Management \& Visual Exploration\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-dplyr\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Data transformation.\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\textbf{Data Management }\& Visual** *Exploration**\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+**\textbar{} dplyr \textbar{} \textbar{}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Data transformation.\\[2\baselineskip]\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 ggplot2\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Create graphs.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 haven\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Import and export SPSS data files.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 lubridate\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Manipulate date and time variables.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Mixed-effects Modeling\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-lme4\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Fit linear and nonlinear mixed-effects models. Fast alternative to
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\textbf{Auto-regressive modeling}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+autovarCore\\
+\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Automate the construction of vector\\
+autoregressive models.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\textbf{Mixed-effects Modeling}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+lme4\\[2\baselineskip]\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Fit linear and nonlinear mixed-effects\\
+models. Fast alternative to\\
 package `nlme'.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-nlme\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Fit linear and nonlinear mixed effects models. Pre-dates package `lme4',
-but is still used because it a provides more advanced options to model
-correlational structures in the data.\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+nlme\\[4\baselineskip]\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Fit linear and nonlinear mixed effects\\
+models. Pre-dates package `lme4', but is\\
+still used because it a provides more\\
+advanced options to model correlational\\
+structures in the data.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Power Analysis\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-simr\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Simulation-based power calculations for mixed models.\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+**Power Analysis*\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+*\textbar{} simr \textbar{}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Simulation-based power calculations for\\
+mixed models.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Simulation\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\textbf{Simulation}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 simstudy\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Simulate study data.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Spatio-temporal analysis\strut
+\begin{minipage}[t]{0.20\columnwidth}\raggedright\strut
+\textbf{Spatio-temporal analysis}\strut
 \end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-adehabitatHR\strut
+** \textbar{} adehabitatHR \textbar{} \textbar{}\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Developed for home range estimation of wild animals from GPS data.
-Useful for human data as well.\strut
+\textbar{} Developed for home range estimation of \textbar{} wild
+animals from GPS data. Useful for \textbar{} human data as well.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Symptom Networks\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-autovarCore\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Automate the construction of vector autoregressive models.\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+**Symptom Network\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+s** \textbar{} bootnet \textbar{}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Assess the stability of symptom\\
+networks.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 \strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-bootnet\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Assess the stability of symptom networks.\strut
-\end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 qgraph\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
 Estimate and plot symptom networks.\strut
 \end{minipage}\tabularnewline
-\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-Time series analysis\strut
-\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-lomb\strut
-\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Calculate the Lomb-Scargle Periodogram for unevenly sampled time
-series.\strut
+\begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+\textbf{Time series analysis}\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+lomb\\
+\strut
+\end{minipage} & \begin{minipage}[t]{0.32\columnwidth}\raggedright\strut
+Calculate the Lomb-Scargle Periodogram\\
+for unevenly sampled time series.\strut
 \end{minipage}\tabularnewline
 \bottomrule
 \end{longtable}
@@ -5592,11 +5647,12 @@ into R for further processing, as illustrated below.
 \begin{Highlighting}[]
 \CommentTok{# Reading raw GENEActiv data.}
 \KeywordTok{library}\NormalTok{(GENEAread)}
+\KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{library}\NormalTok{(tidyr)}
 
 \NormalTok{dat <-}\StringTok{ }\KeywordTok{read.bin}\NormalTok{(}\KeywordTok{system.file}\NormalTok{(}\StringTok{"binfile/TESTfile.bin"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"GENEAread"}\NormalTok{),}
                 \DataTypeTok{verbose =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{downsample =} \DecValTok{20}\NormalTok{)}
-\CommentTok{#> Processing took: 0.055 secs .}
+\CommentTok{#> Processing took: 0.085 secs .}
 \CommentTok{#> Loaded 1560 records (Approx  0 MB of RAM)}
 \CommentTok{#> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)}
 
@@ -5614,11 +5670,11 @@ into R for further processing, as illustrated below.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/unnamed-chunk-2-1} 
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/genearead-example-1} 
 
 }
 
-\caption{Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).}\label{fig:unnamed-chunk-2}
+\caption{Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).}\label{fig:genearead-example}
 \end{figure}
 
 \subsection{GGIR}\label{ggir}
@@ -5664,6 +5720,77 @@ alternative to package \texttt{GGIR}, when ActiGraph data are available.
 \caption{Activity Counts (5-minute windows), in a Three-day Accelerometer data set.}\label{fig:fig15a}
 \end{figure}
 
+\section{Autoregressive modeling}\label{autoregressive-modeling}
+
+\subsection{autovarCore}\label{autovarcore}
+
+\index{Packages!autovarCore} \index{Packages!autovar}
+
+\index{Vector autoregressive models}
+
+Vector auto-regressive (VAR) models can be used to detect lagged
+relationships between multiple time-series (see also Chapter
+\ref{features}). In VAR, each variable is modeled as a linear function
+of past values (lags) of itself and of present and past values of other
+variables. When EMA is used to capture multiple phenomena over time, VAR
+can provide insight in how these phenomena interact. One challenge in
+VAR modelling is that many alternative models potentially exist, Package
+\emph{autovarCore} \citep{R-autovarCore} was developed to help
+researchers to find the VAR model with the best fit to a given
+time-series data set.
+
+In the (unrealistic) example below, function \texttt{autovar} is used to
+detect that changes in depression are positively related to past (lag 1)
+values of activity, in a simulated data set:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Autovar analysis.}
+\KeywordTok{library}\NormalTok{(autovarCore)}
+
+\CommentTok{# simulate data}
+\NormalTok{N =}\StringTok{ }\DecValTok{100}
+\NormalTok{depression <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(N)}
+\NormalTok{activity <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(N)}
+\NormalTok{activity_lag1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, activity[}\DecValTok{1}\OperatorTok{:}\NormalTok{(N }\OperatorTok{-}\DecValTok{1}\NormalTok{)])}
+
+\NormalTok{depression <-}\StringTok{ }\NormalTok{depression }\OperatorTok{+}\StringTok{ }\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{activity_lag1 }
+\NormalTok{d <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(depression, activity)}
+
+\NormalTok{models_found <-}\StringTok{ }\NormalTok{autovarCore}\OperatorTok{::}\KeywordTok{autovar}\NormalTok{(d, }\DataTypeTok{selected_column_names =} \KeywordTok{c}\NormalTok{(}\StringTok{'activity'}\NormalTok{, }\StringTok{'depression'}\NormalTok{))}
+
+\CommentTok{# Show details for the best model found}
+\KeywordTok{summary}\NormalTok{(models_found[[}\DecValTok{1}\NormalTok{]]}\OperatorTok{$}\NormalTok{varest}\OperatorTok{$}\NormalTok{varresult}\OperatorTok{$}\NormalTok{depression)}
+\CommentTok{#> }
+\CommentTok{#> Call:}
+\CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
+\CommentTok{#> }
+\CommentTok{#> Residuals:}
+\CommentTok{#>      Min       1Q   Median       3Q      Max }
+\CommentTok{#> -2.19318 -0.50293 -0.02582  0.59448  2.06502 }
+\CommentTok{#> }
+\CommentTok{#> Coefficients:}
+\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
+\CommentTok{#> activity.l1    0.56051    0.08640   6.488 4.04e-09 ***}
+\CommentTok{#> depression.l1  0.01631    0.08619   0.189    0.850    }
+\CommentTok{#> depression.l2 -0.02220    0.08759  -0.253    0.800    }
+\CommentTok{#> const          0.11889    0.09230   1.288    0.201    }
+\CommentTok{#> ---}
+\CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
+\CommentTok{#> }
+\CommentTok{#> Residual standard error: 0.9049 on 94 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.3133, Adjusted R-squared:  0.2914 }
+\CommentTok{#> F-statistic: 14.29 on 3 and 94 DF,  p-value: 9.507e-08}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{AutovarCore} is a simplified version of a more extensive package
+\emph{autovar} \citep{R-autovarCore}, which was used in several
+publications \citep{VanderKrieke2015, Emerencia2016}. Further
+information can be found on
+\href{https://autovar.nl/}{http://autovar.nl} and
+\href{https://autovarcore.nl/}{http://autovarcore.nl}
+
 \section{Data management \& Visual
 Exploration}\label{data-management-visual-exploration}
 
@@ -5692,15 +5819,33 @@ complex data transformations.
 \KeywordTok{require}\NormalTok{(dplyr)}
 
 \NormalTok{d <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(}
-  \DataTypeTok{c =} \KeywordTok{factor}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\DataTypeTok{each =} \DecValTok{10}\NormalTok{)), }
+  \DataTypeTok{id =} \KeywordTok{factor}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\OperatorTok{:}\DecValTok{5}\NormalTok{, }\DataTypeTok{each =} \DecValTok{10}\NormalTok{)), }
   \DataTypeTok{score =} \KeywordTok{rnorm}\NormalTok{(}\DecValTok{50}\NormalTok{)}
 \NormalTok{)}
 
 \NormalTok{b <-}\StringTok{ }\KeywordTok{as_tibble}\NormalTok{(d) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{group_by}\NormalTok{(c) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{mean_score =} \KeywordTok{mean}\NormalTok{(score))}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(id) }\OperatorTok{%>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{mean =} \KeywordTok{mean}\NormalTok{(score))}
+
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{kable}\NormalTok{(b)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{tabular}{l|r}
+\hline
+id & mean\\
+\hline
+1 & -0.4404972\\
+\hline
+2 & -0.4235974\\
+\hline
+3 & 0.0937901\\
+\hline
+4 & -0.4157054\\
+\hline
+5 & -0.0391835\\
+\hline
+\end{tabular}
 
 A good introduction to \texttt{dplyr} can be found in the book `R for
 Data Science' \citep{wickham2016r}, which can be freely accessed online
@@ -5742,21 +5887,21 @@ identifier), to show individual trajectories.
 \CommentTok{# step 2: add scatterplot}
 \NormalTok{g <-}\StringTok{ }\NormalTok{g }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{(); g}
 
-\CommentTok{# step 3: fit a smoothed line}
-\NormalTok{g <-}\StringTok{ }\NormalTok{g }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_smooth}\NormalTok{(); g}
+\CommentTok{# step 3: add a smoothed line}
+\NormalTok{g <-}\StringTok{ }\NormalTok{g }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"loess"}\NormalTok{); g}
 
-\CommentTok{# step 4: split plot by ID}
+\CommentTok{# step 4: split plot by subject ID}
 \NormalTok{g }\OperatorTok{+}\StringTok{ }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\StringTok{ }\NormalTok{ID)}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-1} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-2} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-3} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/cs15d-4} 
+{\centering \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-1} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-2} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-3} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-4} 
 
 }
 
-\caption{Plotting layers with ggplot2}\label{fig:cs15d}
+\caption{Plotting layers with ggplot2}\label{fig:ggplot2-example}
 \end{figure}
 
 \subsection{haven}\label{haven}
@@ -5764,16 +5909,19 @@ identifier), to show individual trajectories.
 \index{Packages!haven} \index{SPSS}
 
 With package \emph{haven} \citep{R-haven}, SPSS, STATA and SAS files can
-be read into R.
+be read into R. A particular advantage is that variables definitions are
+retained (in attributes of the columns in the R \texttt{data.frames}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Read SPSS data}
 \KeywordTok{library}\NormalTok{(haven)}
 
+\CommentTok{# read example data (included in package)}
 \NormalTok{path <-}\StringTok{ }\KeywordTok{system.file}\NormalTok{(}\StringTok{"examples"}\NormalTok{, }\StringTok{"iris.sav"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"haven"}\NormalTok{)}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{read_sav}\NormalTok{(path)}
 
+\CommentTok{# show attributes of variable}
 \KeywordTok{attributes}\NormalTok{(d}\OperatorTok{$}\NormalTok{Species)}
 \CommentTok{#> $format.spss}
 \CommentTok{#> [1] "F8.0"}
@@ -5798,11 +5946,12 @@ very useful.
 
 In the code snippet below, for example, the \texttt{round\_date}
 function is used to calculate the ENMO value from raw tri-axial
-accelerometer data, in 15-minute epoch windows.
+accelerometer data (see Chapter \ref{activity}), in 15-minute epoch
+windows.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Rounding dates.}
+\CommentTok{# Rounding datetime variables with lubridate.}
 \KeywordTok{library}\NormalTok{(emaph)}
 \KeywordTok{library}\NormalTok{(lubridate)}
 \KeywordTok{library}\NormalTok{(ggplot2)}
@@ -5811,10 +5960,13 @@ accelerometer data, in 15-minute epoch windows.
 \NormalTok{d <-}\StringTok{  }\KeywordTok{subset}\NormalTok{(genea,}
 \NormalTok{              timestamp }\OperatorTok{>}\StringTok{ "2018-06-02 12:00"} \OperatorTok{&}
 \StringTok{              }\NormalTok{timestamp }\OperatorTok{<}\StringTok{ "2018-06-02 18:00"}\NormalTok{)}
-\NormalTok{d}\OperatorTok{$}\NormalTok{epoch <-}\StringTok{ }\KeywordTok{round_date}\NormalTok{(d}\OperatorTok{$}\NormalTok{timestamp, }\StringTok{"minute"}\NormalTok{)}
 
+\CommentTok{# round timestamp}
+\NormalTok{d}\OperatorTok{$}\NormalTok{epoch <-}\StringTok{ }\KeywordTok{round_date}\NormalTok{(d}\OperatorTok{$}\NormalTok{timestamp, }\StringTok{"15 minutes"}\NormalTok{)}
+
+\CommentTok{# summarize x, y, z acceleration to ENMO}
 \NormalTok{d <-}\StringTok{ }\NormalTok{d }\OperatorTok{%>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(id, epoch) }\OperatorTok{%>%}\StringTok{ }
-\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{svm =} \KeywordTok{sum}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(x}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{y}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{z}\OperatorTok{^}\DecValTok{2}\NormalTok{) }\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\KeywordTok{length}\NormalTok{(x))}
+\StringTok{  }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{svm =} \KeywordTok{sum}\NormalTok{(}\KeywordTok{sqrt}\NormalTok{(x}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{y}\OperatorTok{^}\DecValTok{2} \OperatorTok{+}\StringTok{ }\NormalTok{z}\OperatorTok{^}\DecValTok{2}\NormalTok{) }\OperatorTok{-}\DecValTok{1}\NormalTok{) }\OperatorTok{/}\StringTok{ }\KeywordTok{n}\NormalTok{())}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5822,17 +5974,17 @@ accelerometer data, in 15-minute epoch windows.
 \hline
 id & epoch & svm\\
 \hline
-1 & 2018-06-02 12:00:00 & -0.0009766\\
+1 & 2018-06-02 12:00:00 & 0.0235192\\
 \hline
-1 & 2018-06-02 12:01:00 & 0.0072235\\
+1 & 2018-06-02 12:15:00 & 0.0486871\\
 \hline
-1 & 2018-06-02 12:02:00 & 0.0023875\\
+1 & 2018-06-02 12:30:00 & 0.0477664\\
 \hline
-1 & 2018-06-02 12:03:00 & 0.0070644\\
+1 & 2018-06-02 12:45:00 & 0.0128911\\
 \hline
-1 & 2018-06-02 12:04:00 & 0.0265187\\
+1 & 2018-06-02 13:00:00 & 0.0005558\\
 \hline
-1 & 2018-06-02 12:05:00 & 0.0969168\\
+1 & 2018-06-02 13:15:00 & 0.0027089\\
 \hline
 \end{tabular}
 
@@ -5885,7 +6037,7 @@ specifications in \texttt{lme}.
 \begin{Highlighting}[]
 \CommentTok{# Fit a linear mixed model, with lme.}
 \KeywordTok{library}\NormalTok{(lme4)}
-\NormalTok{fm <-}\StringTok{ }\KeywordTok{lmer}\NormalTok{(distance }\OperatorTok{~}\StringTok{ }\NormalTok{age }\OperatorTok{+}\StringTok{ }\NormalTok{Sex }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{|}\StringTok{ }\NormalTok{Subject), }\DataTypeTok{data =}\NormalTok{ Orthodont)}
+\NormalTok{fm <-}\StringTok{ }\KeywordTok{lmer}\NormalTok{(distance }\OperatorTok{~}\StringTok{ }\NormalTok{age }\OperatorTok{+}\StringTok{ }\NormalTok{Sex }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{|}\StringTok{ }\NormalTok{Subject), }\DataTypeTok{data =}\NormalTok{ nlme}\OperatorTok{::}\NormalTok{Orthodont)}
 
 \KeywordTok{fixef}\NormalTok{(fm)}
 \CommentTok{#> (Intercept)         age   SexFemale }
@@ -5913,10 +6065,10 @@ the model), to determine the power of the test.
 \KeywordTok{library}\NormalTok{(simr)}
 
 \CommentTok{# construct design matrix }
-\NormalTok{t <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{24}
-\NormalTok{s <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{40} 
-\NormalTok{X   <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{t =}\NormalTok{ t, }\DataTypeTok{s =}\NormalTok{ s)}
-\NormalTok{X}\OperatorTok{$}\NormalTok{g <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{24}\NormalTok{), }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{24}\NormalTok{))}
+\NormalTok{time <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{24}
+\NormalTok{subject <-}\StringTok{ }\DecValTok{1}\OperatorTok{:}\DecValTok{40}
+\NormalTok{X   <-}\StringTok{ }\KeywordTok{expand.grid}\NormalTok{(}\DataTypeTok{time =}\NormalTok{ time, }\DataTypeTok{subject =}\NormalTok{ subject)}
+\NormalTok{X}\OperatorTok{$}\NormalTok{group <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\KeywordTok{rep}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{24}\NormalTok{), }\KeywordTok{rep}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{24}\NormalTok{)) }\CommentTok{# group}
 
 \CommentTok{# fixed intercept and slope}
 \NormalTok{b <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\OperatorTok{-}\FloatTok{0.1}\NormalTok{, }\DecValTok{0}\NormalTok{, }\OperatorTok{-}\FloatTok{0.5}\NormalTok{)}
@@ -5930,26 +6082,26 @@ the model), to determine the power of the test.
 \CommentTok{# residual standard deviation}
 \NormalTok{s <-}\StringTok{ }\DecValTok{1} 
 
-\NormalTok{model1 <-}\StringTok{ }\KeywordTok{makeLmer}\NormalTok{(y }\OperatorTok{~}\StringTok{ }\NormalTok{t }\OperatorTok{*}\StringTok{ }\NormalTok{g }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{t }\OperatorTok{|}\StringTok{ }\NormalTok{s), }
+\NormalTok{model1 <-}\StringTok{ }\KeywordTok{makeLmer}\NormalTok{(y }\OperatorTok{~}\StringTok{ }\NormalTok{time }\OperatorTok{*}\StringTok{ }\NormalTok{group }\OperatorTok{+}\StringTok{ }\NormalTok{(}\DecValTok{1} \OperatorTok{+}\StringTok{ }\NormalTok{time }\OperatorTok{|}\StringTok{ }\NormalTok{subject), }
                    \DataTypeTok{fixef =}\NormalTok{ b, }
                    \DataTypeTok{VarCorr =}\NormalTok{ V2, }
                    \DataTypeTok{sigma =}\NormalTok{ s, }
                    \DataTypeTok{data =}\NormalTok{ X)}
 
 \KeywordTok{powerSim}\NormalTok{(model1, }
-         \KeywordTok{fixed}\NormalTok{(}\StringTok{"t:g"}\NormalTok{, }\StringTok{"lr"}\NormalTok{), }
-         \DataTypeTok{nsim =} \DecValTok{10}\NormalTok{,}
+         \KeywordTok{fixed}\NormalTok{(}\StringTok{"time:group"}\NormalTok{, }\StringTok{"lr"}\NormalTok{), }
+         \DataTypeTok{nsim =} \DecValTok{10}\NormalTok{, }\CommentTok{# set to high value for better results}
          \DataTypeTok{progress =} \OtherTok{FALSE}\NormalTok{)}
-\CommentTok{#> Power for predictor 't:g', (95% confidence interval):}
+\CommentTok{#> Power for predictor 'time:group', (95% confidence interval):}
 \CommentTok{#>       100.0% (69.15, 100.0)}
 \CommentTok{#> }
 \CommentTok{#> Test: Likelihood ratio}
-\CommentTok{#>       Effect size for t:g is -0.50}
+\CommentTok{#>       Effect size for time:group is -0.50}
 \CommentTok{#> }
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5965,74 +6117,9 @@ easy to fit a graphical network on multivariate data sets. If you are
 interested in conducting a network analysis, be sure to visit the
 Psycho-systems website, at \url{http://psychosystems.org}, or to
 register for the UvA network school course (see:
-\url{http://psychosystems.org/NetworkSchool}).
-
-\subsection{autovarCore}\label{autovarcore}
-
-\index{Packages!autovarCore} \index{Packages!autovar}
-
-\index{Vector autoregressive models}
-
-Vector auto-regressive (VAR) models can be used to detect lagged
-relationships between multiple time-series. In VAR, each variable is
-modeled as a linear function of past values (lags) of itself and of
-present and past values of other variables. When EMA is used to capture
-multiple phenomena over time, VAR can provide insight in how these
-phenomena interact. One challenge in VAR modelling is that many
-alternative models potentially exist, Package \emph{autovarCore}
-\citep{R-autovarCore} was developed to help researchers to find the VAR
-model with the best fit to a given time-series data set.
-
-In the (unrealistic) example below, function \texttt{autovar} is used to
-detect that changes in depression are positively related to past (lag 1)
-values of activity, in a simulated data set:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Autovar analysis.}
-\KeywordTok{library}\NormalTok{(autovarCore)}
-
-\CommentTok{# simulate data}
-\NormalTok{N =}\StringTok{ }\DecValTok{100}
-\NormalTok{depression <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(N)}
-\NormalTok{activity <-}\StringTok{ }\KeywordTok{rnorm}\NormalTok{(N)}
-\NormalTok{activity_lag1 <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\OtherTok{NA}\NormalTok{, activity[}\DecValTok{1}\OperatorTok{:}\NormalTok{(N }\OperatorTok{-}\DecValTok{1}\NormalTok{)])}
-
-\NormalTok{depression <-}\StringTok{ }\NormalTok{depression }\OperatorTok{+}\StringTok{ }\FloatTok{0.5} \OperatorTok{*}\StringTok{ }\NormalTok{activity_lag1 }
-\NormalTok{d <-}\StringTok{ }\KeywordTok{data.frame}\NormalTok{(depression, activity)}
-
-\NormalTok{models_found <-}\StringTok{ }\NormalTok{autovarCore}\OperatorTok{::}\KeywordTok{autovar}\NormalTok{(d, }\DataTypeTok{selected_column_names =} \KeywordTok{c}\NormalTok{(}\StringTok{'activity'}\NormalTok{, }\StringTok{'depression'}\NormalTok{))}
-
-\CommentTok{# Show details for the best model found}
-\KeywordTok{summary}\NormalTok{(models_found[[}\DecValTok{1}\NormalTok{]]}\OperatorTok{$}\NormalTok{varest}\OperatorTok{$}\NormalTok{varresult}\OperatorTok{$}\NormalTok{depression)}
-\CommentTok{#> }
-\CommentTok{#> Call:}
-\CommentTok{#> lm(formula = y ~ -1 + ., data = datamat)}
-\CommentTok{#> }
-\CommentTok{#> Residuals:}
-\CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.39040 -0.67330 -0.01595  0.82156  2.35667 }
-\CommentTok{#> }
-\CommentTok{#> Coefficients:}
-\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.36153    0.10449   3.460 0.000807 ***}
-\CommentTok{#> depression.l1 -0.09251    0.09618  -0.962 0.338543    }
-\CommentTok{#> const         -0.04988    0.10687  -0.467 0.641776    }
-\CommentTok{#> ---}
-\CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
-\CommentTok{#> }
-\CommentTok{#> Residual standard error: 1.062 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.1155, Adjusted R-squared:  0.09708 }
-\CommentTok{#> F-statistic: 6.269 on 2 and 96 DF,  p-value: 0.002762}
-\end{Highlighting}
-\end{Shaded}
-
-\texttt{AutovarCore} is a simplified version of a more extensive package
-\emph{autovar} \citep{R-autovarCore}, which was used in several
-publications \citep{VanderKrieke2015, Emerencia2016}. Further
-information can be found on
-\href{https://autovar.nl/}{http://autovar.nl} and
-\href{https://autovarcore.nl/}{http://autovarcore.nl}
+\url{http://psychosystems.org/NetworkSchool}). Excellent introductions
+in how to fit networks on R can also be found at
+\url{http://sachaepskamp.com/files/Cookbook.html} and
 
 \subsection{qgraph}\label{qgraph}
 
@@ -6070,25 +6157,39 @@ In the example below, \texttt{qgraph} is used to fit a network on the
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/cs15l-1} 
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/qgraph-example-1} 
 
 }
 
-\caption{Network of mood items from CSD data set}\label{fig:cs15l}
+\caption{Network of mood items from CSD data set}\label{fig:qgraph-example}
 \end{figure}
+
+Package \texttt{qgraph} also provides functions to analyze qualities of
+fitted networks, such as the centrality of nodes in the network. In the
+network plot above, node \texttt{md\_s} appears to be a central node in
+the network. This is confirmed by the \texttt{centralityPlot}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{centralityPlot}\NormalTok{(g)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/qgraph-centrality-example-1} \end{center}
 
 \subsection{bootnet}\label{bootnet}
 
 \index{Packages!bootnet}
 
-In the interpretation of fitted network plots, it is important to take
-the stability of the network into account. Intuitively, networks that
-are fit on small sample data sets will be less stable than networks
-based on large data sets. One solution is to fit a large number of
-networks on subsets of the original data, through bootstrapping. In
-stable networks, the variance of edges estimations will be small, while
-in unstable networks, the variance will be large. This idea is
-implemented in package \emph{bootnet} \citep{Epskamp2018a}.
+In the interpretation of fitted networks, it is important to take the
+stability of the network into account. Intuitively, networks that are
+fit on small sample data sets will be less stable than networks based on
+large data sets. One solution is to asses this is to fit a large number
+of networks on subsets of the original data, via bootstrapping. In
+stable networks, the variability of edge estimations and other
+characteristics will be small, while in unstable networks, the variance
+will be large. This idea is implemented in package \emph{bootnet}
+\citep{Epskamp2018a}.
 
 Below, the stability of the network that was fit in the previous example
 is examined with \texttt{bootnet}: fifty networks are fit, based on
@@ -6108,7 +6209,7 @@ intervals mark the distribution of the edge weights in the bootstraps.
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/cs15m-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/bootnet-example-1} \end{center}
 
 \section{Timeseries analysis}\label{timeseries-analysis}
 
@@ -6135,7 +6236,7 @@ be applied to unevenly-sampled time-series as well. Package \emph{lomb}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{center}\includegraphics[width=0.98\linewidth]{R-package-catalogue_files/figure-latex/cs15n-1} \end{center}
+\begin{center}\includegraphics[width=0.98\linewidth]{R-package-catalogue_files/figure-latex/lmob-example-1} \end{center}
 
 \part{Closing Matters}\label{part-closing-matters}
 
@@ -6148,13 +6249,14 @@ research funds.
 
 We also thank the APH researchers, to whom we spoke during the project,
 for sharing their knowledge, experience and insights. We are also
-indebted to the researchers who contributed data, analyses scripts, and
-other materials that are presented in this manual.
+indebted to the researchers who contributed data, scripts, and other
+materials that are presented in this manual.
 
-We particulary like to thank the project advisors, Prof.~Dr.~Heleen
-Riper and Prof.~Dr.~Johannes Smit, for their support and valuable input.
+We also like to thank the project advisors, Prof.~Dr.~Heleen Riper and
+Prof.~Dr.~Johannes Smit, for their support and valuable input.
 
-This manual was written in RMarkdown with
+This manual was written in
+\href{https://rmarkdown.rstudio.com/}{RMarkdown} with
 \href{http://bookdown.org}{Bookdown} \citep{R-bookdown_book}. We thank
 Yihui Xie for this wonderful package.
 

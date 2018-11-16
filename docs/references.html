@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-15">
+<meta name="date" content="2018-11-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -150,9 +150,15 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="4.2" data-path="datamanagement.html"><a href="datamanagement.html#an-example-project-directory-structure"><i class="fa fa-check"></i><b>4.2</b> An Example Project Directory Structure</a></li>
 <li class="chapter" data-level="4.3" data-path="datamanagement.html"><a href="datamanagement.html#data"><i class="fa fa-check"></i><b>4.3</b> Data</a></li>
 <li class="chapter" data-level="4.4" data-path="datamanagement.html"><a href="datamanagement.html#import-scripts"><i class="fa fa-check"></i><b>4.4</b> Import Scripts</a></li>
-<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.5</b> Reproducible Analyses</a></li>
-<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.6</b> README</a></li>
-<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#a-final-note"><i class="fa fa-check"></i><b>4.7</b> A Final Note</a></li>
+<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#cleaning"><i class="fa fa-check"></i><b>4.5</b> Cleaning</a></li>
+<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#pre-process"><i class="fa fa-check"></i><b>4.6</b> Pre-process</a></li>
+<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#combine"><i class="fa fa-check"></i><b>4.7</b> Combine</a></li>
+<li class="chapter" data-level="4.8" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.8</b> Reproducible Analyses</a></li>
+<li class="chapter" data-level="4.9" data-path="datamanagement.html"><a href="datamanagement.html#documentation"><i class="fa fa-check"></i><b>4.9</b> Documentation</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="datamanagement.html"><a href="datamanagement.html#protocol"><i class="fa fa-check"></i><b>4.9.1</b> Protocol</a></li>
+<li class="chapter" data-level="4.9.2" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.9.2</b> README</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="datamanagement.html"><a href="datamanagement.html#discussion"><i class="fa fa-check"></i><b>4.10</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>III EMA Outcomes</b></span></li>
 <li class="chapter" data-level="5" data-path="mood.html"><a href="mood.html"><i class="fa fa-check"></i><b>5</b> Mood</a><ul>
@@ -186,7 +192,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -203,7 +209,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="9.3" data-path="csd.html"><a href="csd.html#mental-state-ema-items"><i class="fa fa-check"></i><b>9.3</b> Mental state EMA Items</a></li>
 <li class="chapter" data-level="9.4" data-path="csd.html"><a href="csd.html#running-the-dfa"><i class="fa fa-check"></i><b>9.4</b> Running the DFA</a></li>
 <li class="chapter" data-level="9.5" data-path="csd.html"><a href="csd.html#results"><i class="fa fa-check"></i><b>9.5</b> Results</a></li>
-<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-1"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
+<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-2"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>VI EMA Catalogues</b></span></li>
 <li class="chapter" data-level="10" data-path="catalogue.html"><a href="catalogue.html"><i class="fa fa-check"></i><b>10</b> EMA Research within the APH Mental Health Consortium</a><ul>
@@ -249,26 +255,28 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>12.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="12.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.3</b> PhysicalActivity</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.2</b> Data management &amp; Visual Exploration</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.2.1</b> dplyr</a></li>
-<li class="chapter" data-level="12.2.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.2.2</b> ggplot2</a></li>
-<li class="chapter" data-level="12.2.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.2.3</b> haven</a></li>
-<li class="chapter" data-level="12.2.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.2.4</b> lubridate</a></li>
+<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#autoregressive-modeling"><i class="fa fa-check"></i><b>12.2</b> Autoregressive modeling</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.2.1</b> autovarCore</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.3</b> Mixed-effects Modeling</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.3.1</b> nlme</a></li>
-<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.3.2</b> lme4</a></li>
+<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.3</b> Data management &amp; Visual Exploration</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.3.2</b> ggplot2</a></li>
+<li class="chapter" data-level="12.3.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.3.3</b> haven</a></li>
+<li class="chapter" data-level="12.3.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.3.4</b> lubridate</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.4</b> Power analysis</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.4.1</b> simr</a></li>
+<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.4</b> Mixed-effects Modeling</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.4.1</b> nlme</a></li>
+<li class="chapter" data-level="12.4.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.4.2</b> lme4</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.5</b> Symptom Network Analysis</a><ul>
-<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.5.1</b> autovarCore</a></li>
-<li class="chapter" data-level="12.5.2" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.5.2</b> qgraph</a></li>
-<li class="chapter" data-level="12.5.3" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.5.3</b> bootnet</a></li>
+<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.5</b> Power analysis</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.5.1</b> simr</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.6</b> Timeseries analysis</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.6.1</b> lomb</a></li>
+<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.6</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.6.1</b> qgraph</a></li>
+<li class="chapter" data-level="12.6.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.6.2</b> bootnet</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.7</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.7.1</b> lomb</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VII Closing Matters</b></span></li>

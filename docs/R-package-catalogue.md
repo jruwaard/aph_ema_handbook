@@ -9,56 +9,56 @@ documentation, to give you a head start in using the packages for your work.
 
 Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
-+-----------------+-------------------+-----------------------------------------+
-| **Category**    |**Package**        | **Description**                         |
-+:================+:==================+:========================================+
-| Accelerometry   | GENEAread         | Import GENEActive data into R.          |
-+-----------------+-------------------+-----------------------------------------+
-|                 | GGIR              | Pre-process and analyze raw multi-day   |
-|                 |                   | multi-day accelerometer data.           | 
-+-----------------+-------------------+-----------------------------------------+
-|                 | PhysicalActivity  | Analyze actigraph accelerometer data.   | 
-+-----------------+-------------------+-----------------------------------------+
-| Data Management | dplyr             | Data transformation.                    | 
-| & Visual        |                   |                                         |
-| Exploration     |                   |                                         |
-+-----------------+-------------------+-----------------------------------------+
-|                 | ggplot2           | Create graphs.                          |
-+-----------------+-------------------+-----------------------------------------+
-|                 | haven             | Import and export SPSS data files.      |
-+-----------------+-------------------+-----------------------------------------+
-|                 | lubridate         | Manipulate date and time variables.     |
-+-----------------+-------------------+-----------------------------------------+
-| Mixed-effects   | lme4              | Fit linear and nonlinear mixed-effects  |
-| Modeling        |                   | models. Fast alternative to             |
-|                 |                   | package 'nlme'.                         |
-+-----------------+-------------------+-----------------------------------------+
-|                 | nlme              | Fit linear and nonlinear mixed effects  |
-|                 |                   | models. Pre-dates package 'lme4', but is|
-|                 |                   | still used because it a provides more   |
-|                 |                   | advanced options to model correlational |
-|                 |                   | structures in the data.                 |
-+-----------------+-------------------+-----------------------------------------+
-| Power Analysis  | simr              | Simulation-based power calculations for |
-|                 |                   | mixed models.                           | 
-+-----------------+-------------------+-----------------------------------------+
-| Simulation      | simstudy          | Simulate study data.                    | 
-+-----------------+-------------------+-----------------------------------------+
-| Spatio-temporal | adehabitatHR      | Developed for home range estimation of  |
-| analysis        |                   | wild animals from GPS data. Useful for  |
-|                 |                   | human data as well.                     | 
-+-----------------+-------------------+-----------------------------------------+
-| Symptom Networks| autovarCore       | Automate the construction of vector     |     
-|                 |                   | autoregressive models.                  |
-+-----------------+-------------------+-----------------------------------------+
-|                 | bootnet           | Assess the stability of symptom         |
-|                 |                   | networks.                               |
-+-----------------+-------------------+-----------------------------------------+
-|                 | qgraph            | Estimate and plot symptom networks.     |  
-+-----------------+-------------------+-----------------------------------------+
-| Time series     | lomb              | Calculate the Lomb-Scargle Periodogram  |
-| analysis        |                   | for unevenly sampled time series.       |
-+-----------------+-------------------+-----------------------------------------+
++-----------------+-------------------+------------------------------------------+
+| **Category**    |**Package**        | **Description**                          |
++:================+:==================+:=========================================+
+| **Accelerometry**| GENEAread         | Import GENEActive data into R.          |
++------------------+-------------------+-----------------------------------------+
+|                  | GGIR              | Pre-process and analyze raw multi-day   |
+|                  |                   | multi-day accelerometer data.           | 
++------------------+-------------------+-----------------------------------------+
+|                  | PhysicalActivity  | Analyze actigraph accelerometer data.   | 
++------------------+-------------------+-----------------------------------------+
+| **Data Management**| dplyr           | Data transformation.                    | 
+| **& Visual**     |                   |                                         |
+| *Exploration**   |                   |                                         |
++------------------+-------------------+-----------------------------------------+
+|                  | ggplot2           | Create graphs.                          |
++------------------+-------------------+-----------------------------------------+
+|                  | haven             | Import and export SPSS data files.      |
++------------------+-------------------+-----------------------------------------+
+|                  | lubridate         | Manipulate date and time variables.     |
++------------------+-------------------+-----------------------------------------+
+| **Auto-regressive| autovarCore       | Automate the construction of vector     |     
+| modeling**       |                   | autoregressive models.                  |
++------------------+-------------------+-----------------------------------------+
+| **Mixed-effects  | lme4              | Fit linear and nonlinear mixed-effects  |
+| Modeling**       |                   | models. Fast alternative to             |
+|                  |                   | package 'nlme'.                         |
++------------------+-------------------+-----------------------------------------+
+|                  | nlme              | Fit linear and nonlinear mixed effects  |
+|                  |                   | models. Pre-dates package 'lme4', but is|
+|                  |                   | still used because it a provides more   |
+|                  |                   | advanced options to model correlational |
+|                  |                   | structures in the data.                 |
++------------------+-------------------+-----------------------------------------+
+| **Power Analysis**| simr              | Simulation-based power calculations for |
+|                   |                   | mixed models.                           | 
++-------------------+-------------------+-----------------------------------------+
+| **Simulation**    | simstudy          | Simulate study data.                    | 
++-------------------+-------------------+-----------------------------------------+
+| **Spatio-temporal** | adehabitatHR      | Developed for home range estimation of  |
+| analysis**        |                   | wild animals from GPS data. Useful for  |
+|                   |                   | human data as well.                     | 
++-------------------+-------------------+-----------------------------------------+
+| **Symptom Networks** | bootnet        | Assess the stability of symptom         |
+|                   |                   | networks.                               |
++-------------------+-------------------+-----------------------------------------+
+|                   | qgraph            | Estimate and plot symptom networks.     |  
++-------------------+-------------------+-----------------------------------------+
+| **Time series     | lomb              | Calculate the Lomb-Scargle Periodogram  |
+| analysis**        |                   | for unevenly sampled time series.       |
++-------------------+-------------------+-----------------------------------------+
 
 
 ## Accelerometry
@@ -82,11 +82,12 @@ illustrated below.
 ```r
 # Reading raw GENEActiv data.
 library(GENEAread)
+library(ggplot2)
 library(tidyr)
 
 dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
                 verbose = FALSE, downsample = 20)
-#> Processing took: 0.047 secs .
+#> Processing took: 0.087 secs .
 #> Loaded 1560 records (Approx  0 MB of RAM)
 #> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)
 
@@ -102,8 +103,8 @@ ggplot(d, aes(x = timestamp, y = value)) +
 ```
 
 <div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/unnamed-chunk-2-1.png" alt="Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-2)Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).</p>
+<img src="R-package-catalogue_files/figure-html/genearead-example-1.png" alt="Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
+<p class="caption">(\#fig:genearead-example)Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).</p>
 </div>
 
 
@@ -143,6 +144,75 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 </div>
 
 
+
+## Autoregressive modeling
+
+### autovarCore
+\index{Packages!autovarCore}
+\index{Packages!autovar}
+
+\index{Vector autoregressive models}
+
+Vector auto-regressive (VAR) models can be used to detect lagged relationships
+between multiple time-series (see also Chapter \@ref(features)). In VAR, each
+variable is modeled as a linear function of past values (lags) of itself and of
+present and past values of other variables. When EMA is used to capture multiple
+phenomena over time, VAR can provide insight in how these phenomena interact.
+One challenge in VAR modelling is that many alternative models potentially
+exist, Package *autovarCore* [@R-autovarCore] was developed to help
+researchers to find the VAR model with the best fit to a given time-series data
+set.
+
+In the (unrealistic) example below, function `autovar` is used to detect that
+changes in depression are positively related to past (lag 1) values of activity,
+in a simulated data set:
+
+
+```r
+# Autovar analysis.
+library(autovarCore)
+
+# simulate data
+N = 100
+depression <- rnorm(N)
+activity <- rnorm(N)
+activity_lag1 <- c(NA, activity[1:(N -1)])
+
+depression <- depression + 0.5 * activity_lag1 
+d <- data.frame(depression, activity)
+
+models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'depression'))
+
+# Show details for the best model found
+summary(models_found[[1]]$varest$varresult$depression)
+#> 
+#> Call:
+#> lm(formula = y ~ -1 + ., data = datares)
+#> 
+#> Residuals:
+#>     Min      1Q  Median      3Q     Max 
+#> -2.4559 -0.7809  0.1928  0.7688  2.5007 
+#> 
+#> Coefficients:
+#>               Estimate Std. Error t value Pr(>|t|)    
+#> activity.l1    0.73450    0.12038   6.101 2.33e-08 ***
+#> depression.l1  0.12256    0.08942   1.371    0.174    
+#> depression.l2 -0.14434    0.09187  -1.571    0.119    
+#> const         -0.15526    0.10674  -1.455    0.149    
+#> ---
+#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+#> 
+#> Residual standard error: 1.045 on 94 degrees of freedom
+#> Multiple R-squared:  0.2857,	Adjusted R-squared:  0.2629 
+#> F-statistic: 12.53 on 3 and 94 DF,  p-value: 5.801e-07
+```
+
+`AutovarCore` is a simplified version of a more extensive package *autovar*
+[@R-autovarCore], which was used in several publications
+[@VanderKrieke2015; @Emerencia2016]. Further information can be found on
+[http://autovar.nl](https://autovar.nl/) and
+[http://autovarcore.nl](https://autovarcore.nl/)
+
 ## Data management & Visual Exploration
 \index{Packages!tidyverse}
 
@@ -165,14 +235,26 @@ operator `%\>%`) to elegantly implement complex data transformations.
 require(dplyr)
 
 d <- data.frame(
-  c = factor(rep(1:5, each = 10)), 
+  id = factor(rep(1:5, each = 10)), 
   score = rnorm(50)
 )
 
 b <- as_tibble(d) %>% 
-  group_by(c) %>%
-  summarize(mean_score = mean(score))
+  group_by(id) %>%
+  summarize(mean = mean(score))
+
+knitr::kable(b)
 ```
+
+
+
+id          mean
+---  -----------
+1      0.1182435
+2     -0.1349234
+3     -0.6896931
+4      0.3212943
+5      0.8340555
 
 A good introduction to `dplyr` can be found in the book 'R for Data Science'
 [@wickham2016r], which can be freely accessed online
@@ -212,16 +294,16 @@ g <- ggplot(d, aes(x = time, y = score)); g
 # step 2: add scatterplot
 g <- g + geom_point(); g
 
-# step 3: fit a smoothed line
-g <- g + geom_smooth(); g
+# step 3: add a smoothed line
+g <- g + geom_smooth(method = "loess"); g
 
-# step 4: split plot by ID
+# step 4: split plot by subject ID
 g + facet_wrap(~ ID)
 ```
 
 <div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/cs15d-1.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-2.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-3.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/cs15d-4.png" alt="Plotting layers with ggplot2" width="45%" />
-<p class="caption">(\#fig:cs15d)Plotting layers with ggplot2</p>
+<img src="R-package-catalogue_files/figure-html/ggplot2-example-1.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-2.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-3.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-4.png" alt="Plotting layers with ggplot2" width="45%" />
+<p class="caption">(\#fig:ggplot2-example)Plotting layers with ggplot2</p>
 </div>
 
 
@@ -229,16 +311,18 @@ g + facet_wrap(~ ID)
 \index{Packages!haven}
 \index{SPSS}
 
-With package *haven* [@R-haven], SPSS, STATA and SAS files can be read into R.
+With package *haven* [@R-haven], SPSS, STATA and SAS files can be read into R. A particular advantage is that variables definitions are retained (in attributes of the columns in the R `data.frames`).
 
 
 ```r
 # Read SPSS data
 library(haven)
 
+# read example data (included in package)
 path <- system.file("examples", "iris.sav", package = "haven")
 d <- read_sav(path)
 
+# show attributes of variable
 attributes(d$Species)
 #> $format.spss
 #> [1] "F8.0"
@@ -260,12 +344,12 @@ this, package *lubridate* [@R-lubridate], which provides many functions for
 common date and date time operations, can be very useful.
 
 In the code snippet below, for example, the `round_date` function is used to
-calculate the ENMO value from raw tri-axial accelerometer data, in 15-minute
-epoch windows.
+calculate the ENMO value from raw tri-axial accelerometer data (see Chapter
+\@ref(activity)), in 15-minute epoch windows.
 
 
 ```r
-# Rounding dates.
+# Rounding datetime variables with lubridate.
 library(emaph)
 library(lubridate)
 library(ggplot2)
@@ -274,21 +358,24 @@ library(dplyr)
 d <-  subset(genea,
               timestamp > "2018-06-02 12:00" &
               timestamp < "2018-06-02 18:00")
-d$epoch <- round_date(d$timestamp, "minute")
 
+# round timestamp
+d$epoch <- round_date(d$timestamp, "15 minutes")
+
+# summarize x, y, z acceleration to ENMO
 d <- d %>% group_by(id, epoch) %>% 
-  summarise(svm = sum(sqrt(x^2 + y^2 + z^2) -1) / length(x))
+  summarise(svm = sum(sqrt(x^2 + y^2 + z^2) -1) / n())
 ```
 
 
- id  epoch                         svm
----  --------------------  -----------
-  1  2018-06-02 12:00:00    -0.0009766
-  1  2018-06-02 12:01:00     0.0072235
-  1  2018-06-02 12:02:00     0.0023875
-  1  2018-06-02 12:03:00     0.0070644
-  1  2018-06-02 12:04:00     0.0265187
-  1  2018-06-02 12:05:00     0.0969168
+ id  epoch                        svm
+---  --------------------  ----------
+  1  2018-06-02 12:00:00    0.0235192
+  1  2018-06-02 12:15:00    0.0486871
+  1  2018-06-02 12:30:00    0.0477664
+  1  2018-06-02 12:45:00    0.0128911
+  1  2018-06-02 13:00:00    0.0005558
+  1  2018-06-02 13:15:00    0.0027089
 
 To learn more about handling dates and times with `lubridate`,
 [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data
@@ -334,7 +421,7 @@ in `lmer` are different from model specifications in `lme`.
 ```r
 # Fit a linear mixed model, with lme.
 library(lme4)
-fm <- lmer(distance ~ age + Sex + (1 | Subject), data = Orthodont)
+fm <- lmer(distance ~ age + Sex + (1 | Subject), data = nlme::Orthodont)
 
 fixef(fm)
 #> (Intercept)         age   SexFemale 
@@ -359,10 +446,10 @@ set. Next, function `simPower` can be used to simulate new data sets and tests
 library(simr)
 
 # construct design matrix 
-t <- 1:24
-s <- 1:40 
-X   <- expand.grid(t = t, s = s)
-X$g <- c(rep(0, 24), rep(1, 24))
+time <- 1:24
+subject <- 1:40
+X   <- expand.grid(time = time, subject = subject)
+X$group <- c(rep(0, 24), rep(1, 24)) # group
 
 # fixed intercept and slope
 b <- c(2, -0.1, 0, -0.5)
@@ -376,26 +463,26 @@ V2 <- matrix(c(0.5, 0.05, 0.05, 0.1), 2)
 # residual standard deviation
 s <- 1 
 
-model1 <- makeLmer(y ~ t * g + (1 + t | s), 
+model1 <- makeLmer(y ~ time * group + (1 + time | subject), 
                    fixef = b, 
                    VarCorr = V2, 
                    sigma = s, 
                    data = X)
 
 powerSim(model1, 
-         fixed("t:g", "lr"), 
-         nsim = 10,
+         fixed("time:group", "lr"), 
+         nsim = 10, # set to high value for better results
          progress = FALSE)
-#> Power for predictor 't:g', (95% confidence interval):
+#> Power for predictor 'time:group', (95% confidence interval):
 #>       100.0% (69.15, 100.0)
 #> 
 #> Test: Likelihood ratio
-#>       Effect size for t:g is -0.50
+#>       Effect size for time:group is -0.50
 #> 
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 1 s
+#> Time elapsed: 0 h 0 m 2 s
 ```
 
 
@@ -409,71 +496,7 @@ dynamic interplay between these symptoms [@Borsboom2013; @Borsboom2017;
 packages, it is relatively easy to fit a graphical network on multivariate data
 sets. If you are interested in conducting a network analysis, be sure to visit
 the Psycho-systems website, at <http://psychosystems.org>, or to register for the UvA 
-network school course (see: <http://psychosystems.org/NetworkSchool>).
-
-### autovarCore
-\index{Packages!autovarCore}
-\index{Packages!autovar}
-
-\index{Vector autoregressive models}
-
-Vector auto-regressive (VAR) models can be used to detect lagged relationships
-between multiple time-series. In VAR, each variable is modeled as a linear
-function of past values (lags) of itself and of present and past values of other
-variables. When EMA is used to capture multiple phenomena over time, VAR can
-provide insight in how these phenomena interact. One challenge in VAR modelling
-is that many alternative models potentially exist, Package *autovarCore*
-[@R-autovarCore] was developed to help researchers to find the VAR model with
-the best fit to a given time-series data set.
-
-In the (unrealistic) example below, function `autovar` is used to detect that
-changes in depression are positively related to past (lag 1) values of activity,
-in a simulated data set:
-
-
-```r
-# Autovar analysis.
-library(autovarCore)
-
-# simulate data
-N = 100
-depression <- rnorm(N)
-activity <- rnorm(N)
-activity_lag1 <- c(NA, activity[1:(N -1)])
-
-depression <- depression + 0.5 * activity_lag1 
-d <- data.frame(depression, activity)
-
-models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'depression'))
-
-# Show details for the best model found
-summary(models_found[[1]]$varest$varresult$depression)
-#> 
-#> Call:
-#> lm(formula = y ~ -1 + ., data = datamat)
-#> 
-#> Residuals:
-#>      Min       1Q   Median       3Q      Max 
-#> -2.17783 -0.71063  0.01998  0.61903  3.15200 
-#> 
-#> Coefficients:
-#>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.69552    0.09514   7.310 7.94e-11 ***
-#> depression.l1 -0.02113    0.08242  -0.256    0.798    
-#> const         -0.04070    0.10347  -0.393    0.695    
-#> ---
-#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-#> 
-#> Residual standard error: 1.029 on 96 degrees of freedom
-#> Multiple R-squared:   0.36,	Adjusted R-squared:  0.3467 
-#> F-statistic:    27 on 2 and 96 DF,  p-value: 4.973e-10
-```
-
-`AutovarCore` is a simplified version of a more extensive package *autovar*
-[@R-autovarCore], which was used in several publications
-[@VanderKrieke2015; @Emerencia2016]. Further information can be found on
-[http://autovar.nl](https://autovar.nl/) and
-[http://autovarcore.nl](https://autovarcore.nl/)
+network school course (see: <http://psychosystems.org/NetworkSchool>). Excellent introductions in how to fit networks on R can also be found at <http://sachaepskamp.com/files/Cookbook.html> and 
 
 
 ### qgraph
@@ -509,21 +532,31 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
 ```
 
 <div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/cs15l-1.png" alt="Network of mood items from CSD data set" width="100%" />
-<p class="caption">(\#fig:cs15l)Network of mood items from CSD data set</p>
+<img src="R-package-catalogue_files/figure-html/qgraph-example-1.png" alt="Network of mood items from CSD data set" width="100%" />
+<p class="caption">(\#fig:qgraph-example)Network of mood items from CSD data set</p>
 </div>
+
+Package `qgraph` also provides functions to analyze qualities of fitted networks, such as the centrality of nodes in the network. In the network plot above, node `md_s` appears to be a central node in the network. This is confirmed by the `centralityPlot`:   
+
+
+```r
+centralityPlot(g)
+```
+
+<img src="R-package-catalogue_files/figure-html/qgraph-centrality-example-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ### bootnet
 \index{Packages!bootnet}
 
-In the interpretation of fitted network plots, it is important to take the
-stability of the network into account. Intuitively, networks that are fit on
-small sample data sets will be less stable than networks based on large data
-sets. One solution is to fit a large number of networks on subsets of the
-original data, through bootstrapping. In stable networks, the variance of edges
-estimations will be small, while in unstable networks, the variance will be
-large. This idea is implemented in package *bootnet* [@Epskamp2018a].
+In the interpretation of fitted networks, it is important to take the stability
+of the network into account. Intuitively, networks that are fit on small sample
+data sets will be less stable than networks based on large data sets. One
+solution is to asses this is to fit a large number of networks on subsets of the
+original data, via bootstrapping. In stable networks, the variability of edge
+estimations and other characteristics will be small, while in unstable networks,
+the variance will be large. This idea is implemented in package *bootnet*
+[@Epskamp2018a].
 
 Below, the stability of the network that was fit in the previous example is
 examined with `bootnet`: fifty networks are fit, based on fifty bootstrapped
@@ -542,7 +575,7 @@ results <- bootnet(g, nBoots = 50, verbose = FALSE)
 plot(results, order = "mean")
 ```
 
-<img src="R-package-catalogue_files/figure-html/cs15m-1.png" width="100%" style="display: block; margin: auto;" />
+<img src="R-package-catalogue_files/figure-html/bootnet-example-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## Timeseries analysis
@@ -568,4 +601,4 @@ data(ibex, package = "lomb")
 lomb::lsp(ibex[2:3]) 
 ```
 
-<img src="R-package-catalogue_files/figure-html/cs15n-1.png" width="98%" style="display: block; margin: auto;" />
+<img src="R-package-catalogue_files/figure-html/lmob-example-1.png" width="98%" style="display: block; margin: auto;" />

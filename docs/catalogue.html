@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-15">
+<meta name="date" content="2018-11-16">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -150,9 +150,15 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="4.2" data-path="datamanagement.html"><a href="datamanagement.html#an-example-project-directory-structure"><i class="fa fa-check"></i><b>4.2</b> An Example Project Directory Structure</a></li>
 <li class="chapter" data-level="4.3" data-path="datamanagement.html"><a href="datamanagement.html#data"><i class="fa fa-check"></i><b>4.3</b> Data</a></li>
 <li class="chapter" data-level="4.4" data-path="datamanagement.html"><a href="datamanagement.html#import-scripts"><i class="fa fa-check"></i><b>4.4</b> Import Scripts</a></li>
-<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.5</b> Reproducible Analyses</a></li>
-<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.6</b> README</a></li>
-<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#a-final-note"><i class="fa fa-check"></i><b>4.7</b> A Final Note</a></li>
+<li class="chapter" data-level="4.5" data-path="datamanagement.html"><a href="datamanagement.html#cleaning"><i class="fa fa-check"></i><b>4.5</b> Cleaning</a></li>
+<li class="chapter" data-level="4.6" data-path="datamanagement.html"><a href="datamanagement.html#pre-process"><i class="fa fa-check"></i><b>4.6</b> Pre-process</a></li>
+<li class="chapter" data-level="4.7" data-path="datamanagement.html"><a href="datamanagement.html#combine"><i class="fa fa-check"></i><b>4.7</b> Combine</a></li>
+<li class="chapter" data-level="4.8" data-path="datamanagement.html"><a href="datamanagement.html#reproducible-analyses"><i class="fa fa-check"></i><b>4.8</b> Reproducible Analyses</a></li>
+<li class="chapter" data-level="4.9" data-path="datamanagement.html"><a href="datamanagement.html#documentation"><i class="fa fa-check"></i><b>4.9</b> Documentation</a><ul>
+<li class="chapter" data-level="4.9.1" data-path="datamanagement.html"><a href="datamanagement.html#protocol"><i class="fa fa-check"></i><b>4.9.1</b> Protocol</a></li>
+<li class="chapter" data-level="4.9.2" data-path="datamanagement.html"><a href="datamanagement.html#readme"><i class="fa fa-check"></i><b>4.9.2</b> README</a></li>
+</ul></li>
+<li class="chapter" data-level="4.10" data-path="datamanagement.html"><a href="datamanagement.html#discussion"><i class="fa fa-check"></i><b>4.10</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>III EMA Outcomes</b></span></li>
 <li class="chapter" data-level="5" data-path="mood.html"><a href="mood.html"><i class="fa fa-check"></i><b>5</b> Mood</a><ul>
@@ -186,7 +192,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -203,7 +209,7 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="9.3" data-path="csd.html"><a href="csd.html#mental-state-ema-items"><i class="fa fa-check"></i><b>9.3</b> Mental state EMA Items</a></li>
 <li class="chapter" data-level="9.4" data-path="csd.html"><a href="csd.html#running-the-dfa"><i class="fa fa-check"></i><b>9.4</b> Running the DFA</a></li>
 <li class="chapter" data-level="9.5" data-path="csd.html"><a href="csd.html#results"><i class="fa fa-check"></i><b>9.5</b> Results</a></li>
-<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-1"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
+<li class="chapter" data-level="9.6" data-path="csd.html"><a href="csd.html#discussion-2"><i class="fa fa-check"></i><b>9.6</b> Discussion</a></li>
 </ul></li>
 <li class="part"><span><b>VI EMA Catalogues</b></span></li>
 <li class="chapter" data-level="10" data-path="catalogue.html"><a href="catalogue.html"><i class="fa fa-check"></i><b>10</b> EMA Research within the APH Mental Health Consortium</a><ul>
@@ -249,26 +255,28 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>12.1.2</b> GGIR</a></li>
 <li class="chapter" data-level="12.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.3</b> PhysicalActivity</a></li>
 </ul></li>
-<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.2</b> Data management &amp; Visual Exploration</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.2.1</b> dplyr</a></li>
-<li class="chapter" data-level="12.2.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.2.2</b> ggplot2</a></li>
-<li class="chapter" data-level="12.2.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.2.3</b> haven</a></li>
-<li class="chapter" data-level="12.2.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.2.4</b> lubridate</a></li>
+<li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#autoregressive-modeling"><i class="fa fa-check"></i><b>12.2</b> Autoregressive modeling</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.2.1</b> autovarCore</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.3</b> Mixed-effects Modeling</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.3.1</b> nlme</a></li>
-<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.3.2</b> lme4</a></li>
+<li class="chapter" data-level="12.3" data-path="rcat.html"><a href="rcat.html#data-management-visual-exploration"><i class="fa fa-check"></i><b>12.3</b> Data management &amp; Visual Exploration</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="rcat.html"><a href="rcat.html#dplyr"><i class="fa fa-check"></i><b>12.3.1</b> dplyr</a></li>
+<li class="chapter" data-level="12.3.2" data-path="rcat.html"><a href="rcat.html#ggplot2"><i class="fa fa-check"></i><b>12.3.2</b> ggplot2</a></li>
+<li class="chapter" data-level="12.3.3" data-path="rcat.html"><a href="rcat.html#haven"><i class="fa fa-check"></i><b>12.3.3</b> haven</a></li>
+<li class="chapter" data-level="12.3.4" data-path="rcat.html"><a href="rcat.html#lubridate"><i class="fa fa-check"></i><b>12.3.4</b> lubridate</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.4</b> Power analysis</a><ul>
-<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.4.1</b> simr</a></li>
+<li class="chapter" data-level="12.4" data-path="rcat.html"><a href="rcat.html#mixed-effects-modeling"><i class="fa fa-check"></i><b>12.4</b> Mixed-effects Modeling</a><ul>
+<li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.4.1</b> nlme</a></li>
+<li class="chapter" data-level="12.4.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.4.2</b> lme4</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.5</b> Symptom Network Analysis</a><ul>
-<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.5.1</b> autovarCore</a></li>
-<li class="chapter" data-level="12.5.2" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.5.2</b> qgraph</a></li>
-<li class="chapter" data-level="12.5.3" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.5.3</b> bootnet</a></li>
+<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.5</b> Power analysis</a><ul>
+<li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.5.1</b> simr</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.6</b> Timeseries analysis</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.6.1</b> lomb</a></li>
+<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.6</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.6.1</b> qgraph</a></li>
+<li class="chapter" data-level="12.6.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.6.2</b> bootnet</a></li>
+</ul></li>
+<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.7</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.7.1</b> lomb</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VII Closing Matters</b></span></li>
@@ -353,17 +361,17 @@ code > span.in { font-style: italic; } /* Information */
 </tr>
 <tr class="even">
 <td align="left">Snoek</td>
-<td align="left">MERITS (type 1 diabetes)</td>
+<td align="left">MERITS</td>
 <td align="left">VUmc</td>
 </tr>
 <tr class="odd">
 <td align="left">Sprangers</td>
-<td align="left">FAntasTIGUE (fatigue)</td>
+<td align="left">FAntasTIGUE</td>
 <td align="left">AMC</td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="left">IMPACT (Heart failure)</td>
+<td align="left">IMPACT</td>
 <td align="left">AMC</td>
 </tr>
 <tr class="odd">
@@ -487,8 +495,8 @@ code > span.in { font-style: italic; } /* Information */
 <p> </p>
 <table>
 <colgroup>
-<col width="21%" />
-<col width="78%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -541,8 +549,8 @@ code > span.in { font-style: italic; } /* Information */
 
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -595,10 +603,10 @@ code > span.in { font-style: italic; } /* Information */
 <h3><span class="header-section-number">10.1.3</span> Riper and Smit</h3>
 <p>  </p>
 <p><em>Prof. dr. Heleen Riper</em> is affiliated with the department of clinical, neuro- and developmental psychology of the Vrije Universiteit and specialized mental health organization GGZ inGeest, Amsterdam. <em>Prof. dr. Jan Smit</em> is affiliated with the department of psychiatry of the Vrije Universiteit Medical Center (VUmc) and GGZ inGeest, Amsterdam. Riper and Smit have been driving forces behind the development of <em>Moodbuster</em> (<a href="http://www.ict4depression.eu/moodbuster/" class="uri">http://www.ict4depression.eu/moodbuster/</a>), a research platform for the delivery of online and blended psychotherapy, which has built-in, integrated EMA functionality.</p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="24%" />
-<col width="75%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -655,8 +663,8 @@ code > span.in { font-style: italic; } /* Information */
 <p><strong>Prof. dr. Hans Knoop</strong> is professor of evidence-based psychological and behavioral interventions for medical conditions and somatic symptoms at the department of Medical Psychology of the Amsterdam Medical Center (AMC). In 2015/2016, Knoop and colleagues ran an EMA study at the Expert Centre for Chronic Fatigue (ECCF; <a href="http://nkcv.nl/" class="uri">http://nkcv.nl/</a>).</p>
 <table>
 <colgroup>
-<col width="21%" />
-<col width="78%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -705,8 +713,8 @@ code > span.in { font-style: italic; } /* Information */
 <p> </p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -745,10 +753,10 @@ code > span.in { font-style: italic; } /* Information */
 <div id="impact" class="section level4">
 <h4><span class="header-section-number">10.2.2.2</span> IMPACT</h4>
 <p> </p>
-<table style="width:100%;">
+<table>
 <colgroup>
-<col width="24%" />
-<col width="75%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -791,8 +799,8 @@ code > span.in { font-style: italic; } /* Information */
 <p><strong>Prof. dr. Frank Snoek</strong> is Professor of Medical Psychology, specialized in psycho-social diabetology. He heads the Diabetes Psychology Research Group (<a href="http://www.vumc.com/branch/diabetes-psychology/" class="uri">http://www.vumc.com/branch/diabetes-psychology/</a>) and is consulting clinical psychologist for the VUmc Diabetes Center <a href="http://www.vumc.nl/afdelingen/diabetescentrum/" class="uri">http://www.vumc.nl/afdelingen/diabetescentrum/</a>). Snoek and co-workers use EMA to study the relationship between blood glucose variability and wellbeing.</p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -830,12 +838,12 @@ code > span.in { font-style: italic; } /* Information */
 <td align="left"><a href="http://research.vumc.nl/en/persons/maartje-de-wit" class="uri">http://research.vumc.nl/en/persons/maartje-de-wit</a></td>
 </tr>
 <tr class="even">
-<td align="left"><a href="http://research.vumc.nl/en/persons/cati-racca" class="uri">http://research.vumc.nl/en/persons/cati-racca</a></td>
 <td align="left"></td>
+<td align="left"><a href="http://research.vumc.nl/en/persons/cati-racca" class="uri">http://research.vumc.nl/en/persons/cati-racca</a></td>
 </tr>
 <tr class="odd">
-<td align="left"><a href="http://research.vumc.nl/en/persons/linda-muijs" class="uri">http://research.vumc.nl/en/persons/linda-muijs</a></td>
 <td align="left"></td>
+<td align="left"><a href="http://research.vumc.nl/en/persons/linda-muijs" class="uri">http://research.vumc.nl/en/persons/linda-muijs</a></td>
 </tr>
 </tbody>
 </table>
@@ -849,8 +857,8 @@ code > span.in { font-style: italic; } /* Information */
 <p><strong>Dr. Wouter Van Ballegooijen</strong> is a post-doctoral researcher at the VU and GGZ inGeest, specialized in the use of information and communication technology in mental health care and suicide prevention. In the ‘Continuous Assessment for Suicide Prevention And Research’ study <span class="citation">(<em>CASPAR</em>; Nuij et al., <a href="#ref-Nuij2018">2018</a>)</span> Van Ballegooijen and colleagues use EMA to study pathways to suicidal behavior.</p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -902,8 +910,8 @@ code > span.in { font-style: italic; } /* Information */
 
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -952,8 +960,8 @@ code > span.in { font-style: italic; } /* Information */
 <p> </p>
 <table>
 <colgroup>
-<col width="23%" />
-<col width="76%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1003,8 +1011,8 @@ code > span.in { font-style: italic; } /* Information */
 <p><em>Prof. dr. Eus van Someren</em> is affiliated with the department of sleep and cognition of the Netherlands Institute for Neuroscience (<a href="http://herseninstituut.nl/" class="uri">http://herseninstituut.nl/</a>), the Department of Psychiatry of VUmc and GGZ inGeest, Amsterdam. His group focusses on the study of healthy and disturbed sleep, using neuro-imaging, actigraphy and EMA. Here, two examples of such studies are provided.</p>
 <table>
 <colgroup>
-<col width="21%" />
-<col width="78%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1057,13 +1065,13 @@ code > span.in { font-style: italic; } /* Information */
 <p><em>Prof. dr. Eco de Geus</em> is head of the department of Biological Psychology and co-director of the Netherlands Twin Registry at the VU University. De Geus has been the driving force behind the development of the VU University Ambulatory Monitoring System (VU-AMS; <a href="http://www.vu-ams.nl/vu-ams/" class="uri">http://www.vu-ams.nl/vu-ams/</a>), a non-invasive wearable device that is used for continuous ambulatory measurement of the autonomic nervous system.</p>
 <table>
 <colgroup>
-<col width="21%" />
-<col width="78%" />
+<col width="26%" />
+<col width="73%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Aspect</th>
-<th align="left">Description</th>
+<th align="left"><strong>Aspect</strong></th>
+<th align="left"><strong>Description</strong></th>
 </tr>
 </thead>
 <tbody>

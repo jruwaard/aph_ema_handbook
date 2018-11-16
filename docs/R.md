@@ -1,5 +1,4 @@
 
-
 # Introducing R & RStudio {#rstudio}
 \index{R and RStudio} 
 
@@ -429,13 +428,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 1.1444, df = 189.3, p-value = 0.2539
+#> t = -1.452, df = 197.56, p-value = 0.1481
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.1146557  0.4315523
+#>  -0.49017423  0.07444499
 #> sample estimates:
 #>   mean of x   mean of y 
-#>  0.13989017 -0.01855812
+#> -0.13788334  0.06998128
 ```
 
 

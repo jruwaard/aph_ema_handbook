@@ -17,7 +17,8 @@ some of the features that can be extracted from EMA time-series.
 \index{Simulating data} 
 
 We will focus on a simulated three-week time-series of EMA mood responses of a
-single person, in which ratings were collected five times per day. Figure
+single person, in which ratings were collected five times per day (using the
+`generate_features_dataset` function of package `emaph`). Figure
 \@ref(fig:feat-plot) shows a plot of the simulated scores.
 
 Stare at the figure for a moment. How would you characterize the development of
@@ -82,13 +83,14 @@ time-series, the question is how we can do better. What other features can we
 extract? One option would be to characterize the series in simple regression
 terms, via an intercept and a slope. By doing so, we can economically describe
 the dynamics of the series with two numbers. As can be seen in Figure
-\@ref(fig:feat-plot-lm), the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is
+\@ref(fig:feat-plot-lm), the regression model provides a more realistic and
+informative summary. At the start, the estimated mean - the intercept - is
 3.2. This mean increases approximately
 0.9 points per week (the slope), to a final estimated
 mean of 5.9. Comparing Figure
-\@ref(fig:feat-plot-mean) and Figure \@ref(fig:feat-plot-lm), we see that
-Figure \@ref(fig:feat-plot-lm) is more successful in capturing the variation in
-the series.
+\@ref(fig:feat-plot-mean) and Figure \@ref(fig:feat-plot-lm), we see that Figure
+\@ref(fig:feat-plot-lm) is more successful in capturing the variation in the
+series.
 
 <div class="figure" style="text-align: center">
 <img src="features_files/figure-html/feat-plot-lm-1.png" alt="EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)" width="100%" />
@@ -204,8 +206,10 @@ develops over time, the periodicity in the series is becoming more clear. Figure
 Both the auto-correlation analysis and the moving average plot suggest
 periodicity in the EMA time series. Suppose we want to know more about this
 periodicity. Is there a way to quantify it? Yes, there is. With a technique
-called Fourier Analysis, the strength ('power') of various frequencies can
-be quantified. Figure \@ref(fig:feat-plot-pow) shows what happens if we run a Fourier analysis of our time series (with R's built-in function `spec.pgram`).
+called Fourier Analysis, the strength ('power') of the evidence for the presence
+of various frequencies can be quantified. Figure \@ref(fig:feat-plot-pow) shows
+what happens if we run a Fourier analysis of our time series (with R's built-in
+function `spec.pgram`).
 
 <div class="figure" style="text-align: center">
 <img src="features_files/figure-html/feat-plot-pow-1.png" alt="periodogram of the EMA time series, revealing a one-day and a one-week period." width="100%" />
@@ -257,49 +261,10 @@ library(ggplot2)
 library(gridExtra)
 library(psych)
 library(zoo)
+library(emaph)
 
-# simulate the signal -------
-set.seed(123)
-n_measurements_per_day <- 5
-n_days <- 21
-n <- n_measurements_per_day * (n_days)
-m <- 3
-sdev_min <- 1
-sdev_max <- 4
-trend  <- 3
-missingness_prob = c(0.1, 0.5)
-autocorrelation = .6
-
-## time
-t <- seq(0, (n - 1) * 1 / 5, by =  1 / 5)
-
-## signal
-s <- numeric(length(t))
-
-## periodicity
-s <- seq(sdev_min, sdev_max, length.out = n) * sin(1   * t * 2 * pi)
-s <-
-  s + 0.5 * seq(sdev_min, sdev_max, length.out = n) * sin(1 / 7 * t * 2 * pi)
-
-## mean + trend + sd (heteroscedastic)
-s <- s + rnorm(n,
-               mean = seq(m, m + trend, length.out = n),
-               sd = 0.5)
-
-#3 auto-correlation
-s <- s + 1 * arima.sim(model = list(ar = autocorrelation), n = n)
-
-## missingness
-m1 <-
-  rbinom(n, 1, seq(missingness_prob[1], missingness_prob[2], length.out = n))
-s[m1 == 1] <- NA
-
-## in range
-s[s > 10] <- 10
-s[s < 0] <- 0
-
-## combine in data.frame
-d <- data.frame(t, s)
+# simulate the signal (using emaph function) -------
+d <- generate_features_dataset(seed = 123)
 
 # plot -------------------------
 e <- subset(d,!is.na(s))

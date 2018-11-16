@@ -62,22 +62,17 @@ following research guidelines:
   - Output of (published) analyses should be saved.
 
 A directory structure based on these guidelines is listed in Figure
-\@ref(fig:fig5b). It depicts the organization of a project in which data were
-collected via:
-\index{QuestManager}
-\index{Movisens}
-\index{GENEActiv}
+\@ref(fig:dm-project-tree). It shows the organization of a (hypothetical) project
+in which data were collected via:
 
-1.  an online survey system (QuestManager), to assess demographics and pre/post
+1.  an online survey system, to assess demographics and pre/post
     study depression severity (with the PHQ-9 questionnaire, @Kroenke2009),
     
-2.  an active EMA smartphone app (Movisens - see Chapter
-    \@ref(ema-instruments-catalogue)), to assess day-to-day changes in mood, and
+2.  an active EMA smartphone app, to assess day-to-day changes in mood, and
     
-3.  an accelerometer (GENEActiv - see Chapter \@ref(ema-instruments-catalogue))
-    to assess activity levels.
+3.  an accelerometer to assess activity levels.
 
-```{r fig5b, echo = FALSE, fig.cap="Example project directory structure", out.width = "75%"}
+```{r dm-project-tree, echo = FALSE, fig.cap="Example project directory structure", out.width = "65%"}
 # Show the EMA R-project directory structure.
 
 library(DiagrammeR)
@@ -85,20 +80,25 @@ library(data.tree)
 
 path <- c(
     "project/data/raw/keyfile.csv",
-    "project/data/raw/questmanager/qm_baseline_2018_05_01.csv", 
-    "project/data/raw/questmanager/qm_posttest_2018_05_01.csv", 
-    "project/data/raw/movisens/ms_export_2018_05_01.csv", 
-    "project/data/raw/geneactiv/ga_APC009_2018_04_26.bin", 
-    "project/data/raw/geneactiv/ga_APC009_b_2018_05_01.bin", 
-    "project/data/raw/geneactiv/ga_APC010_2018_05_01.bin",
-    "project/data/raw/geneactiv/ga_APC011_2018_05_01.bin", 
-    "project/data/cleaned/baseline.Rda", 
-    "project/data/cleaned/mood.Rda",
-    "project/data/cleaned/activity.Rda",
-    "project/scripts/import/import_questmanager.R", 
-    "project/scripts/import/import_movisens.R", 
-    "project/scripts/import/import_geneactiv.R", 
-    "project/scripts/import/explore.R",
+    "project/data/raw/surveys/sur_t0_2018_05_01.csv", 
+    "project/data/raw/surveys/sur_t1_2018_05_01.csv", 
+    "project/data/raw/ema/ema_2018_05_01.csv", 
+    "project/data/raw/actigraphy/acc_APC009_2018_04_26.bin", 
+    "project/data/raw/actigraphy/acc_APC009_b_2018_05_01.bin", 
+    "project/data/raw/actigraphy/acc_APC010_2018_05_01.bin",
+    "project/data/raw/actigraphy/acc_APC011_2018_05_01.bin", 
+    "project/data/cleaned/t0.Rda", 
+    "project/data/cleaned/t1.Rda",
+    "project/data/cleaned/ema.Rda",
+    "project/data/cleaned/actigraphy.Rda",
+    "project/docs/protocol.docx",
+    "project/scripts/import/calc_surveys.R", 
+    "project/scripts/import/calc_ema.R", 
+    "project/scripts/import/calc_actigraphy.R",
+    "project/scripts/import/clean_surveys.R", 
+    "project/scripts/import/clean_ema.R", 
+    "project/scripts/import/clean_actigraphy.R", 
+    "project/scripts/import/import.R",
     "project/scripts/publish/analysis.R",
     "project/scripts/publish/P001_regression.Rda",
     "project/scripts/publish/figure1.pdf",
@@ -135,25 +135,25 @@ Wherever possible, this should translate to the availability of raw study data
 in your project.
 
 In the example project, unprocessed data files exported from the three data
-collection systems (i.e., QuestManager, Movisens and GeneaActive) are stored in
-the 'data/raw"-directory', in separate sub-directories per system.
+collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in
+the 'data/raw"-directory', in separate sub-directories per data type.
 
-In 'data/raw/questmanager', we find two files: 1)
-'qm_baseline_2018_05_01.csv', containing the results of demographic
+In 'data/raw/survey', we find two files: 1)
+'sur_t0_2018_05_01.csv', containing the results of demographic
 questionnaire and the PHQ-9 pre-test, and 2) and
-'qm_posttest_2018_05_01.csv', containing the results of the PHQ-9 post-test.
+'sur_t1_2018_05_01.csv', containing the results of the PHQ-9 post-test.
 In exports of such survey systems, data from all participants are typically
 stored in one file per assessment moment. Note how the export date is added to
 the files, to make sure that future updates are only used in the analysis when
 explicitly noted. 
 
-In 'data/raw/movisens', we find one file: 'ms_mood_2018_05_01.csv',
+In 'data/raw/ema', we find one file: 'ema_2018_05_01.csv',
 containing the results of the EMA mood measurements of all participants,
-exported from the back-office of the MoviSens application.
+exported from the back-office of the EMA platform.
 
-Finally, in 'data/raw/geneactiv', we see a series of '.bin' files: binary data
-files that were exported from the GENEActiv smart watches that were worn by the
-participants. Actigraphy data are high-volume: these files are typically large
+Finally, in 'data/raw/actigraphy', we see a series of '.bin' files: binary data
+files that were exported from, e.g., GENEActiv smart watches, that were worn by the
+participants. Actigraphy data are high-volume data: these files are typically large
 (500MB is no exception). By using the '.bin' format, in which data are compressed,
 disk space is saved (in uncompressed format, data in a single .bin file can
 amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this
@@ -174,11 +174,11 @@ through scripts.
 In the example key-file below, we find four columns. The first column defines
 the global study ID for each participant (i.e., the ID that the researcher
 intends to use as the "official" ID). The other three columns define how the
-participant is identified in each of the data collection systems.
+participant is identified in each data collection system.
 
 Table: (\#tab:tab5a) Example Study Key-file
 
-|  ID        | QM_ID    | MoviSens_ID    | GENEActiv_ID   |
+|  ID        | Survey_ID| EMA_ID         | Actigraphy_ID   |
 |:-----------|:---------|:---------------|:---------------|
 | P001       |  QM01221 | 192.A102.83A   | APC009         |
 | P002       |  QM01228 | 192.B106.73X   | APC010         |
@@ -187,6 +187,7 @@ Table: (\#tab:tab5a) Example Study Key-file
 
 ## Import Scripts
 
+## Cleaning
 In 'scripts/import', we find the scripts with which the raw data are imported
 and cleaned, to produce ready-to-analyze data that are stored in 'data/cleaned'.
 
@@ -203,47 +204,111 @@ The code snippet below illustrates the kind of data transformations that you can
 expect to find in an import script. With a few lines of code, raw baseline
 questionnaire data are imported into R, participant id's that are specific to
 the data collection system are replaced by the proper global study id, variables
-of interest are selected, sum scores of the PHQ-9 are calculated, data ranges
-are checked (and corrected if needed), and data types are set (in accordance to
-the study code-book). Finally, the cleaned data set is saved to the
-'data/cleaned' folder, ready for further processing in the final analyses.
+of interest are selected, data ranges are checked (and corrected if needed), and
+data types are set (in accordance to the study code-book). Finally, the cleaned
+data set is saved to the 'data/cleaned' folder, ready for further processing in
+the final analyses.
 
-```{r cs5a, eval = FALSE}
-# Data import example
+```{r dm-clean-example-script, eval = FALSE}
+# ------------------------------------------------------------
+# Clean data 
+# JR - 2018-10-16
+# ------------------------------------------------------------
 
-# import raw questmanager baseline data (csv file)
-d <- read.csv("data/raw/questmanager/qm_baseline_2018_05_01.csv")
+# import raw baseline survey data (csv file) -----------------
+t0 <- read.csv("data/raw/survey/sur_t0_2018_05_01.csv")
 
-# inject study ID, from study key file
+# inject study ID, from study key file -----------------------
 keys <- read.csv("data/raw/keyfile.csv")
-d <- merge(d, keys)
+t0 <- merge(t0, keys)
 
-# only keep variables of interest 
-d <- d[c("ID", "gender", "age", paste0("phq", 1:9)]
+# only keep variables of interest ----------------------------
+# (gender, age, phq item scores)
+t0 <- t0[c("ID", "gender", "age", paste0("phq", 1:9)]
 
-# calculate PHQ-9 sum score
-d$phq <- rowSums(d[paste0("phq", 1:9)])
+# turn gender into a proper factor ---------------------------
+t0$gender <- factor(t0$gender, levels = c("M", "F"))
 
-# replace out-of-range data with missing values (NA)
-d$age[d$age > 100] <- NA
-d$age[d$age < 5] <- NA
+# replace out-of-range data with missing values (NA) ---------
+t0$age[t0$age > 100] <- NA
+t0$age[t0$age < 5] <- NA
 
-# turn gender into a proper factor
-d$gender <- factor(d$gender, levels = c("M", "F"))
+# replace out-of-range phq item data with missing values -----
+t0[paste0("phq", 1:9)] <- lapply(
+  t0[paste0("phq", 1:9)], 
+  function(x) {
+    x[x < 0] <- NA
+    x[x > 3] <- NA
+  })
 
-# save cleaned baseline data to data/cleaned, in R (.Rda) format
-baseline <- d
-save(baseline, file = "data/cleaned/baseline.Rda")
+# save cleaned baseline data --------------------------------- 
+save(t0, file = "data/cleaned/t0.Rda")
 ```
 
 The code snippet above illustrates the importance of code documentation. You may
 struggle to immediately understand some of the code segments. For instance, you
 might not be familiar with the `paste0` function that is used to create the
 names of the variables that contain the PHQ-9 item scores. Fortunately, however,
-it becomes clear that the code statement calculates the sum of the item from the
-comment just above the code (the line starting with `#`). Use these comments in
-your code. You will do yourself and your colleagues a big favor by making it
-much easier to quickly grasp the meaning of your code.
+the comment (the lines starting with `#`) make it clear that the function is
+used to select individual PHQ-9 items. Comment your code. You will do yourself
+and your colleagues a big favor by making it much easier to quickly grasp the
+meaning of your code.
+
+## Pre-process
+
+Once data are cleaned, you can enrich the data sets with variables that can be
+derived from the raw data, such as, e.g., survey scale and subscale scores, if
+needed), or actigraphy summary measures (see Chapter \@ref(activity)). The
+example below calculates the PHQ-9 sum scores from the item scores in the
+cleaned baseline data:
+
+```{r dm-preprocess-example-script, eval = FALSE}
+# ------------------------------------------------------------
+# Pre-process data 
+# JR - 2018-10-16
+# ------------------------------------------------------------
+
+# import cleaned baseline survey data ------------------------
+load("data/cleaned/baseline.Rda")
+load("data/cleaned/posttest.Rda")
+
+# add PHQ-9 sum scores ---------------------------------------
+baseline$phq9 <- rowSums(baseline[paste0("phq", 1:9)], 
+                         na.rm = TRUE)
+posttest$phq9 <- rowSums(posttest[paste0("phq", 1:9)], 
+                         na.rm = TRUE)
+
+# re-save baseline data --------------------------------------
+save(baseline, file = "data/cleaned/baseline.Rda")
+save(baseline, file = "data/cleaned/posttest.Rda")
+```
+
+
+## Combine
+While working on your project, you will probably want to re-run the cleaning and
+pre-processing scripts a lot, for instance in response to additional data coming
+in, or to fix bugs in the import routines. For this, it can be helpful to create
+one file in which all import scripts are executed in proper sequence. For this,
+you can use R's `source` command, with which scripts can be read and executed
+directly from disk:
+
+```{r dm-import-example-script, eval = FALSE}
+# ------------------------------------------------------------
+# Import (clean & pre-process) all data files 
+# JR - 2018-10-16
+# ------------------------------------------------------------
+
+# clean -------------------------------
+source("scripts/import/clean_surveys.R") 
+source("scripts/import/clean_ema.R") 
+source("scripts/import/clean_actigraphy.R") 
+
+# pre-process----------------------------
+source("scripts/import/calc_surveys.R") 
+source("scripts/import/calc_ema.R")
+source("scripts/import/calc_actigraphy.R") 
+```
+
 
 ## Reproducible Analyses
 
@@ -258,15 +323,19 @@ Both the plot and the result of the regression are saved in the analysis
 directory. The plot is saved as a PDF-file (ready for submission to the
 journal), and the regression results are saved in a standard R data structure.
 
-```{r cs5b, eval = FALSE}
-# Data analysis example
+```{r dm-analysis-example, eval = FALSE}
+# -------------------------------------------------------------
+# N = 1 Analysis (P001)
+# note: part of manuscript!
+# JR - 2018-10-16
+# ------------------------------------------------------------
 
-# import cleaned EMA mood study data
-load("data/cleaned/mood.Rda")
+# import cleaned EMA mood study data --------------------------
+load("data/cleaned/ema.Rda")
 
 # create and save Figure 1: EMA mood data, of participant P001 
 d <- subset(mood, ID == "P001")
-pdf(file = "scripts/publised/figure1.pdf")
+pdf(file = "scripts/published/figure1.pdf")
 plot(mood ~ time, d)
 dev.off()
 
@@ -285,7 +354,7 @@ Reviewers ask you to send residual plots, to convince them that the residual
 errors are normally distributed. When the regression results are saved to disk,
 the following three lines are all you need to satisfy their request:
 
-```{r cs5c, eval = FALSE}
+```{r dm-revisit-lm, eval = FALSE}
 # Revisiting regression results, for a visual regression residual check  
 load("scripts/published/P001_regression.Rda")
 
@@ -294,8 +363,18 @@ plot(fm)
 dev.off()
 ```
 
+## Documentation
 
-## README
+### Protocol
+
+In "docs/protocol", we find the "protocol.docx" file, which should contain a
+detailed description of the study. This file provides information on the
+background of the study, the methods, analysis techniques, defines the
+codebook of the study, and should include full descriptions of all surveys,
+assessment protocols, etc.. If needed, you can use this folder to store
+additional background material, such as PDFs of published psychometric studies. 
+
+### README
 
 Note, finally, the 'README' file in the root of the project directory. This
 file should contain a brief summary of the project, to quickly inform others
@@ -304,28 +383,28 @@ project directory.
 
 | Element        | Description                          |
 |:---------------|:-------------------------------------|
-| Title          | Project title & Acronym              |
-| Description    | One-paragraph project description    |
-| Author         | Author name, e-mail affiliation      |
+| Title          | Project title & Acronym .             |
+| Description    | One-paragraph project description.    |
+| Author         | Author name, e-mail affiliation.      |
 | Getting Started| Instructions on how to get the project up and running on a local machine for development. |
-| Prerequisites  | A listing of software required (i.e. R packages), and instructions on how to install this software |
-| Contents       | A listing of project directories, with a brief description of their contents |
-| Restrictions   | Notes about potential data access limitations |
+| Prerequisites  | A listing of software required (i.e. R packages), and instructions on how to install this software. |
+| Contents       | A listing of project directories, with a brief description of their contents. |
+| Restrictions   | Notes about potential data access limitations. |
 
 
-## A Final Note
+## Discussion
 
 In this chapter, we aimed to show how adopting the RStudio Project can help you
-to implement key principles of EMA data management, such as reproducibility. To
-do so, we discussed the project structure of an illustrative small-scale EMA
-study. No doubt, your project will differ from this example in many ways,
-forcing you to deviate from the example structure. The example may be too
-elaborate, for example, if your project only requires you to analyze a single
-data file. The structure it certainly too limited to support the requirements of
-a full PHD project (such as the one described, for example, in the APH quality
-handbook - see <http://www.emgo.nl/kc/folders-and-file-names/>). But as we
-mentioned earlier, RStudio Projects are flexible. It should be relatively
-straightforward to scale down or scale up the example that we discussed. 
+to implement key principles of EMA data management. To illustrate this, we
+discussed the project structure of a small-scale EMA study. No doubt, your
+project will differ from this example in many ways, forcing you to deviate from
+the example structure. The example may be too elaborate, for example, if your
+project only requires you to analyze a single data file. The structure is
+certainly too limited to support the requirements of a full PHD project (such as
+the one described, for example, in the APH quality handbook - see
+<http://www.emgo.nl/kc/folders-and-file-names/>). But as we mentioned earlier,
+RStudio Projects are flexible. It should be relatively straightforward to scale
+down or scale up the example that we discussed.
 
 If you want to learn more about data management with R and RStudio, the book
 *"Reproducible Research with R and RStudio"* [@gandrud2015] would be a good

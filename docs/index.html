@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-16">
+<meta name="date" content="2018-11-17">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -251,7 +251,7 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 <li class="chapter" data-level="12" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>12</b> R Packages for EMA Research</a><ul>
 <li class="chapter" data-level="12.1" data-path="rcat.html"><a href="rcat.html#accelerometry"><i class="fa fa-check"></i><b>12.1</b> Accelerometry</a><ul>
-<li class="chapter" data-level="12.1.1" data-path="rcat.html"><a href="rcat.html#genearead-ggir"><i class="fa fa-check"></i><b>12.1.1</b> GENEAread / GGIR</a></li>
+<li class="chapter" data-level="12.1.1" data-path="rcat.html"><a href="rcat.html#genearead"><i class="fa fa-check"></i><b>12.1.1</b> GENEAread</a></li>
 <li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.2</b> PhysicalActivity</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#autoregressive-modeling"><i class="fa fa-check"></i><b>12.2</b> Autoregressive modeling</a><ul>
@@ -267,15 +267,16 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12.4.1" data-path="rcat.html"><a href="rcat.html#nlme"><i class="fa fa-check"></i><b>12.4.1</b> nlme</a></li>
 <li class="chapter" data-level="12.4.2" data-path="rcat.html"><a href="rcat.html#lme4"><i class="fa fa-check"></i><b>12.4.2</b> lme4</a></li>
 </ul></li>
-<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#power-analysis"><i class="fa fa-check"></i><b>12.5</b> Power analysis</a><ul>
+<li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#simulation"><i class="fa fa-check"></i><b>12.5</b> Simulation</a><ul>
 <li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.5.1</b> simr</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.6</b> Symptom Network Analysis</a><ul>
-<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.6.1</b> qgraph</a></li>
-<li class="chapter" data-level="12.6.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.6.2</b> bootnet</a></li>
+<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#simstudy"><i class="fa fa-check"></i><b>12.6</b> simstudy</a></li>
+<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.7</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.7.1</b> qgraph</a></li>
+<li class="chapter" data-level="12.7.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.7.2</b> bootnet</a></li>
 </ul></li>
-<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.7</b> Timeseries analysis</a><ul>
-<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.7.1</b> lomb</a></li>
+<li class="chapter" data-level="12.8" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.8</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="12.8.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.8.1</b> lomb</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VII Closing Matters</b></span></li>
@@ -306,7 +307,7 @@ code > span.in { font-style: italic; } /* Information */
 <p class="author"><em>Jeroen Ruwaard</em></p>
 <p class="author"><em>Lisa Kooistra</em></p>
 <p class="author"><em>Melissa Thong</em></p>
-<p class="date"><em>2018-11-16</em></p>
+<p class="date"><em>2018-11-17</em></p>
 </div>
 <div id="preface" class="section level1 unnumbered">
 <h1>Preface</h1>
@@ -317,7 +318,7 @@ code > span.in { font-style: italic; } /* Information */
 <p>The manual provides a practical introduction to EMA-research. It was written to aid beginning researchers of the Amsterdam School of Public Health (APH), who are looking for practical advice in conducting EMA studies. The manual provides an overview of EMA instruments, outcomes, methods and analytic techniques, guidelines for EMA-studies, and a catalogue of EMA research in the APH consortium.</p>
 <p>This manual is available online at <a href="https://jruwaard.github.io/aph_ema_handbook/" class="uri">https://jruwaard.github.io/aph_ema_handbook/</a>. Sources are available at <a href="https://github.com/jruwaard/aph_ema_handbook" class="uri">https://github.com/jruwaard/aph_ema_handbook</a>. Please post your comments and suggestions there, or via e-mail, through <a href="mailto:aph.ema@ggzingeest.nl">aph.ema@ggzingeest.nl</a>.</p>
 <p>This manual will be continuously updated. In citations, please include explicit build dates, as in:</p>
-<p>Ruwaard, J., Kooistra, L. and Thong, M. (2018). <em>Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, with Examples in R (1st edition - build 2018-11-16)</em>. Amsterdam: APH Mental Health.</p>
+<p>Ruwaard, J., Kooistra, L. and Thong, M. (2018). <em>Ecological Momentary Assessment in Mental Health Research: A Practical Introduction, with Examples in R (1st edition - build 2018-11-17)</em>. Amsterdam: APH Mental Health.</p>
 
 
 </div>

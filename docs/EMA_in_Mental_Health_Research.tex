@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-16}
+    \date{2018-11-17}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -201,7 +201,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-16)}.
+Introduction, with Examples in R (1st edition - build 2018-11-17)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -674,8 +674,8 @@ research are discussed.
   outcomes: Mood (Chapter \ref{mood}) and Activity (Chapter
   \ref{activity}).
 \item
-  \textbf{Part IV} introduces EMA data analysis techniques: Feature
-  Extraction (Chapter \ref{features}), and Mixed Modelling (Chapter
+  \textbf{Part IV} discusses EMA data analysis techniques: Feature
+  Extraction (Chapter \ref{features}), and Mixed Modeling (Chapter
   \ref{lmm}).
 \item
   In \textbf{part V}, the application of the preceding material is
@@ -1187,13 +1187,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.63201, df = 197.18, p-value = 0.5281}
+\CommentTok{#> t = -0.3943, df = 197.06, p-value = 0.6938}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.3808144  0.1959674}
+\CommentTok{#>  -0.3555122  0.2370368}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.01695238  0.07547113}
+\CommentTok{#> -0.03187952  0.02735817}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1546,7 +1546,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4717}
+\CommentTok{#> [1] 0.4747}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5467,9 +5467,9 @@ stress and emotion in both laboratory and naturalistic settings
 
 Many R packages exist that can help you in the management and analysis
 of EMA data. In this chapter, a selection of these packages is
-discussed. For each, we provide a summary description, a code example
-code, and pointers to further documentation, to give you a head start in
-using the packages for your work.
+discussed. For each, we provide a summary description, example code, and
+pointers to further documentation, to give you a head start in using
+these packages for your work.
 
 \begin{longtable}[]{@{}lll@{}}
 \caption{\label{tab:rcat} List of R packages that are useful in EMA
@@ -5549,7 +5549,7 @@ Automate the construction of vector autoregressive models.\strut
 lme4\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
 Fit linear and nonlinear mixed-effects models. Fast alternative to
-package `nlme'.\strut
+package \texttt{nlme}.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
@@ -5609,7 +5609,7 @@ as activity counts and energy-expenditure measures, have to be
 calculated from imputed triangular (x, y, x) data, often in several time
 windows (i.e., epochs).
 
-\subsection{GENEAread / GGIR}\label{genearead-ggir}
+\subsection{GENEAread}\label{genearead}
 
 \index{Packages!GENEAread} \index{Packages!GGIR}
 
@@ -5629,17 +5629,13 @@ imported into R for further processing, as illustrated below.
 \KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{library}\NormalTok{(tidyr)}
 
-\NormalTok{dat <-}\StringTok{ }\KeywordTok{read.bin}\NormalTok{(}\KeywordTok{system.file}\NormalTok{(}\StringTok{"binfile/TESTfile.bin"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"GENEAread"}\NormalTok{),}
-                \DataTypeTok{verbose =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{downsample =} \DecValTok{20}\NormalTok{)}
-\CommentTok{#> Processing took: 0.178 secs .}
-\CommentTok{#> Loaded 1560 records (Approx  0 MB of RAM)}
-\CommentTok{#> 12-05-23 16:47:50.000 (Wed)  to  12-05-23 16:53:01.799 (Wed)}
+\NormalTok{out <-}\StringTok{ }\KeywordTok{capture.output}\NormalTok{(}
+\NormalTok{  dat <-}\StringTok{ }\KeywordTok{read.bin}\NormalTok{(}\KeywordTok{system.file}\NormalTok{(}\StringTok{"binfile/TESTfile.bin"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"GENEAread"}\NormalTok{),}
+                  \DataTypeTok{verbose =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{downsample =} \DecValTok{20}\NormalTok{))}
 
 \NormalTok{d <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(dat}\OperatorTok{$}\NormalTok{data.out)}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{gather}\NormalTok{(d, }\DataTypeTok{key =} \StringTok{"sensor"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{timestamp)}
-\NormalTok{d}\OperatorTok{$}\NormalTok{timestamp <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(d}\OperatorTok{$}\NormalTok{timestamp, }
-                          \DataTypeTok{origin =} \StringTok{"1970-01-01"}\NormalTok{,}
-                          \DataTypeTok{tz =} \StringTok{"UTC"}\NormalTok{)}
+\NormalTok{d}\OperatorTok{$}\NormalTok{timestamp <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(d}\OperatorTok{$}\NormalTok{timestamp, }\DataTypeTok{origin =} \StringTok{"1970-01-01"}\NormalTok{, }\DataTypeTok{tz =} \StringTok{"UTC"}\NormalTok{)}
 
 \KeywordTok{ggplot}\NormalTok{(d, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ timestamp, }\DataTypeTok{y =}\NormalTok{ value)) }\OperatorTok{+}\StringTok{ }
 \StringTok{  }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }
@@ -5706,11 +5702,9 @@ can provide insight in how these phenomena interact. One challenge in
 VAR modelling is that many alternative models potentially exist, Package
 \emph{autovarCore} \citep{R-autovarCore} was developed to help
 researchers to find the VAR model with the best fit to a given
-time-series data set.
-
-In the (unrealistic) example below, function \texttt{autovar} is used to
-detect that changes in depression are positively related to past (lag 1)
-values of activity, in a simulated data set:
+time-series data set. In the example below, function \texttt{autovar} is
+used to detect that changes in depression are positively related to past
+(lag 1) values of activity, in a simulated data set:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5736,19 +5730,19 @@ values of activity, in a simulated data set:
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.16684 -0.70663 -0.07416  0.55735  2.51048 }
+\CommentTok{#> -1.89839 -0.66056 -0.08484  0.76054  2.48846 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.50159    0.10708   4.684 9.25e-06 ***}
-\CommentTok{#> depression.l1  0.14209    0.09166   1.550    0.124    }
-\CommentTok{#> const          0.09227    0.10229   0.902    0.369    }
+\CommentTok{#> activity.l1    0.50320    0.08474   5.938 4.59e-08 ***}
+\CommentTok{#> depression.l1 -0.01553    0.08787  -0.177     0.86    }
+\CommentTok{#> const         -0.08607    0.09551  -0.901     0.37    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 1.015 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.2048, Adjusted R-squared:  0.1882 }
-\CommentTok{#> F-statistic: 12.36 on 2 and 96 DF,  p-value: 1.669e-05}
+\CommentTok{#> Residual standard error: 0.944 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.2705, Adjusted R-squared:  0.2553 }
+\CommentTok{#> F-statistic:  17.8 on 2 and 96 DF,  p-value: 2.668e-07}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5803,15 +5797,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.3668117\\
+1 & 0.1744643\\
 \hline
-2 & 0.1445131\\
+2 & -0.1943311\\
 \hline
-3 & 0.4324790\\
+3 & 0.0105962\\
 \hline
-4 & -0.1027515\\
+4 & -0.1228842\\
 \hline
-5 & -0.3770372\\
+5 & 0.0588404\\
 \hline
 \end{tabular}
 
@@ -5877,8 +5871,9 @@ identifier), to show individual trajectories.
 \index{Packages!haven} \index{SPSS}
 
 With package \emph{haven} \citep{R-haven}, SPSS, STATA and SAS files can
-be read into R. A particular advantage is that variables definitions are
-retained (in attributes of the columns in the R \texttt{data.frames}).
+be read into R. A particular advantage is that SPSS variables
+definitions are retained (in attributes of the columns in the R
+\texttt{data.frames}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6013,7 +6008,7 @@ specifications in \texttt{lme}.
 \end{Highlighting}
 \end{Shaded}
 
-\section{Power analysis}\label{power-analysis}
+\section{Simulation}\label{simulation}
 
 \subsection{simr}\label{simr}
 
@@ -6061,7 +6056,7 @@ the model), to determine the power of the test.
          \DataTypeTok{nsim =} \DecValTok{10}\NormalTok{, }\CommentTok{# set to high value for better results}
          \DataTypeTok{progress =} \OtherTok{FALSE}\NormalTok{)}
 \CommentTok{#> Power for predictor 'time:group', (95% confidence interval):}
-\CommentTok{#>       90.00% (55.50, 99.75)}
+\CommentTok{#>       100.0% (69.15, 100.0)}
 \CommentTok{#> }
 \CommentTok{#> Test: Likelihood ratio}
 \CommentTok{#>       Effect size for time:group is -0.50}
@@ -6069,7 +6064,27 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 5 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
+\end{Highlighting}
+\end{Shaded}
+
+\section{simstudy}\label{simstudy}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(simstudy)}
+
+\NormalTok{def <-}\StringTok{ }\KeywordTok{defData}\NormalTok{(}\DataTypeTok{varname =} \StringTok{"nr"}\NormalTok{, }\DataTypeTok{dist =} \StringTok{"nonrandom"}\NormalTok{, }\DataTypeTok{formula =} \DecValTok{7}\NormalTok{, }\DataTypeTok{id =} \StringTok{"idnum"}\NormalTok{)}
+\NormalTok{def <-}\StringTok{ }\KeywordTok{defData}\NormalTok{(def, }\DataTypeTok{varname =} \StringTok{"x1"}\NormalTok{, }\DataTypeTok{dist =} \StringTok{"uniform"}\NormalTok{, }\DataTypeTok{formula =} \StringTok{"10;20"}\NormalTok{)}
+\NormalTok{def <-}\StringTok{ }\KeywordTok{defData}\NormalTok{(def, }\DataTypeTok{varname =} \StringTok{"y1"}\NormalTok{, }\DataTypeTok{formula =} \StringTok{"nr + x1 * 2"}\NormalTok{, }\DataTypeTok{variance =} \DecValTok{8}\NormalTok{)}
+
+\KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
+\CommentTok{#>    idnum nr       x1       y1}
+\CommentTok{#> 1:     1  7 10.74207 28.41630}
+\CommentTok{#> 2:     2  7 10.44255 27.97137}
+\CommentTok{#> 3:     3  7 13.49877 33.02364}
+\CommentTok{#> 4:     4  7 12.96595 28.31062}
+\CommentTok{#> 5:     5  7 18.85833 40.79275}
 \end{Highlighting}
 \end{Shaded}
 

@@ -367,8 +367,8 @@ discussed.
   - **Part III** details the momentary assessment of two specific outcomes: Mood
     (Chapter \@ref(mood)) and Activity (Chapter \@ref(activity)).
 
-  - **Part IV** introduces EMA data analysis techniques: Feature Extraction
-    (Chapter \@ref(features)), and Mixed Modelling (Chapter \@ref(lmm)).
+  - **Part IV** discusses EMA data analysis techniques: Feature Extraction
+    (Chapter \@ref(features)), and Mixed Modeling (Chapter \@ref(lmm)).
 
   - In **part V**, the application of the preceding material is illustrated in a
     case study, in which EMA is used to detect early warnings signs of

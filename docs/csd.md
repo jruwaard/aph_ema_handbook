@@ -13,6 +13,7 @@ signs?
 
 
 ## Critical Slowing Down
+\index{Critical Slowing Down}
 
 Critical Slowing Down (CSD) is a concept from dynamic systems theory. In dynamic
 systems, state transitions are preceded by a change in which the system reacts
@@ -37,6 +38,9 @@ considered). With another analysis technique, called 'Detrended Fluctuation
 Analysis', all lags can be considered.
 
 To conduct the analysis, we need three R packages:
+\index{tidyverse}
+\index{nonlinearTseries}
+\index{empah}
 
 - Raw EMA data of this study were published in the public domain
 [@Kossakowski2017]. We included the data in the `emaph` package.
@@ -46,7 +50,6 @@ going to use several functions from `tidyverse` packages.
 
 - DFA is implemented in package `nonlinearTseries`, so we will need that as well.
 
-\index{Packages!nonlinearTseries}
 
 
 ```r
@@ -81,10 +84,14 @@ ggplot(dep, aes(x = dayno, y = scl90r_dep, group = 1)) +
   theme_classic()
 ```
 
-<div class="figure" style="text-align: center">
-<img src="csd_files/figure-html/csd-scl90plot-1.png" alt="SCL-90 depression score, over the study period" width="100%" />
-<p class="caption">(\#fig:csd-scl90plot)SCL-90 depression score, over the study period</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/csd-scl90plot-1} 
+
+}
+
+\caption{SCL-90 depression score, over the study period}(\#fig:csd-scl90plot)
+\end{figure}
 
 
 ## Mental state EMA Items
@@ -151,9 +158,10 @@ csd <- csd %>% filter(nna == 0)
 
 
 ## Running the DFA
+\index{DFA analysis}
 
 We are now ready to run the DFA analysis. We split the full series in 31-day
-overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc),
+overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc.),
 calculate the DFA of each window and save that value so that we can compare it
 to the weekly depression assessments.
 
@@ -216,10 +224,14 @@ ggplot(na.omit(d),
   theme_classic()
 ```
 
-<div class="figure" style="text-align: center">
-<img src="csd_files/figure-html/csd-dfaplot-1.png" alt="Results of the DFA analysis." width="100%" />
-<p class="caption">(\#fig:csd-dfaplot)Results of the DFA analysis.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{csd_files/figure-latex/csd-dfaplot-1} 
+
+}
+
+\caption{Results of the DFA analysis.}(\#fig:csd-dfaplot)
+\end{figure}
 
 
 ## Discussion

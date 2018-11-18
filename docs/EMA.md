@@ -44,16 +44,24 @@ activity, smartphone use or engagement on social media (see Figure
 sleep patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/activeema-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
-<p class="caption">(\#fig:activeema)Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. </p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/activeema-1} 
+
+}
+
+\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:activeema)
+\end{figure}
 
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/passiveema-1.png" alt="Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer." width="100%" />
-<p class="caption">(\#fig:passiveema)Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/passiveema-1} 
+
+}
+
+\caption{Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer.}(\#fig:passiveema)
+\end{figure}
 
 
 
@@ -138,10 +146,14 @@ idiographic research, measuring characteristics of (unique) individuals across
 time and context [@Shiffman2008]. This allows for a better understanding of
 the factors that account for the variability within and between individuals.
 
-<div class="figure" style="text-align: center">
-<img src="EMA_files/figure-html/idiographic-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
-<p class="caption">(\#fig:idiographic)An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/idiographic-1} 
+
+}
+
+\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:idiographic)
+\end{figure}
 
 ### To Understand the Dynamic Interplay between Symptoms
 
@@ -189,7 +201,7 @@ with several reviews outlining recent findings in depression [@Telford2012;
 @Wichers2011; @burton2013], anxiety disorders [@Walz2014], and
 depression/bipolar disorder [@AanhetRot2012]. The potential of EMA for use
 among young populations showed promising results [@Dubad2018]. Innovations in
-mobile devices has improved the feasibility and popularity of ecological
+mobile devices have improved the feasibility and popularity of ecological
 momentary interventions (EMIs) for anxiety and depression [@schueller2017]. A
 systematic review and meta-analysis of EMIs reported small to medium effects on
 mental health [@Versluis2016].
@@ -261,7 +273,7 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 | **Eating disorders**   | |
 | @Engel2016 | An overview of studies on eating disorders, obesity, and bariatric surgery using EMA.|
 | **Mood disorders**     | |
-| @AanhetRot2012         | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, pediatric populations, MDD/BD specificity, and links with neuroscience, |
+| @AanhetRot2012         | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, pediatric populations, MDD/BD specificity, and links with neuroscience. |
 | @Aung2017              | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
 | @burton2013            | Focuses on diurnal variations in activity levels among depressed individuals. |
 | @Telford2012           | Identifies six themes of EMA research in MDD: methodology, positive and negative affect, cortisol secretion, antidepressant treatment, work performance, and genetic risk factors. |

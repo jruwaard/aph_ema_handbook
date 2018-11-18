@@ -16,7 +16,7 @@ researchers who are planning Ecological Momentary Assessment (EMA) studies."
 
 # Preface {-}
 
-<img src="./images/cover/smallcover.jpg" width="250" height="375" alt="Cover image" align="right" style="margin: 0 1em 0 1em" />
+
 
 Given known limitations of retrospective self-report questionnaires, such as
 recall bias and poor generalizability of assessment results to real-life

@@ -54,10 +54,14 @@ product on the market. Being an American company, researchers should also
 consider EU regulations relating to personal data privacy protection, since
 regulations are stricter when personal data of EU citizens leave the EU.
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/ilumivu/iv-app-1.png" alt="Ilumivu App Screenshots" width="30%" /><img src="images/instruments/ilumivu/iv-app-2.png" alt="Ilumivu App Screenshots" width="30%" /><img src="images/instruments/ilumivu/iv-app-3.png" alt="Ilumivu App Screenshots" width="30%" />
-<p class="caption">(\#fig:ilumivu)Ilumivu App Screenshots</p>
-</div>
+\begin{figure}[!t]
+
+{\centering \includegraphics[width=0.3\linewidth]{images/instruments/ilumivu/iv-app-1} \includegraphics[width=0.3\linewidth]{images/instruments/ilumivu/iv-app-2} \includegraphics[width=0.3\linewidth]{images/instruments/ilumivu/iv-app-3} 
+
+}
+
+\caption{Ilumivu App Screenshots}(\#fig:ilumivu)
+\end{figure}
 
 
 
@@ -89,10 +93,14 @@ Cross-platform versions of the app are in development.
 More information on Moodbuster can be obtained from prof. dr. Heleen Riper
 (<h.riper@vu.nl>).
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/moodbuster/mb-app-home.png" alt="MoodBuster App Screenshots" width="25%" /><img src="images/instruments/moodbuster/mb-app-mood.png" alt="MoodBuster App Screenshots" width="25%" /><img src="images/instruments/moodbuster/mb-app-graph.png" alt="MoodBuster App Screenshots" width="25%" />
-<p class="caption">(\#fig:moodbuster)MoodBuster App Screenshots</p>
-</div>
+\begin{figure}[!t]
+
+{\centering \includegraphics[width=0.25\linewidth]{images/instruments/moodbuster/mb-app-home} \includegraphics[width=0.25\linewidth]{images/instruments/moodbuster/mb-app-mood} \includegraphics[width=0.25\linewidth]{images/instruments/moodbuster/mb-app-graph} 
+
+}
+
+\caption{MoodBuster App Screenshots}(\#fig:moodbuster)
+\end{figure}
 
 
 ### Movisens
@@ -113,11 +121,11 @@ Specialized software to import, pre-process and analyze raw sensor data is
 available for download. Like Ilumivu, researchers can define EMA sample
 schedules for their study in a web-based back-office
 (<https://xs.movisens.com>), using an online graphical editor. Once defined,
-participants can be invited to the study , through the back-office, to download
+participants can be invited to the study, through the back-office, to download
 the freely available Movisens App from Google Play store. The back-office also
 allows researchers to monitor study compliance and download data. 
 
-MoviSensXS EMA license costs vary from 500 to 10.000 euro's per year, depending
+MovisensXS EMA license costs vary from 500 to 10.000 euros per year, depending
 on the required number of 'credits' which are linked to the number of EMA
 responses. Prospect users can test platform, without functional restrictions,
 with a free test account. An EMA test-study can thus be set up and started in
@@ -125,10 +133,14 @@ less than a day. A current (November 2018) limitation of Movisens is the lack of
 an iOS version of the EMA app. Study participants who own an iPhone have to be
 excluded from studies, or will have to be provided with an Android phone.
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/movisens/movisens.png" alt="Movisens Sample scheme editor (left) and App Screenshots (right)" width="80%" />
-<p class="caption">(\#fig:movisens)Movisens Sample scheme editor (left) and App Screenshots (right)</p>
-</div>
+\begin{figure}[!t]
+
+{\centering \includegraphics[width=0.8\linewidth]{images/instruments/movisens/movisens} 
+
+}
+
+\caption{Movisens Sample scheme editor (left) and App Screenshots (right)}(\#fig:movisens)
+\end{figure}
 
 ### PsyMate
 \index{PsyMate}
@@ -139,7 +151,7 @@ psychological problems in daily life. The app has been validated for use in
 depression, bipolar disorder, and psychosis, with new scales currently being
 developed for a range of diseases including Parkinson's disease, pain,
 cardiology, hypertension, diabetes and Irritable Bowel Syndrome. It was also
-used in a EU-funded project to study gene-environment interaction in
+used in an EU-funded project to study gene-environment interaction in
 schizophrenia (<http://www.eu-gei.eu/about-the-project/psymate>). 
 
 The app is free to download for iOS and Android devices on Apple and Google play
@@ -155,10 +167,14 @@ data without having to go through the PsyMate development team. Communication
 from the PsyMate back office to researchers about updates and assistance with
 technical problems could be a point for consideration for using this platform.
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/psymate/psymate-app1.jpg" alt="PsyMate App Screenshots" width="25%" /><img src="images/instruments/psymate/psymate-app3.jpg" alt="PsyMate App Screenshots" width="25%" /><img src="images/instruments/psymate/psymate-app4.jpg" alt="PsyMate App Screenshots" width="25%" />
-<p class="caption">(\#fig:psymate)PsyMate App Screenshots</p>
-</div>
+\begin{figure}[!t]
+
+{\centering \includegraphics[width=0.25\linewidth]{images/instruments/psymate/psymate-app1} \includegraphics[width=0.25\linewidth]{images/instruments/psymate/psymate-app3} \includegraphics[width=0.25\linewidth]{images/instruments/psymate/psymate-app4} 
+
+}
+
+\caption{PsyMate App Screenshots}(\#fig:psymate)
+\end{figure}
 
 
 ### RoQua
@@ -184,10 +200,14 @@ called 'Physiqual' [@Blaauw2016], with which active EMA data, collected with RoQ
 can be combined with wearable sensor data.
 
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/roqua/roqua_p1.jpg" alt="Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system" width="25%" /><img src="images/instruments/roqua/roqua_p2.jpg" alt="Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system" width="25%" /><img src="images/instruments/roqua/roqua_p3.jpg" alt="Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system" width="25%" />
-<p class="caption">(\#fig:roqua)Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system</p>
-</div>
+\begin{figure}[!t]
+
+{\centering \includegraphics[width=0.25\linewidth]{images/instruments/roqua/roqua_p1} \includegraphics[width=0.25\linewidth]{images/instruments/roqua/roqua_p2} \includegraphics[width=0.25\linewidth]{images/instruments/roqua/roqua_p3} 
+
+}
+
+\caption{Screenshots of the participant feedback web-page of the 'HowNutsAreTheDutch' project, in which data is collected by the RoQua system}(\#fig:roqua)
+\end{figure}
 
 ## Wearables
 
@@ -215,10 +235,14 @@ negatively affect wear-time and study compliance in research participants, who
 are accustomed to consumer activity-sampling devices, such as Fitbit, where many
 options for real-time feedback exist. Further, researchers we spoke with noted that the event logger was hard to use in practice. This resulted in low compliance in field studies. 
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/geneactive/geneactive-pack.png" alt="The GENEActiv Accelerometer" width="100%" />
-<p class="caption">(\#fig:geneactiv)The GENEActiv Accelerometer</p>
-</div>
+\begin{figure}[!h]
+
+{\centering \includegraphics[width=1\linewidth]{images/instruments/geneactive/geneactive-pack} 
+
+}
+
+\caption{The GENEActiv Accelerometer}(\#fig:geneactiv)
+\end{figure}
 
 
 ### VU-AMS
@@ -240,9 +264,13 @@ and Mac). VU-AMS is used worldwide by many research groups, to study stress and
 emotion in both laboratory and naturalistic settings [@DeGeus1995; @Geus1996;
 @Willemsen1996].
 
-<div class="figure" style="text-align: center">
-<img src="images/instruments/VU-AMS/VU_AMS2.png" alt="VU-AMS device (left) and VU-DAMS screenshot (right)" width="100%" />
-<p class="caption">(\#fig:vu-ams)VU-AMS device (left) and VU-DAMS screenshot (right)</p>
-</div>
+\begin{figure}[!t]
+
+{\centering \includegraphics[width=1\linewidth]{images/instruments/VU-AMS/VU_AMS2} 
+
+}
+
+\caption{VU-AMS device (left) and VU-DAMS screenshot (right)}(\#fig:vu-ams)
+\end{figure}
 
 

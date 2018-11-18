@@ -53,7 +53,7 @@ such a scale implies a mood state that ranges from negative to positive, rather
 than absent to present. Another alternative is to use Likert scales, where the
 scale center often reflects a neutral response.
 
-Plotting data from an unidimensional item in a graph is an easy way to visually
+Plotting data from a unidimensional item in a graph is an easy way to visually
 inspect within-subject change in general mood:
 
 
@@ -70,10 +70,14 @@ plotmood_down <- ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
 print(plotmood_down)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="mood_files/figure-html/moodplot-1.png" alt="34 weeks of mood data, from a single participant" width="100%" />
-<p class="caption">(\#fig:moodplot)34 weeks of mood data, from a single participant</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodplot-1} 
+
+}
+
+\caption{34 weeks of mood data, from a single participant}(\#fig:moodplot)
+\end{figure}
 
 ### Bipolar Unidimensional Items
 \index{Mood assessment!Bipolar unidimensional}
@@ -98,7 +102,7 @@ positives) [@Vanrijsbergen2014].
 
 In order to make sure all constructs of interest are measured, you can also
 consider including a number of specific mood items in your EMA questionnaire,
-rather than one general uni-polar item or one bipolar item. For example, you can
+rather than one general unipolar item or one bipolar item. For example, you can
 ask respondents *"How depressed are you feeling right now?"* and *"How anxious are
 you feeling right now?"* [@Starr2012]. This strategy often leads to a
 'bag-of-items' approach, where single items from various sources, such as
@@ -127,10 +131,14 @@ combined <- plotmood_down +
 print(combined)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="mood_files/figure-html/moodplotcombined-1.png" alt="34 weeks of combined mood data, from a single participant" width="100%" />
-<p class="caption">(\#fig:moodplotcombined)34 weeks of combined mood data, from a single participant</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodplotcombined-1} 
+
+}
+
+\caption{34 weeks of combined mood data, from a single participant}(\#fig:moodplotcombined)
+\end{figure}
 
 ## Multi-dimensional Mood Assessment
 \index{Mood assessment!Multi-dimensional}
@@ -153,10 +161,14 @@ scales: valence (ranging from unpleasant to pleasant) and arousal/activation
 affective states in a circle on one of four quadrants (see Figure
 \@ref(fig:circumplexrussel)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.
 
-<div class="figure" style="text-align: center">
-<img src="images/outcomes/Russell1980.png" alt="Russell's Circumplex model of affect." width="60%" />
-<p class="caption">(\#fig:circumplexrussel)Russell's Circumplex model of affect.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.6\linewidth]{images/outcomes/Russell1980} 
+
+}
+
+\caption{Russell's Circumplex model of affect.}(\#fig:circumplexrussel)
+\end{figure}
 
 There are several options to operationalize the Circumplex model in EMA
 research. For example, respondents can rate valence and arousal on two VAS
@@ -180,10 +192,14 @@ model and adds the third dimension "dominance" (level of experienced control
 over the mood state), rendering eight (instead of four) different mood states
 and one neutral state (see Figure \@ref(fig:pickamood)).
 
-<div class="figure" style="text-align: center">
-<img src="images/outcomes/Circumplex-Pick-A-Mood.png" alt="The Pick-A-Mood Circle." width="50%" />
-<p class="caption">(\#fig:pickamood)The Pick-A-Mood Circle.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/outcomes/Circumplex-Pick-A-Mood} 
+
+}
+
+\caption{The Pick-A-Mood Circle.}(\#fig:pickamood)
+\end{figure}
 
 ### Negative & Positive Affect
 \index{Positive and Negative Affect}
@@ -254,7 +270,11 @@ colnames(model$loadings) <- c("PA", "NA")
 psych::fa.diagram(model)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="mood_files/figure-html/moodfa-1.png" alt="Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)." width="100%" />
-<p class="caption">(\#fig:moodfa)Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodfa-1} 
+
+}
+
+\caption{Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).}(\#fig:moodfa)
+\end{figure}

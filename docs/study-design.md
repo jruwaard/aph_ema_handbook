@@ -86,8 +86,8 @@ manufacturers often limit access to raw data and data pre-processing algorithms,
 making it difficult (or even impossible) to fully analyze outcomes.'Scientific
 wearables' do offer this access, but often choose function over form (design). 
 They can therefore draw attention, prompting unwanted questions to partcipants. 
-Being aware of these issues when you plan the study, will help
-considerably in the analysis stage of your study. 
+Being aware of these issues when you plan the study, will help considerably 
+in the analysis stage of your study. 
 
 
 ## What is the Sample Plan?
@@ -140,14 +140,19 @@ plan <- sample_plan(n_participants = 5,
                     plot = TRUE)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="study-design_files/figure-html/fig3a-1.png" alt="Generated two-day EMA sampling plan, for 5 participants" width="95%" />
-<p class="caption">(\#fig:fig3a)Generated two-day EMA sampling plan, for 5 participants</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{study-design_files/figure-latex/fig3a-1} 
+
+}
+
+\caption{Generated two-day EMA sampling plan, for 5 participants}(\#fig:fig3a)
+\end{figure}
 
 
 ##  What is the Optimal Sample Size?
 \index{Methods!Power analysis}
+\index{pwr}
 
 The power of a statistical test is the probability that it will detect an effect
 when this effect, in reality, exists. It is a function of the strength of the
@@ -203,6 +208,8 @@ the hypothesized effect is present. To illustrate how this works, we will
 calculate the power of the t-test again, through simulation:
 
 \index{Simulating data} 
+\index{MASS}
+\index{simstudy}
 
 
 ```r
@@ -235,7 +242,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4788
+#> [1] 0.4753
 ```
 
 As can be seen, the simulation results are very close to the output of
@@ -311,7 +318,11 @@ model agreements in which all relevant issues are addressed. Third parties may
 offer model agreements as well. If so, however, these agreements need to be
 checked for compliance to local regulations.
 
-<div class="figure" style="text-align: center">
-<img src="images/outcomes/Flow_MD.png" alt="Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device." width="90%" />
-<p class="caption">(\#fig:fig3b)Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{images/outcomes/Medical_deviceFC} 
+
+}
+
+\caption{Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device. Based on http://cetool.nl/general/scanAid}(\#fig:fig3b)
+\end{figure}

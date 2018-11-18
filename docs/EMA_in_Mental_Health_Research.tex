@@ -432,8 +432,8 @@ depression \citep{Telford2012, Wichers2011, burton2013}, anxiety
 disorders \citep{Walz2014}, and depression/bipolar disorder
 \citep{AanhetRot2012}. The potential of EMA for use among young
 populations showed promising results \citep{Dubad2018}. Innovations in
-mobile devices has improved the feasibility and popularity of ecological
-momentary interventions (EMIs) for anxiety and depression
+mobile devices have improved the feasibility and popularity of
+ecological momentary interventions (EMIs) for anxiety and depression
 \citep{schueller2017}. A systematic review and meta-analysis of EMIs
 reported small to medium effects on mental health \citep{Versluis2016}.
 
@@ -562,7 +562,7 @@ surgery using EMA.\strut
 \end{minipage} & \begin{minipage}[t]{0.61\columnwidth}\raggedright\strut
 Provides an overview of EMA studies on correlates of mood, treatment
 effects, residual symptoms of remitted patients, pediatric populations,
-MDD/BD specificity, and links with neuroscience,\strut
+MDD/BD specificity, and links with neuroscience.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.33\columnwidth}\raggedright\strut
 \citet{Aung2017}\strut
@@ -1018,7 +1018,7 @@ work-space.
 \subsection{Installing R-packages from
 CRAN}\label{installing-r-packages-from-cran}
 
-\index{CRAN} \index{Packages!tidyverse}
+\index{CRAN} \index{tidyverse}
 
 Packages can be found at the CRAN website. To browse through the
 impressive list of available packages, see
@@ -1051,7 +1051,7 @@ in RStudio's top-right pane).
 \subsection{Installing R-packages from
 GitHub}\label{installing-r-packages-from-github}
 
-\index{GitHub} \index{Packages!emaph}
+\index{GitHub} \index{emaph}
 
 Not all packages are at CRAN. Many `unofficial' packages are shared at a
 site called `GitHub'. This book's companion R package \texttt{emaph},
@@ -1187,13 +1187,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = 1.3486, df = 196.44, p-value = 0.179}
+\CommentTok{#> t = -0.22317, df = 198, p-value = 0.8236}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.09182058  0.48905524}
+\CommentTok{#>  -0.3073181  0.2448314}
 \CommentTok{#> sample estimates:}
-\CommentTok{#>   mean of x   mean of y }
-\CommentTok{#>  0.10607049 -0.09254684}
+\CommentTok{#>    mean of x    mean of y }
+\CommentTok{#> 0.0005615944 0.0318049394}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1265,7 +1265,7 @@ is presented below.
 
 \subsection{Learn R, in R}\label{learn-r-in-r}
 
-\index{Packages!swirl}
+\index{swirl}
 
 Package \texttt{swirl} contains a set of interactive courses that teach
 many aspects of the R language. See \url{http://swirlstats.com}
@@ -1452,7 +1452,7 @@ simulate the sample plan, as is done below, using the
 \section{What is the Optimal Sample
 Size?}\label{what-is-the-optimal-sample-size}
 
-\index{Methods!Power analysis}
+\index{Methods!Power analysis} \index{pwr}
 
 The power of a statistical test is the probability that it will detect
 an effect when this effect, in reality, exists. It is a function of the
@@ -1513,7 +1513,7 @@ significance, if it is run, many times, on simulated data, in which the
 hypothesized effect is present. To illustrate how this works, we will
 calculate the power of the t-test again, through simulation:
 
-\index{Simulating data}
+\index{Simulating data} \index{MASS} \index{simstudy}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1546,7 +1546,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4838}
+\CommentTok{#> [1] 0.4753}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1635,11 +1635,11 @@ regulations.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{images/outcomes/Flow_MD} 
+{\centering \includegraphics[width=0.9\linewidth]{images/outcomes/Medical_deviceFC} 
 
 }
 
-\caption{Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device.}\label{fig:fig3b}
+\caption{Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device. Based on http://cetool.nl/general/scanAid}\label{fig:fig3b}
 \end{figure}
 
 \chapter{Data Management}\label{datamanagement}
@@ -2160,7 +2160,7 @@ negative to positive, rather than absent to present. Another alternative
 is to use Likert scales, where the scale center often reflects a neutral
 response.
 
-Plotting data from an unidimensional item in a graph is an easy way to
+Plotting data from a unidimensional item in a graph is an easy way to
 visually inspect within-subject change in general mood:
 
 \begin{Shaded}
@@ -2215,7 +2215,7 @@ scale did not fulfill formal criteria for relapse (false positives)
 
 In order to make sure all constructs of interest are measured, you can
 also consider including a number of specific mood items in your EMA
-questionnaire, rather than one general uni-polar item or one bipolar
+questionnaire, rather than one general unipolar item or one bipolar
 item. For example, you can ask respondents \emph{``How depressed are you
 feeling right now?''} and \emph{``How anxious are you feeling right
 now?''} \citep{Starr2012}. This strategy often leads to a `bag-of-items'
@@ -2425,6 +2425,8 @@ factor analysis can be executed as follows:
 
 \chapter{Activity}\label{activity}
 
+\index{EMA!Passive EMA} \index{Actigraphy} \index{Geotracking}
+
 The objective study of human physical activity is one of the exciting
 opportunities created by passive EMA \citep{Marszalek2014}. Through
 technological advances in mobile sensing, we are now able to
@@ -2458,7 +2460,7 @@ wildlife telemetry research \citep{tomkiewicz2010global}.
 
 \section{Actigraphy}\label{actigraphy}
 
-\index{Actigraphy} \index{Accelerometer}
+\index{Actigraphy} \index{Accelerometer} \index{GENEActive}
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure
 changes in acceleration forces (i.e., both static forces - earth's
@@ -2510,6 +2512,8 @@ five seconds (0.2Hz), you would set the argument of this function to
 \end{Shaded}
 
 \subsection{Data cleaning}\label{data-cleaning}
+
+\index{Datamanagement!Data cleaning} \index{GGIR} \index{GENEARead}
 
 Raw accelerometer data need to be cleaned before analyses can be run.
 Typical data import work-flows include re-calibration (to reduce
@@ -2809,6 +2813,8 @@ extract? How would you quantify these features?
 \section{Central Tendency and
 Variability}\label{central-tendency-and-variability}
 
+\index{Central tendency} \index{Central Variability}
+
 Features do not necessarily have to be complex. Familiar measures of
 central tendency of EMA time-series, such as the mode or the mean, can
 be useful predictors of traditional clinical assessments. Standard
@@ -2834,7 +2840,7 @@ beginning, and above the mean at the end. The overall mean (\emph{M} =
 and underestimates the scores of the last week (\emph{M} = 5.5). If you
 use the overall mean as a feature of the time-series in your analyses,
 you ignore the mood improvements over the three-week period. In clinical
-research, your would probably not want to miss this other important
+research, you would probably not want to miss this other important
 feature.
 
 When a trend exists in a series, the overall standard deviation is
@@ -2994,8 +3000,8 @@ components in the series as well: the signal appears also to be
 characterized by a series of increases and decreases in the mean mood
 level. In the plot of the raw series, this is not immediately clear.
 However, if we ``smooth'' the series, by calculating the mean as it
-develops over time, the periodicity in the series is becoming more
-clear. Figure \ref{fig:feat-plot-roll} illustrates this.
+develops over time, the periodicity in the series is becoming clearer.
+Figure \ref{fig:feat-plot-roll} illustrates this.
 
 \begin{figure}
 
@@ -3342,7 +3348,7 @@ dashed line). So far, so good.
 
 \section{Fitting a Mixed Model in R}\label{fitting-a-mixed-model-in-r}
 
-\index{Packages!nlme}
+\index{nlme}
 
 Now, let's fit a mixed model to the data, to see whether the simulation
 parameters are detected. For this, we will use the \texttt{lme}
@@ -3604,6 +3610,8 @@ warning signs?
 
 \section{Critical Slowing Down}\label{critical-slowing-down}
 
+\index{Critical Slowing Down}
+
 Critical Slowing Down (CSD) is a concept from dynamic systems theory. In
 dynamic systems, state transitions are preceded by a change in which the
 system reacts to disturbances. In a stable state, the system quickly
@@ -3629,7 +3637,8 @@ auto-correlation was analyzed at lag 1 only (i.e., only the correlation
 between t and t-1 was considered). With another analysis technique,
 called `Detrended Fluctuation Analysis', all lags can be considered.
 
-To conduct the analysis, we need three R packages:
+To conduct the analysis, we need three R packages: \index{tidyverse}
+\index{nonlinearTseries} \index{empah}
 
 \begin{itemize}
 \item
@@ -3644,8 +3653,6 @@ To conduct the analysis, we need three R packages:
   DFA is implemented in package \texttt{nonlinearTseries}, so we will
   need that as well.
 \end{itemize}
-
-\index{Packages!nonlinearTseries}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -3761,9 +3768,11 @@ running a simple complete-case analysis.
 
 \section{Running the DFA}\label{running-the-dfa}
 
+\index{DFA analysis}
+
 We are now ready to run the DFA analysis. We split the full series in
 31-day overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32,
-etc), calculate the DFA of each window and save that value so that we
+etc.), calculate the DFA of each window and save that value so that we
 can compare it to the weekly depression assessments.
 
 \begin{Shaded}
@@ -4059,7 +4068,7 @@ Femke Lamers, PhD, Brenda Penninx, PhD (VUmc), Harriette Riese, PhD
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
 \end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
-VUmc, GGZ inGeest, Amsterdam\strut
+VUmc, GGZ inGeest\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project(s)}\strut
@@ -4149,7 +4158,7 @@ Chapter \ref{ema-instruments-catalogue}).\strut
 \textbf{Project team}\strut
 \end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Femke Lamers, PhD; Brenda Penninx, PhD; Sonia Difrancesco, MSc, and the
-RADAR consortium.\strut
+RADAR consortium\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
@@ -4851,7 +4860,7 @@ IOS and Android.\strut
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Team}\strut
 \end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
-Mark van der Gaag, PhD, Roos Pot-Kolder, MSc, with others\strut
+Mark van der Gaag, PhD, Roos Pot-Kolder, MSc, with others.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
@@ -4938,12 +4947,12 @@ examples of such studies are provided.
 \end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
 Eus van Someren, PhD (department head), with Bart te Lindert, MSc, Wisse
 van der Meijden, MSc, Tessa Blanken, MSc, Michele Colombo, PhD, Kim
-Dekker, MSc, Jeanne Leerssen, MSc, Rick Wassing, MSc.\strut
+Dekker, MSc, Jeanne Leerssen, MSc, Rick Wassing, MSc\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{APH site}\strut
 \end{minipage} & \begin{minipage}[t]{0.69\columnwidth}\raggedright\strut
-The Netherlands Institute for Neuroscience, VUmc, GGZ inGeest,\strut
+The Netherlands Institute for Neuroscience, VUmc, GGZ inGeest\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{Project(s)}\strut
@@ -5086,7 +5095,7 @@ sympathetic nervous system activity (measured as skin conductance
 responses) and present this information to the person's as an index of
 the current stress level, alongside a one-hour prediction of changes in
 stress level and cognitive functioning (Cognitive Zone Changes;
-\url{http://www.ip.philips.com/licensing/program/121})\strut
+\url{http://www.ip.philips.com/licensing/program/121}).\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \strut
@@ -5098,7 +5107,7 @@ for approximately 22 hours. Autonomic nervous system activity is
 collected continuously over the course of a regular school day
 (including the night and morning thereafter) and will be related to
 multiple components of self-regulation, including emotion-regulation,
-cognitive functioning, impulsivity and inhibition\strut
+cognitive functioning, impulsivity and inhibition.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.25\columnwidth}\raggedright\strut
 \textbf{EMA measures}\strut
@@ -5299,12 +5308,12 @@ Specialized software to import, pre-process and analyze raw sensor data
 is available for download. Like Ilumivu, researchers can define EMA
 sample schedules for their study in a web-based back-office
 (\url{https://xs.movisens.com}), using an online graphical editor. Once
-defined, participants can be invited to the study , through the
+defined, participants can be invited to the study, through the
 back-office, to download the freely available Movisens App from Google
 Play store. The back-office also allows researchers to monitor study
 compliance and download data.
 
-MoviSensXS EMA license costs vary from 500 to 10.000 euro's per year,
+MovisensXS EMA license costs vary from 500 to 10.000 euros per year,
 depending on the required number of `credits' which are linked to the
 number of EMA responses. Prospect users can test platform, without
 functional restrictions, with a free test account. An EMA test-study can
@@ -5332,8 +5341,8 @@ Netherlands to assess psychological problems in daily life. The app has
 been validated for use in depression, bipolar disorder, and psychosis,
 with new scales currently being developed for a range of diseases
 including Parkinson's disease, pain, cardiology, hypertension, diabetes
-and Irritable Bowel Syndrome. It was also used in a EU-funded project to
-study gene-environment interaction in schizophrenia
+and Irritable Bowel Syndrome. It was also used in an EU-funded project
+to study gene-environment interaction in schizophrenia
 (\url{http://www.eu-gei.eu/about-the-project/psymate}).
 
 The app is free to download for iOS and Android devices on Apple and
@@ -5495,7 +5504,7 @@ research.}\tabularnewline
 \midrule
 \endhead
 \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
-\textbf{Accelerometry}\strut
+\textbf{Actigraphy}\strut
 \end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
 GENEAread / GGIR\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
@@ -5599,7 +5608,8 @@ series.\strut
 \bottomrule
 \end{longtable}
 
-\section{Accelerometry}\label{accelerometry}
+\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
+HEAD \#\# Actigraphy \index{Actigraphy}
 
 Accelerometer data need considerable pre-processing before final
 analyses can be run. Raw data have to be read in from a variety of
@@ -5611,11 +5621,11 @@ windows (i.e., epochs).
 
 \subsection{GENEAread}\label{genearead}
 
-\index{Packages!GENEAread}
+\index{GENEAread}
 
 \href{https://www.geneactiv.org/}{GENEActiv} is a wrist-worn
 accelerometer that is widely used in sleep and physical activity
-research. With package \textbf{GENEAread} \citep[GENEAread]{R}, raw
+research. With package \textbf{GENEAread} \citep{R_GENEAread}, raw
 GENEActiv binary files can be imported into R for further processing, as
 illustrated below.
 
@@ -5671,17 +5681,18 @@ each sensor, type:
 
 \subsection{GGIR}\label{ggir}
 
-\index{Packages!GGIR}
+\index{GGIR}
 
-Package \emph{GGIR} \citep{R-GGIR} is a package to process raw
+Package \emph{GGIR} \citep{R-GGIR} is a package to pre-process raw
 accelerometry data from three accelerometer brands:
 \href{http://actigraphcorp.com/}{ActiGraph},
 \href{http://axivity.com/}{Axivity}, and
 \href{https://www.geneactiv.org/}{GENEActiv} (GGIR includes package
 \texttt{GENEAread}). The package is in active development. New features
 are introduced and bugs are fixed on a regular basis. If you consider to
-use \texttt{ggir} for your project, you may want to install the
-development version, which is on GitHub.
+use \texttt{GGIR} for your project, you may want to install the
+development version, which is on
+\href{https://github.com/wadpac/GGIR}{GitHub}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5692,7 +5703,7 @@ development version, which is on GitHub.
 
 \texttt{GGIR}'s main function is \texttt{g.shell.GGIR}, with which
 multiple accelerometer data files can be imported, calibrated, cleaned
-and analysed. The example below shows an example configuration of this
+and analyzed. The example below shows an example configuration of this
 function. See \texttt{?g.shell.GGIR} (and \texttt{?g.part1},
 ?\texttt{g.part2}, to \texttt{g.part5}) to learn the meaning of each
 parameter. If you get lost or run into a problem, you can ask the
@@ -5745,7 +5756,7 @@ discussion forum, at
 
 \subsection{PhysicalActivity}\label{physicalactivity}
 
-\index{Packages!PhysicalActivity}
+\index{PhysicalActivity}
 
 Package \emph{PhysicalActivity} \citep{R-PhysicalActivity} provides an
 alternative to packages \texttt{GGIR} and \texttt{GENEAread}, when
@@ -5780,11 +5791,11 @@ alternative to packages \texttt{GGIR} and \texttt{GENEAread}, when
 
 \subsection{autovarCore}\label{autovarcore}
 
-\index{Packages!autovarCore} \index{Packages!autovar}
+\index{autovarCore} \index{autovar}
 
 \index{Vector autoregressive models}
 
-Vector auto-regressive (VAR) models can be used to detect lagged
+Vector autoregressive (VAR) models can be used to detect lagged
 relationships between multiple time-series (see also Chapter
 \ref{features}). In VAR, each variable is modeled as a linear function
 of past values (lags) of itself and of present and past values of other
@@ -5820,21 +5831,21 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
-\CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.24701 -0.66208  0.03378  0.65822  2.05743 }
+\CommentTok{#>     Min      1Q  Median      3Q     Max }
+\CommentTok{#> -2.3230 -0.6354  0.1325  0.6432  1.9003 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.58233    0.08606   6.767 1.11e-09 ***}
-\CommentTok{#> depression.l1 -0.03764    0.08440  -0.446    0.657    }
-\CommentTok{#> depression.l2  0.01846    0.08456   0.218    0.828    }
-\CommentTok{#> const          0.11715    0.09299   1.260    0.211    }
+\CommentTok{#> activity.l1    0.45171    0.08130   5.556 2.56e-07 ***}
+\CommentTok{#> depression.l1  0.12774    0.08780   1.455    0.149    }
+\CommentTok{#> depression.l2 -0.10841    0.08780  -1.235    0.220    }
+\CommentTok{#> const         -0.13312    0.09584  -1.389    0.168    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.9122 on 94 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.3286, Adjusted R-squared:  0.3072 }
-\CommentTok{#> F-statistic: 15.33 on 3 and 94 DF,  p-value: 3.371e-08}
+\CommentTok{#> Residual standard error: 0.937 on 94 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.2578, Adjusted R-squared:  0.2342 }
+\CommentTok{#> F-statistic: 10.89 on 3 and 94 DF,  p-value: 3.337e-06}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5848,7 +5859,7 @@ information can be found on
 \section{Data management \& Visual
 Exploration}\label{data-management-visual-exploration}
 
-\index{Packages!tidyverse}
+\index{tidyverse}
 
 The \emph{tidyverse} is a collection of well-designed packages, authored
 by the team behind RStudio, that together add a consistent, modern, and
@@ -5859,7 +5870,7 @@ more (see: \url{http://tidyverse.org} for a full list).
 
 \subsection{dplyr}\label{dplyr}
 
-\index{Packages!dplyr}
+\index{dplyr}
 
 Package \emph{dplyr} \citep{R-dplyr} implements the
 `split-apply-combine'-strategy. With \texttt{dplyr}, elementary data
@@ -5889,15 +5900,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.1103710\\
+1 & 0.4859577\\
 \hline
-2 & 0.7602674\\
+2 & 0.1336322\\
 \hline
-3 & -0.4654157\\
+3 & -0.2648633\\
 \hline
-4 & -0.6009268\\
+4 & 0.3439284\\
 \hline
-5 & 0.4414845\\
+5 & -0.0146370\\
 \hline
 \end{tabular}
 
@@ -5907,7 +5918,7 @@ Data Science' \citep{wickham2016r}, which can be freely accessed online
 
 \subsection{ggplot2}\label{ggplot2}
 
-\index{Packages!ggplot2}
+\index{ggplot2}
 
 Package \emph{ggplot2} \citep{wickham2016ggplot2} provides a collection
 of high-level plotting commands with which graphs can be build up in
@@ -5960,7 +5971,7 @@ identifier), to show individual trajectories.
 
 \subsection{haven}\label{haven}
 
-\index{Packages!haven} \index{SPSS}
+\index{haven} \index{SPSS}
 
 With package \emph{haven} \citep{R-haven}, SPSS, STATA and SAS files can
 be read into R. A particular advantage of the \texttt{read.sav} function
@@ -5992,7 +6003,7 @@ columns in the R \texttt{data.frames}).
 
 \subsection{lubridate}\label{lubridate}
 
-\index{Datetime variables} \index{Packages!lubridate}
+\index{Datetime variables} \index{lubridate}
 
 EMA data analyses frequently require manipulations of date-time
 variables. For this, package \emph{lubridate} \citep{R-lubridate}, which
@@ -6050,7 +6061,7 @@ introduction.
 
 \section{Mixed-effects Modeling}\label{mixed-effects-modeling}
 
-\index{mixed effects}
+\index{Mixed effects}
 
 Several R-packages for mixed-effects modelling exist. The most popular
 are package \emph{nlme} \citep{R-nlme} and package \emph{lme4}
@@ -6059,7 +6070,7 @@ unique functionalities.
 
 \subsection{nlme}\label{nlme}
 
-\index{Packages!nlme}
+\index{nlme}
 
 Package \emph{nlme} is introduced in Chapter \ref{lmm}. It is an older
 package (in comparison to \texttt{lme4}), that is still used a lot
@@ -6080,7 +6091,7 @@ not implemented (yet) in \texttt{lme4}.
 
 \subsection{lme4}\label{lme4}
 
-\index{Packages!lme4}
+\index{lme4}
 
 Package \emph{lme4} \citep{Bates2015} is a faster reimplementation of
 the mixed-effects model. With large data sets and complex hierarchical
@@ -6104,7 +6115,7 @@ specifications in \texttt{lme}.
 
 \subsection{simr}\label{simr}
 
-\index{Packages!simr}
+\index{simr}
 
 With package \emph{simr} \citep{Green2016}, power of mixed-effects
 models can be determined via simulation. As illustrated below, the
@@ -6156,7 +6167,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6172,11 +6183,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 14.89742 33.20295}
-\CommentTok{#> 2:     2  7 10.20935 27.02771}
-\CommentTok{#> 3:     3  7 13.77554 35.13268}
-\CommentTok{#> 4:     4  7 18.50612 48.98011}
-\CommentTok{#> 5:     5  7 17.66275 44.74252}
+\CommentTok{#> 1:     1  7 16.90259 42.52596}
+\CommentTok{#> 2:     2  7 14.75910 39.52481}
+\CommentTok{#> 3:     3  7 14.79069 43.30653}
+\CommentTok{#> 4:     4  7 17.04341 41.29668}
+\CommentTok{#> 5:     5  7 15.62857 37.55662}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6201,7 +6212,7 @@ tutorials can also be found at
 
 \subsection{qgraph}\label{qgraph}
 
-\index{Packages!qgraph}
+\index{qgraph}
 
 Package \emph{qgraph} \citep{Epskamp2012} can be used to fit, visualize
 and analyze graphical networks.
@@ -6257,7 +6268,7 @@ the network. This is confirmed by calling \texttt{centralityPlot}:
 
 \subsection{bootnet}\label{bootnet}
 
-\index{Packages!bootnet}
+\index{bootnet}
 
 In the interpretation of fitted networks, it is important to take the
 stability of the network into account. Intuitively, networks that are
@@ -6294,7 +6305,7 @@ intervals mark the distribution of the edge weights in the bootstraps.
 \subsection{lomb}\label{lomb}
 
 \index{Lomb-Scargle periodogram} \index{Unevenly-sampled timeseries}
-\index{Packages!lomb}
+\index{lomb}
 
 Disturbances in circadian rhythms have been related to depressive
 symptoms \citep[see, e.g.,][]{Saeb2015}. With so-called periodograms,

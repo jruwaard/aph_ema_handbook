@@ -75,10 +75,14 @@ higher) of RStudio.
 If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
-<p class="caption">(\#fig:r-interface)The RStudio Interface</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
+
+}
+
+\caption{The RStudio Interface}(\#fig:r-interface)
+\end{figure}
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -176,10 +180,14 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-<div class="figure" style="text-align: center">
-<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
-<p class="caption">(\#fig:r-import)RStudio's CSV import wizard.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
+
+}
+
+\caption{RStudio's CSV import wizard.}(\#fig:r-import)
+\end{figure}
 
 ### Using Functions to Import Data
 
@@ -279,7 +287,7 @@ the internet, specialized functions can be added to your work-space.
 
 ### Installing R-packages from CRAN
 \index{CRAN}
-\index{Packages!tidyverse}
+\index{tidyverse}
 
 Packages can be found at the CRAN website. To browse through the impressive list
 of available packages, see
@@ -290,7 +298,7 @@ choosing `Tools > packages`. But you can also use the console, via the
 `install.package` function.
 
 A popular package, `tidyverse`, is used extensively in the examples of this
-manual. This package  comprises a set of popular packages from the creators
+manual. This package comprises a set of popular packages from the creators
 of RStudio, that greatly simplify working with R. So, while you are at it,
 install this package now.
 
@@ -309,7 +317,7 @@ Dataset > From SPSS`, in RStudio's top-right pane).
 
 ### Installing R-packages from GitHub
 \index{GitHub}
-\index{Packages!emaph}
+\index{emaph}
 
 Not all packages are at CRAN. Many 'unofficial' packages are shared at a site
 called 'GitHub'. This book's companion R package `emaph`, for example, which
@@ -359,10 +367,14 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3." width="100%" />
-<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/r-irriplot-1} 
+
+}
+
+\caption{Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.}(\#fig:r-irriplot)
+\end{figure}
 
 
 ## Getting Help
@@ -428,13 +440,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.56339, df = 196.1, p-value = 0.5738
+#> t = -0.22317, df = 198, p-value = 0.8236
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.3324927  0.1847347
+#>  -0.3073181  0.2448314
 #> sample estimates:
-#>  mean of x  mean of y 
-#> -0.2029385 -0.1290595
+#>    mean of x    mean of y 
+#> 0.0005615944 0.0318049394
 ```
 
 
@@ -495,7 +507,7 @@ since excellent resources are readily available. A selection is presented below.
 
 
 ### Learn R, in R
-\index{Packages!swirl}
+\index{swirl}
 
 Package `swirl` contains a set of interactive courses that teach many aspects
 of the R language. See <http://swirlstats.com>

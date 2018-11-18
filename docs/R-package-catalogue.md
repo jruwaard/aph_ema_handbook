@@ -10,7 +10,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 | **Category**    |**Package**        | **Description**                         |
 |:----------------|:------------------|:----------------------------------------|
-| **Accelerometry**| GENEAread / GGIR | Import, pre-process and analyze raw accelerometer data. |
+| **Actigraphy**| GENEAread / GGIR | Import, pre-process and analyze raw accelerometer data. |
 |                 | PhysicalActivity  | Analyze Actigraph accelerometer data.   | 
 | **Data Management & Visual Exploration**| dplyr | Data transformation.            |
 |                 | ggplot2           | Create graphs.                          |
@@ -26,7 +26,9 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 | **Time series analysis** | lomb     | Calculate the Lomb-Scargle Periodogram for unevenly sampled time series. |
 
 
-## Accelerometry
+<<<<<<< HEAD
+## Actigraphy
+\index{Actigraphy}
 
 Accelerometer data need considerable pre-processing before final analyses can be
 run. Raw data have to be read in from a variety of brand-specific file formats,
@@ -36,11 +38,11 @@ energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs).
 
 ### GENEAread
-\index{Packages!GENEAread}
+\index{GENEAread}
 
 [GENEActiv](https://www.geneactiv.org/) is a wrist-worn accelerometer that is
 widely used in sleep and physical activity research. With package **GENEAread**
-[@R\_GENEAread], raw GENEActiv binary files can be imported into R for further
+[@R_GENEAread], raw GENEActiv binary files can be imported into R for further
 processing, as illustrated below.
 
 
@@ -55,12 +57,19 @@ d[1:4, ]
 ```
 
 
-timestamp                       x           y           z   light   button   temperature
-----------------------  ---------  ----------  ----------  ------  -------  ------------
-2012-05-23 16:47:50.0    0.023516   -0.887283   -0.100785       0        0          25.8
-2012-05-23 16:47:50.2    0.027462   -0.933668   -0.140047       0        0          25.8
-2012-05-23 16:47:50.4    0.035354   -1.150135   -0.030114       0        0          25.8
-2012-05-23 16:47:50.5    0.070865   -3.229764   -0.619042       0        0          25.8
+\begin{tabular}{l|r|r|r|r|r|r}
+\hline
+timestamp & x & y & z & light & button & temperature\\
+\hline
+2012-05-23 16:47:50.0 & 0.023516 & -0.887283 & -0.100785 & 0 & 0 & 25.8\\
+\hline
+2012-05-23 16:47:50.2 & 0.027462 & -0.933668 & -0.140047 & 0 & 0 & 25.8\\
+\hline
+2012-05-23 16:47:50.4 & 0.035354 & -1.150135 & -0.030114 & 0 & 0 & 25.8\\
+\hline
+2012-05-23 16:47:50.5 & 0.070865 & -3.229764 & -0.619042 & 0 & 0 & 25.8\\
+\hline
+\end{tabular}
 
 By having access to the raw data, you are free to explore the data further in
 any you want. For instance, to plot the raw data captured by each sensor, type:
@@ -75,14 +84,18 @@ ggplot(d, aes(x = timestamp, y = value)) +
   facet_wrap(~sensor, scales = "free_y")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/genearead-plot-example-1.png" alt="Raw sensor data of a GENEActiv accelerometer." width="100%" />
-<p class="caption">(\#fig:genearead-plot-example)Raw sensor data of a GENEActiv accelerometer.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/genearead-plot-example-1} 
+
+}
+
+\caption{Raw sensor data of a GENEActiv accelerometer.}(\#fig:genearead-plot-example)
+\end{figure}
 
 
 ### GGIR
-\index{Packages!GGIR}
+\index{GGIR}
 
 Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data from
 three accelerometer brands: [ActiGraph](http://actigraphcorp.com/),
@@ -149,7 +162,7 @@ g.shell.GGIR(#=======================================
 ```
 
 ### PhysicalActivity
-\index{Packages!PhysicalActivity}
+\index{PhysicalActivity}
 
 Package *PhysicalActivity* [@R-PhysicalActivity] provides an alternative to
 packages `GGIR` and `GENEAread`, when [ActiGraph](https://actigraphcorp.com/)
@@ -170,21 +183,25 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
   xlab("Time") + ylab("Activity Counts")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/fig15a-1.png" alt="Activity Counts (5-minute windows), in a Three-day Accelerometer data set." width="100%" />
-<p class="caption">(\#fig:fig15a)Activity Counts (5-minute windows), in a Three-day Accelerometer data set.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/fig15a-1} 
+
+}
+
+\caption{Activity Counts (5-minute windows), in a Three-day Accelerometer data set.}(\#fig:fig15a)
+\end{figure}
 
 
 ## Autoregressive modeling
 
 ### autovarCore
-\index{Packages!autovarCore}
-\index{Packages!autovar}
+\index{autovarCore}
+\index{autovar}
 
 \index{Vector autoregressive models}
 
-Vector auto-regressive (VAR) models can be used to detect lagged relationships
+Vector autoregressive (VAR) models can be used to detect lagged relationships
 between multiple time-series (see also Chapter \@ref(features)). In VAR, each
 variable is modeled as a linear function of past values (lags) of itself and of
 present and past values of other variables. When EMA is used to capture multiple
@@ -216,23 +233,24 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datamat)
+#> lm(formula = y ~ -1 + ., data = datares)
 #> 
 #> Residuals:
 #>     Min      1Q  Median      3Q     Max 
-#> -2.0880 -0.7279 -0.1105  0.7210  2.2722 
+#> -2.3230 -0.6354  0.1325  0.6432  1.9003 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.35645    0.10062   3.542 0.000614 ***
-#> depression.l1  0.05224    0.09615   0.543 0.588219    
-#> const          0.13771    0.10399   1.324 0.188552    
+#> activity.l1    0.45171    0.08130   5.556 2.56e-07 ***
+#> depression.l1  0.12774    0.08780   1.455    0.149    
+#> depression.l2 -0.10841    0.08780  -1.235    0.220    
+#> const         -0.13312    0.09584  -1.389    0.168    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 1.027 on 96 degrees of freedom
-#> Multiple R-squared:  0.117,	Adjusted R-squared:  0.09859 
-#> F-statistic: 6.359 on 2 and 96 DF,  p-value: 0.00255
+#> Residual standard error: 0.937 on 94 degrees of freedom
+#> Multiple R-squared:  0.2578,	Adjusted R-squared:  0.2342 
+#> F-statistic: 10.89 on 3 and 94 DF,  p-value: 3.337e-06
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -242,7 +260,7 @@ summary(models_found[[1]]$varest$varresult$depression)
 [http://autovarcore.nl](https://autovarcore.nl/)
 
 ## Data management & Visual Exploration
-\index{Packages!tidyverse}
+\index{tidyverse}
 
 The *tidyverse* is a collection of well-designed packages, authored by the team
 behind RStudio, that together add a consistent, modern, and efficient extension
@@ -251,7 +269,7 @@ of base R functions. The `tidyverse` includes popular packages such as
 manipulation), and many more (see: <http://tidyverse.org> for a full list).
 
 ### dplyr
-\index{Packages!dplyr}
+\index{dplyr}
 
 Package *dplyr* [@R-dplyr] implements the 'split-apply-combine'-strategy.
 With `dplyr`, elementary data manipulations can be e chained (using the pipe
@@ -275,14 +293,21 @@ knitr::kable(b)
 ```
 
 
-
-id          mean
----  -----------
-1     -0.4674685
-2     -0.3460365
-3     -0.1286195
-4     -0.3194260
-5      0.3089390
+\begin{tabular}{l|r}
+\hline
+id & mean\\
+\hline
+1 & 0.4859577\\
+\hline
+2 & 0.1336322\\
+\hline
+3 & -0.2648633\\
+\hline
+4 & 0.3439284\\
+\hline
+5 & -0.0146370\\
+\hline
+\end{tabular}
 
 A good introduction to `dplyr` can be found in the book 'R for Data Science'
 [@wickham2016r], which can be freely accessed online
@@ -290,7 +315,7 @@ A good introduction to `dplyr` can be found in the book 'R for Data Science'
 
 
 ### ggplot2
-\index{Packages!ggplot2}
+\index{ggplot2}
 
 Package *ggplot2* [@wickham2016ggplot2] provides a collection of high-level
 plotting commands with which graphs can be build up in layers. It is based on
@@ -329,14 +354,18 @@ g <- g + geom_smooth(method = "loess"); g
 g + facet_wrap(~ ID)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/ggplot2-example-1.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-2.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-3.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-4.png" alt="Plotting layers with ggplot2" width="45%" />
-<p class="caption">(\#fig:ggplot2-example)Plotting layers with ggplot2</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-1} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-2} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-3} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-4} 
+
+}
+
+\caption{Plotting layers with ggplot2}(\#fig:ggplot2-example)
+\end{figure}
 
 
 ### haven
-\index{Packages!haven}
+\index{haven}
 \index{SPSS}
 
 With package *haven* [@R-haven], SPSS, STATA and SAS files can be read into R.
@@ -367,7 +396,7 @@ attributes(d$Species)
 
 ### lubridate
 \index{Datetime variables}
-\index{Packages!lubridate}
+\index{lubridate}
 
 EMA data analyses frequently require manipulations of date-time variables. For
 this, package *lubridate* [@R-lubridate], which provides many functions for
@@ -398,14 +427,23 @@ d <- d %>% group_by(id, epoch) %>%
 ```
 
 
- id  epoch                        svm
----  --------------------  ----------
-  1  2018-06-02 12:00:00    0.0235192
-  1  2018-06-02 12:15:00    0.0486871
-  1  2018-06-02 12:30:00    0.0477664
-  1  2018-06-02 12:45:00    0.0128911
-  1  2018-06-02 13:00:00    0.0005558
-  1  2018-06-02 13:15:00    0.0027089
+\begin{tabular}{r|l|r}
+\hline
+id & epoch & svm\\
+\hline
+1 & 2018-06-02 12:00:00 & 0.0235192\\
+\hline
+1 & 2018-06-02 12:15:00 & 0.0486871\\
+\hline
+1 & 2018-06-02 12:30:00 & 0.0477664\\
+\hline
+1 & 2018-06-02 12:45:00 & 0.0128911\\
+\hline
+1 & 2018-06-02 13:00:00 & 0.0005558\\
+\hline
+1 & 2018-06-02 13:15:00 & 0.0027089\\
+\hline
+\end{tabular}
 
 To learn more about handling dates and times with `lubridate`,
 [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data
@@ -413,7 +451,7 @@ Science' [@wickham2016r] provides a good introduction.
 
 
 ## Mixed-effects Modeling
-\index{mixed effects}
+\index{Mixed effects}
 
 Several R-packages for mixed-effects modelling exist. The most popular are
 package *nlme* [@R-nlme] and package *lme4* [@Bates2015]. Both packages are
@@ -421,7 +459,7 @@ actively used, as both provide unique functionalities.
 
 
 ### nlme
-\index{Packages!nlme}
+\index{nlme}
 
 Package *nlme* is introduced in Chapter \@ref(lmm). It is an older package (in
 comparison to `lme4`), that is still used a lot because it provides
@@ -440,7 +478,7 @@ fixef(fm)
 ```
 
 ### lme4
-\index{Packages!lme4}
+\index{lme4}
 
 Package *lme4* [@Bates2015] is a faster reimplementation of the
 mixed-effects model. With large data sets and complex hierarchical models, this
@@ -461,7 +499,7 @@ fixef(fm)
 ## Simulation
 
 ### simr
-\index{Packages!simr}
+\index{simr}
 
 With package *simr* [@Green2016], power of mixed-effects models can be
 determined via simulation. As illustrated below, the procedure requires the
@@ -512,7 +550,7 @@ powerSim(model1,
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 1 s
+#> Time elapsed: 0 h 0 m 2 s
 ```
 
 
@@ -528,11 +566,11 @@ def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
 
 genData(5, def)
 #>    idnum nr       x1       y1
-#> 1:     1  7 19.21663 50.01862
-#> 2:     2  7 14.59046 32.23880
-#> 3:     3  7 11.39000 33.07156
-#> 4:     4  7 18.96826 40.77855
-#> 5:     5  7 15.17646 38.37636
+#> 1:     1  7 16.90259 42.52596
+#> 2:     2  7 14.75910 39.52481
+#> 3:     3  7 14.79069 43.30653
+#> 4:     4  7 17.04341 41.29668
+#> 5:     5  7 15.62857 37.55662
 ```
 
 
@@ -553,7 +591,7 @@ can also be found at <http://psych-networks.com/tutorials/> and at
 <http://sachaepskamp.com/files/Cookbook.html>.
 
 ### qgraph
-\index{Packages!qgraph}
+\index{qgraph}
 
 Package *qgraph* [@Epskamp2012] can be used to fit, visualize and analyze
 graphical networks.
@@ -584,10 +622,14 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
        layout = "spring")
 ```
 
-<div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/qgraph-example-1.png" alt="Network of mood items from CSD data set" width="100%" />
-<p class="caption">(\#fig:qgraph-example)Network of mood items from CSD data set</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/qgraph-example-1} 
+
+}
+
+\caption{Network of mood items from CSD data set}(\#fig:qgraph-example)
+\end{figure}
 
 Package `qgraph` also provides functions to analyze qualities of fitted networks, such as the centrality of nodes in the network. In the network plot above, node `md_s` appears to be a central node in the network. This is confirmed by calling `centralityPlot`:   
 
@@ -596,11 +638,13 @@ Package `qgraph` also provides functions to analyze qualities of fitted networks
 centralityPlot(g)
 ```
 
-<img src="R-package-catalogue_files/figure-html/qgraph-centrality-example-1.png" width="100%" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/qgraph-centrality-example-1} \end{center}
 
 
 ### bootnet
-\index{Packages!bootnet}
+\index{bootnet}
 
 In the interpretation of fitted networks, it is important to take the stability
 of the network into account. Intuitively, networks that are fit on small sample
@@ -628,7 +672,9 @@ results <- bootnet(g, nBoots = 50, verbose = FALSE)
 plot(results, order = "mean")
 ```
 
-<img src="R-package-catalogue_files/figure-html/bootnet-example-1.png" width="100%" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/bootnet-example-1} \end{center}
 
 
 ## Timeseries analysis
@@ -636,7 +682,7 @@ plot(results, order = "mean")
 ### lomb
 \index{Lomb-Scargle periodogram}
 \index{Unevenly-sampled timeseries}
-\index{Packages!lomb}
+\index{lomb}
 
 Disturbances in circadian rhythms have been related to depressive symptoms
 [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhythms
@@ -654,4 +700,6 @@ data(ibex, package = "lomb")
 lomb::lsp(ibex[2:3]) 
 ```
 
-<img src="R-package-catalogue_files/figure-html/lmob-example-1.png" width="98%" style="display: block; margin: auto;" />
+
+
+\begin{center}\includegraphics[width=0.98\linewidth]{R-package-catalogue_files/figure-latex/lmob-example-1} \end{center}

@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-17">
+<meta name="date" content="2018-11-18">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -252,7 +252,8 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="12" data-path="rcat.html"><a href="rcat.html"><i class="fa fa-check"></i><b>12</b> R Packages for EMA Research</a><ul>
 <li class="chapter" data-level="12.1" data-path="rcat.html"><a href="rcat.html#accelerometry"><i class="fa fa-check"></i><b>12.1</b> Accelerometry</a><ul>
 <li class="chapter" data-level="12.1.1" data-path="rcat.html"><a href="rcat.html#genearead"><i class="fa fa-check"></i><b>12.1.1</b> GENEAread</a></li>
-<li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.2</b> PhysicalActivity</a></li>
+<li class="chapter" data-level="12.1.2" data-path="rcat.html"><a href="rcat.html#ggir"><i class="fa fa-check"></i><b>12.1.2</b> GGIR</a></li>
+<li class="chapter" data-level="12.1.3" data-path="rcat.html"><a href="rcat.html#physicalactivity"><i class="fa fa-check"></i><b>12.1.3</b> PhysicalActivity</a></li>
 </ul></li>
 <li class="chapter" data-level="12.2" data-path="rcat.html"><a href="rcat.html#autoregressive-modeling"><i class="fa fa-check"></i><b>12.2</b> Autoregressive modeling</a><ul>
 <li class="chapter" data-level="12.2.1" data-path="rcat.html"><a href="rcat.html#autovarcore"><i class="fa fa-check"></i><b>12.2.1</b> autovarCore</a></li>
@@ -269,14 +270,14 @@ code > span.in { font-style: italic; } /* Information */
 </ul></li>
 <li class="chapter" data-level="12.5" data-path="rcat.html"><a href="rcat.html#simulation"><i class="fa fa-check"></i><b>12.5</b> Simulation</a><ul>
 <li class="chapter" data-level="12.5.1" data-path="rcat.html"><a href="rcat.html#simr"><i class="fa fa-check"></i><b>12.5.1</b> simr</a></li>
+<li class="chapter" data-level="12.5.2" data-path="rcat.html"><a href="rcat.html#simstudy"><i class="fa fa-check"></i><b>12.5.2</b> simstudy</a></li>
 </ul></li>
-<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#simstudy"><i class="fa fa-check"></i><b>12.6</b> simstudy</a></li>
-<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.7</b> Symptom Network Analysis</a><ul>
-<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.7.1</b> qgraph</a></li>
-<li class="chapter" data-level="12.7.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.7.2</b> bootnet</a></li>
+<li class="chapter" data-level="12.6" data-path="rcat.html"><a href="rcat.html#symptom-network-analysis"><i class="fa fa-check"></i><b>12.6</b> Symptom Network Analysis</a><ul>
+<li class="chapter" data-level="12.6.1" data-path="rcat.html"><a href="rcat.html#qgraph"><i class="fa fa-check"></i><b>12.6.1</b> qgraph</a></li>
+<li class="chapter" data-level="12.6.2" data-path="rcat.html"><a href="rcat.html#bootnet"><i class="fa fa-check"></i><b>12.6.2</b> bootnet</a></li>
 </ul></li>
-<li class="chapter" data-level="12.8" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.8</b> Timeseries analysis</a><ul>
-<li class="chapter" data-level="12.8.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.8.1</b> lomb</a></li>
+<li class="chapter" data-level="12.7" data-path="rcat.html"><a href="rcat.html#timeseries-analysis"><i class="fa fa-check"></i><b>12.7</b> Timeseries analysis</a><ul>
+<li class="chapter" data-level="12.7.1" data-path="rcat.html"><a href="rcat.html#lomb"><i class="fa fa-check"></i><b>12.7.1</b> lomb</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>VII Closing Matters</b></span></li>
@@ -396,33 +397,128 @@ code > span.in { font-style: italic; } /* Information */
 <p>Accelerometer data need considerable pre-processing before final analyses can be run. Raw data have to be read in from a variety of brand-specific file formats, data have to re-calibrated on a per-device basis, non-wear periods have to detected, and summarizing measures, such as activity counts and energy-expenditure measures, have to be calculated from imputed triangular (x, y, x) data, often in several time windows (i.e., epochs).</p>
 <div id="genearead" class="section level3">
 <h3><span class="header-section-number">12.1.1</span> GENEAread</h3>
-<p> </p>
-<p>Package <em>GGIR</em> <span class="citation">(Van Hees et al., <a href="#ref-R-GGIR">2018</a>)</span> is a package to pre-process raw accelerometry data from three brands of wearables that are widely used in sleep and physical activity research: <a href="https://www.geneactiv.org/">GENEActiv</a>, <a href="http://actigraphcorp.com/">ActiGraph</a> and <a href="http://axivity.com/">Axivity</a>. GGIR includes package <strong>GENEAread</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R"><strong>???</strong></span>_GENEAread)</span>, with which raw data can be imported into R for further processing, as illustrated below.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Reading raw GENEActiv data.</span>
+
+<p><a href="https://www.geneactiv.org/">GENEActiv</a> is a wrist-worn accelerometer that is widely used in sleep and physical activity research. With package <strong>GENEAread</strong> <span class="citation">(<span class="citeproc-not-found" data-reference-id="R"><strong>???</strong></span>_GENEAread)</span>, raw GENEActiv binary files can be imported into R for further processing, as illustrated below.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Read raw GENEActiv data.</span>
 <span class="kw">library</span>(GENEAread)
-<span class="kw">library</span>(ggplot2)
-<span class="kw">library</span>(tidyr)
-
-out &lt;-<span class="st"> </span><span class="kw">capture.output</span>(
-  dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
-                  <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>))
-
+dat &lt;-<span class="st"> </span><span class="kw">read.bin</span>(<span class="kw">system.file</span>(<span class="st">&quot;binfile/TESTfile.bin&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;GENEAread&quot;</span>),
+                  <span class="dt">verbose =</span> <span class="ot">FALSE</span>, <span class="dt">downsample =</span> <span class="dv">20</span>)
 d &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(dat<span class="op">$</span>data.out)
-d &lt;-<span class="st"> </span><span class="kw">gather</span>(d, <span class="dt">key =</span> <span class="st">&quot;sensor&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;value&quot;</span>, <span class="op">-</span>timestamp)
 d<span class="op">$</span>timestamp &lt;-<span class="st"> </span><span class="kw">as.POSIXct</span>(d<span class="op">$</span>timestamp, <span class="dt">origin =</span> <span class="st">&quot;1970-01-01&quot;</span>, <span class="dt">tz =</span> <span class="st">&quot;UTC&quot;</span>)
-
+d[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, ]</code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">timestamp</th>
+<th align="right">x</th>
+<th align="right">y</th>
+<th align="right">z</th>
+<th align="right">light</th>
+<th align="right">button</th>
+<th align="right">temperature</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2012-05-23 16:47:50.0</td>
+<td align="right">0.023516</td>
+<td align="right">-0.887283</td>
+<td align="right">-0.100785</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">25.8</td>
+</tr>
+<tr class="even">
+<td align="left">2012-05-23 16:47:50.2</td>
+<td align="right">0.027462</td>
+<td align="right">-0.933668</td>
+<td align="right">-0.140047</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">25.8</td>
+</tr>
+<tr class="odd">
+<td align="left">2012-05-23 16:47:50.4</td>
+<td align="right">0.035354</td>
+<td align="right">-1.150135</td>
+<td align="right">-0.030114</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">25.8</td>
+</tr>
+<tr class="even">
+<td align="left">2012-05-23 16:47:50.5</td>
+<td align="right">0.070865</td>
+<td align="right">-3.229764</td>
+<td align="right">-0.619042</td>
+<td align="right">0</td>
+<td align="right">0</td>
+<td align="right">25.8</td>
+</tr>
+</tbody>
+</table>
+<p>By having access to the raw data, you are free to explore the data further in any you want. For instance, to plot the raw data captured by each sensor, type:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot raw GENEActive data, with ggplot</span>
+<span class="kw">library</span>(ggplot2); <span class="kw">library</span>(tidyr)
+d &lt;-<span class="st"> </span><span class="kw">gather</span>(d, <span class="dt">key =</span> <span class="st">&quot;sensor&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;value&quot;</span>, <span class="op">-</span>timestamp)
 <span class="kw">ggplot</span>(d, <span class="kw">aes</span>(<span class="dt">x =</span> timestamp, <span class="dt">y =</span> value)) <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span>
 <span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span>sensor, <span class="dt">scales =</span> <span class="st">&quot;free_y&quot;</span>)</code></pre></div>
-<div class="figure" style="text-align: center"><span id="fig:genearead-example"></span>
-<img src="R-package-catalogue_files/figure-html/genearead-example-1.png" alt="Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
+<div class="figure" style="text-align: center"><span id="fig:genearead-plot-example"></span>
+<img src="R-package-catalogue_files/figure-html/genearead-plot-example-1.png" alt="Raw sensor data of a GENEActiv accelerometer." width="100%" />
 <p class="caption">
-Figure 12.1: Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).
+Figure 12.1: Raw sensor data of a GENEActiv accelerometer.
 </p>
 </div>
 </div>
+<div id="ggir" class="section level3">
+<h3><span class="header-section-number">12.1.2</span> GGIR</h3>
+
+<p>Package <em>GGIR</em> <span class="citation">(Van Hees et al., <a href="#ref-R-GGIR">2018</a>)</span> is a package to pre-process raw accelerometry data from three accelerometer brands: <a href="http://actigraphcorp.com/">ActiGraph</a>, <a href="http://axivity.com/">Axivity</a>, and <a href="https://www.geneactiv.org/">GENEActiv</a> (GGIR includes package <code>GENEAread</code>). The package is in active development. New features are introduced and bugs are fixed on a regular basis. If you consider to use <code>GGIR</code> for your project, you may want to install the development version, which is on <a href="https://github.com/wadpac/GGIR">GitHub</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
+<span class="kw">install_github</span>(<span class="st">&quot;wadpac/GGIR&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
+<p><code>GGIR</code>’s main function is <code>g.shell.GGIR</code>, with which multiple accelerometer data files can be imported, calibrated, cleaned and analyzed. The example below shows an example configuration of this function. See <code>?g.shell.GGIR</code> (and <code>?g.part1</code>, ?<code>g.part2</code>, to <code>g.part5</code>) to learn the meaning of each parameter. If you get lost or run into a problem, you can ask the package developers or other users for help via the GGIR Google discussion forum, at <a href="https://groups.google.com/forum/#!forum/rpackageggir" class="uri">https://groups.google.com/forum/#!forum/rpackageggir</a>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Import actigraphy data with GGIR</span>
+<span class="kw">library</span>(GGIR)
+<span class="kw">g.shell.GGIR</span>(<span class="co">#=======================================</span>
+             <span class="co"># Shell configuration:</span>
+             <span class="dt">mode =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),
+             <span class="dt">datadir=</span><span class="st">&quot;./data/raw&quot;</span>, <span class="dt">outputdir=</span><span class="st">&quot;./data&quot;</span>,
+             <span class="dt">desiredtz =</span> <span class="st">&quot;Europe/Amsterdam&quot;</span>, <span class="co"># set timezone!</span>
+             <span class="dt">f0 =</span> <span class="dv">1</span>, <span class="dt">f1 =</span> <span class="dv">2</span>, <span class="dt">overwrite =</span> <span class="ot">FALSE</span>,
+             <span class="co">#-------------------------------</span>
+             <span class="co"># Part 1: read, calibrate, extract features</span>
+             <span class="dt">do.enmo =</span> <span class="ot">TRUE</span>, <span class="dt">do.anglez=</span><span class="ot">TRUE</span>,
+             <span class="dt">chunksize =</span> <span class="dv">1</span>, <span class="dt">printsummary =</span> <span class="ot">TRUE</span>,
+             <span class="co">#-------------------------------</span>
+             <span class="co"># Part 2:</span>
+             <span class="dt">strategy =</span> <span class="dv">1</span>, <span class="dt">ndayswindow=</span><span class="dv">7</span>,
+             <span class="dt">hrs.del.start =</span> <span class="dv">0</span>, <span class="dt">hrs.del.end =</span> <span class="dv">0</span>,
+             <span class="dt">maxdur =</span> <span class="dv">8</span>,  <span class="dt">includedaycrit =</span> <span class="dv">10</span>,
+             <span class="dt">winhr =</span> <span class="kw">c</span>(<span class="dv">5</span>,<span class="dv">10</span>),
+             <span class="dt">qlevels =</span> <span class="kw">c</span>(<span class="kw">c</span>(<span class="dv">1380</span><span class="op">/</span><span class="dv">1440</span>),<span class="kw">c</span>(<span class="dv">1410</span><span class="op">/</span><span class="dv">1440</span>)),
+             <span class="dt">qwindow =</span> <span class="kw">c</span>(<span class="dv">0</span>,<span class="dv">24</span>),
+             <span class="dt">ilevels =</span> <span class="kw">c</span>(<span class="kw">seq</span>(<span class="dv">0</span>, <span class="dv">400</span>, <span class="dt">by=</span><span class="dv">50</span>), <span class="dv">8000</span>),
+             <span class="dt">mvpathreshold =</span> <span class="kw">c</span>(<span class="dv">100</span>,<span class="dv">125</span>), 
+             <span class="dt">bout.metric =</span> <span class="dv">4</span>, <span class="dt">closedbout =</span> <span class="ot">FALSE</span>,
+             <span class="co">#-------------------------------</span>
+             <span class="co"># Part 3: Sleep detection</span>
+             <span class="co">#-------------------------------</span>
+             <span class="dt">timethreshold=</span> <span class="kw">c</span>(<span class="dv">5</span>), <span class="dt">anglethreshold=</span><span class="dv">5</span>,
+             <span class="dt">ignorenonwear =</span> <span class="ot">TRUE</span>,
+             <span class="co">#-------------------------------</span>
+             <span class="co"># Part 4: Sleep summaries (per person)</span>
+             <span class="dt">excludefirstlast =</span> <span class="ot">TRUE</span>, <span class="dt">includenightcrit =</span> <span class="dv">16</span>,
+             <span class="dt">def.noc.sleep =</span> <span class="kw">c</span>(<span class="dv">21</span>, <span class="dv">9</span>),
+             <span class="dt">relyonsleeplog =</span> <span class="ot">TRUE</span>, <span class="dt">nnights =</span> <span class="dv">3</span>,
+             <span class="co">#-----------------------------------</span>
+             <span class="co"># Report generation</span>
+             <span class="dt">do.report =</span> <span class="kw">c</span>(<span class="dv">2</span>, <span class="dv">4</span>), <span class="dt">visualreport =</span> <span class="ot">TRUE</span>,
+             <span class="dt">dofirstpage =</span> <span class="ot">TRUE</span>, <span class="dt">viewingwindow =</span> <span class="dv">1</span>
+)</code></pre></div>
+</div>
 <div id="physicalactivity" class="section level3">
-<h3><span class="header-section-number">12.1.2</span> PhysicalActivity</h3>
+<h3><span class="header-section-number">12.1.3</span> PhysicalActivity</h3>
 
 <p>Package <em>PhysicalActivity</em> <span class="citation">(Choi, Beck, Liu, Matthews, &amp; Buchowski, <a href="#ref-R-PhysicalActivity">2018</a>)</span> provides an alternative to packages <code>GGIR</code> and <code>GENEAread</code>, when <a href="https://actigraphcorp.com/">ActiGraph</a> data are available.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plotting activity counts.</span>
@@ -473,23 +569,19 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
-<span class="co">#&gt; -0.5956 -0.1212  0.0000  0.1357  0.4385 </span>
+<span class="co">#&gt; -2.0880 -0.7279 -0.1105  0.7210  2.2722 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.36714    0.06718   5.465 3.93e-07 ***</span>
-<span class="co">#&gt; depression.l1  0.08973    0.07629   1.176   0.2425    </span>
-<span class="co">#&gt; const          0.93354    0.13560   6.884 6.97e-10 ***</span>
-<span class="co">#&gt; outlier_39     0.09220    0.21186   0.435   0.6644    </span>
-<span class="co">#&gt; outlier_63     0.42999    0.21214   2.027   0.0456 *  </span>
-<span class="co">#&gt; outlier_66     0.38781    0.21056   1.842   0.0687 .  </span>
-<span class="co">#&gt; outlier_70    -1.34936    0.21162  -6.376 7.15e-09 ***</span>
+<span class="co">#&gt; activity.l1    0.35645    0.10062   3.542 0.000614 ***</span>
+<span class="co">#&gt; depression.l1  0.05224    0.09615   0.543 0.588219    </span>
+<span class="co">#&gt; const          0.13771    0.10399   1.324 0.188552    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.2091 on 92 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.4994, Adjusted R-squared:  0.4667 </span>
-<span class="co">#&gt; F-statistic: 15.29 on 6 and 92 DF,  p-value: 4.426e-12</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 1.027 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.117,  Adjusted R-squared:  0.09859 </span>
+<span class="co">#&gt; F-statistic: 6.359 on 2 and 96 DF,  p-value: 0.00255</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 </div>
@@ -524,23 +616,23 @@ knitr<span class="op">::</span><span class="kw">kable</span>(b)</code></pre></di
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="right">-0.3472872</td>
+<td align="right">-0.4674685</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="right">0.0404342</td>
+<td align="right">-0.3460365</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="right">-0.4546743</td>
+<td align="right">-0.1286195</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="right">-0.1825336</td>
+<td align="right">-0.3194260</td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
-<td align="right">0.2622946</td>
+<td align="right">0.3089390</td>
 </tr>
 </tbody>
 </table>
@@ -742,11 +834,10 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <span class="co">#&gt; Based on 10 simulations, (0 warnings, 0 errors)</span>
 <span class="co">#&gt; alpha = 0.05, nrow = 960</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Time elapsed: 0 h 0 m 2 s</span></code></pre></div>
+<span class="co">#&gt; Time elapsed: 0 h 0 m 1 s</span></code></pre></div>
 </div>
-</div>
-<div id="simstudy" class="section level2">
-<h2><span class="header-section-number">12.6</span> simstudy</h2>
+<div id="simstudy" class="section level3">
+<h3><span class="header-section-number">12.5.2</span> simstudy</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(simstudy)
 
 def &lt;-<span class="st"> </span><span class="kw">defData</span>(<span class="dt">varname =</span> <span class="st">&quot;nr&quot;</span>, <span class="dt">dist =</span> <span class="st">&quot;nonrandom&quot;</span>, <span class="dt">formula =</span> <span class="dv">7</span>, <span class="dt">id =</span> <span class="st">&quot;idnum&quot;</span>)
@@ -755,18 +846,19 @@ def &lt;-<span class="st"> </span><span class="kw">defData</span>(def, <span cla
 
 <span class="kw">genData</span>(<span class="dv">5</span>, def)
 <span class="co">#&gt;    idnum nr       x1       y1</span>
-<span class="co">#&gt; 1:     1  7 14.42349 35.74583</span>
-<span class="co">#&gt; 2:     2  7 14.79304 39.23039</span>
-<span class="co">#&gt; 3:     3  7 10.79959 22.90367</span>
-<span class="co">#&gt; 4:     4  7 13.75197 36.85938</span>
-<span class="co">#&gt; 5:     5  7 15.65793 37.68300</span></code></pre></div>
+<span class="co">#&gt; 1:     1  7 19.21663 50.01862</span>
+<span class="co">#&gt; 2:     2  7 14.59046 32.23880</span>
+<span class="co">#&gt; 3:     3  7 11.39000 33.07156</span>
+<span class="co">#&gt; 4:     4  7 18.96826 40.77855</span>
+<span class="co">#&gt; 5:     5  7 15.17646 38.37636</span></code></pre></div>
+</div>
 </div>
 <div id="symptom-network-analysis" class="section level2">
-<h2><span class="header-section-number">12.7</span> Symptom Network Analysis</h2>
+<h2><span class="header-section-number">12.6</span> Symptom Network Analysis</h2>
 <p> </p>
 <p>When EMA is used to tap various symptoms, network analysis can reveal the dynamic interplay between these symptoms <span class="citation">(Borsboom, <a href="#ref-Borsboom2017">2017</a>; Borsboom &amp; Cramer, <a href="#ref-Borsboom2013">2013</a>; Bringmann et al., <a href="#ref-Bringmann2015">2015</a>)</span>. Various packages exist to fit these networks in R. With these packages, it is relatively easy to fit a graphical network on multivariate data sets. If you are interested in conducting a network analysis, be sure to visit the Psycho-systems website, at <a href="http://psychosystems.org" class="uri">http://psychosystems.org</a>, or to register for the UvA network school course (see: <a href="http://psychosystems.org/NetworkSchool" class="uri">http://psychosystems.org/NetworkSchool</a>). A complete list of software related to network analysis from the Psycho-systems group is maintained at <a href="http://psychosystems.org/software/" class="uri">http://psychosystems.org/software/</a>. Excellent tutorials can also be found at <a href="http://psych-networks.com/tutorials/" class="uri">http://psych-networks.com/tutorials/</a> and at <a href="http://sachaepskamp.com/files/Cookbook.html" class="uri">http://sachaepskamp.com/files/Cookbook.html</a>.</p>
 <div id="qgraph" class="section level3">
-<h3><span class="header-section-number">12.7.1</span> qgraph</h3>
+<h3><span class="header-section-number">12.6.1</span> qgraph</h3>
 
 <p>Package <em>qgraph</em> <span class="citation">(Epskamp, Cramer, Waldorp, Schmittmann, &amp; Borsboom, <a href="#ref-Epskamp2012">2012</a>)</span> can be used to fit, visualize and analyze graphical networks.</p>
 <p>In the example below, <code>qgraph</code> is used to fit a network on the ‘Critical Slowing Down’ (CSD) data set, which is included in package <code>emaph</code> (see Chapter <a href="csd.html#csd">9</a>).</p>
@@ -799,7 +891,7 @@ Figure 12.4: Network of mood items from CSD data set
 <p><img src="R-package-catalogue_files/figure-html/qgraph-centrality-example-1.png" width="100%" style="display: block; margin: auto;" /></p>
 </div>
 <div id="bootnet" class="section level3">
-<h3><span class="header-section-number">12.7.2</span> bootnet</h3>
+<h3><span class="header-section-number">12.6.2</span> bootnet</h3>
 
 <p>In the interpretation of fitted networks, it is important to take the stability of the network into account. Intuitively, networks that are fit on small sample data sets will be less stable than networks based on large data sets. One solution is to asses this is to fit a large number of networks on subsets of the original data, via bootstrapping. In stable networks, the variability of edge estimations and other characteristics will be small, while in unstable networks, the variance will be large. This idea is implemented in package <em>bootnet</em> <span class="citation">(Epskamp, Borsboom, &amp; Fried, <a href="#ref-Epskamp2018a">2018</a>)</span>.</p>
 <p>Below, the stability of the network that was fit in the previous example is examined with <code>bootnet</code>: fifty networks are fit, based on fifty bootstrapped samples. In the results plot, the red line marks the strength of the edges in the full sample, while grey confidence intervals mark the distribution of the edge weights in the bootstraps.</p>
@@ -814,9 +906,9 @@ results &lt;-<span class="st"> </span><span class="kw">bootnet</span>(g, <span c
 </div>
 </div>
 <div id="timeseries-analysis" class="section level2">
-<h2><span class="header-section-number">12.8</span> Timeseries analysis</h2>
+<h2><span class="header-section-number">12.7</span> Timeseries analysis</h2>
 <div id="lomb" class="section level3">
-<h3><span class="header-section-number">12.8.1</span> lomb</h3>
+<h3><span class="header-section-number">12.7.1</span> lomb</h3>
 <p>  </p>
 <p>Disturbances in circadian rhythms have been related to depressive symptoms <span class="citation">(see, e.g., Saeb et al., <a href="#ref-Saeb2015">2015</a>)</span>. With so-called periodograms, these circadian rhythms can be detected in EMA data (see Chapter <a href="features.html#features">7</a>). Standard analysis techniques, however, expect regular time-series, in which data are sampled at equidistant intervals. EMA data, typically, are not equidistant. One solution to this problem is to use the Lomb-Scargle periodogram procedure <span class="citation">(Lomb, <a href="#ref-Lomb1976">1976</a>)</span>, which can be applied to unevenly-sampled time-series as well. Package <em>lomb</em> <span class="citation">(Ruf, <a href="#ref-ruf1999">1999</a>)</span> implements this procedure.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Calculating a Lomb-Scargle periodogram.</span>

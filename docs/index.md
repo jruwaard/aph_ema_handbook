@@ -3,7 +3,7 @@
 title: "Ecological Momentary Assessment in Mental Health Research"
 subtitle: "A Practical Introduction, with Examples in R (1st edition)"
 author: ["Jeroen Ruwaard", "Lisa Kooistra", "Melissa Thong"]
-date: "2018-11-17"
+date: "2018-11-18"
 cover-image: "images/cover/smallcover.jpg"
 site: bookdown::bookdown_site
 documentclass: book
@@ -53,4 +53,4 @@ build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). *Ecological Momentary Assessment
 in Mental Health Research: A Practical Introduction, with Examples in R (1st
-edition - build 2018-11-17)*. Amsterdam: APH Mental Health. 
+edition - build 2018-11-18)*. Amsterdam: APH Mental Health. 

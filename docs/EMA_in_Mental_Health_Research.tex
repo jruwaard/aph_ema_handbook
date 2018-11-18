@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-17}
+    \date{2018-11-18}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -201,7 +201,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-17)}.
+Introduction, with Examples in R (1st edition - build 2018-11-18)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -1187,13 +1187,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.3943, df = 197.06, p-value = 0.6938}
+\CommentTok{#> t = 1.3486, df = 196.44, p-value = 0.179}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.3555122  0.2370368}
+\CommentTok{#>  -0.09182058  0.48905524}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.03187952  0.02735817}
+\CommentTok{#>  0.10607049 -0.09254684}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1546,7 +1546,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4747}
+\CommentTok{#> [1] 0.4838}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5611,32 +5611,49 @@ windows (i.e., epochs).
 
 \subsection{GENEAread}\label{genearead}
 
-\index{Packages!GENEAread} \index{Packages!GGIR}
+\index{Packages!GENEAread}
 
-Package \emph{GGIR} \citep{R-GGIR} is a package to pre-process raw
-accelerometry data from three brands of wearables that are widely used
-in sleep and physical activity research:
-\href{https://www.geneactiv.org/}{GENEActiv},
-\href{http://actigraphcorp.com/}{ActiGraph} and
-\href{http://axivity.com/}{Axivity}. GGIR includes package
-\textbf{GENEAread} \citep[GENEAread]{R}, with which raw data can be
-imported into R for further processing, as illustrated below.
+\href{https://www.geneactiv.org/}{GENEActiv} is a wrist-worn
+accelerometer that is widely used in sleep and physical activity
+research. With package \textbf{GENEAread} \citep[GENEAread]{R}, raw
+GENEActiv binary files can be imported into R for further processing, as
+illustrated below.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Reading raw GENEActiv data.}
+\CommentTok{# Read raw GENEActiv data.}
 \KeywordTok{library}\NormalTok{(GENEAread)}
-\KeywordTok{library}\NormalTok{(ggplot2)}
-\KeywordTok{library}\NormalTok{(tidyr)}
-
-\NormalTok{out <-}\StringTok{ }\KeywordTok{capture.output}\NormalTok{(}
-\NormalTok{  dat <-}\StringTok{ }\KeywordTok{read.bin}\NormalTok{(}\KeywordTok{system.file}\NormalTok{(}\StringTok{"binfile/TESTfile.bin"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"GENEAread"}\NormalTok{),}
-                  \DataTypeTok{verbose =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{downsample =} \DecValTok{20}\NormalTok{))}
-
+\NormalTok{dat <-}\StringTok{ }\KeywordTok{read.bin}\NormalTok{(}\KeywordTok{system.file}\NormalTok{(}\StringTok{"binfile/TESTfile.bin"}\NormalTok{, }\DataTypeTok{package =} \StringTok{"GENEAread"}\NormalTok{),}
+                  \DataTypeTok{verbose =} \OtherTok{FALSE}\NormalTok{, }\DataTypeTok{downsample =} \DecValTok{20}\NormalTok{)}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(dat}\OperatorTok{$}\NormalTok{data.out)}
-\NormalTok{d <-}\StringTok{ }\KeywordTok{gather}\NormalTok{(d, }\DataTypeTok{key =} \StringTok{"sensor"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{timestamp)}
 \NormalTok{d}\OperatorTok{$}\NormalTok{timestamp <-}\StringTok{ }\KeywordTok{as.POSIXct}\NormalTok{(d}\OperatorTok{$}\NormalTok{timestamp, }\DataTypeTok{origin =} \StringTok{"1970-01-01"}\NormalTok{, }\DataTypeTok{tz =} \StringTok{"UTC"}\NormalTok{)}
+\NormalTok{d[}\DecValTok{1}\OperatorTok{:}\DecValTok{4}\NormalTok{, ]}
+\end{Highlighting}
+\end{Shaded}
 
+\begin{tabular}{l|r|r|r|r|r|r}
+\hline
+timestamp & x & y & z & light & button & temperature\\
+\hline
+2012-05-23 16:47:50.0 & 0.023516 & -0.887283 & -0.100785 & 0 & 0 & 25.8\\
+\hline
+2012-05-23 16:47:50.2 & 0.027462 & -0.933668 & -0.140047 & 0 & 0 & 25.8\\
+\hline
+2012-05-23 16:47:50.4 & 0.035354 & -1.150135 & -0.030114 & 0 & 0 & 25.8\\
+\hline
+2012-05-23 16:47:50.5 & 0.070865 & -3.229764 & -0.619042 & 0 & 0 & 25.8\\
+\hline
+\end{tabular}
+
+By having access to the raw data, you are free to explore the data
+further in any you want. For instance, to plot the raw data captured by
+each sensor, type:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Plot raw GENEActive data, with ggplot}
+\KeywordTok{library}\NormalTok{(ggplot2); }\KeywordTok{library}\NormalTok{(tidyr)}
+\NormalTok{d <-}\StringTok{ }\KeywordTok{gather}\NormalTok{(d, }\DataTypeTok{key =} \StringTok{"sensor"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{timestamp)}
 \KeywordTok{ggplot}\NormalTok{(d, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ timestamp, }\DataTypeTok{y =}\NormalTok{ value)) }\OperatorTok{+}\StringTok{ }
 \StringTok{  }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}\StringTok{ }
 \StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(}\OperatorTok{~}\NormalTok{sensor, }\DataTypeTok{scales =} \StringTok{"free_y"}\NormalTok{)}
@@ -5645,12 +5662,86 @@ imported into R for further processing, as illustrated below.
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/genearead-example-1} 
+{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/genearead-plot-example-1} 
 
 }
 
-\caption{Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).}\label{fig:genearead-example}
+\caption{Raw sensor data of a GENEActiv accelerometer.}\label{fig:genearead-plot-example}
 \end{figure}
+
+\subsection{GGIR}\label{ggir}
+
+\index{Packages!GGIR}
+
+Package \emph{GGIR} \citep{R-GGIR} is a package to process raw
+accelerometry data from three accelerometer brands:
+\href{http://actigraphcorp.com/}{ActiGraph},
+\href{http://axivity.com/}{Axivity}, and
+\href{https://www.geneactiv.org/}{GENEActiv} (GGIR includes package
+\texttt{GENEAread}). The package is in active development. New features
+are introduced and bugs are fixed on a regular basis. If you consider to
+use \texttt{ggir} for your project, you may want to install the
+development version, which is on GitHub.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(devtools)}
+\KeywordTok{install_github}\NormalTok{(}\StringTok{"wadpac/GGIR"}\NormalTok{, }\DataTypeTok{dependencies =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{GGIR}'s main function is \texttt{g.shell.GGIR}, with which
+multiple accelerometer data files can be imported, calibrated, cleaned
+and analysed. The example below shows an example configuration of this
+function. See \texttt{?g.shell.GGIR} (and \texttt{?g.part1},
+?\texttt{g.part2}, to \texttt{g.part5}) to learn the meaning of each
+parameter. If you get lost or run into a problem, you can ask the
+package developers or other users for help via the GGIR Google
+discussion forum, at
+\url{https://groups.google.com/forum/\#!forum/rpackageggir}.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Import actigraphy data with GGIR}
+\KeywordTok{library}\NormalTok{(GGIR)}
+\KeywordTok{g.shell.GGIR}\NormalTok{(}\CommentTok{#=======================================}
+             \CommentTok{# Shell configuration:}
+             \DataTypeTok{mode =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{),}
+             \DataTypeTok{datadir=}\StringTok{"./data/raw"}\NormalTok{, }\DataTypeTok{outputdir=}\StringTok{"./data"}\NormalTok{,}
+             \DataTypeTok{desiredtz =} \StringTok{"Europe/Amsterdam"}\NormalTok{, }\CommentTok{# set timezone!}
+             \DataTypeTok{f0 =} \DecValTok{1}\NormalTok{, }\DataTypeTok{f1 =} \DecValTok{2}\NormalTok{, }\DataTypeTok{overwrite =} \OtherTok{FALSE}\NormalTok{,}
+             \CommentTok{#-------------------------------}
+             \CommentTok{# Part 1: read, calibrate, extract features}
+             \DataTypeTok{do.enmo =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{do.anglez=}\OtherTok{TRUE}\NormalTok{,}
+             \DataTypeTok{chunksize =} \DecValTok{1}\NormalTok{, }\DataTypeTok{printsummary =} \OtherTok{TRUE}\NormalTok{,}
+             \CommentTok{#-------------------------------}
+             \CommentTok{# Part 2:}
+             \DataTypeTok{strategy =} \DecValTok{1}\NormalTok{, }\DataTypeTok{ndayswindow=}\DecValTok{7}\NormalTok{,}
+             \DataTypeTok{hrs.del.start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{hrs.del.end =} \DecValTok{0}\NormalTok{,}
+             \DataTypeTok{maxdur =} \DecValTok{8}\NormalTok{,  }\DataTypeTok{includedaycrit =} \DecValTok{10}\NormalTok{,}
+             \DataTypeTok{winhr =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{),}
+             \DataTypeTok{qlevels =} \KeywordTok{c}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1380}\OperatorTok{/}\DecValTok{1440}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{1410}\OperatorTok{/}\DecValTok{1440}\NormalTok{)),}
+             \DataTypeTok{qwindow =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{24}\NormalTok{),}
+             \DataTypeTok{ilevels =} \KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{400}\NormalTok{, }\DataTypeTok{by=}\DecValTok{50}\NormalTok{), }\DecValTok{8000}\NormalTok{),}
+             \DataTypeTok{mvpathreshold =} \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{125}\NormalTok{), }
+             \DataTypeTok{bout.metric =} \DecValTok{4}\NormalTok{, }\DataTypeTok{closedbout =} \OtherTok{FALSE}\NormalTok{,}
+             \CommentTok{#-------------------------------}
+             \CommentTok{# Part 3: Sleep detection}
+             \CommentTok{#-------------------------------}
+             \DataTypeTok{timethreshold=} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{), }\DataTypeTok{anglethreshold=}\DecValTok{5}\NormalTok{,}
+             \DataTypeTok{ignorenonwear =} \OtherTok{TRUE}\NormalTok{,}
+             \CommentTok{#-------------------------------}
+             \CommentTok{# Part 4: Sleep summaries (per person)}
+             \DataTypeTok{excludefirstlast =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{includenightcrit =} \DecValTok{16}\NormalTok{,}
+             \DataTypeTok{def.noc.sleep =} \KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{, }\DecValTok{9}\NormalTok{),}
+             \DataTypeTok{relyonsleeplog =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{nnights =} \DecValTok{3}\NormalTok{,}
+             \CommentTok{#-----------------------------------}
+             \CommentTok{# Report generation}
+             \DataTypeTok{do.report =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{visualreport =} \OtherTok{TRUE}\NormalTok{,}
+             \DataTypeTok{dofirstpage =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{viewingwindow =} \DecValTok{1}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
 
 \subsection{PhysicalActivity}\label{physicalactivity}
 
@@ -5726,23 +5817,24 @@ used to detect that changes in depression are positively related to past
 \KeywordTok{summary}\NormalTok{(models_found[[}\DecValTok{1}\NormalTok{]]}\OperatorTok{$}\NormalTok{varest}\OperatorTok{$}\NormalTok{varresult}\OperatorTok{$}\NormalTok{depression)}
 \CommentTok{#> }
 \CommentTok{#> Call:}
-\CommentTok{#> lm(formula = y ~ -1 + ., data = datamat)}
+\CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -1.89839 -0.66056 -0.08484  0.76054  2.48846 }
+\CommentTok{#> -2.24701 -0.66208  0.03378  0.65822  2.05743 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.50320    0.08474   5.938 4.59e-08 ***}
-\CommentTok{#> depression.l1 -0.01553    0.08787  -0.177     0.86    }
-\CommentTok{#> const         -0.08607    0.09551  -0.901     0.37    }
+\CommentTok{#> activity.l1    0.58233    0.08606   6.767 1.11e-09 ***}
+\CommentTok{#> depression.l1 -0.03764    0.08440  -0.446    0.657    }
+\CommentTok{#> depression.l2  0.01846    0.08456   0.218    0.828    }
+\CommentTok{#> const          0.11715    0.09299   1.260    0.211    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.944 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.2705, Adjusted R-squared:  0.2553 }
-\CommentTok{#> F-statistic:  17.8 on 2 and 96 DF,  p-value: 2.668e-07}
+\CommentTok{#> Residual standard error: 0.9122 on 94 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.3286, Adjusted R-squared:  0.3072 }
+\CommentTok{#> F-statistic: 15.33 on 3 and 94 DF,  p-value: 3.371e-08}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5797,15 +5889,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.1744643\\
+1 & 0.1103710\\
 \hline
-2 & -0.1943311\\
+2 & 0.7602674\\
 \hline
-3 & 0.0105962\\
+3 & -0.4654157\\
 \hline
-4 & -0.1228842\\
+4 & -0.6009268\\
 \hline
-5 & 0.0588404\\
+5 & 0.4414845\\
 \hline
 \end{tabular}
 
@@ -5871,9 +5963,9 @@ identifier), to show individual trajectories.
 \index{Packages!haven} \index{SPSS}
 
 With package \emph{haven} \citep{R-haven}, SPSS, STATA and SAS files can
-be read into R. A particular advantage is that SPSS variables
-definitions are retained (in attributes of the columns in the R
-\texttt{data.frames}).
+be read into R. A particular advantage of the \texttt{read.sav} function
+is that SPSS variables definitions are retained (in attributes of the
+columns in the R \texttt{data.frames}).
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6064,11 +6156,11 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
 \end{Highlighting}
 \end{Shaded}
 
-\section{simstudy}\label{simstudy}
+\subsection{simstudy}\label{simstudy}
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6080,11 +6172,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 10.74207 28.41630}
-\CommentTok{#> 2:     2  7 10.44255 27.97137}
-\CommentTok{#> 3:     3  7 13.49877 33.02364}
-\CommentTok{#> 4:     4  7 12.96595 28.31062}
-\CommentTok{#> 5:     5  7 18.85833 40.79275}
+\CommentTok{#> 1:     1  7 14.89742 33.20295}
+\CommentTok{#> 2:     2  7 10.20935 27.02771}
+\CommentTok{#> 3:     3  7 13.77554 35.13268}
+\CommentTok{#> 4:     4  7 18.50612 48.98011}
+\CommentTok{#> 5:     5  7 17.66275 44.74252}
 \end{Highlighting}
 \end{Shaded}
 

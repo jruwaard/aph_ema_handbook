@@ -1,5 +1,4 @@
 
-
 # R Packages for EMA Research {#rcat}
 
 Many R packages exist that can help you in the management and analysis of EMA
@@ -34,43 +33,120 @@ run. Raw data have to be read in from a variety of brand-specific file formats,
 data have to re-calibrated on a per-device basis, non-wear periods have to
 detected, and summarizing measures, such as activity counts and
 energy-expenditure measures, have to be calculated from imputed triangular (x,
-y, x) data, often in several time windows (i.e., epochs). 
+y, x) data, often in several time windows (i.e., epochs).
 
 ### GENEAread
 \index{Packages!GENEAread}
-\index{Packages!GGIR}
 
-Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data
-from three brands of wearables that are widely used in sleep and physical
-activity research: [GENEActiv](https://www.geneactiv.org/),
-[ActiGraph](http://actigraphcorp.com/) and [Axivity](http://axivity.com/). GGIR
-includes package **GENEAread** [@R\_GENEAread], with which raw data can be
-imported into R for further processing, as illustrated below.
+[GENEActiv](https://www.geneactiv.org/) is a wrist-worn accelerometer that is
+widely used in sleep and physical activity research. With package **GENEAread**
+[@R\_GENEAread], raw GENEActiv binary files can be imported into R for further
+processing, as illustrated below.
 
 
 ```r
-# Reading raw GENEActiv data.
+# Read raw GENEActiv data.
 library(GENEAread)
-library(ggplot2)
-library(tidyr)
-
-out <- capture.output(
-  dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
-                  verbose = FALSE, downsample = 20))
-
+dat <- read.bin(system.file("binfile/TESTfile.bin", package = "GENEAread"),
+                  verbose = FALSE, downsample = 20)
 d <- as.data.frame(dat$data.out)
-d <- gather(d, key = "sensor", value = "value", -timestamp)
 d$timestamp <- as.POSIXct(d$timestamp, origin = "1970-01-01", tz = "UTC")
+d[1:4, ]
+```
 
+
+timestamp                       x           y           z   light   button   temperature
+----------------------  ---------  ----------  ----------  ------  -------  ------------
+2012-05-23 16:47:50.0    0.023516   -0.887283   -0.100785       0        0          25.8
+2012-05-23 16:47:50.2    0.027462   -0.933668   -0.140047       0        0          25.8
+2012-05-23 16:47:50.4    0.035354   -1.150135   -0.030114       0        0          25.8
+2012-05-23 16:47:50.5    0.070865   -3.229764   -0.619042       0        0          25.8
+
+By having access to the raw data, you are free to explore the data further in
+any you want. For instance, to plot the raw data captured by each sensor, type:
+
+
+```r
+# Plot raw GENEActive data, with ggplot
+library(ggplot2); library(tidyr)
+d <- gather(d, key = "sensor", value = "value", -timestamp)
 ggplot(d, aes(x = timestamp, y = value)) + 
   geom_line() + 
   facet_wrap(~sensor, scales = "free_y")
 ```
 
 <div class="figure" style="text-align: center">
-<img src="R-package-catalogue_files/figure-html/genearead-example-1.png" alt="Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz)." width="100%" />
-<p class="caption">(\#fig:genearead-example)Raw sensor data of a GENEActiv wrist-worn tri-axial accelerometer (down-sampled from 100Hz to 5Hz).</p>
+<img src="R-package-catalogue_files/figure-html/genearead-plot-example-1.png" alt="Raw sensor data of a GENEActiv accelerometer." width="100%" />
+<p class="caption">(\#fig:genearead-plot-example)Raw sensor data of a GENEActiv accelerometer.</p>
 </div>
+
+
+### GGIR
+\index{Packages!GGIR}
+
+Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data from
+three accelerometer brands: [ActiGraph](http://actigraphcorp.com/),
+[Axivity](http://axivity.com/), and [GENEActiv](https://www.geneactiv.org/)
+(GGIR includes package `GENEAread`). The package is in active development. New
+features are introduced and bugs are fixed on a regular basis. If you consider
+to use `GGIR` for your project, you may want to install the development version,
+which is on [GitHub](https://github.com/wadpac/GGIR).
+
+
+```r
+library(devtools)
+install_github("wadpac/GGIR", dependencies = TRUE)
+```
+
+`GGIR`'s main function is `g.shell.GGIR`, with which multiple accelerometer data
+files can be imported, calibrated, cleaned and analyzed. The example below shows
+an example configuration of this function. See `?g.shell.GGIR` (and `?g.part1`,
+?`g.part2`, to `g.part5`) to learn the meaning of each parameter. If you get
+lost or run into a problem, you can ask the package developers or other users
+for help via the GGIR Google discussion forum, at
+<https://groups.google.com/forum/#!forum/rpackageggir>. 
+
+
+```r
+# Import actigraphy data with GGIR
+library(GGIR)
+g.shell.GGIR(#=======================================
+             # Shell configuration:
+             mode = c(1, 2, 3, 4),
+             datadir="./data/raw", outputdir="./data",
+             desiredtz = "Europe/Amsterdam", # set timezone!
+             f0 = 1, f1 = 2, overwrite = FALSE,
+             #-------------------------------
+             # Part 1: read, calibrate, extract features
+             do.enmo = TRUE, do.anglez=TRUE,
+             chunksize = 1, printsummary = TRUE,
+             #-------------------------------
+             # Part 2:
+             strategy = 1, ndayswindow=7,
+             hrs.del.start = 0, hrs.del.end = 0,
+             maxdur = 8,  includedaycrit = 10,
+             winhr = c(5,10),
+             qlevels = c(c(1380/1440),c(1410/1440)),
+             qwindow = c(0,24),
+             ilevels = c(seq(0, 400, by=50), 8000),
+             mvpathreshold = c(100,125), 
+             bout.metric = 4, closedbout = FALSE,
+             #-------------------------------
+             # Part 3: Sleep detection
+             #-------------------------------
+             timethreshold= c(5), anglethreshold=5,
+             ignorenonwear = TRUE,
+             #-------------------------------
+             # Part 4: Sleep summaries (per person)
+             excludefirstlast = TRUE, includenightcrit = 16,
+             def.noc.sleep = c(21, 9),
+             relyonsleeplog = TRUE, nnights = 3,
+             #-----------------------------------
+             # Report generation
+             do.report = c(2, 4), visualreport = TRUE,
+             dofirstpage = TRUE, viewingwindow = 1
+)
+```
 
 ### PhysicalActivity
 \index{Packages!PhysicalActivity}
@@ -144,23 +220,19 @@ summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Residuals:
 #>     Min      1Q  Median      3Q     Max 
-#> -0.5956 -0.1212  0.0000  0.1357  0.4385 
+#> -2.0880 -0.7279 -0.1105  0.7210  2.2722 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.36714    0.06718   5.465 3.93e-07 ***
-#> depression.l1  0.08973    0.07629   1.176   0.2425    
-#> const          0.93354    0.13560   6.884 6.97e-10 ***
-#> outlier_39     0.09220    0.21186   0.435   0.6644    
-#> outlier_63     0.42999    0.21214   2.027   0.0456 *  
-#> outlier_66     0.38781    0.21056   1.842   0.0687 .  
-#> outlier_70    -1.34936    0.21162  -6.376 7.15e-09 ***
+#> activity.l1    0.35645    0.10062   3.542 0.000614 ***
+#> depression.l1  0.05224    0.09615   0.543 0.588219    
+#> const          0.13771    0.10399   1.324 0.188552    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.2091 on 92 degrees of freedom
-#> Multiple R-squared:  0.4994,	Adjusted R-squared:  0.4667 
-#> F-statistic: 15.29 on 6 and 92 DF,  p-value: 4.426e-12
+#> Residual standard error: 1.027 on 96 degrees of freedom
+#> Multiple R-squared:  0.117,	Adjusted R-squared:  0.09859 
+#> F-statistic: 6.359 on 2 and 96 DF,  p-value: 0.00255
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -206,11 +278,11 @@ knitr::kable(b)
 
 id          mean
 ---  -----------
-1     -0.3472872
-2      0.0404342
-3     -0.4546743
-4     -0.1825336
-5      0.2622946
+1     -0.4674685
+2     -0.3460365
+3     -0.1286195
+4     -0.3194260
+5      0.3089390
 
 A good introduction to `dplyr` can be found in the book 'R for Data Science'
 [@wickham2016r], which can be freely accessed online
@@ -440,11 +512,11 @@ powerSim(model1,
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 2 s
+#> Time elapsed: 0 h 0 m 1 s
 ```
 
 
-## simstudy
+### simstudy
 
 
 ```r
@@ -456,11 +528,11 @@ def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
 
 genData(5, def)
 #>    idnum nr       x1       y1
-#> 1:     1  7 14.42349 35.74583
-#> 2:     2  7 14.79304 39.23039
-#> 3:     3  7 10.79959 22.90367
-#> 4:     4  7 13.75197 36.85938
-#> 5:     5  7 15.65793 37.68300
+#> 1:     1  7 19.21663 50.01862
+#> 2:     2  7 14.59046 32.23880
+#> 3:     3  7 11.39000 33.07156
+#> 4:     4  7 18.96826 40.77855
+#> 5:     5  7 15.17646 38.37636
 ```
 
 

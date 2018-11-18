@@ -253,7 +253,7 @@ choosing `Tools > packages`. But you can also use the console, via the
 `install.package` function.
 
 A popular package, `tidyverse`, is used extensively in the examples of this
-manual. This package  comprises a set of popular packages from the creators
+manual. This package comprises a set of popular packages from the creators
 of RStudio, that greatly simplify working with R. So, while you are at it,
 install this package now.
 

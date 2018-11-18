@@ -43,6 +43,8 @@ ggplot(e, aes(x = t, y = s)) +
 ```
 
 ## Central Tendency and Variability
+\index{Central tendency}
+\index{Central Variability}
 
 Features do not necessarily have to be complex. Familiar measures of central
 tendency of EMA time-series, such as the mode or the mean, can be useful
@@ -67,7 +69,7 @@ the EMA scores of the first week (*M* = `r round(mean(e$s[e$t < 8]), 1)`), and
 underestimates the scores of the last week (*M* =
 `r round(mean(e$s[e$t > 13]), 1)`). If you use the overall mean as a feature of
 the time-series in your analyses, you ignore the mood improvements over the
-three-week period. In clinical research, your would probably not want to miss
+three-week period. In clinical research, you would probably not want to miss
 this other important feature.
 
 When a trend exists in a series, the overall standard deviation is
@@ -256,7 +258,7 @@ linear fashion. There seem to be periodic components in the series as well: the
 signal appears also to be characterized by a series of increases and decreases
 in the mean mood level. In the plot of the raw series, this is not immediately
 clear. However, if we "smooth" the series, by calculating the mean as it
-develops over time, the periodicity in the series is becoming more clear. Figure
+develops over time, the periodicity in the series is becoming clearer. Figure
 \@ref(fig:feat-plot-roll) illustrates this.
 
 ```{r feat-plot-roll, echo = FALSE, out.width = "100%", fig.asp = .3, fig.cap = "EMA mood series, with a rolling mean superposed."}

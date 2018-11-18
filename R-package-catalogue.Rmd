@@ -27,6 +27,7 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 
 ## Accelerometry
+\index{Accelerometry}
 
 Accelerometer data need considerable pre-processing before final analyses can be
 run. Raw data have to be read in from a variety of brand-specific file formats,
@@ -95,7 +96,7 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 
 \index{Vector autoregressive models}
 
-Vector auto-regressive (VAR) models can be used to detect lagged relationships
+Vector autoregressive (VAR) models can be used to detect lagged relationships
 between multiple time-series (see also Chapter \@ref(features)). In VAR, each
 variable is modeled as a linear function of past values (lags) of itself and of
 present and past values of other variables. When EMA is used to capture multiple
@@ -270,7 +271,7 @@ Science' [@wickham2016r] provides a good introduction.
 
 
 ## Mixed-effects Modeling
-\index{mixed effects}
+\index{Mixed effects}
 
 Several R-packages for mixed-effects modelling exist. The most popular are
 package *nlme* [@R-nlme] and package *lme4* [@Bates2015]. Both packages are

@@ -62,7 +62,7 @@ By having access to the raw data, you are free to explore the data further in
 any you want. For instance, to plot the raw data captured by each sensor, type:
 
 ```{r genearead-plot-example, out.with = "100%", fig.asp = .3, fig.cap = "Raw sensor data of a GENEActiv accelerometer.", message = FALSE, warning = FALSE}
-# Plot raw GENEActive data, with ggplot
+# Plot raw GENEActiv data, with ggplot
 library(ggplot2); library(tidyr)
 d <- gather(d, key = "sensor", value = "value", -timestamp)
 ggplot(d, aes(x = timestamp, y = value)) + 

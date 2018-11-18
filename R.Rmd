@@ -14,7 +14,6 @@ the R/RStudio-combo.
 
 
 ## Why R?
-\index{R and RStudio!Why R} 
 
 R, you may have been told, is for data scientists, methodologists, and
 scientific programmers only. It has a steep learning curve. If you are trained
@@ -187,7 +186,6 @@ ESMdata <- read.csv(url("https://tinyurl.com/yczmjdat"), row.names = NULL)
 ```
 
 ### Accessing your Data
-\index{R and RStudio!Data access} 
 
 Since the data is now in the environment (under the name `ESMdata`), you can use
 it in other R commands. For example, to produce a more detailed summary of the
@@ -234,7 +232,7 @@ point, the important milestone is that you have imported and accessed data in R.
 
 
 ## Extending R with Packages
-\index{R packages}
+\index{packages} 
 
 R's attractiveness lies in the ease with which it can be extended with new
 functionality. Through so-called packages, which can be freely downloaded from
@@ -290,7 +288,7 @@ devtools::install_github("jruwaard/emaph")
 
 
 ### Using Packages
-\index{R and RStudio!Packages} 
+\index{packages} 
 
 To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library` function. For example, to use package `tidyverse` and `emaph`, type:
 

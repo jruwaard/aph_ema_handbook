@@ -8,13 +8,12 @@
 ## What is EMA?
 
 \index{EMA} 
-\index{EMA synonyms} 
-\index{EMA synonyms!Ambulatory Assessment} 
-\index{EMA synonyms!Experience Sampling} 
-\index{EMA synonyms!Ambulatory Self-reporting} 
-\index{EMA synonyms!Real-time Data Capturing} 
-\index{EMA synonyms!Continuous Unified Electronic Diary Method} 
-\index{EMA synonyms!Intensive-longitudinal Study Design} 
+\index{Ambulatory Assessment} 
+\index{Experience Sampling} 
+\index{Ambulatory Self-reporting} 
+\index{Real-time Data Capturing} 
+\index{Continuous Unified Electronic Diary Method} 
+\index{Intensive-longitudinal Study Design} 
 
 Ecological Momentary Assessment (EMA) has many aliases. It is known as
 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment'
@@ -320,11 +319,11 @@ high-quality studies. Other general limitations considered include:
     
   - Unresolved methodological issues [@Dubad2018]
 
-\index{EMA research!Anxiety disorders}
-\index{EMA research!Eating disorders}
-\index{EMA research!Mood disorders}
-\index{EMA research!Substance-related disorders}
-\index{EMA research!Mental health/ Well-being}
+\index{Anxiety disorders}
+\index{Eating disorders}
+\index{Mood disorders}
+\index{Substance-related disorders}
+\index{Well-being}
 
 Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting various mental health conditions
 

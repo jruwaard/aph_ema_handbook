@@ -9,7 +9,8 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 
 | **Category**    |**Package**        | **Description**                         |
 |:----------------|:------------------|:----------------------------------------|
-| **Actigraphy**| GENEAread / GGIR | Import, pre-process and analyze raw accelerometer data. |
+| **Actigraphy**  | GENEAread         | Import GENEActiv data. |
+|                 | GGIR              | Import, pre-process and analyze accelerometer data.|
 |                 | PhysicalActivity  | Analyze Actigraph accelerometer data.   | 
 | **Data Management & Visual Exploration**| dplyr | Data transformation.            |
 |                 | ggplot2           | Create graphs.                          |

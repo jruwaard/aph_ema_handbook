@@ -73,7 +73,7 @@ grid.arrange(acc, gps, ncol=2, widths = c(500, 500))
 ## Actigraphy
 \index{Actigraphy} 
 \index{Accelerometer} 
-\index{GENEActive} 
+\index{GENEActiv} 
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure changes
 in acceleration forces (i.e., both static forces - earth's gravity - and dynamic
@@ -140,7 +140,7 @@ ggplot(d, aes(timestamp, value)) + geom_line() +
 ### Data cleaning
 \index{Datamanagement!Data cleaning}
 \index{GGIR}
-\index{GENEARead}
+\index{GENEAread}
 
 Raw accelerometer data need to be cleaned before analyses can be run. Typical
 data import work-flows include re-calibration (to reduce systematic measurement
@@ -150,7 +150,7 @@ filtering/aggregation (to smoothen the signal and reduce the impact of outliers,
 measurement error and occasional missing values). Study results can be highly
 dependent on these initial steps, which, unfortunately, are also complex and
 time-consuming. Specialized R-packages exist to help you with this (see, for
-example, package `GGIR` and `GENEARead`, which are described in more detail in
+example, package `GGIR` and `GENEAread`, which are described in more detail in
 Chapter \@ref(rcat)).
 
 

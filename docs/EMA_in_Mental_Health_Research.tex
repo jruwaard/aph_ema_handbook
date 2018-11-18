@@ -212,13 +212,10 @@ Amsterdam: APH Mental Health.
 
 \section{What is EMA?}\label{what-is-ema}
 
-\index{EMA} \index{EMA synonyms}
-\index{EMA synonyms!Ambulatory Assessment}
-\index{EMA synonyms!Experience Sampling}
-\index{EMA synonyms!Ambulatory Self-reporting}
-\index{EMA synonyms!Real-time Data Capturing}
-\index{EMA synonyms!Continuous Unified Electronic Diary Method}
-\index{EMA synonyms!Intensive-longitudinal Study Design}
+\index{EMA} \index{Ambulatory Assessment} \index{Experience Sampling}
+\index{Ambulatory Self-reporting} \index{Real-time Data Capturing}
+\index{Continuous Unified Electronic Diary Method}
+\index{Intensive-longitudinal Study Design}
 
 Ecological Momentary Assessment (EMA) has many aliases. It is known as
 `Experience Sampling' \citep{Larson1983}, `Ambulatory Assessment'
@@ -496,11 +493,9 @@ considered include:
   Unresolved methodological issues \citep{Dubad2018}
 \end{itemize}
 
-\index{EMA research!Anxiety disorders}
-\index{EMA research!Eating disorders}
-\index{EMA research!Mood disorders}
-\index{EMA research!Substance-related disorders}
-\index{EMA research!Mental health/ Well-being}
+\index{Anxiety disorders} \index{Eating disorders}
+\index{Mood disorders} \index{Substance-related disorders}
+\index{Well-being}
 
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tab:emareviews} A selection of reviews of EMA studies
@@ -705,8 +700,6 @@ to R. It has many useful features that greatly simplify R-work. We
 strongly advise you to adopt the R/RStudio-combo.
 
 \section{Why R?}\label{why-r}
-
-\index{R and RStudio!Why R}
 
 R, you may have been told, is for data scientists, methodologists, and
 scientific programmers only. It has a steep learning curve. If you are
@@ -924,8 +917,6 @@ line to download and import the example data.
 
 \subsection{Accessing your Data}\label{accessing-your-data}
 
-\index{R and RStudio!Data access}
-
 Since the data is now in the environment (under the name
 \texttt{ESMdata}), you can use it in other R commands. For example, to
 produce a more detailed summary of the first four columns of
@@ -1008,7 +999,7 @@ accessed data in R.
 
 \section{Extending R with Packages}\label{extending-r-with-packages}
 
-\index{R packages}
+\index{packages}
 
 R's attractiveness lies in the ease with which it can be extended with
 new functionality. Through so-called packages, which can be freely
@@ -1073,7 +1064,7 @@ install \texttt{emaph}, enter the following in the console:
 
 \subsection{Using Packages}\label{using-packages}
 
-\index{R and RStudio!Packages}
+\index{packages}
 
 To use packages, you have to tell R to load them, each session you want
 to work with them. You do this with the \texttt{library} function. For
@@ -1187,13 +1178,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.22317, df = 198, p-value = 0.8236}
+\CommentTok{#> t = -1.389, df = 197.91, p-value = 0.1664}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.3073181  0.2448314}
+\CommentTok{#>  -0.47646082  0.08264839}
 \CommentTok{#> sample estimates:}
-\CommentTok{#>    mean of x    mean of y }
-\CommentTok{#> 0.0005615944 0.0318049394}
+\CommentTok{#>   mean of x   mean of y }
+\CommentTok{#> -0.12890452  0.06800169}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1546,7 +1537,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4753}
+\CommentTok{#> [1] 0.4778}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2460,7 +2451,7 @@ wildlife telemetry research \citep{tomkiewicz2010global}.
 
 \section{Actigraphy}\label{actigraphy}
 
-\index{Actigraphy} \index{Accelerometer} \index{GENEActive}
+\index{Actigraphy} \index{Accelerometer} \index{GENEActiv}
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure
 changes in acceleration forces (i.e., both static forces - earth's
@@ -2513,7 +2504,7 @@ five seconds (0.2Hz), you would set the argument of this function to
 
 \subsection{Data cleaning}\label{data-cleaning}
 
-\index{Datamanagement!Data cleaning} \index{GGIR} \index{GENEARead}
+\index{Datamanagement!Data cleaning} \index{GGIR} \index{GENEAread}
 
 Raw accelerometer data need to be cleaned before analyses can be run.
 Typical data import work-flows include re-calibration (to reduce
@@ -2524,7 +2515,7 @@ smoothen the signal and reduce the impact of outliers, measurement error
 and occasional missing values). Study results can be highly dependent on
 these initial steps, which, unfortunately, are also complex and
 time-consuming. Specialized R-packages exist to help you with this (see,
-for example, package \texttt{GGIR} and \texttt{GENEARead}, which are
+for example, package \texttt{GGIR} and \texttt{GENEAread}, which are
 described in more detail in Chapter \ref{rcat}).
 
 \subsection{Feature Extraction}\label{feature-extraction}
@@ -5506,9 +5497,16 @@ research.}\tabularnewline
 \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \textbf{Actigraphy}\strut
 \end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
-GENEAread / GGIR\strut
+GENEAread\strut
 \end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
-Import, pre-process and analyze raw accelerometer data.\strut
+Import GENEActiv data.\strut
+\end{minipage}\tabularnewline
+\begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
+\strut
+\end{minipage} & \begin{minipage}[t]{0.23\columnwidth}\raggedright\strut
+GGIR\strut
+\end{minipage} & \begin{minipage}[t]{0.48\columnwidth}\raggedright\strut
+Import, pre-process and analyze accelerometer data.\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.21\columnwidth}\raggedright\strut
 \strut
@@ -5661,7 +5659,7 @@ each sensor, type:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Plot raw GENEActive data, with ggplot}
+\CommentTok{# Plot raw GENEActiv data, with ggplot}
 \KeywordTok{library}\NormalTok{(ggplot2); }\KeywordTok{library}\NormalTok{(tidyr)}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{gather}\NormalTok{(d, }\DataTypeTok{key =} \StringTok{"sensor"}\NormalTok{, }\DataTypeTok{value =} \StringTok{"value"}\NormalTok{, }\OperatorTok{-}\NormalTok{timestamp)}
 \KeywordTok{ggplot}\NormalTok{(d, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ timestamp, }\DataTypeTok{y =}\NormalTok{ value)) }\OperatorTok{+}\StringTok{ }
@@ -5828,24 +5826,23 @@ used to detect that changes in depression are positively related to past
 \KeywordTok{summary}\NormalTok{(models_found[[}\DecValTok{1}\NormalTok{]]}\OperatorTok{$}\NormalTok{varest}\OperatorTok{$}\NormalTok{varresult}\OperatorTok{$}\NormalTok{depression)}
 \CommentTok{#> }
 \CommentTok{#> Call:}
-\CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
+\CommentTok{#> lm(formula = y ~ -1 + ., data = datamat)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
-\CommentTok{#>     Min      1Q  Median      3Q     Max }
-\CommentTok{#> -2.3230 -0.6354  0.1325  0.6432  1.9003 }
+\CommentTok{#>      Min       1Q   Median       3Q      Max }
+\CommentTok{#> -2.36992 -0.79436 -0.00088  0.77342  2.28050 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
-\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.45171    0.08130   5.556 2.56e-07 ***}
-\CommentTok{#> depression.l1  0.12774    0.08780   1.455    0.149    }
-\CommentTok{#> depression.l2 -0.10841    0.08780  -1.235    0.220    }
-\CommentTok{#> const         -0.13312    0.09584  -1.389    0.168    }
+\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)   }
+\CommentTok{#> activity.l1    0.40754    0.12188   3.344  0.00118 **}
+\CommentTok{#> depression.l1 -0.02633    0.09717  -0.271  0.78696   }
+\CommentTok{#> const          0.08154    0.11179   0.729  0.46753   }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.937 on 94 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.2578, Adjusted R-squared:  0.2342 }
-\CommentTok{#> F-statistic: 10.89 on 3 and 94 DF,  p-value: 3.337e-06}
+\CommentTok{#> Residual standard error: 1.104 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.1044, Adjusted R-squared:  0.0857 }
+\CommentTok{#> F-statistic: 5.593 on 2 and 96 DF,  p-value: 0.005041}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5900,15 +5897,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.4859577\\
+1 & 0.1385073\\
 \hline
-2 & 0.1336322\\
+2 & 0.1768444\\
 \hline
-3 & -0.2648633\\
+3 & 0.0117487\\
 \hline
-4 & 0.3439284\\
+4 & -0.4791096\\
 \hline
-5 & -0.0146370\\
+5 & 0.4690814\\
 \hline
 \end{tabular}
 
@@ -6167,7 +6164,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6183,11 +6180,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 16.90259 42.52596}
-\CommentTok{#> 2:     2  7 14.75910 39.52481}
-\CommentTok{#> 3:     3  7 14.79069 43.30653}
-\CommentTok{#> 4:     4  7 17.04341 41.29668}
-\CommentTok{#> 5:     5  7 15.62857 37.55662}
+\CommentTok{#> 1:     1  7 13.22258 34.18324}
+\CommentTok{#> 2:     2  7 11.30530 30.60927}
+\CommentTok{#> 3:     3  7 15.28499 36.45162}
+\CommentTok{#> 4:     4  7 12.24029 35.20977}
+\CommentTok{#> 5:     5  7 18.90349 45.45360}
 \end{Highlighting}
 \end{Shaded}
 

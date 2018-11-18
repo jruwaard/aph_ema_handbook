@@ -320,70 +320,75 @@ code > span.in { font-style: italic; } /* Information */
 <tbody>
 <tr class="odd">
 <td align="left"><strong>Actigraphy</strong></td>
-<td align="left">GENEAread / GGIR</td>
-<td align="left">Import, pre-process and analyze raw accelerometer data.</td>
+<td align="left">GENEAread</td>
+<td align="left">Import GENEActiv data.</td>
 </tr>
 <tr class="even">
+<td align="left"></td>
+<td align="left">GGIR</td>
+<td align="left">Import, pre-process and analyze accelerometer data.</td>
+</tr>
+<tr class="odd">
 <td align="left"></td>
 <td align="left">PhysicalActivity</td>
 <td align="left">Analyze Actigraph accelerometer data.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><strong>Data Management &amp; Visual Exploration</strong></td>
 <td align="left">dplyr</td>
 <td align="left">Data transformation.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"></td>
 <td align="left">ggplot2</td>
 <td align="left">Create graphs.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">haven</td>
 <td align="left">Import and export SPSS data files.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"></td>
 <td align="left">lubridate</td>
 <td align="left">Manipulate date and time variables.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><strong>Auto-regressive modeling</strong></td>
 <td align="left">autovarCore</td>
 <td align="left">Automate the construction of vector autoregressive models.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><strong>Mixed-effects Modeling</strong></td>
 <td align="left">lme4</td>
 <td align="left">Fit linear and nonlinear mixed-effects models. Fast alternative to package <code>nlme</code>.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">nlme</td>
 <td align="left">Fit linear and nonlinear mixed effects models. Pre-dates package <code>lme4</code>, but is still used because it a provides advanced options to model correlational structures</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><strong>Simulation</strong></td>
 <td align="left">simr</td>
 <td align="left">Simulation-based power calculations for mixed models.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">simstudy</td>
 <td align="left">Simulate complex study data.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><strong>Symptom Networks</strong></td>
 <td align="left">bootnet</td>
 <td align="left">Assess the stability of symptom networks.</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"></td>
 <td align="left">qgraph</td>
 <td align="left">Estimate and plot symptom networks.</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><strong>Time series analysis</strong></td>
 <td align="left">lomb</td>
 <td align="left">Calculate the Lomb-Scargle Periodogram for unevenly sampled time series.</td>
@@ -455,7 +460,7 @@ d[<span class="dv">1</span><span class="op">:</span><span class="dv">4</span>, ]
 </tbody>
 </table>
 <p>By having access to the raw data, you are free to explore the data further in any you want. For instance, to plot the raw data captured by each sensor, type:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot raw GENEActive data, with ggplot</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot raw GENEActiv data, with ggplot</span>
 <span class="kw">library</span>(ggplot2); <span class="kw">library</span>(tidyr)
 d &lt;-<span class="st"> </span><span class="kw">gather</span>(d, <span class="dt">key =</span> <span class="st">&quot;sensor&quot;</span>, <span class="dt">value =</span> <span class="st">&quot;value&quot;</span>, <span class="op">-</span>timestamp)
 <span class="kw">ggplot</span>(d, <span class="kw">aes</span>(<span class="dt">x =</span> timestamp, <span class="dt">y =</span> value)) <span class="op">+</span><span class="st"> </span>
@@ -564,21 +569,21 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -1.99334 -0.53685  0.09276  0.63813  2.56697 </span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -1.8544 -0.6930 -0.1234  0.7793  1.9142 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
-<span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)  </span>
-<span class="co">#&gt; activity.l1    0.20611    0.10755   1.916   0.0583 .</span>
-<span class="co">#&gt; depression.l1  0.15118    0.10115   1.495   0.1384  </span>
-<span class="co">#&gt; depression.l2  0.05568    0.10018   0.556   0.5796  </span>
-<span class="co">#&gt; const         -0.20907    0.10256  -2.039   0.0443 *</span>
+<span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
+<span class="co">#&gt; activity.l1    0.59555    0.09460   6.295 9.71e-09 ***</span>
+<span class="co">#&gt; depression.l1 -0.04666    0.08652  -0.539  0.59099    </span>
+<span class="co">#&gt; depression.l2 -0.11804    0.08556  -1.380  0.17099    </span>
+<span class="co">#&gt; const         -0.26578    0.10061  -2.642  0.00966 ** </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9658 on 94 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.07734,    Adjusted R-squared:  0.04789 </span>
-<span class="co">#&gt; F-statistic: 2.626 on 3 and 94 DF,  p-value: 0.0549</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9619 on 94 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.3245, Adjusted R-squared:  0.3029 </span>
+<span class="co">#&gt; F-statistic: 15.05 on 3 and 94 DF,  p-value: 4.465e-08</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 </div>
@@ -613,23 +618,23 @@ knitr<span class="op">::</span><span class="kw">kable</span>(b)</code></pre></di
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="right">0.6447561</td>
+<td align="right">-0.1876783</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="right">-0.3991006</td>
+<td align="right">-0.3371631</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="right">-0.4384056</td>
+<td align="right">0.2036519</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="right">-0.0792706</td>
+<td align="right">-0.2084446</td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
-<td align="right">0.7267163</td>
+<td align="right">-0.1470799</td>
 </tr>
 </tbody>
 </table>
@@ -831,7 +836,7 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <span class="co">#&gt; Based on 10 simulations, (0 warnings, 0 errors)</span>
 <span class="co">#&gt; alpha = 0.05, nrow = 960</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Time elapsed: 0 h 0 m 2 s</span></code></pre></div>
+<span class="co">#&gt; Time elapsed: 0 h 0 m 1 s</span></code></pre></div>
 </div>
 <div id="simstudy" class="section level3">
 <h3><span class="header-section-number">12.4.2</span> simstudy</h3>
@@ -843,11 +848,11 @@ def &lt;-<span class="st"> </span><span class="kw">defData</span>(def, <span cla
 
 <span class="kw">genData</span>(<span class="dv">5</span>, def)
 <span class="co">#&gt;    idnum nr       x1       y1</span>
-<span class="co">#&gt; 1:     1  7 11.70663 30.89218</span>
-<span class="co">#&gt; 2:     2  7 15.24162 40.68140</span>
-<span class="co">#&gt; 3:     3  7 17.33442 37.07520</span>
-<span class="co">#&gt; 4:     4  7 18.96159 44.80643</span>
-<span class="co">#&gt; 5:     5  7 14.16724 38.54858</span></code></pre></div>
+<span class="co">#&gt; 1:     1  7 14.82438 32.49386</span>
+<span class="co">#&gt; 2:     2  7 10.73944 21.92317</span>
+<span class="co">#&gt; 3:     3  7 16.96491 40.69389</span>
+<span class="co">#&gt; 4:     4  7 19.88402 44.07655</span>
+<span class="co">#&gt; 5:     5  7 10.44471 27.32871</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">

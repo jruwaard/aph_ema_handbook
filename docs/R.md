@@ -15,7 +15,6 @@ the R/RStudio-combo.
 
 
 ## Why R?
-\index{R and RStudio!Why R} 
 
 R, you may have been told, is for data scientists, methodologists, and
 scientific programmers only. It has a steep learning curve. If you are trained
@@ -75,14 +74,10 @@ higher) of RStudio.
 If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
-
-}
-
-\caption{The RStudio Interface}(\#fig:r-interface)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
+<p class="caption">(\#fig:r-interface)The RStudio Interface</p>
+</div>
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -180,14 +175,10 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
-
-}
-
-\caption{RStudio's CSV import wizard.}(\#fig:r-import)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
+<p class="caption">(\#fig:r-import)RStudio's CSV import wizard.</p>
+</div>
 
 ### Using Functions to Import Data
 
@@ -203,7 +194,6 @@ ESMdata <- read.csv(url("https://tinyurl.com/yczmjdat"), row.names = NULL)
 ```
 
 ### Accessing your Data
-\index{R and RStudio!Data access} 
 
 Since the data is now in the environment (under the name `ESMdata`), you can use
 it in other R commands. For example, to produce a more detailed summary of the
@@ -279,7 +269,7 @@ point, the important milestone is that you have imported and accessed data in R.
 
 
 ## Extending R with Packages
-\index{R packages}
+\index{packages} 
 
 R's attractiveness lies in the ease with which it can be extended with new
 functionality. Through so-called packages, which can be freely downloaded from
@@ -337,7 +327,7 @@ devtools::install_github("jruwaard/emaph")
 
 
 ### Using Packages
-\index{R and RStudio!Packages} 
+\index{packages} 
 
 To use packages, you have to tell R to load them, each session you want to work with them. You do this with the `library` function. For example, to use package `tidyverse` and `emaph`, type:
 
@@ -367,14 +357,10 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/r-irriplot-1} 
-
-}
-
-\caption{Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.}(\#fig:r-irriplot)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3." width="100%" />
+<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.</p>
+</div>
 
 
 ## Getting Help
@@ -440,13 +426,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = -0.22317, df = 198, p-value = 0.8236
+#> t = 0.68687, df = 195.71, p-value = 0.493
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.3073181  0.2448314
+#>  -0.1698498  0.3513888
 #> sample estimates:
-#>    mean of x    mean of y 
-#> 0.0005615944 0.0318049394
+#>   mean of x   mean of y 
+#> -0.01949899 -0.11026846
 ```
 
 

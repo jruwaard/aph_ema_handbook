@@ -9,13 +9,12 @@
 ## What is EMA?
 
 \index{EMA} 
-\index{EMA synonyms} 
-\index{EMA synonyms!Ambulatory Assessment} 
-\index{EMA synonyms!Experience Sampling} 
-\index{EMA synonyms!Ambulatory Self-reporting} 
-\index{EMA synonyms!Real-time Data Capturing} 
-\index{EMA synonyms!Continuous Unified Electronic Diary Method} 
-\index{EMA synonyms!Intensive-longitudinal Study Design} 
+\index{Ambulatory Assessment} 
+\index{Experience Sampling} 
+\index{Ambulatory Self-reporting} 
+\index{Real-time Data Capturing} 
+\index{Continuous Unified Electronic Diary Method} 
+\index{Intensive-longitudinal Study Design} 
 
 Ecological Momentary Assessment (EMA) has many aliases. It is known as
 'Experience Sampling' [@Larson1983], 'Ambulatory Assessment'
@@ -44,24 +43,16 @@ activity, smartphone use or engagement on social media (see Figure
 sleep patterns, for example, may involve both a self-report sleep diary and an
 accelerometer sensor [@Meijden2016].
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.95\linewidth]{EMA_files/figure-latex/activeema-1} 
-
-}
-
-\caption{Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. }(\#fig:activeema)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="EMA_files/figure-html/activeema-1.png" alt="Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. " width="95%" />
+<p class="caption">(\#fig:activeema)Active EMA: data are collected by prompting questions to participants, for instance by using an EMA app such as Moodbuster. </p>
+</div>
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/passiveema-1} 
-
-}
-
-\caption{Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer.}(\#fig:passiveema)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="EMA_files/figure-html/passiveema-1.png" alt="Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer." width="100%" />
+<p class="caption">(\#fig:passiveema)Passive EMA: data are collected automatically, for instance by a wearable device such as the GENEActiv accelerometer.</p>
+</div>
 
 
 
@@ -146,14 +137,10 @@ idiographic research, measuring characteristics of (unique) individuals across
 time and context [@Shiffman2008]. This allows for a better understanding of
 the factors that account for the variability within and between individuals.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{EMA_files/figure-latex/idiographic-1} 
-
-}
-
-\caption{An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).}(\#fig:idiographic)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="EMA_files/figure-html/idiographic-1.png" alt="An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses)." width="100%" />
+<p class="caption">(\#fig:idiographic)An illustration of how group-level and individual-level processes can differ dramatically: the relationship between x on y is negative in the group (as shown by the descending regression line), but positive for individuals (marked by ellipses).</p>
+</div>
 
 ### To Understand the Dynamic Interplay between Symptoms
 
@@ -257,11 +244,11 @@ high-quality studies. Other general limitations considered include:
     
   - Unresolved methodological issues [@Dubad2018]
 
-\index{EMA research!Anxiety disorders}
-\index{EMA research!Eating disorders}
-\index{EMA research!Mood disorders}
-\index{EMA research!Substance-related disorders}
-\index{EMA research!Mental health/ Well-being}
+\index{Anxiety disorders}
+\index{Eating disorders}
+\index{Mood disorders}
+\index{Substance-related disorders}
+\index{Well-being}
 
 Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting various mental health conditions
 

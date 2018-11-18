@@ -264,7 +264,7 @@ with several reviews outlining recent findings in depression [@Telford2012;
 @Wichers2011; @burton2013], anxiety disorders [@Walz2014], and
 depression/bipolar disorder [@AanhetRot2012]. The potential of EMA for use
 among young populations showed promising results [@Dubad2018]. Innovations in
-mobile devices has improved the feasibility and popularity of ecological
+mobile devices have improved the feasibility and popularity of ecological
 momentary interventions (EMIs) for anxiety and depression [@schueller2017]. A
 systematic review and meta-analysis of EMIs reported small to medium effects on
 mental health [@Versluis2016].
@@ -336,7 +336,7 @@ Table: (\#tab:emareviews) A selection of reviews of EMA studies targeting variou
 | **Eating disorders**   | |
 | @Engel2016 | An overview of studies on eating disorders, obesity, and bariatric surgery using EMA.|
 | **Mood disorders**     | |
-| @AanhetRot2012         | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, pediatric populations, MDD/BD specificity, and links with neuroscience, |
+| @AanhetRot2012         | Provides an overview of EMA studies on correlates of mood, treatment effects, residual symptoms of remitted patients, pediatric populations, MDD/BD specificity, and links with neuroscience. |
 | @Aung2017              | Provides a conceptual review of passive sensing techniques for measuring, understanding, and treatment of mental illness. |
 | @burton2013            | Focuses on diurnal variations in activity levels among depressed individuals. |
 | @Telford2012           | Identifies six themes of EMA research in MDD: methodology, positive and negative affect, cortisol secretion, antidepressant treatment, work performance, and genetic risk factors. |

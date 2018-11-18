@@ -52,7 +52,7 @@ such a scale implies a mood state that ranges from negative to positive, rather
 than absent to present. Another alternative is to use Likert scales, where the
 scale center often reflects a neutral response.
 
-Plotting data from an unidimensional item in a graph is an easy way to visually
+Plotting data from a unidimensional item in a graph is an easy way to visually
 inspect within-subject change in general mood:
 
 ```{r moodplot, fig.cap = "34 weeks of mood data, from a single participant"}
@@ -91,7 +91,7 @@ positives) [@Vanrijsbergen2014].
 
 In order to make sure all constructs of interest are measured, you can also
 consider including a number of specific mood items in your EMA questionnaire,
-rather than one general uni-polar item or one bipolar item. For example, you can
+rather than one general unipolar item or one bipolar item. For example, you can
 ask respondents *"How depressed are you feeling right now?"* and *"How anxious are
 you feeling right now?"* [@Starr2012]. This strategy often leads to a
 'bag-of-items' approach, where single items from various sources, such as

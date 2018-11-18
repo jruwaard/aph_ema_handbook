@@ -12,6 +12,7 @@ signs?
 
 
 ## Critical Slowing Down
+\index{Critical Slowing Down}
 
 Critical Slowing Down (CSD) is a concept from dynamic systems theory. In dynamic
 systems, state transitions are preceded by a change in which the system reacts
@@ -36,6 +37,9 @@ considered). With another analysis technique, called 'Detrended Fluctuation
 Analysis', all lags can be considered.
 
 To conduct the analysis, we need three R packages:
+\index{tidyverse}
+\index{nonlinearTseries}
+\index{empah}
 
 - Raw EMA data of this study were published in the public domain
 [@Kossakowski2017]. We included the data in the `emaph` package.
@@ -45,7 +49,6 @@ going to use several functions from `tidyverse` packages.
 
 - DFA is implemented in package `nonlinearTseries`, so we will need that as well.
 
-\index{Packages!nonlinearTseries}
 
 ```{r csd-lib, warning=FALSE}
 # Required libraries for the CSD-study re-analysis.
@@ -141,9 +144,10 @@ csd <- csd %>% filter(nna == 0)
 
 
 ## Running the DFA
+\index{DFA analysis}
 
 We are now ready to run the DFA analysis. We split the full series in 31-day
-overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc),
+overlapping windows, in steps of 1 day (i.e., day 1-31, day 2-32, etc.),
 calculate the DFA of each window and save that value so that we can compare it
 to the weekly depression assessments.
 

@@ -25,7 +25,9 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 | **Time series analysis** | lomb     | Calculate the Lomb-Scargle Periodogram for unevenly sampled time series. |
 
 
+<<<<<<< HEAD
 ## Actigraphy
+\index{Actigraphy}
 
 Accelerometer data need considerable pre-processing before final analyses can be
 run. Raw data have to be read in from a variety of brand-specific file formats,
@@ -35,11 +37,11 @@ energy-expenditure measures, have to be calculated from imputed triangular (x,
 y, x) data, often in several time windows (i.e., epochs).
 
 ### GENEAread
-\index{Packages!GENEAread}
+\index{GENEAread}
 
 [GENEActiv](https://www.geneactiv.org/) is a wrist-worn accelerometer that is
 widely used in sleep and physical activity research. With package **GENEAread**
-[@R\_GENEAread], raw GENEActiv binary files can be imported into R for further
+[@R_GENEAread], raw GENEActiv binary files can be imported into R for further
 processing, as illustrated below.
 
 ```{r GENEAread-example, message = FALSE, warning = FALSE, eval = TRUE, include=TRUE, results='hide'}
@@ -70,7 +72,7 @@ ggplot(d, aes(x = timestamp, y = value)) +
 
 
 ### GGIR
-\index{Packages!GGIR}
+\index{GGIR}
 
 Package *GGIR* [@R-GGIR] is a package to pre-process raw accelerometry data from
 three accelerometer brands: [ActiGraph](http://actigraphcorp.com/),
@@ -135,7 +137,7 @@ g.shell.GGIR(#=======================================
 ```
 
 ### PhysicalActivity
-\index{Packages!PhysicalActivity}
+\index{PhysicalActivity}
 
 Package *PhysicalActivity* [@R-PhysicalActivity] provides an alternative to
 packages `GGIR` and `GENEAread`, when [ActiGraph](https://actigraphcorp.com/)
@@ -159,12 +161,12 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
 ## Autoregressive modeling
 
 ### autovarCore
-\index{Packages!autovarCore}
-\index{Packages!autovar}
+\index{autovarCore}
+\index{autovar}
 
 \index{Vector autoregressive models}
 
-Vector auto-regressive (VAR) models can be used to detect lagged relationships
+Vector autoregressive (VAR) models can be used to detect lagged relationships
 between multiple time-series (see also Chapter \@ref(features)). In VAR, each
 variable is modeled as a linear function of past values (lags) of itself and of
 present and past values of other variables. When EMA is used to capture multiple
@@ -202,7 +204,7 @@ summary(models_found[[1]]$varest$varresult$depression)
 [http://autovarcore.nl](https://autovarcore.nl/)
 
 ## Data management & Visual Exploration
-\index{Packages!tidyverse}
+\index{tidyverse}
 
 The *tidyverse* is a collection of well-designed packages, authored by the team
 behind RStudio, that together add a consistent, modern, and efficient extension
@@ -211,7 +213,7 @@ of base R functions. The `tidyverse` includes popular packages such as
 manipulation), and many more (see: <http://tidyverse.org> for a full list).
 
 ### dplyr
-\index{Packages!dplyr}
+\index{dplyr}
 
 Package *dplyr* [@R-dplyr] implements the 'split-apply-combine'-strategy.
 With `dplyr`, elementary data manipulations can be e chained (using the pipe
@@ -239,7 +241,7 @@ A good introduction to `dplyr` can be found in the book 'R for Data Science'
 
 
 ### ggplot2
-\index{Packages!ggplot2}
+\index{ggplot2}
 
 Package *ggplot2* [@wickham2016ggplot2] provides a collection of high-level
 plotting commands with which graphs can be build up in layers. It is based on
@@ -279,7 +281,7 @@ g + facet_wrap(~ ID)
 
 
 ### haven
-\index{Packages!haven}
+\index{haven}
 \index{SPSS}
 
 With package *haven* [@R-haven], SPSS, STATA and SAS files can be read into R.
@@ -300,7 +302,7 @@ attributes(d$Species)
 
 ### lubridate
 \index{Datetime variables}
-\index{Packages!lubridate}
+\index{lubridate}
 
 EMA data analyses frequently require manipulations of date-time variables. For
 this, package *lubridate* [@R-lubridate], which provides many functions for
@@ -339,7 +341,7 @@ Science' [@wickham2016r] provides a good introduction.
 
 
 ## Mixed-effects Modeling
-\index{mixed effects}
+\index{Mixed effects}
 
 Several R-packages for mixed-effects modelling exist. The most popular are
 package *nlme* [@R-nlme] and package *lme4* [@Bates2015]. Both packages are
@@ -347,7 +349,7 @@ actively used, as both provide unique functionalities.
 
 
 ### nlme
-\index{Packages!nlme}
+\index{nlme}
 
 Package *nlme* is introduced in Chapter \@ref(lmm). It is an older package (in
 comparison to `lme4`), that is still used a lot because it provides
@@ -363,7 +365,7 @@ fixef(fm)
 ```
 
 ### lme4
-\index{Packages!lme4}
+\index{lme4}
 
 Package *lme4* [@Bates2015] is a faster reimplementation of the
 mixed-effects model. With large data sets and complex hierarchical models, this
@@ -381,7 +383,7 @@ fixef(fm)
 ## Simulation
 
 ### simr
-\index{Packages!simr}
+\index{simr}
 
 With package *simr* [@Green2016], power of mixed-effects models can be
 determined via simulation. As illustrated below, the procedure requires the
@@ -455,7 +457,7 @@ can also be found at <http://psych-networks.com/tutorials/> and at
 <http://sachaepskamp.com/files/Cookbook.html>.
 
 ### qgraph
-\index{Packages!qgraph}
+\index{qgraph}
 
 Package *qgraph* [@Epskamp2012] can be used to fit, visualize and analyze
 graphical networks.
@@ -493,7 +495,7 @@ centralityPlot(g)
 
 
 ### bootnet
-\index{Packages!bootnet}
+\index{bootnet}
 
 In the interpretation of fitted networks, it is important to take the stability
 of the network into account. Intuitively, networks that are fit on small sample
@@ -526,7 +528,7 @@ plot(results, order = "mean")
 ### lomb
 \index{Lomb-Scargle periodogram}
 \index{Unevenly-sampled timeseries}
-\index{Packages!lomb}
+\index{lomb}
 
 Disturbances in circadian rhythms have been related to depressive symptoms
 [see, e.g., @Saeb2015]. With so-called periodograms, these circadian rhythms

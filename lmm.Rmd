@@ -98,7 +98,7 @@ ggplot(subset(d1, id %in% unique(d1$id)[1:6]),
 
 
 ## Fitting a Mixed Model in R 
-\index{Packages!nlme}
+\index{nlme}
 
 Now, let's fit a mixed model to the data, to see whether the simulation
 parameters are detected. For this, we will use the `lme` function, from package

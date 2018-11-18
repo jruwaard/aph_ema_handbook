@@ -116,11 +116,11 @@ Specialized software to import, pre-process and analyze raw sensor data is
 available for download. Like Ilumivu, researchers can define EMA sample
 schedules for their study in a web-based back-office
 (<https://xs.movisens.com>), using an online graphical editor. Once defined,
-participants can be invited to the study , through the back-office, to download
+participants can be invited to the study, through the back-office, to download
 the freely available Movisens App from Google Play store. The back-office also
 allows researchers to monitor study compliance and download data. 
 
-MoviSensXS EMA license costs vary from 500 to 10.000 euro's per year, depending
+MovisensXS EMA license costs vary from 500 to 10.000 euros per year, depending
 on the required number of 'credits' which are linked to the number of EMA
 responses. Prospect users can test platform, without functional restrictions,
 with a free test account. An EMA test-study can thus be set up and started in
@@ -142,7 +142,7 @@ psychological problems in daily life. The app has been validated for use in
 depression, bipolar disorder, and psychosis, with new scales currently being
 developed for a range of diseases including Parkinson's disease, pain,
 cardiology, hypertension, diabetes and Irritable Bowel Syndrome. It was also
-used in a EU-funded project to study gene-environment interaction in
+used in an EU-funded project to study gene-environment interaction in
 schizophrenia (<http://www.eu-gei.eu/about-the-project/psymate>). 
 
 The app is free to download for iOS and Android devices on Apple and Google play

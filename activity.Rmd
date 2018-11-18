@@ -1,5 +1,8 @@
 
 # Activity {#activity}
+\index{EMA!Passive EMA}
+\index{Actigraphy} 
+\index{Geotracking} 
 
 The objective study of human physical activity is one of the exciting
 opportunities created by passive EMA [@Marszalek2014]. Through technological
@@ -70,6 +73,7 @@ grid.arrange(acc, gps, ncol=2, widths = c(500, 500))
 ## Actigraphy
 \index{Actigraphy} 
 \index{Accelerometer} 
+\index{GENEActive} 
 
 Accelerometers are micro electro-mechanical systems (MEMS) that measure changes
 in acceleration forces (i.e., both static forces - earth's gravity - and dynamic
@@ -134,6 +138,9 @@ ggplot(d, aes(timestamp, value)) + geom_line() +
 
 
 ### Data cleaning
+\index{Datamanagement!Data cleaning}
+\index{GGIR}
+\index{GENEARead}
 
 Raw accelerometer data need to be cleaned before analyses can be run. Typical
 data import work-flows include re-calibration (to reduce systematic measurement

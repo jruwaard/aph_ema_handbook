@@ -242,7 +242,7 @@ the internet, specialized functions can be added to your work-space.
 
 ### Installing R-packages from CRAN
 \index{CRAN}
-\index{Packages!tidyverse}
+\index{tidyverse}
 
 Packages can be found at the CRAN website. To browse through the impressive list
 of available packages, see
@@ -253,7 +253,7 @@ choosing `Tools > packages`. But you can also use the console, via the
 `install.package` function.
 
 A popular package, `tidyverse`, is used extensively in the examples of this
-manual. This package  comprises a set of popular packages from the creators
+manual. This package comprises a set of popular packages from the creators
 of RStudio, that greatly simplify working with R. So, while you are at it,
 install this package now.
 
@@ -271,7 +271,7 @@ Dataset > From SPSS`, in RStudio's top-right pane).
 
 ### Installing R-packages from GitHub
 \index{GitHub}
-\index{Packages!emaph}
+\index{emaph}
 
 Not all packages are at CRAN. Many 'unofficial' packages are shared at a site
 called 'GitHub'. This book's companion R package `emaph`, for example, which
@@ -435,7 +435,7 @@ since excellent resources are readily available. A selection is presented below.
 
 
 ### Learn R, in R
-\index{Packages!swirl}
+\index{swirl}
 
 Package `swirl` contains a set of interactive courses that teach many aspects
 of the R language. See <http://swirlstats.com>

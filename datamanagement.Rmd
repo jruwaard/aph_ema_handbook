@@ -210,16 +210,16 @@ the final analyses.
 # JR - 2018-10-16
 # ------------------------------------------------------------
 
-# import raw baseline survey data (csv file) -----------------
-t0 <- read.csv("data/raw/survey/sur_t0_2018_05_01.csv")
+# T0 (baseline) data -----------------------------------------
+t0 <- read.csv("data/raw/surveys/sur_t0_2018_06_10.csv")
 
 # inject study ID, from study key file -----------------------
-keys <- read.csv("data/raw/keyfile.csv")
+keys <- read.csv("data/raw/key_file.csv")
 t0 <- merge(t0, keys)
 
 # only keep variables of interest ----------------------------
 # (gender, age, phq item scores)
-t0 <- t0[c("ID", "gender", "age", paste0("phq", 1:9)]
+t0 <- t0[c("ID", "gender", "age", paste0("phq", 1:9))]
 
 # turn gender into a proper factor ---------------------------
 t0$gender <- factor(t0$gender, levels = c("M", "F"))
@@ -236,7 +236,7 @@ t0[paste0("phq", 1:9)] <- lapply(
     x[x > 3] <- NA
   })
 
-# save cleaned baseline data --------------------------------- 
+# save cleaned T0 data --------------------------------- 
 save(t0, file = "data/cleaned/t0.Rda")
 ```
 
@@ -264,18 +264,16 @@ cleaned baseline data:
 # ------------------------------------------------------------
 
 # import cleaned baseline survey data ------------------------
-load("data/cleaned/baseline.Rda")
-load("data/cleaned/posttest.Rda")
+load("data/cleaned/t0.Rda")
+load("data/cleaned/t1.Rda")
 
 # add PHQ-9 sum scores ---------------------------------------
-baseline$phq9 <- rowSums(baseline[paste0("phq", 1:9)], 
-                         na.rm = TRUE)
-posttest$phq9 <- rowSums(posttest[paste0("phq", 1:9)], 
-                         na.rm = TRUE)
+t0$phq9 <- rowSums(t0[paste0("phq", 1:9)], na.rm = TRUE)
+t1$phq9 <- rowSums(t1[paste0("phq", 1:9)], na.rm = TRUE)
 
 # re-save baseline data --------------------------------------
-save(baseline, file = "data/cleaned/baseline.Rda")
-save(baseline, file = "data/cleaned/posttest.Rda")
+save(t0, file = "data/cleaned/t0.Rda")
+save(t0, file = "data/cleaned/t1.Rda")
 ```
 
 
@@ -397,9 +395,9 @@ the example structure. The example may be too elaborate, for example, if your
 project only requires you to analyze a single data file. The structure is
 certainly too limited to support the requirements of a full PHD project (such as
 the one described, for example, in the APH quality handbook - see
-<http://www.emgo.nl/kc/folders-and-file-names/>). But as we mentioned earlier,
-RStudio Projects are flexible. It should be relatively straightforward to scale
-down or scale up the example that we discussed.
+<http://www.emgo.nl/kc/folders-and-file-names/>). But RStudio Projects are
+flexible. It should be relatively straightforward to scale down or scale up the
+example that we discussed.
 
 If you want to learn more about data management with R and RStudio, the book
 *"Reproducible Research with R and RStudio"* [@gandrud2015] would be a good

@@ -15,7 +15,7 @@ utility of passive EMA of specific activities, such as (disturbed) sleep,
 sedentary behavior, and energy expenditure [see, e.g., @Feehan2018;
 @Gomersall2016], an increasing number of mental health studies are including
 activity tracking devices to better understand sleep habits, circadian rhythm
-disorders and depression [see, e.g., @Saeb2015; @Saunders2016;
+disorders and depression [see, e.g., @Cornet2017; @Saeb2015; @Saunders2016;
 @Tahmasian2013].
 
 In this chapter, we will discuss two passive EMA methods to assess physical
@@ -174,10 +174,11 @@ SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axial
 signals (the Euclidean distance in the three-dimensional space), i.e. *SVM =
 sqrt(x^2 + y^2 + z^2)*. ENMO is the corrected SVM: the vector magnitude
 remaining after removing one Earth Standard Gravitational unit (1g = 9.81
-m/s^2), i.e. *ENMO = SVM - 1*. The metrics can, in principle, be calculated for
-each {x, y, z}-data point in the raw series. Typically, however, the metrics are
-calculated for time-windows (called *epochs*), in which case the mean can be
-used to characterize the overall activity in each epoch.
+m/s^2), with negative values rounded to 0, i.e. *ENMO = max(SVM - 1, 0)*. The
+metrics can, in principle, be calculated for each {x, y, z}-data point in the
+raw series. Typically, however, the metrics are calculated for time-windows
+(called *epochs*), in which case the mean can be used to characterize the
+overall activity in each epoch.
 
 Figure \@ref(fig:genea-one-day) shows the development of ENMO over one day, as
 sampled by GENEActiv accelerometers that were worn by a young adult (top) and a
@@ -345,7 +346,7 @@ Table \@ref(tab:GPSfeatures) shows some of the measures that were derived from
 GPS data in a small (n = 28) study exploring the correlation between passive EMA
 data and depression, conducted by researchers of Northwestern University
 [@Saeb2015]. The researchers calculated total distance, location variance, the
-number of places visited by the participants during the study, the percentage of
+number of places visited by the participants during the study [using the K-means clustering algorithm, @Hartigan1979, which is implemented in R as `kmeans`), the percentage of
 time spent at home (defined as a top 3 place which was most frequently visited
 between 24:00 and 6:00), and circadian movement - the consistency of location
 visits based on a 24-hour period. Circadian movement and location variance were
@@ -358,7 +359,7 @@ Table: (\#tab:GPSfeatures) Activity measures that can be derived from a GPS data
 |:---------------------------------|:-------------------------------------------------------------|
 | Total distance between locations | $\sum(distance((lat_{t}, lon_{t}), (lat_{t-1}, lon_{t-1})$   |
 | Location variance                | $log(\sigma_{lon}^2 + \sigma_{lat}^2)$                       | 
-| N Places                         | k-means(loc, lat)                                            | 
+| N Places                         | kmeans(loc, lat)                                             | 
 | Home Stay                        | time(cluster[home]) / time(clusters[j])                      |
 | Circadian Movement               | $\sum(psd(f_i) / (i1 - i2)$                                  |
 

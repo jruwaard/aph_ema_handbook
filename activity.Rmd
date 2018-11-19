@@ -38,7 +38,7 @@ library(dplyr)
 library(emaph)
 
 ## acc
-d <-  subset(genea,
+d <-  subset(geneactiv,
               timestamp > "2018-06-01 13:00" &
               timestamp < "2018-06-01 14:00" &
               id == 1)
@@ -95,7 +95,7 @@ library(tidyr)
 library(dplyr)
 library(emaph)
 
-d <-  subset(genea,
+d <-  subset(geneactiv,
               timestamp > "2018-06-01 13:00" &
               timestamp < "2018-06-01 14:00" &
               id == 1)
@@ -125,7 +125,7 @@ function to `5 seconds`.
 # Plot one hour of emaph accelerometer data (of person 1).
 library(dplyr)
 library(ggplot2)
-d <-  subset(emaph::genea, timestamp > "2018-06-01 13:00" &
+d <-  subset(emaph::geneactiv, timestamp > "2018-06-01 13:00" &
                            timestamp < "2018-06-01 14:00" &
                            id == 1)
 d$timestamp <- lubridate::round_date(d$timestamp, "10 seconds")
@@ -194,7 +194,7 @@ library(lubridate)
 library(ggplot2)
 library(dplyr)
 
-d <-  subset(genea,
+d <-  subset(geneactiv,
               timestamp > "2018-06-02 00:00" &
               timestamp < "2018-06-02 23:59")
 d$time <- round_date(d$timestamp, "10 minutes")

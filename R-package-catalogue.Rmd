@@ -308,7 +308,7 @@ library(lubridate)
 library(ggplot2)
 library(dplyr)
 
-d <-  subset(genea,
+d <-  subset(geneactiv,
               timestamp > "2018-06-02 12:00" &
               timestamp < "2018-06-02 18:00")
 

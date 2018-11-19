@@ -206,10 +206,11 @@ questionnaire:
   - Positive affect (4): cheerful, content, energetic, enthusiastic.
 
 PA and NA were calculated as the average score across all items and weighted for
-their factor loadings [@Wichers2012]. In r, such a factor analysis can be
-executed as follows:
+their factor loadings [@Wichers2012]. Figure \@ref(fig:moodfa) shows the PA/NA
+factors in the data set of the 'Critical Slowing Down'-study
+[@VandeLeemput2014; see also Chapter \@ref(csd)].
 
-```{r moodfa, fig.cap = "Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)."}
+```{r moodfa, fig.cap = "Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).", echo = FALSE}
 # Performing a factor analysis.
 library(dplyr)
 library(tibble)
@@ -235,6 +236,5 @@ model <- fa(items2,
                scores = "regression")
 
 colnames(model$loadings) <- c("PA", "NA")
-psych::fa.diagram(model)
-
+psych::fa.diagram(model, cex = .8)
 ```

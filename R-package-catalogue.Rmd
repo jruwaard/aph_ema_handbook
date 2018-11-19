@@ -26,7 +26,6 @@ Table: (\#tab:rcat) List of R packages that are useful in EMA research.
 | **Time series analysis** | lomb     | Calculate the Lomb-Scargle Periodogram for unevenly sampled time series. |
 
 
-<<<<<<< HEAD
 ## Actigraphy
 \index{Actigraphy}
 
@@ -89,9 +88,9 @@ install_github("wadpac/GGIR", dependencies = TRUE)
 ```
 
 `GGIR`'s main function is `g.shell.GGIR`, with which multiple accelerometer data
-files can be imported, calibrated, cleaned and analyzed. The example below shows
-an example configuration of this function. See `?g.shell.GGIR` (and `?g.part1`,
-?`g.part2`, to `g.part5`) to learn the meaning of each parameter. If you get
+files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract variables on physical activity and sleep). The example below shows
+an example configuration. See `?g.shell.GGIR` (and `?g.part1`,
+?`g.part2`, to `g.part4`) to learn the meaning of each parameter. If you get
 lost or run into a problem, you can ask the package developers or other users
 for help via the GGIR Google discussion forum, at
 <https://groups.google.com/forum/#!forum/rpackageggir>. 
@@ -99,41 +98,25 @@ for help via the GGIR Google discussion forum, at
 ```{r ggir-example, eval = FALSE}
 # Import actigraphy data with GGIR
 library(GGIR)
-g.shell.GGIR(#=======================================
-             # Shell configuration:
-             mode = c(1, 2, 3, 4),
-             datadir="./data/raw", outputdir="./data",
-             desiredtz = "Europe/Amsterdam", # set timezone!
-             f0 = 1, f1 = 2, overwrite = FALSE,
-             #-------------------------------
-             # Part 1: read, calibrate, extract features
-             do.enmo = TRUE, do.anglez=TRUE,
-             chunksize = 1, printsummary = TRUE,
-             #-------------------------------
-             # Part 2:
-             strategy = 1, ndayswindow=7,
-             hrs.del.start = 0, hrs.del.end = 0,
-             maxdur = 8,  includedaycrit = 10,
-             winhr = c(5,10),
-             qlevels = c(c(1380/1440),c(1410/1440)),
-             qwindow = c(0,24),
-             ilevels = c(seq(0, 400, by=50), 8000),
-             mvpathreshold = c(100,125), 
-             bout.metric = 4, closedbout = FALSE,
-             #-------------------------------
-             # Part 3: Sleep detection
-             #-------------------------------
-             timethreshold= c(5), anglethreshold=5,
-             ignorenonwear = TRUE,
-             #-------------------------------
-             # Part 4: Sleep summaries (per person)
-             excludefirstlast = TRUE, includenightcrit = 16,
-             def.noc.sleep = c(21, 9),
-             relyonsleeplog = TRUE, nnights = 3,
-             #-----------------------------------
-             # Report generation
-             do.report = c(2, 4), visualreport = TRUE,
-             dofirstpage = TRUE, viewingwindow = 1
+g.shell.GGIR(
+  # Shell configuration ---------------------------
+  mode = c(1, 2, 3, 4), f1 = 2,
+  datadir = "./data/raw/actigraphy/", 
+  outputdir = "./data/cleaned/ggir",
+  desiredtz = "Europe/Amsterdam",
+  do.report = c(2, 4), visualreport = TRUE,
+  overwrite = TRUE,
+  # Part 1: import, calibrate, extract features ----
+  do.anglez=TRUE,
+  # Part 2: impute and summarize -------------------
+  strategy = 1, maxdur = 8,
+  hrs.del.start = 0, hrs.del.end = 0,
+  includedaycrit = 10, mvpathreshold = c(125), 
+  # Part 3: Sleep detection
+  timethreshold = c(5), anglethreshold = 5,
+  ignorenonwear = TRUE,
+  # Part 4: sleep summaries ------------------------
+  includenightcrit = 12,
 )
 ```
 
@@ -172,7 +155,7 @@ between multiple time-series (see also Chapter \@ref(features)). In VAR, each
 variable is modeled as a linear function of past values (lags) of itself and of
 present and past values of other variables. When EMA is used to capture multiple
 phenomena over time, VAR can provide insight in how these phenomena interact.
-One challenge in VAR modelling is that many alternative models potentially
+One challenge in VAR modeling is that many alternative models potentially
 exist, Package *autovarCore* [@R-autovarCore] was developed to help
 researchers to find the VAR model with the best fit to a given time-series data
 set. In the example below, function `autovar` is used to detect that
@@ -344,7 +327,7 @@ Science' [@wickham2016r] provides a good introduction.
 ## Mixed-effects Modeling
 \index{Mixed effects}
 
-Several R-packages for mixed-effects modelling exist. The most popular are
+Several R-packages for mixed-effects modeling exist. The most popular are
 package *nlme* [@R-nlme] and package *lme4* [@Bates2015]. Both packages are
 actively used, as both provide unique functionalities.
 

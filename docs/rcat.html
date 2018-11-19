@@ -483,9 +483,10 @@ Figure 12.1: Raw sensor data of a GENEActiv accelerometer.
 <p>Package <em>GGIR</em> <span class="citation">(Van Hees et al., <a href="#ref-R-GGIR">2018</a>)</span> is a package to pre-process raw accelerometry data from three accelerometer brands: <a href="http://actigraphcorp.com/">ActiGraph</a>, <a href="http://axivity.com/">Axivity</a>, and <a href="https://www.geneactiv.org/">GENEActiv</a> (GGIR includes package <code>GENEAread</code>). The package is in active development. New features are introduced and bugs are fixed on a regular basis. If you consider to use <code>GGIR</code> for your project, you may want to install the development version, which is on <a href="https://github.com/wadpac/GGIR">GitHub</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
 <span class="kw">install_github</span>(<span class="st">&quot;wadpac/GGIR&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<p><code>GGIR</code>’s main function is <code>g.shell.GGIR</code>, with which multiple accelerometer data files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract variables on physical activity and sleep). The example below shows an example configuration. See <code>?g.shell.GGIR</code> (and <code>?g.part1</code>, ?<code>g.part2</code>, to <code>g.part4</code>) to learn the meaning of each parameter. If you get lost or run into a problem, you can ask the package developers or other users for help via the GGIR Google discussion forum, at <a href="https://groups.google.com/forum/#!forum/rpackageggir" class="uri">https://groups.google.com/forum/#!forum/rpackageggir</a>.</p>
+<p><code>GGIR</code>’s main function is <code>g.shell.GGIR</code>, with which multiple accelerometer data files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract and summarize variables on physical activity and sleep). The example below shows an example configuration. See <code>?g.shell.GGIR</code> (and <code>?g.part1</code>, ?<code>g.part2</code>, to <code>g.part4</code>) to learn the meaning of each parameter. If you get lost or run into a problem, you can ask the package developers or other users for help via the GGIR Google discussion forum, at <a href="https://groups.google.com/forum/#!forum/rpackageggir" class="uri">https://groups.google.com/forum/#!forum/rpackageggir</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Import actigraphy data with GGIR</span>
 <span class="kw">library</span>(GGIR)
+
 <span class="kw">g.shell.GGIR</span>(
   <span class="co"># Shell configuration ---------------------------</span>
   <span class="dt">mode =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>), <span class="dt">f1 =</span> <span class="dv">2</span>,
@@ -565,19 +566,19 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
-<span class="co">#&gt; -2.9339 -0.6384 -0.1183  0.6371  2.6702 </span>
+<span class="co">#&gt; -2.2684 -0.6205 -0.1979  0.8409  2.1266 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.65127    0.10653   6.113 2.09e-08 ***</span>
-<span class="co">#&gt; depression.l1 -0.01591    0.08859  -0.180    0.858    </span>
-<span class="co">#&gt; const         -0.04562    0.10725  -0.425    0.672    </span>
+<span class="co">#&gt; activity.l1    0.54170    0.09759   5.551 2.52e-07 ***</span>
+<span class="co">#&gt; depression.l1  0.19994    0.08838   2.262   0.0259 *  </span>
+<span class="co">#&gt; const         -0.20473    0.10094  -2.028   0.0453 *  </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 1.066 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.2804, Adjusted R-squared:  0.2654 </span>
-<span class="co">#&gt; F-statistic:  18.7 on 2 and 96 DF,  p-value: 1.382e-07</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9865 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.2819, Adjusted R-squared:  0.267 </span>
+<span class="co">#&gt; F-statistic: 18.85 on 2 and 96 DF,  p-value: 1.248e-07</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 </div>
@@ -612,23 +613,23 @@ knitr<span class="op">::</span><span class="kw">kable</span>(b)</code></pre></di
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="right">0.4946231</td>
+<td align="right">-0.5949821</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="right">-0.3411584</td>
+<td align="right">0.0313533</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="right">0.1413029</td>
+<td align="right">0.0944947</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="right">0.1242166</td>
+<td align="right">-0.1869292</td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
-<td align="right">-0.2513943</td>
+<td align="right">0.4124060</td>
 </tr>
 </tbody>
 </table>
@@ -700,7 +701,7 @@ d &lt;-<span class="st"> </span><span class="kw">read_sav</span>(path)
 <span class="kw">library</span>(ggplot2)
 <span class="kw">library</span>(dplyr)
 
-d &lt;-<span class="st">  </span><span class="kw">subset</span>(genea,
+d &lt;-<span class="st">  </span><span class="kw">subset</span>(geneactiv,
               timestamp <span class="op">&gt;</span><span class="st"> &quot;2018-06-02 12:00&quot;</span> <span class="op">&amp;</span>
 <span class="st">              </span>timestamp <span class="op">&lt;</span><span class="st"> &quot;2018-06-02 18:00&quot;</span>)
 
@@ -842,11 +843,11 @@ def &lt;-<span class="st"> </span><span class="kw">defData</span>(def, <span cla
 
 <span class="kw">genData</span>(<span class="dv">5</span>, def)
 <span class="co">#&gt;    idnum nr       x1       y1</span>
-<span class="co">#&gt; 1:     1  7 14.81122 38.25032</span>
-<span class="co">#&gt; 2:     2  7 11.73306 31.83286</span>
-<span class="co">#&gt; 3:     3  7 18.12600 46.07667</span>
-<span class="co">#&gt; 4:     4  7 10.69889 28.74646</span>
-<span class="co">#&gt; 5:     5  7 14.70195 34.52728</span></code></pre></div>
+<span class="co">#&gt; 1:     1  7 11.76486 31.05347</span>
+<span class="co">#&gt; 2:     2  7 14.47253 32.65013</span>
+<span class="co">#&gt; 3:     3  7 13.93163 40.96484</span>
+<span class="co">#&gt; 4:     4  7 16.34513 35.37557</span>
+<span class="co">#&gt; 5:     5  7 18.18841 42.24141</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">

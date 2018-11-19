@@ -74,14 +74,10 @@ higher) of RStudio.
 If you open RStudio, you will be presented with the interface shown in Figure
 \@ref(fig:r-interface). RStudio's main window is divided in four panes (sub-windows), which further contain several tabbed windows.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.98\linewidth]{images/R/rstudio} 
-
-}
-
-\caption{The RStudio Interface}(\#fig:r-interface)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/R/rstudio.png" alt="The RStudio Interface" width="98%" />
+<p class="caption">(\#fig:r-interface)The RStudio Interface</p>
+</div>
 
 Commands are sent to R in the bottom-left pane, named "Console". To test
 this, move your cursor to the bottom line, immediately after the prompt sign
@@ -179,14 +175,10 @@ analysis. You will also find a new entry in the `Environment`-tab in
 the top-right pane. When you click the small arrow, at the left of the name, you
 will see a brief summary of the contents of the data.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.98\linewidth]{images/R/csv_import} 
-
-}
-
-\caption{RStudio's CSV import wizard.}(\#fig:r-import)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/R/csv_import.png" alt="RStudio's CSV import wizard." width="98%" />
+<p class="caption">(\#fig:r-import)RStudio's CSV import wizard.</p>
+</div>
 
 ### Using Functions to Import Data
 
@@ -365,14 +357,10 @@ ggplot(data = subset(csd, dayno <= 6),
   facet_wrap(~ dayno, nrow = 2)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R_files/figure-latex/r-irriplot-1} 
-
-}
-
-\caption{Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.}(\#fig:r-irriplot)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R_files/figure-html/r-irriplot-1.png" alt="Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3." width="100%" />
+<p class="caption">(\#fig:r-irriplot)Irritation levels of a single patient, in the first six days of an EMA study. Missing values were most prominent at day 1, and irritation varied most at day 3.</p>
+</div>
 
 
 ## Getting Help
@@ -438,13 +426,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 1.0472, df = 197.76, p-value = 0.2963
+#> t = -1.6398, df = 197.92, p-value = 0.1026
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.1249879  0.4080276
+#>  -0.48606765  0.04470909
 #> sample estimates:
 #>   mean of x   mean of y 
-#>  0.11294828 -0.02857159
+#> -0.12299219  0.09768709
 ```
 
 

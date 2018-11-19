@@ -57,19 +57,12 @@ d[1:4, ]
 ```
 
 
-\begin{tabular}{l|r|r|r|r|r|r}
-\hline
-timestamp & x & y & z & light & button & temperature\\
-\hline
-2012-05-23 16:47:50.0 & 0.023516 & -0.887283 & -0.100785 & 0 & 0 & 25.8\\
-\hline
-2012-05-23 16:47:50.2 & 0.027462 & -0.933668 & -0.140047 & 0 & 0 & 25.8\\
-\hline
-2012-05-23 16:47:50.4 & 0.035354 & -1.150135 & -0.030114 & 0 & 0 & 25.8\\
-\hline
-2012-05-23 16:47:50.5 & 0.070865 & -3.229764 & -0.619042 & 0 & 0 & 25.8\\
-\hline
-\end{tabular}
+timestamp                       x           y           z   light   button   temperature
+----------------------  ---------  ----------  ----------  ------  -------  ------------
+2012-05-23 16:47:50.0    0.023516   -0.887283   -0.100785       0        0          25.8
+2012-05-23 16:47:50.2    0.027462   -0.933668   -0.140047       0        0          25.8
+2012-05-23 16:47:50.4    0.035354   -1.150135   -0.030114       0        0          25.8
+2012-05-23 16:47:50.5    0.070865   -3.229764   -0.619042       0        0          25.8
 
 By having access to the raw data, you are free to explore the data further in
 any you want. For instance, to plot the raw data captured by each sensor, type:
@@ -84,14 +77,10 @@ ggplot(d, aes(x = timestamp, y = value)) +
   facet_wrap(~sensor, scales = "free_y")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/genearead-plot-example-1} 
-
-}
-
-\caption{Raw sensor data of a GENEActiv accelerometer.}(\#fig:genearead-plot-example)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/genearead-plot-example-1.png" alt="Raw sensor data of a GENEActiv accelerometer." width="100%" />
+<p class="caption">(\#fig:genearead-plot-example)Raw sensor data of a GENEActiv accelerometer.</p>
+</div>
 
 
 ### GGIR
@@ -112,17 +101,19 @@ install_github("wadpac/GGIR", dependencies = TRUE)
 ```
 
 `GGIR`'s main function is `g.shell.GGIR`, with which multiple accelerometer data
-files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract variables on physical activity and sleep). The example below shows
-an example configuration. See `?g.shell.GGIR` (and `?g.part1`,
-?`g.part2`, to `g.part4`) to learn the meaning of each parameter. If you get
-lost or run into a problem, you can ask the package developers or other users
-for help via the GGIR Google discussion forum, at
-<https://groups.google.com/forum/#!forum/rpackageggir>. 
+files can be imported, calibrated, cleaned (identify non-wear periods, impute
+data) and analyzed (extract and summarize variables on physical activity and
+sleep). The example below shows an example configuration. See `?g.shell.GGIR`
+(and `?g.part1`, ?`g.part2`, to `g.part4`) to learn the meaning of each
+parameter. If you get lost or run into a problem, you can ask the package
+developers or other users for help via the GGIR Google discussion forum, at
+<https://groups.google.com/forum/#!forum/rpackageggir>.
 
 
 ```r
 # Import actigraphy data with GGIR
 library(GGIR)
+
 g.shell.GGIR(
   # Shell configuration ---------------------------
   mode = c(1, 2, 3, 4), f1 = 2,
@@ -145,14 +136,10 @@ g.shell.GGIR(
 )
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{images/catalogue_R/GGIR_pdf} 
-
-}
-
-\caption{sample GGIR output}(\#fig:GGIR-pdf)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/catalogue_R/GGIR_pdf.png" alt="sample GGIR output" width="100%" />
+<p class="caption">(\#fig:GGIR-pdf)sample GGIR output</p>
+</div>
 
 ### PhysicalActivity
 \index{PhysicalActivity}
@@ -176,14 +163,10 @@ ggplot(d, aes(x = as.POSIXct(TimeStamp), y = counts)) +
   xlab("Time") + ylab("Activity Counts")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/fig15a-1} 
-
-}
-
-\caption{Activity Counts (5-minute windows), in a Three-day Accelerometer data set.}(\#fig:fig15a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/fig15a-1.png" alt="Activity Counts (5-minute windows), in a Three-day Accelerometer data set." width="100%" />
+<p class="caption">(\#fig:fig15a)Activity Counts (5-minute windows), in a Three-day Accelerometer data set.</p>
+</div>
 
 
 ## Autoregressive modeling
@@ -229,20 +212,20 @@ summary(models_found[[1]]$varest$varresult$depression)
 #> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
-#>      Min       1Q   Median       3Q      Max 
-#> -2.52626 -0.51668  0.00704  0.67312  2.48094 
+#>     Min      1Q  Median      3Q     Max 
+#> -2.2684 -0.6205 -0.1979  0.8409  2.1266 
 #> 
 #> Coefficients:
-#>                Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.638778   0.087992   7.260 1.01e-10 ***
-#> depression.l1 -0.082443   0.081824  -1.008    0.316    
-#> const          0.007891   0.097905   0.081    0.936    
+#>               Estimate Std. Error t value Pr(>|t|)    
+#> activity.l1    0.54170    0.09759   5.551 2.52e-07 ***
+#> depression.l1  0.19994    0.08838   2.262   0.0259 *  
+#> const         -0.20473    0.10094  -2.028   0.0453 *  
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.974 on 96 degrees of freedom
-#> Multiple R-squared:  0.3737,	Adjusted R-squared:  0.3606 
-#> F-statistic: 28.64 on 2 and 96 DF,  p-value: 1.764e-10
+#> Residual standard error: 0.9865 on 96 degrees of freedom
+#> Multiple R-squared:  0.2819,	Adjusted R-squared:  0.267 
+#> F-statistic: 18.85 on 2 and 96 DF,  p-value: 1.248e-07
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -285,21 +268,14 @@ knitr::kable(b)
 ```
 
 
-\begin{tabular}{l|r}
-\hline
-id & mean\\
-\hline
-1 & -0.2738254\\
-\hline
-2 & -0.1800270\\
-\hline
-3 & 0.1525548\\
-\hline
-4 & 0.1147911\\
-\hline
-5 & 0.2550401\\
-\hline
-\end{tabular}
+
+id          mean
+---  -----------
+1     -0.5949821
+2      0.0313533
+3      0.0944947
+4     -0.1869292
+5      0.4124060
 
 A good introduction to `dplyr` can be found in the book 'R for Data Science'
 [@wickham2016r], which can be freely accessed online
@@ -346,14 +322,10 @@ g <- g + geom_smooth(method = "loess"); g
 g + facet_wrap(~ ID)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-1} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-2} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-3} \includegraphics[width=0.45\linewidth]{R-package-catalogue_files/figure-latex/ggplot2-example-4} 
-
-}
-
-\caption{Plotting layers with ggplot2}(\#fig:ggplot2-example)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/ggplot2-example-1.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-2.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-3.png" alt="Plotting layers with ggplot2" width="45%" /><img src="R-package-catalogue_files/figure-html/ggplot2-example-4.png" alt="Plotting layers with ggplot2" width="45%" />
+<p class="caption">(\#fig:ggplot2-example)Plotting layers with ggplot2</p>
+</div>
 
 
 ### haven
@@ -406,7 +378,7 @@ library(lubridate)
 library(ggplot2)
 library(dplyr)
 
-d <-  subset(genea,
+d <-  subset(geneactiv,
               timestamp > "2018-06-02 12:00" &
               timestamp < "2018-06-02 18:00")
 
@@ -419,23 +391,14 @@ d <- d %>% group_by(id, epoch) %>%
 ```
 
 
-\begin{tabular}{r|l|r}
-\hline
-id & epoch & svm\\
-\hline
-1 & 2018-06-02 12:00:00 & 0.0235192\\
-\hline
-1 & 2018-06-02 12:15:00 & 0.0486871\\
-\hline
-1 & 2018-06-02 12:30:00 & 0.0477664\\
-\hline
-1 & 2018-06-02 12:45:00 & 0.0128911\\
-\hline
-1 & 2018-06-02 13:00:00 & 0.0005558\\
-\hline
-1 & 2018-06-02 13:15:00 & 0.0027089\\
-\hline
-\end{tabular}
+ id  epoch                        svm
+---  --------------------  ----------
+  1  2018-06-02 12:00:00    0.0235192
+  1  2018-06-02 12:15:00    0.0486871
+  1  2018-06-02 12:30:00    0.0477664
+  1  2018-06-02 12:45:00    0.0128911
+  1  2018-06-02 13:00:00    0.0005558
+  1  2018-06-02 13:15:00    0.0027089
 
 To learn more about handling dates and times with `lubridate`,
 [Chapter 16](http://r4ds.had.co.nz/dates-and-times.html) of the book 'R for Data
@@ -542,7 +505,7 @@ powerSim(model1,
 #> Based on 10 simulations, (0 warnings, 0 errors)
 #> alpha = 0.05, nrow = 960
 #> 
-#> Time elapsed: 0 h 0 m 2 s
+#> Time elapsed: 0 h 0 m 1 s
 ```
 
 
@@ -558,11 +521,11 @@ def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
 
 genData(5, def)
 #>    idnum nr       x1       y1
-#> 1:     1  7 15.09602 37.20751
-#> 2:     2  7 17.72179 41.40412
-#> 3:     3  7 13.00572 33.37782
-#> 4:     4  7 10.86516 28.14085
-#> 5:     5  7 13.91522 33.78071
+#> 1:     1  7 11.76486 31.05347
+#> 2:     2  7 14.47253 32.65013
+#> 3:     3  7 13.93163 40.96484
+#> 4:     4  7 16.34513 35.37557
+#> 5:     5  7 18.18841 42.24141
 ```
 
 
@@ -614,14 +577,10 @@ g <- qgraph(cor_auto(d, detectOrdinal = FALSE),
        layout = "spring")
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/qgraph-example-1} 
-
-}
-
-\caption{Network of mood items from CSD data set}(\#fig:qgraph-example)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="R-package-catalogue_files/figure-html/qgraph-example-1.png" alt="Network of mood items from CSD data set" width="100%" />
+<p class="caption">(\#fig:qgraph-example)Network of mood items from CSD data set</p>
+</div>
 
 Package `qgraph` also provides functions to analyze qualities of fitted networks, such as the centrality of nodes in the network. In the network plot above, node `md_s` appears to be a central node in the network. This is confirmed by calling `centralityPlot`:   
 
@@ -630,9 +589,7 @@ Package `qgraph` also provides functions to analyze qualities of fitted networks
 centralityPlot(g)
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/qgraph-centrality-example-1} \end{center}
+<img src="R-package-catalogue_files/figure-html/qgraph-centrality-example-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ### bootnet
@@ -664,9 +621,7 @@ results <- bootnet(g, nBoots = 50, verbose = FALSE)
 plot(results, order = "mean")
 ```
 
-
-
-\begin{center}\includegraphics[width=1\linewidth]{R-package-catalogue_files/figure-latex/bootnet-example-1} \end{center}
+<img src="R-package-catalogue_files/figure-html/bootnet-example-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 ## Timeseries analysis
@@ -692,6 +647,4 @@ data(ibex, package = "lomb")
 lomb::lsp(ibex[2:3]) 
 ```
 
-
-
-\begin{center}\includegraphics[width=0.98\linewidth]{R-package-catalogue_files/figure-latex/lmob-example-1} \end{center}
+<img src="R-package-catalogue_files/figure-html/lmob-example-1.png" width="98%" style="display: block; margin: auto;" />

@@ -399,16 +399,16 @@ Figure 4.2: Example project directory structure
 <span class="co"># JR - 2018-10-16</span>
 <span class="co"># ------------------------------------------------------------</span>
 
-<span class="co"># import raw baseline survey data (csv file) -----------------</span>
-t0 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/survey/sur_t0_2018_05_01.csv&quot;</span>)
+<span class="co"># T0 (baseline) data -----------------------------------------</span>
+t0 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/surveys/sur_t0_2018_06_10.csv&quot;</span>)
 
 <span class="co"># inject study ID, from study key file -----------------------</span>
-keys &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/keyfile.csv&quot;</span>)
+keys &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/key_file.csv&quot;</span>)
 t0 &lt;-<span class="st"> </span><span class="kw">merge</span>(t0, keys)
 
 <span class="co"># only keep variables of interest ----------------------------</span>
 <span class="co"># (gender, age, phq item scores)</span>
-t0 &lt;-<span class="st"> </span>t0[<span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>, <span class="st">&quot;gender&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)]
+t0 &lt;-<span class="st"> </span>t0[<span class="kw">c</span>(<span class="st">&quot;ID&quot;</span>, <span class="st">&quot;gender&quot;</span>, <span class="st">&quot;age&quot;</span>, <span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>))]
 
 <span class="co"># turn gender into a proper factor ---------------------------</span>
 t0<span class="op">$</span>gender &lt;-<span class="st"> </span><span class="kw">factor</span>(t0<span class="op">$</span>gender, <span class="dt">levels =</span> <span class="kw">c</span>(<span class="st">&quot;M&quot;</span>, <span class="st">&quot;F&quot;</span>))
@@ -425,7 +425,7 @@ t0[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span
     x[x <span class="op">&gt;</span><span class="st"> </span><span class="dv">3</span>] &lt;-<span class="st"> </span><span class="ot">NA</span>
   })
 
-<span class="co"># save cleaned baseline data --------------------------------- </span>
+<span class="co"># save cleaned T0 data --------------------------------- </span>
 <span class="kw">save</span>(t0, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t0.Rda&quot;</span>)</code></pre></div>
 <p>The code snippet above illustrates the importance of code documentation. You may struggle to immediately understand some of the code segments. For instance, you might not be familiar with the <code>paste0</code> function that is used to create the names of the variables that contain the PHQ-9 item scores. Fortunately, however, the comment (the lines starting with <code>#</code>) make it clear that the function is used to select individual PHQ-9 items. Comment your code. You will do yourself and your colleagues a big favor by making it much easier to quickly grasp the meaning of your code.</p>
 </div>
@@ -438,18 +438,16 @@ t0[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span
 <span class="co"># ------------------------------------------------------------</span>
 
 <span class="co"># import cleaned baseline survey data ------------------------</span>
-<span class="kw">load</span>(<span class="st">&quot;data/cleaned/baseline.Rda&quot;</span>)
-<span class="kw">load</span>(<span class="st">&quot;data/cleaned/posttest.Rda&quot;</span>)
+<span class="kw">load</span>(<span class="st">&quot;data/cleaned/t0.Rda&quot;</span>)
+<span class="kw">load</span>(<span class="st">&quot;data/cleaned/t1.Rda&quot;</span>)
 
 <span class="co"># add PHQ-9 sum scores ---------------------------------------</span>
-baseline<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">rowSums</span>(baseline[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], 
-                         <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
-posttest<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">rowSums</span>(posttest[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], 
-                         <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+t0<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">rowSums</span>(t0[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
+t1<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">rowSums</span>(t1[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span class="dv">1</span><span class="op">:</span><span class="dv">9</span>)], <span class="dt">na.rm =</span> <span class="ot">TRUE</span>)
 
 <span class="co"># re-save baseline data --------------------------------------</span>
-<span class="kw">save</span>(baseline, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/baseline.Rda&quot;</span>)
-<span class="kw">save</span>(baseline, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/posttest.Rda&quot;</span>)</code></pre></div>
+<span class="kw">save</span>(t0, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t0.Rda&quot;</span>)
+<span class="kw">save</span>(t0, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t1.Rda&quot;</span>)</code></pre></div>
 </div>
 <div id="combine" class="section level2">
 <h2><span class="header-section-number">4.7</span> Combine</h2>

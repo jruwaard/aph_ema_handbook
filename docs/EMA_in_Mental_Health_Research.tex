@@ -1178,13 +1178,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = 1.0472, df = 197.76, p-value = 0.2963}
+\CommentTok{#> t = 0.59946, df = 197.86, p-value = 0.5496}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.1249879  0.4080276}
+\CommentTok{#>  -0.1999010  0.3745107}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#>  0.11294828 -0.02857159}
+\CommentTok{#> -0.01464935 -0.10195419}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1537,7 +1537,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4818}
+\CommentTok{#> [1] 0.4822}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2487,7 +2487,7 @@ five seconds (0.2Hz), you would set the argument of this function to
 \CommentTok{# Plot one hour of emaph accelerometer data (of person 1).}
 \KeywordTok{library}\NormalTok{(dplyr)}
 \KeywordTok{library}\NormalTok{(ggplot2)}
-\NormalTok{d <-}\StringTok{  }\KeywordTok{subset}\NormalTok{(emaph}\OperatorTok{::}\NormalTok{genea, timestamp }\OperatorTok{>}\StringTok{ "2018-06-01 13:00"} \OperatorTok{&}
+\NormalTok{d <-}\StringTok{  }\KeywordTok{subset}\NormalTok{(emaph}\OperatorTok{::}\NormalTok{geneactiv, timestamp }\OperatorTok{>}\StringTok{ "2018-06-01 13:00"} \OperatorTok{&}
 \StringTok{                           }\NormalTok{timestamp }\OperatorTok{<}\StringTok{ "2018-06-01 14:00"} \OperatorTok{&}
 \StringTok{                           }\NormalTok{id }\OperatorTok{==}\StringTok{ }\DecValTok{1}\NormalTok{)}
 \NormalTok{d}\OperatorTok{$}\NormalTok{timestamp <-}\StringTok{ }\NormalTok{lubridate}\OperatorTok{::}\KeywordTok{round_date}\NormalTok{(d}\OperatorTok{$}\NormalTok{timestamp, }\StringTok{"10 seconds"}\NormalTok{)}
@@ -5700,19 +5700,20 @@ development version, which is on
 
 \texttt{GGIR}'s main function is \texttt{g.shell.GGIR}, with which
 multiple accelerometer data files can be imported, calibrated, cleaned
-(identify non-wear periods, impute data) and analyzed (extract variables
-on physical activity and sleep). The example below shows an example
-configuration. See \texttt{?g.shell.GGIR} (and \texttt{?g.part1},
-?\texttt{g.part2}, to \texttt{g.part4}) to learn the meaning of each
-parameter. If you get lost or run into a problem, you can ask the
-package developers or other users for help via the GGIR Google
-discussion forum, at
+(identify non-wear periods, impute data) and analyzed (extract and
+summarize variables on physical activity and sleep). The example below
+shows an example configuration. See \texttt{?g.shell.GGIR} (and
+\texttt{?g.part1}, ?\texttt{g.part2}, to \texttt{g.part4}) to learn the
+meaning of each parameter. If you get lost or run into a problem, you
+can ask the package developers or other users for help via the GGIR
+Google discussion forum, at
 \url{https://groups.google.com/forum/\#!forum/rpackageggir}.
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# Import actigraphy data with GGIR}
 \KeywordTok{library}\NormalTok{(GGIR)}
+
 \KeywordTok{g.shell.GGIR}\NormalTok{(}
   \CommentTok{# Shell configuration ---------------------------}
   \DataTypeTok{mode =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{f1 =} \DecValTok{2}\NormalTok{,}
@@ -5823,19 +5824,19 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.52626 -0.51668  0.00704  0.67312  2.48094 }
+\CommentTok{#> -2.43414 -0.34274  0.08556  0.48940  2.00398 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
-\CommentTok{#>                Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.638778   0.087992   7.260 1.01e-10 ***}
-\CommentTok{#> depression.l1 -0.082443   0.081824  -1.008    0.316    }
-\CommentTok{#> const          0.007891   0.097905   0.081    0.936    }
+\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
+\CommentTok{#> activity.l1   0.559758   0.088822   6.302  8.9e-09 ***}
+\CommentTok{#> depression.l1 0.009637   0.086561   0.111    0.912    }
+\CommentTok{#> const         0.048668   0.096022   0.507    0.613    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.974 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.3737, Adjusted R-squared:  0.3606 }
-\CommentTok{#> F-statistic: 28.64 on 2 and 96 DF,  p-value: 1.764e-10}
+\CommentTok{#> Residual standard error: 0.9139 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.2928, Adjusted R-squared:  0.2781 }
+\CommentTok{#> F-statistic: 19.88 on 2 and 96 DF,  p-value: 5.985e-08}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5890,15 +5891,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & -0.2738254\\
+1 & 0.4762840\\
 \hline
-2 & -0.1800270\\
+2 & 0.0998677\\
 \hline
-3 & 0.1525548\\
+3 & -0.3389929\\
 \hline
-4 & 0.1147911\\
+4 & -0.6569904\\
 \hline
-5 & 0.2550401\\
+5 & 0.2259757\\
 \hline
 \end{tabular}
 
@@ -6013,7 +6014,7 @@ windows.
 \KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{library}\NormalTok{(dplyr)}
 
-\NormalTok{d <-}\StringTok{  }\KeywordTok{subset}\NormalTok{(genea,}
+\NormalTok{d <-}\StringTok{  }\KeywordTok{subset}\NormalTok{(geneactiv,}
 \NormalTok{              timestamp }\OperatorTok{>}\StringTok{ "2018-06-02 12:00"} \OperatorTok{&}
 \StringTok{              }\NormalTok{timestamp }\OperatorTok{<}\StringTok{ "2018-06-02 18:00"}\NormalTok{)}
 
@@ -6157,7 +6158,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6173,11 +6174,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 15.09602 37.20751}
-\CommentTok{#> 2:     2  7 17.72179 41.40412}
-\CommentTok{#> 3:     3  7 13.00572 33.37782}
-\CommentTok{#> 4:     4  7 10.86516 28.14085}
-\CommentTok{#> 5:     5  7 13.91522 33.78071}
+\CommentTok{#> 1:     1  7 10.21397 27.09114}
+\CommentTok{#> 2:     2  7 17.12704 38.51710}
+\CommentTok{#> 3:     3  7 13.83150 30.96668}
+\CommentTok{#> 4:     4  7 11.60709 27.85283}
+\CommentTok{#> 5:     5  7 13.44091 34.95997}
 \end{Highlighting}
 \end{Shaded}
 

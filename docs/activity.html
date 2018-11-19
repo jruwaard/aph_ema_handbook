@@ -328,7 +328,7 @@ Figure 6.2: One hour of raw data collected with a wrist-worn GENEActiv accelerom
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Plot one hour of emaph accelerometer data (of person 1).</span>
 <span class="kw">library</span>(dplyr)
 <span class="kw">library</span>(ggplot2)
-d &lt;-<span class="st">  </span><span class="kw">subset</span>(emaph<span class="op">::</span>genea, timestamp <span class="op">&gt;</span><span class="st"> &quot;2018-06-01 13:00&quot;</span> <span class="op">&amp;</span>
+d &lt;-<span class="st">  </span><span class="kw">subset</span>(emaph<span class="op">::</span>geneactiv, timestamp <span class="op">&gt;</span><span class="st"> &quot;2018-06-01 13:00&quot;</span> <span class="op">&amp;</span>
 <span class="st">                           </span>timestamp <span class="op">&lt;</span><span class="st"> &quot;2018-06-01 14:00&quot;</span> <span class="op">&amp;</span>
 <span class="st">                           </span>id <span class="op">==</span><span class="st"> </span><span class="dv">1</span>)
 d<span class="op">$</span>timestamp &lt;-<span class="st"> </span>lubridate<span class="op">::</span><span class="kw">round_date</span>(d<span class="op">$</span>timestamp, <span class="st">&quot;10 seconds&quot;</span>)

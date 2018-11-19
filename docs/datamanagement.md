@@ -21,14 +21,10 @@ creating new projects from RStudio's file menu. To create a new project, choose
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{images/datamanagement/new_project} 
-
-}
-
-\caption{creating a project in RStudio}(\#fig:fig5a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/datamanagement/new_project.png" alt="creating a project in RStudio" width="70%" />
+<p class="caption">(\#fig:fig5a)creating a project in RStudio</p>
+</div>
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
@@ -78,14 +74,10 @@ in which data were collected via:
     
 3.  an accelerometer to assess activity levels.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.65\linewidth]{images/datamanagement/project_tree} 
-
-}
-
-\caption{Example project directory structure}(\#fig:dm-project-tree)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="65%" />
+<p class="caption">(\#fig:dm-project-tree)Example project directory structure</p>
+</div>
 
 
 ## Data
@@ -174,16 +166,16 @@ the final analyses.
 # JR - 2018-10-16
 # ------------------------------------------------------------
 
-# import raw baseline survey data (csv file) -----------------
-t0 <- read.csv("data/raw/survey/sur_t0_2018_05_01.csv")
+# T0 (baseline) data -----------------------------------------
+t0 <- read.csv("data/raw/surveys/sur_t0_2018_06_10.csv")
 
 # inject study ID, from study key file -----------------------
-keys <- read.csv("data/raw/keyfile.csv")
+keys <- read.csv("data/raw/key_file.csv")
 t0 <- merge(t0, keys)
 
 # only keep variables of interest ----------------------------
 # (gender, age, phq item scores)
-t0 <- t0[c("ID", "gender", "age", paste0("phq", 1:9)]
+t0 <- t0[c("ID", "gender", "age", paste0("phq", 1:9))]
 
 # turn gender into a proper factor ---------------------------
 t0$gender <- factor(t0$gender, levels = c("M", "F"))
@@ -200,7 +192,7 @@ t0[paste0("phq", 1:9)] <- lapply(
     x[x > 3] <- NA
   })
 
-# save cleaned baseline data --------------------------------- 
+# save cleaned T0 data --------------------------------- 
 save(t0, file = "data/cleaned/t0.Rda")
 ```
 
@@ -229,18 +221,16 @@ cleaned baseline data:
 # ------------------------------------------------------------
 
 # import cleaned baseline survey data ------------------------
-load("data/cleaned/baseline.Rda")
-load("data/cleaned/posttest.Rda")
+load("data/cleaned/t0.Rda")
+load("data/cleaned/t1.Rda")
 
 # add PHQ-9 sum scores ---------------------------------------
-baseline$phq9 <- rowSums(baseline[paste0("phq", 1:9)], 
-                         na.rm = TRUE)
-posttest$phq9 <- rowSums(posttest[paste0("phq", 1:9)], 
-                         na.rm = TRUE)
+t0$phq9 <- rowSums(t0[paste0("phq", 1:9)], na.rm = TRUE)
+t1$phq9 <- rowSums(t1[paste0("phq", 1:9)], na.rm = TRUE)
 
 # re-save baseline data --------------------------------------
-save(baseline, file = "data/cleaned/baseline.Rda")
-save(baseline, file = "data/cleaned/posttest.Rda")
+save(t0, file = "data/cleaned/t0.Rda")
+save(t0, file = "data/cleaned/t1.Rda")
 ```
 
 

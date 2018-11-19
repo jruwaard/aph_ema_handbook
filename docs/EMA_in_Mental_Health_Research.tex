@@ -1178,13 +1178,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = 0.59946, df = 197.86, p-value = 0.5496}
+\CommentTok{#> t = -0.037492, df = 195.95, p-value = 0.9701}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.1999010  0.3745107}
+\CommentTok{#>  -0.2859183  0.2752502}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.01464935 -0.10195419}
+\CommentTok{#> -0.08158503 -0.07625095}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1537,7 +1537,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4822}
+\CommentTok{#> [1] 0.4746}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1728,12 +1728,18 @@ project in which data were collected via:
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.65\linewidth]{images/datamanagement/project_tree} 
+{\centering \includegraphics[width=0.5\linewidth]{images/datamanagement/project_tree} 
 
 }
 
 \caption{Example project directory structure}\label{fig:dm-project-tree}
 \end{figure}
+
+The full project, including example data and R-scripts, is available for
+download at \url{https://tinyurl.com/yd7mx32c}. Download, unzip, and
+double-click the `APH EMA Project.Rproj' file, to open the project in
+RStudio. Note that this is a large download (\textasciitilde{}134MB),
+because it contains large accelerometer data files.
 
 \section{Data}\label{data}
 
@@ -1750,8 +1756,8 @@ sub-directories per data type.
 
 In `data/raw/survey', we find two files: 1) `sur\_t0\_2018\_06\_10.csv',
 containing the results of the demographic questionnaire and the PHQ-9
-pre-test, and 2) and `sur\_t1\_2018\_06\_10.csv', containing the results
-of the PHQ-9 post-test. In exports of such survey systems, data from all
+pre-test, and 2) `sur\_t1\_2018\_06\_10.csv', containing the results of
+the PHQ-9 post-test. In exports of such survey systems, data from all
 participants are typically stored in one file per assessment moment.
 Note how the export date is added to the files, to make sure that future
 updates are only used in the analysis when explicitly noted.
@@ -1797,7 +1803,7 @@ ID & Survey\_ID & EMA\_ID & Actigraphy\_ID\tabularnewline
 \endhead
 P001 & QM01221 & 192.A102.83A & A001\tabularnewline
 P002 & QM01228 & 192.B106.73X & A002\tabularnewline
-P003 & QM01230 & 192.B220.00N &\tabularnewline
+P003 & QM01230 & 192.B220.00N & NA\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -1821,9 +1827,9 @@ crucial.
 
 The code snippet below illustrates the kind of data transformations that
 you can expect to find in an import script. With a few lines of code,
-raw baseline questionnaire data are imported into R, participant id's
+raw baseline questionnaire data are imported into R, participant ID's
 that are specific to the data collection system are replaced by the
-proper global study id, variables of interest are selected, data ranges
+proper global study ID, variables of interest are selected, data ranges
 are checked (and corrected if needed), and data types are set (in
 accordance to the study code-book). Finally, the cleaned data set is
 saved to the `data/cleaned' folder, ready for further processing in the
@@ -1836,16 +1842,16 @@ final analyses.
 \CommentTok{# JR - 2018-10-16}
 \CommentTok{# ------------------------------------------------------------}
 
-\CommentTok{# import raw baseline survey data (csv file) -----------------}
-\NormalTok{t0 <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/survey/sur_t0_2018_05_01.csv"}\NormalTok{)}
+\CommentTok{# T0 (baseline) data -----------------------------------------}
+\NormalTok{t0 <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/surveys/sur_t0_2018_06_10.csv"}\NormalTok{)}
 
 \CommentTok{# inject study ID, from study key file -----------------------}
-\NormalTok{keys <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/keyfile.csv"}\NormalTok{)}
+\NormalTok{keys <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/key_file.csv"}\NormalTok{)}
 \NormalTok{t0 <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(t0, keys)}
 
 \CommentTok{# only keep variables of interest ----------------------------}
 \CommentTok{# (gender, age, phq item scores)}
-\NormalTok{t0 <-}\StringTok{ }\NormalTok{t0[}\KeywordTok{c}\NormalTok{(}\StringTok{"ID"}\NormalTok{, }\StringTok{"gender"}\NormalTok{, }\StringTok{"age"}\NormalTok{, }\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)]}
+\NormalTok{t0 <-}\StringTok{ }\NormalTok{t0[}\KeywordTok{c}\NormalTok{(}\StringTok{"ID"}\NormalTok{, }\StringTok{"gender"}\NormalTok{, }\StringTok{"age"}\NormalTok{, }\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{))]}
 
 \CommentTok{# turn gender into a proper factor ---------------------------}
 \NormalTok{t0}\OperatorTok{$}\NormalTok{gender <-}\StringTok{ }\KeywordTok{factor}\NormalTok{(t0}\OperatorTok{$}\NormalTok{gender, }\DataTypeTok{levels =} \KeywordTok{c}\NormalTok{(}\StringTok{"M"}\NormalTok{, }\StringTok{"F"}\NormalTok{))}
@@ -1862,7 +1868,7 @@ final analyses.
 \NormalTok{    x[x }\OperatorTok{>}\StringTok{ }\DecValTok{3}\NormalTok{] <-}\StringTok{ }\OtherTok{NA}
 \NormalTok{  \})}
 
-\CommentTok{# save cleaned baseline data --------------------------------- }
+\CommentTok{# save cleaned T0 data --------------------------------- }
 \KeywordTok{save}\NormalTok{(t0, }\DataTypeTok{file =} \StringTok{"data/cleaned/t0.Rda"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
@@ -1893,18 +1899,16 @@ the item scores in the cleaned baseline data:
 \CommentTok{# ------------------------------------------------------------}
 
 \CommentTok{# import cleaned baseline survey data ------------------------}
-\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/baseline.Rda"}\NormalTok{)}
-\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/posttest.Rda"}\NormalTok{)}
+\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/t0.Rda"}\NormalTok{)}
+\KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/t1.Rda"}\NormalTok{)}
 
 \CommentTok{# add PHQ-9 sum scores ---------------------------------------}
-\NormalTok{baseline}\OperatorTok{$}\NormalTok{phq9 <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(baseline[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }
-                         \DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
-\NormalTok{posttest}\OperatorTok{$}\NormalTok{phq9 <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(posttest[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }
-                         \DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{t0}\OperatorTok{$}\NormalTok{phq9 <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(t0[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{t1}\OperatorTok{$}\NormalTok{phq9 <-}\StringTok{ }\KeywordTok{rowSums}\NormalTok{(t1[}\KeywordTok{paste0}\NormalTok{(}\StringTok{"phq"}\NormalTok{, }\DecValTok{1}\OperatorTok{:}\DecValTok{9}\NormalTok{)], }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{)}
 
 \CommentTok{# re-save baseline data --------------------------------------}
-\KeywordTok{save}\NormalTok{(baseline, }\DataTypeTok{file =} \StringTok{"data/cleaned/baseline.Rda"}\NormalTok{)}
-\KeywordTok{save}\NormalTok{(baseline, }\DataTypeTok{file =} \StringTok{"data/cleaned/posttest.Rda"}\NormalTok{)}
+\KeywordTok{save}\NormalTok{(t0, }\DataTypeTok{file =} \StringTok{"data/cleaned/t0.Rda"}\NormalTok{)}
+\KeywordTok{save}\NormalTok{(t0, }\DataTypeTok{file =} \StringTok{"data/cleaned/t1.Rda"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1958,23 +1962,23 @@ standard R data structure.
 \CommentTok{# N = 1 Analysis (P001)}
 \CommentTok{# note: part of manuscript!}
 \CommentTok{# JR - 2018-10-16}
-\CommentTok{# ------------------------------------------------------------}
+\CommentTok{# -------------------------------------------------------------}
 
 \CommentTok{# import cleaned EMA mood study data --------------------------}
 \KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/ema.Rda"}\NormalTok{)}
 
-\CommentTok{# create and save Figure 1: EMA mood data, of participant P001 }
-\NormalTok{d <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(mood, ID }\OperatorTok{==}\StringTok{ "P001"}\NormalTok{)}
+\CommentTok{# create and save Figure 1: EMA mood data, of P001 ------------ }
+\NormalTok{d <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(ema, ID }\OperatorTok{==}\StringTok{ "P001"} \OperatorTok{&}\StringTok{ }\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(valence))}
 \KeywordTok{pdf}\NormalTok{(}\DataTypeTok{file =} \StringTok{"scripts/published/figure1.pdf"}\NormalTok{)}
-\KeywordTok{plot}\NormalTok{(mood }\OperatorTok{~}\StringTok{ }\NormalTok{time, d)}
+\KeywordTok{plot}\NormalTok{(valence }\OperatorTok{~}\StringTok{ }\NormalTok{timestamp, d, }\DataTypeTok{type =} \StringTok{"b"}\NormalTok{)}
 \KeywordTok{dev.off}\NormalTok{()}
 
-\CommentTok{# run a regression model on P001 mood data}
-\NormalTok{fm <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(mood }\OperatorTok{~}\StringTok{ }\NormalTok{time, d)}
+\CommentTok{# run a regression model on P001 mood data --------------------}
+\NormalTok{fm <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(valence }\OperatorTok{~}\StringTok{ }\NormalTok{timestamp, d)}
 \KeywordTok{summary}\NormalTok{(fm)}
 
-\CommentTok{# save regression results }
-\KeywordTok{save}\NormalTok{(fm, }\DataTypeTok{file =} \StringTok{"scripts/published/P001_regression.Rda"}\NormalTok{)}
+\CommentTok{# save regression results -------------------------------------}
+\KeywordTok{save}\NormalTok{(fm, }\DataTypeTok{file =} \StringTok{"scripts/publish/P001_regression.Rda"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2077,10 +2081,9 @@ be too elaborate, for example, if your project only requires you to
 analyze a single data file. The structure is certainly too limited to
 support the requirements of a full PHD project (such as the one
 described, for example, in the APH quality handbook - see
-\url{http://www.emgo.nl/kc/folders-and-file-names/}). But as we
-mentioned earlier, RStudio Projects are flexible. It should be
-relatively straightforward to scale down or scale up the example that we
-discussed.
+\url{http://www.emgo.nl/kc/folders-and-file-names/}). But RStudio
+Projects are flexible. It should be relatively straightforward to scale
+down or scale up the example that we discussed.
 
 If you want to learn more about data management with R and RStudio, the
 book \emph{``Reproducible Research with R and RStudio''}
@@ -5824,19 +5827,19 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.43414 -0.34274  0.08556  0.48940  2.00398 }
+\CommentTok{#> -2.18344 -0.58304 -0.06999  0.71413  2.00996 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1   0.559758   0.088822   6.302  8.9e-09 ***}
-\CommentTok{#> depression.l1 0.009637   0.086561   0.111    0.912    }
-\CommentTok{#> const         0.048668   0.096022   0.507    0.613    }
+\CommentTok{#> activity.l1    0.57308    0.09893   5.793 8.76e-08 ***}
+\CommentTok{#> depression.l1 -0.09833    0.08763  -1.122    0.265    }
+\CommentTok{#> const          0.11831    0.09740   1.215    0.227    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.9139 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.2928, Adjusted R-squared:  0.2781 }
-\CommentTok{#> F-statistic: 19.88 on 2 and 96 DF,  p-value: 5.985e-08}
+\CommentTok{#> Residual standard error: 0.9558 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.2685, Adjusted R-squared:  0.2533 }
+\CommentTok{#> F-statistic: 17.62 on 2 and 96 DF,  p-value: 3.028e-07}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5891,15 +5894,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.4762840\\
+1 & 0.0763054\\
 \hline
-2 & 0.0998677\\
+2 & 0.1949383\\
 \hline
-3 & -0.3389929\\
+3 & -0.0200923\\
 \hline
-4 & -0.6569904\\
+4 & -0.4782672\\
 \hline
-5 & 0.2259757\\
+5 & -0.5206676\\
 \hline
 \end{tabular}
 
@@ -6158,7 +6161,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6174,11 +6177,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 10.21397 27.09114}
-\CommentTok{#> 2:     2  7 17.12704 38.51710}
-\CommentTok{#> 3:     3  7 13.83150 30.96668}
-\CommentTok{#> 4:     4  7 11.60709 27.85283}
-\CommentTok{#> 5:     5  7 13.44091 34.95997}
+\CommentTok{#> 1:     1  7 12.72141 33.10472}
+\CommentTok{#> 2:     2  7 16.80707 46.23012}
+\CommentTok{#> 3:     3  7 14.94203 36.85655}
+\CommentTok{#> 4:     4  7 19.54930 47.94539}
+\CommentTok{#> 5:     5  7 13.55486 40.19600}
 \end{Highlighting}
 \end{Shaded}
 

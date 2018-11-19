@@ -21,10 +21,14 @@ creating new projects from RStudio's file menu. To create a new project, choose
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
-<div class="figure" style="text-align: center">
-<img src="images/datamanagement/new_project.png" alt="creating a project in RStudio" width="70%" />
-<p class="caption">(\#fig:fig5a)creating a project in RStudio</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{images/datamanagement/new_project} 
+
+}
+
+\caption{creating a project in RStudio}(\#fig:fig5a)
+\end{figure}
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
@@ -74,11 +78,16 @@ in which data were collected via:
     
 3.  an accelerometer to assess activity levels.
 
-<div class="figure" style="text-align: center">
-<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="65%" />
-<p class="caption">(\#fig:dm-project-tree)Example project directory structure</p>
-</div>
+\begin{figure}
 
+{\centering \includegraphics[width=0.5\linewidth]{images/datamanagement/project_tree} 
+
+}
+
+\caption{Example project directory structure}(\#fig:dm-project-tree)
+\end{figure}
+
+The full project, including example data and R-scripts, is available for download at <https://tinyurl.com/yd7mx32c>. Download, unzip, and double-click the 'APH EMA Project.Rproj' file, to open the project in RStudio. Note that this is a large download (~134MB), because it contains large accelerometer data files.
 
 ## Data
 \index{Datamanagement!Raw data}
@@ -93,7 +102,7 @@ the 'data/raw"-directory', in separate sub-directories per data type.
 
 In 'data/raw/survey', we find two files: 1) 'sur_t0_2018_06_10.csv',
 containing the results of the demographic questionnaire and the PHQ-9 pre-test,
-and 2) and 'sur_t1_2018_06_10.csv', containing the results of the PHQ-9
+and 2) 'sur_t1_2018_06_10.csv', containing the results of the PHQ-9
 post-test. In exports of such survey systems, data from all participants are
 typically stored in one file per assessment moment. Note how the export date is
 added to the files, to make sure that future updates are only used in the
@@ -132,7 +141,7 @@ Table: (\#tab:tab5a) Example Study Key-file
 |:-----------|:---------|:---------------|:---------------|
 | P001       |  QM01221 | 192.A102.83A   | A001           |
 | P002       |  QM01228 | 192.B106.73X   | A002           |
-| P003       |  QM01230 | 192.B220.00N   |                |
+| P003       |  QM01230 | 192.B220.00N   | NA             |
 
 
 ## Import Scripts
@@ -152,8 +161,8 @@ import routines is crucial.
 
 The code snippet below illustrates the kind of data transformations that you can
 expect to find in an import script. With a few lines of code, raw baseline
-questionnaire data are imported into R, participant id's that are specific to
-the data collection system are replaced by the proper global study id, variables
+questionnaire data are imported into R, participant ID's that are specific to
+the data collection system are replaced by the proper global study ID, variables
 of interest are selected, data ranges are checked (and corrected if needed), and
 data types are set (in accordance to the study code-book). Finally, the cleaned
 data set is saved to the 'data/cleaned' folder, ready for further processing in
@@ -262,7 +271,6 @@ source("scripts/import/calc_actigraphy.R")
 
 
 ## Reproducible Analyses
-
 When raw data stored, imported and cleaned, final analyses can be run. By basing
 these analyses on the cleaned data in 'data/cleaned', you ensure that these
 analyses can be fully reproduced from the raw study data.
@@ -280,23 +288,23 @@ journal), and the regression results are saved in a standard R data structure.
 # N = 1 Analysis (P001)
 # note: part of manuscript!
 # JR - 2018-10-16
-# ------------------------------------------------------------
+# -------------------------------------------------------------
 
 # import cleaned EMA mood study data --------------------------
 load("data/cleaned/ema.Rda")
 
-# create and save Figure 1: EMA mood data, of participant P001 
-d <- subset(mood, ID == "P001")
+# create and save Figure 1: EMA mood data, of P001 ------------ 
+d <- subset(ema, ID == "P001" & !is.na(valence))
 pdf(file = "scripts/published/figure1.pdf")
-plot(mood ~ time, d)
+plot(valence ~ timestamp, d, type = "b")
 dev.off()
 
-# run a regression model on P001 mood data
-fm <- lm(mood ~ time, d)
+# run a regression model on P001 mood data --------------------
+fm <- lm(valence ~ timestamp, d)
 summary(fm)
 
-# save regression results 
-save(fm, file = "scripts/published/P001_regression.Rda")
+# save regression results -------------------------------------
+save(fm, file = "scripts/publish/P001_regression.Rda")
 ```
 
 R's ability to save the results of analyses to disk is yet another example of
@@ -355,9 +363,9 @@ the example structure. The example may be too elaborate, for example, if your
 project only requires you to analyze a single data file. The structure is
 certainly too limited to support the requirements of a full PHD project (such as
 the one described, for example, in the APH quality handbook - see
-<http://www.emgo.nl/kc/folders-and-file-names/>). But as we mentioned earlier,
-RStudio Projects are flexible. It should be relatively straightforward to scale
-down or scale up the example that we discussed.
+<http://www.emgo.nl/kc/folders-and-file-names/>). But RStudio Projects are
+flexible. It should be relatively straightforward to scale down or scale up the
+example that we discussed.
 
 If you want to learn more about data management with R and RStudio, the book
 *"Reproducible Research with R and RStudio"* [@gandrud2015] would be a good

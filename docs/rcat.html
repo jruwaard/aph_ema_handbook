@@ -562,23 +562,24 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="kw">summary</span>(models_found[[<span class="dv">1</span>]]<span class="op">$</span>varest<span class="op">$</span>varresult<span class="op">$</span>depression)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
-<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
+<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
-<span class="co">#&gt; -2.2684 -0.6205 -0.1979  0.8409  2.1266 </span>
+<span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
+<span class="co">#&gt; -2.65654 -0.56578 -0.02801  0.70844  1.98821 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
 <span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.54170    0.09759   5.551 2.52e-07 ***</span>
-<span class="co">#&gt; depression.l1  0.19994    0.08838   2.262   0.0259 *  </span>
-<span class="co">#&gt; const         -0.20473    0.10094  -2.028   0.0453 *  </span>
+<span class="co">#&gt; activity.l1    0.51765    0.08808   5.877 6.32e-08 ***</span>
+<span class="co">#&gt; depression.l1  0.08996    0.09101   0.988    0.325    </span>
+<span class="co">#&gt; depression.l2  0.04669    0.09060   0.515    0.608    </span>
+<span class="co">#&gt; const         -0.07002    0.09352  -0.749    0.456    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9865 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.2819, Adjusted R-squared:  0.267 </span>
-<span class="co">#&gt; F-statistic: 18.85 on 2 and 96 DF,  p-value: 1.248e-07</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9243 on 94 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.2711, Adjusted R-squared:  0.2478 </span>
+<span class="co">#&gt; F-statistic: 11.65 on 3 and 94 DF,  p-value: 1.468e-06</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 </div>
@@ -613,23 +614,23 @@ knitr<span class="op">::</span><span class="kw">kable</span>(b)</code></pre></di
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="right">-0.5949821</td>
+<td align="right">0.2328654</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="right">0.0313533</td>
+<td align="right">0.5747025</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="right">0.0944947</td>
+<td align="right">0.4546563</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="right">-0.1869292</td>
+<td align="right">0.4255058</td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
-<td align="right">0.4124060</td>
+<td align="right">0.2117424</td>
 </tr>
 </tbody>
 </table>
@@ -831,7 +832,7 @@ model1 &lt;-<span class="st"> </span><span class="kw">makeLmer</span>(y <span cl
 <span class="co">#&gt; Based on 10 simulations, (0 warnings, 0 errors)</span>
 <span class="co">#&gt; alpha = 0.05, nrow = 960</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Time elapsed: 0 h 0 m 1 s</span></code></pre></div>
+<span class="co">#&gt; Time elapsed: 0 h 0 m 2 s</span></code></pre></div>
 </div>
 <div id="simstudy" class="section level3">
 <h3><span class="header-section-number">12.5.2</span> simstudy</h3>
@@ -843,11 +844,11 @@ def &lt;-<span class="st"> </span><span class="kw">defData</span>(def, <span cla
 
 <span class="kw">genData</span>(<span class="dv">5</span>, def)
 <span class="co">#&gt;    idnum nr       x1       y1</span>
-<span class="co">#&gt; 1:     1  7 11.76486 31.05347</span>
-<span class="co">#&gt; 2:     2  7 14.47253 32.65013</span>
-<span class="co">#&gt; 3:     3  7 13.93163 40.96484</span>
-<span class="co">#&gt; 4:     4  7 16.34513 35.37557</span>
-<span class="co">#&gt; 5:     5  7 18.18841 42.24141</span></code></pre></div>
+<span class="co">#&gt; 1:     1  7 19.94272 49.50447</span>
+<span class="co">#&gt; 2:     2  7 17.64202 36.13432</span>
+<span class="co">#&gt; 3:     3  7 12.45528 31.69922</span>
+<span class="co">#&gt; 4:     4  7 15.05936 36.19629</span>
+<span class="co">#&gt; 5:     5  7 11.29401 28.62402</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">

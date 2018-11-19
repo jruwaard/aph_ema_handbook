@@ -120,6 +120,11 @@ g.shell.GGIR(
 )
 ```
 
+```{r GGIR-pdf, echo = FALSE, fig.cap = "sample GGIR output", out.width = '100%', fig.align = 'center', fig.asp = .3, fig.show = 'hold'}
+knitr::include_graphics(c(
+   "images/catalogue_R/GGIR_pdf.png"))
+```
+
 ### PhysicalActivity
 \index{PhysicalActivity}
 

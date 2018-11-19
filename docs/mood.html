@@ -400,33 +400,7 @@ Figure 5.4: The Pick-A-Mood Circle.
 <li>Negative affect (6): insecure, lonely, anxious, low, guilty, suspicious.</li>
 <li>Positive affect (4): cheerful, content, energetic, enthusiastic.</li>
 </ul>
-<p>PA and NA were calculated as the average score across all items and weighted for their factor loadings <span class="citation">(Wichers et al., <a href="#ref-Wichers2012">2012</a>)</span>. In r, such a factor analysis can be executed as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Performing a factor analysis.</span>
-<span class="kw">library</span>(dplyr)
-<span class="kw">library</span>(tibble)
-
-items2 &lt;-<span class="st"> </span>csd <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">select</span>(<span class="kw">c</span>(
-   <span class="st">&quot;mood_relaxed&quot;</span>, <span class="st">&quot;mood_satisfi&quot;</span>,
-   <span class="st">&quot;mood_enthus&quot;</span>, <span class="st">&quot;mood_cheerf&quot;</span>,
-   <span class="st">&quot;mood_strong&quot;</span>, <span class="st">&quot;mood_down&quot;</span>,
-   <span class="st">&quot;mood_lonely&quot;</span>, <span class="st">&quot;mood_anxious&quot;</span>, 
-   <span class="st">&quot;mood_guilty&quot;</span> )) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">scale</span>(.) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">as.tibble</span>(.) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate_all</span>(<span class="kw">funs</span>(<span class="kw">residuals</span>(stats<span class="op">::</span><span class="kw">arima</span>(., <span class="dt">order =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>)))))
-
-<span class="kw">require</span>(psych)
-
-correlations &lt;-<span class="st"> </span><span class="kw">cor</span>(items2, <span class="dt">use =</span> <span class="st">&quot;complete.obs&quot;</span>)
-model &lt;-<span class="st"> </span><span class="kw">fa</span>(items2,
-               <span class="dt">nfactors =</span> <span class="dv">2</span>,
-               <span class="dt">rotate =</span> <span class="st">&quot;oblimin&quot;</span>,
-               <span class="dt">fm =</span> <span class="st">&quot;pa&quot;</span>,
-               <span class="dt">scores =</span> <span class="st">&quot;regression&quot;</span>)
-
-<span class="kw">colnames</span>(model<span class="op">$</span>loadings) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;PA&quot;</span>, <span class="st">&quot;NA&quot;</span>)
-psych<span class="op">::</span><span class="kw">fa.diagram</span>(model)</code></pre></div>
+<p>PA and NA were calculated as the average score across all items and weighted for their factor loadings <span class="citation">(Wichers et al., <a href="#ref-Wichers2012">2012</a>)</span>. Figure <a href="mood.html#fig:moodfa">5.5</a> shows the PA/NA factors in the data set of the ‘Critical Slowing Down’-study [<span class="citation">Van de Leemput et al. (<a href="#ref-VandeLeemput2014">2014</a>)</span>; see also Chapter <a href="csd.html#csd">9</a>].</p>
 <div class="figure" style="text-align: center"><span id="fig:moodfa"></span>
 <img src="mood_files/figure-html/moodfa-1.png" alt="Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)." width="100%" />
 <p class="caption">
@@ -522,6 +496,9 @@ Figure 5.5: Factor analysis of scores of 9 EMA items, revealing two factors: Pos
 </div>
 <div id="ref-Wichers2012">
 <p>Wichers, M., Peeters, F., Rutten, B. P. F., Jacobs, N., Derom, C., Thiery, E., … Van Os, J. (2012). A time-lagged momentary assessment study on daily life physical activity and affect. <em>Health Psychology</em>, <em>31</em>(2), 135–144. <a href="https://doi.org/10.1037/a0025688" class="uri">https://doi.org/10.1037/a0025688</a></p>
+</div>
+<div id="ref-VandeLeemput2014">
+<p>Van de Leemput, I. A., Wichers, M., Cramer, A. O. J., Borsboom, D., Tuerlinckx, F., Kuppens, P., … Scheffer, M. (2014). Critical slowing down as early warning for the onset and termination of depression. <em>Proceedings of the National Academy of Sciences</em>, <em>111</em>(1), 87–92. <a href="https://doi.org/10.1073/pnas.1312114110" class="uri">https://doi.org/10.1073/pnas.1312114110</a></p>
 </div>
 </div>
             </section>

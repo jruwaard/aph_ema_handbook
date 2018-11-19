@@ -16,7 +16,7 @@ utility of passive EMA of specific activities, such as (disturbed) sleep,
 sedentary behavior, and energy expenditure [see, e.g., @Feehan2018;
 @Gomersall2016], an increasing number of mental health studies are including
 activity tracking devices to better understand sleep habits, circadian rhythm
-disorders and depression [see, e.g., @Saeb2015; @Saunders2016;
+disorders and depression [see, e.g., @Cornet2017; @Saeb2015; @Saunders2016;
 @Tahmasian2013].
 
 In this chapter, we will discuss two passive EMA methods to assess physical
@@ -28,14 +28,10 @@ developed in the past decades in wildlife telemetry research
 [@tomkiewicz2010global].
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.95\linewidth]{activity_files/figure-latex/accgps-1} 
-
-}
-
-\caption{Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.}(\#fig:accgps)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/accgps-1.png" alt="Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity." width="95%" />
+<p class="caption">(\#fig:accgps)Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.</p>
+</div>
 
 ## Actigraphy
 \index{Actigraphy} 
@@ -55,14 +51,10 @@ sub-sampled here to 0.1Hz (one measurement every 10 seconds), for practical
 reasons. If we would have plotted the data at 30Hz, the plot would have
 included 108.000 data points. At 0.1Hz, this reduces to 360 points.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-hour-1} 
-
-}
-
-\caption{One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)}(\#fig:genea-one-hour)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/genea-one-hour-1.png" alt="One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)" width="100%" />
+<p class="caption">(\#fig:genea-one-hour)One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)</p>
+</div>
 
 Data shown are included in package `emaph`, and the R-code to reproduce the plot
 is listed below. Use this to familiarize yourself with actigraphy data. If you
@@ -125,10 +117,11 @@ SVM and ENMO are closely related. SVM is the magnitude of the raw tri-axial
 signals (the Euclidean distance in the three-dimensional space), i.e. *SVM =
 sqrt(x^2 + y^2 + z^2)*. ENMO is the corrected SVM: the vector magnitude
 remaining after removing one Earth Standard Gravitational unit (1g = 9.81
-m/s^2), i.e. *ENMO = SVM - 1*. The metrics can, in principle, be calculated for
-each {x, y, z}-data point in the raw series. Typically, however, the metrics are
-calculated for time-windows (called *epochs*), in which case the mean can be
-used to characterize the overall activity in each epoch.
+m/s^2), with negative values rounded to 0, i.e. *ENMO = max(SVM - 1, 0)*. The
+metrics can, in principle, be calculated for each {x, y, z}-data point in the
+raw series. Typically, however, the metrics are calculated for time-windows
+(called *epochs*), in which case the mean can be used to characterize the
+overall activity in each epoch.
 
 Figure \@ref(fig:genea-one-day) shows the development of ENMO over one day, as
 sampled by GENEActiv accelerometers that were worn by a young adult (top) and a
@@ -138,14 +131,10 @@ over the day follow a similar pattern, but the activity levels in the two plots
 are strikingly different. Age appears to matter here: activity levels of the
 middle-aged person are consistently lower than those of the young adult.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-day-1} 
-
-}
-
-\caption{One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs}(\#fig:genea-one-day)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/genea-one-day-1.png" alt="One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs" width="100%" />
+<p class="caption">(\#fig:genea-one-day)One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs</p>
+</div>
 
 \index{MVPA}
 
@@ -186,14 +175,10 @@ for example, is {latitude: 52.37022; longitude: 4.89517}, which can be verified
 by punching these numbers in [Google maps](https://tinyurl.com/ybxxk99a).
 
 
-\begin{figure}[!h]
-
-{\centering \includegraphics[width=0.75\linewidth]{images/activity/Latitude_and_Longitude_of_the_Earth} 
-
-}
-
-\caption{Latitude and Longtitude of the Earth (source: WikiPedia).}(\#fig:longlat)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/activity/Latitude_and_Longitude_of_the_Earth.png" alt="Latitude and Longtitude of the Earth (source: WikiPedia)." width="75%" />
+<p class="caption">(\#fig:longlat)Latitude and Longtitude of the Earth (source: WikiPedia).</p>
+</div>
 
 
 ### The Global Positioning System
@@ -228,14 +213,10 @@ ggplot(d, aes(lon, lat)) +
   facet_wrap(~ id)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/fourweekgps-1} 
-
-}
-
-\caption{Four-week location history of two people, collected with Google Timeline.}(\#fig:fourweekgps)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/fourweekgps-1.png" alt="Four-week location history of two people, collected with Google Timeline." width="100%" />
+<p class="caption">(\#fig:fourweekgps)Four-week location history of two people, collected with Google Timeline.</p>
+</div>
 
 Data-points are superposed, using transparent colors, to make a distinction
 between locations that were visited once (light areas) and places that were
@@ -265,14 +246,10 @@ park. The red dot in the figure marks the median coordinate. This coordinate is
 very accurate: it marks the bedroom. All individual data points, however, fail
 to identify this location.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/nightcrawl-1} 
-
-}
-
-\caption{Nightly GPS-fluctuations, revealing inaccurate location measurements}(\#fig:nightcrawl)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="activity_files/figure-html/nightcrawl-1.png" alt="Nightly GPS-fluctuations, revealing inaccurate location measurements" width="100%" />
+<p class="caption">(\#fig:nightcrawl)Nightly GPS-fluctuations, revealing inaccurate location measurements</p>
+</div>
 
 
 ### GPS-based Activity Measures
@@ -284,7 +261,7 @@ Table \@ref(tab:GPSfeatures) shows some of the measures that were derived from
 GPS data in a small (n = 28) study exploring the correlation between passive EMA
 data and depression, conducted by researchers of Northwestern University
 [@Saeb2015]. The researchers calculated total distance, location variance, the
-number of places visited by the participants during the study, the percentage of
+number of places visited by the participants during the study [using the K-means clustering algorithm, @Hartigan1979, which is implemented in R as `kmeans`), the percentage of
 time spent at home (defined as a top 3 place which was most frequently visited
 between 24:00 and 6:00), and circadian movement - the consistency of location
 visits based on a 24-hour period. Circadian movement and location variance were
@@ -297,7 +274,7 @@ Table: (\#tab:GPSfeatures) Activity measures that can be derived from a GPS data
 |:---------------------------------|:-------------------------------------------------------------|
 | Total distance between locations | $\sum(distance((lat_{t}, lon_{t}), (lat_{t-1}, lon_{t-1})$   |
 | Location variance                | $log(\sigma_{lon}^2 + \sigma_{lat}^2)$                       | 
-| N Places                         | k-means(loc, lat)                                            | 
+| N Places                         | kmeans(loc, lat)                                             | 
 | Home Stay                        | time(cluster[home]) / time(clusters[j])                      |
 | Circadian Movement               | $\sum(psd(f_i) / (i1 - i2)$                                  |
 

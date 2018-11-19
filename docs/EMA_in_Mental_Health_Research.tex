@@ -1178,13 +1178,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.037492, df = 195.95, p-value = 0.9701}
+\CommentTok{#> t = -0.64846, df = 194.71, p-value = 0.5175}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.2859183  0.2752502}
+\CommentTok{#>  -0.3858413  0.1948966}
 \CommentTok{#> sample estimates:}
-\CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.08158503 -0.07625095}
+\CommentTok{#> mean of x mean of y }
+\CommentTok{#> 0.0703100 0.1657823}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1537,7 +1537,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4746}
+\CommentTok{#> [1] 0.4847}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2371,39 +2371,10 @@ Likert items were chosen for the questionnaire:
 \end{itemize}
 
 PA and NA were calculated as the average score across all items and
-weighted for their factor loadings \citep{Wichers2012}. In r, such a
-factor analysis can be executed as follows:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{# Performing a factor analysis.}
-\KeywordTok{library}\NormalTok{(dplyr)}
-\KeywordTok{library}\NormalTok{(tibble)}
-
-\NormalTok{items2 <-}\StringTok{ }\NormalTok{csd }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{select}\NormalTok{(}\KeywordTok{c}\NormalTok{(}
-   \StringTok{"mood_relaxed"}\NormalTok{, }\StringTok{"mood_satisfi"}\NormalTok{,}
-   \StringTok{"mood_enthus"}\NormalTok{, }\StringTok{"mood_cheerf"}\NormalTok{,}
-   \StringTok{"mood_strong"}\NormalTok{, }\StringTok{"mood_down"}\NormalTok{,}
-   \StringTok{"mood_lonely"}\NormalTok{, }\StringTok{"mood_anxious"}\NormalTok{, }
-   \StringTok{"mood_guilty"}\NormalTok{ )) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{scale}\NormalTok{(.) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{as.tibble}\NormalTok{(.) }\OperatorTok{%>%}
-\StringTok{  }\KeywordTok{mutate_all}\NormalTok{(}\KeywordTok{funs}\NormalTok{(}\KeywordTok{residuals}\NormalTok{(stats}\OperatorTok{::}\KeywordTok{arima}\NormalTok{(., }\DataTypeTok{order =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{0}\NormalTok{,}\DecValTok{0}\NormalTok{)))))}
-
-\KeywordTok{require}\NormalTok{(psych)}
-
-\NormalTok{correlations <-}\StringTok{ }\KeywordTok{cor}\NormalTok{(items2, }\DataTypeTok{use =} \StringTok{"complete.obs"}\NormalTok{)}
-\NormalTok{model <-}\StringTok{ }\KeywordTok{fa}\NormalTok{(items2,}
-               \DataTypeTok{nfactors =} \DecValTok{2}\NormalTok{,}
-               \DataTypeTok{rotate =} \StringTok{"oblimin"}\NormalTok{,}
-               \DataTypeTok{fm =} \StringTok{"pa"}\NormalTok{,}
-               \DataTypeTok{scores =} \StringTok{"regression"}\NormalTok{)}
-
-\KeywordTok{colnames}\NormalTok{(model}\OperatorTok{$}\NormalTok{loadings) <-}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"PA"}\NormalTok{, }\StringTok{"NA"}\NormalTok{)}
-\NormalTok{psych}\OperatorTok{::}\KeywordTok{fa.diagram}\NormalTok{(model)}
-\end{Highlighting}
-\end{Shaded}
+weighted for their factor loadings \citep{Wichers2012}. Figure
+\ref{fig:moodfa} shows the PA/NA factors in the data set of the
+`Critical Slowing Down'-study {[}\citet{VandeLeemput2014}; see also
+Chapter \ref{csd}{]}.
 
 \begin{figure}
 
@@ -2430,7 +2401,7 @@ clinical utility of passive EMA of specific activities, such as
 \citep[see, e.g.,][]{Feehan2018, Gomersall2016}, an increasing number of
 mental health studies are including activity tracking devices to better
 understand sleep habits, circadian rhythm disorders and depression
-\citep[see, e.g.,][]{Saeb2015, Saunders2016, Tahmasian2013}.
+\citep[see, e.g.,][]{Cornet2017, Saeb2015, Saunders2016, Tahmasian2013}.
 
 In this chapter, we will discuss two passive EMA methods to assess
 physical activity: actigraphy and geotracking. Of these two, actigraphy
@@ -2540,11 +2511,12 @@ SVM and ENMO are closely related. SVM is the magnitude of the raw
 tri-axial signals (the Euclidean distance in the three-dimensional
 space), i.e. \emph{SVM = sqrt(x\^{}2 + y\^{}2 + z\^{}2)}. ENMO is the
 corrected SVM: the vector magnitude remaining after removing one Earth
-Standard Gravitational unit (1g = 9.81 m/s\^{}2), i.e. \emph{ENMO = SVM
-- 1}. The metrics can, in principle, be calculated for each \{x, y,
-z\}-data point in the raw series. Typically, however, the metrics are
-calculated for time-windows (called \emph{epochs}), in which case the
-mean can be used to characterize the overall activity in each epoch.
+Standard Gravitational unit (1g = 9.81 m/s\^{}2), with negative values
+rounded to 0, i.e. \emph{ENMO = max(SVM - 1, 0)}. The metrics can, in
+principle, be calculated for each \{x, y, z\}-data point in the raw
+series. Typically, however, the metrics are calculated for time-windows
+(called \emph{epochs}), in which case the mean can be used to
+characterize the overall activity in each epoch.
 
 Figure \ref{fig:genea-one-day} shows the development of ENMO over one
 day, as sampled by GENEActiv accelerometers that were worn by a young
@@ -2710,13 +2682,14 @@ from GPS data in a small (n = 28) study exploring the correlation
 between passive EMA data and depression, conducted by researchers of
 Northwestern University \citep{Saeb2015}. The researchers calculated
 total distance, location variance, the number of places visited by the
-participants during the study, the percentage of time spent at home
-(defined as a top 3 place which was most frequently visited between
-24:00 and 6:00), and circadian movement - the consistency of location
-visits based on a 24-hour period. Circadian movement and location
-variance were found to be correlated with PHQ-9 scores in this study,
-but not - however - in a follow-up study, which included more
-participants \citep{Saeb2017}.
+participants during the study {[}using the K-means clustering algorithm,
+\citet{Hartigan1979}, which is implemented in R as \texttt{kmeans}), the
+percentage of time spent at home (defined as a top 3 place which was
+most frequently visited between 24:00 and 6:00), and circadian movement
+- the consistency of location visits based on a 24-hour period.
+Circadian movement and location variance were found to be correlated
+with PHQ-9 scores in this study, but not - however - in a follow-up
+study, which included more participants \citep{Saeb2017}.
 
 \begin{longtable}[]{@{}ll@{}}
 \caption{\label{tab:GPSfeatures} Activity measures that can be derived from
@@ -2750,7 +2723,7 @@ Location variance\strut
 \begin{minipage}[t]{0.34\columnwidth}\raggedright\strut
 N Places\strut
 \end{minipage} & \begin{minipage}[t]{0.60\columnwidth}\raggedright\strut
-k-means(loc, lat)\strut
+kmeans(loc, lat)\strut
 \end{minipage}\tabularnewline
 \begin{minipage}[t]{0.34\columnwidth}\raggedright\strut
 Home Stay\strut
@@ -5827,19 +5800,19 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.18344 -0.58304 -0.06999  0.71413  2.00996 }
+\CommentTok{#> -2.12417 -0.63067 -0.07466  0.70421  2.74190 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.57308    0.09893   5.793 8.76e-08 ***}
-\CommentTok{#> depression.l1 -0.09833    0.08763  -1.122    0.265    }
-\CommentTok{#> const          0.11831    0.09740   1.215    0.227    }
+\CommentTok{#> activity.l1    0.73173    0.10257   7.134 1.84e-10 ***}
+\CommentTok{#> depression.l1  0.01143    0.08263   0.138    0.890    }
+\CommentTok{#> const          0.12207    0.09739   1.253    0.213    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.9558 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.2685, Adjusted R-squared:  0.2533 }
-\CommentTok{#> F-statistic: 17.62 on 2 and 96 DF,  p-value: 3.028e-07}
+\CommentTok{#> Residual standard error: 0.9416 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.3465, Adjusted R-squared:  0.3329 }
+\CommentTok{#> F-statistic: 25.45 on 2 and 96 DF,  p-value: 1.352e-09}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5894,15 +5867,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.0763054\\
+1 & 0.6480054\\
 \hline
-2 & 0.1949383\\
+2 & -0.0690737\\
 \hline
-3 & -0.0200923\\
+3 & 0.2468734\\
 \hline
-4 & -0.4782672\\
+4 & -0.1099927\\
 \hline
-5 & -0.5206676\\
+5 & -0.2516691\\
 \hline
 \end{tabular}
 
@@ -6161,7 +6134,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6177,11 +6150,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 12.72141 33.10472}
-\CommentTok{#> 2:     2  7 16.80707 46.23012}
-\CommentTok{#> 3:     3  7 14.94203 36.85655}
-\CommentTok{#> 4:     4  7 19.54930 47.94539}
-\CommentTok{#> 5:     5  7 13.55486 40.19600}
+\CommentTok{#> 1:     1  7 12.99650 32.18590}
+\CommentTok{#> 2:     2  7 18.67787 42.08207}
+\CommentTok{#> 3:     3  7 14.87447 36.87552}
+\CommentTok{#> 4:     4  7 13.19019 36.87518}
+\CommentTok{#> 5:     5  7 13.32257 30.78009}
 \end{Highlighting}
 \end{Shaded}
 

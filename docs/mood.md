@@ -70,14 +70,10 @@ plotmood_down <- ggplot(csd, aes(x = date, y = as.numeric(mood_down))) +
 print(plotmood_down)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodplot-1} 
-
-}
-
-\caption{34 weeks of mood data, from a single participant}(\#fig:moodplot)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="mood_files/figure-html/moodplot-1.png" alt="34 weeks of mood data, from a single participant" width="100%" />
+<p class="caption">(\#fig:moodplot)34 weeks of mood data, from a single participant</p>
+</div>
 
 ### Bipolar Unidimensional Items
 \index{Mood assessment!Bipolar unidimensional}
@@ -131,14 +127,10 @@ combined <- plotmood_down +
 print(combined)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodplotcombined-1} 
-
-}
-
-\caption{34 weeks of combined mood data, from a single participant}(\#fig:moodplotcombined)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="mood_files/figure-html/moodplotcombined-1.png" alt="34 weeks of combined mood data, from a single participant" width="100%" />
+<p class="caption">(\#fig:moodplotcombined)34 weeks of combined mood data, from a single participant</p>
+</div>
 
 ## Multi-dimensional Mood Assessment
 \index{Mood assessment!Multi-dimensional}
@@ -161,14 +153,10 @@ scales: valence (ranging from unpleasant to pleasant) and arousal/activation
 affective states in a circle on one of four quadrants (see Figure
 \@ref(fig:circumplexrussel)). States within one quadrant are believed to be positively correlated, while states in the opposing quadrant are thought to be negatively correlated.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.6\linewidth]{images/outcomes/Russell1980} 
-
-}
-
-\caption{Russell's Circumplex model of affect.}(\#fig:circumplexrussel)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/outcomes/Russell1980.png" alt="Russell's Circumplex model of affect." width="60%" />
+<p class="caption">(\#fig:circumplexrussel)Russell's Circumplex model of affect.</p>
+</div>
 
 There are several options to operationalize the Circumplex model in EMA
 research. For example, respondents can rate valence and arousal on two VAS
@@ -192,14 +180,10 @@ model and adds the third dimension "dominance" (level of experienced control
 over the mood state), rendering eight (instead of four) different mood states
 and one neutral state (see Figure \@ref(fig:pickamood)).
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{images/outcomes/Circumplex-Pick-A-Mood} 
-
-}
-
-\caption{The Pick-A-Mood Circle.}(\#fig:pickamood)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/outcomes/Circumplex-Pick-A-Mood.png" alt="The Pick-A-Mood Circle." width="50%" />
+<p class="caption">(\#fig:pickamood)The Pick-A-Mood Circle.</p>
+</div>
 
 ### Negative & Positive Affect
 \index{Positive and Negative Affect}
@@ -237,44 +221,11 @@ questionnaire:
   - Positive affect (4): cheerful, content, energetic, enthusiastic.
 
 PA and NA were calculated as the average score across all items and weighted for
-their factor loadings [@Wichers2012]. In r, such a factor analysis can be
-executed as follows:
+their factor loadings [@Wichers2012]. Figure \@ref(fig:moodfa) shows the PA/NA
+factors in the data set of the 'Critical Slowing Down'-study
+[@VandeLeemput2014; see also Chapter \@ref(csd)].
 
-
-```r
-# Performing a factor analysis.
-library(dplyr)
-library(tibble)
-
-items2 <- csd %>%
-  select(c(
-   "mood_relaxed", "mood_satisfi",
-   "mood_enthus", "mood_cheerf",
-   "mood_strong", "mood_down",
-   "mood_lonely", "mood_anxious", 
-   "mood_guilty" )) %>%
-  scale(.) %>%
-  as.tibble(.) %>%
-  mutate_all(funs(residuals(stats::arima(., order = c(1,0,0)))))
-
-require(psych)
-
-correlations <- cor(items2, use = "complete.obs")
-model <- fa(items2,
-               nfactors = 2,
-               rotate = "oblimin",
-               fm = "pa",
-               scores = "regression")
-
-colnames(model$loadings) <- c("PA", "NA")
-psych::fa.diagram(model)
-```
-
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{mood_files/figure-latex/moodfa-1} 
-
-}
-
-\caption{Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).}(\#fig:moodfa)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="mood_files/figure-html/moodfa-1.png" alt="Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA)." width="100%" />
+<p class="caption">(\#fig:moodfa)Factor analysis of scores of 9 EMA items, revealing two factors:  Positive Affect (PA) and Negative Affect (NA).</p>
+</div>

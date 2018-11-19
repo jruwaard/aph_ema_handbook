@@ -72,7 +72,7 @@ in which data were collected via:
     
 3.  an accelerometer to assess activity levels.
 
-```{r dm-project-tree, echo = FALSE, fig.cap="Example project directory structure", out.width = "65%"}
+```{r dm-project-tree, echo = FALSE, fig.cap="Example project directory structure", out.width = "50%"}
 # Show the EMA R-project directory structure.
 
 library(DiagrammeR)
@@ -124,8 +124,7 @@ export_graph(ToDiagrammeRGraph(mytree), "images/datamanagement/project_tree.png"
 knitr::include_graphics("images/datamanagement/project_tree.png")
 ``` 
 
-The full project, including example data and R-scripts, is available for download at
-<https://drive.google.com/open?id=15TDS2k1NSlh8z1zEdObga4pcKkPhlOIG>. Download, unzip, and double-click the 'APH EMA Project.Rproj' file, to open the project in RStudio. Note that this is a large download (~134MB), because it contains large accelerometer data files.
+The full project, including example data and R-scripts, is available for download at <https://tinyurl.com/yd7mx32c>. Download, unzip, and double-click the 'APH EMA Project.Rproj' file, to open the project in RStudio. Note that this is a large download (~134MB), because it contains large accelerometer data files.
 
 ## Data
 \index{Datamanagement!Raw data}

@@ -95,7 +95,7 @@ ggplot(e, aes(x = t, y = s)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 ```
 
-## Modelling the Trend
+## Modeling the Trend
 ```{r feat-lm, echo=FALSE, include=FALSE}
 fm = lm(s ~ t, e)
 ```

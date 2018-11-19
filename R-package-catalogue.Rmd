@@ -88,16 +88,18 @@ install_github("wadpac/GGIR", dependencies = TRUE)
 ```
 
 `GGIR`'s main function is `g.shell.GGIR`, with which multiple accelerometer data
-files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract variables on physical activity and sleep). The example below shows
-an example configuration. See `?g.shell.GGIR` (and `?g.part1`,
-?`g.part2`, to `g.part4`) to learn the meaning of each parameter. If you get
-lost or run into a problem, you can ask the package developers or other users
-for help via the GGIR Google discussion forum, at
-<https://groups.google.com/forum/#!forum/rpackageggir>. 
+files can be imported, calibrated, cleaned (identify non-wear periods, impute
+data) and analyzed (extract and summarize variables on physical activity and
+sleep). The example below shows an example configuration. See `?g.shell.GGIR`
+(and `?g.part1`, ?`g.part2`, to `g.part4`) to learn the meaning of each
+parameter. If you get lost or run into a problem, you can ask the package
+developers or other users for help via the GGIR Google discussion forum, at
+<https://groups.google.com/forum/#!forum/rpackageggir>.
 
 ```{r ggir-example, eval = FALSE}
 # Import actigraphy data with GGIR
 library(GGIR)
+
 g.shell.GGIR(
   # Shell configuration ---------------------------
   mode = c(1, 2, 3, 4), f1 = 2,
@@ -120,7 +122,7 @@ g.shell.GGIR(
 )
 ```
 
-```{r GGIR-pdf, echo = FALSE, fig.cap = "sample GGIR output", out.width = '100%', fig.align = 'center', fig.asp = .3, fig.show = 'hold'}
+```{r GGIR-pdf, echo = FALSE, fig.cap = "sample GGIR output", out.width = '100%', fig.align = 'center', fig.asp = .4, fig.show = 'hold'}
 knitr::include_graphics(c(
    "images/catalogue_R/GGIR_pdf.png"))
 ```

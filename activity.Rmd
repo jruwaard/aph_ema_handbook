@@ -143,15 +143,15 @@ ggplot(d, aes(timestamp, value)) + geom_line() +
 \index{GENEAread}
 
 Raw accelerometer data need to be cleaned before analyses can be run. Typical
-data import work-flows include re-calibration (to reduce systematic measurement
-error), the detection of non-wear periods (to ensure that non-informative data
-are removed), sub-sampling (reducing the sample rate to reduce analysis time) and
-filtering/aggregation (to smoothen the signal and reduce the impact of outliers,
-measurement error and occasional missing values). Study results can be highly
-dependent on these initial steps, which, unfortunately, are also complex and
-time-consuming. Specialized R-packages exist to help you with this (see, for
-example, package `GGIR` and `GENEAread`, which are described in more detail in
-Chapter \@ref(rcat)).
+data import work-flows include re-calibration [to reduce systematic measurement
+error; @VanHees2014], the detection of non-wear periods (to ensure that
+non-informative data are removed or imputed), sub-sampling (reducing the sample
+rate to reduce analysis time) and filtering/aggregation (to smoothen the signal
+and reduce the impact of outliers, measurement error and occasional missing
+values). Study results can be highly dependent on these initial steps, which,
+unfortunately, are also complex and time-consuming. Specialized R-packages exist
+to help you with this (see, for example, package `GGIR` and `GENEAread`, which
+are described in more detail in Chapter \@ref(rcat)).
 
 
 ### Feature Extraction
@@ -166,7 +166,7 @@ data are used to study circadian rhythms in activity. Several approaches exist
 to combine the X, Y, Z measurements into a single meaningful
 metric. Two popular metrics are the 'Signal Vector Magnitude' (SVM) and the
 'Euclidean Norm Minus One' (ENMO). Validation studies suggest that ENMO should be
-the preferred metric [@VanHeest2014; @VanHeest2015], although recent findings
+the preferred metric [@VanHees2014; @VanHees2015], although recent findings
 also suggest that alternative metrics should perhaps be considered when
 sedentary and light activities are of interest [@Bai2016].
 
@@ -216,10 +216,10 @@ ggplot(d, aes(time, svm)) +
 
 For SVM and ENMO, cut-off values for various activity classes have been
 determined [@Dasilva2014; @Hildebrand2014; @Kim2017; @Rowlands2016]. Although
-these cut-offs vary somewhat from study to study, a common ENMO cut-off for
-Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g (125 milligravity units;
-Femke Lamers, personal communication, 15 november 2018). The dotted line in Figure
-\@ref(fig:genea-one-day) marks this cut-off.
+these cut-offs vary somewhat from study to study, a suggested pragmatic ENMO
+cut-off for Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g (125
+milligravity units; Femke Lamers, personal communication, 15 november 2018). The
+dotted line in Figure \@ref(fig:genea-one-day) marks this cut-off.
 
 ```{r echo = FALSE}
 t <- table(d$id, d$svm > 0.125)

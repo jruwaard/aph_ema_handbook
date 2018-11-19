@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-18}
+    \date{2018-11-19}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -201,7 +201,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-18)}.
+Introduction, with Examples in R (1st edition - build 2018-11-19)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -1178,13 +1178,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -1.389, df = 197.91, p-value = 0.1664}
+\CommentTok{#> t = 1.0472, df = 197.76, p-value = 0.2963}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.47646082  0.08264839}
+\CommentTok{#>  -0.1249879  0.4080276}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.12890452  0.06800169}
+\CommentTok{#>  0.11294828 -0.02857159}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1537,7 +1537,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4778}
+\CommentTok{#> [1] 0.4818}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1748,29 +1748,26 @@ data collection systems (i.e., survey data, EMA data, and actigraphy
 data) are stored in the 'data/raw``-directory', in separate
 sub-directories per data type.
 
-In `data/raw/survey', we find two files: 1) `sur\_t0\_2018\_05\_01.csv',
-containing the results of demographic questionnaire and the PHQ-9
-pre-test, and 2) and `sur\_t1\_2018\_05\_01.csv', containing the results
+In `data/raw/survey', we find two files: 1) `sur\_t0\_2018\_06\_10.csv',
+containing the results of the demographic questionnaire and the PHQ-9
+pre-test, and 2) and `sur\_t1\_2018\_06\_10.csv', containing the results
 of the PHQ-9 post-test. In exports of such survey systems, data from all
 participants are typically stored in one file per assessment moment.
 Note how the export date is added to the files, to make sure that future
 updates are only used in the analysis when explicitly noted.
 
-In `data/raw/ema', we find one file: `ema\_2018\_05\_01.csv', containing
+In `data/raw/ema', we find one file: `ema\_2018\_06\_10.csv', containing
 the results of the EMA mood measurements of all participants, exported
 from the back-office of the EMA platform.
 
-Finally, in `data/raw/actigraphy', we see a series of `.bin' files:
-binary data files that were exported from, e.g., GENEActiv smart
-watches, that were worn by the participants. Actigraphy data are
-high-volume data: these files are typically large (500MB is no
+Finally, in `data/raw/actigraphy', we see two `.bin' files: binary data
+files that were exported from, e.g., GENEActiv smart watches, that were
+worn by two participants. Unlike the survey and EMA mood data, each data
+file in this directory contains data of one participant. Actigraphy data
+are high-volume data: these files are typically large (500MB is no
 exception). By using the `.bin' format, in which data are compressed,
 disk space is saved (in uncompressed format, data in a single .bin file
-can amount up to 2 GB). Unlike the survey and EMA mood data, each data
-file in this directory contains data of one participant. In this case,
-there are even two files for one participant (`APC009'), perhaps because
-this participant started the study with a faulty device, which was
-swapped during the study.
+can amount up to 2 GB).
 
 In `data/raw', a final very important file is `key\_file.csv'. This file
 is important because it ties all the data together. It contains the
@@ -1798,9 +1795,9 @@ ID & Survey\_ID & EMA\_ID & Actigraphy\_ID\tabularnewline
 ID & Survey\_ID & EMA\_ID & Actigraphy\_ID\tabularnewline
 \midrule
 \endhead
-P001 & QM01221 & 192.A102.83A & APC009\tabularnewline
-P002 & QM01228 & 192.B106.73X & APC010\tabularnewline
-P003 & QM01230 & 192.B220.00N & APC011\tabularnewline
+P001 & QM01221 & 192.A102.83A & A001\tabularnewline
+P002 & QM01228 & 192.B106.73X & A002\tabularnewline
+P003 & QM01230 & 192.B220.00N &\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -2507,16 +2504,17 @@ five seconds (0.2Hz), you would set the argument of this function to
 \index{Datamanagement!Data cleaning} \index{GGIR} \index{GENEAread}
 
 Raw accelerometer data need to be cleaned before analyses can be run.
-Typical data import work-flows include re-calibration (to reduce
-systematic measurement error), the detection of non-wear periods (to
-ensure that non-informative data are removed), sub-sampling (reducing
-the sample rate to reduce analysis time) and filtering/aggregation (to
-smoothen the signal and reduce the impact of outliers, measurement error
-and occasional missing values). Study results can be highly dependent on
-these initial steps, which, unfortunately, are also complex and
-time-consuming. Specialized R-packages exist to help you with this (see,
-for example, package \texttt{GGIR} and \texttt{GENEAread}, which are
-described in more detail in Chapter \ref{rcat}).
+Typical data import work-flows include re-calibration \citep[to reduce
+systematic measurement error;][]{VanHees2014}, the detection of non-wear
+periods (to ensure that non-informative data are removed or imputed),
+sub-sampling (reducing the sample rate to reduce analysis time) and
+filtering/aggregation (to smoothen the signal and reduce the impact of
+outliers, measurement error and occasional missing values). Study
+results can be highly dependent on these initial steps, which,
+unfortunately, are also complex and time-consuming. Specialized
+R-packages exist to help you with this (see, for example, package
+\texttt{GGIR} and \texttt{GENEAread}, which are described in more detail
+in Chapter \ref{rcat}).
 
 \subsection{Feature Extraction}\label{feature-extraction}
 
@@ -2531,9 +2529,9 @@ activity. Several approaches exist to combine the X, Y, Z measurements
 into a single meaningful metric. Two popular metrics are the `Signal
 Vector Magnitude' (SVM) and the `Euclidean Norm Minus One' (ENMO).
 Validation studies suggest that ENMO should be the preferred metric
-\citep{VanHeest2014, VanHeest2015}, although recent findings also
-suggest that alternative metrics should perhaps be considered when
-sedentary and light activities are of interest \citep{Bai2016}.
+\citep{VanHees2014, VanHees2015}, although recent findings also suggest
+that alternative metrics should perhaps be considered when sedentary and
+light activities are of interest \citep{Bai2016}.
 
 SVM and ENMO are closely related. SVM is the magnitude of the raw
 tri-axial signals (the Euclidean distance in the three-dimensional
@@ -2567,11 +2565,11 @@ middle-aged person are consistently lower than those of the young adult.
 
 For SVM and ENMO, cut-off values for various activity classes have been
 determined \citep{Dasilva2014, Hildebrand2014, Kim2017, Rowlands2016}.
-Although these cut-offs vary somewhat from study to study, a common ENMO
-cut-off for Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g (125
-milligravity units; Femke Lamers, personal communication, 15 november
-2018). The dotted line in Figure \ref{fig:genea-one-day} marks this
-cut-off.
+Although these cut-offs vary somewhat from study to study, a suggested
+pragmatic ENMO cut-off for Moderate-to-Vigorous-Physical-Activity (MVPA)
+is 0.125g (125 milligravity units; Femke Lamers, personal communication,
+15 november 2018). The dotted line in Figure \ref{fig:genea-one-day}
+marks this cut-off.
 
 With this cut-off, we can summarize the two series shown in Figure
 \ref{fig:genea-one-day} by the number of times on which ENMO is higher
@@ -2852,7 +2850,7 @@ decreases considerably.
 \caption{EMA time-series, with reference lines for the mean (red line) and the mean +/- 1 standard deviation range (the area between the two blue lines). Both statistics are informative, but obviously do not do full justice to the variation in observations over time.}\label{fig:feat-plot-mean}
 \end{figure}
 
-\section{Modelling the Trend}\label{modelling-the-trend}
+\section{Modeling the Trend}\label{modeling-the-trend}
 
 Now that we know that the overall mean and SD are sub-optimal features
 of this time-series, the question is how we can do better. What other
@@ -5606,8 +5604,9 @@ series.\strut
 \bottomrule
 \end{longtable}
 
-\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}\textless{}
-HEAD \#\# Actigraphy \index{Actigraphy}
+\section{Actigraphy}\label{actigraphy-1}
+
+\index{Actigraphy}
 
 Accelerometer data need considerable pre-processing before final
 analyses can be run. Raw data have to be read in from a variety of
@@ -5701,9 +5700,10 @@ development version, which is on
 
 \texttt{GGIR}'s main function is \texttt{g.shell.GGIR}, with which
 multiple accelerometer data files can be imported, calibrated, cleaned
-and analyzed. The example below shows an example configuration of this
-function. See \texttt{?g.shell.GGIR} (and \texttt{?g.part1},
-?\texttt{g.part2}, to \texttt{g.part5}) to learn the meaning of each
+(identify non-wear periods, impute data) and analyzed (extract variables
+on physical activity and sleep). The example below shows an example
+configuration. See \texttt{?g.shell.GGIR} (and \texttt{?g.part1},
+?\texttt{g.part2}, to \texttt{g.part4}) to learn the meaning of each
 parameter. If you get lost or run into a problem, you can ask the
 package developers or other users for help via the GGIR Google
 discussion forum, at
@@ -5713,44 +5713,37 @@ discussion forum, at
 \begin{Highlighting}[]
 \CommentTok{# Import actigraphy data with GGIR}
 \KeywordTok{library}\NormalTok{(GGIR)}
-\KeywordTok{g.shell.GGIR}\NormalTok{(}\CommentTok{#=======================================}
-             \CommentTok{# Shell configuration:}
-             \DataTypeTok{mode =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{),}
-             \DataTypeTok{datadir=}\StringTok{"./data/raw"}\NormalTok{, }\DataTypeTok{outputdir=}\StringTok{"./data"}\NormalTok{,}
-             \DataTypeTok{desiredtz =} \StringTok{"Europe/Amsterdam"}\NormalTok{, }\CommentTok{# set timezone!}
-             \DataTypeTok{f0 =} \DecValTok{1}\NormalTok{, }\DataTypeTok{f1 =} \DecValTok{2}\NormalTok{, }\DataTypeTok{overwrite =} \OtherTok{FALSE}\NormalTok{,}
-             \CommentTok{#-------------------------------}
-             \CommentTok{# Part 1: read, calibrate, extract features}
-             \DataTypeTok{do.enmo =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{do.anglez=}\OtherTok{TRUE}\NormalTok{,}
-             \DataTypeTok{chunksize =} \DecValTok{1}\NormalTok{, }\DataTypeTok{printsummary =} \OtherTok{TRUE}\NormalTok{,}
-             \CommentTok{#-------------------------------}
-             \CommentTok{# Part 2:}
-             \DataTypeTok{strategy =} \DecValTok{1}\NormalTok{, }\DataTypeTok{ndayswindow=}\DecValTok{7}\NormalTok{,}
-             \DataTypeTok{hrs.del.start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{hrs.del.end =} \DecValTok{0}\NormalTok{,}
-             \DataTypeTok{maxdur =} \DecValTok{8}\NormalTok{,  }\DataTypeTok{includedaycrit =} \DecValTok{10}\NormalTok{,}
-             \DataTypeTok{winhr =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{,}\DecValTok{10}\NormalTok{),}
-             \DataTypeTok{qlevels =} \KeywordTok{c}\NormalTok{(}\KeywordTok{c}\NormalTok{(}\DecValTok{1380}\OperatorTok{/}\DecValTok{1440}\NormalTok{),}\KeywordTok{c}\NormalTok{(}\DecValTok{1410}\OperatorTok{/}\DecValTok{1440}\NormalTok{)),}
-             \DataTypeTok{qwindow =} \KeywordTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{,}\DecValTok{24}\NormalTok{),}
-             \DataTypeTok{ilevels =} \KeywordTok{c}\NormalTok{(}\KeywordTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{400}\NormalTok{, }\DataTypeTok{by=}\DecValTok{50}\NormalTok{), }\DecValTok{8000}\NormalTok{),}
-             \DataTypeTok{mvpathreshold =} \KeywordTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{125}\NormalTok{), }
-             \DataTypeTok{bout.metric =} \DecValTok{4}\NormalTok{, }\DataTypeTok{closedbout =} \OtherTok{FALSE}\NormalTok{,}
-             \CommentTok{#-------------------------------}
-             \CommentTok{# Part 3: Sleep detection}
-             \CommentTok{#-------------------------------}
-             \DataTypeTok{timethreshold=} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{), }\DataTypeTok{anglethreshold=}\DecValTok{5}\NormalTok{,}
-             \DataTypeTok{ignorenonwear =} \OtherTok{TRUE}\NormalTok{,}
-             \CommentTok{#-------------------------------}
-             \CommentTok{# Part 4: Sleep summaries (per person)}
-             \DataTypeTok{excludefirstlast =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{includenightcrit =} \DecValTok{16}\NormalTok{,}
-             \DataTypeTok{def.noc.sleep =} \KeywordTok{c}\NormalTok{(}\DecValTok{21}\NormalTok{, }\DecValTok{9}\NormalTok{),}
-             \DataTypeTok{relyonsleeplog =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{nnights =} \DecValTok{3}\NormalTok{,}
-             \CommentTok{#-----------------------------------}
-             \CommentTok{# Report generation}
-             \DataTypeTok{do.report =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{visualreport =} \OtherTok{TRUE}\NormalTok{,}
-             \DataTypeTok{dofirstpage =} \OtherTok{TRUE}\NormalTok{, }\DataTypeTok{viewingwindow =} \DecValTok{1}
+\KeywordTok{g.shell.GGIR}\NormalTok{(}
+  \CommentTok{# Shell configuration ---------------------------}
+  \DataTypeTok{mode =} \KeywordTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{f1 =} \DecValTok{2}\NormalTok{,}
+  \DataTypeTok{datadir =} \StringTok{"./data/raw/actigraphy/"}\NormalTok{, }
+  \DataTypeTok{outputdir =} \StringTok{"./data/cleaned/ggir"}\NormalTok{,}
+  \DataTypeTok{desiredtz =} \StringTok{"Europe/Amsterdam"}\NormalTok{,}
+  \DataTypeTok{do.report =} \KeywordTok{c}\NormalTok{(}\DecValTok{2}\NormalTok{, }\DecValTok{4}\NormalTok{), }\DataTypeTok{visualreport =} \OtherTok{TRUE}\NormalTok{,}
+  \DataTypeTok{overwrite =} \OtherTok{TRUE}\NormalTok{,}
+  \CommentTok{# Part 1: import, calibrate, extract features ----}
+  \DataTypeTok{do.anglez=}\OtherTok{TRUE}\NormalTok{,}
+  \CommentTok{# Part 2: impute and summarize -------------------}
+  \DataTypeTok{strategy =} \DecValTok{1}\NormalTok{, }\DataTypeTok{maxdur =} \DecValTok{8}\NormalTok{,}
+  \DataTypeTok{hrs.del.start =} \DecValTok{0}\NormalTok{, }\DataTypeTok{hrs.del.end =} \DecValTok{0}\NormalTok{,}
+  \DataTypeTok{includedaycrit =} \DecValTok{10}\NormalTok{, }\DataTypeTok{mvpathreshold =} \KeywordTok{c}\NormalTok{(}\DecValTok{125}\NormalTok{), }
+  \CommentTok{# Part 3: Sleep detection}
+  \DataTypeTok{timethreshold =} \KeywordTok{c}\NormalTok{(}\DecValTok{5}\NormalTok{), }\DataTypeTok{anglethreshold =} \DecValTok{5}\NormalTok{,}
+  \DataTypeTok{ignorenonwear =} \OtherTok{TRUE}\NormalTok{,}
+  \CommentTok{# Part 4: sleep summaries ------------------------}
+  \DataTypeTok{includenightcrit =} \DecValTok{12}\NormalTok{,}
 \NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{images/catalogue_R/GGIR_pdf} 
+
+}
+
+\caption{sample GGIR output}\label{fig:GGIR-pdf}
+\end{figure}
 
 \subsection{PhysicalActivity}\label{physicalactivity}
 
@@ -5799,7 +5792,7 @@ relationships between multiple time-series (see also Chapter
 of past values (lags) of itself and of present and past values of other
 variables. When EMA is used to capture multiple phenomena over time, VAR
 can provide insight in how these phenomena interact. One challenge in
-VAR modelling is that many alternative models potentially exist, Package
+VAR modeling is that many alternative models potentially exist, Package
 \emph{autovarCore} \citep{R-autovarCore} was developed to help
 researchers to find the VAR model with the best fit to a given
 time-series data set. In the example below, function \texttt{autovar} is
@@ -5830,19 +5823,19 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.36992 -0.79436 -0.00088  0.77342  2.28050 }
+\CommentTok{#> -2.52626 -0.51668  0.00704  0.67312  2.48094 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
-\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)   }
-\CommentTok{#> activity.l1    0.40754    0.12188   3.344  0.00118 **}
-\CommentTok{#> depression.l1 -0.02633    0.09717  -0.271  0.78696   }
-\CommentTok{#> const          0.08154    0.11179   0.729  0.46753   }
+\CommentTok{#>                Estimate Std. Error t value Pr(>|t|)    }
+\CommentTok{#> activity.l1    0.638778   0.087992   7.260 1.01e-10 ***}
+\CommentTok{#> depression.l1 -0.082443   0.081824  -1.008    0.316    }
+\CommentTok{#> const          0.007891   0.097905   0.081    0.936    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 1.104 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.1044, Adjusted R-squared:  0.0857 }
-\CommentTok{#> F-statistic: 5.593 on 2 and 96 DF,  p-value: 0.005041}
+\CommentTok{#> Residual standard error: 0.974 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.3737, Adjusted R-squared:  0.3606 }
+\CommentTok{#> F-statistic: 28.64 on 2 and 96 DF,  p-value: 1.764e-10}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5897,15 +5890,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.1385073\\
+1 & -0.2738254\\
 \hline
-2 & 0.1768444\\
+2 & -0.1800270\\
 \hline
-3 & 0.0117487\\
+3 & 0.1525548\\
 \hline
-4 & -0.4791096\\
+4 & 0.1147911\\
 \hline
-5 & 0.4690814\\
+5 & 0.2550401\\
 \hline
 \end{tabular}
 
@@ -6060,7 +6053,7 @@ introduction.
 
 \index{Mixed effects}
 
-Several R-packages for mixed-effects modelling exist. The most popular
+Several R-packages for mixed-effects modeling exist. The most popular
 are package \emph{nlme} \citep{R-nlme} and package \emph{lme4}
 \citep{Bates2015}. Both packages are actively used, as both provide
 unique functionalities.
@@ -6164,7 +6157,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6180,11 +6173,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 13.22258 34.18324}
-\CommentTok{#> 2:     2  7 11.30530 30.60927}
-\CommentTok{#> 3:     3  7 15.28499 36.45162}
-\CommentTok{#> 4:     4  7 12.24029 35.20977}
-\CommentTok{#> 5:     5  7 18.90349 45.45360}
+\CommentTok{#> 1:     1  7 15.09602 37.20751}
+\CommentTok{#> 2:     2  7 17.72179 41.40412}
+\CommentTok{#> 3:     3  7 13.00572 33.37782}
+\CommentTok{#> 4:     4  7 10.86516 28.14085}
+\CommentTok{#> 5:     5  7 13.91522 33.78071}
 \end{Highlighting}
 \end{Shaded}
 

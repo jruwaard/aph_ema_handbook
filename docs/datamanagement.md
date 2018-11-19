@@ -21,10 +21,14 @@ creating new projects from RStudio's file menu. To create a new project, choose
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
-<div class="figure" style="text-align: center">
-<img src="images/datamanagement/new_project.png" alt="creating a project in RStudio" width="70%" />
-<p class="caption">(\#fig:fig5a)creating a project in RStudio</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{images/datamanagement/new_project} 
+
+}
+
+\caption{creating a project in RStudio}(\#fig:fig5a)
+\end{figure}
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
@@ -74,10 +78,14 @@ in which data were collected via:
     
 3.  an accelerometer to assess activity levels.
 
-<div class="figure" style="text-align: center">
-<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="65%" />
-<p class="caption">(\#fig:dm-project-tree)Example project directory structure</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.65\linewidth]{images/datamanagement/project_tree} 
+
+}
+
+\caption{Example project directory structure}(\#fig:dm-project-tree)
+\end{figure}
 
 
 ## Data
@@ -91,28 +99,25 @@ In the example project, unprocessed data files exported from the three data
 collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in
 the 'data/raw"-directory', in separate sub-directories per data type.
 
-In 'data/raw/survey', we find two files: 1)
-'sur_t0_2018_05_01.csv', containing the results of demographic
-questionnaire and the PHQ-9 pre-test, and 2) and
-'sur_t1_2018_05_01.csv', containing the results of the PHQ-9 post-test.
-In exports of such survey systems, data from all participants are typically
-stored in one file per assessment moment. Note how the export date is added to
-the files, to make sure that future updates are only used in the analysis when
-explicitly noted. 
+In 'data/raw/survey', we find two files: 1) 'sur_t0_2018_06_10.csv',
+containing the results of the demographic questionnaire and the PHQ-9 pre-test,
+and 2) and 'sur_t1_2018_06_10.csv', containing the results of the PHQ-9
+post-test. In exports of such survey systems, data from all participants are
+typically stored in one file per assessment moment. Note how the export date is
+added to the files, to make sure that future updates are only used in the
+analysis when explicitly noted.
 
-In 'data/raw/ema', we find one file: 'ema_2018_05_01.csv',
+In 'data/raw/ema', we find one file: 'ema_2018_06_10.csv',
 containing the results of the EMA mood measurements of all participants,
 exported from the back-office of the EMA platform.
 
-Finally, in 'data/raw/actigraphy', we see a series of '.bin' files: binary data
-files that were exported from, e.g., GENEActiv smart watches, that were worn by the
-participants. Actigraphy data are high-volume data: these files are typically large
-(500MB is no exception). By using the '.bin' format, in which data are compressed,
-disk space is saved (in uncompressed format, data in a single .bin file can
-amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this
-directory contains data of one participant. In this case, there are even two
-files for one participant ('APC009'), perhaps because this participant started the
-study with a faulty device, which was swapped during the study.
+Finally, in 'data/raw/actigraphy', we see two '.bin' files: binary data files
+that were exported from, e.g., GENEActiv smart watches, that were worn by two
+participants. Unlike the survey and EMA mood data, each data file in this
+directory contains data of one participant. Actigraphy data are high-volume
+data: these files are typically large (500MB is no exception). By using the
+'.bin' format, in which data are compressed, disk space is saved (in
+uncompressed format, data in a single .bin file can amount up to 2 GB).
 
 In 'data/raw', a final very important file is 'key_file.csv'. This file is
 important because it ties all the data together. It contains the unique
@@ -131,11 +136,11 @@ participant is identified in each data collection system.
 
 Table: (\#tab:tab5a) Example Study Key-file
 
-|  ID        | Survey_ID| EMA_ID         | Actigraphy_ID   |
+|  ID        | Survey_ID| EMA_ID         | Actigraphy_ID  |
 |:-----------|:---------|:---------------|:---------------|
-| P001       |  QM01221 | 192.A102.83A   | APC009         |
-| P002       |  QM01228 | 192.B106.73X   | APC010         |
-| P003       |  QM01230 | 192.B220.00N   | APC011         |
+| P001       |  QM01221 | 192.A102.83A   | A001           |
+| P002       |  QM01228 | 192.B106.73X   | A002           |
+| P003       |  QM01230 | 192.B220.00N   |                |
 
 
 ## Import Scripts

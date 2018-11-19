@@ -28,10 +28,14 @@ developed in the past decades in wildlife telemetry research
 [@tomkiewicz2010global].
 
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/accgps-1.png" alt="Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity." width="95%" />
-<p class="caption">(\#fig:accgps)Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.95\linewidth]{activity_files/figure-latex/accgps-1} 
+
+}
+
+\caption{Actigraphy (left) and Geotracking (right): two methods for passive ecological momentary assessment of activity.}(\#fig:accgps)
+\end{figure}
 
 ## Actigraphy
 \index{Actigraphy} 
@@ -51,10 +55,14 @@ sub-sampled here to 0.1Hz (one measurement every 10 seconds), for practical
 reasons. If we would have plotted the data at 30Hz, the plot would have
 included 108.000 data points. At 0.1Hz, this reduces to 360 points.
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/genea-one-hour-1.png" alt="One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)" width="100%" />
-<p class="caption">(\#fig:genea-one-hour)One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-hour-1} 
+
+}
+
+\caption{One hour of raw data collected with a wrist-worn GENEActiv accelerometer, sub-sampled to 10-second epochs (0.1 Hz)}(\#fig:genea-one-hour)
+\end{figure}
 
 Data shown are included in package `emaph`, and the R-code to reproduce the plot
 is listed below. Use this to familiarize yourself with actigraphy data. If you
@@ -86,15 +94,15 @@ ggplot(d, aes(timestamp, value)) + geom_line() +
 \index{GENEAread}
 
 Raw accelerometer data need to be cleaned before analyses can be run. Typical
-data import work-flows include re-calibration (to reduce systematic measurement
-error), the detection of non-wear periods (to ensure that non-informative data
-are removed), sub-sampling (reducing the sample rate to reduce analysis time) and
-filtering/aggregation (to smoothen the signal and reduce the impact of outliers,
-measurement error and occasional missing values). Study results can be highly
-dependent on these initial steps, which, unfortunately, are also complex and
-time-consuming. Specialized R-packages exist to help you with this (see, for
-example, package `GGIR` and `GENEAread`, which are described in more detail in
-Chapter \@ref(rcat)).
+data import work-flows include re-calibration [to reduce systematic measurement
+error; @VanHees2014], the detection of non-wear periods (to ensure that
+non-informative data are removed or imputed), sub-sampling (reducing the sample
+rate to reduce analysis time) and filtering/aggregation (to smoothen the signal
+and reduce the impact of outliers, measurement error and occasional missing
+values). Study results can be highly dependent on these initial steps, which,
+unfortunately, are also complex and time-consuming. Specialized R-packages exist
+to help you with this (see, for example, package `GGIR` and `GENEAread`, which
+are described in more detail in Chapter \@ref(rcat)).
 
 
 ### Feature Extraction
@@ -109,7 +117,7 @@ data are used to study circadian rhythms in activity. Several approaches exist
 to combine the X, Y, Z measurements into a single meaningful
 metric. Two popular metrics are the 'Signal Vector Magnitude' (SVM) and the
 'Euclidean Norm Minus One' (ENMO). Validation studies suggest that ENMO should be
-the preferred metric [@VanHeest2014; @VanHeest2015], although recent findings
+the preferred metric [@VanHees2014; @VanHees2015], although recent findings
 also suggest that alternative metrics should perhaps be considered when
 sedentary and light activities are of interest [@Bai2016].
 
@@ -130,19 +138,23 @@ over the day follow a similar pattern, but the activity levels in the two plots
 are strikingly different. Age appears to matter here: activity levels of the
 middle-aged person are consistently lower than those of the young adult.
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/genea-one-day-1.png" alt="One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs" width="100%" />
-<p class="caption">(\#fig:genea-one-day)One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/genea-one-day-1} 
+
+}
+
+\caption{One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs}(\#fig:genea-one-day)
+\end{figure}
 
 \index{MVPA}
 
 For SVM and ENMO, cut-off values for various activity classes have been
 determined [@Dasilva2014; @Hildebrand2014; @Kim2017; @Rowlands2016]. Although
-these cut-offs vary somewhat from study to study, a common ENMO cut-off for
-Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g (125 milligravity units;
-Femke Lamers, personal communication, 15 november 2018). The dotted line in Figure
-\@ref(fig:genea-one-day) marks this cut-off.
+these cut-offs vary somewhat from study to study, a suggested pragmatic ENMO
+cut-off for Moderate-to-Vigorous-Physical-Activity (MVPA) is 0.125g (125
+milligravity units; Femke Lamers, personal communication, 15 november 2018). The
+dotted line in Figure \@ref(fig:genea-one-day) marks this cut-off.
 
 
 
@@ -174,10 +186,14 @@ for example, is {latitude: 52.37022; longitude: 4.89517}, which can be verified
 by punching these numbers in [Google maps](https://tinyurl.com/ybxxk99a).
 
 
-<div class="figure" style="text-align: center">
-<img src="images/activity/Latitude_and_Longitude_of_the_Earth.png" alt="Latitude and Longtitude of the Earth (source: WikiPedia)." width="75%" />
-<p class="caption">(\#fig:longlat)Latitude and Longtitude of the Earth (source: WikiPedia).</p>
-</div>
+\begin{figure}[!h]
+
+{\centering \includegraphics[width=0.75\linewidth]{images/activity/Latitude_and_Longitude_of_the_Earth} 
+
+}
+
+\caption{Latitude and Longtitude of the Earth (source: WikiPedia).}(\#fig:longlat)
+\end{figure}
 
 
 ### The Global Positioning System
@@ -212,10 +228,14 @@ ggplot(d, aes(lon, lat)) +
   facet_wrap(~ id)
 ```
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/fourweekgps-1.png" alt="Four-week location history of two people, collected with Google Timeline." width="100%" />
-<p class="caption">(\#fig:fourweekgps)Four-week location history of two people, collected with Google Timeline.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/fourweekgps-1} 
+
+}
+
+\caption{Four-week location history of two people, collected with Google Timeline.}(\#fig:fourweekgps)
+\end{figure}
 
 Data-points are superposed, using transparent colors, to make a distinction
 between locations that were visited once (light areas) and places that were
@@ -245,10 +265,14 @@ park. The red dot in the figure marks the median coordinate. This coordinate is
 very accurate: it marks the bedroom. All individual data points, however, fail
 to identify this location.
 
-<div class="figure" style="text-align: center">
-<img src="activity_files/figure-html/nightcrawl-1.png" alt="Nightly GPS-fluctuations, revealing inaccurate location measurements" width="100%" />
-<p class="caption">(\#fig:nightcrawl)Nightly GPS-fluctuations, revealing inaccurate location measurements</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{activity_files/figure-latex/nightcrawl-1} 
+
+}
+
+\caption{Nightly GPS-fluctuations, revealing inaccurate location measurements}(\#fig:nightcrawl)
+\end{figure}
 
 
 ### GPS-based Activity Measures

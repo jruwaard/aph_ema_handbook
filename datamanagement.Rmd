@@ -80,13 +80,11 @@ library(data.tree)
 
 path <- c(
     "project/data/raw/keyfile.csv",
-    "project/data/raw/surveys/sur_t0_2018_05_01.csv", 
-    "project/data/raw/surveys/sur_t1_2018_05_01.csv", 
-    "project/data/raw/ema/ema_2018_05_01.csv", 
-    "project/data/raw/actigraphy/acc_APC009_2018_04_26.bin", 
-    "project/data/raw/actigraphy/acc_APC009_b_2018_05_01.bin", 
-    "project/data/raw/actigraphy/acc_APC010_2018_05_01.bin",
-    "project/data/raw/actigraphy/acc_APC011_2018_05_01.bin", 
+    "project/data/raw/surveys/sur_t0_2018_06_10.csv", 
+    "project/data/raw/surveys/sur_t1_2018_06_10.csv", 
+    "project/data/raw/ema/ema_2018_06_10.csv", 
+    "project/data/raw/actigraphy/A001_2018_06_08.bin", 
+    "project/data/raw/actigraphy/A002_2018_06_08.bin", 
     "project/data/cleaned/t0.Rda", 
     "project/data/cleaned/t1.Rda",
     "project/data/cleaned/ema.Rda",
@@ -138,28 +136,25 @@ In the example project, unprocessed data files exported from the three data
 collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in
 the 'data/raw"-directory', in separate sub-directories per data type.
 
-In 'data/raw/survey', we find two files: 1)
-'sur_t0_2018_05_01.csv', containing the results of demographic
-questionnaire and the PHQ-9 pre-test, and 2) and
-'sur_t1_2018_05_01.csv', containing the results of the PHQ-9 post-test.
-In exports of such survey systems, data from all participants are typically
-stored in one file per assessment moment. Note how the export date is added to
-the files, to make sure that future updates are only used in the analysis when
-explicitly noted. 
+In 'data/raw/survey', we find two files: 1) 'sur_t0_2018_06_10.csv',
+containing the results of the demographic questionnaire and the PHQ-9 pre-test,
+and 2) and 'sur_t1_2018_06_10.csv', containing the results of the PHQ-9
+post-test. In exports of such survey systems, data from all participants are
+typically stored in one file per assessment moment. Note how the export date is
+added to the files, to make sure that future updates are only used in the
+analysis when explicitly noted.
 
-In 'data/raw/ema', we find one file: 'ema_2018_05_01.csv',
+In 'data/raw/ema', we find one file: 'ema_2018_06_10.csv',
 containing the results of the EMA mood measurements of all participants,
 exported from the back-office of the EMA platform.
 
-Finally, in 'data/raw/actigraphy', we see a series of '.bin' files: binary data
-files that were exported from, e.g., GENEActiv smart watches, that were worn by the
-participants. Actigraphy data are high-volume data: these files are typically large
-(500MB is no exception). By using the '.bin' format, in which data are compressed,
-disk space is saved (in uncompressed format, data in a single .bin file can
-amount up to 2 GB). Unlike the survey and EMA mood data, each data file in this
-directory contains data of one participant. In this case, there are even two
-files for one participant ('APC009'), perhaps because this participant started the
-study with a faulty device, which was swapped during the study.
+Finally, in 'data/raw/actigraphy', we see two '.bin' files: binary data files
+that were exported from, e.g., GENEActiv smart watches, that were worn by two
+participants. Unlike the survey and EMA mood data, each data file in this
+directory contains data of one participant. Actigraphy data are high-volume
+data: these files are typically large (500MB is no exception). By using the
+'.bin' format, in which data are compressed, disk space is saved (in
+uncompressed format, data in a single .bin file can amount up to 2 GB).
 
 In 'data/raw', a final very important file is 'key_file.csv'. This file is
 important because it ties all the data together. It contains the unique
@@ -178,11 +173,11 @@ participant is identified in each data collection system.
 
 Table: (\#tab:tab5a) Example Study Key-file
 
-|  ID        | Survey_ID| EMA_ID         | Actigraphy_ID   |
+|  ID        | Survey_ID| EMA_ID         | Actigraphy_ID  |
 |:-----------|:---------|:---------------|:---------------|
-| P001       |  QM01221 | 192.A102.83A   | APC009         |
-| P002       |  QM01228 | 192.B106.73X   | APC010         |
-| P003       |  QM01230 | 192.B220.00N   | APC011         |
+| P001       |  QM01221 | 192.A102.83A   | A001           |
+| P002       |  QM01228 | 192.B106.73X   | A002           |
+| P003       |  QM01230 | 192.B220.00N   |                |
 
 
 ## Import Scripts

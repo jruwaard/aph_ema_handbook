@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-19}
+    \date{2018-11-20}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -201,7 +201,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-19)}.
+Introduction, with Examples in R (1st edition - build 2018-11-20)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -1178,13 +1178,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.64846, df = 194.71, p-value = 0.5175}
+\CommentTok{#> t = 0.99815, df = 195.97, p-value = 0.3194}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.3858413  0.1948966}
+\CommentTok{#>  -0.1427713  0.4353978}
 \CommentTok{#> sample estimates:}
 \CommentTok{#> mean of x mean of y }
-\CommentTok{#> 0.0703100 0.1657823}
+\CommentTok{#> 0.2570271 0.1107139}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1537,7 +1537,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4847}
+\CommentTok{#> [1] 0.4669}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1754,13 +1754,14 @@ data collection systems (i.e., survey data, EMA data, and actigraphy
 data) are stored in the 'data/raw``-directory', in separate
 sub-directories per data type.
 
-In `data/raw/survey', we find two files: 1) `sur\_t0\_2018\_06\_10.csv',
-containing the results of the demographic questionnaire and the PHQ-9
-pre-test, and 2) `sur\_t1\_2018\_06\_10.csv', containing the results of
-the PHQ-9 post-test. In exports of such survey systems, data from all
-participants are typically stored in one file per assessment moment.
-Note how the export date is added to the files, to make sure that future
-updates are only used in the analysis when explicitly noted.
+In `data/raw/surveys', we find two files: 1)
+`sur\_t0\_2018\_06\_10.csv', containing the results of the demographic
+questionnaire and the PHQ-9 pre-test, and 2)
+`sur\_t1\_2018\_06\_10.csv', containing the results of the PHQ-9
+post-test. In exports of such survey systems, data from all participants
+are typically stored in one file per assessment moment. Note how the
+export date is added to the files, to make sure that future updates are
+only used in the analysis when explicitly noted.
 
 In `data/raw/ema', we find one file: `ema\_2018\_06\_10.csv', containing
 the results of the EMA mood measurements of all participants, exported
@@ -1838,7 +1839,7 @@ final analyses.
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# ------------------------------------------------------------}
-\CommentTok{# Clean data }
+\CommentTok{# Clean survey data }
 \CommentTok{# JR - 2018-10-16}
 \CommentTok{# ------------------------------------------------------------}
 
@@ -1847,6 +1848,8 @@ final analyses.
 
 \CommentTok{# inject study ID, from study key file -----------------------}
 \NormalTok{keys <-}\StringTok{ }\KeywordTok{read.csv}\NormalTok{(}\StringTok{"data/raw/key_file.csv"}\NormalTok{)}
+
+\KeywordTok{names}\NormalTok{(t0)[}\DecValTok{1}\NormalTok{] <-}\StringTok{ "Survey_ID"}
 \NormalTok{t0 <-}\StringTok{ }\KeywordTok{merge}\NormalTok{(t0, keys)}
 
 \CommentTok{# only keep variables of interest ----------------------------}
@@ -1894,11 +1897,11 @@ the item scores in the cleaned baseline data:
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{# ------------------------------------------------------------}
-\CommentTok{# Pre-process data }
+\CommentTok{# Pre-process survey data }
 \CommentTok{# JR - 2018-10-16}
 \CommentTok{# ------------------------------------------------------------}
 
-\CommentTok{# import cleaned baseline survey data ------------------------}
+\CommentTok{# import cleaned survey data ------------------------}
 \KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/t0.Rda"}\NormalTok{)}
 \KeywordTok{load}\NormalTok{(}\StringTok{"data/cleaned/t1.Rda"}\NormalTok{)}
 
@@ -1908,7 +1911,7 @@ the item scores in the cleaned baseline data:
 
 \CommentTok{# re-save baseline data --------------------------------------}
 \KeywordTok{save}\NormalTok{(t0, }\DataTypeTok{file =} \StringTok{"data/cleaned/t0.Rda"}\NormalTok{)}
-\KeywordTok{save}\NormalTok{(t0, }\DataTypeTok{file =} \StringTok{"data/cleaned/t1.Rda"}\NormalTok{)}
+\KeywordTok{save}\NormalTok{(t1, }\DataTypeTok{file =} \StringTok{"data/cleaned/t1.Rda"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1960,7 +1963,6 @@ standard R data structure.
 \begin{Highlighting}[]
 \CommentTok{# -------------------------------------------------------------}
 \CommentTok{# N = 1 Analysis (P001)}
-\CommentTok{# note: part of manuscript!}
 \CommentTok{# JR - 2018-10-16}
 \CommentTok{# -------------------------------------------------------------}
 
@@ -1992,7 +1994,7 @@ all you need to satisfy their request:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{# Revisiting regression results, for a visual regression residual check  }
+\CommentTok{# Revisiting regression results, for a visual regression residuals check  }
 \KeywordTok{load}\NormalTok{(}\StringTok{"scripts/published/P001_regression.Rda"}\NormalTok{)}
 
 \KeywordTok{pdf}\NormalTok{(}\DataTypeTok{file =} \StringTok{"scripts/publised/residual_plot.pdf"}\NormalTok{)}
@@ -2089,7 +2091,7 @@ If you want to learn more about data management with R and RStudio, the
 book \emph{``Reproducible Research with R and RStudio''}
 \citep{gandrud2015} would be a good place to start. You may also be
 informed by the data management techniques that are described in the
-first two chapters of the book \emph{``Using Rand RStudio for Data
+first two chapters of the book \emph{``Using R and RStudio for Data
 Management, Statistical Analysis, and Graphics''} \citep{horton2015}.
 
 \part{EMA Outcomes}\label{part-ema-outcomes}
@@ -5218,7 +5220,7 @@ personal data of EU citizens leave the EU.
 
 Moodbuster (\url{http://moodbuster.eu/}) is a web-based treatment
 platform with an integrated EMA app. The platform was developed by an
-international non-profit research consortium, including VU, VUmc and GGZ
+international non-profit research consortium, including VU and GGZ
 inGeest, in two major EU-funded research projects: ICT4Depression
 \citep[see ICT4Depression.eu;][]{warmerdam2012} and E-COMPARED
 \citep[see \url{http://e-compared.eu};][]{Kleiboer2016, VandeVen2017}.
@@ -5231,7 +5233,7 @@ period of up to 20 weeks.
 
 E-COMPARED EMA data were used in several predictive machine learning
 studies \citep{mikus2018, rocha2018}. In addition, the EMA app was used
-in a satellite study designed to assess the effects of long-term EMA
+in a satellite study designed to assess reactivity in long-term EMA
 \citep{VanBallegooijen2016}. Moodbuster will also be used in the EU
 ImpleMentAll project (\url{http://www.implementall.eu}) and in several
 other clinical trials that are in preparation. Currently, EMA assessment
@@ -5239,7 +5241,8 @@ protocols are hard-coded in the Moodbuster app. New EMA assessments
 protocols can be implemented in collaboration with the Moodbuster
 development team. An online back-office is in development. Previous
 studies used an Android version of the EMA app. Cross-platform versions
-of the app are in development.
+of the app are in development (The expected launch date of MoodBuster
+2.0 is December 2018).
 
 More information on Moodbuster can be obtained from prof. dr. Heleen
 Riper (\href{mailto:h.riper@vu.nl}{\nolinkurl{h.riper@vu.nl}}).
@@ -5678,7 +5681,7 @@ development version, which is on
 multiple accelerometer data files can be imported, calibrated, cleaned
 (identify non-wear periods, impute data) and analyzed (extract and
 summarize variables on physical activity and sleep). The example below
-shows an example configuration. See \texttt{?g.shell.GGIR} (and
+shows an example configuration (. See \texttt{?g.shell.GGIR} (and
 \texttt{?g.part1}, ?\texttt{g.part2}, to \texttt{g.part4}) to learn the
 meaning of each parameter. If you get lost or run into a problem, you
 can ask the package developers or other users for help via the GGIR
@@ -5800,19 +5803,19 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.12417 -0.63067 -0.07466  0.70421  2.74190 }
+\CommentTok{#> -3.05080 -0.58418 -0.06736  0.55004  1.89357 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
-\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.73173    0.10257   7.134 1.84e-10 ***}
-\CommentTok{#> depression.l1  0.01143    0.08263   0.138    0.890    }
-\CommentTok{#> const          0.12207    0.09739   1.253    0.213    }
+\CommentTok{#>                Estimate Std. Error t value Pr(>|t|)    }
+\CommentTok{#> activity.l1    0.511952   0.089347   5.730 1.15e-07 ***}
+\CommentTok{#> depression.l1 -0.015223   0.089966  -0.169    0.866    }
+\CommentTok{#> const         -0.007729   0.092572  -0.083    0.934    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.9416 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.3465, Adjusted R-squared:  0.3329 }
-\CommentTok{#> F-statistic: 25.45 on 2 and 96 DF,  p-value: 1.352e-09}
+\CommentTok{#> Residual standard error: 0.8926 on 96 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.255,  Adjusted R-squared:  0.2395 }
+\CommentTok{#> F-statistic: 16.43 on 2 and 96 DF,  p-value: 7.306e-07}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5867,15 +5870,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.6480054\\
+1 & -0.4052636\\
 \hline
-2 & -0.0690737\\
+2 & -0.1865967\\
 \hline
-3 & 0.2468734\\
+3 & -0.1393853\\
 \hline
-4 & -0.1099927\\
+4 & 0.0279950\\
 \hline
-5 & -0.2516691\\
+5 & -0.1300189\\
 \hline
 \end{tabular}
 
@@ -6150,11 +6153,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 12.99650 32.18590}
-\CommentTok{#> 2:     2  7 18.67787 42.08207}
-\CommentTok{#> 3:     3  7 14.87447 36.87552}
-\CommentTok{#> 4:     4  7 13.19019 36.87518}
-\CommentTok{#> 5:     5  7 13.32257 30.78009}
+\CommentTok{#> 1:     1  7 17.97807 43.00726}
+\CommentTok{#> 2:     2  7 14.57202 37.21649}
+\CommentTok{#> 3:     3  7 11.70117 30.40389}
+\CommentTok{#> 4:     4  7 12.53885 36.75428}
+\CommentTok{#> 5:     5  7 14.78020 34.44720}
 \end{Highlighting}
 \end{Shaded}
 

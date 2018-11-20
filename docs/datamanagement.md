@@ -21,10 +21,14 @@ creating new projects from RStudio's file menu. To create a new project, choose
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
-<div class="figure" style="text-align: center">
-<img src="images/datamanagement/new_project.png" alt="creating a project in RStudio" width="70%" />
-<p class="caption">(\#fig:fig5a)creating a project in RStudio</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{images/datamanagement/new_project} 
+
+}
+
+\caption{creating a project in RStudio}(\#fig:fig5a)
+\end{figure}
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
@@ -74,10 +78,14 @@ in which data were collected via:
     
 3.  an accelerometer to assess activity levels.
 
-<div class="figure" style="text-align: center">
-<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="50%" />
-<p class="caption">(\#fig:dm-project-tree)Example project directory structure</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.5\linewidth]{images/datamanagement/project_tree} 
+
+}
+
+\caption{Example project directory structure}(\#fig:dm-project-tree)
+\end{figure}
 
 The full project, including example data and R-scripts, is available for download at <https://tinyurl.com/yd7mx32c>. Download, unzip, and double-click the 'APH EMA Project.Rproj' file, to open the project in RStudio. Note that this is a large download (~134MB), because it contains large accelerometer data files.
 
@@ -92,7 +100,7 @@ In the example project, unprocessed data files exported from the three data
 collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in
 the 'data/raw"-directory', in separate sub-directories per data type.
 
-In 'data/raw/survey', we find two files: 1) 'sur_t0_2018_06_10.csv',
+In 'data/raw/surveys', we find two files: 1) 'sur_t0_2018_06_10.csv',
 containing the results of the demographic questionnaire and the PHQ-9 pre-test,
 and 2) 'sur_t1_2018_06_10.csv', containing the results of the PHQ-9
 post-test. In exports of such survey systems, data from all participants are
@@ -163,7 +171,7 @@ the final analyses.
 
 ```r
 # ------------------------------------------------------------
-# Clean data 
+# Clean survey data 
 # JR - 2018-10-16
 # ------------------------------------------------------------
 
@@ -172,6 +180,8 @@ t0 <- read.csv("data/raw/surveys/sur_t0_2018_06_10.csv")
 
 # inject study ID, from study key file -----------------------
 keys <- read.csv("data/raw/key_file.csv")
+
+names(t0)[1] <- "Survey_ID"
 t0 <- merge(t0, keys)
 
 # only keep variables of interest ----------------------------
@@ -217,11 +227,11 @@ cleaned baseline data:
 
 ```r
 # ------------------------------------------------------------
-# Pre-process data 
+# Pre-process survey data 
 # JR - 2018-10-16
 # ------------------------------------------------------------
 
-# import cleaned baseline survey data ------------------------
+# import cleaned survey data ------------------------
 load("data/cleaned/t0.Rda")
 load("data/cleaned/t1.Rda")
 
@@ -231,7 +241,7 @@ t1$phq9 <- rowSums(t1[paste0("phq", 1:9)], na.rm = TRUE)
 
 # re-save baseline data --------------------------------------
 save(t0, file = "data/cleaned/t0.Rda")
-save(t0, file = "data/cleaned/t1.Rda")
+save(t1, file = "data/cleaned/t1.Rda")
 ```
 
 
@@ -278,7 +288,6 @@ journal), and the regression results are saved in a standard R data structure.
 ```r
 # -------------------------------------------------------------
 # N = 1 Analysis (P001)
-# note: part of manuscript!
 # JR - 2018-10-16
 # -------------------------------------------------------------
 
@@ -308,7 +317,7 @@ the following three lines are all you need to satisfy their request:
 
 
 ```r
-# Revisiting regression results, for a visual regression residual check  
+# Revisiting regression results, for a visual regression residuals check  
 load("scripts/published/P001_regression.Rda")
 
 pdf(file = "scripts/publised/residual_plot.pdf")
@@ -362,5 +371,5 @@ example that we discussed.
 If you want to learn more about data management with R and RStudio, the book
 *"Reproducible Research with R and RStudio"* [@gandrud2015] would be a good
 place to start. You may also be informed by the data management techniques that
-are described in the first two chapters of the book *"Using Rand RStudio for
+are described in the first two chapters of the book *"Using R and RStudio for
 Data Management, Statistical Analysis, and Graphics"* [@horton2015].

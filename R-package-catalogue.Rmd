@@ -90,7 +90,7 @@ install_github("wadpac/GGIR", dependencies = TRUE)
 `GGIR`'s main function is `g.shell.GGIR`, with which multiple accelerometer data
 files can be imported, calibrated, cleaned (identify non-wear periods, impute
 data) and analyzed (extract and summarize variables on physical activity and
-sleep). The example below shows an example configuration. See `?g.shell.GGIR`
+sleep). The example below shows an example configuration (. See `?g.shell.GGIR`
 (and `?g.part1`, ?`g.part2`, to `g.part4`) to learn the meaning of each
 parameter. If you get lost or run into a problem, you can ask the package
 developers or other users for help via the GGIR Google discussion forum, at

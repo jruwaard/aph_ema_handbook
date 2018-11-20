@@ -67,7 +67,7 @@ knitr::include_graphics(c(
 
 Moodbuster (<http://moodbuster.eu/>) is a web-based treatment platform with an
 integrated EMA app. The platform was developed by an international non-profit
-research consortium, including VU, VUmc and GGZ inGeest, in two major EU-funded
+research consortium, including VU and GGZ inGeest, in two major EU-funded
 research projects: ICT4Depression [see ICT4Depression.eu; @warmerdam2012] and
 E-COMPARED [see <http://e-compared.eu>; @Kleiboer2016; @VandeVen2017]. 
 
@@ -78,14 +78,15 @@ of their treatment, over a period of up to 20 weeks.
 
 E-COMPARED EMA data were used in several predictive machine learning studies
 [@mikus2018; @rocha2018]. In addition, the EMA app was used in a satellite
-study designed to assess the effects of long-term EMA [@VanBallegooijen2016].
+study designed to assess reactivity in long-term EMA [@VanBallegooijen2016].
 Moodbuster will also be used in the EU ImpleMentAll project
 (<http://www.implementall.eu>) and in several other clinical trials that are in
 preparation. Currently, EMA assessment protocols are hard-coded in the
 Moodbuster app. New EMA assessments protocols can be implemented in
 collaboration with the Moodbuster development team. An online back-office is in
 development. Previous studies used an Android version of the EMA app.
-Cross-platform versions of the app are in development.
+Cross-platform versions of the app are in development (The expected launch date
+of MoodBuster 2.0 is December 2018).
 
 More information on Moodbuster can be obtained from prof. dr. Heleen Riper
 (<h.riper@vu.nl>).
@@ -176,7 +177,7 @@ Department of Psychiatry, University Medical Center Groningen. RoQUA has a
 sophisticated and user-friendly online back-office portal, with which
 researchers can define assessment protocols and invite study participants -
 through e-mail or SMS - to complete questionnaires online (on desktop or mobile
-devices). 
+devices).
 
 By inviting study participants several times a day to complete a
 questionnaire via the standard web browser of their mobile phone, active EMA an
@@ -214,13 +215,16 @@ one unit was approximately 250 euro.
 GENEActiv is used in a growing number of clinical studies to measure activity
 and sleep-wake cycles, in natural conditions, over longer periods of time.
 Dedicated R-packages to pre-process and analyze the raw data exist (see Chapter
-\@ref(rcat)). Matlab users should consider the open source 'Actant - Activity Analysis Toolbox' (https://github.com/maximosipov/actant), by Osipov & Te Lindert, which includes functionality for visualization and analysis of behavioral
-and environmental timeseries, acquired using GENEActiv (and other)
-accelerometers. No accompanying app exists with which study
-participants can be provided feedback about their activity. This might
-negatively affect wear-time and study compliance in research participants, who
-are accustomed to consumer activity-sampling devices, such as Fitbit, where many
-options for real-time feedback exist. Further, researchers we spoke with noted that the event logger was hard to use in practice. This resulted in low compliance in field studies. 
+\@ref(rcat)). Matlab users should consider the open source 'Actant - Activity
+Analysis Toolbox' (<https://github.com/maximosipov/actant>), by Osipov & Te
+Lindert, which includes functionality for visualization and analysis of
+behavioral and environmental timeseries, acquired using GENEActiv (and other)
+accelerometers. No accompanying app exists with which study participants can be
+provided feedback about their activity. This might negatively affect wear-time
+and study compliance in research participants, who are accustomed to consumer
+activity-sampling devices, such as Fitbit, where many options for real-time
+feedback exist. Further, researchers we spoke with noted that the event logger
+was hard to use in practice. This resulted in low compliance in field studies.
 
 ```{r geneactiv, echo = FALSE, fig.cap = "The GENEActiv Accelerometer", out.width='100%', fig.align = 'center', fig.show = 'hold', fig.pos = "!h"}
 knitr::include_graphics("images/instruments/geneactive/geneactive-pack.png")

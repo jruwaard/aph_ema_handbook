@@ -188,7 +188,7 @@ over the day follow a similar pattern, but the activity levels in the two plots
 are strikingly different. Age appears to matter here: activity levels of the
 middle-aged person are consistently lower than those of the young adult.
 
-```{r genea-one-day, out.width = "100%", fig.asp = 0.4, fig.cap = "One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs", echo = FALSE}
+```{r genea-one-day, out.width = "100%", fig.asp = 0.35, fig.cap = "One day of data of the two persons in the GENEA data set of package 'emaph', summarised with ENMO, in 10-minute epochs", echo = FALSE}
 # Plot signal vector magnitude.
 library(emaph)
 library(lubridate)

@@ -45,7 +45,7 @@ populations. You should be aware, though, that results obtained in non-patient
 populations do not necessarily generalize to patient populations. EMA mood
 ratings, for example, might be much more variable in patients compared to
 non-patients. Pilot studies should therefore also be conducted in the target
-population. It is also advisable to write a manual on how to operate the EMA device and spend time on briefing participants on what is expected of them during the study. Depending on your study topic and EMA method, de-briefing might also be nescesarry, along with instructions on how to return a wearable or de-install an EMA app. 
+population. It is also advisable to write a manual on how to operate the EMA device and spend time on briefing participants on what is expected of them during the study. Depending on your study topic and EMA method, de-briefing might also be necesarry, along with instructions on how to return a wearable or de-install an EMA app. 
 
 
 ## What are the Qualities of the EMA Measures?

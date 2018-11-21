@@ -9,6 +9,5 @@ aph_ema.Rmd
 aph_ema.rds
 .DS_Store
 aph_ema.tex
-
-
-
+*.rds
+*.Rproj

@@ -248,7 +248,7 @@ of available packages, see
 
 If you find a package you like, you can install it via the RStudio menu system,
 choosing `Tools > packages`. But you can also use the console, via the
-`install.package` function.
+`install.packages` function.
 
 A popular package, `tidyverse`, is used extensively in the examples of this
 manual. This package comprises a set of popular packages from the creators
@@ -257,7 +257,7 @@ install this package now.
 
 ```{r r-install, eval = FALSE}
 # Install a package from CRAN.
-install.package(tidyverse)
+install.packages(tidyverse)
 ```
 
 The `tidyverse` contains a package called `haven`, which allows you to read and

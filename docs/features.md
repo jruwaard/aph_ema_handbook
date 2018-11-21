@@ -96,10 +96,7 @@ the dynamics of the series with two numbers. As can be seen in Figure
 informative summary. At the start, the estimated mean - the intercept - is
 3.2. This mean increases approximately
 0.9 points per week (the slope), to a final estimated
-mean of 5.9. Comparing Figure
-\@ref(fig:feat-plot-mean) and Figure \@ref(fig:feat-plot-lm), we see that Figure
-\@ref(fig:feat-plot-lm) is more successful in capturing the variation in the
-series.
+mean of 5.9. If you visually compare the red regression line in Figure \@ref(fig:feat-plot-lm) with the red line for the mean in \@ref(fig:feat-plot-mean), it is clear the regression line provides a much better summary.
 
 \begin{figure}
 
@@ -107,7 +104,7 @@ series.
 
 }
 
-\caption{EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)}(\#fig:feat-plot-lm)
+\caption{EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines).}(\#fig:feat-plot-lm)
 \end{figure}
 
 By using regression, we can also find a better estimate of the SD. Remember how
@@ -268,7 +265,9 @@ In this chapter, we used a number of statistical indicators to characterize a
 single time-series. By extracting these indicators (or "features"), we
 identified several regularities. We learned that the mean, variance and
 missingness increased over time, and we identified clear signs of circadian
-rhythmicity. You might have identified some of these features when you first
+rhythmicity. 
+
+You might have identified some of the features when you first
 inspected Figure \@ref(fig:feat-plot). The increase in the mean was pretty easy
 to spot. However, the systematic increases in the variance and the missingness
 were less clear. Likewise, although you might have spotted the periodicity in
@@ -291,22 +290,20 @@ you learn how to apply the feature extraction techniques yourself.
 
 
 ```r
-## (De)constructing a simulated EMA time-series
+# (De)constructing a simulated EMA time-series ------------
 
-# libraries ----------------
+# libraries -----------------------------------------------
 library(ggplot2)
 library(gridExtra)
 library(psych)
 library(zoo)
 library(emaph)
 
-# simulate the signal (using emaph function) -------
+# simulate the signal (using emaph function) --------------
 d <- generate_features_dataset(seed = 123)
 
-# plot -------------------------
+# plot ----------------------------------------------------
 e <- subset(d,!is.na(s))
-
-# raw series 
 ggplot(e, aes(x = t, y = s)) +
   geom_line() +
   geom_point() +
@@ -315,32 +312,34 @@ ggplot(e, aes(x = t, y = s)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-# plot mean and variance --------
+# plot, with mean and variance ----------------------------
 ggplot(e, aes(x = t, y = s)) +
-  geom_hline(yintercept = mean(e$s, na.rm = TRUE), color = "red") +
+  geom_hline(yintercept = mean(e$s, na.rm = TRUE), 
+             color = "red") +
   geom_hline(
-    yintercept = mean(e$s, na.rm = TRUE) + sd(e$s, na.rm = TRUE),
+    yintercept = mean(e$s, na.rm = TRUE) + sd(e$s, 
+                                              na.rm = TRUE),
     color = "blue",
     linetype = 2
   ) +
   geom_hline(
-    yintercept = mean(e$s, na.rm = TRUE) - sd(e$s, na.rm = TRUE),
+    yintercept = mean(e$s, na.rm = TRUE) - sd(e$s, 
+                                              na.rm = TRUE),
     color = "blue",
     linetype = 2
   ) +
-  #geom_line() +
   geom_point() +
   ylab("mood") + xlab("days") +
   ylim(0, 10) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-## The trends ---------------------
+# The trends ----------------------------------------------
 
-## run a linear regression of mood ratings by time
+# run a linear regression of mood ratings by time
 fm = lm(s ~ t, e)
 
-## mean
+# mean
 ggplot(e, aes(x = t, y = s)) +
   geom_smooth(method = "lm", color = "red", se = FALSE) +
   geom_abline(
@@ -361,7 +360,7 @@ ggplot(e, aes(x = t, y = s)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-## residuals
+# residuals
 e$residuals <- rstandard(fm)
 e$week <- (e$t %/% 1) + 1
 
@@ -372,8 +371,7 @@ ggplot(subset(e, week < 20), aes(x = t, y = abs(residuals))) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-# Missing values ----------------------
-
+# Missing values ------------------------------------------
 d$t_g <- cut(t, 21, labels = 1:21)
 p <- prop.table(table(d$t_g, is.na(d$s)), 1)
 p <- as.data.frame(p)
@@ -388,7 +386,7 @@ ggplot(p, aes(x = as.numeric(Var1), y = Freq * 100)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-## imputation through interpolation
+# imputation through interpolation
 impute_interpolation <- function(x) {
   require(zoo)
   
@@ -406,7 +404,6 @@ impute_interpolation <- function(x) {
   y_
 }
 
-
 d$s_imputed <- impute_interpolation(d$s)
 ggplot(d, aes(x = t, y = s_imputed)) +
   geom_line(color = 1) +
@@ -416,14 +413,14 @@ ggplot(d, aes(x = t, y = s_imputed)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-# Autocorrelation ---------------------------
+# Autocorrelation -----------------------------------------
 acf(e$s,
     type = "partial",
     lag.max = 35,
     main = "")
 
 
-# Rolling mean ------------------------------
+# Rolling mean --------------------------------------------
 d$rolling_mean <-
   as.numeric(
     zoo::rollapply(
@@ -446,11 +443,11 @@ ggplot(e, aes(x = t, y = rolling_mean)) +
   theme_bw() + theme(panel.grid.minor = element_blank())
 
 
-# Frequency analysis --------------------------
-
+# Frequency analysis --------------------------------------
 fa <-
   spec.pgram(
-    ts(impute_interpolation(d$s), frequency = n_measurements_per_day),
+    ts(impute_interpolation(d$s), 
+       frequency = n_measurements_per_day),
     detrend = TRUE,
     demean = TRUE,
     main = "periodogram",

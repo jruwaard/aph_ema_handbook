@@ -46,7 +46,7 @@ an overview of EMA instruments, outcomes, methods and analytic techniques,
 guidelines for EMA-studies, and a catalogue of EMA research in the APH
 consortium.
 
-This manual is available online at <https://jruwaard.github.io/aph_ema_handbook/>. Sources are available at <https://github.com/jruwaard/aph_ema_handbook>. Please post your comments and suggestions there, or via e-mail, through <aph.ema@ggzingeest.nl>.
+This manual is available online at <https://jruwaard.github.io/aph_ema_handbook/>. Sources are available at <https://github.com/jruwaard/aph_ema_handbook>. Please post your comments and suggestions [there](https://github.com/jruwaard/aph_ema_handbook/issues), or via e-mail, through <aph.ema@ggzingeest.nl>.
 
 This manual will be continuously updated. In citations, please include explicit 
 build dates, as in:

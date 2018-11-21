@@ -50,6 +50,14 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37468015-2', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 <style type="text/css">
@@ -286,6 +294,7 @@ code > span.in { font-style: italic; } /* Information */
 <li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
 <li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
 <li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
+
 </ul>
 
       </nav>
@@ -407,7 +416,7 @@ p &lt;-<span class="st"> </span><span class="kw">numeric</span>(nsim)
 
 <span class="co"># power</span>
 <span class="kw">sum</span>(p <span class="op">&lt;</span><span class="st"> </span><span class="fl">0.05</span>) <span class="op">/</span><span class="st"> </span>nsim
-<span class="co">#&gt; [1] 0.473</span></code></pre></div>
+<span class="co">#&gt; [1] 0.4789</span></code></pre></div>
 <p>As can be seen, the simulation results are very close to the output of <code>pwr.t.test</code>. There was no immediate need to run this simulation. We already knew that the power was 48%. The example illustrates, however, that simulation is a valid option when power calculators are too limited. Simulating the right data, of course, can be challenging as well, but you will find that R has packages that simplify data simulation. For example, <code>mvrnorm</code> in package <code>MASS</code> <span class="citation">(Venables &amp; Ripley, <a href="#ref-Venables2002">2002</a>)</span> can be used to generate correlated data, and package <code>simstudy</code> <span class="citation">(Goldfeld, <a href="#ref-R-simstudy">2018</a>)</span> can be used to generate complex longitudinal and hierarchical data.</p>
 </div>
 <div id="what-are-the-ethical-aspects" class="section level2">
@@ -472,6 +481,19 @@ Figure 3.2: Flow-chart to determine whether study devices (including EMA apps) s
 <p>Ekker, A., &amp; van Rest, B. (2013). <em>Medische apps, is certificeren nodig? In 7 stappen naar een CE-markering voor uw app</em>. Den Haag: Nictiz. Retrieved from <a href="https://www.nictiz.nl/wp-content/uploads/2013/05/13005-Whitepaper-medische-apps.pdf" class="uri">https://www.nictiz.nl/wp-content/uploads/2013/05/13005-Whitepaper-medische-apps.pdf</a></p>
 </div>
 </div>
+<script>
+  /*
+  Sorts the references alphabetically.
+  Modified from code by Yvonne Aburrow.
+  */
+  $(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+      return $(b).children('p').html().toUpperCase() > $(a).children('p').html().toUpperCase() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+  })
+</script>
             </section>
 
           </div>

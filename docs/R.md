@@ -438,13 +438,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 0.34261, df = 196.93, p-value = 0.7323
+#> t = -0.86628, df = 197.75, p-value = 0.3874
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.2414434  0.3429740
+#>  -0.4100198  0.1597358
 #> sample estimates:
 #>   mean of x   mean of y 
-#> 0.059604340 0.008839078
+#> -0.01955265  0.10558936
 ```
 
 

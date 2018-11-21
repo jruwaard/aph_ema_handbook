@@ -50,6 +50,14 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37468015-2', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 <style type="text/css">
@@ -286,6 +294,7 @@ code > span.in { font-style: italic; } /* Information */
 <li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
 <li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
 <li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
+
 </ul>
 
       </nav>
@@ -334,11 +343,11 @@ Figure 7.2: EMA time-series, with reference lines for the mean (red line) and th
 </div>
 <div id="modeling-the-trend" class="section level2">
 <h2><span class="header-section-number">7.3</span> Modeling the Trend</h2>
-<p>Now that we know that the overall mean and SD are sub-optimal features of this time-series, the question is how we can do better. What other features can we extract? One option would be to characterize the series in simple regression terms, via an intercept and a slope. By doing so, we can economically describe the dynamics of the series with two numbers. As can be seen in Figure <a href="features.html#fig:feat-plot-lm">7.3</a>, the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is 3.2. This mean increases approximately 0.9 points per week (the slope), to a final estimated mean of 5.9. Comparing Figure <a href="features.html#fig:feat-plot-mean">7.2</a> and Figure <a href="features.html#fig:feat-plot-lm">7.3</a>, we see that Figure <a href="features.html#fig:feat-plot-lm">7.3</a> is more successful in capturing the variation in the series.</p>
+<p>Now that we know that the overall mean and SD are sub-optimal features of this time-series, the question is how we can do better. What other features can we extract? One option would be to characterize the series in simple regression terms, via an intercept and a slope. By doing so, we can economically describe the dynamics of the series with two numbers. As can be seen in Figure <a href="features.html#fig:feat-plot-lm">7.3</a>, the regression model provides a more realistic and informative summary. At the start, the estimated mean - the intercept - is 3.2. This mean increases approximately 0.9 points per week (the slope), to a final estimated mean of 5.9. If you visually compare the red regression line in Figure <a href="features.html#fig:feat-plot-lm">7.3</a> with the red line for the mean in <a href="features.html#fig:feat-plot-mean">7.2</a>, it is clear the regression line provides a much better summary.</p>
 <div class="figure" style="text-align: center"><span id="fig:feat-plot-lm"></span>
-<img src="features_files/figure-html/feat-plot-lm-1.png" alt="EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)" width="100%" />
+<img src="features_files/figure-html/feat-plot-lm-1.png" alt="EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)." width="100%" />
 <p class="caption">
-Figure 7.3: EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)
+Figure 7.3: EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines).
 </p>
 </div>
 <p>By using regression, we can also find a better estimate of the SD. Remember how the SD is conceptually defined as the average distance between the scores and the mean. Since the mean is modeled by the regression line, we can estimate the SD by calculating the standard deviation of the residuals of the regression model that we used to retrieve the intercept and slope. For our series, this results in an estimated SD of 2.3. The new SD estimate is smaller than the overall SD, as expected. By accounting for the extra variability introduced by the trend, we get a more accurate estimate of the variability around the mean at each point in time. However, the new estimate is still higher than the daily estimate that we calculated above. Figure <a href="features.html#fig:feat-plot-resid">7.4</a> provides a first indication of what is going on. In the figure, absolution regression residuals are plotted over time, with a regression line superposed. This reveals that residuals increase as time goes by. We discovered a new feature of the series: heteroscedasticity.</p>
@@ -402,26 +411,25 @@ Figure 7.9: periodogram of the EMA time series, revealing a one-day and a one-we
 </div>
 <div id="discussion-1" class="section level2">
 <h2><span class="header-section-number">7.8</span> Discussion</h2>
-<p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure <a href="features.html#fig:feat-plot">7.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
+<p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity.</p>
+<p>You might have identified some of the features when you first inspected Figure <a href="features.html#fig:feat-plot">7.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
 <p>The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter <a href="csd.html#csd">9</a>, for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.</p>
 <p>Finally, you might have been disappointed by the lack of code examples in this chapter. We did not include them, to avoid unnecessary distraction from the conceptual explanation. Instead, we provide a full code listing below, to allow you learn how to apply the feature extraction techniques yourself.</p>
 
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## (De)constructing a simulated EMA time-series
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># (De)constructing a simulated EMA time-series ------------</span>
 
-<span class="co"># libraries ----------------</span>
+<span class="co"># libraries -----------------------------------------------</span>
 <span class="kw">library</span>(ggplot2)
 <span class="kw">library</span>(gridExtra)
 <span class="kw">library</span>(psych)
 <span class="kw">library</span>(zoo)
 <span class="kw">library</span>(emaph)
 
-<span class="co"># simulate the signal (using emaph function) -------</span>
+<span class="co"># simulate the signal (using emaph function) --------------</span>
 d &lt;-<span class="st"> </span><span class="kw">generate_features_dataset</span>(<span class="dt">seed =</span> <span class="dv">123</span>)
 
-<span class="co"># plot -------------------------</span>
+<span class="co"># plot ----------------------------------------------------</span>
 e &lt;-<span class="st"> </span><span class="kw">subset</span>(d,<span class="op">!</span><span class="kw">is.na</span>(s))
-
-<span class="co"># raw series </span>
 <span class="kw">ggplot</span>(e, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> s)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
@@ -430,32 +438,34 @@ e &lt;-<span class="st"> </span><span class="kw">subset</span>(d,<span class="op
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-<span class="co"># plot mean and variance --------</span>
+<span class="co"># plot, with mean and variance ----------------------------</span>
 <span class="kw">ggplot</span>(e, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> s)) <span class="op">+</span>
-<span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="kw">mean</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_hline</span>(<span class="dt">yintercept =</span> <span class="kw">mean</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), 
+             <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_hline</span>(
-    <span class="dt">yintercept =</span> <span class="kw">mean</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">sd</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+    <span class="dt">yintercept =</span> <span class="kw">mean</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">+</span><span class="st"> </span><span class="kw">sd</span>(e<span class="op">$</span>s, 
+                                              <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
     <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,
     <span class="dt">linetype =</span> <span class="dv">2</span>
   ) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_hline</span>(
-    <span class="dt">yintercept =</span> <span class="kw">mean</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span><span class="kw">sd</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
+    <span class="dt">yintercept =</span> <span class="kw">mean</span>(e<span class="op">$</span>s, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>) <span class="op">-</span><span class="st"> </span><span class="kw">sd</span>(e<span class="op">$</span>s, 
+                                              <span class="dt">na.rm =</span> <span class="ot">TRUE</span>),
     <span class="dt">color =</span> <span class="st">&quot;blue&quot;</span>,
     <span class="dt">linetype =</span> <span class="dv">2</span>
   ) <span class="op">+</span>
-<span class="st">  </span><span class="co">#geom_line() +</span>
 <span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylab</span>(<span class="st">&quot;mood&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">xlab</span>(<span class="st">&quot;days&quot;</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">ylim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-## The trends ---------------------
+<span class="co"># The trends ----------------------------------------------</span>
 
-## run a linear regression of mood ratings by time
+<span class="co"># run a linear regression of mood ratings by time</span>
 fm =<span class="st"> </span><span class="kw">lm</span>(s <span class="op">~</span><span class="st"> </span>t, e)
 
-## mean
+<span class="co"># mean</span>
 <span class="kw">ggplot</span>(e, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> s)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_abline</span>(
@@ -476,7 +486,7 @@ fm =<span class="st"> </span><span class="kw">lm</span>(s <span class="op">~</sp
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-## residuals
+<span class="co"># residuals</span>
 e<span class="op">$</span>residuals &lt;-<span class="st"> </span><span class="kw">rstandard</span>(fm)
 e<span class="op">$</span>week &lt;-<span class="st"> </span>(e<span class="op">$</span>t <span class="op">%/%</span><span class="st"> </span><span class="dv">1</span>) <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
 
@@ -487,8 +497,7 @@ e<span class="op">$</span>week &lt;-<span class="st"> </span>(e<span class="op">
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-<span class="co"># Missing values ----------------------</span>
-
+<span class="co"># Missing values ------------------------------------------</span>
 d<span class="op">$</span>t_g &lt;-<span class="st"> </span><span class="kw">cut</span>(t, <span class="dv">21</span>, <span class="dt">labels =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">21</span>)
 p &lt;-<span class="st"> </span><span class="kw">prop.table</span>(<span class="kw">table</span>(d<span class="op">$</span>t_g, <span class="kw">is.na</span>(d<span class="op">$</span>s)), <span class="dv">1</span>)
 p &lt;-<span class="st"> </span><span class="kw">as.data.frame</span>(p)
@@ -503,7 +512,7 @@ fm2 &lt;-<span class="st"> </span><span class="kw">lm</span>(p<span class="op">$
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-## imputation through interpolation
+<span class="co"># imputation through interpolation</span>
 impute_interpolation &lt;-<span class="st"> </span><span class="cf">function</span>(x) {
   <span class="kw">require</span>(zoo)
   
@@ -521,7 +530,6 @@ impute_interpolation &lt;-<span class="st"> </span><span class="cf">function</sp
   y_
 }
 
-
 d<span class="op">$</span>s_imputed &lt;-<span class="st"> </span><span class="kw">impute_interpolation</span>(d<span class="op">$</span>s)
 <span class="kw">ggplot</span>(d, <span class="kw">aes</span>(<span class="dt">x =</span> t, <span class="dt">y =</span> s_imputed)) <span class="op">+</span>
 <span class="st">  </span><span class="kw">geom_line</span>(<span class="dt">color =</span> <span class="dv">1</span>) <span class="op">+</span>
@@ -531,14 +539,14 @@ d<span class="op">$</span>s_imputed &lt;-<span class="st"> </span><span class="k
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-<span class="co"># Autocorrelation ---------------------------</span>
+<span class="co"># Autocorrelation -----------------------------------------</span>
 <span class="kw">acf</span>(e<span class="op">$</span>s,
     <span class="dt">type =</span> <span class="st">&quot;partial&quot;</span>,
     <span class="dt">lag.max =</span> <span class="dv">35</span>,
     <span class="dt">main =</span> <span class="st">&quot;&quot;</span>)
 
 
-<span class="co"># Rolling mean ------------------------------</span>
+<span class="co"># Rolling mean --------------------------------------------</span>
 d<span class="op">$</span>rolling_mean &lt;-
 <span class="st">  </span><span class="kw">as.numeric</span>(
     zoo<span class="op">::</span><span class="kw">rollapply</span>(
@@ -561,11 +569,11 @@ e &lt;-<span class="st"> </span><span class="kw">subset</span>(d,<span class="op
 <span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span><span class="kw">theme</span>(<span class="dt">panel.grid.minor =</span> <span class="kw">element_blank</span>())
 
 
-<span class="co"># Frequency analysis --------------------------</span>
-
+<span class="co"># Frequency analysis --------------------------------------</span>
 fa &lt;-
 <span class="st">  </span><span class="kw">spec.pgram</span>(
-    <span class="kw">ts</span>(<span class="kw">impute_interpolation</span>(d<span class="op">$</span>s), <span class="dt">frequency =</span> n_measurements_per_day),
+    <span class="kw">ts</span>(<span class="kw">impute_interpolation</span>(d<span class="op">$</span>s), 
+       <span class="dt">frequency =</span> n_measurements_per_day),
     <span class="dt">detrend =</span> <span class="ot">TRUE</span>,
     <span class="dt">demean =</span> <span class="ot">TRUE</span>,
     <span class="dt">main =</span> <span class="st">&quot;periodogram&quot;</span>,
@@ -611,6 +619,19 @@ fa &lt;-
 <p>Van Someren, E. (2000). Circadian rhythms and sleep in human aging. <em>Chronobiology International</em>. <a href="https://doi.org/10.1081/CBI-100101046" class="uri">https://doi.org/10.1081/CBI-100101046</a></p>
 </div>
 </div>
+<script>
+  /*
+  Sorts the references alphabetically.
+  Modified from code by Yvonne Aburrow.
+  */
+  $(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+      return $(b).children('p').html().toUpperCase() > $(a).children('p').html().toUpperCase() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+  })
+</script>
             </section>
 
           </div>

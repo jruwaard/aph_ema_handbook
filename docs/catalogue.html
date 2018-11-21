@@ -50,6 +50,14 @@
 
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-37468015-2', 'auto');
+  ga('send', 'pageview');
+</script>
 
 
 <style type="text/css">
@@ -286,6 +294,7 @@ code > span.in { font-style: italic; } /* Information */
 <li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
 <li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
 <li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
+
 </ul>
 
       </nav>
@@ -1225,6 +1234,19 @@ code > span.in { font-style: italic; } /* Information */
 <p>Willemsen, G. H., De Geus, E., Klaver, C. H., Van Doornen, L. J., &amp; Carroll, D. (1996). Ambulatory monitoring of the impedance cardiogram. <em>Psychophysiology</em>. <a href="https://doi.org/10.1111/j.1469-8986.1996.tb02122.x" class="uri">https://doi.org/10.1111/j.1469-8986.1996.tb02122.x</a></p>
 </div>
 </div>
+<script>
+  /*
+  Sorts the references alphabetically.
+  Modified from code by Yvonne Aburrow.
+  */
+  $(function(){
+    var elems = $('#refs').children('div').remove();
+    elems.sort(function (a, b) {
+      return $(b).children('p').html().toUpperCase() > $(a).children('p').html().toUpperCase() ? -1 : 1;
+    });
+    $('#refs').append(elems);
+  })
+</script>
             </section>
 
           </div>

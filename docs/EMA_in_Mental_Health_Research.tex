@@ -193,7 +193,9 @@ catalogue of EMA research in the APH consortium.
 This manual is available online at
 \url{https://jruwaard.github.io/aph_ema_handbook/}. Sources are
 available at \url{https://github.com/jruwaard/aph_ema_handbook}. Please
-post your comments and suggestions there, or via e-mail, through
+post your comments and suggestions
+\href{https://github.com/jruwaard/aph_ema_handbook/issues}{there}, or
+via e-mail, through
 \href{mailto:aph.ema@ggzingeest.nl}{\nolinkurl{aph.ema@ggzingeest.nl}}.
 
 This manual will be continuously updated. In citations, please include
@@ -1178,13 +1180,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = 0.34261, df = 196.93, p-value = 0.7323}
+\CommentTok{#> t = -0.86628, df = 197.75, p-value = 0.3874}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.2414434  0.3429740}
+\CommentTok{#>  -0.4100198  0.1597358}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> 0.059604340 0.008839078}
+\CommentTok{#> -0.01955265  0.10558936}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1537,7 +1539,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4797}
+\CommentTok{#> [1] 0.4875}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2839,9 +2841,10 @@ numbers. As can be seen in Figure \ref{fig:feat-plot-lm}, the regression
 model provides a more realistic and informative summary. At the start,
 the estimated mean - the intercept - is 3.2. This mean increases
 approximately 0.9 points per week (the slope), to a final estimated mean
-of 5.9. Comparing Figure \ref{fig:feat-plot-mean} and Figure
-\ref{fig:feat-plot-lm}, we see that Figure \ref{fig:feat-plot-lm} is
-more successful in capturing the variation in the series.
+of 5.9. If you visually compare the red regression line in Figure
+\ref{fig:feat-plot-lm} with the red line for the mean in
+\ref{fig:feat-plot-mean}, it is clear the regression line provides a
+much better summary.
 
 \begin{figure}
 
@@ -2849,7 +2852,7 @@ more successful in capturing the variation in the series.
 
 }
 
-\caption{EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines)}\label{fig:feat-plot-lm}
+\caption{EMA time-series, with a regression reference line (red) and the residual error SD range around this line (the area between the two blue lines).}\label{fig:feat-plot-lm}
 \end{figure}
 
 By using regression, we can also find a better estimate of the SD.
@@ -3014,12 +3017,14 @@ In this chapter, we used a number of statistical indicators to
 characterize a single time-series. By extracting these indicators (or
 ``features''), we identified several regularities. We learned that the
 mean, variance and missingness increased over time, and we identified
-clear signs of circadian rhythmicity. You might have identified some of
-these features when you first inspected Figure \ref{fig:feat-plot}. The
-increase in the mean was pretty easy to spot. However, the systematic
-increases in the variance and the missingness were less clear. Likewise,
-although you might have spotted the periodicity in the series, the
-circadian components were probably too subtle to spot for the naked eye.
+clear signs of circadian rhythmicity.
+
+You might have identified some of the features when you first inspected
+Figure \ref{fig:feat-plot}. The increase in the mean was pretty easy to
+spot. However, the systematic increases in the variance and the
+missingness were less clear. Likewise, although you might have spotted
+the periodicity in the series, the circadian components were probably
+too subtle to spot for the naked eye.
 
 The aim of the chapter was to illustrate the options available to the
 EMA researcher to quantitatively summarize EMA series. Other options, of
@@ -3038,22 +3043,20 @@ extraction techniques yourself.
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{## (De)constructing a simulated EMA time-series}
+\CommentTok{# (De)constructing a simulated EMA time-series ------------}
 
-\CommentTok{# libraries ----------------}
+\CommentTok{# libraries -----------------------------------------------}
 \KeywordTok{library}\NormalTok{(ggplot2)}
 \KeywordTok{library}\NormalTok{(gridExtra)}
 \KeywordTok{library}\NormalTok{(psych)}
 \KeywordTok{library}\NormalTok{(zoo)}
 \KeywordTok{library}\NormalTok{(emaph)}
 
-\CommentTok{# simulate the signal (using emaph function) -------}
+\CommentTok{# simulate the signal (using emaph function) --------------}
 \NormalTok{d <-}\StringTok{ }\KeywordTok{generate_features_dataset}\NormalTok{(}\DataTypeTok{seed =} \DecValTok{123}\NormalTok{)}
 
-\CommentTok{# plot -------------------------}
+\CommentTok{# plot ----------------------------------------------------}
 \NormalTok{e <-}\StringTok{ }\KeywordTok{subset}\NormalTok{(d,}\OperatorTok{!}\KeywordTok{is.na}\NormalTok{(s))}
-
-\CommentTok{# raw series }
 \KeywordTok{ggplot}\NormalTok{(e, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ t, }\DataTypeTok{y =}\NormalTok{ s)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_line}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
@@ -3062,32 +3065,34 @@ extraction techniques yourself.
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\CommentTok{# plot mean and variance --------}
+\CommentTok{# plot, with mean and variance ----------------------------}
 \KeywordTok{ggplot}\NormalTok{(e, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ t, }\DataTypeTok{y =}\NormalTok{ s)) }\OperatorTok{+}
-\StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}\DataTypeTok{yintercept =} \KeywordTok{mean}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{), }\DataTypeTok{color =} \StringTok{"red"}\NormalTok{) }\OperatorTok{+}
+\StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}\DataTypeTok{yintercept =} \KeywordTok{mean}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{), }
+             \DataTypeTok{color =} \StringTok{"red"}\NormalTok{) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}
-    \DataTypeTok{yintercept =} \KeywordTok{mean}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{sd}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
+    \DataTypeTok{yintercept =} \KeywordTok{mean}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{sd}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }
+                                              \DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
     \DataTypeTok{color =} \StringTok{"blue"}\NormalTok{,}
     \DataTypeTok{linetype =} \DecValTok{2}
 \NormalTok{  ) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_hline}\NormalTok{(}
-    \DataTypeTok{yintercept =} \KeywordTok{mean}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{sd}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
+    \DataTypeTok{yintercept =} \KeywordTok{mean}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }\DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{) }\OperatorTok{-}\StringTok{ }\KeywordTok{sd}\NormalTok{(e}\OperatorTok{$}\NormalTok{s, }
+                                              \DataTypeTok{na.rm =} \OtherTok{TRUE}\NormalTok{),}
     \DataTypeTok{color =} \StringTok{"blue"}\NormalTok{,}
     \DataTypeTok{linetype =} \DecValTok{2}
 \NormalTok{  ) }\OperatorTok{+}
-\StringTok{  }\CommentTok{#geom_line() +}
 \StringTok{  }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}
 \StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"mood"}\NormalTok{) }\OperatorTok{+}\StringTok{ }\KeywordTok{xlab}\NormalTok{(}\StringTok{"days"}\NormalTok{) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{ylim}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{10}\NormalTok{) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\NormalTok{## The trends ---------------------}
+\CommentTok{# The trends ----------------------------------------------}
 
-\NormalTok{## run a linear regression of mood ratings by time}
+\CommentTok{# run a linear regression of mood ratings by time}
 \NormalTok{fm =}\StringTok{ }\KeywordTok{lm}\NormalTok{(s }\OperatorTok{~}\StringTok{ }\NormalTok{t, e)}
 
-\NormalTok{## mean}
+\CommentTok{# mean}
 \KeywordTok{ggplot}\NormalTok{(e, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ t, }\DataTypeTok{y =}\NormalTok{ s)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_smooth}\NormalTok{(}\DataTypeTok{method =} \StringTok{"lm"}\NormalTok{, }\DataTypeTok{color =} \StringTok{"red"}\NormalTok{, }\DataTypeTok{se =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_abline}\NormalTok{(}
@@ -3108,7 +3113,7 @@ extraction techniques yourself.
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\NormalTok{## residuals}
+\CommentTok{# residuals}
 \NormalTok{e}\OperatorTok{$}\NormalTok{residuals <-}\StringTok{ }\KeywordTok{rstandard}\NormalTok{(fm)}
 \NormalTok{e}\OperatorTok{$}\NormalTok{week <-}\StringTok{ }\NormalTok{(e}\OperatorTok{$}\NormalTok{t }\OperatorTok{%/%}\StringTok{ }\DecValTok{1}\NormalTok{) }\OperatorTok{+}\StringTok{ }\DecValTok{1}
 
@@ -3119,8 +3124,7 @@ extraction techniques yourself.
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\CommentTok{# Missing values ----------------------}
-
+\CommentTok{# Missing values ------------------------------------------}
 \NormalTok{d}\OperatorTok{$}\NormalTok{t_g <-}\StringTok{ }\KeywordTok{cut}\NormalTok{(t, }\DecValTok{21}\NormalTok{, }\DataTypeTok{labels =} \DecValTok{1}\OperatorTok{:}\DecValTok{21}\NormalTok{)}
 \NormalTok{p <-}\StringTok{ }\KeywordTok{prop.table}\NormalTok{(}\KeywordTok{table}\NormalTok{(d}\OperatorTok{$}\NormalTok{t_g, }\KeywordTok{is.na}\NormalTok{(d}\OperatorTok{$}\NormalTok{s)), }\DecValTok{1}\NormalTok{)}
 \NormalTok{p <-}\StringTok{ }\KeywordTok{as.data.frame}\NormalTok{(p)}
@@ -3135,7 +3139,7 @@ extraction techniques yourself.
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\NormalTok{## imputation through interpolation}
+\CommentTok{# imputation through interpolation}
 \NormalTok{impute_interpolation <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(x) \{}
   \KeywordTok{require}\NormalTok{(zoo)}
   
@@ -3153,7 +3157,6 @@ extraction techniques yourself.
 \NormalTok{  y_}
 \NormalTok{\}}
 
-
 \NormalTok{d}\OperatorTok{$}\NormalTok{s_imputed <-}\StringTok{ }\KeywordTok{impute_interpolation}\NormalTok{(d}\OperatorTok{$}\NormalTok{s)}
 \KeywordTok{ggplot}\NormalTok{(d, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ t, }\DataTypeTok{y =}\NormalTok{ s_imputed)) }\OperatorTok{+}
 \StringTok{  }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{color =} \DecValTok{1}\NormalTok{) }\OperatorTok{+}
@@ -3163,14 +3166,14 @@ extraction techniques yourself.
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\CommentTok{# Autocorrelation ---------------------------}
+\CommentTok{# Autocorrelation -----------------------------------------}
 \KeywordTok{acf}\NormalTok{(e}\OperatorTok{$}\NormalTok{s,}
     \DataTypeTok{type =} \StringTok{"partial"}\NormalTok{,}
     \DataTypeTok{lag.max =} \DecValTok{35}\NormalTok{,}
     \DataTypeTok{main =} \StringTok{""}\NormalTok{)}
 
 
-\CommentTok{# Rolling mean ------------------------------}
+\CommentTok{# Rolling mean --------------------------------------------}
 \NormalTok{d}\OperatorTok{$}\NormalTok{rolling_mean <-}
 \StringTok{  }\KeywordTok{as.numeric}\NormalTok{(}
 \NormalTok{    zoo}\OperatorTok{::}\KeywordTok{rollapply}\NormalTok{(}
@@ -3193,11 +3196,11 @@ extraction techniques yourself.
 \StringTok{  }\KeywordTok{theme_bw}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{panel.grid.minor =} \KeywordTok{element_blank}\NormalTok{())}
 
 
-\CommentTok{# Frequency analysis --------------------------}
-
+\CommentTok{# Frequency analysis --------------------------------------}
 \NormalTok{fa <-}
 \StringTok{  }\KeywordTok{spec.pgram}\NormalTok{(}
-    \KeywordTok{ts}\NormalTok{(}\KeywordTok{impute_interpolation}\NormalTok{(d}\OperatorTok{$}\NormalTok{s), }\DataTypeTok{frequency =}\NormalTok{ n_measurements_per_day),}
+    \KeywordTok{ts}\NormalTok{(}\KeywordTok{impute_interpolation}\NormalTok{(d}\OperatorTok{$}\NormalTok{s), }
+       \DataTypeTok{frequency =}\NormalTok{ n_measurements_per_day),}
     \DataTypeTok{detrend =} \OtherTok{TRUE}\NormalTok{,}
     \DataTypeTok{demean =} \OtherTok{TRUE}\NormalTok{,}
     \DataTypeTok{main =} \StringTok{"periodogram"}\NormalTok{,}
@@ -5799,23 +5802,24 @@ used to detect that changes in depression are positively related to past
 \KeywordTok{summary}\NormalTok{(models_found[[}\DecValTok{1}\NormalTok{]]}\OperatorTok{$}\NormalTok{varest}\OperatorTok{$}\NormalTok{varresult}\OperatorTok{$}\NormalTok{depression)}
 \CommentTok{#> }
 \CommentTok{#> Call:}
-\CommentTok{#> lm(formula = y ~ -1 + ., data = datamat)}
+\CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
 \CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -1.94381 -0.58516  0.04387  0.48950  3.05005 }
+\CommentTok{#> -2.70261 -0.66704 -0.02332  0.80532  2.31751 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
 \CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.53413    0.08780   6.084 2.39e-08 ***}
-\CommentTok{#> depression.l1 -0.17096    0.08534  -2.003    0.048 *  }
-\CommentTok{#> const         -0.05690    0.08557  -0.665    0.508    }
+\CommentTok{#> activity.l1    0.59865    0.12123   4.938 3.42e-06 ***}
+\CommentTok{#> depression.l1 -0.17298    0.09151  -1.890   0.0618 .  }
+\CommentTok{#> depression.l2 -0.09707    0.09148  -1.061   0.2914    }
+\CommentTok{#> const          0.11712    0.11640   1.006   0.3169    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.85 on 96 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.3017, Adjusted R-squared:  0.2871 }
-\CommentTok{#> F-statistic: 20.74 on 2 and 96 DF,  p-value: 3.271e-08}
+\CommentTok{#> Residual standard error: 1.145 on 94 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.2393, Adjusted R-squared:  0.215 }
+\CommentTok{#> F-statistic: 9.857 on 3 and 94 DF,  p-value: 1.028e-05}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5870,15 +5874,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.2218100\\
+1 & -0.2310463\\
 \hline
-2 & -0.4419581\\
+2 & 0.0554627\\
 \hline
-3 & 0.4681362\\
+3 & 0.2577817\\
 \hline
-4 & -0.3744796\\
+4 & 0.2734464\\
 \hline
-5 & -0.1696447\\
+5 & -0.3021499\\
 \hline
 \end{tabular}
 
@@ -6153,11 +6157,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 14.58560 41.47346}
-\CommentTok{#> 2:     2  7 19.43753 46.93242}
-\CommentTok{#> 3:     3  7 10.81102 31.14380}
-\CommentTok{#> 4:     4  7 17.49799 38.77780}
-\CommentTok{#> 5:     5  7 17.50691 41.32916}
+\CommentTok{#> 1:     1  7 11.45151 27.11454}
+\CommentTok{#> 2:     2  7 14.48724 40.22195}
+\CommentTok{#> 3:     3  7 14.56614 34.46593}
+\CommentTok{#> 4:     4  7 12.80402 38.69230}
+\CommentTok{#> 5:     5  7 11.44767 29.71716}
 \end{Highlighting}
 \end{Shaded}
 

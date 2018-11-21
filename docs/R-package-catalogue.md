@@ -228,23 +228,24 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datamat)
+#> lm(formula = y ~ -1 + ., data = datares)
 #> 
 #> Residuals:
 #>      Min       1Q   Median       3Q      Max 
-#> -1.94381 -0.58516  0.04387  0.48950  3.05005 
+#> -2.70261 -0.66704 -0.02332  0.80532  2.31751 
 #> 
 #> Coefficients:
 #>               Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.53413    0.08780   6.084 2.39e-08 ***
-#> depression.l1 -0.17096    0.08534  -2.003    0.048 *  
-#> const         -0.05690    0.08557  -0.665    0.508    
+#> activity.l1    0.59865    0.12123   4.938 3.42e-06 ***
+#> depression.l1 -0.17298    0.09151  -1.890   0.0618 .  
+#> depression.l2 -0.09707    0.09148  -1.061   0.2914    
+#> const          0.11712    0.11640   1.006   0.3169    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.85 on 96 degrees of freedom
-#> Multiple R-squared:  0.3017,	Adjusted R-squared:  0.2871 
-#> F-statistic: 20.74 on 2 and 96 DF,  p-value: 3.271e-08
+#> Residual standard error: 1.145 on 94 degrees of freedom
+#> Multiple R-squared:  0.2393,	Adjusted R-squared:  0.215 
+#> F-statistic: 9.857 on 3 and 94 DF,  p-value: 1.028e-05
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -291,15 +292,15 @@ knitr::kable(b)
 \hline
 id & mean\\
 \hline
-1 & 0.2218100\\
+1 & -0.2310463\\
 \hline
-2 & -0.4419581\\
+2 & 0.0554627\\
 \hline
-3 & 0.4681362\\
+3 & 0.2577817\\
 \hline
-4 & -0.3744796\\
+4 & 0.2734464\\
 \hline
-5 & -0.1696447\\
+5 & -0.3021499\\
 \hline
 \end{tabular}
 
@@ -560,11 +561,11 @@ def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
 
 genData(5, def)
 #>    idnum nr       x1       y1
-#> 1:     1  7 14.58560 41.47346
-#> 2:     2  7 19.43753 46.93242
-#> 3:     3  7 10.81102 31.14380
-#> 4:     4  7 17.49799 38.77780
-#> 5:     5  7 17.50691 41.32916
+#> 1:     1  7 11.45151 27.11454
+#> 2:     2  7 14.48724 40.22195
+#> 3:     3  7 14.56614 34.46593
+#> 4:     4  7 12.80402 38.69230
+#> 5:     5  7 11.44767 29.71716
 ```
 
 

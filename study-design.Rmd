@@ -82,7 +82,7 @@ since samples rates can often not be set and the precision of the built-in
 sensors varies considerably from device to device. Commercial accelerometers may
 have better precision and reliability [see, e.g., @Evenson2015], but
 manufacturers often limit access to raw data and data pre-processing algorithms,
-making it difficult (or even impossible) to fully analyze outcomes.'Scientific
+making it difficult (or even impossible) to fully analyze outcomes. 'Scientific
 wearables' do offer this access, but often choose function over form (design). 
 They can therefore draw attention, prompting unwanted questions to partcipants. 
 Being aware of these issues when you plan the study, will help considerably 

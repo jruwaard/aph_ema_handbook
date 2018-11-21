@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2018-11-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,11 +188,10 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.2" data-path="features.html"><a href="features.html#central-tendency-and-variability"><i class="fa fa-check"></i><b>7.2</b> Central Tendency and Variability</a></li>
 <li class="chapter" data-level="7.3" data-path="features.html"><a href="features.html#modeling-the-trend"><i class="fa fa-check"></i><b>7.3</b> Modeling the Trend</a></li>
 <li class="chapter" data-level="7.4" data-path="features.html"><a href="features.html#missing-values"><i class="fa fa-check"></i><b>7.4</b> Missing Values</a></li>
-<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a></li>
+<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.6</b> Rolling Statistics</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.7</b> Periodicity</a></li>
+<li class="chapter" data-level="7.8" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.8</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -284,7 +283,9 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
+<li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
+<li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
 </ul>
 
       </nav>
@@ -449,10 +450,10 @@ ESMdata &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span cla
 <h3><span class="header-section-number">2.7.1</span> Installing R-packages from CRAN</h3>
 <p> </p>
 <p>Packages can be found at the CRAN website. To browse through the impressive list of available packages, see <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html" class="uri">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></p>
-<p>If you find a package you like, you can install it via the RStudio menu system, choosing <code>Tools &gt; packages</code>. But you can also use the console, via the <code>install.package</code> function.</p>
+<p>If you find a package you like, you can install it via the RStudio menu system, choosing <code>Tools &gt; packages</code>. But you can also use the console, via the <code>install.packages</code> function.</p>
 <p>A popular package, <code>tidyverse</code>, is used extensively in the examples of this manual. This package comprises a set of popular packages from the creators of RStudio, that greatly simplify working with R. So, while you are at it, install this package now.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install a package from CRAN.</span>
-<span class="kw">install.package</span>(tidyverse)</code></pre></div>
+<span class="kw">install.packages</span>(tidyverse)</code></pre></div>
 <p>The <code>tidyverse</code> contains a package called <code>haven</code>, which allows you to read and write SPSS data files (.sav files). This is very convenient. You don’t have to convert all your SPSS data to csv files. See <code>?read_spss</code> to learn how to import an SPSS-file (or use the data import wizard, by choosing <code>File &gt; Import Dataset &gt; From SPSS</code>, in RStudio’s top-right pane).</p>
 </div>
 <div id="installing-r-packages-from-github" class="section level3">
@@ -517,13 +518,13 @@ A &lt;-<span class="st"> </span><span class="kw">rnorm</span>(<span class="dv">1
 <span class="co">#&gt;  Welch Two Sample t-test</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; data:  A and B</span>
-<span class="co">#&gt; t = 0.04352, df = 197.98, p-value = 0.9653</span>
+<span class="co">#&gt; t = 0.013866, df = 196.98, p-value = 0.989</span>
 <span class="co">#&gt; alternative hypothesis: true difference in means is not equal to 0</span>
 <span class="co">#&gt; 95 percent confidence interval:</span>
-<span class="co">#&gt;  -0.2689887  0.2811292</span>
+<span class="co">#&gt;  -0.2835972  0.2876135</span>
 <span class="co">#&gt; sample estimates:</span>
-<span class="co">#&gt;   mean of x   mean of y </span>
-<span class="co">#&gt; 0.008974005 0.002903749</span></code></pre></div>
+<span class="co">#&gt;  mean of x  mean of y </span>
+<span class="co">#&gt; 0.02729115 0.02528300</span></code></pre></div>
 </div>
 <div id="learning-from-examples" class="section level3">
 <h3><span class="header-section-number">2.8.3</span> Learning from Examples</h3>

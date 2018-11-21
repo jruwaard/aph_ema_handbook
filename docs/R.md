@@ -293,7 +293,7 @@ of available packages, see
 
 If you find a package you like, you can install it via the RStudio menu system,
 choosing `Tools > packages`. But you can also use the console, via the
-`install.package` function.
+`install.packages` function.
 
 A popular package, `tidyverse`, is used extensively in the examples of this
 manual. This package comprises a set of popular packages from the creators
@@ -303,7 +303,7 @@ install this package now.
 
 ```r
 # Install a package from CRAN.
-install.package(tidyverse)
+install.packages(tidyverse)
 ```
 
 The `tidyverse` contains a package called `haven`, which allows you to read and
@@ -438,13 +438,13 @@ t.test(A, B)
 #> 	Welch Two Sample t-test
 #> 
 #> data:  A and B
-#> t = 0.99815, df = 195.97, p-value = 0.3194
+#> t = 0.34261, df = 196.93, p-value = 0.7323
 #> alternative hypothesis: true difference in means is not equal to 0
 #> 95 percent confidence interval:
-#>  -0.1427713  0.4353978
+#>  -0.2414434  0.3429740
 #> sample estimates:
-#> mean of x mean of y 
-#> 0.2570271 0.1107139
+#>   mean of x   mean of y 
+#> 0.059604340 0.008839078
 ```
 
 

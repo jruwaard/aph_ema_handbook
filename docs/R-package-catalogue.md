@@ -232,19 +232,19 @@ summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Residuals:
 #>      Min       1Q   Median       3Q      Max 
-#> -3.05080 -0.58418 -0.06736  0.55004  1.89357 
+#> -1.94381 -0.58516  0.04387  0.48950  3.05005 
 #> 
 #> Coefficients:
-#>                Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.511952   0.089347   5.730 1.15e-07 ***
-#> depression.l1 -0.015223   0.089966  -0.169    0.866    
-#> const         -0.007729   0.092572  -0.083    0.934    
+#>               Estimate Std. Error t value Pr(>|t|)    
+#> activity.l1    0.53413    0.08780   6.084 2.39e-08 ***
+#> depression.l1 -0.17096    0.08534  -2.003    0.048 *  
+#> const         -0.05690    0.08557  -0.665    0.508    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.8926 on 96 degrees of freedom
-#> Multiple R-squared:  0.255,	Adjusted R-squared:  0.2395 
-#> F-statistic: 16.43 on 2 and 96 DF,  p-value: 7.306e-07
+#> Residual standard error: 0.85 on 96 degrees of freedom
+#> Multiple R-squared:  0.3017,	Adjusted R-squared:  0.2871 
+#> F-statistic: 20.74 on 2 and 96 DF,  p-value: 3.271e-08
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -291,15 +291,15 @@ knitr::kable(b)
 \hline
 id & mean\\
 \hline
-1 & -0.4052636\\
+1 & 0.2218100\\
 \hline
-2 & -0.1865967\\
+2 & -0.4419581\\
 \hline
-3 & -0.1393853\\
+3 & 0.4681362\\
 \hline
-4 & 0.0279950\\
+4 & -0.3744796\\
 \hline
-5 & -0.1300189\\
+5 & -0.1696447\\
 \hline
 \end{tabular}
 
@@ -560,11 +560,11 @@ def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
 
 genData(5, def)
 #>    idnum nr       x1       y1
-#> 1:     1  7 17.97807 43.00726
-#> 2:     2  7 14.57202 37.21649
-#> 3:     3  7 11.70117 30.40389
-#> 4:     4  7 12.53885 36.75428
-#> 5:     5  7 14.78020 34.44720
+#> 1:     1  7 14.58560 41.47346
+#> 2:     2  7 19.43753 46.93242
+#> 3:     3  7 10.81102 31.14380
+#> 4:     4  7 17.49799 38.77780
+#> 5:     5  7 17.50691 41.32916
 ```
 
 

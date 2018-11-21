@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2018-11-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,11 +188,10 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.2" data-path="features.html"><a href="features.html#central-tendency-and-variability"><i class="fa fa-check"></i><b>7.2</b> Central Tendency and Variability</a></li>
 <li class="chapter" data-level="7.3" data-path="features.html"><a href="features.html#modeling-the-trend"><i class="fa fa-check"></i><b>7.3</b> Modeling the Trend</a></li>
 <li class="chapter" data-level="7.4" data-path="features.html"><a href="features.html#missing-values"><i class="fa fa-check"></i><b>7.4</b> Missing Values</a></li>
-<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a></li>
+<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.6</b> Rolling Statistics</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.7</b> Periodicity</a></li>
+<li class="chapter" data-level="7.8" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.8</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -284,7 +283,9 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
+<li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
+<li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
 </ul>
 
       </nav>
@@ -350,7 +351,7 @@ Figure 4.2: Example project directory structure
 
 <p>Full replicability implies that raw data can be traced back to the source. Wherever possible, this should translate to the availability of raw study data in your project.</p>
 <p>In the example project, unprocessed data files exported from the three data collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in the ’data/raw“-directory’, in separate sub-directories per data type.</p>
-<p>In ‘data/raw/survey’, we find two files: 1) ‘sur_t0_2018_06_10.csv’, containing the results of the demographic questionnaire and the PHQ-9 pre-test, and 2) ‘sur_t1_2018_06_10.csv’, containing the results of the PHQ-9 post-test. In exports of such survey systems, data from all participants are typically stored in one file per assessment moment. Note how the export date is added to the files, to make sure that future updates are only used in the analysis when explicitly noted.</p>
+<p>In ‘data/raw/surveys’, we find two files: 1) ‘sur_t0_2018_06_10.csv’, containing the results of the demographic questionnaire and the PHQ-9 pre-test, and 2) ‘sur_t1_2018_06_10.csv’, containing the results of the PHQ-9 post-test. In exports of such survey systems, data from all participants are typically stored in one file per assessment moment. Note how the export date is added to the files, to make sure that future updates are only used in the analysis when explicitly noted.</p>
 <p>In ‘data/raw/ema’, we find one file: ‘ema_2018_06_10.csv’, containing the results of the EMA mood measurements of all participants, exported from the back-office of the EMA platform.</p>
 <p>Finally, in ‘data/raw/actigraphy’, we see two ‘.bin’ files: binary data files that were exported from, e.g., GENEActiv smart watches, that were worn by two participants. Unlike the survey and EMA mood data, each data file in this directory contains data of one participant. Actigraphy data are high-volume data: these files are typically large (500MB is no exception). By using the ‘.bin’ format, in which data are compressed, disk space is saved (in uncompressed format, data in a single .bin file can amount up to 2 GB).</p>
 <p>In ‘data/raw’, a final very important file is ‘key_file.csv’. This file is important because it ties all the data together. It contains the unique identifiers (IDs) that are assigned to the study participants in the various data collection systems. Ideally, of course, participants would be designated by a single ID in each data collection system. In practice, unfortunately, this is often not possible due to limitations of the systems used. As a result, researchers are forced to deal with the fact that participants are known under different IDs in each system. With a key-file, data can be tied together through scripts.</p>
@@ -396,7 +397,7 @@ Figure 4.2: Example project directory structure
 <p>By making these scripts parts of your project, you ensure that you and others can always trace the decisions that were made to prepare the raw data for analysis. Raw data may be updated, for instance because more participants are recruited, or because new data exports are made from the data collection systems. You may also detect errors in the import routines during the analyses, or peer reviewers may request information that can only be found by going back to the raw data. In all these cases, the availability of ready-to-run raw data import routines is crucial.</p>
 <p>The code snippet below illustrates the kind of data transformations that you can expect to find in an import script. With a few lines of code, raw baseline questionnaire data are imported into R, participant ID’s that are specific to the data collection system are replaced by the proper global study ID, variables of interest are selected, data ranges are checked (and corrected if needed), and data types are set (in accordance to the study code-book). Finally, the cleaned data set is saved to the ‘data/cleaned’ folder, ready for further processing in the final analyses.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ------------------------------------------------------------</span>
-<span class="co"># Clean data </span>
+<span class="co"># Clean survey data </span>
 <span class="co"># JR - 2018-10-16</span>
 <span class="co"># ------------------------------------------------------------</span>
 
@@ -405,6 +406,8 @@ t0 &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="s
 
 <span class="co"># inject study ID, from study key file -----------------------</span>
 keys &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;data/raw/key_file.csv&quot;</span>)
+
+<span class="kw">names</span>(t0)[<span class="dv">1</span>] &lt;-<span class="st"> &quot;Survey_ID&quot;</span>
 t0 &lt;-<span class="st"> </span><span class="kw">merge</span>(t0, keys)
 
 <span class="co"># only keep variables of interest ----------------------------</span>
@@ -434,11 +437,11 @@ t0[<span class="kw">paste0</span>(<span class="st">&quot;phq&quot;</span>, <span
 <h2><span class="header-section-number">4.6</span> Pre-process</h2>
 <p>Once data are cleaned, you can enrich the data sets with variables that can be derived from the raw data, such as, e.g., survey scale and subscale scores, if needed), or actigraphy summary measures (see Chapter <a href="activity.html#activity">6</a>). The example below calculates the PHQ-9 sum scores from the item scores in the cleaned baseline data:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># ------------------------------------------------------------</span>
-<span class="co"># Pre-process data </span>
+<span class="co"># Pre-process survey data </span>
 <span class="co"># JR - 2018-10-16</span>
 <span class="co"># ------------------------------------------------------------</span>
 
-<span class="co"># import cleaned baseline survey data ------------------------</span>
+<span class="co"># import cleaned survey data ------------------------</span>
 <span class="kw">load</span>(<span class="st">&quot;data/cleaned/t0.Rda&quot;</span>)
 <span class="kw">load</span>(<span class="st">&quot;data/cleaned/t1.Rda&quot;</span>)
 
@@ -448,7 +451,7 @@ t1<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">r
 
 <span class="co"># re-save baseline data --------------------------------------</span>
 <span class="kw">save</span>(t0, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t0.Rda&quot;</span>)
-<span class="kw">save</span>(t0, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t1.Rda&quot;</span>)</code></pre></div>
+<span class="kw">save</span>(t1, <span class="dt">file =</span> <span class="st">&quot;data/cleaned/t1.Rda&quot;</span>)</code></pre></div>
 </div>
 <div id="combine" class="section level2">
 <h2><span class="header-section-number">4.7</span> Combine</h2>
@@ -474,7 +477,6 @@ t1<span class="op">$</span>phq9 &lt;-<span class="st"> </span><span class="kw">r
 <p>The code snippet below illustrates a typical analysis file: cleaned data are loaded into the R work environment, after which EMA scores of a single participant are selected, plotted and analyzed in a simple linear regression. Both the plot and the result of the regression are saved in the analysis directory. The plot is saved as a PDF-file (ready for submission to the journal), and the regression results are saved in a standard R data structure.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># -------------------------------------------------------------</span>
 <span class="co"># N = 1 Analysis (P001)</span>
-<span class="co"># note: part of manuscript!</span>
 <span class="co"># JR - 2018-10-16</span>
 <span class="co"># -------------------------------------------------------------</span>
 
@@ -494,7 +496,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lm</span>(valence <span class=
 <span class="co"># save regression results -------------------------------------</span>
 <span class="kw">save</span>(fm, <span class="dt">file =</span> <span class="st">&quot;scripts/publish/P001_regression.Rda&quot;</span>)</code></pre></div>
 <p>R’s ability to save the results of analyses to disk is yet another example of how R promotes accountability in clinical research. Suppose you used the regression analysis of ‘P001’ in a manuscript that you submitted for publication. Reviewers ask you to send residual plots, to convince them that the residual errors are normally distributed. When the regression results are saved to disk, the following three lines are all you need to satisfy their request:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Revisiting regression results, for a visual regression residual check  </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Revisiting regression results, for a visual regression residuals check  </span>
 <span class="kw">load</span>(<span class="st">&quot;scripts/published/P001_regression.Rda&quot;</span>)
 
 <span class="kw">pdf</span>(<span class="dt">file =</span> <span class="st">&quot;scripts/publised/residual_plot.pdf&quot;</span>)
@@ -557,7 +559,7 @@ fm &lt;-<span class="st"> </span><span class="kw">lm</span>(valence <span class=
 <div id="discussion" class="section level2">
 <h2><span class="header-section-number">4.10</span> Discussion</h2>
 <p>In this chapter, we aimed to show how adopting the RStudio Project can help you to implement key principles of EMA data management. To illustrate this, we discussed the project structure of a small-scale EMA study. No doubt, your project will differ from this example in many ways, forcing you to deviate from the example structure. The example may be too elaborate, for example, if your project only requires you to analyze a single data file. The structure is certainly too limited to support the requirements of a full PHD project (such as the one described, for example, in the APH quality handbook - see <a href="http://www.emgo.nl/kc/folders-and-file-names/" class="uri">http://www.emgo.nl/kc/folders-and-file-names/</a>). But RStudio Projects are flexible. It should be relatively straightforward to scale down or scale up the example that we discussed.</p>
-<p>If you want to learn more about data management with R and RStudio, the book <em>“Reproducible Research with R and RStudio”</em> <span class="citation">(Gandrud, <a href="#ref-gandrud2015">2015</a>)</span> would be a good place to start. You may also be informed by the data management techniques that are described in the first two chapters of the book <em>“Using Rand RStudio for Data Management, Statistical Analysis, and Graphics”</em> <span class="citation">(Horton &amp; Kleinman, <a href="#ref-horton2015">2015</a>)</span>.</p>
+<p>If you want to learn more about data management with R and RStudio, the book <em>“Reproducible Research with R and RStudio”</em> <span class="citation">(Gandrud, <a href="#ref-gandrud2015">2015</a>)</span> would be a good place to start. You may also be informed by the data management techniques that are described in the first two chapters of the book <em>“Using R and RStudio for Data Management, Statistical Analysis, and Graphics”</em> <span class="citation">(Horton &amp; Kleinman, <a href="#ref-horton2015">2015</a>)</span>.</p>
 
 </div>
 </div>

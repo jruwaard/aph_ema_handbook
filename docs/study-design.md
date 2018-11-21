@@ -46,7 +46,7 @@ populations. You should be aware, though, that results obtained in non-patient
 populations do not necessarily generalize to patient populations. EMA mood
 ratings, for example, might be much more variable in patients compared to
 non-patients. Pilot studies should therefore also be conducted in the target
-population. It is also advisable to write a manual on how to operate the EMA device and spend time on briefing participants on what is expected of them during the study. Depending on your study topic and EMA method, de-briefing might also be nescesarry, along with instructions on how to return a wearable or de-install an EMA app. 
+population. It is also advisable to write a manual on how to operate the EMA device and spend time on briefing participants on what is expected of them during the study. Depending on your study topic and EMA method, de-briefing might also be necesarry, along with instructions on how to return a wearable or de-install an EMA app. 
 
 
 ## What are the Qualities of the EMA Measures?
@@ -83,7 +83,7 @@ since samples rates can often not be set and the precision of the built-in
 sensors varies considerably from device to device. Commercial accelerometers may
 have better precision and reliability [see, e.g., @Evenson2015], but
 manufacturers often limit access to raw data and data pre-processing algorithms,
-making it difficult (or even impossible) to fully analyze outcomes.'Scientific
+making it difficult (or even impossible) to fully analyze outcomes. 'Scientific
 wearables' do offer this access, but often choose function over form (design). 
 They can therefore draw attention, prompting unwanted questions to partcipants. 
 Being aware of these issues when you plan the study, will help considerably 
@@ -242,7 +242,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4669
+#> [1] 0.4797
 ```
 
 As can be seen, the simulation results are very close to the output of

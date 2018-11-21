@@ -212,7 +212,7 @@ a pattern that seems to reflect periodicity.
 \caption{Autocorrelation plot of the EMA mood series, revealing periodicity.}(\#fig:feat-plot-autocorr)
 \end{figure}
 
-### Rolling Statistics
+## Rolling Statistics
 
 From the auto-correlation analysis, we learned that describing the EMA series as
 a simple trend might be too simplistic. The mean does not increase in a simple

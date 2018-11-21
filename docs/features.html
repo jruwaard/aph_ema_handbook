@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2018-11-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,11 +188,10 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.2" data-path="features.html"><a href="features.html#central-tendency-and-variability"><i class="fa fa-check"></i><b>7.2</b> Central Tendency and Variability</a></li>
 <li class="chapter" data-level="7.3" data-path="features.html"><a href="features.html#modeling-the-trend"><i class="fa fa-check"></i><b>7.3</b> Modeling the Trend</a></li>
 <li class="chapter" data-level="7.4" data-path="features.html"><a href="features.html#missing-values"><i class="fa fa-check"></i><b>7.4</b> Missing Values</a></li>
-<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a></li>
+<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.6</b> Rolling Statistics</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.7</b> Periodicity</a></li>
+<li class="chapter" data-level="7.8" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.8</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -284,7 +283,9 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
+<li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
+<li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
 </ul>
 
       </nav>
@@ -376,8 +377,9 @@ Figure 7.6: EMA time series, with missing values (red) imputed through interpola
 Figure 7.7: Autocorrelation plot of the EMA mood series, revealing periodicity.
 </p>
 </div>
-<div id="rolling-statistics" class="section level3">
-<h3><span class="header-section-number">7.5.1</span> Rolling Statistics</h3>
+</div>
+<div id="rolling-statistics" class="section level2">
+<h2><span class="header-section-number">7.6</span> Rolling Statistics</h2>
 <p>From the auto-correlation analysis, we learned that describing the EMA series as a simple trend might be too simplistic. The mean does not increase in a simple linear fashion. There seem to be periodic components in the series as well: the signal appears also to be characterized by a series of increases and decreases in the mean mood level. In the plot of the raw series, this is not immediately clear. However, if we “smooth” the series, by calculating the mean as it develops over time, the periodicity in the series is becoming clearer. Figure <a href="features.html#fig:feat-plot-roll">7.8</a> illustrates this.</p>
 <div class="figure" style="text-align: center"><span id="fig:feat-plot-roll"></span>
 <img src="features_files/figure-html/feat-plot-roll-1.png" alt="EMA mood series, with a rolling mean superposed." width="100%" />
@@ -386,9 +388,8 @@ Figure 7.8: EMA mood series, with a rolling mean superposed.
 </p>
 </div>
 </div>
-</div>
 <div id="periodicity" class="section level2">
-<h2><span class="header-section-number">7.6</span> Periodicity</h2>
+<h2><span class="header-section-number">7.7</span> Periodicity</h2>
 
 <p>Both the auto-correlation analysis and the moving average plot suggest periodicity in the EMA time series. Suppose we want to know more about this periodicity. Is there a way to quantify it? Yes, there is. With a technique called Fourier Analysis, the strength (‘power’) of the evidence for the presence of various frequencies can be quantified. Figure <a href="features.html#fig:feat-plot-pow">7.9</a> shows what happens if we run a Fourier analysis of our time series (with R’s built-in function <code>spec.pgram</code>).</p>
 <div class="figure" style="text-align: center"><span id="fig:feat-plot-pow"></span>
@@ -400,7 +401,7 @@ Figure 7.9: periodogram of the EMA time series, revealing a one-day and a one-we
 <p>There are two peaks in the figure: at a frequency of 1 (day) and at a frequency of 0.14 (about one week). This series is <em>circadian</em>: mood ratings follow a daily and a weekly pattern. This is a common feature of EMA data, because of the circadian rhythms in our body and in our environment (our biological clocks, day-night cycles, seasons) <span class="citation">(Doherty, <a href="#ref-Doherty2018">2018</a>; Frank, Swartz, &amp; Boland, <a href="#ref-Frank2007">2007</a>; Frank, Swartz, &amp; Kupfer, <a href="#ref-Frank2000">2000</a>; Karatsoreos, <a href="#ref-Karatsoreos2014">2014</a>; Tahmasian et al., <a href="#ref-Tahmasian2013">2013</a>; Van Someren, <a href="#ref-VanSomeren2000">2000</a>)</span>.</p>
 </div>
 <div id="discussion-1" class="section level2">
-<h2><span class="header-section-number">7.7</span> Discussion</h2>
+<h2><span class="header-section-number">7.8</span> Discussion</h2>
 <p>In this chapter, we used a number of statistical indicators to characterize a single time-series. By extracting these indicators (or “features”), we identified several regularities. We learned that the mean, variance and missingness increased over time, and we identified clear signs of circadian rhythmicity. You might have identified some of these features when you first inspected Figure <a href="features.html#fig:feat-plot">7.1</a>. The increase in the mean was pretty easy to spot. However, the systematic increases in the variance and the missingness were less clear. Likewise, although you might have spotted the periodicity in the series, the circadian components were probably too subtle to spot for the naked eye.</p>
 <p>The aim of the chapter was to illustrate the options available to the EMA researcher to quantitatively summarize EMA series. Other options, of course, exist. In chapter <a href="csd.html#csd">9</a>, for example, we will see how subtle changes in variation and auto-correlation in EMA mood scores can be summarized in a single dynamic statistical feature that may be predictive indicator of significant future state changes.</p>
 <p>Finally, you might have been disappointed by the lack of code examples in this chapter. We did not include them, to avoid unnecessary distraction from the conceptual explanation. Instead, we provide a full code listing below, to allow you learn how to apply the feature extraction techniques yourself.</p>

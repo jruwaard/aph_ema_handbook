@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-20">
+<meta name="date" content="2018-11-21">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -188,11 +188,10 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="7.2" data-path="features.html"><a href="features.html#central-tendency-and-variability"><i class="fa fa-check"></i><b>7.2</b> Central Tendency and Variability</a></li>
 <li class="chapter" data-level="7.3" data-path="features.html"><a href="features.html#modeling-the-trend"><i class="fa fa-check"></i><b>7.3</b> Modeling the Trend</a></li>
 <li class="chapter" data-level="7.4" data-path="features.html"><a href="features.html#missing-values"><i class="fa fa-check"></i><b>7.4</b> Missing Values</a></li>
-<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.5.1</b> Rolling Statistics</a></li>
-</ul></li>
-<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.6</b> Periodicity</a></li>
-<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.7</b> Discussion</a></li>
+<li class="chapter" data-level="7.5" data-path="features.html"><a href="features.html#auto-correlation"><i class="fa fa-check"></i><b>7.5</b> Auto-correlation</a></li>
+<li class="chapter" data-level="7.6" data-path="features.html"><a href="features.html#rolling-statistics"><i class="fa fa-check"></i><b>7.6</b> Rolling Statistics</a></li>
+<li class="chapter" data-level="7.7" data-path="features.html"><a href="features.html#periodicity"><i class="fa fa-check"></i><b>7.7</b> Periodicity</a></li>
+<li class="chapter" data-level="7.8" data-path="features.html"><a href="features.html#discussion-1"><i class="fa fa-check"></i><b>7.8</b> Discussion</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="lmm.html"><a href="lmm.html"><i class="fa fa-check"></i><b>8</b> Mixed Modeling</a><ul>
 <li class="chapter" data-level="8.1" data-path="lmm.html"><a href="lmm.html#the-mixed-model"><i class="fa fa-check"></i><b>8.1</b> The Mixed Model</a></li>
@@ -284,7 +283,9 @@ code > span.in { font-style: italic; } /* Information */
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
-<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+<li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
+<li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
+<li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
 </ul>
 
       </nav>
@@ -483,7 +484,7 @@ Figure 12.1: Raw sensor data of a GENEActiv accelerometer.
 <p>Package <em>GGIR</em> <span class="citation">(Van Hees et al., <a href="#ref-R-GGIR">2018</a>)</span> is a package to pre-process raw accelerometry data from three accelerometer brands: <a href="http://actigraphcorp.com/">ActiGraph</a>, <a href="http://axivity.com/">Axivity</a>, and <a href="https://www.geneactiv.org/">GENEActiv</a> (GGIR includes package <code>GENEAread</code>). The package is in active development. New features are introduced and bugs are fixed on a regular basis. If you consider to use <code>GGIR</code> for your project, you may want to install the development version, which is on <a href="https://github.com/wadpac/GGIR">GitHub</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(devtools)
 <span class="kw">install_github</span>(<span class="st">&quot;wadpac/GGIR&quot;</span>, <span class="dt">dependencies =</span> <span class="ot">TRUE</span>)</code></pre></div>
-<p><code>GGIR</code>’s main function is <code>g.shell.GGIR</code>, with which multiple accelerometer data files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract and summarize variables on physical activity and sleep). The example below shows an example configuration. See <code>?g.shell.GGIR</code> (and <code>?g.part1</code>, ?<code>g.part2</code>, to <code>g.part4</code>) to learn the meaning of each parameter. If you get lost or run into a problem, you can ask the package developers or other users for help via the GGIR Google discussion forum, at <a href="https://groups.google.com/forum/#!forum/rpackageggir" class="uri">https://groups.google.com/forum/#!forum/rpackageggir</a>.</p>
+<p><code>GGIR</code>’s main function is <code>g.shell.GGIR</code>, with which multiple accelerometer data files can be imported, calibrated, cleaned (identify non-wear periods, impute data) and analyzed (extract and summarize variables on physical activity and sleep). The example below shows an example configuration (. See <code>?g.shell.GGIR</code> (and <code>?g.part1</code>, ?<code>g.part2</code>, to <code>g.part4</code>) to learn the meaning of each parameter. If you get lost or run into a problem, you can ask the package developers or other users for help via the GGIR Google discussion forum, at <a href="https://groups.google.com/forum/#!forum/rpackageggir" class="uri">https://groups.google.com/forum/#!forum/rpackageggir</a>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Import actigraphy data with GGIR</span>
 <span class="kw">library</span>(GGIR)
 
@@ -566,19 +567,21 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
 <span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.60634 -0.74277  0.02982  0.63570  2.37540 </span>
+<span class="co">#&gt; -2.14664 -0.79313 -0.04654  0.68567  2.36424 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
-<span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.51662    0.12134   4.258 4.81e-05 ***</span>
-<span class="co">#&gt; depression.l1  0.04871    0.09415   0.517  0.60611    </span>
-<span class="co">#&gt; const          0.30974    0.11278   2.746  0.00719 ** </span>
+<span class="co">#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    </span>
+<span class="co">#&gt; activity.l1    0.5863541  0.1121159   5.230 1.02e-06 ***</span>
+<span class="co">#&gt; depression.l1 -0.0670961  0.0906330  -0.740    0.461    </span>
+<span class="co">#&gt; const         -0.4202698  0.3189785  -1.318    0.191    </span>
+<span class="co">#&gt; index          0.0228933  0.0148084   1.546    0.125    </span>
+<span class="co">#&gt; index2        -0.0002285  0.0001429  -1.599    0.113    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 1.083 on 96 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.1591, Adjusted R-squared:  0.1416 </span>
-<span class="co">#&gt; F-statistic:  9.08 on 2 and 96 DF,  p-value: 0.0002445</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 0.9899 on 94 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.2751, Adjusted R-squared:  0.2443 </span>
+<span class="co">#&gt; F-statistic: 8.919 on 4 and 94 DF,  p-value: 3.772e-06</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 </div>
@@ -613,23 +616,23 @@ knitr<span class="op">::</span><span class="kw">kable</span>(b)</code></pre></di
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="right">0.3093015</td>
+<td align="right">-0.1021935</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="right">-0.0592608</td>
+<td align="right">-0.3355790</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="right">-0.1035563</td>
+<td align="right">0.2449858</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="right">-0.3855794</td>
+<td align="right">0.4760528</td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
-<td align="right">-0.1548274</td>
+<td align="right">-0.0996229</td>
 </tr>
 </tbody>
 </table>
@@ -843,11 +846,11 @@ def &lt;-<span class="st"> </span><span class="kw">defData</span>(def, <span cla
 
 <span class="kw">genData</span>(<span class="dv">5</span>, def)
 <span class="co">#&gt;    idnum nr       x1       y1</span>
-<span class="co">#&gt; 1:     1  7 19.43941 44.81457</span>
-<span class="co">#&gt; 2:     2  7 17.75292 44.34090</span>
-<span class="co">#&gt; 3:     3  7 13.68190 32.43690</span>
-<span class="co">#&gt; 4:     4  7 15.96630 40.40480</span>
-<span class="co">#&gt; 5:     5  7 11.18811 38.27916</span></code></pre></div>
+<span class="co">#&gt; 1:     1  7 12.96156 33.57869</span>
+<span class="co">#&gt; 2:     2  7 18.03132 37.47113</span>
+<span class="co">#&gt; 3:     3  7 17.62231 40.03445</span>
+<span class="co">#&gt; 4:     4  7 12.53070 30.34530</span>
+<span class="co">#&gt; 5:     5  7 19.77858 45.64095</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">

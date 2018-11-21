@@ -218,7 +218,7 @@ ggplot(na.omit(d),
           group = 1)) +
   geom_point() +
   geom_line() + 
-  ylab("dfa (60-day window)") + 
+  ylab("dfa (31-day window)") + 
   xlim(c(0, 250)) + 
   guides(color = FALSE) + 
   theme_classic()

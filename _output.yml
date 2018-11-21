@@ -20,3 +20,6 @@ bookdown::gitbook:
         <li><a href="http://jruwaard.nl" target="blank">Jeroen Ruwaard</a></li>
         <li><a href="https://https://www.linkedin.com/in/lisakooistra/?originalSubdomain=nl" target="blank">Lisa Kooistra</a></li>
         <li><a href="https://www.linkedin.com/in/melissa-thong-76977331/" target="blank">Melissa Thong</a></li>
+  includes:
+    in_header: ga.html
+    after_body: after-body.html

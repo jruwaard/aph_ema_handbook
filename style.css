@@ -1,3 +1,21 @@
+.header-section-number {
+  padding-right: .2em;
+  font-weight: 500;
+}
+
+.level1 h1 {
+  border-bottom: 1px solid;
+  border-bottom: 3px solid;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+h1.title {
+  font-weight: 700;
+}
+
+
 p.caption {
   color: #777;
   margin-top: 10px;

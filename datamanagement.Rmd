@@ -46,18 +46,18 @@ you are advised to choose a structure that aids you best to implement the
 following research guidelines:
 
   - You should adhere strictly to a clear and logical directory structure, to
-    ensure that co-workers and external auditors can quickly grasp and replicate
+    ensure that co-workers and external auditors can quickly grasp and reproduce
     your work;
     
   - Raw data should be part of your project, so that results can be traced back
     to their source;
     
   - Cleaned data should be separated from raw data, and data cleaning procedures
-    should be explicit and replicable;
+    should be explicit and reproducible;
     
   - Data and analyses should be clearly separated;
   
-  - All analyses should be explicit and replicable;
+  - All analyses should be explicit and reproducible;
   
   - Output of (published) analyses should be saved.
 
@@ -129,7 +129,7 @@ The full project, including example data and R-scripts, is available for downloa
 ## Data
 \index{Datamanagement!Raw data}
 
-Full replicability implies that raw data can be traced back to the source.
+Full reproducibility implies that raw data can be traced back to the source.
 Wherever possible, this should translate to the availability of raw study data
 in your project.
 

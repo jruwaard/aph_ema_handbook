@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-21">
+<meta name="date" content="2018-11-22">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -334,11 +334,11 @@ Figure 4.1: creating a project in RStudio
 
 <p>RStudio imposes no limitations to the contents of project directories. You are free to organize the project in the way you want. In clinical research, however, you are advised to choose a structure that aids you best to implement the following research guidelines:</p>
 <ul>
-<li><p>You should adhere strictly to a clear and logical directory structure, to ensure that co-workers and external auditors can quickly grasp and replicate your work;</p></li>
+<li><p>You should adhere strictly to a clear and logical directory structure, to ensure that co-workers and external auditors can quickly grasp and reproduce your work;</p></li>
 <li><p>Raw data should be part of your project, so that results can be traced back to their source;</p></li>
-<li><p>Cleaned data should be separated from raw data, and data cleaning procedures should be explicit and replicable;</p></li>
+<li><p>Cleaned data should be separated from raw data, and data cleaning procedures should be explicit and reproducible;</p></li>
 <li><p>Data and analyses should be clearly separated;</p></li>
-<li><p>All analyses should be explicit and replicable;</p></li>
+<li><p>All analyses should be explicit and reproducible;</p></li>
 <li><p>Output of (published) analyses should be saved.</p></li>
 </ul>
 <p>A directory structure based on these guidelines is listed in Figure <a href="datamanagement.html#fig:dm-project-tree">4.2</a>. It shows the organization of a (hypothetical) project in which data were collected via:</p>
@@ -358,7 +358,7 @@ Figure 4.2: Example project directory structure
 <div id="data" class="section level2">
 <h2><span class="header-section-number">4.3</span> Data</h2>
 
-<p>Full replicability implies that raw data can be traced back to the source. Wherever possible, this should translate to the availability of raw study data in your project.</p>
+<p>Full reproducibility implies that raw data can be traced back to the source. Wherever possible, this should translate to the availability of raw study data in your project.</p>
 <p>In the example project, unprocessed data files exported from the three data collection systems (i.e., survey data, EMA data, and actigraphy data) are stored in the ’data/raw“-directory’, in separate sub-directories per data type.</p>
 <p>In ‘data/raw/surveys’, we find two files: 1) ‘sur_t0_2018_06_10.csv’, containing the results of the demographic questionnaire and the PHQ-9 pre-test, and 2) ‘sur_t1_2018_06_10.csv’, containing the results of the PHQ-9 post-test. In exports of such survey systems, data from all participants are typically stored in one file per assessment moment. Note how the export date is added to the files, to make sure that future updates are only used in the analysis when explicitly noted.</p>
 <p>In ‘data/raw/ema’, we find one file: ‘ema_2018_06_10.csv’, containing the results of the EMA mood measurements of all participants, exported from the back-office of the EMA platform.</p>

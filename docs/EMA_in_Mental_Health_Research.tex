@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-21}
+    \date{2018-11-22}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -203,7 +203,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-21)}.
+Introduction, with Examples in R (1st edition - build 2018-11-22)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -1180,13 +1180,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = -0.86628, df = 197.75, p-value = 0.3874}
+\CommentTok{#> t = 0.77835, df = 196.5, p-value = 0.4373}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.4100198  0.1597358}
+\CommentTok{#>  -0.1400373  0.3226484}
 \CommentTok{#> sample estimates:}
 \CommentTok{#>   mean of x   mean of y }
-\CommentTok{#> -0.01955265  0.10558936}
+\CommentTok{#>  0.07620393 -0.01510164}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1539,7 +1539,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.4875}
+\CommentTok{#> [1] 0.472}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1696,17 +1696,17 @@ best to implement the following research guidelines:
 \item
   You should adhere strictly to a clear and logical directory structure,
   to ensure that co-workers and external auditors can quickly grasp and
-  replicate your work;
+  reproduce your work;
 \item
   Raw data should be part of your project, so that results can be traced
   back to their source;
 \item
   Cleaned data should be separated from raw data, and data cleaning
-  procedures should be explicit and replicable;
+  procedures should be explicit and reproducible;
 \item
   Data and analyses should be clearly separated;
 \item
-  All analyses should be explicit and replicable;
+  All analyses should be explicit and reproducible;
 \item
   Output of (published) analyses should be saved.
 \end{itemize}
@@ -1747,7 +1747,7 @@ because it contains large accelerometer data files.
 
 \index{Datamanagement!Raw data}
 
-Full replicability implies that raw data can be traced back to the
+Full reproducibility implies that raw data can be traced back to the
 source. Wherever possible, this should translate to the availability of
 raw study data in your project.
 
@@ -5805,21 +5805,24 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
-\CommentTok{#>      Min       1Q   Median       3Q      Max }
-\CommentTok{#> -2.70261 -0.66704 -0.02332  0.80532  2.31751 }
+\CommentTok{#>     Min      1Q  Median      3Q     Max }
+\CommentTok{#> -2.3763 -0.7740  0.1084  0.6763  2.3256 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
-\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.59865    0.12123   4.938 3.42e-06 ***}
-\CommentTok{#> depression.l1 -0.17298    0.09151  -1.890   0.0618 .  }
-\CommentTok{#> depression.l2 -0.09707    0.09148  -1.061   0.2914    }
-\CommentTok{#> const          0.11712    0.11640   1.006   0.3169    }
+\CommentTok{#>                 Estimate Std. Error t value Pr(>|t|)    }
+\CommentTok{#> activity.l1    0.4308963  0.0919634   4.686 9.74e-06 ***}
+\CommentTok{#> depression.l1  0.1237535  0.0960958   1.288    0.201    }
+\CommentTok{#> depression.l2  0.0001138  0.0985318   0.001    0.999    }
+\CommentTok{#> const          0.0123469  0.1012162   0.122    0.903    }
+\CommentTok{#> outlier_43    -0.1040700  1.0234661  -0.102    0.919    }
+\CommentTok{#> outlier_63     1.6619606  1.0187869   1.631    0.106    }
+\CommentTok{#> outlier_74     0.0983524  1.0023439   0.098    0.922    }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 1.145 on 94 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.2393, Adjusted R-squared:  0.215 }
-\CommentTok{#> F-statistic: 9.857 on 3 and 94 DF,  p-value: 1.028e-05}
+\CommentTok{#> Residual standard error: 0.9822 on 91 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.246,  Adjusted R-squared:  0.1963 }
+\CommentTok{#> F-statistic: 4.949 on 6 and 91 DF,  p-value: 0.0002004}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5874,15 +5877,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & -0.2310463\\
+1 & 0.0658163\\
 \hline
-2 & 0.0554627\\
+2 & -0.1894564\\
 \hline
-3 & 0.2577817\\
+3 & 0.4731616\\
 \hline
-4 & 0.2734464\\
+4 & 0.2005177\\
 \hline
-5 & -0.3021499\\
+5 & 0.2073418\\
 \hline
 \end{tabular}
 
@@ -6141,7 +6144,7 @@ the model), to determine the power of the test.
 \CommentTok{#> Based on 10 simulations, (0 warnings, 0 errors)}
 \CommentTok{#> alpha = 0.05, nrow = 960}
 \CommentTok{#> }
-\CommentTok{#> Time elapsed: 0 h 0 m 1 s}
+\CommentTok{#> Time elapsed: 0 h 0 m 2 s}
 \end{Highlighting}
 \end{Shaded}
 
@@ -6157,11 +6160,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 11.45151 27.11454}
-\CommentTok{#> 2:     2  7 14.48724 40.22195}
-\CommentTok{#> 3:     3  7 14.56614 34.46593}
-\CommentTok{#> 4:     4  7 12.80402 38.69230}
-\CommentTok{#> 5:     5  7 11.44767 29.71716}
+\CommentTok{#> 1:     1  7 13.60210 35.77394}
+\CommentTok{#> 2:     2  7 14.63747 40.83358}
+\CommentTok{#> 3:     3  7 17.48012 44.34175}
+\CommentTok{#> 4:     4  7 11.41653 25.02426}
+\CommentTok{#> 5:     5  7 13.14122 33.63673}
 \end{Highlighting}
 \end{Shaded}
 

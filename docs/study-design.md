@@ -140,14 +140,10 @@ plan <- sample_plan(n_participants = 5,
                     plot = TRUE)
 ```
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.95\linewidth]{study-design_files/figure-latex/fig3a-1} 
-
-}
-
-\caption{Generated two-day EMA sampling plan, for 5 participants}(\#fig:fig3a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="study-design_files/figure-html/fig3a-1.png" alt="Generated two-day EMA sampling plan, for 5 participants" width="95%" />
+<p class="caption">(\#fig:fig3a)Generated two-day EMA sampling plan, for 5 participants</p>
+</div>
 
 
 ##  What is the Optimal Sample Size?
@@ -242,7 +238,7 @@ for (i in 1:nsim) {
 
 # power
 sum(p < 0.05) / nsim
-#> [1] 0.4875
+#> [1] 0.4749
 ```
 
 As can be seen, the simulation results are very close to the output of
@@ -318,11 +314,7 @@ model agreements in which all relevant issues are addressed. Third parties may
 offer model agreements as well. If so, however, these agreements need to be
 checked for compliance to local regulations.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.9\linewidth]{images/outcomes/Medical_deviceFC} 
-
-}
-
-\caption{Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device. Based on http://cetool.nl/general/scanAid}(\#fig:fig3b)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/outcomes/Medical_deviceFC.png" alt="Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device. Based on http://cetool.nl/general/scanAid" width="90%" />
+<p class="caption">(\#fig:fig3b)Flow-chart to determine whether study devices (including EMA apps) should be considered a medical device. Based on http://cetool.nl/general/scanAid</p>
+</div>

@@ -13,5 +13,4 @@ This manual was written in [RMarkdown](https://rmarkdown.rstudio.com/) with [Boo
 *Jeroen Ruwaard, Lisa Kooistra \& Melissa Thong*
 
 
-
-\begin{center}\includegraphics[width=0.98\linewidth]{images/aph_consortium} \end{center}
+<img src="images/aph_consortium.png" width="98%" style="display: block; margin: auto;" />

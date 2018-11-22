@@ -21,14 +21,10 @@ creating new projects from RStudio's file menu. To create a new project, choose
 disk location (as shown in \@ref(fig:fig5a), after which the project will open in
 a new window.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{images/datamanagement/new_project} 
-
-}
-
-\caption{creating a project in RStudio}(\#fig:fig5a)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/datamanagement/new_project.png" alt="creating a project in RStudio" width="70%" />
+<p class="caption">(\#fig:fig5a)creating a project in RStudio</p>
+</div>
 
 One of the advantages of using RStudio Projects is that projects set the working
 directory to the project directory location. You can verify this by asking R to
@@ -52,18 +48,18 @@ you are advised to choose a structure that aids you best to implement the
 following research guidelines:
 
   - You should adhere strictly to a clear and logical directory structure, to
-    ensure that co-workers and external auditors can quickly grasp and replicate
+    ensure that co-workers and external auditors can quickly grasp and reproduce
     your work;
     
   - Raw data should be part of your project, so that results can be traced back
     to their source;
     
   - Cleaned data should be separated from raw data, and data cleaning procedures
-    should be explicit and replicable;
+    should be explicit and reproducible;
     
   - Data and analyses should be clearly separated;
   
-  - All analyses should be explicit and replicable;
+  - All analyses should be explicit and reproducible;
   
   - Output of (published) analyses should be saved.
 
@@ -78,21 +74,17 @@ in which data were collected via:
     
 3.  an accelerometer to assess activity levels.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.5\linewidth]{images/datamanagement/project_tree} 
-
-}
-
-\caption{Example project directory structure}(\#fig:dm-project-tree)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="images/datamanagement/project_tree.png" alt="Example project directory structure" width="50%" />
+<p class="caption">(\#fig:dm-project-tree)Example project directory structure</p>
+</div>
 
 The full project, including example data and R-scripts, is available for download at <https://tinyurl.com/yd7mx32c>. Download, unzip, and double-click the 'APH EMA Project.Rproj' file, to open the project in RStudio. Note that this is a large download (~134MB), because it contains large accelerometer data files.
 
 ## Data
 \index{Datamanagement!Raw data}
 
-Full replicability implies that raw data can be traced back to the source.
+Full reproducibility implies that raw data can be traced back to the source.
 Wherever possible, this should translate to the availability of raw study data
 in your project.
 

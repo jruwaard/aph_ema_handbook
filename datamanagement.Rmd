@@ -255,10 +255,10 @@ meaning of your code.
 ## Pre-process
 
 Once data are cleaned, you can enrich the data sets with variables that can be
-derived from the raw data, such as, e.g., survey scale and subscale scores, if
-needed), or actigraphy summary measures (see Chapter \@ref(activity)). The
-example below calculates the PHQ-9 sum scores from the item scores in the
-cleaned baseline data:
+derived from the raw data, such as, e.g., survey sum-scores, or actigraphy
+summary measures (see Chapter \@ref(activity)). The example below calculates the
+PHQ-9 sum scores from the item scores in the cleaned baseline (t0) and post-test
+(t1) data:
 
 ```{r dm-preprocess-example-script, eval = FALSE}
 # ------------------------------------------------------------

@@ -126,7 +126,7 @@
   \postauthor{\par}
       \predate{\centering\large\emph}
   \postdate{\par}
-    \date{2018-11-22}
+    \date{2018-11-26}
 
 % disable maketile temporarily (to get the cover before title - see frontpage.tex)
 \let\oldmaketitle\maketitle
@@ -203,7 +203,7 @@ explicit build dates, as in:
 
 Ruwaard, J., Kooistra, L. and Thong, M. (2018). \emph{Ecological
 Momentary Assessment in Mental Health Research: A Practical
-Introduction, with Examples in R (1st edition - build 2018-11-22)}.
+Introduction, with Examples in R (1st edition - build 2018-11-26)}.
 Amsterdam: APH Mental Health.
 
 \mainmatter
@@ -1180,13 +1180,13 @@ function you were looking for.
 \CommentTok{#>  Welch Two Sample t-test}
 \CommentTok{#> }
 \CommentTok{#> data:  A and B}
-\CommentTok{#> t = 0.77835, df = 196.5, p-value = 0.4373}
+\CommentTok{#> t = 2.0891, df = 197.81, p-value = 0.03798}
 \CommentTok{#> alternative hypothesis: true difference in means is not equal to 0}
 \CommentTok{#> 95 percent confidence interval:}
-\CommentTok{#>  -0.1400373  0.3226484}
+\CommentTok{#>  0.01652539 0.57348693}
 \CommentTok{#> sample estimates:}
-\CommentTok{#>   mean of x   mean of y }
-\CommentTok{#>  0.07620393 -0.01510164}
+\CommentTok{#>  mean of x  mean of y }
+\CommentTok{#>  0.0363802 -0.2586260}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1539,7 +1539,7 @@ calculate the power of the t-test again, through simulation:
 
 \CommentTok{# power}
 \KeywordTok{sum}\NormalTok{(p }\OperatorTok{<}\StringTok{ }\FloatTok{0.05}\NormalTok{) }\OperatorTok{/}\StringTok{ }\NormalTok{nsim}
-\CommentTok{#> [1] 0.472}
+\CommentTok{#> [1] 0.4741}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1891,10 +1891,10 @@ grasp the meaning of your code.
 \section{Pre-process}\label{pre-process}
 
 Once data are cleaned, you can enrich the data sets with variables that
-can be derived from the raw data, such as, e.g., survey scale and
-subscale scores, if needed), or actigraphy summary measures (see Chapter
-\ref{activity}). The example below calculates the PHQ-9 sum scores from
-the item scores in the cleaned baseline data:
+can be derived from the raw data, such as, e.g., survey sum-scores, or
+actigraphy summary measures (see Chapter \ref{activity}). The example
+below calculates the PHQ-9 sum scores from the item scores in the
+cleaned baseline (t0) and post-test (t1) data:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -1982,7 +1982,7 @@ standard R data structure.
 \KeywordTok{summary}\NormalTok{(fm)}
 
 \CommentTok{# save regression results -------------------------------------}
-\KeywordTok{save}\NormalTok{(fm, }\DataTypeTok{file =} \StringTok{"scripts/publish/P001_regression.Rda"}\NormalTok{)}
+\KeywordTok{save}\NormalTok{(fm, }\DataTypeTok{file =} \StringTok{"scripts/published/P001_regression.Rda"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5805,24 +5805,21 @@ used to detect that changes in depression are positively related to past
 \CommentTok{#> lm(formula = y ~ -1 + ., data = datares)}
 \CommentTok{#> }
 \CommentTok{#> Residuals:}
-\CommentTok{#>     Min      1Q  Median      3Q     Max }
-\CommentTok{#> -2.3763 -0.7740  0.1084  0.6763  2.3256 }
+\CommentTok{#>      Min       1Q   Median       3Q      Max }
+\CommentTok{#> -2.68264 -0.58318  0.08341  0.72290  1.88910 }
 \CommentTok{#> }
 \CommentTok{#> Coefficients:}
-\CommentTok{#>                 Estimate Std. Error t value Pr(>|t|)    }
-\CommentTok{#> activity.l1    0.4308963  0.0919634   4.686 9.74e-06 ***}
-\CommentTok{#> depression.l1  0.1237535  0.0960958   1.288    0.201    }
-\CommentTok{#> depression.l2  0.0001138  0.0985318   0.001    0.999    }
-\CommentTok{#> const          0.0123469  0.1012162   0.122    0.903    }
-\CommentTok{#> outlier_43    -0.1040700  1.0234661  -0.102    0.919    }
-\CommentTok{#> outlier_63     1.6619606  1.0187869   1.631    0.106    }
-\CommentTok{#> outlier_74     0.0983524  1.0023439   0.098    0.922    }
+\CommentTok{#>               Estimate Std. Error t value Pr(>|t|)   }
+\CommentTok{#> activity.l1    0.30928    0.09881   3.130  0.00233 **}
+\CommentTok{#> depression.l1 -0.04635    0.09697  -0.478  0.63376   }
+\CommentTok{#> depression.l2 -0.17821    0.09672  -1.842  0.06856 . }
+\CommentTok{#> const          0.11528    0.10578   1.090  0.27862   }
 \CommentTok{#> ---}
 \CommentTok{#> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1}
 \CommentTok{#> }
-\CommentTok{#> Residual standard error: 0.9822 on 91 degrees of freedom}
-\CommentTok{#> Multiple R-squared:  0.246,  Adjusted R-squared:  0.1963 }
-\CommentTok{#> F-statistic: 4.949 on 6 and 91 DF,  p-value: 0.0002004}
+\CommentTok{#> Residual standard error: 1.027 on 94 degrees of freedom}
+\CommentTok{#> Multiple R-squared:  0.1253, Adjusted R-squared:  0.09743 }
+\CommentTok{#> F-statistic:  4.49 on 3 and 94 DF,  p-value: 0.005444}
 \end{Highlighting}
 \end{Shaded}
 
@@ -5877,15 +5874,15 @@ complex data transformations.
 \hline
 id & mean\\
 \hline
-1 & 0.0658163\\
+1 & 0.1035896\\
 \hline
-2 & -0.1894564\\
+2 & 0.2474329\\
 \hline
-3 & 0.4731616\\
+3 & -0.4249159\\
 \hline
-4 & 0.2005177\\
+4 & 0.6600599\\
 \hline
-5 & 0.2073418\\
+5 & 0.1865828\\
 \hline
 \end{tabular}
 
@@ -6160,11 +6157,11 @@ the model), to determine the power of the test.
 
 \KeywordTok{genData}\NormalTok{(}\DecValTok{5}\NormalTok{, def)}
 \CommentTok{#>    idnum nr       x1       y1}
-\CommentTok{#> 1:     1  7 13.60210 35.77394}
-\CommentTok{#> 2:     2  7 14.63747 40.83358}
-\CommentTok{#> 3:     3  7 17.48012 44.34175}
-\CommentTok{#> 4:     4  7 11.41653 25.02426}
-\CommentTok{#> 5:     5  7 13.14122 33.63673}
+\CommentTok{#> 1:     1  7 16.37369 36.66801}
+\CommentTok{#> 2:     2  7 12.54895 26.95664}
+\CommentTok{#> 3:     3  7 13.78576 32.03588}
+\CommentTok{#> 4:     4  7 15.20732 38.84472}
+\CommentTok{#> 5:     5  7 17.29907 40.60162}
 \end{Highlighting}
 \end{Shaded}
 

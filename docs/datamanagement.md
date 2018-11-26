@@ -211,10 +211,10 @@ meaning of your code.
 ## Pre-process
 
 Once data are cleaned, you can enrich the data sets with variables that can be
-derived from the raw data, such as, e.g., survey scale and subscale scores, if
-needed), or actigraphy summary measures (see Chapter \@ref(activity)). The
-example below calculates the PHQ-9 sum scores from the item scores in the
-cleaned baseline data:
+derived from the raw data, such as, e.g., survey sum-scores, or actigraphy
+summary measures (see Chapter \@ref(activity)). The example below calculates the
+PHQ-9 sum scores from the item scores in the cleaned baseline (t0) and post-test
+(t1) data:
 
 
 ```r
@@ -297,7 +297,7 @@ fm <- lm(valence ~ timestamp, d)
 summary(fm)
 
 # save regression results -------------------------------------
-save(fm, file = "scripts/publish/P001_regression.Rda")
+save(fm, file = "scripts/published/P001_regression.Rda")
 ```
 
 R's ability to save the results of analyses to disk is yet another example of

@@ -209,26 +209,23 @@ models_found <- autovarCore::autovar(d, selected_column_names = c('activity', 'd
 summary(models_found[[1]]$varest$varresult$depression)
 #> 
 #> Call:
-#> lm(formula = y ~ -1 + ., data = datares)
+#> lm(formula = y ~ -1 + ., data = datamat)
 #> 
 #> Residuals:
-#>      Min       1Q   Median       3Q      Max 
-#> -2.81442 -0.50094  0.06734  0.54927  2.49861 
+#>     Min      1Q  Median      3Q     Max 
+#> -2.2123 -0.6768  0.1725  0.6794  2.9461 
 #> 
 #> Coefficients:
-#>                 Estimate Std. Error t value Pr(>|t|)    
-#> activity.l1    0.5813673  0.0925945   6.279 1.11e-08 ***
-#> depression.l1 -0.0371659  0.0889408  -0.418   0.6770    
-#> depression.l2  0.0152312  0.0901156   0.169   0.8662    
-#> const         -0.3052847  0.3337492  -0.915   0.3627    
-#> index          0.0273383  0.0148712   1.838   0.0692 .  
-#> index2        -0.0003647  0.0001403  -2.598   0.0109 *  
+#>               Estimate Std. Error t value Pr(>|t|)    
+#> activity.l1    0.50289    0.11166   4.504 1.88e-05 ***
+#> depression.l1 -0.05937    0.09256  -0.641    0.523    
+#> const         -0.03508    0.10690  -0.328    0.744    
 #> ---
 #> Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 #> 
-#> Residual standard error: 0.9714 on 92 degrees of freedom
-#> Multiple R-squared:  0.368,	Adjusted R-squared:  0.3336 
-#> F-statistic: 10.71 on 5 and 92 DF,  p-value: 3.93e-08
+#> Residual standard error: 1.046 on 96 degrees of freedom
+#> Multiple R-squared:  0.1776,	Adjusted R-squared:  0.1605 
+#> F-statistic: 10.37 on 2 and 96 DF,  p-value: 8.384e-05
 ```
 
 `AutovarCore` is a simplified version of a more extensive package *autovar*
@@ -274,11 +271,11 @@ knitr::kable(b)
 
 id          mean
 ---  -----------
-1     -0.4841959
-2     -0.2268515
-3      0.0650939
-4      0.0714066
-5      0.1296515
+1      0.0151337
+2     -0.3329648
+3      0.7150186
+4     -0.0570848
+5      0.2506864
 
 A good introduction to `dplyr` can be found in the book 'R for Data Science'
 [@wickham2016r], which can be freely accessed online
@@ -524,11 +521,11 @@ def <- defData(def, varname = "y1", formula = "nr + x1 * 2", variance = 8)
 
 genData(5, def)
 #>    idnum nr       x1       y1
-#> 1:     1  7 16.08567 39.47196
-#> 2:     2  7 12.46348 32.27785
-#> 3:     3  7 17.84386 46.95338
-#> 4:     4  7 19.47801 43.35452
-#> 5:     5  7 11.26391 29.32974
+#> 1:     1  7 16.87369 41.31695
+#> 2:     2  7 12.48892 37.73286
+#> 3:     3  7 13.25283 33.61216
+#> 4:     4  7 14.00136 39.41692
+#> 5:     5  7 11.06026 26.04434
 ```
 
 

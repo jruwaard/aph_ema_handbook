@@ -27,7 +27,7 @@
 <meta name="author" content="Melissa Thong">
 
 
-<meta name="date" content="2018-11-22">
+<meta name="date" content="2018-11-26">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -572,26 +572,23 @@ models_found &lt;-<span class="st"> </span>autovarCore<span class="op">::</span>
 <span class="kw">summary</span>(models_found[[<span class="dv">1</span>]]<span class="op">$</span>varest<span class="op">$</span>varresult<span class="op">$</span>depression)
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Call:</span>
-<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datares)</span>
+<span class="co">#&gt; lm(formula = y ~ -1 + ., data = datamat)</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Residuals:</span>
-<span class="co">#&gt;      Min       1Q   Median       3Q      Max </span>
-<span class="co">#&gt; -2.81442 -0.50094  0.06734  0.54927  2.49861 </span>
+<span class="co">#&gt;     Min      1Q  Median      3Q     Max </span>
+<span class="co">#&gt; -2.2123 -0.6768  0.1725  0.6794  2.9461 </span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; Coefficients:</span>
-<span class="co">#&gt;                 Estimate Std. Error t value Pr(&gt;|t|)    </span>
-<span class="co">#&gt; activity.l1    0.5813673  0.0925945   6.279 1.11e-08 ***</span>
-<span class="co">#&gt; depression.l1 -0.0371659  0.0889408  -0.418   0.6770    </span>
-<span class="co">#&gt; depression.l2  0.0152312  0.0901156   0.169   0.8662    </span>
-<span class="co">#&gt; const         -0.3052847  0.3337492  -0.915   0.3627    </span>
-<span class="co">#&gt; index          0.0273383  0.0148712   1.838   0.0692 .  </span>
-<span class="co">#&gt; index2        -0.0003647  0.0001403  -2.598   0.0109 *  </span>
+<span class="co">#&gt;               Estimate Std. Error t value Pr(&gt;|t|)    </span>
+<span class="co">#&gt; activity.l1    0.50289    0.11166   4.504 1.88e-05 ***</span>
+<span class="co">#&gt; depression.l1 -0.05937    0.09256  -0.641    0.523    </span>
+<span class="co">#&gt; const         -0.03508    0.10690  -0.328    0.744    </span>
 <span class="co">#&gt; ---</span>
 <span class="co">#&gt; Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; Residual standard error: 0.9714 on 92 degrees of freedom</span>
-<span class="co">#&gt; Multiple R-squared:  0.368,  Adjusted R-squared:  0.3336 </span>
-<span class="co">#&gt; F-statistic: 10.71 on 5 and 92 DF,  p-value: 3.93e-08</span></code></pre></div>
+<span class="co">#&gt; Residual standard error: 1.046 on 96 degrees of freedom</span>
+<span class="co">#&gt; Multiple R-squared:  0.1776, Adjusted R-squared:  0.1605 </span>
+<span class="co">#&gt; F-statistic: 10.37 on 2 and 96 DF,  p-value: 8.384e-05</span></code></pre></div>
 <p><code>AutovarCore</code> is a simplified version of a more extensive package <em>autovar</em> <span class="citation">(Emerencia, <a href="#ref-R-autovarCore">2018</a>)</span>, which was used in several publications <span class="citation">(Emerencia et al., <a href="#ref-Emerencia2016">2016</a>; Van der Krieke et al., <a href="#ref-VanderKrieke2015">2015</a>)</span>. Further information can be found on <a href="https://autovar.nl/">http://autovar.nl</a> and <a href="https://autovarcore.nl/">http://autovarcore.nl</a></p>
 </div>
 </div>
@@ -626,23 +623,23 @@ knitr<span class="op">::</span><span class="kw">kable</span>(b)</code></pre></di
 <tbody>
 <tr class="odd">
 <td align="left">1</td>
-<td align="right">-0.4841959</td>
+<td align="right">0.0151337</td>
 </tr>
 <tr class="even">
 <td align="left">2</td>
-<td align="right">-0.2268515</td>
+<td align="right">-0.3329648</td>
 </tr>
 <tr class="odd">
 <td align="left">3</td>
-<td align="right">0.0650939</td>
+<td align="right">0.7150186</td>
 </tr>
 <tr class="even">
 <td align="left">4</td>
-<td align="right">0.0714066</td>
+<td align="right">-0.0570848</td>
 </tr>
 <tr class="odd">
 <td align="left">5</td>
-<td align="right">0.1296515</td>
+<td align="right">0.2506864</td>
 </tr>
 </tbody>
 </table>
@@ -856,11 +853,11 @@ def &lt;-<span class="st"> </span><span class="kw">defData</span>(def, <span cla
 
 <span class="kw">genData</span>(<span class="dv">5</span>, def)
 <span class="co">#&gt;    idnum nr       x1       y1</span>
-<span class="co">#&gt; 1:     1  7 16.08567 39.47196</span>
-<span class="co">#&gt; 2:     2  7 12.46348 32.27785</span>
-<span class="co">#&gt; 3:     3  7 17.84386 46.95338</span>
-<span class="co">#&gt; 4:     4  7 19.47801 43.35452</span>
-<span class="co">#&gt; 5:     5  7 11.26391 29.32974</span></code></pre></div>
+<span class="co">#&gt; 1:     1  7 16.87369 41.31695</span>
+<span class="co">#&gt; 2:     2  7 12.48892 37.73286</span>
+<span class="co">#&gt; 3:     3  7 13.25283 33.61216</span>
+<span class="co">#&gt; 4:     4  7 14.00136 39.41692</span>
+<span class="co">#&gt; 5:     5  7 11.06026 26.04434</span></code></pre></div>
 </div>
 </div>
 <div id="symptom-network-analysis" class="section level2">

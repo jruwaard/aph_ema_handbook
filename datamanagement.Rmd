@@ -338,7 +338,7 @@ fm <- lm(valence ~ timestamp, d)
 summary(fm)
 
 # save regression results -------------------------------------
-save(fm, file = "scripts/publish/P001_regression.Rda")
+save(fm, file = "scripts/published/P001_regression.Rda")
 ``` 
 
 R's ability to save the results of analyses to disk is yet another example of
